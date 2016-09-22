@@ -2044,9 +2044,21 @@ co_g2_overruns_only <-
 co_g3_overruns_only <-
   co_g3 %>%
   filter(Final_cost_over_initial >1)
-overall_overruns_by_cohort <- data.frame(variable = c("Possible or under consid cohort", "Committed cohort", "Under construction cohort"),
-                                           Net_cost_overrun = c(sum(co_g1$Final_cost_real)/sum(co_g1$Initial_cost_real), sum(co_g2$Final_cost_real)/sum(co_g2$Initial_cost_real), sum(co_g3$Final_cost_real)/sum(co_g3$Initial_cost_real)),
-                                         Total_cost_overrun = c(sum(co_g1_overruns_only$Final_cost_real)/sum(co_g1_overruns_only$Initial_cost_real), sum(co_g2_overruns_only$Final_cost_real)/sum(co_g2_overruns_only$Initial_cost_real), sum(co_g3_overruns_only$Final_cost_real)/sum(co_g3_overruns_only$Initial_cost_real)))  
+co_g2g3 <-
+  co_all %>%
+  filter(Matching_status_numeric>=3) 
+co_g2g3_overruns_only <-
+  co_all %>%
+  filter(Matching_status_numeric>=3) %>%
+  filter(Final_cost_over_initial >1)
+
+  
+    
+overall_overruns_by_cohort <- data.frame(variable = c("Possible or under consid cohort", "Committed cohort", "Under construction cohort", "Committed and under construction cohorts"),
+                                           Net_cost_overrun = c(sum(co_g1$Final_cost_real)/sum(co_g1$Initial_cost_real), sum(co_g2$Final_cost_real)/sum(co_g2$Initial_cost_real), sum(co_g3$Final_cost_real)/sum(co_g3$Initial_cost_real), sum(co_g2g3$Final_cost_real)/sum(co_g2g3$Initial_cost_real)),
+                                         Total_cost_overrun = c(sum(co_g1_overruns_only$Final_cost_real)/sum(co_g1_overruns_only$Initial_cost_real), sum(co_g2_overruns_only$Final_cost_real)/sum(co_g2_overruns_only$Initial_cost_real), sum(co_g3_overruns_only$Final_cost_real)/sum(co_g3_overruns_only$Initial_cost_real), sum(co_g2g3_overruns_only$Final_cost_real)/sum(co_g2g3_overruns_only$Initial_cost_real)))  
+
+
 
 #* Export cost overrun figures analysis data to excel: --------
 #Cost_overrun_figures <- createWorkbook()
@@ -3842,6 +3854,45 @@ Figure 2.1: Extremely large cost overruns pose almost all the cost
 \section{Australia does not compare especially well internationally}
  ... lit review goes here...
 
-\section{Scope changes have no single culprit}
+\section{Cost overruns have no single culprit}
+Transport infrastructure projects are very varied, sometimes very complex, and subject to a range of pressures. None of the common reasons given for cost overruns, taken alone is especially compelling.
+
+\subsection{Scope changes explain a small share of overruns}
+
+...some text...
+Scope changes only account for around 12 per cent of cost overruns on transport infrastructure projects, even including the full project lifecycle from the time of first announcement HUGH: This figure comes from the Grattan dataset. The analysis is in excel. 
+
+Figure 2.3.1: Scope changes pie chart   
+...some text...
+
+\subsection{Escalation in costs is not a significant cause of cost overruns}
+
+...some text...
+However, escalation in costs does not have a significant impact on cost overruns across the whole portfolio of projects of the past 15 years in above and beyond the other factors outlined in this report. 
+HUGH: This finding comes the eight regression models. See the Regression results final spreadsheet
+
+\subsection{Early overruns do not prevent later overruns}
+Cost overruns occur throughout the project lifecycle, accounting overall for \Sexpr{spending_per_dollar_budgeted-1}  cents additional cost for every dollar of estimated project cost (Figure 2.3.3). 
+
+Overruns in the initial phase, between announcement and before a formal funding commitment, occur at a rate of \Sexpr{co_all_indices_AM$co12} cents on every dollar of project value. These overruns are concerning because any later overruns that occur do so on the enlarged cost base resulting from the earlier overrun. 
+Overruns in the middle phase, after the funding commitment up until construction begins, occur at a rate of \Sexpr{co_all_indices_AM$co23} cents on every dollar of project value. Overruns during construction occur at a rate of \Sexpr{co_all_indices_AM$co34} cents for every dollar of project value. These middle and later phase overruns are concerning because they reveal that the initial decision to invest was made on an inaccurate basis. 
+
+Figure 2.3.3
+
+The inaccurate basis for the decision to invest is also apparent from analysis of the cost estimates. Cost estimates produced to a standard that anticipates the project will equal or better its budget three quarters of the time (known as a “P75” costing) actually only achieved this result \Sexpr{1-pc_of_projects_w_overrun} per cent of the time. The difference reveals significant understatement of costs across the portfolio of projects planned or built since 2000.
+
+\chapter{Cost overruns are more preventable than people think}
+..some text..
+
+\section {Poor incentives for decision-makers}
+Ministers, governments and would-be governments have always sought political advantage by promising infrastructure. But politicised announcements that ignore proper process have poor outcomes. Cost overruns are 36 per cent larger on average for projects announced close to a state election than otherwise similar projects announced at other times. This confirms the contention of previous Grattan report, Roads to Riches, that politicians commit to poor quality projects for political benefit.  
+HUGH: See Regression results final spreadsheet
+
+\section{Premature announcements}
+
+NOTE: I think Marion was referring to the gross figures in her text. This is not clear,and I don't think the right numbers to cite. The figures below are net of underruns:
+Premature announcement affects not only the likelihood of an overrun, but also its size. Projects with costs announced ahead of a government funding commitment have far larger cost overruns, averaging \Sexpr{overall_overruns_by_cohort[1,2]-1} per cent of the initially announced cost (Figure xx). By contrast, those announced with a formal funding commitment averaged overruns of \Sexpr{overall_overruns_by_cohort[4,2]-1} per cent.
+
+When the net impact of cost overruns and under-runs is closer to zero, this indicates that the variation is less to do with preventable errors and more a case of normal variation in project cost outcomes relative to estimates. Figure xx illustrates net overruns of \Sexpr{overall_overruns_by_cohort[2,2]-1} to \Sexpr{overall_overruns_by_cohort[3,2]-1} per cent occur for projects announced with more mature cost estimates than those announced early.
 
 \end{document}
