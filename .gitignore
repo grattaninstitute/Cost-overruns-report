@@ -178,3 +178,9 @@ TSWLatexianTemp*
 
 # KBibTeX
 *~[0-9]*
+.Rproj.user
+.Rhistory
+*.Rproj
+*.tex
+*.pdf
+figure/
