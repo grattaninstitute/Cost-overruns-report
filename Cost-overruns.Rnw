@@ -58,7 +58,7 @@
 # Brindabella Business Park ACT 2609
 # Tel: +61 (2) 6263 5079 | Mobile: +61 438 609 986 
 # stephensmith1@deloitte.com.au | www.deloitte.com/au/economics
-
+library(testthat)
 library(Rcpp)
 library(rJava)
 library(xlsx)
@@ -96,6 +96,7 @@ library(logistf)
 library(curl)
 library(DBI)
 library(digest)
+
 
 aspercent<-function(x){
   percent<-(x-1)*100
@@ -149,6 +150,12 @@ na_reset <- function(x) {
   y <- cumsum(test)
   c(y - cummax(y * !test))
 }
+
+test_that("na_reset expected", {
+  expect_equal(na_reset(c(1, 2, NA, NA, NA, 4, 5, NA, NA, 3, NA, 5)), 
+               c(0L, 0L, 1L, 2L, 3L, 0L, 0L, 1L, 2L, 0L, 1L, 0L))
+})
+
 
 # Then we need to write a function that calulates the distance to the closest later non-NA cost estimate:
 
