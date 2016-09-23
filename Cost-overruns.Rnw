@@ -2551,11 +2551,17 @@ project_dataset_t_g1 <- project_dataset_t %>% filter(Initial_status=="Possible" 
 n_projects <- project_dataset_t %>% summarise(n())
 n_completed_projects <- co_all %>% summarise(n())
 pc_g1_projects_completed <- (project_dataset_t_g1 %>% filter(Final_status_historical == "Completed") %>% nrow)/(project_dataset_t_g1 %>% nrow)
-savings_B_from_no_co_gt_10_pc <- 
-  big_overruns %$%
+@
+
+<<savings_if_every_proj_with_CO_had_CO_le_10pc>>=
+savings_if_every_proj_with_CO_had_CO_le_10pc <- 
+  co_all %>%
+  filter(Final_cost_real > Initial_cost_real) %$%
   # If every cost-overrun was only 10%, subtract from
-  # initial_cost_real
-  sum(Final_cost_real - Initial_cost_real * 1.1) %>%
+  # 110% of initial_cost_real, otherwise just the normal difference
+  sum(if_else(Final_cost_real > 1.1 * Initial_cost_real, 
+              Final_cost_real - 1.1 * Initial_cost_real, 
+              Final_cost_real - 1.0 * Initial_cost_real)) %>%
   # Costs are in millions
   multiply_by(10^6)
 @
@@ -3918,9 +3924,9 @@ grattan_percent <- function(number, digits = 1){
 
 
 \begin{overview}[-40pt]
-Most of the time, Australia isn’t bad at managing transport infrastructure projects. But when one goes wrong, it can be spectacular. Australia could have saved \Sexpr{texNum(savings_B_from_no_co_gt_10_pc, dollar = TRUE)} over the past 15 years if every transport infrastructure project with a cost overrun had gone no more than ten per cent over budget. 
+Most of the time, Australia isn’t bad at managing transport infrastructure projects. But when one goes wrong, it can be spectacular. Australia could have saved \Sexpr{texNum(savings_if_every_proj_with_CO_had_CO_le_10pc, dollar = TRUE)} over the past 15 years if every transport infrastructure project with a cost overrun had gone no more than ten per cent over budget. 
 
-Policymakers appear to be complacent about this outcome. At first glance, this is understandable: \Sexpr{grattan_percent(pc_of_projects_on_budget)} of projects finish on budget, and we are assured that every extreme cost blowout comes with its own story. 
+Policymakers appear to be complacent about this outcome. At first glance, this is understandable: \Sexpr{grattan_percent(prop_projects_on_budget)} of projects finish on budget, and we are assured that every extreme cost blowout comes with its own story. 
 
 However, data on the cost overruns incurred over the \Sexpr{n_completed_projects} $20m+ transport infrastructure projects built in Australia since 2000 reveals that these stories are misleading: Australia’s cost overruns are larger and far more common than could be considered ‘normal’, and more predictable than their surprised proponents realise. 
 Over the last 15 years, Australia has spent at least \Sexpr{texNum(spending_per_dollar_budgeted, dollar = TRUE)} for every dollar initially budgeted for transport infrastructure projects. Cost overruns on infrastructure projects are not a uniquely Australian phenomenon, but Australia’s cost overruns – especially those that occur prior to construction – are larger than is commonly observed on similarly sized projects overseas. 
@@ -3941,7 +3947,7 @@ Instead of each project being a fresh start, the information exists to support p
 \end{overview}
 
 \chapter{Introduction}
-Cost overruns on transport infrastructure projects are nothing new. Some of the biggest examples are widely known, such as Western Australia’s Forrest Highway between Perth and Bunbury, which cost nearly six times its initial budget, or New South Wales’ Hunter Expressway, which cost nearly four times its initial budget. The amount of money at stake is very large: transport infrastructure over the past 15 years has cost $\Sexpr{savings_B_from_no_co_gt_10_pc} billion more than taxpayers were told it would. 
+Cost overruns on transport infrastructure projects are nothing new. Some of the biggest examples are widely known, such as Western Australia’s Forrest Highway between Perth and Bunbury, which cost nearly six times its initial budget, or New South Wales’ Hunter Expressway, which cost nearly four times its initial budget. The amount of money at stake is very large: transport infrastructure over the past 15 years has cost \Sexpr{texNum(savings_if_every_proj_with_CO_had_CO_le_10pc, dollar = TRUE)} more than taxpayers were told it would. 
 
 ...some more text...
 
