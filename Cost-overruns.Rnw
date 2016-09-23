@@ -3875,7 +3875,26 @@ Figure 2.3.1: Scope changes pie chart
 
 ...some text...
 However, escalation in costs does not have a significant impact on cost overruns across the whole portfolio of projects of the past 15 years in above and beyond the other factors outlined in this report. 
-Hugh: This finding comes the eight regression models. See the Regression results final spreadsheet
+Hugh: This finding comes the eight regression models listed below.
+
+<<>>=
+# Escalation (which is consequence of spending longer than expected in the investment pipeline) is proxied by log_Total_days_pre_construction:
+# Note: t1: initial announcment - commitment stage, t2: commitment - under construction stage, t3: under construction - completion, no t suffix: initial announcement - completion stage
+
+# These four models report the marginal effects of X's on the probability of a cost overrun
+fit_logit_co_all_v7_OUTPUT
+fit_logit_co_all_v7_t1_OUTPUT
+fit_logit_co_all_v7_t2_OUTPUT
+fit_logit_co_all_v7_t3_OUTPUT
+
+# These four models report the marginal effects of X's on the magnitude of cost overruns, if they occurred. 
+fit_logistic_co_all_v4_OUTPUT
+fit_logistic_co_all_v4_t1_OUTPUT
+fit_logistic_co_all_v4_t2_OUTPUT
+fit_logistic_co_all_v4_t3_OUTPUT
+
+@
+
 
 \subsection{Early overruns do not prevent later overruns}
 Cost overruns occur throughout the project lifecycle, accounting overall for \Sexpr{round((spending_per_dollar_budgeted-1)*100,0)}  cents additional cost for every dollar of estimated project cost (Figure 2.3.3). 
