@@ -2130,8 +2130,27 @@ overall_overruns_by_cohort <- data.frame(variable = c("Possible or under consid 
                                                                 sum(co_g3$Final_cost_real)/sum(co_g3$Initial_cost_real)))  
 
 
-
-
+# Frequency value graph:
+      
+      # Relevant frequencies:
+      freq_1<-as.numeric(nrow(co_all[co_all$co14<0,])/nrow(co_all))
+      freq_2<-as.numeric(nrow(co_all[co_all$co14==0,])/nrow(co_all))
+      freq_3<-as.numeric((nrow(co_all[co_all$co14>0,])- nrow(co_all[co_all$co14>=0.25,]))/nrow(co_all))
+      freq_4<-as.numeric((nrow(co_all[co_all$co14>=0.25,])- nrow(co_all[co_all$co14>=0.5,]))/nrow(co_all))
+      freq_5<-as.numeric(nrow(co_all[co_all$co14>=0.5,])/nrow(co_all))
+      
+      # Relevant % of value
+      pc_val_1<-as.numeric((co_all%>% filter(co14<0) %>% summarise(sum(Final_cost_real - Initial_cost_real)))/(co_all%>% filter(co14>0) %>% summarise(sum(Final_cost_real - Initial_cost_real))))
+      pc_val_2<-as.numeric((co_all%>% filter(co14==0) %>% summarise(sum(Final_cost_real - Initial_cost_real)))/(co_all%>% filter(co14>0) %>% summarise(sum(Final_cost_real - Initial_cost_real))))
+      pc_val_3<-as.numeric((co_all%>% filter(co14>0 & co14<0.25) %>% summarise(sum(Final_cost_real - Initial_cost_real)))/(co_all%>% filter(co14>0) %>% summarise(sum(Final_cost_real - Initial_cost_real))))
+      pc_val_4<-as.numeric((co_all%>% filter(co14>=0.25 & co14<0.5) %>% summarise(sum(Final_cost_real - Initial_cost_real)))/(co_all%>% filter(co14>0) %>% summarise(sum(Final_cost_real - Initial_cost_real))))
+      pc_val_5<-as.numeric((co_all%>% filter(co14>=0.5) %>% summarise(sum(Final_cost_real - Initial_cost_real)))/(co_all%>% filter(co14>0) %>% summarise(sum(Final_cost_real - Initial_cost_real))))
+      
+      freq_value_graph<-data.frame( "Magnitude of cost overruns" = c("<= 25% underrun", "On budget exactly", "<= 25% overrun ", "25%-50% overrun", ">50% overrun"),
+                  "Proportion of projects" = c(freq_1, freq_2, freq_3, freq_4, freq_5),
+                   "Proportion of the value of cost overruns" = c(pc_val_1, pc_val_2, pc_val_3, pc_val_4, pc_val_5))
+      
+      
 
 #* Export cost overrun figures analysis data to excel: --------
 #Cost_overrun_figures <- createWorkbook()
@@ -3946,24 +3965,7 @@ Even bigger blowouts, of 200 per cent or more, occurred on \Sexpr{round(pc_of_pr
 
 Figure 2.1: Extremely large cost overruns pose almost all the cost
 <<>>=
-
-# Relevant frequencies:
-freq_1<-as.numeric(nrow(co_all[co_all$co14<0,])/nrow(co_all))
-freq_2<-as.numeric(nrow(co_all[co_all$co14==0,])/nrow(co_all))
-freq_3<-as.numeric((nrow(co_all[co_all$co14>0,])- nrow(co_all[co_all$co14>=0.25,]))/nrow(co_all))
-freq_4<-as.numeric((nrow(co_all[co_all$co14>=0.25,])- nrow(co_all[co_all$co14>=0.5,]))/nrow(co_all))
-freq_5<-as.numeric(nrow(co_all[co_all$co14>=0.5,])/nrow(co_all))
-
-# Relevant % of value
-pc_val_1<-as.numeric((co_all%>% filter(co14<0) %>% summarise(sum(Final_cost_real - Initial_cost_real)))/(co_all%>% filter(co14>0) %>% summarise(sum(Final_cost_real - Initial_cost_real))))
-pc_val_2<-as.numeric((co_all%>% filter(co14==0) %>% summarise(sum(Final_cost_real - Initial_cost_real)))/(co_all%>% filter(co14>0) %>% summarise(sum(Final_cost_real - Initial_cost_real))))
-pc_val_3<-as.numeric((co_all%>% filter(co14>0 & co14<0.25) %>% summarise(sum(Final_cost_real - Initial_cost_real)))/(co_all%>% filter(co14>0) %>% summarise(sum(Final_cost_real - Initial_cost_real))))
-pc_val_4<-as.numeric((co_all%>% filter(co14>=0.25 & co14<0.5) %>% summarise(sum(Final_cost_real - Initial_cost_real)))/(co_all%>% filter(co14>0) %>% summarise(sum(Final_cost_real - Initial_cost_real))))
-pc_val_5<-as.numeric((co_all%>% filter(co14>=0.5) %>% summarise(sum(Final_cost_real - Initial_cost_real)))/(co_all%>% filter(co14>0) %>% summarise(sum(Final_cost_real - Initial_cost_real))))
-
-data.frame( "Magnitude of cost overruns" = c("<= 25% underrun", "On budget exactly", "<= 25% overrun ", "25%-50% overrun", ">50% overrun"),
-            "Proportion of projects" = c(freq_1, freq_2, freq_3, freq_4, freq_5),
-             "Proportion of the value of cost overruns" = c(pc_val_1, pc_val_2, pc_val_3, pc_val_4, pc_val_5))
+freq_value_graph
             
 @
 
@@ -4020,10 +4022,8 @@ Cost overruns occur throughout the project lifecycle, accounting overall for \Se
 Figure 2.3.3:
 
 <<>>= 
-co_all_table_1_portfolio_az$co12[3]
-co_all_table_1_portfolio_az$co23[3]
-co_all_table_1_portfolio_az$co34[3]
-co_all_table_1_portfolio_az$co14[3]
+waterfall_graph <-data.frame( Time_period = c("First cost announcement - budget commitment", "Budget commitment - under construction", "Under construction - completed", "First cost announcement - completed" ), 
+                              Cost_overrun = c(co_all_table_1_portfolio_az$co12[3], co_all_table_1_portfolio_az$co23[3], co_all_table_1_portfolio_az$co34[3], co_all_table_1_portfolio_az$co14[3]))
 
 @
 
@@ -4093,6 +4093,37 @@ summary(fit_logistic_co_all_v4_t2)
 
  Figure 4.2.1
 <<>>=
+SS_coall_table_7
+class(SS_coall_table_8)
+
+sample_size_states <-
+  co_all %>%
+  group_by(State_new) %>%
+  summarise(no_projects = n()) %>%
+  setkey(State_new)
+
+n_overruns_states <-
+  co_all %>%
+  filter(Final_cost_over_initial>1) %>%
+  group_by(State_new) %>%
+  summarise(no_projects = n()) %>%
+  setkey(State_new)
+
+pc_overruns_states<-data.frame(State_new = c("Australian Capital Territory","New South Wales","Northern Territory","Queensland",
+                                             "South Australia","Tasmania","Unallocated","Victoria","Western Australia"),
+                               pc_w_overruns = n_overruns_states$no_projects/sample_size_states$no_projects,
+                               
+                               sample_size = c(SS_coall_table_8[1], SS_coall_table_8[2], SS_coall_table_8[3], SS_coall_table_8[4], 
+                                               SS_coall_table_8[5], SS_coall_table_8[6], SS_coall_table_8[7], SS_coall_table_8[8], SS_coall_table_8[9]))
+pc_overruns_states<-cbind(pc_overruns_states, str(t(SS_coall_table_8))
+
+sample_size <- data.frame(States = t(SS_coall_table_8))                          
+                          
+
+  group_by(co_initial_final_category) %>%
+  summarise(no_projects = n()) %>%
+  spread(co_initial_final_category, no_projects)  %>%
+  setkey(State_new)
 
 @
 
