@@ -4218,4 +4218,19 @@ pre_post_GFC_predicted_probabilities <- data.frame(time_period = c("Prior to the
     
 @
 
+<<>>=
+# Density graph:
+
+
+# Triangle density. Should have approximately 10% of probability greater than 0.
+x <- c(-1.4, -0.5, 0.4)
+y <- c(0, 1.025, 0)
+series = data.frame(x, y)
+
+Final_over_initial_density<-density((co_all$Final_cost_over_initial-1), bw = 0.3)
+plot(Final_over_initial_density, xlim = c(-2,5), ylim = c(0,1), lwd=3, col = "orange", main = "PDF: Probability that a random CO is = X", xlab = "Magnitude of cost overrun (Final cost / Initial)", ylab = "Probability")
+lines(series, lwd=2, lty=2)
+
+
+@
 \end{document}
