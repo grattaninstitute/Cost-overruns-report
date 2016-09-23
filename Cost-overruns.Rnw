@@ -802,7 +802,13 @@ project_dataset_plus %<>%
          Matching_status_numeric = if_else(Matching_status == "Possible - Completed", 1, 
                                            if_else(Matching_status == "Under consideration - Completed", 2,
                                                    if_else(Matching_status == "Committed - Completed", 3, 4))),
-         Final_matching_status = paste0(Final_status, " - ", Final_status_historical))
+         Final_matching_status = paste0(Final_status, " - ", Final_status_historical),
+         Matching_status_refined = if_else(as.character(Matching_status) =="Possible - Completed", "Possible or under consideration - Completed", as.character(Matching_status)), 
+         Matching_status_refined = as.factor(if_else(Matching_status_refined == "Under consideration - Completed", "Possible or under consideration - Completed", Matching_status_refined)),
+         Matching_status_refined = ordered(Matching_status_refined, c("Possible - NA", "Under consideration - NA", "Committed - NA", "Under construction - NA", "Possible - Deleted",
+                                                            "Under consideration - Deleted", "Committed - Deleted", "Under construction - Deleted", "Possible or under consideration - Completed", "Committed - Completed", "Under construction - Completed")))
+
+
 
 ####################### Sub setting the dataset to the first usable dataset (biggest filter: transport projects only): ********* "project_dataset_t" ******** -----------------------------------
 
@@ -1420,6 +1426,46 @@ g3_suvival_curve_data<-
   group_by(Final_status_historical == "Deleted", Final_status) %>%
   summarise(no_projects_G3 = n()) 
 
+# Surival figures needed for report outputs:
+n_projects_deleted_t1<-
+  project_dataset_t %>% 
+  filter(Initial_status=="Possible" | Initial_status=="Under consideration") %>% 
+  filter(Final_status_historical =="Deleted") %>% 
+  filter(Final_status == "Possible" | Final_status == "Under consideration") %>% 
+  nrow  
+
+n_projects_deleted_t2<-
+project_dataset_t %>% 
+  filter(Initial_status=="Possible" | Initial_status=="Under consideration" | Initial_status=="Committed") %>% 
+  filter(Final_status_historical =="Deleted") %>% 
+  filter(Final_status == "Committed") %>% 
+  nrow  
+
+n_projects_deleted_t3<-
+project_dataset_t %>% 
+  filter(Final_status_historical =="Deleted") %>% 
+  filter(Final_status == "Under construction") %>% 
+  nrow  
+
+n_projects_t1<-project_dataset_t %>% filter(Initial_status=="Possible" | Initial_status=="Under consideration") %>% nrow
+n_projects_t2<-project_dataset_t %>% filter(Initial_status=="Possible" | Initial_status=="Under consideration" | Initial_status=="Committed") %>% nrow - n_projects_deleted_t1
+n_projects_t3<-project_dataset_t %>% filter(Initial_status=="Possible" | Initial_status=="Under consideration" | Initial_status=="Committed" | Initial_status=="Under construction") %>% nrow - n_projects_deleted_t1 - n_projects_deleted_t2
+
+pc_cancelled_t1<-n_projects_deleted_t1/n_projects_t1
+pc_cancelled_t2<-n_projects_deleted_t2/n_projects_t2
+pc_cancelled_t3<-n_projects_deleted_t3/n_projects_t3
+
+cancellation_rate_by_stage<-data.frame(Project_stage = c("Possible and under consideration", "Committed", "Under construction"), 
+           Cancellation_rate = c(pc_cancelled_t1, pc_cancelled_t2, pc_cancelled_t3))
+
+pc_cancelled_g1<- 1- nrow(co_g1)/(project_dataset_t %>% filter(Initial_status == "Possible" | Initial_status == "Under consideration") %>% nrow)
+pc_cancelled_g2<- 1- nrow(co_g2)/(project_dataset_t %>% filter(Initial_status == "Committed") %>% nrow)
+pc_cancelled_g3<- 1- nrow(co_g3)/(project_dataset_t %>% filter(Initial_status == "Under construction") %>% nrow)
+
+cancellation_rate_by_cohort <-data.frame(First_project_stage = c("Possible and under consideration", "Committed", "Under construction"), 
+           Cancellation_rate = c(pc_cancelled_g1, pc_cancelled_g2, pc_cancelled_g3))
+  
+  
 # Export the survival curve data to excel... after the next section...
 
 # I think this code can be deleted. 
@@ -2020,10 +2066,12 @@ co_all %<>%
          total_prop_co_by_co_intial_final_category = total_value_co_by_co_initial_final_category / total_value_co, 
          total_prop_of_projects_by_co_intial_final_category = n()/total_projects)
 
+table(co_all$Matching_status)
+
 co_all_table_3 <-  
   co_all %>%
-  arrange(Matching_status, co_initial_final_category) %>%
-  group_by(Matching_status, co_initial_final_category) %>%
+  arrange(Matching_status_refined, co_initial_final_category) %>%
+  group_by(Matching_status_refined, co_initial_final_category) %>%
   summarise(prop_projects_by_co_category_and_matching_status) %>% 
   unique
 
@@ -2056,19 +2104,32 @@ co_g2_overruns_only <-
 co_g3_overruns_only <-
   co_g3 %>%
   filter(Final_cost_over_initial >1)
-co_g2g3 <-
-  co_all %>%
-  filter(Matching_status_numeric>=3) 
-co_g2g3_overruns_only <-
-  co_all %>%
-  filter(Matching_status_numeric>=3) %>%
-  filter(Final_cost_over_initial >1)
 
-  
-    
-overall_overruns_by_cohort <- data.frame(variable = c("Possible or under consid cohort", "Committed cohort", "Under construction cohort", "Committed and under construction cohorts"),
-                                           Net_cost_overrun = c(sum(co_g1$Final_cost_real)/sum(co_g1$Initial_cost_real), sum(co_g2$Final_cost_real)/sum(co_g2$Initial_cost_real), sum(co_g3$Final_cost_real)/sum(co_g3$Initial_cost_real), sum(co_g2g3$Final_cost_real)/sum(co_g2g3$Initial_cost_real)),
-                                         Total_cost_overrun = c(sum(co_g1_overruns_only$Final_cost_real)/sum(co_g1_overruns_only$Initial_cost_real), sum(co_g2_overruns_only$Final_cost_real)/sum(co_g2_overruns_only$Initial_cost_real), sum(co_g3_overruns_only$Final_cost_real)/sum(co_g3_overruns_only$Initial_cost_real), sum(co_g2g3_overruns_only$Final_cost_real)/sum(co_g2g3_overruns_only$Initial_cost_real)))  
+co_g1_underruns_only <-
+  co_g1 %>%
+  filter(Final_cost_over_initial <1)
+co_g2_underruns_only <-
+  co_g2 %>%
+  filter(Final_cost_over_initial <1)
+co_g3_underruns_only <-
+  co_g3 %>%
+  filter(Final_cost_over_initial <1)
+
+overall_overruns_by_cohort <- data.frame(variable = c("Possible or under consid cohort", "Committed cohort", "Under construction cohort"),
+                                         
+                                         Average_overrun = c(sum(co_g1_overruns_only$Final_cost_real)/sum(co_g1_overruns_only$Initial_cost_real), 
+                                                             sum(co_g2_overruns_only$Final_cost_real)/sum(co_g2_overruns_only$Initial_cost_real), 
+                                                             sum(co_g3_overruns_only$Final_cost_real)/sum(co_g3_overruns_only$Initial_cost_real)),
+                                         
+                                         Average_underrun = c(sum(co_g1_underruns_only$Final_cost_real)/sum(co_g1_underruns_only$Initial_cost_real), 
+                                                             sum(co_g2_underruns_only$Final_cost_real)/sum(co_g2_underruns_only$Initial_cost_real), 
+                                                             sum(co_g3_underruns_only$Final_cost_real)/sum(co_g3_underruns_only$Initial_cost_real)), 
+                                         
+                                         Average_net_overrun= c(sum(co_g1$Final_cost_real)/sum(co_g1$Initial_cost_real), 
+                                                                sum(co_g2$Final_cost_real)/sum(co_g2$Initial_cost_real), 
+                                                                sum(co_g3$Final_cost_real)/sum(co_g3$Initial_cost_real)))  
+
+
 
 
 
@@ -3890,13 +3951,37 @@ Even though cost overruns on transport infrastructure represent a very large cos
 Even bigger blowouts, of 200 per cent or more, occurred on \Sexpr{round(pc_of_projects_w_overrun_gt_2,0)} per cent of projects, but accounted for fully a quarter (\Sexpr{round(pc_of_co_value_from_projects_w_overrun_gt_2,0)}\%)of the total value of all overruns. The cost of overruns where the project was completed at double its budgeted cost or more was $\Sexpr{round(value_B_of_co_gt_2,2)} billion.
 
 Figure 2.1: Extremely large cost overruns pose almost all the cost
-
 <<>>=
 
+# Relevant frequencies:
+freq_1<-as.numeric(nrow(co_all[co_all$co14<0,])/nrow(co_all))
+freq_2<-as.numeric(nrow(co_all[co_all$co14==0,])/nrow(co_all))
+freq_3<-as.numeric((nrow(co_all[co_all$co14>0,])- nrow(co_all[co_all$co14>=0.25,]))/nrow(co_all))
+freq_4<-as.numeric((nrow(co_all[co_all$co14>=0.25,])- nrow(co_all[co_all$co14>=0.5,]))/nrow(co_all))
+freq_5<-as.numeric(nrow(co_all[co_all$co14>=0.5,])/nrow(co_all))
+
+# Relevant % of value
+pc_val_1<-as.numeric((co_all%>% filter(co14<0) %>% summarise(sum(Final_cost_real - Initial_cost_real)))/(co_all%>% filter(co14>0) %>% summarise(sum(Final_cost_real - Initial_cost_real))))
+pc_val_2<-as.numeric((co_all%>% filter(co14==0) %>% summarise(sum(Final_cost_real - Initial_cost_real)))/(co_all%>% filter(co14>0) %>% summarise(sum(Final_cost_real - Initial_cost_real))))
+pc_val_3<-as.numeric((co_all%>% filter(co14>0 & co14<0.25) %>% summarise(sum(Final_cost_real - Initial_cost_real)))/(co_all%>% filter(co14>0) %>% summarise(sum(Final_cost_real - Initial_cost_real))))
+pc_val_4<-as.numeric((co_all%>% filter(co14>=0.25 & co14<0.5) %>% summarise(sum(Final_cost_real - Initial_cost_real)))/(co_all%>% filter(co14>0) %>% summarise(sum(Final_cost_real - Initial_cost_real))))
+pc_val_5<-as.numeric((co_all%>% filter(co14>=0.5) %>% summarise(sum(Final_cost_real - Initial_cost_real)))/(co_all%>% filter(co14>0) %>% summarise(sum(Final_cost_real - Initial_cost_real))))
+
+data.frame( "Magnitude of cost overruns" = c("<= 25% underrun", "On budget exactly", "<= 25% overrun ", "25%-50% overrun", ">50% overrun"),
+            "Proportion of projects" = c(freq_1, freq_2, freq_3, freq_4, freq_5),
+             "Proportion of the value of cost overruns" = c(pc_val_1, pc_val_2, pc_val_3, pc_val_4, pc_val_5))
+            
 @
 
 \section{Australia does not compare especially well internationally}
  ... lit review goes here...
+  <<>>=
+# The lit review graph uses lots of datasets. The key figures from this dataset (not in the current graph, which is super old) are:
+co_all_table_1_portfolio_az$co12[3]
+co_all_table_1_portfolio_az$co23[3]
+co_all_table_1_portfolio_az$co34[3]
+
+@
 
 \section{Cost overruns have no single culprit}
 Transport infrastructure projects are very varied, sometimes very complex, and subject to a range of pressures. None of the common reasons given for cost overruns, taken alone is especially compelling.
@@ -3904,9 +3989,10 @@ Transport infrastructure projects are very varied, sometimes very complex, and s
 \subsection{Scope changes explain a small share of overruns}
 
 ...some text...
-Scope changes only account for around 12 per cent of cost overruns on transport infrastructure projects, even including the full project lifecycle from the time of first announcement HUGH: This figure comes from the Grattan dataset. The analysis is in excel. 
+Scope changes only account for around 12 per cent of cost overruns on transport infrastructure projects, even including the full project lifecycle from the time of first announcement 
+Hugh: This figure comes from the Grattan dataset. The analysis is in excel. 
 
-Figure 2.3.1: Scope changes pie chart   
+Figure 2.3.1: Scope changes pie chart (again, the data is not in R)
 ...some text...
 
 \subsection{Escalation in costs is not a significant cause of cost overruns}
@@ -3937,10 +4023,19 @@ fit_logistic_co_all_v4_t3_OUTPUT
 \subsection{Early overruns do not prevent later overruns}
 Cost overruns occur throughout the project lifecycle, accounting overall for \Sexpr{round((spending_per_dollar_budgeted-1)*100,0)}  cents additional cost for every dollar of estimated project cost (Figure 2.3.3). 
 
+Figure 2.3.3:
+
+<<>>= 
+co_all_table_1_portfolio_az$co12[3]
+co_all_table_1_portfolio_az$co23[3]
+co_all_table_1_portfolio_az$co34[3]
+co_all_table_1_portfolio_az$co14[3]
+
+@
+
+
 Overruns in the initial phase, between announcement and before a formal funding commitment, occur at a rate of \Sexpr{round(co_all_indices_AM$co12*100,0)} cents on every dollar of project value. These overruns are concerning because any later overruns that occur do so on the enlarged cost base resulting from the earlier overrun. 
 Overruns in the middle phase, after the funding commitment up until construction begins, occur at a rate of \Sexpr{round(co_all_indices_AM$co23*100,0)} cents on every dollar of project value. Overruns during construction occur at a rate of \Sexpr{round(co_all_indices_AM$co34*100,0)} cents for every dollar of project value. These middle and later phase overruns are concerning because they reveal that the initial decision to invest was made on an inaccurate basis. 
-
-Figure 2.3.3
 
 The inaccurate basis for the decision to invest is also apparent from analysis of the cost estimates. Cost estimates produced to a standard that anticipates the project will equal or better its budget three quarters of the time (known as a “P75” costing) actually only achieved this result \Sexpr{round((1-pc_of_projects_w_overrun)*100,0)} per cent of the time. The difference reveals significant understatement of costs across the portfolio of projects planned or built since 2000.
 
@@ -3954,11 +4049,35 @@ Ministers, governments and would-be governments have always sought political adv
 
 \subsection{Premature announcements}
 
-**** REVIEW THE USE OF GROSS/NET IN THE TEXT HERE ****
+Figure 3.3.11
+<<>>=
+ co_all_table_3
 
-Premature announcement affects not only the likelihood of an overrun, but also its size. Projects with costs announced ahead of a government funding commitment have far larger cost overruns, averaging \Sexpr{round((overall_overruns_by_cohort[1,2]-1)*100,0)} per cent of the initially announced cost (Figure xx). By contrast, those announced with a formal funding commitment averaged overruns of \Sexpr{round((overall_overruns_by_cohort[4,2]-1)*100,0)} per cent.
+@
 
-When the net impact of cost overruns and under-runs is closer to zero, this indicates that the variation is less to do with preventable errors and more a case of normal variation in project cost outcomes relative to estimates. Figure xx illustrates net overruns of \Sexpr{round((overall_overruns_by_cohort[2,2]-1)*100,0)} to \Sexpr{round((overall_overruns_by_cohort[3,2]-1)*100,0)} per cent occur for projects announced with more mature cost estimates than those announced early.
+Figure 3.3.12
+<<>>=
+overall_overruns_by_cohort
+@
+
+Figure 3.3.21
+<<>>=
+#HMM triple check this. 
+
+cancellation_rate_by_stage
+
+@
+
+Figure 3.3.22
+<<>>=
+
+cancellation_rate_by_cohort
+  
+@
+
+Premature announcement affects not only the likelihood of an overrun, but also its size. Projects with costs announced ahead of a government funding commitment have far larger cost overruns, averaging \Sexpr{round((overall_overruns_by_cohort[1,4]-1)*100,0)} per cent of the initially announced cost (Figure xx).  Figure xx illustrates net overruns of \Sexpr{round((overall_overruns_by_cohort[2,4]-1)*100,0)} to \Sexpr{round((overall_overruns_by_cohort[3,4]-1)*100,0)} per cent occur for projects announced with more mature cost estimates than those announced early.
+
+(This paragraph is currently being rewritten, but these should be the correct figures)
 
 \subsection{Failure to cancel dubious projects}
 ..some text...
@@ -3968,9 +4087,30 @@ Not all projects that are announced end up being built. Around \Sexpr{round(n_co
 \chapter{Cost overruns are much more predictable than people think}
 
 \section {Why predict unavoidable risks?}
-\section {More complex projects are riskier}
+\subsection {More complex projects are riskier}
 
-The likelihood of a cost overrun increases markedly as project size increases, after consideration of other factors. For every extra 10 per cent in a project’s size (measured by cost estimate when first under construction), there is a\Sexpr{round(marginal_effects_logit_co_all_v7$mfxest[9]*100*10,0)}  per cent higher chance of a cost overrun, and for the projects with an overrun, greater project size leads is linked to much greater overrun size during the pre-construction period (specifically, \Sexpr{round(fit_logistic_co_all_v4_t1$coefficients[10]*100*10,0)} and \Sexpr{round(fit_logistic_co_all_v4_t2$coefficients[10]*100*10,0)}, pre commitment and between commitment and construction respectively).
+The likelihood of a cost overrun increases markedly as project size increases, after consideration of other factors. For every extra 10 per cent in a project’s size (measured by cost estimate when first under construction), there is a\Sexpr{round(marginal_effects_logit_co_all_v7$mfxest[9]*100*10,0)}  per cent higher chance of a cost overrun, and for the projects with an overrun, greater project size leads is linked to much greater overrun size during the pre-construction period .
+
+<<>>=
+# For the last claim, see the coefficients of log_first_cost_when_under_construction in:
+summary(fit_logistic_co_all_v4_t1)
+summary(fit_logistic_co_all_v4_t2)
+@
+
+ Figure 4.2.1
+<<>>=
+
+@
+
+
+\subsection{Singular projects are riskier}
+
+Figure 4.2.2
+<<>>=
+
+@
+
+
 
 \section {How can avoidable risks be managed?}
 
