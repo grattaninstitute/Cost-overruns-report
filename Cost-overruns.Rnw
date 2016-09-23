@@ -100,6 +100,10 @@ library(curl)
 library(DBI)
 library(digest)
 
+knitr::opts_chunk$set(error = FALSE)
+
+select <- function(...) dplyr::select(...)
+
 
 aspercent<-function(x){
   percent<-(x-1)*100
@@ -1462,7 +1466,8 @@ pc_cancelled_g1<- 1- nrow(co_g1)/(project_dataset_t %>% filter(Initial_status ==
 pc_cancelled_g2<- 1- nrow(co_g2)/(project_dataset_t %>% filter(Initial_status == "Committed") %>% nrow)
 pc_cancelled_g3<- 1- nrow(co_g3)/(project_dataset_t %>% filter(Initial_status == "Under construction") %>% nrow)
 
-cancellation_rate_by_cohort <-data.frame(First_project_stage = c("Possible and under consideration", "Committed", "Under construction"), 
+cancellation_rate_by_cohort <-
+  data.frame(First_project_stage = c("Possible and under consideration", "Committed", "Under construction"), 
            Cancellation_rate = c(pc_cancelled_g1, pc_cancelled_g2, pc_cancelled_g3))
   
   
@@ -2585,9 +2590,11 @@ project_dataset_t_g1 <- project_dataset_t %>% filter(Initial_status=="Possible" 
 
 
 #Key figures:
-n_projects <- project_dataset_t %>% summarise(n())
-n_completed_projects <- co_all %>% summarise(n())
-pc_g1_projects_completed <- (project_dataset_t_g1 %>% filter(Final_status_historical == "Completed") %>% nrow)/(project_dataset_t_g1 %>% nrow)
+n_projects <- project_dataset_t %>% nrow
+n_completed_projects <- co_all %>% nrow
+prop_g1_projects_completed <- 
+  project_dataset_t_g1 %$% 
+  mean(Final_status_historical == "Completed")
 @
 
 <<savings_if_every_proj_with_CO_had_CO_le_10pc>>=
@@ -2658,13 +2665,13 @@ SS_coall_table_10<- data.table(cbind(SS_coall_table_10_variable_names), "Key fig
 the_worst_offenders<-
   co_all %>%
   filter(Final_cost_over_initial>2) %>%
-  summarise(Grattan_record, Project, Final_cost_over_initial, Initial_cost, First_cost_when_Possible_or_under_consideration, First_cost_when_Committed, First_cost_when_under_construction, Final_cost) %>%
+  select(Grattan_record, Project, Final_cost_over_initial, Initial_cost, First_cost_when_Possible_or_under_consideration, First_cost_when_Committed, First_cost_when_under_construction, Final_cost) %>%
   arrange(Final_cost_over_initial)
 
 project_list_for_Eric<-
   co_all %>%
   filter(Final_cost>1000) %>%
-  summarise(Project, Final_cost, Final_cost_real) %>%
+  select(Project, Final_cost, Final_cost_real) %>%
   arrange(Final_cost)
 
 really_small_overruns <-
@@ -4119,7 +4126,7 @@ Premature announcement affects not only the likelihood of an overrun, but also i
 \subsection{Failure to cancel dubious projects}
 ..some text...
 
-Not all projects that are announced end up being built. Around \Sexpr{round(n_completed_projects/n_projects*100,0)} per cent of all announced projects go through to completion. Of those announced early, before a formal government funding commitment, \Sexpr{round(pc_g1_projects_completed*100, 0)} per cent continue through to completion. Projects that are announced when more mature are much more likely to be completed (Figure xx).
+Not all projects that are announced end up being built. Around \Sexpr{round(n_completed_projects/n_projects*100,0)} per cent of all announced projects go through to completion. Of those announced early, before a formal government funding commitment, \Sexpr{grattan_percent(prop_g1_projects_completed)} continue through to completion. Projects that are announced when more mature are much more likely to be completed (Figure xx).
 
 \chapter{Cost overruns are much more predictable than people think}
 
