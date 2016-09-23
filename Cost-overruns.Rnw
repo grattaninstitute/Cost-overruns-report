@@ -3823,11 +3823,17 @@ plot(sd_overall_overrun_over_time___initial)
 
 @
 
+<<grattan_percent>>=
+grattan_percent <- function(number, digits = 1){
+  paste0(comma(100*number, digits = digits), "~per~cent")
+}
+@
+
 
 \begin{overview}[-40pt]
 Most of the time, Australia isn’t bad at managing transport infrastructure projects. But when one goes wrong, it can be spectacular. Australia could have saved \Sexpr{texNum(savings_B_from_no_co_gt_10_pc, dollar = TRUE)} over the past 15 years if every transport infrastructure project with a cost overrun had gone no more than ten per cent over budget. 
 
-Policymakers appear to be complacent about this outcome. At first glance, this is understandable: \Sexpr{pc_of_projects_on_budget} per cent of projects finish on budget, and we are assured that every extreme cost blowout comes with its own story. 
+Policymakers appear to be complacent about this outcome. At first glance, this is understandable: \Sexpr{grattan_percent(pc_of_projects_on_budget)} of projects finish on budget, and we are assured that every extreme cost blowout comes with its own story. 
 
 However, data on the cost overruns incurred over the \Sexpr{n_completed_projects} $20m+ transport infrastructure projects built in Australia since 2000 reveals that these stories are misleading: Australia’s cost overruns are larger and far more common than could be considered ‘normal’, and more predictable than their surprised proponents realise. 
 Over the last 15 years, Australia has spent at least \Sexpr{texNum(spending_per_dollar_budgeted, dollar = TRUE)} for every dollar initially budgeted for transport infrastructure projects. Cost overruns on infrastructure projects are not a uniquely Australian phenomenon, but Australia’s cost overruns – especially those that occur prior to construction – are larger than is commonly observed on similarly sized projects overseas. 
