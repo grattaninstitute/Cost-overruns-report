@@ -3019,6 +3019,8 @@ BIC(fit_logit_co_all_v7_t3)
 fit_logistic_co_all_v4<- lm(log(Final_cost_over_initial)~ premature_announcement + log_Total_days_pre_construction   + big_states + `Sub-industry` + `Constructed_post_GFC`+ log(First_cost_when_under_construction_real)  +election_180_days         , data = co_positive_only_all)
 summary(fit_logistic_co_all_v4)   
 
+
+
 # Diagnostics
 e_fit_logistic_co_all_v4<-residuals(fit_logistic_co_all_v4)
 scatter.smooth(e_fit_logistic_co_all_v4)
@@ -3873,7 +3875,7 @@ Figure 2.3.1: Scope changes pie chart
 
 ...some text...
 However, escalation in costs does not have a significant impact on cost overruns across the whole portfolio of projects of the past 15 years in above and beyond the other factors outlined in this report. 
-HUGH: This finding comes the eight regression models. See the Regression results final spreadsheet
+Hugh: This finding comes the eight regression models. See the Regression results final spreadsheet
 
 \subsection{Early overruns do not prevent later overruns}
 Cost overruns occur throughout the project lifecycle, accounting overall for \Sexpr{round((spending_per_dollar_budgeted-1)*100,0)}  cents additional cost for every dollar of estimated project cost (Figure 2.3.3). 
@@ -3889,8 +3891,7 @@ The inaccurate basis for the decision to invest is also apparent from analysis o
 ..some text..
 
 \section {Poor incentives for decision-makers}
-Ministers, governments and would-be governments have always sought political advantage by promising infrastructure. But politicised announcements that ignore proper process have poor outcomes. Cost overruns are 36 per cent larger on average for projects announced close to a state election than otherwise similar projects announced at other times. This confirms the contention of previous Grattan report, Roads to Riches, that politicians commit to poor quality projects for political benefit.  
-HUGH: See Regression results final spreadsheet
+Ministers, governments and would-be governments have always sought political advantage by promising infrastructure. But politicised announcements that ignore proper process have poor outcomes. Cost overruns are \Sexpr{round(fit_logistic_co_all_v4$coefficients[11]*100,0)} per cent larger on average for projects announced close to a state election than otherwise similar projects announced at other times. This confirms the contention of previous Grattan report, Roads to Riches, that politicians commit to poor quality projects for political benefit.  
 
 \section {Poor process causes cost overruns}
 
@@ -3912,9 +3913,7 @@ Not all projects that are announced end up being built. Around \Sexpr{round(n_co
 \section {Why predict unavoidable risks?}
 \section {More complex projects are riskier}
 
-The likelihood of a cost overrun increases markedly as project size increases, after consideration of other factors. For every extra 10 per cent in a project’s size (measured by cost estimate when first under construction), there is a 60 per cent higher chance of a cost overrun, and for the projects with an overrun, greater project size leads is linked to much greater overrun size during the pre-construction period.
-
-[See regression results]
+The likelihood of a cost overrun increases markedly as project size increases, after consideration of other factors. For every extra 10 per cent in a project’s size (measured by cost estimate when first under construction), there is a\Sexpr{round(marginal_effects_logit_co_all_v7$mfxest[9]*100*10,0)}  per cent higher chance of a cost overrun, and for the projects with an overrun, greater project size leads is linked to much greater overrun size during the pre-construction period (specifically, \Sexpr{round(fit_logistic_co_all_v4_t1$coefficients[10]*100*10,0)} and \Sexpr{round(fit_logistic_co_all_v4_t2$coefficients[10]*100*10,0)}, pre commitment and between commitment and construction respectively).
 
 \section {How can avoidable risks be managed?}
 
