@@ -79,7 +79,7 @@ library(CostOverrunsData)
 library(data.table)
 library(grattan)
 if (texNum(1.25, dollar = TRUE) != "\\$1.25"){
-  stop("Update the grattan package")
+  stop("Update the grattan package")  # recent bugfix
 }
 library(stats)
 library(scales)
