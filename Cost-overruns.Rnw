@@ -2536,6 +2536,43 @@ SS_coall_table_9 <-
   spread(co_initial_final_category, no_projects)  %>%
   setkey(Matching_status)
 
+
+# Project size and % overrun by state - graph for report: 
+sample_size_states <-
+  co_all %>%
+  group_by(State_new) %>%
+  summarise(no_projects = n()) %>%
+  setkey(State_new)
+
+project_size_states<-
+  co_all %>%
+  filter(Final_cost_over_initial>1) %>%
+  group_by(State_new) %>%
+  summarise(average_size = mean(First_cost_when_under_construction)) %>%
+  setkey(State_new) 
+
+n_overruns_states <-
+  co_all %>%
+  filter(Final_cost_over_initial>1) %>%
+  group_by(State_new) %>%
+  summarise(no_projects = n()) %>%
+  setkey(State_new)
+
+pc_overruns_and_project_size_states<-data.frame(State_new = c("Australian Capital Territory","New South Wales","Northern Territory","Queensland",
+                                             "South Australia","Tasmania","Unallocated","Victoria","Western Australia"),
+                               pc_w_overruns = n_overruns_states$no_projects/sample_size_states$no_projects, 
+                               average_project_size = c(as.numeric(project_size_states$average_size[1]), as.numeric(project_size_states$average_size[2]), 
+                                                        as.numeric(project_size_states$average_size[3]), as.numeric(project_size_states$average_size[4]), 
+                                                        as.numeric(project_size_states$average_size[5]), as.numeric(project_size_states$average_size[6]), 
+                                                        as.numeric(project_size_states$average_size[7]), as.numeric(project_size_states$average_size[8]), 
+                                                        as.numeric(project_size_states$average_size[9])))
+
+# Mode and cost overruns - graph for report:
+Cost_overruns_by_mode<- data.frame(Mode = c("road", "rail", "all"),
+                                  First_announced_to_contracted = c(co_all_table_1_portfolio_az$co13[1], co_all_table_1_portfolio_az$co13[2], co_all_table_1_portfolio_az$co13[3]),
+                                  Contracted_to_completed = c(co_all_table_1_portfolio_az$co13[1], co_all_table_1_portfolio_az$co13[2], co_all_table_1_portfolio_az$co13[3]))
+
+
 # Key numbers for the report
 
 #Prep:
@@ -4062,7 +4099,7 @@ overall_overruns_by_cohort
 
 Figure 3.3.21
 <<>>=
-#HMM triple check this. 
+#Hmm triple check this. 
 
 cancellation_rate_by_stage
 
@@ -4089,7 +4126,7 @@ Not all projects that are announced end up being built. Around \Sexpr{round(n_co
 \section {Why predict unavoidable risks?}
 \subsection {More complex projects are riskier}
 
-The likelihood of a cost overrun increases markedly as project size increases, after consideration of other factors. For every extra 10 per cent in a project’s size (measured by cost estimate when first under construction), there is a\Sexpr{round(marginal_effects_logit_co_all_v7$mfxest[9]*100*10,0)}  per cent higher chance of a cost overrun, and for the projects with an overrun, greater project size leads is linked to much greater overrun size during the pre-construction period .
+The likelihood of a cost overrun increases markedly as project size increases, after consideration of other factors. For every extra 10 per cent in a project’s size (measured by cost estimate when first under construction), there is a \Sexpr{round(marginal_effects_logit_co_all_v7$mfxest[9]*100*10,0)}  per cent higher chance of a cost overrun, and for the projects with an overrun, greater project size leads is linked to much greater overrun size during the pre-construction period .
 
 <<>>=
 # For the last claim, see the coefficients of log_first_cost_when_under_construction in:
@@ -4099,38 +4136,8 @@ summary(fit_logistic_co_all_v4_t2)
 
  Figure 4.2.1
 <<>>=
-SS_coall_table_7
-class(SS_coall_table_8)
-
-sample_size_states <-
-  co_all %>%
-  group_by(State_new) %>%
-  summarise(no_projects = n()) %>%
-  setkey(State_new)
-
-n_overruns_states <-
-  co_all %>%
-  filter(Final_cost_over_initial>1) %>%
-  group_by(State_new) %>%
-  summarise(no_projects = n()) %>%
-  setkey(State_new)
-
-pc_overruns_states<-data.frame(State_new = c("Australian Capital Territory","New South Wales","Northern Territory","Queensland",
-                                             "South Australia","Tasmania","Unallocated","Victoria","Western Australia"),
-                               pc_w_overruns = n_overruns_states$no_projects/sample_size_states$no_projects,
-                               
-                               sample_size = c(SS_coall_table_8[1], SS_coall_table_8[2], SS_coall_table_8[3], SS_coall_table_8[4], 
-                                               SS_coall_table_8[5], SS_coall_table_8[6], SS_coall_table_8[7], SS_coall_table_8[8], SS_coall_table_8[9]))
-pc_overruns_states<-cbind(pc_overruns_states, str(t(SS_coall_table_8))
-
-sample_size <- data.frame(States = t(SS_coall_table_8))                          
-                          
-
-  group_by(co_initial_final_category) %>%
-  summarise(no_projects = n()) %>%
-  spread(co_initial_final_category, no_projects)  %>%
-  setkey(State_new)
-
+                           
+pc_overruns_and_project_size_states
 @
 
 
@@ -4138,6 +4145,8 @@ sample_size <- data.frame(States = t(SS_coall_table_8))
 
 Figure 4.2.2
 <<>>=
+
+Cost_overruns_by_mode
 
 @
 
@@ -4159,5 +4168,16 @@ Note: there's some text that says:
 
 This needs to be changed to:
 "Over \Sexpr{round(pc_of_projects_w_overrun*100,0)} per cent of projects end up costing more than the “worst case” or (P75-P90) cost estimate." It also needs to be clarified and moved to chapter 1..
+
+\chapter{Charts that will probably be added in}
+
+ <<>>=
+
+# Sample size charts:
+sample_size_by_cohort<- data.frame(Period_of_initial_cost_announcement = c("Possible or under consideration", "Committed", "Under construction"), 
+                                   Sample_size = c(nrow(co_g1), nrow(co_g2), nrow(co_g3)))
+
+@
+
 
 \end{document}
