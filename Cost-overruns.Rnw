@@ -618,7 +618,9 @@ mutate(Expected_cost_real = inflate_using_mid_point_qtr_construction(Expected_co
 #  merge(project_dataset_plus, project_dataset_plus_costs_real, all.x = TRUE, suffixes = c("","_real")) 
 
 stopifnot(all(!is.na(project_dataset_plus$Initial_cost_real)))
-if_else(sum(project_dataset_plus$Initial_cost) - sum(project_dataset_plus$Initial_cost_real) ==0, "Stop and check this: inflator isn't working", "Good: real costs are different from nominal costs")
+test_that("Inflator returns different values", {
+  expect_false(project_dataset_plus %$% all(near(Initial_cost, Initial_cost_real)))
+})
 
 # Writing cost ratio variables (used to build indices) -----
 
