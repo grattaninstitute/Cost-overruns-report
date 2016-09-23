@@ -3928,7 +3928,7 @@ Instead of each project being a fresh start, the information exists to support p
 \end{overview}
 
 \chapter{Introduction}
-Cost overruns on transport infrastructure projects are nothing new. Some of the biggest examples are widely known, such as Western Australia’s Forrest Highway between Perth and Bunbury, which cost nearly six times its initial budget, or New South Wales’ Hunter Expressway, which cost nearly four times its initial budget. The amount of money at stake is very large: transport infrastructure over the past 15 years has cost $\Sexpr{savings_B_from_no_co_gt_10_pc} billion more than taxpayers were told it would. 
+Cost overruns on transport infrastructure projects are nothing new. Some of the biggest examples are widely known, such as Western Australia’s Forrest Highway between Perth and Bunbury, which cost nearly six times its initial budget, or New South Wales’ Hunter Expressway, which cost nearly four times its initial budget. The amount of money at stake is very large: transport infrastructure over the past 15 years has cost \Sexpr{texNum(savings_if_every_proj_with_CO_had_CO_le_10pc, dollar = TRUE)} more than taxpayers were told it would. 
 
 ...some more text...
 
