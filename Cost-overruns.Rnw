@@ -3296,13 +3296,37 @@ fit_logistic_co_all_v4_t1_OUTPUT <-tidy(fit_logistic_co_all_v4_t1)
 fit_logistic_co_all_v4_t2_OUTPUT <-tidy(fit_logistic_co_all_v4_t2)
 fit_logistic_co_all_v4_t3_OUTPUT<- cbind(row.names(as.data.frame.matrix(coeftest(fit_logistic_co_all_v4_t3,fit_logistic_co_all_v4_t3$newse))), as.data.frame.matrix(coeftest(fit_logistic_co_all_v4_t3,fit_logistic_co_all_v4_t3$newse))) 
 
-# Goodness of fit: full dataset:  
+# Goodness of fit: full dataset:
 Goodness_of_fit <- data.frame(Model = c("Logit_all", "Loglogistic_project_level_all", "Logit_t1", "Loglogistic_project_level_t1", "Logit_t2", "Loglogistic_project_level_t2", "Logit_t3", "Loglogistic_project_level_t3"),
                               logLikelihood = c(logLik(fit_logit_co_all_v7) , logLik(fit_logistic_co_all_v4), logLik(fit_logit_co_all_v7_t1) , logLik(fit_logistic_co_all_v4_t1),  logLik(fit_logit_co_all_v7_t2) , logLik(fit_logistic_co_all_v4_t2), logLik(fit_logit_co_all_v7_t3) , logLik(fit_logistic_co_all_v4_t3)),
                               AIC = c(AIC(fit_logit_co_all_v7), AIC(fit_logistic_co_all_v4),  AIC(fit_logit_co_all_v7_t1), AIC(fit_logistic_co_all_v4_t1), AIC(fit_logit_co_all_v7_t2), AIC(fit_logistic_co_all_v4_t2),   AIC(fit_logit_co_all_v7_t3), AIC(fit_logistic_co_all_v4_t3)),   
                               BIC = c(BIC(fit_logit_co_all_v7), BIC(fit_logistic_co_all_v4), BIC(fit_logit_co_all_v7_t1), BIC(fit_logistic_co_all_v4_t1),  BIC(fit_logit_co_all_v7_t2), BIC(fit_logistic_co_all_v4_t2), BIC(fit_logit_co_all_v7_t3), BIC(fit_logistic_co_all_v4_t3)),
                               R_sq = c("NA", summary(fit_logistic_co_all_v4)$r.squared , "NA", summary(fit_logistic_co_all_v4_t1)$r.squared ,  "NA", summary(fit_logistic_co_all_v4_t2)$r.squared, "NA", summary(fit_logistic_co_all_v4_t3)$r.squared), 
                               Adj_R_sq = c("NA", summary(fit_logistic_co_all_v4)$adj.r.squared,  "NA", summary(fit_logistic_co_all_v4_t1)$adj.r.squared, "NA", summary(fit_logistic_co_all_v4_t2)$adj.r.squared, "NA", summary(fit_logistic_co_all_v4_t3)$adj.r.squared))
+
+#Preditcted probabilities, pre post GFC graph - graph for report: 
+  #Marginal effects
+  logit_marginal_effects<-c(as.numeric(marginal_effects_logit_co_all_v7$mfxest[1]), as.numeric(marginal_effects_logit_co_all_v7$mfxest[2]), as.numeric(marginal_effects_logit_co_all_v7$mfxest[3]), 
+                            as.numeric(marginal_effects_logit_co_all_v7$mfxest[4]),as.numeric(marginal_effects_logit_co_all_v7$mfxest[5]), as.numeric(marginal_effects_logit_co_all_v7$mfxest[6]), 
+                            as.numeric(marginal_effects_logit_co_all_v7$mfxest[7]), as.numeric(marginal_effects_logit_co_all_v7$mfxest[8]), as.numeric(marginal_effects_logit_co_all_v7$mfxest[9]), 
+                            as.numeric(marginal_effects_logit_co_all_v7$mfxest[10]))
+  
+  # Dependent variables 
+  pc_QLD<- (co_all %>% filter(State_new == "Queensland") %>% nrow()/nrow(co_all))
+  pc_VIC<- (co_all %>% filter(State_new == "Victoria") %>% nrow()/nrow(co_all))
+  pc_NSW<- (co_all %>% filter(State_new == "New South Wales") %>% nrow()/nrow(co_all))
+  pc_WA<- (co_all %>% filter(State_new == "Western Australia") %>% nrow()/nrow(co_all))
+  pc_small_states<- 1-pc_QLD-pc_VIC-pc_NSW-pc_WA
+  
+  dep_var_means_pre_GFC <- c(nrow(co_g1)/nrow(co_all), mean(co_all$log_Total_days_pre_construction), pc_QLD, pc_small_states, pc_VIC, pc_WA, mean(co_all$Road),
+                     0, mean(log(co_all$First_cost_when_under_construction)), mean(co_all$election_180_days))
+  
+  dep_var_means_post_GFC <- c(nrow(co_g1)/nrow(co_all), mean(co_all$log_Total_days_pre_construction), pc_QLD, pc_small_states, pc_VIC, pc_WA, mean(co_all$Road),
+                     1, mean(log(co_all$First_cost_when_under_construction)), mean(co_all$election_180_days))
+  
+  #Predicted probabilities
+  predicted_CO_pre_GFC<- sum(dep_var_means_pre_GFC*logit_marginal_effects)
+  predicted_CO_post_GFC<- sum(dep_var_means_post_GFC*logit_marginal_effects)
 
 #Regressions_second_round <- createWorkbook()
 #addWorksheet(Regressions_second_round, "Logit all")
@@ -4183,8 +4207,15 @@ This needs to be changed to:
 # Sample size charts:
 sample_size_by_cohort<- data.frame(Period_of_initial_cost_announcement = c("Possible or under consideration", "Committed", "Under construction"), 
                                    Sample_size = c(nrow(co_g1), nrow(co_g2), nrow(co_g3)))
-
 @
 
+<<>>=
+
+
+#Pre/post GFC predicted probabilities graph: 
+pre_post_GFC_predicted_probabilities <- data.frame(time_period = c("Prior to the GFC", "During and after the GFC"), 
+                                                   Mean_cost_overrun_average_sample_of_projects = c(predicted_CO_pre_GFC, predicted_CO_post_GFC))
+    
+@
 
 \end{document}
