@@ -78,6 +78,9 @@ library(devtools)
 library(CostOverrunsData)
 library(data.table)
 library(grattan)
+if (texNum(1.25, dollar = TRUE) != "\\$1.25"){
+  stop("Update the grattan package")
+}
 library(stats)
 library(scales)
 library(stats)
@@ -3827,7 +3830,7 @@ Most of the time, Australia isn’t bad at managing transport infrastructure pro
 Policymakers appear to be complacent about this outcome. At first glance, this is understandable: \Sexpr{pc_of_projects_on_budget} per cent of projects finish on budget, and we are assured that every extreme cost blowout comes with its own story. 
 
 However, data on the cost overruns incurred over the \Sexpr{n_completed_projects} $20m+ transport infrastructure projects built in Australia since 2000 reveals that these stories are misleading: Australia’s cost overruns are larger and far more common than could be considered ‘normal’, and more predictable than their surprised proponents realise. 
-Over the last 15 years, Australia has spent at least $\Sexpr{spending_per_dollar_budgeted} for every dollar initially budgeted for transport infrastructure projects. Cost overruns on infrastructure projects are not a uniquely Australian phenomenon, but Australia’s cost overruns – especially those that occur prior to construction – are larger than is commonly observed on similarly sized projects overseas. 
+Over the last 15 years, Australia has spent at least \Sexpr{texNum(spending_per_dollar_budgeted, dollar = TRUE)} for every dollar initially budgeted for transport infrastructure projects. Cost overruns on infrastructure projects are not a uniquely Australian phenomenon, but Australia’s cost overruns – especially those that occur prior to construction – are larger than is commonly observed on similarly sized projects overseas. 
 
 This outcome is not surprising when considered against the backdrop of Australia’s current cost management efforts. As it stands, the guidelines for risk management on transport infrastructure projects are fragmented, insufficient information has been provided for modern strategies like reference class forecasting to be employed and outcomes are not reported transparently.
 
