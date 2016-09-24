@@ -358,15 +358,6 @@ first_cost_by_status <-
   setnames(old = names(.)[names(.) != "Grattan_record"], new = paste0("First_cost_when_", names(.)[names(.) != "Grattan_record"])) %>% .[] %>%
   setkey(Grattan_record)
 
-# Separate data frame for final cost in each status
-
-final_cost_by_status <- 
-  costs_by_status %>%
-  dplyr::select(-contains("first")) %>%
-  spread(Status, cost_when_final) %>%
-  setnames(old = names(.)[names(.) != "Grattan_record"], new = paste0("Final_cost_when_", names(.)[names(.) != "Grattan_record"])) %>% .[] %>%
-  setkey(Grattan_record)
-
 # Now we merge this data frame into our main project_dataset_plus
 
 # Set key for merging the datasets
