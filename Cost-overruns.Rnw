@@ -884,40 +884,35 @@ project_dataset_plus %<>%
 
 project_dataset_plus <- 
   merge(project_dataset_plus, public_private_by_Grattan_record, all.x = TRUE)  
+@
 
-# A4. Filter out any private projects
-project_dataset_t_A <- 
+<<project_dataset_t>>=
+# _t for transport
+project_dataset_t <- 
   project_dataset_plus %>% 
-  filter(is_public)
+  # A4. Filter out any private projects
+  filter(is_public) %>%
 
 # B) Subsetting to Transport Projects only
-
-
-project_dataset_t_B <- 
-  project_dataset_t_A %>% 
   filter(`Major industry` == "Transport & Storage") %>%
-  filter(`Sub-industry` == "Road"| `Sub-industry` == "Rail" )
+  filter(`Sub-industry` == "Road"| `Sub-industry` == "Rail" ) %>%
 
 
-# C) Filter out any projects that are missing key data
-
-project_dataset_t_C <- 
-  project_dataset_t_B %>% 
+# C) Filter out any projects that are missing key data 
+# does this do that?
   setkey(Grattan_record) %>%     
-  unique 
-
+  unique %>%
+## Issue #1
 
 # D) Filter out projects with final values below $20m:
-project_dataset_t_D <- 
-  project_dataset_t_C %>% 
-  filter(Initial_cost >= 20)
+  filter(Initial_cost >= 20) %>%
 
 # E) Filter out any erroneous data:
-project_dataset_t <- 
-  project_dataset_t_D %>% 
-  filter(Final_cost_over_initial <=5.2) %>% # Any overrun greater than 5.2 is suspect of a data error. This is because the Peel deviation is the project with the largest overrun that we have been able to verify with certainty. A bunch of the extreme outliers were all redcorded on the same day, which looks suspicious too. 
+  filter(Final_cost_over_initial <= 5.2) %>% # Any overrun greater than 5.2 is suspect of a data error. This is because the Peel deviation is the project with the largest overrun that we have been able to verify with certainty. A bunch of the extreme outliers were all redcorded on the same day, which looks suspicious too. 
   filter(Final_cost_over_initial >=0.5) # This is a generous definition of outliers as the biggest underrun we observe is the 34% underrun on the Springfield to Richlands line. 
-  
+@
+ 
+<<source-intermediate>>=
 ### In case we need to replicate earlier results, this was the previous outlier filter I had applied: 
 # filter(Grattan_record != 6829) Grattan id: 6829 has an overall cost overrun of 7950%. 
 
