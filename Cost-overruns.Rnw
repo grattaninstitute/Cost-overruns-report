@@ -1462,13 +1462,7 @@ pc_cancelled_t3<-n_projects_deleted_t3/n_projects_t3
 cancellation_rate_by_stage<-data.frame(Project_stage = c("Possible and under consideration", "Committed", "Under construction"), 
            Cancellation_rate = c(pc_cancelled_t1, pc_cancelled_t2, pc_cancelled_t3))
 
-pc_cancelled_g1<- 1- nrow(co_g1)/(project_dataset_t %>% filter(Initial_status == "Possible" | Initial_status == "Under consideration") %>% nrow)
-pc_cancelled_g2<- 1- nrow(co_g2)/(project_dataset_t %>% filter(Initial_status == "Committed") %>% nrow)
-pc_cancelled_g3<- 1- nrow(co_g3)/(project_dataset_t %>% filter(Initial_status == "Under construction") %>% nrow)
 
-cancellation_rate_by_cohort <-
-  data.frame(First_project_stage = c("Possible and under consideration", "Committed", "Under construction"), 
-           Cancellation_rate = c(pc_cancelled_g1, pc_cancelled_g2, pc_cancelled_g3))
   
   
 # Export the survival curve data to excel... after the next section...
@@ -2599,6 +2593,7 @@ prop_g1_projects_completed <-
 
 <<savings_if_every_proj_with_CO_had_CO_le_10pc>>=
 savings_if_every_proj_with_CO_had_CO_le_10pc <- 
+  savings_from_no_co_gt_10_pc <- 
   co_all %>%
   filter(Final_cost_real > Initial_cost_real) %$%
   # If every cost-overrun was only 10%, subtract from
@@ -2616,22 +2611,77 @@ prop_projects_on_budget <-
   mean(co_initial_final_category == "On budget")
 @
 
-<<source-continued>>=
-pc_of_projects_w_overrun<- (co_all %>% filter(co_initial_final_category =="Cost overrun") %>% summarise(n()))/(co_all %>% summarise(n()))
-pc_of_projects_w_overrun_gt_0.5<- ((co_all %>% filter(Final_cost_over_initial > 1.5) %>% nrow) / (co_all %>% nrow))*100
-pc_of_co_value_from_projects_w_overrun_gt_0.5 <- (sum(overrun_gt_50_pc$Final_cost_real)-sum(overrun_gt_50_pc$Initial_cost_real))/(sum(overruns$Final_cost_real)-sum(overruns$Initial_cost_real))*100
-pc_of_projects_w_overrun_gt_2<- (co_all %>% filter(Final_cost_over_initial > 3) %>% nrow) / (co_all %>% nrow)*100
-pc_of_co_value_from_projects_w_overrun_gt_2 <- (sum(huge_overruns$Final_cost_real)-sum(huge_overruns$Initial_cost_real))/(sum(overruns$Final_cost_real)-sum(overruns$Initial_cost_real))*100
-value_B_of_co_gt_2<- (sum(huge_overruns$Final_cost_real)-sum(huge_overruns$Initial_cost_real))/1000
-spending_per_dollar_budgeted<-sum(co_all$Final_cost_real)/sum(co_all$Initial_cost_real)
-pc_lower_ROI<-1-(1*sum(co_all$Initial_cost_real)/sum(co_all$Final_cost_real)) # My working: (Initial_BCR - BCR_after_COs)/Initial_BCR, where BCR_after_COs = Benefits/(Initial costs*(sum(Final_costs)/sum(Initial_costs))) and Initial_BCR = Benefits/Initial_costs. 
+<<prop_projects_w_overrun>>=
+pc_of_projects_w_overrun <- 
+  co_all %$% 
+  mean(co_initial_final_category == "Cost overrun")
+@
+
+<<prop_projects_w_overrun_gt_0.5>>=
+prop_projects_w_overrun_gt_0.5 <- 
+  co_all %$% 
+  mean(Final_cost_over_initial > 1.5)
+@
+
+<<prop_co_value_from_projects_w_overrun_gt_0.5>>=
+prop_projects_w_overrun_gt_0.5 <- 
+  (sum(overrun_gt_50_pc$Final_cost_real) - sum(overrun_gt_50_pc$Initial_cost_real)) / 
+  (sum(overruns$Final_cost_real) - sum(overruns$Initial_cost_real))
+@
+
+<<prop_projects_w_overrun_gt_2>>=
+prop_projects_w_overrun_gt_2 <- 
+  co_all %$%
+  mean(Final_cost_over_initial > 3)
+@
+
+<<prop_co_value_projects_gt_2>>=
+prop_co_value_projects_gt_2 <-
+  (sum(huge_overruns$Final_cost_real) - sum(huge_overruns$Initial_cost_real)) / 
+  (sum(overruns$Final_cost_real) - sum(overruns$Initial_cost_real))
+@
+
+<<value_B_of_co_gt_2>>=
+value_B_of_co_gt_2 <- 
+  # data is in millions
+  (sum(huge_overruns$Final_cost_real) - sum(huge_overruns$Initial_cost_real)) / 1000
+@
+
+<<spending_per_dollar_budgeted>>=
+spending_per_dollar_budgeted <- 
+  co_all %$%
+  {sum(Final_cost_real) / sum(Initial_cost_real)}
+@
+
+<<pc_lower_ROI>>=
+pc_lower_ROI <- 
+  co_all %$%
+  # LD working: (Initial_BCR - BCR_after_COs)/Initial_BCR, 
+  # where BCR_after_COs = Benefits/(Initial costs*(sum(Final_costs)/sum(Initial_costs))) and Initial_BCR = Benefits/Initial_costs. 
+  {1 - (sum(Initial_cost_real) / sum(Final_cost_real))}
+@
+
+pc_lower_ROI<-1-(1*sum(co_all$Initial_cost_real)/sum(co_all$Final_cost_real)) 
 cost_of_overruns_gt_50_pc<- sum(overrun_gt_50_pc$Final_cost_real) - sum(overrun_gt_50_pc$Initial_cost_real)
 
-SS_coall_table_10_variable_names<-data_frame(Variable = c("n_completed_projects", "savings_from_no_co_gt_10_pc", "pc_of_projects_on_budget", 
-                                                         "pc_of_projects_w_overrun", "spending_per_dollar_budgeted", "pc_lower_ROI","cost_of_overruns_gt_50_pc"))
-SS_coall_table_10_content <- as.data.frame(c(n_completed_projects, data.frame(savings_from_no_co_gt_10_pc), pc_of_projects_on_budget, 
-                               pc_of_projects_w_overrun, data.frame(spending_per_dollar_budgeted), data.frame(pc_lower_ROI),
-                               data.frame(cost_of_overruns_gt_50_pc)))
+<<source-continued>>=
+
+SS_coall_table_10_variable_names <-
+  data_frame(Variable = c("n_completed_projects", 
+                          "savings_from_no_co_gt_10_pc", 
+                          "prop_projects_on_budget", 
+                          "pc_of_projects_w_overrun", 
+                          "spending_per_dollar_budgeted", 
+                          "pc_lower_ROI","cost_of_overruns_gt_50_pc"))
+
+SS_coall_table_10_content <- 
+  as.data.frame(c(n_completed_projects, 
+                  data.frame(savings_from_no_co_gt_10_pc), 
+                  prop_projects_on_budget, 
+                  pc_of_projects_w_overrun, 
+                  data.frame(spending_per_dollar_budgeted), 
+                  data.frame(pc_lower_ROI),
+                  data.frame(cost_of_overruns_gt_50_pc)))
 SS_coall_table_10<- data.table(cbind(SS_coall_table_10_variable_names), "Key figures" = t(SS_coall_table_10_content))
 
 
@@ -2660,8 +2710,8 @@ SS_coall_table_10<- data.table(cbind(SS_coall_table_10_variable_names), "Key fig
 #writeData(Summary_statistics_coall, 10, SS_coall_table_10)
 #saveWorkbook(Summary_statistics_coall, file = "../Spreadsheets/Deloitte pipeline analysis outputs/Summary statistics co_all dataset.xlsx", overwrite = TRUE)
 
+<<exploratory, eval=FALSE>>=
 #* Exporting misc subsets of the data (This is exploratory, not needed for the report): ----
-
 the_worst_offenders<-
   co_all %>%
   filter(Final_cost_over_initial>2) %>%
@@ -4033,9 +4083,9 @@ Figure 1.1: Cost overruns are at least as large as 22 per cent of initial projec
 Even though cost overruns on transport infrastructure represent a very large cost, they receive little focus and governments appear complacent...
 
 \section {Cost overruns are very expensive}
-...But the frequency of overruns is only a small part of the story: what is much more important is the size. While only \Sexpr{round(pc_of_projects_w_overrun_gt_0.5,0)} per cent of projects overran their budget by 50 per cent or more, such overruns accounted for \Sexpr{round(pc_of_co_value_from_projects_w_overrun_gt_0.5,0)} per cent of the total value of overruns (Figure xx). The cost to government budgets of overruns of 50 per cent or more was $xx billion over the past fifteen years.
+...But the frequency of overruns is only a small part of the story: what is much more important is the size. While only \Sexpr{round(pc_of_projects_w_overrun_gt_0.5,0)} per cent of projects overran their budget by 50 per cent or more, such overruns accounted for \Sexpr{round(prop_projects_w_overrun_gt_0.5,0)} per cent of the total value of overruns (Figure xx). The cost to government budgets of overruns of 50 per cent or more was $xx billion over the past fifteen years.
 
-Even bigger blowouts, of 200 per cent or more, occurred on \Sexpr{round(pc_of_projects_w_overrun_gt_2,0)} per cent of projects, but accounted for fully a quarter (\Sexpr{round(pc_of_co_value_from_projects_w_overrun_gt_2,0)}\%)of the total value of all overruns. The cost of overruns where the project was completed at double its budgeted cost or more was $\Sexpr{round(value_B_of_co_gt_2,2)} billion.
+Even bigger blowouts, of 200 per cent or more, occurred on \Sexpr{round(prop_projects_w_overrun_gt_2,0)} per cent of projects, but accounted for fully a quarter (\Sexpr{round(prop_co_value_projects_gt_2,0)}\%)of the total value of all overruns. The cost of overruns where the project was completed at double its budgeted cost or more was $\Sexpr{round(value_B_of_co_gt_2,2)} billion.
 
 Figure 2.1: Extremely large cost overruns pose almost all the cost
 <<>>=
