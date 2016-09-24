@@ -2620,7 +2620,7 @@ prop_projects_on_budget <-
 @
 
 <<prop_projects_w_overrun>>=
-pc_of_projects_w_overrun <- 
+prop_projects_w_overrun <- 
   co_all %$% 
   mean(co_initial_final_category == "Cost overrun")
 @
@@ -2669,24 +2669,28 @@ pc_lower_ROI <-
   {1 - (sum(Initial_cost_real) / sum(Final_cost_real))}
 @
 
-pc_lower_ROI<-1-(1*sum(co_all$Initial_cost_real)/sum(co_all$Final_cost_real)) 
-cost_of_overruns_gt_50_pc<- sum(overrun_gt_50_pc$Final_cost_real) - sum(overrun_gt_50_pc$Initial_cost_real)
+<<cost_of_overruns_gt_50_pc>>=
+cost_of_overruns_gt_50_pc <- 
+  overrun_gt_50_pc %$%
+  {sum(Final_cost_real) - sum(Initial_cost_real)}
+
+@
 
 <<source-continued>>=
-
 SS_coall_table_10_variable_names <-
   data_frame(Variable = c("n_completed_projects", 
                           "savings_from_no_co_gt_10_pc", 
                           "prop_projects_on_budget", 
-                          "pc_of_projects_w_overrun", 
+                          "prop_projects_w_overrun", 
                           "spending_per_dollar_budgeted", 
-                          "pc_lower_ROI","cost_of_overruns_gt_50_pc"))
+                          "pc_lower_ROI",
+                          "cost_of_overruns_gt_50_pc"))
 
 SS_coall_table_10_content <- 
   as.data.frame(c(n_completed_projects, 
                   data.frame(savings_from_no_co_gt_10_pc), 
                   prop_projects_on_budget, 
-                  pc_of_projects_w_overrun, 
+                  prop_projects_w_overrun, 
                   data.frame(spending_per_dollar_budgeted), 
                   data.frame(pc_lower_ROI),
                   data.frame(cost_of_overruns_gt_50_pc)))
@@ -2717,8 +2721,9 @@ SS_coall_table_10<- data.table(cbind(SS_coall_table_10_variable_names), "Key fig
 #writeData(Summary_statistics_coall, 9, SS_coall_table_9)
 #writeData(Summary_statistics_coall, 10, SS_coall_table_10)
 #saveWorkbook(Summary_statistics_coall, file = "../Spreadsheets/Deloitte pipeline analysis outputs/Summary statistics co_all dataset.xlsx", overwrite = TRUE)
+@
 
-<<exploratory, eval=FALSE>>=
+<<exploratory, eval=TRUE>>=
 #* Exporting misc subsets of the data (This is exploratory, not needed for the report): ----
 the_worst_offenders<-
   co_all %>%
@@ -4091,7 +4096,7 @@ Figure 1.1: Cost overruns are at least as large as 22 per cent of initial projec
 Even though cost overruns on transport infrastructure represent a very large cost, they receive little focus and governments appear complacent...
 
 \section {Cost overruns are very expensive}
-...But the frequency of overruns is only a small part of the story: what is much more important is the size. While only \Sexpr{round(pc_of_projects_w_overrun_gt_0.5,0)} per cent of projects overran their budget by 50 per cent or more, such overruns accounted for \Sexpr{round(prop_projects_w_overrun_gt_0.5,0)} per cent of the total value of overruns (Figure xx). The cost to government budgets of overruns of 50 per cent or more was $xx billion over the past fifteen years.
+...But the frequency of overruns is only a small part of the story: what is much more important is the size. While only \Sexpr{round(prop_projects_w_overrun_gt_0.5,0)} per cent of projects overran their budget by 50 per cent or more, such overruns accounted for \Sexpr{round(prop_projects_w_overrun_gt_0.5,0)} per cent of the total value of overruns (Figure xx). The cost to government budgets of overruns of 50 per cent or more was $xx billion over the past fifteen years.
 
 Even bigger blowouts, of 200 per cent or more, occurred on \Sexpr{round(prop_projects_w_overrun_gt_2,0)} per cent of projects, but accounted for fully a quarter (\Sexpr{round(prop_co_value_projects_gt_2,0)}\%)of the total value of all overruns. The cost of overruns where the project was completed at double its budgeted cost or more was $\Sexpr{round(value_B_of_co_gt_2,2)} billion.
 
@@ -4163,7 +4168,7 @@ waterfall_graph <-data.frame( Time_period = c("First cost announcement - budget 
 Overruns in the initial phase, between announcement and before a formal funding commitment, occur at a rate of \Sexpr{round(co_all_indices_AM$co12*100,0)} cents on every dollar of project value. These overruns are concerning because any later overruns that occur do so on the enlarged cost base resulting from the earlier overrun. 
 Overruns in the middle phase, after the funding commitment up until construction begins, occur at a rate of \Sexpr{round(co_all_indices_AM$co23*100,0)} cents on every dollar of project value. Overruns during construction occur at a rate of \Sexpr{round(co_all_indices_AM$co34*100,0)} cents for every dollar of project value. These middle and later phase overruns are concerning because they reveal that the initial decision to invest was made on an inaccurate basis. 
 
-The inaccurate basis for the decision to invest is also apparent from analysis of the cost estimates. Cost estimates produced to a standard that anticipates the project will equal or better its budget three quarters of the time (known as a “P75” costing) actually only achieved this result \Sexpr{round((1-pc_of_projects_w_overrun)*100,0)} per cent of the time. The difference reveals significant understatement of costs across the portfolio of projects planned or built since 2000.
+The inaccurate basis for the decision to invest is also apparent from analysis of the cost estimates. Cost estimates produced to a standard that anticipates the project will equal or better its budget three quarters of the time (known as a “P75” costing) actually only achieved this result \Sexpr{round((1-prop_projects_w_overrun)*100,0)} per cent of the time. The difference reveals significant understatement of costs across the portfolio of projects planned or built since 2000.
 
 \chapter{Cost overruns are more preventable than people think}
 ..some text..
@@ -4256,7 +4261,7 @@ Note: there's some text that says:
 "The assumptions that are being made at present in project budgets are significantly different to the costs that eventuate when the project is built (Figure XX). Almost 50 per cent of projects end up costing more than the “worst case” or P90 cost estimate. . "
 
 This needs to be changed to:
-"Over \Sexpr{round(pc_of_projects_w_overrun*100,0)} per cent of projects end up costing more than the “worst case” or (P75-P90) cost estimate." It also needs to be clarified and moved to chapter 1..
+"Over \Sexpr{round(prop_projects_w_overrun*100,0)} per cent of projects end up costing more than the “worst case” or (P75-P90) cost estimate." It also needs to be clarified and moved to chapter 1..
 
 \chapter{Charts that will probably be added in}
 
