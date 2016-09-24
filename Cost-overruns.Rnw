@@ -1606,6 +1606,14 @@ mutate(Matching_status_numeric = if_else(Matching_status == "Possible - Complete
                                   if_else(Matching_status == "Under consideration - Completed", 2,
                                           if_else(Matching_status == "Committed - Completed", 3, 4))))
 
+pc_cancelled_g1<- 1- nrow(co_g1)/(project_dataset_t %>% filter(Initial_status == "Possible" | Initial_status == "Under consideration") %>% nrow)
+pc_cancelled_g2<- 1- nrow(co_g2)/(project_dataset_t %>% filter(Initial_status == "Committed") %>% nrow)
+pc_cancelled_g3<- 1- nrow(co_g3)/(project_dataset_t %>% filter(Initial_status == "Under construction") %>% nrow)
+
+cancellation_rate_by_cohort <-
+  data.frame(First_project_stage = c("Possible and under consideration", "Committed", "Under construction"), 
+           Cancellation_rate = c(pc_cancelled_g1, pc_cancelled_g2, pc_cancelled_g3))
+
 # Writing filled cost series' (assuming NO OVERRUN if not observed), for use in indices: ----
 # Note: "_a_z" is shorthand for Assuming Zero overrun if no earlier cost is recorded.  
 
