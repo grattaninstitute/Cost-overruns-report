@@ -105,17 +105,30 @@ library(curl)
 library(DBI)
 library(digest)
 
-knitr::opts_chunk$set(error = FALSE)
+
 
 select <- function(...) dplyr::select(...)
+@
 
-
+<<aspercent>>=
 aspercent <- function(x){
   percent <- (x-1)*100
   return(percent)
 }
+@
 
+<<public_private_by_Grattan_record>>=
+public_private_by_Grattan_record <- 
+  completed_project_list %>%
+  # no need to spread info over two columns
+  mutate(is_public = as.logical(Public_project_Grattan)) %>%
+  dplyr::select(Grattan_record, is_public) %>%
+  as.data.table %>%
+  setkey(Grattan_record)
 
+@
+
+<<project_dataset_plus>>=
 project_dataset_plus <-
 project_dataset %>% 
   mutate(Grattan_record = ifelse(is.na(`Record No`), 
@@ -868,18 +881,14 @@ project_dataset_plus %<>%
 #                                     sheet = "Project_list", col_names = TRUE, na = "na")
 
 # A3. Merge Lucille's public/private variable for all transport projects back into the main dataframe.
-completed_project_list %<>%
-  dplyr::select(Grattan_record, Public_project_Grattan, Private_project_Grattan) %>%
-  as.data.table %>%
-  setkey(Grattan_record)
 
 project_dataset_plus <- 
-  merge(project_dataset_plus, completed_project_list, all.x = TRUE)  
+  merge(project_dataset_plus, public_private_by_Grattan_record, all.x = TRUE)  
 
 # A4. Filter out any private projects
 project_dataset_t_A <- 
   project_dataset_plus %>% 
-  filter(Public_project_Grattan == 1)
+  filter(is_public)
 
 # B) Subsetting to Transport Projects only
 
@@ -1293,7 +1302,7 @@ project_dataset_t %>%
 project_dataset_t_cor <-
   project_dataset_t %>%
   filter(`Sub-industry` == "Road" | `Sub-industry` == "Rail") %>%
-  filter(Public_project_Grattan == 1) %>%
+  filter(is_public) %>%
   filter(Initial_cost != 0) %>%
   filter(Final_matching_status != "Possible - Completed" & Final_matching_status != "Committed - Completed" & Final_matching_status != "Under consideration - Completed") %>%
   filter(Final_status_historical == "Completed")
