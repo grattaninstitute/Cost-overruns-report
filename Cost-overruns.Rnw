@@ -8,6 +8,11 @@
 \catcode`\$=12
 \begin{document}
 
+<<knitrOpts>>=
+library(knitr)
+opts_chunk$set(error = FALSE, echo = FALSE)
+@
+
 <<source_all, echo=FALSE, message=FALSE, cache=FALSE>>=
 # Grattan Program: Transport
 # Project: Project level evaluation of transport infrastructure in Australia
