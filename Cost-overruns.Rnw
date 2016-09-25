@@ -108,6 +108,7 @@ library(digest)
 
 
 select <- function(...) dplyr::select(...)
+rename <- function(...) dplyr::rename(...)
 @
 
 <<aspercent>>=
@@ -156,26 +157,55 @@ public_private_by_Grattan_record <-
 
 @
 
+<<historical_dataset>>=
+# Reading in the historical dataset --------------------------------------------------------
+
+# Deloitte-Access have also provided a listing of all projects in the Transport and Storage sector that have exited the database, either due to being completed, or being deleted (i.e. did not proceed)
+
+# This is the replacement dataset provided by Deloitte access by email on 15 April 2016
+#historical_dataset <- read_excel("../../Data sources/IM/Historical Transport and Storage - Original - 15 April.xls", sheet = "Project listing", skip = 2, col_names = TRUE, na = "na")
+
+# Checking NA's - there are some records that have NA's for project costs - these are useless to us
+#str(project_dataset_plus)
+#str(historical_dataset)
+
+#historical_dataset %>% 
+#  group_by(is.na(`Total cost $m`)) %>%
+#  summarise(total = length(`Total cost $m`))
+
+# We subset just for those variables from the historical dataset that arent duplicates, and create a unique Grattan project record number to merge with our current dataset
+
+# We also filter out those records that do not have a final expected project cost
+
+historical_dataset %<>%
+  filter(!is.na(`Total cost $m`)) %>%
+  rename(Grattan_record = `Project No.`, 
+         Final_cost_historical = `Total cost $m`, 
+         Final_status_historical = Status, 
+         Ownership_historical = Ownership, 
+         Sub_industry_historical = `Sub-industry`, 
+         State_historical = State) %>%
+  as.data.table %>%
+  setkey(Grattan_record) %>%
+  unique
+@
+
 <<project_dataset_plus>>=
 project_dataset_plus <-
-project_dataset %>% 
+  project_dataset %>% 
   mutate(Grattan_record = ifelse(is.na(`Record No`), 
                                  `Project No.`,
-                                 `Record No`)) 
+                                 `Record No`)) %>%
 #subset(select = -c(`Project No.`, `Record No`))
 
 
 # Expected project cost (and remove the old variables)
-
-project_dataset_plus %<>% 
   mutate(Expected_cost = ifelse(!is.na(`Cost ($m)`), 
                                 `Cost ($m)`, 
                                 ifelse(!is.na(`Total cost`), `Total cost`, `Total cost $m`)), 
-         Expected_cost = ifelse(Expected_cost==0, NA, Expected_cost))
+         Expected_cost = ifelse(Expected_cost==0, NA, Expected_cost)) %>%
 
 # We also need to create a consistent set of State names for the state variable
-
-project_dataset_plus %<>%
   mutate(State_new = ifelse(State == "TAS", "Tasmania",
                             ifelse(State == "Tasmania", "Tasmania", 
                                    ifelse(State == "SA", "South Australia",
@@ -192,32 +222,13 @@ project_dataset_plus %<>%
                                                                                                                 ifelse(State == "NT", "Northern Territory",
                                                                                                                        ifelse(State == "Northern Territory", "Northern Territory", 
                                                                                                                               ifelse(State == "ACT", "Australian Capital Territory", 
-                                                                                                                                     ifelse(State == "Australian Capital Territory", "Australian Capital Territory", "Unallocated"))))))))))))))))))
+                                                                                                                                     ifelse(State == "Australian Capital Territory", "Australian Capital Territory", "Unallocated")))))))))))))))))) %>%
  
 # Fill expected cost variable, and filter out projects with initial or all expected costs == 0: -----
 
 # First, we need to write a function that calculates the distance to the closest earlier non-NA cost estimate:
 
-na_reset <- function(x) {
-  test <- is.na(x)
-  y <- cumsum(test)
-  c(y - cummax(y * !test))
-}
 
-test_that("na_reset expected", {
-  expect_equal(na_reset(c(1, 2, NA, NA, NA, 4, 5, NA, NA, 3, NA, 5)), 
-               c(0L, 0L, 1L, 2L, 3L, 0L, 0L, 1L, 2L, 0L, 1L, 0L))
-})
-
-
-# Then we need to write a function that calulates the distance to the closest later non-NA cost estimate:
-
-na_reset_rev <- function(x) {
-  x <- rev(x)
-  test <- is.na(x)
-  y <- cumsum(test)
-  rev(c(y - cummax(y * !test)))
-}
 
 # Now we need to generate the: 
 #D2PC (distance to previous non na cost), 
@@ -227,18 +238,13 @@ na_reset_rev <- function(x) {
 # and gap (D2PC + D2FC) variables:
 
 ## But first: Turning the sheet name into a record date. We want this to be the last day of the Quarter, as that is the point that the IM pipeline snapshot reflects. This will be important when we match the timing of project annoucements to election dates. 
-
-project_dataset_plus %<>% 
   mutate(Record_date = paste("1 ", sheet), 
          Record_date = as.Date(as.yearqtr(Record_date, format = "%d %b %Y"), frac = 1)) %>%
   group_by(Grattan_record) %>%
   mutate(Qtrs_in_dataset = row_number(Record_date)) %>%
-  ungroup
+  ungroup %>%
 
 ### REMEMBER TO TREAT NA's and 0's THE SAME!!
-
-
-project_dataset_plus %<>%
   group_by(Grattan_record) %>%
   mutate(D2PC=na_reset(Expected_cost),
          D2FC=na_reset_rev(Expected_cost),
@@ -249,37 +255,30 @@ project_dataset_plus %<>%
          Expected_cost_fill = ifelse(gap == 0, Expected_cost, Previous_cost^((gap - D2PC)/gap)*Following_cost^((gap - D2FC)/gap))) %>%
   mutate(Expected_cost = Expected_cost_fill) %>%
   ungroup() %>%
-  filter(Quarter_of_previous_cost >0) %>%    # Drop observations prior to a cost being allocated to the project 
-  arrange(Grattan_record)
+  filter(Quarter_of_previous_cost > 0) %>%    # Drop observations prior to a cost being allocated to the project 
+  arrange(Grattan_record) %>%
 
 # Writing new variables for when project enters and exits database -----------------------------------
 
 ## Turning the sheet name into a record date. We want this to be the last day of the Quarter, as that is the point that the IM pipeline snapshot reflects. This will be important when we match the timing of project annoucements to election dates. 
 
-project_dataset_plus %<>% 
   mutate(Record_date = paste("1 ", sheet), 
-         Record_date = as.Date(as.yearqtr(Record_date, format = "%d %b %Y"), frac = 1))
+         Record_date = as.Date(as.yearqtr(Record_date, format = "%d %b %Y"), frac = 1)) %>%
 
 
 # Writing a variable for when project first enters database
 # Writing an index number of the sequential quarter from when project first enters database, until it exits
 # Writing a variable for when project exits database
-
-project_dataset_plus %<>% 
   group_by(Grattan_record) %>% 
   mutate(Initial_date = min(Record_date), 
          Qtrs_in_dataset = row_number(Record_date), 
          Final_date = max(Record_date), 
          Total_qtrs_in_dataset = max(Qtrs_in_dataset),
-         First_qtr_in_dataset = min(Qtrs_in_dataset))
-
-
-
-# Fixing status descriptors - 'under construction' appears both as a lower and upper case but we only want one unique identifier
-
-project_dataset_plus %<>%
-  mutate(Status = ifelse(Status == "Under Construction", "Under construction", Status))
-
+         First_qtr_in_dataset = min(Qtrs_in_dataset),
+         
+         # Fixing status descriptors - 'under construction' appears both as a lower and upper case but we only want one unique identifier
+         Status = ifelse(Status == "Under Construction", "Under construction", Status),
+  
 # I DON'T UNDERSTAND THIS PIECE OF CODE (at least it's hashed..) DELETE?
 # There was a variable for when a record changed in the IM dataset (such as a status change), however it does not capture all status changes. 
 # * New Projects  ^ Status Change  ~ Other Amended Details, or some combination of them
@@ -321,38 +320,7 @@ project_dataset_plus %<>%
   mutate(Initial_cost = first(Expected_cost_fill, order_by = Qtrs_in_dataset), 
          Final_cost = last(Expected_cost_fill, order_by = Qtrs_in_dataset))
 
-# Reading in the historical dataset --------------------------------------------------------
 
-# Deloitte-Access have also provided a listing of all projects in the Transport and Storage sector that have exited the database, either due to being completed, or being deleted (i.e. did not proceed)
-
-# This is the replacement dataset provided by Deloitte access by email on 15 April 2016
-#historical_dataset <- read_excel("../../Data sources/IM/Historical Transport and Storage - Original - 15 April.xls", sheet = "Project listing", skip = 2, col_names = TRUE, na = "na")
-
-# Checking NA's - there are some records that have NA's for project costs - these are useless to us
-#str(project_dataset_plus)
-#str(historical_dataset)
-
-#historical_dataset %>% 
-#  group_by(is.na(`Total cost $m`)) %>%
-#  summarise(total = length(`Total cost $m`))
-
-# We subset just for those variables from the historical dataset that arent duplicates, and create a unique Grattan project record number to merge with our current dataset
-
-# We also filter out those records that do not have a final expected project cost
-
-historical_dataset %<>%
-  filter(!is.na(`Total cost $m`)) %>%
-  rename(Grattan_record = `Project No.`, 
-         Final_cost_historical = `Total cost $m`, 
-         Final_status_historical = Status, 
-         Ownership_historical = Ownership, 
-         Sub_industry_historical = `Sub-industry`, 
-         State_historical = State) %>%
-  dplyr::select(Grattan_record, Final_cost_historical, 
-                Final_status_historical, Ownership_historical, Sub_industry_historical, State_historical) %>%
-  as.data.table %>%
-  setkey(Grattan_record) %>%
-  unique
 
 
 
@@ -406,7 +374,8 @@ final_cost_by_status <-
   costs_by_status %>%
   dplyr::select(-contains("first")) %>%
   spread(Status, cost_when_final) %>%
-  setnames(old = names(.)[names(.) != "Grattan_record"], new = paste0("Final_cost_when_", names(.)[names(.) != "Grattan_record"])) %>% .[] %>%
+  setnames(old = names(.)[names(.) != "Grattan_record"], 
+           new = paste0("Final_cost_when_", names(.)[names(.) != "Grattan_record"])) %>% 
   setkey(Grattan_record)
 
 # Now we merge this data frame into our main project_dataset_plus
@@ -415,12 +384,8 @@ final_cost_by_status <-
 setkey(project_dataset_plus, Grattan_record)
 
 project_dataset_plus <-
-  merge(project_dataset_plus, first_date_by_status, all.x = TRUE) 
-
-project_dataset_plus <-
-  merge(project_dataset_plus, first_cost_by_status, all.x = TRUE) 
-
-project_dataset_plus <-
+  merge(project_dataset_plus, first_date_by_status, all.x = TRUE) %>%
+  merge(project_dataset_plus, first_cost_by_status, all.x = TRUE) %>%
   merge(project_dataset_plus, final_cost_by_status, all.x = TRUE) 
 
 # Writing status and other time-related variables -----
@@ -928,7 +893,7 @@ project_dataset_t <-
   unique %>%
 ## Issue #1
 
-# D) Filter out projects with final values below $20m:
+# D) Filter out projects with initial values below $20m:
   filter(Initial_cost >= 20) %>%
 
 # E) Filter out any erroneous data:
