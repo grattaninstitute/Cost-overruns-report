@@ -89,7 +89,7 @@ public_private_by_Grattan_record <-
 <<final_status_by_Grattan_record>>=
 warning("Using 'Final_status_historical' (Issue #4)")
 final_status_by_Grattan_record <- 
-  completed_project_list  %>%
+  completed_project_list %>%
   as.data.table %>%
   setkey(Grattan_record) %>%
   unique %>%
@@ -174,7 +174,8 @@ transport_projects <-
   setkey(Grattan_record, Record_date) %>%
   group_by(Grattan_record) %>%
   # See Issue #3.
-  filter(first(Cost_estimate, order_by = Record_date) >= 20e6) 
+  # filter(first(Cost_estimate, order_by = Record_date) >= 20e6) 
+  filter(first(Cost_estimate) >= 20e6)
 @
 
 <<completed_transport_projects>>=
@@ -182,6 +183,12 @@ completed_transport_projects <-
   transport_projects %>%
   merge(final_status_by_Grattan_record) %>%
   filter(Final_status_historical == "Completed")
+@
+
+<<n_completed_transport_projects_gt_20M>>=
+n_completed_transport_projects_gt_20M <- 
+  completed_transport_projects %$%
+  uniqueN(Grattan_record)
 @
 
 <<Final_cost_over_initial_by_record>>=
@@ -220,13 +227,24 @@ savings_if_every_proj_with_CO_had_CO_le_10pc <-
   summarise(last_cost_estimate_real = last(Cost_estimate_real, order_by = Record_date), 
             first_cost_estimate_real = first(Cost_estimate_real, order_by = Record_date)) %>%
   ungroup %>%
-  filter(last_cost_estimate_real > 1.1 * first_cost_estimate_real) %>%
+  filter(last_cost_estimate_real > first_cost_estimate_real) %>%
   mutate(actual_overrun = last_cost_estimate_real - first_cost_estimate_real, 
          overrun_threshold = 0.1 * first_cost_estimate_real, 
-         overrun_cf_capped = actual_overrun - overrun_threshold) %$%
+         overrun_cf_capped = actual_overrun - overrun_threshold) %>%
+  arrange(desc(overrun_cf_capped)) %$%
   # If every cost-overrun was only 10%, subtract from
   # 110% of initial_cost_real, otherwise just the normal difference
-  sum(actual_overrun - overrun_threshold)
+  sum(overrun_cf_capped)
+@
+
+<<prop_projects_on_budget>>=
+prop_projects_on_budget <- NULL
+  
+@
+
+<<temp>>=
+
+warning("Using temp vars")
 @
 
 <<>>=
@@ -239,7 +257,8 @@ Most of the time, Australia isn’t bad at managing transport infrastructure pro
 
 Policymakers appear to be complacent about this outcome. At first glance, this is understandable: \Sexpr{grattan_percent(prop_projects_on_budget)} of projects finish on budget, and we are assured that every extreme cost blowout comes with its own story. 
 
-However, data on the cost overruns incurred over the \Sexpr{n_completed_projects} $20m+ transport infrastructure projects built in Australia since 2000 reveals that these stories are misleading: Australia’s cost overruns are larger and far more common than could be considered ‘normal’, and more predictable than their surprised proponents realise. 
+However, data on the cost overruns incurred over the \Sexpr{n_completed_transport_projects_gt_20M} $20m+ transport infrastructure projects built in Australia since 2000 reveals that these stories are misleading: Australia’s cost overruns are larger and far more common than could be considered ‘normal’, and more predictable than their surprised proponents realise. 
+
 Over the last 15 years, Australia has spent at least \Sexpr{texNum(spending_per_dollar_budgeted, dollar = TRUE)} for every dollar initially budgeted for transport infrastructure projects. Cost overruns on infrastructure projects are not a uniquely Australian phenomenon, but Australia’s cost overruns – especially those that occur prior to construction – are larger than is commonly observed on similarly sized projects overseas. 
 
 This outcome is not surprising when considered against the backdrop of Australia’s current cost management efforts. As it stands, the guidelines for risk management on transport infrastructure projects are fragmented, insufficient information has been provided for modern strategies like reference class forecasting to be employed and outcomes are not reported transparently.
