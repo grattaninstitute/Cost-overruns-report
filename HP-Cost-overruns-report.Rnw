@@ -227,7 +227,11 @@ savings_if_every_proj_with_CO_had_CO_le_10pc <-
   # If every cost-overrun was only 10%, subtract from
   # 110% of initial_cost_real, otherwise just the normal difference
   sum(actual_overrun - overrun_threshold)
-  
+@
+
+<<>>=
+warning("Not evaluating chunks beyond here...")
+knitr::opts_chunk$set(eval = FALSE, error = FALSE)
 @
 
 \begin{overview}[-40pt]
@@ -263,9 +267,7 @@ This report brings two unique advantages to these public finance questions. One 
 ...and the rest of this section is text. 
 
 Figure 1.1: Cost overruns are at least as large as 22 per cent of initial project costs, but could be as large as 45 per cent
-<<>>=
 
-@
 
 
 \chapter{People underestimate the extent of cost overruns}
