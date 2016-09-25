@@ -44,6 +44,12 @@ select <- function(...) dplyr::select(...)
 rename <- function(...) dplyr::rename(...)
 @
 
+<<grattan_percent>>=
+grattan_percent <- function(number, digits = 1){
+  paste0(comma(100*number, digits = digits), "~per~cent")
+}
+@
+
 <<>>=
 # This will equal 1.661184 if the inflator's working correctly:
 # general_inflator(from = as.yearqtr("1998 Q1"), to = as.yearqtr("2013 Q1"), inflator_table = construction_indices)
