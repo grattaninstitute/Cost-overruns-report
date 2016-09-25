@@ -1,0 +1,470 @@
+\documentclass{grattanAlpha}
+\title{Cost overruns}
+\author{Marion Terrill}
+
+% \GrattanReportNumber{XX}
+
+
+\catcode`\$=12
+\begin{document}
+
+<<knitrOpts>>=
+library(knitr)
+opts_chunk$set(error = FALSE, echo = FALSE)
+@
+
+<<loadPackages, cache=FALSE>>=
+library(testthat)
+library(xlsx)
+library(readxl)
+library(openxlsx)
+library(dplyr)
+library(data.table)
+library(dtplyr)
+library(magrittr)
+library(tidyr)
+library(zoo)
+library(ggplot2)
+library(scales)
+library(devtools)
+library(CostOverrunsData)
+library(grattan)
+if (texNum(1.25, dollar = TRUE) != "\\$1.25"){
+  stop("Update the grattan package")  # recent bugfix
+}
+library(broom)
+library(sandwich)
+library(car)
+library(mfx)
+library(logistf)
+library(curl)
+library(digest)
+# Namespace
+select <- function(...) dplyr::select(...)
+rename <- function(...) dplyr::rename(...)
+@
+
+<<>>=
+# This will equal 1.661184 if the inflator's working correctly:
+# general_inflator(from = as.yearqtr("1998 Q1"), to = as.yearqtr("2013 Q1"), inflator_table = construction_indices)
+construction_indices2 <- 
+  construction_indices %>%
+  as.data.table %>%
+  copy %>%
+  .[, Time := as.Date(Time)]
+
+construction_inflator <- function(x = 1, from, to){
+  general_inflator(x = x, from = from, to = to, inflator_table = construction_indices2)
+}
+
+test_that("Construction inflator returns single correct value", {
+  expect_equal(construction_inflator(1, from = as.Date("1998-03-01"), to = as.Date("2013-03-01")), 1.66118421052632)
+})
+
+test_that("Construction inflator works multiply", {
+  expect_equal(construction_inflator(c(1, 2), from = as.Date(c("1998-03-01", "2000-03-01")), to = as.Date("2013-03-01")), 
+               c(1.66118421052632, 3.05135951661631))
+})
+@
+
+<<public_private_by_Grattan_record>>=
+public_private_by_Grattan_record <- 
+  completed_project_list  %>%
+  as.data.table %>%
+  setkey(Grattan_record) %>%
+  unique %>%
+  # no need to spread info over two columns
+  mutate(Lucille_Ownership = if_else(as.logical(Public_project_Grattan), 
+                                     "Public", 
+                                     "Private")) %>%
+  select(Grattan_record, Lucille_Ownership)
+@
+
+<<final_status_by_Grattan_record>>=
+warning("Using 'Final_status_historical' (Issue #4)")
+final_status_by_Grattan_record <- 
+  completed_project_list  %>%
+  as.data.table %>%
+  setkey(Grattan_record) %>%
+  unique %>%
+  select(Grattan_record, Final_status_historical)
+@
+
+<<convert_million_cols>>=
+convert_million_cols <- function(.data){
+  stopifnot(is.data.table(.data))
+  cols_in_millions <- grep("$m", names(.data), fixed = TRUE)
+  
+  for (j in cols_in_millions){
+    set(.data, j = j, value = .data[[j]] * 10^6)
+  }
+  
+  # Update the names also
+  setnames(.data, 
+           old = names(.data)[cols_in_millions], 
+           trimws(gsub("$m", "", fixed = TRUE, gsub("($m)", "", names(.data)[cols_in_millions], fixed = TRUE))))
+  .data
+}
+
+test_that("convert_million_cols", {
+  example.dt <- data.table(x = 1:5, y = 1:5)
+  setnames(example.dt, "x", "x ($m)")
+  
+  expect_identical(convert_million_cols(example.dt), 
+                   data.table(x = seq(1e6, 5e6, by = 1e6), y = 1:5))
+})
+@
+
+<<transport_projects>>=
+transport_projects <- 
+  project_dataset %>%
+  filter(`Major industry` == "Transport & Storage",
+         `Sub-industry` %in% c("Road", "Rail")) %>%
+  mutate(Grattan_record = if_else(is.na(`Record No`), 
+                                  `Project No.`,
+                                  `Record No`)) %>%
+  select(-`Record No`, -`Project No.`) %>%
+  setkey(Grattan_record) %>%
+  # Convert all 'cost' names to the same
+  melt.data.table(measure.vars = grep("Cost", names(.), ignore.case = TRUE, value = TRUE), 
+                  na.rm = TRUE, 
+                  value.name = "Cost_estimate") %T>%
+                  {
+                    dot <- copy(.)
+                    test_that("Each cost variable is unique", {
+                      nrows_not_unique <- 
+                        setkey(dot, 
+                               Grattan_record, 
+                               variable, 
+                               sheet) %>% 
+                        unique %>% 
+                        group_by(Grattan_record, sheet) %>% 
+                        mutate(n = uniqueN(variable)) %>% 
+                        filter(n > 1) %>%
+                        nrow
+                      expect_equal(nrows_not_unique, 0)
+                    })
+                  } %>%
+  # melt no longer needed
+  select(-variable) %>%
+  {
+    warning("Assuming cost columns not marked ($m) are nonetheless in millions")
+    mutate(., Cost_estimate = Cost_estimate * 10e6) 
+  } %>%
+  setkey(Grattan_record) %>%
+  merge(public_private_by_Grattan_record) %T>%
+  {
+    # check Lucille disagreement
+    # Issue #2
+    dot <- .
+    if ({dot %>% filter(!is.na(Ownership)) %$% any(Ownership != Lucille_Ownership)}){
+      warning("Lucille_Ownership and Ownership vars disagree.")
+    }
+  } %>%
+  filter(Lucille_Ownership == "Public") %>%
+  mutate(Record_date = as.Date(paste("1", sheet), 
+                               format = "%d %b %Y")) %>%
+  mutate(Cost_estimate_real = construction_inflator(Cost_estimate, from = Record_date, to = as.Date("2015-12-01"))) %>%
+  setkey(Grattan_record, Record_date) %>%
+  group_by(Grattan_record) %>%
+  # See Issue #3.
+  filter(first(Cost_estimate, order_by = Record_date) >= 20e6) 
+@
+
+<<completed_transport_projects>>=
+completed_transport_projects <- 
+  transport_projects %>%
+  merge(final_status_by_Grattan_record) %>%
+  filter(Final_status_historical == "Completed")
+@
+
+<<Final_cost_over_initial_by_record>>=
+Final_cost_over_initial_by_record <- 
+  completed_transport_projects %>%
+  # first and last should refer to the first non-NA value
+  #  (Does not appear to be necessary)
+  # mutate(Cost_estimate_filled = pmax(na.locf(Cost_estimate, na.rm = FALSE), 
+  #                                    na.locf(Cost_estimate, na.rm = FALSE, fromLast = TRUE), 
+  #                                    na.rm = TRUE)) %>%
+  group_by(Grattan_record) %>%
+  mutate(Final_cost_over_initial = 
+           last(Cost_estimate, order_by = Record_date) / 
+           first(Cost_estimate, order_by = Record_date)) %>%
+  filter(between(Final_cost_over_initial,
+                 0.5, # This is a generous definition of outliers as the biggest underrun we observe 
+                      # is the 34% underrun on the Springfield to Richlands line. 
+                 
+                 5.2  # Any overrun greater than 5.2 is suspect of a data error. This is because the 
+                      # Peel deviation is the project with the largest overrun that we have been able 
+                      # to verify with certainty. A bunch of the extreme outliers were all redcorded 
+                      # on the same day, which looks suspicious too.
+                 )) %>%
+  setkey(Grattan_record) %>%
+  unique %>%
+  select(Grattan_record, Final_cost_over_initial)
+@
+
+<<savings_if_every_proj_with_CO_had_CO_le_10pc>>=
+savings_if_every_proj_with_CO_had_CO_le_10pc <-
+  completed_transport_projects %>%
+  # inner join (strict)
+  merge(Final_cost_over_initial_by_record) %>%
+  select(Grattan_record, Record_date, Cost_estimate_real) %>%
+  group_by(Grattan_record) %>%
+  summarise(last_cost_estimate_real = last(Cost_estimate_real, order_by = Record_date), 
+            first_cost_estimate_real = first(Cost_estimate_real, order_by = Record_date)) %>%
+  ungroup %>%
+  filter(last_cost_estimate_real > 1.1 * first_cost_estimate_real) %>%
+  mutate(actual_overrun = last_cost_estimate_real - first_cost_estimate_real, 
+         overrun_threshold = 0.1 * first_cost_estimate_real, 
+         overrun_cf_capped = actual_overrun - overrun_threshold) %$%
+  # If every cost-overrun was only 10%, subtract from
+  # 110% of initial_cost_real, otherwise just the normal difference
+  sum(actual_overrun - overrun_threshold)
+  
+@
+
+\begin{overview}[-40pt]
+Most of the time, Australia isn’t bad at managing transport infrastructure projects. But when one goes wrong, it can be spectacular. Australia could have saved \Sexpr{texNum(savings_if_every_proj_with_CO_had_CO_le_10pc, dollar = TRUE)} over the past 15 years if every transport infrastructure project with a cost overrun had gone no more than ten per cent over budget. 
+
+Policymakers appear to be complacent about this outcome. At first glance, this is understandable: \Sexpr{grattan_percent(prop_projects_on_budget)} of projects finish on budget, and we are assured that every extreme cost blowout comes with its own story. 
+
+However, data on the cost overruns incurred over the \Sexpr{n_completed_projects} $20m+ transport infrastructure projects built in Australia since 2000 reveals that these stories are misleading: Australia’s cost overruns are larger and far more common than could be considered ‘normal’, and more predictable than their surprised proponents realise. 
+Over the last 15 years, Australia has spent at least \Sexpr{texNum(spending_per_dollar_budgeted, dollar = TRUE)} for every dollar initially budgeted for transport infrastructure projects. Cost overruns on infrastructure projects are not a uniquely Australian phenomenon, but Australia’s cost overruns – especially those that occur prior to construction – are larger than is commonly observed on similarly sized projects overseas. 
+
+This outcome is not surprising when considered against the backdrop of Australia’s current cost management efforts. As it stands, the guidelines for risk management on transport infrastructure projects are fragmented, insufficient information has been provided for modern strategies like reference class forecasting to be employed and outcomes are not reported transparently.
+
+These efforts are not proportionate to the importance of cost management on transport infrastructure projects. Australia has spent more on transport infrastructure over the last 15 years than we’ve saved in our Future Fund, and the realisation of a \Sexpr{grattan_percent(pc_lower_ROI)} lower return on investment than promised in final business cases on average represents a substantial distortion to infrastructure investment decision making. A comparison of the governance of transport infrastructure with that of the Future Fund suggests that transport infrastructure is destined to fail.
+
+Australia’s toothless appraisal process is not assisted by the perverse incentives facing project proponents. When cheaper projects are more likely to go ahead, top-up federal funding relieves proponents from facing the full marginal cost of overruns and projects’ scopes can be readily expanded during construction, it is not surprising that cost overruns occur far more commonly than underruns. 
+
+Moreover, the efforts Australia has made to manage cost overruns are not proportional to the opportunity to anticipate and manage cost overruns better. Our analysis identifies that the average size of cost overruns at each project stage varies systematically with project size, maturity, mode, the project’s political circumstances and the size of earlier overruns. Insofar as cost overruns can be predicted by observable characteristics like these, opportunities exist for data driven policy that anticipates and actively manages uncertainty.
+
+In this context, Australia’s complacency regarding cost overruns comes at a high (opportunity) cost. Shifting from an anecdotal to data driven approach to understanding cost overruns reveals that there is substantial scope for improvement at all stages of a project’s life, for individual projects and for the portfolio as a whole, and by politicians, bureaucrats and companies alike. 
+
+Instead of each project being a fresh start, the information exists to support project proponents and managers to make good decisions, prevent duplicated effort and learn from experience. We needn’t continue to be surprised by what’s predictable, and this report puts that ambition within reach.
+
+
+\end{overview}
+
+\chapter{Introduction}
+Cost overruns on transport infrastructure projects are nothing new. Some of the biggest examples are widely known, such as Western Australia’s Forrest Highway between Perth and Bunbury, which cost nearly six times its initial budget, or New South Wales’ Hunter Expressway, which cost nearly four times its initial budget. The amount of money at stake is very large: transport infrastructure over the past 15 years has cost \Sexpr{texNum(savings_if_every_proj_with_CO_had_CO_le_10pc, dollar = TRUE)} more than taxpayers were told it would. 
+
+...some more text...
+
+This report brings two unique advantages to these public finance questions. One is that we analyse the entire suite of \Sexpr{n_projects}  transport infrastructure projects valued at $20 million or more each, planned or built by Australian governments since 2000. Another specific advantage is that we analyse projects over their entire lifecycle, right from when they are first announced by a minister or opposition politician, to when they receive a formal funding commitment, through to completion (Figure xx). 
+
+...and the rest of this section is text. 
+
+Figure 1.1: Cost overruns are at least as large as 22 per cent of initial project costs, but could be as large as 45 per cent
+<<>>=
+
+@
+
+
+\chapter{People underestimate the extent of cost overruns}
+Even though cost overruns on transport infrastructure represent a very large cost, they receive little focus and governments appear complacent...
+
+\section {Cost overruns are very expensive}
+...But the frequency of overruns is only a small part of the story: what is much more important is the size. While only \Sexpr{round(prop_projects_w_overrun_gt_0.5,0)} per cent of projects overran their budget by 50 per cent or more, such overruns accounted for \Sexpr{round(prop_projects_w_overrun_gt_0.5,0)} per cent of the total value of overruns (Figure xx). The cost to government budgets of overruns of 50 per cent or more was $xx billion over the past fifteen years.
+
+Even bigger blowouts, of 200 per cent or more, occurred on \Sexpr{round(prop_projects_w_overrun_gt_2,0)} per cent of projects, but accounted for fully a quarter (\Sexpr{round(prop_co_value_projects_gt_2,0)}\%)of the total value of all overruns. The cost of overruns where the project was completed at double its budgeted cost or more was $\Sexpr{round(value_B_of_co_gt_2,2)} billion.
+
+Figure 2.1: Extremely large cost overruns pose almost all the cost
+<<>>=
+freq_value_graph
+            
+@
+
+\section{Australia does not compare especially well internationally}
+ ... lit review goes here...
+  <<>>=
+# The lit review graph uses lots of datasets. The key figures from this dataset (not in the current graph, which is super old) are:
+co_all_table_1_portfolio_az$co12[3]
+co_all_table_1_portfolio_az$co23[3]
+co_all_table_1_portfolio_az$co34[3]
+
+@
+
+\section{Cost overruns have no single culprit}
+Transport infrastructure projects are very varied, sometimes very complex, and subject to a range of pressures. None of the common reasons given for cost overruns, taken alone is especially compelling.
+
+\subsection{Scope changes explain a small share of overruns}
+
+...some text...
+Scope changes only account for around 12 per cent of cost overruns on transport infrastructure projects, even including the full project lifecycle from the time of first announcement 
+Hugh: This figure comes from the Grattan dataset. The analysis is in excel. 
+
+Figure 2.3.1: Scope changes pie chart (again, the data is not in R)
+...some text...
+
+\subsection{Escalation in costs is not a significant cause of cost overruns}
+
+...some text...
+However, escalation in costs does not have a significant impact on cost overruns across the whole portfolio of projects of the past 15 years in above and beyond the other factors outlined in this report. 
+Hugh: This finding comes the eight regression models listed below.
+
+<<>>=
+# Escalation (which is consequence of spending longer than expected in the investment pipeline) is proxied by log_Total_days_pre_construction:
+# Note: t1: initial announcment - commitment stage, t2: commitment - under construction stage, t3: under construction - completion, no t suffix: initial announcement - completion stage
+
+# These four models report the marginal effects of X's on the probability of a cost overrun
+fit_logit_co_all_v7_OUTPUT
+fit_logit_co_all_v7_t1_OUTPUT
+fit_logit_co_all_v7_t2_OUTPUT
+fit_logit_co_all_v7_t3_OUTPUT
+
+# These four models report the marginal effects of X's on the magnitude of cost overruns, if they occurred. 
+fit_logistic_co_all_v4_OUTPUT
+fit_logistic_co_all_v4_t1_OUTPUT
+fit_logistic_co_all_v4_t2_OUTPUT
+fit_logistic_co_all_v4_t3_OUTPUT
+
+@
+
+
+\subsection{Early overruns do not prevent later overruns}
+Cost overruns occur throughout the project lifecycle, accounting overall for \Sexpr{round((spending_per_dollar_budgeted-1)*100,0)}  cents additional cost for every dollar of estimated project cost (Figure 2.3.3). 
+
+Figure 2.3.3:
+
+<<>>= 
+waterfall_graph <- data.frame( Time_period = c("First cost announcement - budget commitment", "Budget commitment - under construction", "Under construction - completed", "First cost announcement - completed" ), 
+                              Cost_overrun = c(co_all_table_1_portfolio_az$co12[3], co_all_table_1_portfolio_az$co23[3], co_all_table_1_portfolio_az$co34[3], co_all_table_1_portfolio_az$co14[3]))
+
+@
+
+
+Overruns in the initial phase, between announcement and before a formal funding commitment, occur at a rate of \Sexpr{round(co_all_indices_AM$co12*100,0)} cents on every dollar of project value. These overruns are concerning because any later overruns that occur do so on the enlarged cost base resulting from the earlier overrun. 
+Overruns in the middle phase, after the funding commitment up until construction begins, occur at a rate of \Sexpr{round(co_all_indices_AM$co23*100,0)} cents on every dollar of project value. Overruns during construction occur at a rate of \Sexpr{round(co_all_indices_AM$co34*100,0)} cents for every dollar of project value. These middle and later phase overruns are concerning because they reveal that the initial decision to invest was made on an inaccurate basis. 
+
+The inaccurate basis for the decision to invest is also apparent from analysis of the cost estimates. Cost estimates produced to a standard that anticipates the project will equal or better its budget three quarters of the time (known as a “P75” costing) actually only achieved this result \Sexpr{round((1-prop_projects_w_overrun)*100,0)} per cent of the time. The difference reveals significant understatement of costs across the portfolio of projects planned or built since 2000.
+
+\chapter{Cost overruns are more preventable than people think}
+..some text..
+
+\section {Poor incentives for decision-makers}
+Ministers, governments and would-be governments have always sought political advantage by promising infrastructure. But politicised announcements that ignore proper process have poor outcomes. Cost overruns are \Sexpr{round(fit_logistic_co_all_v4$coefficients[11]*100,0)} per cent larger on average for projects announced close to a state election than otherwise similar projects announced at other times. This confirms the contention of previous Grattan report, Roads to Riches, that politicians commit to poor quality projects for political benefit.  
+
+\section {Poor process causes cost overruns}
+
+\subsection{Premature announcements}
+
+Figure 3.3.11
+<<>>=
+ co_all_table_3
+
+@
+
+Figure 3.3.12
+<<>>=
+overall_overruns_by_cohort
+@
+
+Figure 3.3.21
+<<>>=
+#Hmm triple check this. 
+
+cancellation_rate_by_stage
+
+@
+
+Figure 3.3.22
+<<>>=
+
+cancellation_rate_by_cohort
+  
+@
+
+Premature announcement affects not only the likelihood of an overrun, but also its size. Projects with costs announced ahead of a government funding commitment have far larger cost overruns, averaging \Sexpr{round((overall_overruns_by_cohort[1,4]-1)*100,0)} per cent of the initially announced cost (Figure xx).  Figure xx illustrates net overruns of \Sexpr{round((overall_overruns_by_cohort[2,4]-1)*100,0)} to \Sexpr{round((overall_overruns_by_cohort[3,4]-1)*100,0)} per cent occur for projects announced with more mature cost estimates than those announced early.
+
+(This paragraph is currently being rewritten, but these should be the correct figures)
+
+\subsection{Failure to cancel dubious projects}
+..some text...
+
+Not all projects that are announced end up being built. Around \Sexpr{round(n_completed_projects/n_projects*100,0)} per cent of all announced projects go through to completion. Of those announced early, before a formal government funding commitment, \Sexpr{grattan_percent(prop_g1_projects_completed)} continue through to completion. Projects that are announced when more mature are much more likely to be completed (Figure xx).
+
+\chapter{Cost overruns are much more predictable than people think}
+
+\section {Why predict unavoidable risks?}
+\subsection {More complex projects are riskier}
+
+The likelihood of a cost overrun increases markedly as project size increases, after consideration of other factors. For every extra 10 per cent in a project’s size (measured by cost estimate when first under construction), there is a \Sexpr{round(marginal_effects_logit_co_all_v7$mfxest[9]*100*10,0)}  per cent higher chance of a cost overrun, and for the projects with an overrun, greater project size leads is linked to much greater overrun size during the pre-construction period .
+
+<<>>=
+# For the last claim, see the coefficients of log_first_cost_when_under_construction in:
+summary(fit_logistic_co_all_v4_t1)
+summary(fit_logistic_co_all_v4_t2)
+@
+
+ Figure 4.2.1
+<<>>=
+                           
+pc_overruns_and_project_size_states
+@
+
+
+\subsection{Singular projects are riskier}
+
+Figure 4.2.2
+<<>>=
+
+Cost_overruns_by_mode
+
+@
+
+
+
+\section {How can avoidable risks be managed?}
+
+Note: this figure does not exist (and can't be estimated) and will be removed from the draft:
+The following three sections identify three major places where improvements could be made so as to save a substantial share of the $18 billion of overruns occurring after the formal funding commitment. 
+
+\subsection {Learn from past experience}
+
+Perhaps the most valuable resource we have in estimating project risks is the reservoir of experience from planning and delivering over \Sexpr{round(n_completed_projects/100,0)*100} transport infrastructure projects valued at $20 million or more in Australia over the past 15 years. 
+
+...some more text...
+
+Note: there's some text that says:
+"The assumptions that are being made at present in project budgets are significantly different to the costs that eventuate when the project is built (Figure XX). Almost 50 per cent of projects end up costing more than the “worst case” or P90 cost estimate. . "
+
+This needs to be changed to:
+"Over \Sexpr{round(prop_projects_w_overrun*100,0)} per cent of projects end up costing more than the “worst case” or (P75-P90) cost estimate." It also needs to be clarified and moved to chapter 1..
+
+\chapter{Charts that will probably be added in}
+
+ <<>>=
+
+# Sample size charts:
+sample_size_by_cohort <- data.frame(Period_of_initial_cost_announcement = c("Possible or under consideration", "Committed", "Under construction"), 
+                                   Sample_size = c(nrow(co_g1), nrow(co_g2), nrow(co_g3)))
+@
+
+<<>>=
+
+
+#Pre/post GFC predicted probabilities graph: 
+pre_post_GFC_predicted_probabilities <- data.frame(time_period = c("Prior to the GFC", "During and after the GFC"), 
+                                                   Mean_cost_overrun_average_sample_of_projects = c(predicted_CO_pre_GFC, predicted_CO_post_GFC))
+    
+@
+
+<<>>=
+# Density graph:
+
+
+# Triangle density. Should have approximately 10% of probability greater than 0.
+x <- c(-1.4, -0.5, 0.4)
+y <- c(0, 1.025, 0)
+series = data.frame(x, y)
+
+Final_over_initial_density <- density((co_all$Final_cost_over_initial-1), bw = 0.3)
+plot(Final_over_initial_density, xlim = c(-2,5), ylim = c(0,1), lwd=3, col = "orange", main = "PDF: Probability that a random CO is = X", xlab = "Magnitude of cost overrun (Final cost / Initial)", ylab = "Probability")
+lines(series, lwd=2, lty=2)
+
+
+@
+\end{document}
+
