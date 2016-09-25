@@ -294,12 +294,8 @@ project_dataset_plus %<>%
 #   select(-Symbol, -`Change `)
 
 # We therefore write a new variable for when the status of a project changes
-
-project_dataset_plus %<>% 
-  group_by(Grattan_record) %>%
-  mutate(Status_change = ifelse(is.na(Status != lag(Status, order_by = Qtrs_in_dataset)), 
-                                TRUE,
-                                Status != lag(Status, order_by = Qtrs_in_dataset)))
+  Status_change = is.na(Status != lag(Status, order_by = Qtrs_in_dataset)) | Status != lag(Status, order_by = Qtrs_in_dataset)
+  )
 
 # Now we write a new data frame that showsthe first quarter in which a project was listed under a particular status
 
