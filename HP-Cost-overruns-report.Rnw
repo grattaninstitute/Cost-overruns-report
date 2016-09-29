@@ -180,11 +180,11 @@ transport_projects <-
                       expect_equal(nrows_not_unique, 0)
                     })
                   } %>%
-  # melt no longer needed
+  # molten state no longer needed
   select(-variable) %>%
   {
     warning("Assuming cost columns not marked ($m) are nonetheless in millions")
-    mutate(., Cost_estimate = Cost_estimate * 10e6) 
+    mutate(., Cost_estimate = Cost_estimate * 10^6) 
   } %>%
   setkey(Grattan_record) %>%
   merge(public_private_by_Grattan_record) %T>%
