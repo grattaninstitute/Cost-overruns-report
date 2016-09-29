@@ -494,8 +494,18 @@ co_all_table_1_portfolio_az$co34[3]
 Transport infrastructure projects are very varied, sometimes very complex, and subject to a range of pressures. None of the common reasons given for cost overruns, taken alone is especially compelling.
 
 \subsection{Scope changes explain a small share of overruns}
+<<prop_value_scope_changes>>=
+prop_value_scope_changes <- 
+  completed_transport_projects %>%
+  group_by(Grattan_record) %>%
+  summarise(Capacity_mentioned = any(!is.na(Capacity)),
+            Capacity_increase = last(na.locf(Capacity, na.rm = FALSE)) - first(na.locf(Capacity, na.rm = FALSE, fromLast = TRUE))) %>%
+  ungroup %>%
+  filter(Capacity_mentioned) %>%
+  arrange(desc(Capacity_increase))
+@
 
-...some text...
+
 Scope changes only account for around 12 per cent of cost overruns on transport infrastructure projects, even including the full project lifecycle from the time of first announcement 
 Hugh: This figure comes from the Grattan dataset. The analysis is in excel. 
 
