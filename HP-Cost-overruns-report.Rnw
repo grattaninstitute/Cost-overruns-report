@@ -199,12 +199,44 @@ transport_projects <-
   filter(Lucille_Ownership == "Public") %>%
   mutate(Record_date = as.Date(paste("1", sheet), 
                                format = "%d %b %Y")) %>%
-  mutate(Cost_estimate_real = construction_inflator(Cost_estimate, from = Record_date, to = as.Date("2015-12-01"))) %>%
+  
+                               {
+                                 dot <- .
+                                 
+                                 # What date should we choose to inflate
+                                 # cost estimates by? A: construction phase, 
+                                 # as defined below.
+                                 inflation_origin_by_GR <- 
+                                   dot %>%
+                                   # Is the status under construction in this quarter?
+                                   mutate(.co = grepl("under.*construction", Status, ignore.case = TRUE)) %>%
+                                   group_by(Grattan_record) %>%
+                                   # For each grattan record, 
+                                   #  1.  Is the project ever under construction?  If so, take
+                                   #      the value nearest the mean of those dates which were
+                                   #      under construction.
+                                   #  2.  If the project is never under construction, take the
+                                   #      the val_nrst_mean of all dates.
+                                   summarise(
+                                     inflation_origin = 
+                                       if (any(.co)) { 
+                                         val_nrst_mean(Record_date[.co]) 
+                                       } else { 
+                                         val_nrst_mean(Record_date)
+                                       }
+                                     ) %>%
+                                   select(Grattan_record, inflation_origin) %>%
+                                   setkey(Grattan_record)
+                                 
+                                 # Return to the top-level pipe:
+                                 merge(dot, inflation_origin_by_GR)
+                               } %>%
+  mutate(Cost_estimate_real = construction_inflator(Cost_estimate, from = inflation_origin, to = as.Date("2015-12-01"))) %>%
   setkey(Grattan_record, Record_date) %>%
   group_by(Grattan_record) %>%
   # See Issue #3.
   # filter(first(Cost_estimate, order_by = Record_date) >= 20e6) 
-  filter(first(Cost_estimate) >= 20e6)
+  filter(first(Cost_estimate_real, order_by = Record_date) >= 20e6)
 @
 
 <<completed_transport_projects>>=
@@ -214,10 +246,30 @@ completed_transport_projects <-
   filter(Final_status_historical == "Completed")
 @
 
-<<n_completed_transport_projects_gt_20M>>=
-n_completed_transport_projects_gt_20M <- 
-  completed_transport_projects %$%
-  uniqueN(Grattan_record)
+<<cost_overrun_by_GR>>=
+cost_overrun_by_GR <- 
+  completed_transport_projects %>%
+  # first and last should refer to the first non-NA value
+  #  (Does not appear to be necessary)
+  # mutate(Cost_estimate_filled = pmax(na.locf(Cost_estimate, na.rm = FALSE), 
+  #                                    na.locf(Cost_estimate, na.rm = FALSE, fromLast = TRUE), 
+  #                                    na.rm = TRUE)) %>%
+  group_by(Grattan_record) %>%
+  summarise(final_cost_estimate_real = last(Cost_estimate_real, order_by = Record_date), 
+            first_cost_estimate_real = first(Cost_estimate_real, order_by = Record_date)) %>%
+  ungroup %>%
+  mutate(cost_overrun = final_cost_estimate_real - first_cost_estimate_real,
+         Final_cost_over_initial = final_cost_estimate_real / first_cost_estimate_real) %>%
+  ungroup %>%
+  mutate(outlier = !between(Final_cost_over_initial,
+                            0.5, # This is a generous definition of outliers as the biggest underrun we observe 
+                            # is the 34% underrun on the Springfield to Richlands line. 
+                            
+                            5.2  # Any overrun greater than 5.2 is suspect of a data error. This is because the 
+                            # Peel deviation is the project with the largest overrun that we have been able 
+                            # to verify with certainty. A bunch of the extreme outliers were all redcorded 
+                            # on the same day, which looks suspicious too.
+  ))
 @
 
 <<Final_cost_over_initial_by_record>>=
