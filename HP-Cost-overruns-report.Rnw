@@ -643,10 +643,12 @@ grattan_records_180days_before_state_election <-
 @
 
 
-<<logit_co_all>>=
-completed_transport_projects %>%
+<<important_vars_by_GR>>=
+important_vars_by_GR <- 
+  completed_transport_projects %>%
   # Premature announcment means the announcement was made
   # in public before the status was committed.
+  setkey(Grattan_record, Record_date) %>%
   group_by(Grattan_record) %>%
   summarise(premature_announcement = any(Status_ordered <= "Under consideration"), 
             log_Total_days_pre_construction = 
@@ -674,13 +676,24 @@ completed_transport_projects %>%
             } else {
               first(State_new)
             },
-            Constructed_post_GFC = min(Record_date[Status_ordered == "Under construction"]) > as.Date("2008-09-12"), 
-            log_First_cost_when_under_construction_real = log(first(Cost_estimate_real[Status_ordered == "Under construction"], 
-                                                                    order_by = Record_date)), 
+            Constructed_post_GFC = any(Status_ordered == "Under construction") && min(Record_date[Status_ordered == "Under construction"]) > as.Date("2008-09-12"), 
+            log_First_cost_when_under_construction_real = if (any(Status_ordered == "Under construction")) 
+              log(Cost_estimate_real[Status_ordered == "Under construction"][[1]])
+            else 
+              NA_real_
             # Due to violation of 3NF
-            Sub_industry = first(`Sub-industry`)) %>%
+            ,Sub_industry = first(`Sub-industry`)
+            ) %>%
   ungroup %>%
-  mutate(election_within_180_days = Grattan_record %in% grattan_records_180days_before_election) %>%
+  # impute
+  mutate(log_First_cost_when_under_construction_real = if_else(is.na(log_First_cost_when_under_construction_real), 
+                                                               mean(log_First_cost_when_under_construction_real, na.rm = TRUE), 
+                                                               log_First_cost_when_under_construction_real),
+         election_within_180_days = Grattan_record %in% grattan_records_180days_before_election) 
+@
+
+<<logit_co_all>>=
+important_vars_by_GR %>%
   merge(cost_overrun_by_GR) %>%
     glm(factor(cost_overrun > 0) ~ premature_announcement + 
           log_Total_days_pre_construction + 
@@ -776,7 +789,43 @@ Cost overruns occur throughout the project lifecycle, accounting overall for \Se
 
 Figure 2.3.3:
 
-<<>>= 
+<<cost_overrun_by_GR_phase>>=
+#' @return  A data table for each Grattan record and each status change (for which a
+#'          a cost was recorded before and after).  The cost change between the first
+#'          instance of the lagged status and the first instance of the lead status.
+cost_overrun_by_GR_phase <-
+  completed_transport_projects %>%
+  setkey(Grattan_record, Status_ordered, Record_date) %>%
+  select(Grattan_record, Status_ordered, Record_date, Cost_estimate_real) %>% 
+  group_by(Grattan_record, Status_ordered) %>%
+  summarise(first_cost = first(Cost_estimate_real), 
+            final_cost = last(Cost_estimate_real)) %>%
+  group_by(Grattan_record) %>%
+  mutate(change_was_from = paste(lag(Status_ordered), "to", Status_ordered),
+         prev_status_existed = !is.na(lag(Status_ordered)),
+         first_cost_change = first_cost - lag(first_cost), 
+         final_cost_change = final_cost - lag(final_cost)) %>%
+  ungroup %>%
+  filter(prev_status_existed) %>%
+  mutate(phase_cost_overrun = coalesce(first_cost_change, 0)) %>%
+  mutate(change_was_from = factor(change_was_from, 
+                                    levels = c("Possible to Under consideration", 
+                                               "Possible to Committed", 
+                                               "Possible to Under construction", 
+                                               "Under consideration to Committed",
+                                               "Under consideration to Under construction", 
+                                               "Committed to Under construction"), 
+                                    ordered = TRUE))  %>%
+  # to compare cost overrun, but also
+  # to omit outliers
+  setkey(Grattan_record) %>%
+  merge(cost_overrun_by_GR) %>%
+  select(Grattan_record, change_was_from, phase_cost_overrun, project_cost_overrun = cost_overrun)
+  
+@
+
+
+<<waterfall, eval=FALSE>>= 
 completed_transport_projects %>%
   setkey(Grattan_record, Status_ordered) %>%
   group_by(Grattan_record, Status_ordered) %>%
@@ -804,42 +853,134 @@ completed_transport_projects %>%
   arrange(change_was_from) %>%
   select(-final_tot_cost_change) %$%
   grattan_waterfall(.data = NULL, values = first_tot_cost_change, labels = as.character(change_was_from))
+@
 
-waterfall_graph <- data.frame(Time_period = c("First cost announcement - budget commitment", 
-                                              "Budget commitment - under construction", 
-                                              "Under construction - completed", 
-                                              "First cost announcement - completed"), 
-                              Cost_overrun = c(co_all_table_1_portfolio_az$co12[3], 
-                                               co_all_table_1_portfolio_az$co23[3], 
-                                               co_all_table_1_portfolio_az$co34[3], 
-                                               co_all_table_1_portfolio_az$co14[3]))
+<<overruns_between_announcment_and_commitment>>=
+val_overruns_between_announcment_and_commitment <- 
+  cost_overrun_by_GR_phase %>%
+  filter(grepl("to Committed", change_was_from, fixed = TRUE), 
+         project_cost_overrun > 0) %$%
+  sum(phase_cost_overrun)
+@
 
+<<overruns_between_announcement_commitment_as_prop_of_proj_val>>=
+overruns_between_announcement_commitment_as_prop_of_proj_val <- 
+  cost_overrun_by_GR_phase %>%
+  merge(cost_overrun_by_GR) %>%
+  filter(!outlier) %>%
+  group_by(change_was_from) %>%
+  summarise(x = sum(phase_cost_overrun) / sum(final_cost_estimate_real) ) %>%
+  ungroup %>%
+  filter(grepl("to Committed", change_was_from, fixed = TRUE)) %$%
+  sum(x)
+@
+
+<<overruns_after_commitment_before_construction_as_prop_of_proj_val>>=
+overruns_after_commitment_before_construction_as_prop_of_proj_val <- 
+  cost_overrun_by_GR_phase %>%
+  merge(cost_overrun_by_GR) %>%
+  filter(!outlier) %>%
+  group_by(change_was_from) %>%
+  summarise(x = sum(phase_cost_overrun) / sum(final_cost_estimate_real) ) %>%
+  ungroup %>%
+  filter(change_was_from == "Committed to Under construction") %$%
+  sum(x)
+@
+
+<<overruns_during_construction>>=
+overruns_during_construction_as_prop_of_final_value <- 
+{
+  cost_overrun_during_construction_by_GR <- 
+    completed_transport_projects %>%
+    filter(Status_ordered == "Under construction") %>%
+    setkey(Grattan_record, Record_date) %>%
+    group_by(Grattan_record) %>%
+    summarise(cost_overrun_during_construction = 
+                last(Cost_estimate_real, order_by = Record_date) - 
+                first(Cost_estimate_real, order_by = Record_date)) 
+  
+  merge(cost_overrun_during_construction_by_GR, cost_overrun_by_GR, by = "Grattan_record") %>%
+    filter(!outlier) %$%
+    {sum(cost_overrun_during_construction) / sum(final_cost_estimate_real)}
+}
 @
 
 
 
 
+Overruns in the initial phase, between announcement and before a formal funding commitment, occur at a rate of \Sexpr{round(overruns_between_announcement_commitment_as_prop_of_proj_val * 100)} cents on every dollar of project value. 
+These overruns are concerning because any later overruns that occur do so on the enlarged cost base resulting from the earlier overrun. 
 
+Overruns in the middle phase, after the funding commitment up until construction begins, occur at a rate of \Sexpr{round(overruns_between_announcement_commitment_as_prop_of_proj_val * 100)} cents on every dollar of project value. 
+Overruns during construction occur at a rate of \Sexpr{round(overruns_during_construction_as_prop_of_final_value * 100)} cents for every dollar of project value. These middle and later phase overruns are concerning because they reveal that the initial decision to invest was made on an inaccurate basis. 
 
-Overruns in the initial phase, between announcement and before a formal funding commitment, occur at a rate of \Sexpr{round(co_all_indices_AM$co12*100,0)} cents on every dollar of project value. These overruns are concerning because any later overruns that occur do so on the enlarged cost base resulting from the earlier overrun. 
-
-Overruns in the middle phase, after the funding commitment up until construction begins, occur at a rate of \Sexpr{round(co_all_indices_AM$co23*100,0)} cents on every dollar of project value. Overruns during construction occur at a rate of \Sexpr{round(co_all_indices_AM$co34*100,0)} cents for every dollar of project value. These middle and later phase overruns are concerning because they reveal that the initial decision to invest was made on an inaccurate basis. 
-
-The inaccurate basis for the decision to invest is also apparent from analysis of the cost estimates. Cost estimates produced to a standard that anticipates the project will equal or better its budget three quarters of the time (known as a “P75” costing) actually only achieved this result \Sexpr{round((1-prop_projects_w_overrun)*100,0)} per cent of the time. The difference reveals significant understatement of costs across the portfolio of projects planned or built since 2000.
+The inaccurate basis for the decision to invest is also apparent from analysis of the cost estimates. Cost estimates produced to a standard that anticipates the project will equal or better its budget three quarters of the time (known as a “P75” costing) actually only achieved this result \Sexpr{grattan_percent(1 - prop_projects_w_overrun)} of the time. The difference reveals significant understatement of costs across the portfolio of projects planned or built since 2000.
 
 \chapter{Cost overruns are more preventable than people think}
 ..some text..
 
 \section {Poor incentives for decision-makers}
-<<cost_overrun_size_by_proximity_to_state_election>>=
-completed_transport_projects %>%
-  group_by(Grattan_record) %>%
-  summarise()
-  mutate(within_180days_of_state_election = Grattan_Record %in% grattan_records_180days_before_state_election)
+<<cost_overrun_size_by_proximity_to_state_election.lm>>=
+cost_overrun_size_by_proximity_to_state_election.lm <- 
+  cost_overrun_by_GR %>%
+  mutate(within_180days_of_state_election = Grattan_record %in% grattan_records_180days_before_state_election) %>% 
+  merge(important_vars_by_GR) %>%
+  filter(!outlier) %>%
+  mutate(cost_overrun_pc = Final_cost_over_initial - 1) %>%
+  select(cost_overrun_pc, within_180days_of_state_election, premature_announcement, log_Total_days_pre_construction, big_states, Constructed_post_GFC, log_First_cost_when_under_construction_real, Sub_industry) %>%
+  lm(cost_overrun_pc ~ .,  data = .)
+@
+
+<<>>=
+cost_overrun_size_by_proximity_to_state_election.lm$coef %>%
+  tidy %>%
+  filter(names == "within_180days_of_state_electionTRUE") %$%
+  x
+@
+
+<<lasso_coefs>>=
+lasso_coefs <- 
+  cost_overrun_by_GR %>%
+  mutate(within_180days_of_state_election = Grattan_record %in% grattan_records_180days_before_state_election) %>% 
+  merge(important_vars_by_GR) %>%
+  filter(!outlier) %>%
+  mutate(cost_overrun_pc = Final_cost_over_initial - 1) %>%
+  select(cost_overrun_pc, within_180days_of_state_election, premature_announcement, log_Total_days_pre_construction, big_states, Constructed_post_GFC, log_First_cost_when_under_construction_real, Sub_industry) %>%
+  {
+    dot <- .
+    x <- model.matrix(cost_overrun_pc ~ within_180days_of_state_election + premature_announcement + log_Total_days_pre_construction +  big_states + Constructed_post_GFC + log_First_cost_when_under_construction_real + Sub_industry, 
+                      data = dot)
+    y <- dot[["cost_overrun_pc"]]
+    
+    # Construct a LASSO model
+    glm.1 <- glmnet(x = x, y = y, alpha = 1)
+    
+    # Cross-validate. Select the automatic choice of lambda.
+    cv.glmmod <- cv.glmnet(x, y, alpha = 1)
+    best_lambda <- cv.glmmod$lambda.min
+    
+    # plot(cv.glmmod)  # doesn't matter much anyway
+    
+    coef(glmnet(x = x, y = y, alpha = 1))[, which(glm.1$lambda == best_lambda)]
+    
+    # cv.glm <<- cv.glmnet(x, y, alpha = 1)
+    # 
+    # plot(cv.glm)
+  } %>%
+  # sweep:
+  tidy
+@
+
+<<cost_overruns_near_state_election>>=
+cost_overruns_pc_larger_when_180_days_before_state_election <- 
+  lasso_coefs %>%
+  filter(names == "within_180days_of_state_electionTRUE") %$%
+  sum(x)
 @
 
 
-Ministers, governments and would-be governments have always sought political advantage by promising infrastructure. But politicised announcements that ignore proper process have poor outcomes. Cost overruns are \Sexpr{round(fit_logistic_co_all_v4$coefficients[11]*100,0)} per cent larger on average for projects announced close to a state election than otherwise similar projects announced at other times. This confirms the contention of previous Grattan report, Roads to Riches, that politicians commit to poor quality projects for political benefit.  
+Ministers, governments and would-be governments have always sought political advantage by promising infrastructure. But politicised announcements that ignore proper process have poor outcomes. Cost overruns are \Sexpr{grattan_percent(cost_overruns_pc_larger_when_180_days_before_state_election)} larger on average for projects announced close to a state election than otherwise similar projects announced at other times. 
+This confirms the contention of previous Grattan report, Roads to Riches, that politicians commit to poor quality projects for political benefit.  
 
 \section {Poor process causes cost overruns}
 
