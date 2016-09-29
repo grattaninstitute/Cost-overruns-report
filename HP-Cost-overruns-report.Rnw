@@ -434,19 +434,55 @@ Figure 1.1: Cost overruns are at least as large as 22 per cent of initial projec
 Even though cost overruns on transport infrastructure represent a very large cost, they receive little focus and governments appear complacent...
 
 \section {Cost overruns are very expensive}
-...But the frequency of overruns is only a small part of the story: what is much more important is the size. While only \Sexpr{round(prop_projects_w_overrun_gt_0.5,0)} per cent of projects overran their budget by 50 per cent or more, such overruns accounted for \Sexpr{round(prop_projects_w_overrun_gt_0.5,0)} per cent of the total value of overruns (Figure xx). The cost to government budgets of overruns of 50 per cent or more was $xx billion over the past fifteen years.
+...But the frequency of overruns is only a small part of the story: what is much more important is the size. While only \Sexpr{grattan_percent(prop_projects_w_overrun_gt(0.50))} of projects overran their budget by 50 per cent or more, such overruns accounted for \Sexpr{grattan_percent(prop_val_projects_w_overrun_gt(0.50))} of the total value of overruns (Figure xx). The cost to government budgets of overruns of 50 per cent or more was \Sexpr{texNum(val_projects_w_overrun_gt(0.50), dollar = TRUE)} over the past fifteen years.
 
-Even bigger blowouts, of 200 per cent or more, occurred on \Sexpr{round(prop_projects_w_overrun_gt_2,0)} per cent of projects, but accounted for fully a quarter (\Sexpr{round(prop_co_value_projects_gt_2,0)}\%)of the total value of all overruns. The cost of overruns where the project was completed at double its budgeted cost or more was $\Sexpr{round(value_B_of_co_gt_2,2)} billion.
+Even bigger blowouts, of 200 per cent or more, occurred on \Sexpr{grattan_percent(prop_projects_w_overrun_gt(2.00))} of projects, but accounted for fully a quarter (\Sexpr{grattan_percent(prop_val_projects_w_overrun_gt(2.00))}) of the total value of all overruns. The cost of overruns where the project was completed at double its budgeted cost or more was \Sexpr{texNum(val_projects_w_overrun_gt(2.00), dollar = TRUE)}.
 
-Figure 2.1: Extremely large cost overruns pose almost all the cost
-<<>>=
-freq_value_graph
+\begin{figure}
+\captionwithunits{Extremely large cost overruns post almost all the cost}%
+{Proportion of projects or value}
+% Figure 2.1: Extremely large cost overruns pose almost all the cost
+<<prop-of-value-projects-by-overruns-as-pc>>=
+overrun_by_GR %>%
+  mutate(overrun_prop = overrun / first_cost_estimate_real) %>%
+  filter(overrun_prop > 0) %>%
+  setorderv("overrun_prop") %>%
+  mutate(prop_projects = (1:.N) / .N, 
+         prop_value = cumsum(overrun) / sum(overrun)) %>%
+  
+  select(overrun_prop, prop_projects, prop_value) %>%
+  melt.data.table(id.vars = "overrun_prop") %>%
+  # Cosmetic
+  group_by(overrun_prop) %>%
+  mutate(ribbon_height = max(value) - min(value), 
+         text.hjust = 0.5 + if_else(value == max(value), 1, -1), 
+         text.vjust = text.hjust) %>%
+  ungroup %>%
+  mutate(text.label = if_else(ribbon_height == max(ribbon_height), gsub("prop_", "", variable, fixed = TRUE), NA_character_)) %>%
+  rename(`Overrun as % of first cost (real)` = overrun_prop) %>%
+  
+  
+  grplot(aes(x = `Overrun as % of first cost (real)`, 
+             y = value, 
+             color = variable)) + 
+  geom_line() + 
+  geom_text(aes(label = text.label, 
+                hjust = text.hjust, 
+                vjust = text.vjust),
+            fontface = "bold", 
+            size = 20/(14/5)) + 
+  scale_y_continuous(label = percent) + 
+  scale_x_continuous(label = percent) + 
+  theme_hugh(base_size = 20) 
             
 @
+\end{figure}
+
+
 
 \section{Australia does not compare especially well internationally}
  ... lit review goes here...
-  <<>>=
+<<lit-review-tables, eval=FALSE>>=
 # The lit review graph uses lots of datasets. The key figures from this dataset (not in the current graph, which is super old) are:
 co_all_table_1_portfolio_az$co12[3]
 co_all_table_1_portfolio_az$co23[3]
