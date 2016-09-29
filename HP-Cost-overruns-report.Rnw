@@ -298,8 +298,16 @@ Final_cost_over_initial_by_record <-
   select(Grattan_record, Final_cost_over_initial)
 @
 
-<<savings_if_every_proj_with_CO_had_CO_le_10pc>>=
-savings_if_every_proj_with_CO_had_CO_le_10pc <-
+<<n_completed_transport_projects_gt_20M>>=
+n_completed_transport_projects_gt_20M <- 
+  completed_transport_projects %>%
+  # inner join (strict)
+  merge(Final_cost_over_initial_by_record) %$%
+  uniqueN(Grattan_record)
+@
+
+<<overrun_by_GR>>=
+overrun_by_GR <- 
   completed_transport_projects %>%
   # inner join (strict)
   merge(Final_cost_over_initial_by_record) %>%
@@ -308,30 +316,80 @@ savings_if_every_proj_with_CO_had_CO_le_10pc <-
   summarise(last_cost_estimate_real = last(Cost_estimate_real, order_by = Record_date), 
             first_cost_estimate_real = first(Cost_estimate_real, order_by = Record_date)) %>%
   ungroup %>%
+  mutate(overrun = last_cost_estimate_real - first_cost_estimate_real)
+@
+
+<<savings_if_every_proj_with_CO_had_CO_le_10pc>>=
+savings_if_every_proj_with_CO_had_CO_le_10pc <-
+  overrun_by_GR %>%
   filter(last_cost_estimate_real > first_cost_estimate_real) %>%
-  mutate(actual_overrun = last_cost_estimate_real - first_cost_estimate_real, 
-         overrun_threshold = 0.1 * first_cost_estimate_real, 
-         overrun_cf_capped = actual_overrun - overrun_threshold) %>%
+  mutate(overrun_threshold = 0.1 * first_cost_estimate_real, 
+         overrun_cf_capped = overrun - overrun_threshold) %>%
   arrange(desc(overrun_cf_capped)) %$%
-  # If every cost-overrun was only 10%, subtract from
-  # 110% of initial_cost_real, otherwise just the normal difference
+  # Assume every overrun is 10% (even if some were under)
   sum(overrun_cf_capped)
 @
 
 <<prop_projects_on_budget>>=
-prop_projects_on_budget <- NULL
+prop_projects_on_budget <- 
+  overrun_by_GR %$% 
+  mean(last_cost_estimate_real <= first_cost_estimate_real)
+@
+
+<<prop_projects_w_overrun_gt>>=
+prop_projects_w_overrun_gt <- function(percentage_over){
+  Final_cost_over_initial_by_record %$%
+  mean(Final_cost_over_initial > 1 + percentage_over)
+}
+@
+
+<<val_projects_w_overrun_gt>>=
+val_projects_w_overrun_gt <- function(percentage_over){
+  overrun_by_GR %>%
+    mutate(is_over = overrun / first_cost_estimate_real > 1 + percentage_over) %$%
+    sum(is_over * overrun)
+}
+@
+
+<<prop_val_projects_w_overrun_gt>>=
+prop_val_projects_w_overrun_gt <- function(percentage_over){
+  overrun_by_GR %>%
+    mutate(is_over = overrun / first_cost_estimate_real > 1 + percentage_over) %$%
+    weighted.mean(is_over, overrun)
+}
+@
+
+<<pc_lower_ROI>>=
+pc_lower_ROI <- 
+  completed_transport_projects %>%
+  # inner join (strict)
+  merge(Final_cost_over_initial_by_record) %>%
+  select(Grattan_record, Record_date, Cost_estimate_real) %>%
+  group_by(Grattan_record) %>%
+  summarise(last_cost_estimate_real = last(Cost_estimate_real, order_by = Record_date), 
+            first_cost_estimate_real = first(Cost_estimate_real, order_by = Record_date)) %>%
+  ungroup %$%
+  # LD working: (Initial_BCR - BCR_after_COs)/Initial_BCR, 
+  # where BCR_after_COs = Benefits/(Initial costs*(sum(Final_costs)/sum(Initial_costs))) and Initial_BCR = Benefits/Initial_costs. 
+  {1 - (sum(first_cost_estimate_real) / sum(last_cost_estimate_real))}
+@
+
+
+<<spending_per_dollar_budgeted>>=
+spending_per_dollar_budgeted <- 
+  completed_transport_projects %>%
+  setkey(Grattan_record, Record_date) %>%
+  group_by(Grattan_record) %>%
+  summarise(overrun_per_dollar = (last(Cost_estimate_real)) / first(Cost_estimate_real)) %$%
+  mean(overrun_per_dollar)
   
 @
 
 <<temp>>=
-
 warning("Using temp vars")
 @
 
-<<>>=
-warning("Not evaluating chunks beyond here...")
-knitr::opts_chunk$set(eval = FALSE, error = FALSE)
-@
+
 
 \begin{overview}[-40pt]
 Most of the time, Australia isn’t bad at managing transport infrastructure projects. But when one goes wrong, it can be spectacular. Australia could have saved \Sexpr{texNum(savings_if_every_proj_with_CO_had_CO_le_10pc, dollar = TRUE)} over the past 15 years if every transport infrastructure project with a cost overrun had gone no more than ten per cent over budget. 
