@@ -420,7 +420,9 @@ Cost overruns on transport infrastructure projects are nothing new. Some of the 
 
 ...some more text...
 
-This report brings two unique advantages to these public finance questions. One is that we analyse the entire suite of \Sexpr{n_projects}  transport infrastructure projects valued at $20 million or more each, planned or built by Australian governments since 2000. Another specific advantage is that we analyse projects over their entire lifecycle, right from when they are first announced by a minister or opposition politician, to when they receive a formal funding commitment, through to completion (Figure xx). 
+This report brings two unique advantages to these public finance questions. One is that we analyse the entire suite of \Sexpr{uniqueN(transport_projects$Grattan_record)}  transport infrastructure projects valued at \$20~million or more and planned or built by Australian governments since 2000. Another specific advantage is that we analyse projects over their entire lifecycle, right from when they are first announced by a minister or opposition politician, to when they receive a formal funding commitment, through to completion (Figure xx). 
+
+\input{tex/project_milestones.tex}
 
 ...and the rest of this section is text. 
 
