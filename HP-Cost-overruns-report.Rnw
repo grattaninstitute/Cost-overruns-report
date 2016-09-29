@@ -148,17 +148,22 @@ test_that("convert_million_cols", {
 <<transport_projects>>=
 transport_projects <- 
   project_dataset %>%
+  merge(readRDS("./data/State_decoding.rds"), by = "State", sort = FALSE) %>%
   filter(`Major industry` == "Transport & Storage",
          `Sub-industry` %in% c("Road", "Rail")) %>%
-  mutate(Grattan_record = if_else(is.na(`Record No`), 
-                                  `Project No.`,
-                                  `Record No`)) %>%
+  filter(Status != "Deleted") %>%
+  mutate(Status_ordered = factor(Status, 
+                                 levels = c("Possible", "Under consideration", "Committed", "Under construction"), 
+                                 ordered = TRUE)) %>%
+  mutate(Grattan_record = coalesce(`Project No.`,
+                                   `Record No`)) %>%
   select(-`Record No`, -`Project No.`) %>%
   setkey(Grattan_record) %>%
   # Convert all 'cost' names to the same
   melt.data.table(measure.vars = grep("Cost", names(.), ignore.case = TRUE, value = TRUE), 
                   na.rm = TRUE, 
                   value.name = "Cost_estimate") %T>%
+  ## Testing:
                   {
                     dot <- copy(.)
                     test_that("Each cost variable is unique", {
