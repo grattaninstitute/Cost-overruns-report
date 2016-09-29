@@ -10,7 +10,7 @@
 
 <<knitrOpts>>=
 library(knitr)
-opts_chunk$set(error = FALSE, echo = FALSE)
+opts_chunk$set(error = FALSE, echo = FALSE, fig.width=11, fig.height=7, out.width="\\columnwidth", out.height=paste0("0.6363\\columnwidth"))
 @
 
 <<loadPackages, cache=FALSE>>=
