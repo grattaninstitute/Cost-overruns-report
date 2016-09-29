@@ -1,4 +1,5 @@
 \documentclass{grattanAlpha}
+\input{tex/preamble}
 \title{Cost overruns}
 \author{Marion Terrill}
 
@@ -792,7 +793,9 @@ Prep_for_average_days_under_construction <-
 Average_days_under_construction <- mean(Prep_for_average_days_under_construction$Total_days_under_construction)
 
 project_dataset_plus %<>%
-  mutate(Total_days_pre_construction = ifelse(is.na(Total_days_under_construction) == TRUE, as.numeric(Final_date - Initial_date)-Average_days_under_construction, as.numeric(`Date_first_as_Under construction` - Initial_date)),
+  mutate(Total_days_pre_construction = ifelse(is.na(Total_days_under_construction) == TRUE, 
+                                              as.numeric(Final_date - Initial_date) - Average_days_under_construction, 
+                                              as.numeric(`Date_first_as_Under construction` - Initial_date)),
          Total_days_pre_commitment = as.numeric(`Date_first_as_Committed` - Initial_date), 
          Total_days_pre_consideration = as.numeric(`Date_first_as_Under consideration` - Initial_date)) 
 
@@ -1967,7 +1970,9 @@ ifelse(round(mean((sum(co_all_rail$Final_cost_real)-sum(co_all_rail$First_cost_w
 
 #                                               ~~~~ SUMMARY TABLE ~~~~
 co_all_table_1_portfolio_az <- 
-  bind_rows("Road" = co_all_road_indices_AM_portfolio, "Rail" = co_all_rail_indices_AM_portfolio, "All" = co_all_indices_AM_portfolio, .id = "Type")
+  bind_rows("Road" = co_all_road_indices_AM_portfolio, 
+            "Rail" = co_all_rail_indices_AM_portfolio, 
+            "All" = co_all_indices_AM_portfolio, .id = "Type")
 
 # PORTFOLIO level cost overrun indices, assuming THE AVERAGE overrun if not observed ----
 # NOTE: Standard errors won't be right here...
@@ -3126,7 +3131,17 @@ power.law.fit(co_g3$Final_cost_over_under_construction) # a = 3.88
 #* Regression analysis >>>>>>>>  PROJECT level, probability of experiencing an overrun: -----
 # All
 # Regression
-fit_logit_co_all_v7 <- glm(experienced_overrun ~ premature_announcement+ log_Total_days_pre_construction + big_states + `Sub-industry` + `Constructed_post_GFC`+ log(First_cost_when_under_construction_real) +election_180_days, data = co_all, family = binomial(link = "logit"))
+fit_logit_co_all_v7 <- 
+    glm(experienced_overrun ~ premature_announcement + 
+          log_Total_days_pre_construction + 
+          big_states + 
+          `Sub-industry` + 
+          `Constructed_post_GFC`+ 
+          log(First_cost_when_under_construction_real) + 
+          election_180_days, 
+        data = co_all, 
+        family = binomial(link = "logit"))
+  
 marginal_effects_logit_co_all_v7 <- logitmfx(fit_logit_co_all_v7, data = co_all, robust = TRUE)
 marginal_effects_logit_co_all_v7
 
@@ -3233,7 +3248,12 @@ BIC(fit_logit_co_all_v7_t3)
 
 # All
 # Regression
-fit_logistic_co_all_v4 <- lm(log(Final_cost_over_initial)~ premature_announcement + log_Total_days_pre_construction   + big_states + `Sub-industry` + `Constructed_post_GFC`+ log(First_cost_when_under_construction_real)  +election_180_days         , data = co_positive_only_all)
+fit_logistic_co_all_v4 <- lm(log(Final_cost_over_initial) ~ premature_announcement + log_Total_days_pre_construction   
+                             + big_states + 
+                               `Sub-industry` +
+                               `Constructed_post_GFC`+ 
+                               log(First_cost_when_under_construction_real)  + election_180_days, 
+                             data = co_positive_only_all)
 summary(fit_logistic_co_all_v4)   
 
 
@@ -4106,13 +4126,6 @@ freq_value_graph
 
 \section{Australia does not compare especially well internationally}
  ... lit review goes here...
-  <<>>=
-# The lit review graph uses lots of datasets. The key figures from this dataset (not in the current graph, which is super old) are:
-co_all_table_1_portfolio_az$co12[3]
-co_all_table_1_portfolio_az$co23[3]
-co_all_table_1_portfolio_az$co34[3]
-
-@
 
 \section{Cost overruns have no single culprit}
 Transport infrastructure projects are very varied, sometimes very complex, and subject to a range of pressures. None of the common reasons given for cost overruns, taken alone is especially compelling.
