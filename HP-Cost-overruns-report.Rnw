@@ -50,6 +50,30 @@ grattan_percent <- function(number, digits = 1){
 }
 @
 
+<<val_nrst_mean>>=
+#' Returns the value in a set nearest to its mean
+#' @param x A numeric vector
+#' @param ... Arguments passed to \code{mean}.
+val_nrst_mean <- function(x, ...){
+  avg <- mean(x, ...)
+  diffs <- abs(avg - x)
+  # floating point precision not an issue
+  if (any(diffs == 0)){
+    return(avg)
+  } else {
+    return(x[which.min(diffs)])
+  }
+}
+
+test_that("Returns mean if there", {
+  expect_equal(mean(c(0.1, 0.3, 0.5)), val_nrst_mean(c(0.1, 0.3, 0.5)))
+})
+
+test_that("Returns nearest otherwise", {
+  expect_equal(val_nrst_mean(c(0.1, 0.35, 0.5)), 0.35)
+})
+@
+
 <<>>=
 # This will equal 1.661184 if the inflator's working correctly:
 # general_inflator(from = as.yearqtr("1998 Q1"), to = as.yearqtr("2013 Q1"), inflator_table = construction_indices)
