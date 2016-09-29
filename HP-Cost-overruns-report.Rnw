@@ -1,4 +1,5 @@
 \documentclass{grattanAlpha}
+\input{tex/preamble}
 \title{Cost overruns}
 \author{Marion Terrill}
 
@@ -44,9 +45,11 @@ select <- function(...) dplyr::select(...)
 rename <- function(...) dplyr::rename(...)
 @
 
-<<grattan_percent>>=
-grattan_percent <- function(number, digits = 1){
-  paste0(comma(100*number, digits = digits), "~per~cent")
+<<n2w>>=
+#' @title Numbers to words
+#' @source \url{https://github.com/ateucher/useful_code/blob/master/R/numbers2words.r}
+n2w <- function(x){
+  c("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten")[x]
 }
 @
 
@@ -272,6 +275,13 @@ cost_overrun_by_GR <-
   ))
 @
 
+<<total_cost_overruns>>=
+total_cost_overruns <- 
+  cost_overrun_by_GR %>%
+  filter(!outlier) %$%
+  sum(final_cost_estimate_real - first_cost_estimate_real)
+@
+
 <<Final_cost_over_initial_by_record>>=
 Final_cost_over_initial_by_record <- 
   completed_transport_projects %>%
@@ -306,25 +316,13 @@ n_completed_transport_projects_gt_20M <-
   uniqueN(Grattan_record)
 @
 
-<<overrun_by_GR>>=
-overrun_by_GR <- 
-  completed_transport_projects %>%
-  # inner join (strict)
-  merge(Final_cost_over_initial_by_record) %>%
-  select(Grattan_record, Record_date, Cost_estimate_real) %>%
-  group_by(Grattan_record) %>%
-  summarise(last_cost_estimate_real = last(Cost_estimate_real, order_by = Record_date), 
-            first_cost_estimate_real = first(Cost_estimate_real, order_by = Record_date)) %>%
-  ungroup %>%
-  mutate(overrun = last_cost_estimate_real - first_cost_estimate_real)
-@
-
 <<savings_if_every_proj_with_CO_had_CO_le_10pc>>=
 savings_if_every_proj_with_CO_had_CO_le_10pc <-
-  overrun_by_GR %>%
-  filter(last_cost_estimate_real > first_cost_estimate_real) %>%
+  cost_overrun_by_GR %>%
+  filter(!outlier) %>%
+  filter(final_cost_estimate_real > first_cost_estimate_real) %>%
   mutate(overrun_threshold = 0.1 * first_cost_estimate_real, 
-         overrun_cf_capped = overrun - overrun_threshold) %>%
+         overrun_cf_capped = cost_overrun - overrun_threshold) %>%
   arrange(desc(overrun_cf_capped)) %$%
   # Assume every overrun is 10% (even if some were under)
   sum(overrun_cf_capped)
@@ -332,46 +330,50 @@ savings_if_every_proj_with_CO_had_CO_le_10pc <-
 
 <<prop_projects_on_budget>>=
 prop_projects_on_budget <- 
-  overrun_by_GR %$% 
-  mean(last_cost_estimate_real <= first_cost_estimate_real)
+  cost_overrun_by_GR %>%
+  filter(!outlier) %$% 
+  mean(final_cost_estimate_real <= first_cost_estimate_real)
+@
+
+<<prop_projects_exactly_on_budget>>=
+prop_projects_exactly_on_budget <- 
+  cost_overrun_by_GR %>%
+  filter(!outlier) %$% 
+  mean(near(final_cost_estimate_real, first_cost_estimate_real))
 @
 
 <<prop_projects_w_overrun_gt>>=
 prop_projects_w_overrun_gt <- function(percentage_over){
-  Final_cost_over_initial_by_record %$%
-  mean(Final_cost_over_initial > 1 + percentage_over)
+  cost_overrun_by_GR %>%
+    filter(!outlier) %$%
+    mean(Final_cost_over_initial > 1 + percentage_over)
 }
 @
 
 <<val_projects_w_overrun_gt>>=
 val_projects_w_overrun_gt <- function(percentage_over){
-  overrun_by_GR %>%
-    mutate(is_over = overrun / first_cost_estimate_real > 1 + percentage_over) %$%
-    sum(is_over * overrun)
+  cost_overrun_by_GR %>%
+    filter(!outlier) %>%
+    mutate(is_over = (final_cost_estimate_real / first_cost_estimate_real) > (1 + percentage_over)) %$%
+    sum(is_over * cost_overrun)
 }
 @
 
 <<prop_val_projects_w_overrun_gt>>=
 prop_val_projects_w_overrun_gt <- function(percentage_over){
-  overrun_by_GR %>%
-    mutate(is_over = overrun / first_cost_estimate_real > 1 + percentage_over) %$%
-    weighted.mean(is_over, overrun)
+  cost_overrun_by_GR %>%
+    filter(!outlier) %>%
+    mutate(is_over = (cost_overrun / first_cost_estimate_real) > (1 + percentage_over)) %$%
+    weighted.mean(is_over, cost_overrun)
 }
 @
 
 <<pc_lower_ROI>>=
 pc_lower_ROI <- 
-  completed_transport_projects %>%
-  # inner join (strict)
-  merge(Final_cost_over_initial_by_record) %>%
-  select(Grattan_record, Record_date, Cost_estimate_real) %>%
-  group_by(Grattan_record) %>%
-  summarise(last_cost_estimate_real = last(Cost_estimate_real, order_by = Record_date), 
-            first_cost_estimate_real = first(Cost_estimate_real, order_by = Record_date)) %>%
-  ungroup %$%
+  cost_overrun_by_GR %$%
   # LD working: (Initial_BCR - BCR_after_COs)/Initial_BCR, 
   # where BCR_after_COs = Benefits/(Initial costs*(sum(Final_costs)/sum(Initial_costs))) and Initial_BCR = Benefits/Initial_costs. 
-  {1 - (sum(first_cost_estimate_real) / sum(last_cost_estimate_real))}
+  {1 - (sum(first_cost_estimate_real) / sum(final_cost_estimate_real))}
 @
 
 
@@ -387,6 +389,13 @@ spending_per_dollar_budgeted <-
 
 <<temp>>=
 warning("Using temp vars")
+@
+
+<<prop_projects_w_overrun>>=
+prop_projects_w_overrun <- 
+  cost_overrun_by_GR %>%
+  filter(!outlier) %$%
+  mean(Final_cost_over_initial > 1)
 @
 
 
@@ -431,9 +440,65 @@ Figure 1.1: Cost overruns are at least as large as 22 per cent of initial projec
 
 
 \chapter{People underestimate the extent of cost overruns}
-Even though cost overruns on transport infrastructure represent a very large cost, they receive little focus and governments appear complacent...
+Cost overruns in \Sexpr{grattan_percent(prop_projects_w_overrun)} of the transport infrastructure budget have cost taxpayers \Sexpr{texNum(total_cost_overruns, dollar = TRUE)} over the past 15 years. 
+The absence of routine monitoring of cost outcomes and initiatives to prevent or minimise cost overruns indicates that Australian governments have been complacent. 
+Indeed, when the scarce information available to governments about cost overruns is considered, it’s easy to understand why. 
+
+This chapter reviews common beliefs about cost overruns, and reveals how these stylized facts disguise the size and nature of Australia’s problem with cost overruns.
+
 
 \section {Cost overruns are very expensive}
+When infrastructure projects are completed, ribbons are cut and – in \Sexpr{grattan_percent(1 - prop_projects_w_overrun)} of cases – projects are declared to have come in within budget. 
+Australia’s success by this criterion tempts policymakers to conclude that Australia performs well on cost management.
+
+<<prop_projects_w_underrun>>=
+prop_projects_w_underrun <- 
+  cost_overrun_by_GR %$%
+  mean(final_cost_estimate_real < first_cost_estimate_real)
+@
+
+<<val_underruns>>=
+val_underruns <- 
+  cost_overrun_by_GR %>%
+  filter(final_cost_estimate_real < first_cost_estimate_real) %$%
+  sum(-cost_overrun)
+@
+
+<<avg_val_underrun>>=
+avg_val_underrun <- 
+  cost_overrun_by_GR %>%
+  filter(!outlier) %>%
+  filter(final_cost_estimate_real < first_cost_estimate_real) %$%
+  mean(-cost_overrun)
+@
+
+<<val_overruns>>=
+val_overruns <- 
+  cost_overrun_by_GR %>%
+  filter(!outlier) %>%
+  filter(final_cost_estimate_real > first_cost_estimate_real) %$%
+  sum(cost_overrun)
+@
+
+<<avg_val_overrun>>=
+avg_val_overrun <- 
+  cost_overrun_by_GR %>%
+  filter(!outlier) %>%
+  filter(final_cost_estimate_real > first_cost_estimate_real) %$%
+  mean(cost_overrun)
+@
+
+
+However, success by this criterion is misleading. 
+The \Sexpr{texNum(val_underruns, sig.figs = 1, dollar = TRUE)} saved across the majority of projects that finish on or under budget is dwarfed by the \Sexpr{texNum(val_overruns, sig.figs = 1, dollar = TRUE)} in costs incurred on the few with large overruns. 
+
+
+
+When projects run over budget, it is often by massive proportions. \Sexpr{grattan_percent(prop_val_projects_w_overrun_gt(0.50))} of Australia’s cost overruns problem is explained by the one in \Sexpr{n2w(1 / prop_projects_w_overrun_gt(0.50))} projects that overrun their budget by more than 50 per cent (Figure 3). Even bigger blowouts of 200 per cent or more occurred on just \Sexpr{grattan_percent(prop_projects_w_overrun_gt(2.00))} of projects, but cost \Sexpr{texNum(val_projects_w_overrun_gt(2), dollar = TRUE)} -- \Sexpr{grattan_frac(prop_val_projects_w_overrun_gt(2.00))} of the total value of all overruns. 
+
+On the other hand, only \Sexpr{grattan_percent(prop_projects_w_underrun)} of projects finished under budget, and these cost underruns were, on average, only \Sexpr{grattan_frac(avg_val_underrun / avg_val_overrun, NULL)} the size of the average cost overrun. 
+The \Sexpr{if (prop_projects_exactly_on_budget > 0.5) "majority" else "minority"} of projects come in exactly on budget, and do nothing to offset the overruns.
+
 ...But the frequency of overruns is only a small part of the story: what is much more important is the size. While only \Sexpr{grattan_percent(prop_projects_w_overrun_gt(0.50))} of projects overran their budget by 50 per cent or more, such overruns accounted for \Sexpr{grattan_percent(prop_val_projects_w_overrun_gt(0.50))} of the total value of overruns (Figure xx). The cost to government budgets of overruns of 50 per cent or more was \Sexpr{texNum(val_projects_w_overrun_gt(0.50), dollar = TRUE)} over the past fifteen years.
 
 Even bigger blowouts, of 200 per cent or more, occurred on \Sexpr{grattan_percent(prop_projects_w_overrun_gt(2.00))} of projects, but accounted for fully a quarter (\Sexpr{grattan_percent(prop_val_projects_w_overrun_gt(2.00))}) of the total value of all overruns. The cost of overruns where the project was completed at double its budgeted cost or more was \Sexpr{texNum(val_projects_w_overrun_gt(2.00), dollar = TRUE)}.
@@ -443,12 +508,13 @@ Even bigger blowouts, of 200 per cent or more, occurred on \Sexpr{grattan_percen
 {Proportion of projects or value}
 % Figure 2.1: Extremely large cost overruns pose almost all the cost
 <<prop-of-value-projects-by-overruns-as-pc>>=
-overrun_by_GR %>%
-  mutate(overrun_prop = overrun / first_cost_estimate_real) %>%
+cost_overrun_by_GR %>%
+  filter(!outlier) %>%
+  mutate(overrun_prop = cost_overrun / first_cost_estimate_real) %>%
   filter(overrun_prop > 0) %>%
   setorderv("overrun_prop") %>%
   mutate(prop_projects = (1:.N) / .N, 
-         prop_value = cumsum(overrun) / sum(overrun)) %>%
+         prop_value = cumsum(cost_overrun) / sum(cost_overrun)) %>%
   
   select(overrun_prop, prop_projects, prop_value) %>%
   melt.data.table(id.vars = "overrun_prop") %>%
@@ -482,13 +548,6 @@ overrun_by_GR %>%
 
 \section{Australia does not compare especially well internationally}
  ... lit review goes here...
-<<lit-review-tables, eval=FALSE>>=
-# The lit review graph uses lots of datasets. The key figures from this dataset (not in the current graph, which is super old) are:
-co_all_table_1_portfolio_az$co12[3]
-co_all_table_1_portfolio_az$co23[3]
-co_all_table_1_portfolio_az$co34[3]
-
-@
 
 \section{Cost overruns have no single culprit}
 Transport infrastructure projects are very varied, sometimes very complex, and subject to a range of pressures. None of the common reasons given for cost overruns, taken alone is especially compelling.
@@ -504,13 +563,6 @@ prop_value_scope_changes <-
   filter(Capacity_mentioned) %>%
   arrange(desc(Capacity_increase))
 @
-
-
-Scope changes only account for around 12 per cent of cost overruns on transport infrastructure projects, even including the full project lifecycle from the time of first announcement 
-Hugh: This figure comes from the Grattan dataset. The analysis is in excel. 
-
-Figure 2.3.1: Scope changes pie chart (again, the data is not in R)
-...some text...
 
 \subsection{Escalation in costs is not a significant cause of cost overruns}
 
@@ -629,8 +681,8 @@ completed_transport_projects %>%
             Sub_industry = first(`Sub-industry`)) %>%
   ungroup %>%
   mutate(election_within_180_days = Grattan_record %in% grattan_records_180days_before_election) %>%
-  merge(overrun_by_GR) %>%
-    glm(factor(overrun > 0) ~ premature_announcement + 
+  merge(cost_overrun_by_GR) %>%
+    glm(factor(cost_overrun > 0) ~ premature_announcement + 
           log_Total_days_pre_construction + 
           big_states + 
           Sub_industry + 
@@ -681,8 +733,8 @@ fit_logit_co_all_v7_mfx <-
             Sub_industry = first(`Sub-industry`)) %>%
   ungroup %>%
   mutate(election_within_180_days = Grattan_record %in% grattan_records_180days_before_election) %>%
-  merge(overrun_by_GR) %>%
-  logitmfx(factor(overrun > 0) ~ premature_announcement + 
+  merge(cost_overrun_by_GR) %>%
+  logitmfx(factor(cost_overrun > 0) ~ premature_announcement + 
              log_Total_days_pre_construction + 
              big_states + 
              Sub_industry + 
@@ -692,11 +744,6 @@ fit_logit_co_all_v7_mfx <-
            data = .)
 @
 
-<<prop_projects_w_overrun>>=
-prop_projects_w_overrun <- 
-  Final_cost_over_initial_by_record %$%
-  mean(Final_cost_over_initial > 1)
-@
 
 <<>>=
 co_all_indices_AM <- NULL
@@ -775,6 +822,7 @@ waterfall_graph <- data.frame(Time_period = c("First cost announcement - budget 
 
 
 Overruns in the initial phase, between announcement and before a formal funding commitment, occur at a rate of \Sexpr{round(co_all_indices_AM$co12*100,0)} cents on every dollar of project value. These overruns are concerning because any later overruns that occur do so on the enlarged cost base resulting from the earlier overrun. 
+
 Overruns in the middle phase, after the funding commitment up until construction begins, occur at a rate of \Sexpr{round(co_all_indices_AM$co23*100,0)} cents on every dollar of project value. Overruns during construction occur at a rate of \Sexpr{round(co_all_indices_AM$co34*100,0)} cents for every dollar of project value. These middle and later phase overruns are concerning because they reveal that the initial decision to invest was made on an inaccurate basis. 
 
 The inaccurate basis for the decision to invest is also apparent from analysis of the cost estimates. Cost estimates produced to a standard that anticipates the project will equal or better its budget three quarters of the time (known as a “P75” costing) actually only achieved this result \Sexpr{round((1-prop_projects_w_overrun)*100,0)} per cent of the time. The difference reveals significant understatement of costs across the portfolio of projects planned or built since 2000.
