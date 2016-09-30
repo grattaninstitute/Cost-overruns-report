@@ -249,6 +249,14 @@ completed_transport_projects <-
   filter(Final_status_historical == "Completed")
 @
 
+<<completed_transport_project_date_range>>=
+completed_transport_project_date_range <- 
+  completed_transport_projects %>% 
+  group_by(Grattan_record) %>% 
+  summarise(last_date = max(Record_date)) %$% 
+  range(last_date)
+@
+
 <<cost_overrun_by_GR>>=
 cost_overrun_by_GR <- 
   completed_transport_projects %>%
@@ -1011,6 +1019,38 @@ Figure 3.3.22
 cancellation_rate_by_cohort
   
 @
+
+\begin{figure}
+\captionwithunits{Projects with premature initial cost announcements are more likely to experience a cost overrun}%
+{Prevalence of cost overruns}
+<<prevalance-of-cost-overruns-by-initial-status>>=
+completed_transport_projects %>%
+  group_by(Grattan_record) %>%
+  summarise(Initial_status = min(Status_ordered)) %>%
+  merge(cost_overrun_by_GR) %>%
+  filter(!outlier) %>%
+  count(Initial_status, Project_outcome = sign(cost_overrun)) %>%
+  setkey(Initial_status, Project_outcome) %>%
+  mutate(fill = factor(Project_outcome, 
+                       levels = -1:1, 
+                       labels = c("Under budget  ", 
+                                  "On budget  ", 
+                                  "Over budget  "), 
+                       ordered = TRUE)) %>%
+  rename(`Project status when first cost estimate was announced` = Initial_status) %>%
+  grplot(aes(x = `Project status when first cost estimate was announced`, y = n, fill = fill)) + 
+  geom_bar(stat = "identity", position = "fill") + 
+  scale_y_continuous(expand = c(0,0), label = percent) + 
+  guides(fill = guide_legend(title = "Project was delivered: ")) + 
+  theme(legend.position = "top")
+
+  
+@
+\noteswithsource{Australian transport project completed between \Sexpr{year(completed_transport_project_date_range[1])} and \Sexpr{year(completed_transport_project_date_range[2])}.}{%
+Deloitte Investment Monitor; Grattan analysis%
+}
+\end{figure}
+
 
 Premature announcement affects not only the likelihood of an overrun, but also its size. Projects with costs announced ahead of a government funding commitment have far larger cost overruns, averaging \Sexpr{round((overall_overruns_by_cohort[1,4]-1)*100,0)} per cent of the initially announced cost (Figure xx).  Figure xx illustrates net overruns of \Sexpr{round((overall_overruns_by_cohort[2,4]-1)*100,0)} to \Sexpr{round((overall_overruns_by_cohort[3,4]-1)*100,0)} per cent occur for projects announced with more mature cost estimates than those announced early.
 
