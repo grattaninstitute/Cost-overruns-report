@@ -1051,8 +1051,78 @@ Deloitte Investment Monitor; Grattan analysis%
 }
 \end{figure}
 
+<<overrun_pc_if_premature_announcment>>=
+overrun_pc_if_premature_announcment <-
+    important_vars_by_GR %>%
+    merge(cost_overrun_by_GR) %>%
+    filter(!outlier) %>%
+    filter(premature_announcement) %$%
+    mean(Final_cost_over_initial) - 1
+@
 
-Premature announcement affects not only the likelihood of an overrun, but also its size. Projects with costs announced ahead of a government funding commitment have far larger cost overruns, averaging \Sexpr{round((overall_overruns_by_cohort[1,4]-1)*100,0)} per cent of the initially announced cost (Figure xx).  Figure xx illustrates net overruns of \Sexpr{round((overall_overruns_by_cohort[2,4]-1)*100,0)} to \Sexpr{round((overall_overruns_by_cohort[3,4]-1)*100,0)} per cent occur for projects announced with more mature cost estimates than those announced early.
+<<overrun_pc_ifnot_premature_announcment>>=
+overrun_pc_ifnot_premature_announcment <-
+    important_vars_by_GR %>%
+    merge(cost_overrun_by_GR) %>%
+    filter(!outlier) %>%
+    filter(!premature_announcement) %$%
+    mean(Final_cost_over_initial) - 1
+@
+
+
+Premature announcement affects not only the likelihood of an overrun, but also its size. Projects with costs announced ahead of a government funding commitment have far larger cost overruns, averaging \Sexpr{grattan_percent(overrun_pc_if_premature_announcment)} of the initially announced cost (Figure xx).  Figure xx illustrates net overruns of \Sexpr{round((overall_overruns_by_cohort[2,4]-1)*100,0)} to \Sexpr{round((overall_overruns_by_cohort[3,4]-1)*100,0)} per cent occur for projects announced with more mature cost estimates than those announced early.
+
+<<mean_of_positive>>=
+mean_of_positive <- function(x){
+  mean(x[x > 0])
+}
+@
+
+<<mean_of_negative>>=
+mean_of_negative <- function(x){
+  mean(x[x < 0])
+}
+@
+
+<<avg-cost-overruns-by-initial-status>>=
+completed_transport_projects %>%
+  group_by(Grattan_record) %>%
+  summarise(Initial_status = min(Status_ordered)) %>%
+  mutate(
+    # Combine
+    Initial_status = factor(if_else(Initial_status %in% c("Possible", "Under consideration"), 
+                                    "Possible or\nUnder consideration", 
+                                    as.character(Initial_status)), 
+                            levels = c("Possible or\nUnder consideration", 
+                                       "Committed", 
+                                       "Under construction"), 
+                            ordered = TRUE)) %>%
+  merge(cost_overrun_by_GR) %>%
+  filter(!outlier) %>%
+  group_by(Initial_status) %>%
+  summarise(avg_overrun = mean_of_positive(Final_cost_over_initial - 1), 
+            avg_underrun = mean_of_negative(Final_cost_over_initial - 1), 
+            avg_net_overrun = mean(Final_cost_over_initial) - 1) %>%
+  melt.data.table(measure.vars = c("avg_overrun", "avg_underrun"), 
+                  id.vars = c("Initial_status", "avg_net_overrun"), 
+                  variable.name = "fill") %>%
+                  {
+                    dot <- .
+                    grplot(NULL, aes(x = Initial_status, y = value, fill = fill)) + 
+                      geom_bar(stat = "identity", 
+                               width = 0.6,
+                               data = filter(dot, fill == "avg_overrun")) + 
+                      geom_bar(stat = "identity", 
+                               width = 0.6,
+                               data = filter(dot, fill == "avg_underrun")) + 
+                      annotate("segment", 
+                               x = 1:3 - 0.35, 
+                               xend = 1:3 + 0.35, 
+                               size = 2,
+                               y = unique(dot$avg_net_overrun), 
+                               yend = unique(dot$avg_net_overrun))
+                  }
+@
 
 (This paragraph is currently being rewritten, but these should be the correct figures)
 
