@@ -969,6 +969,24 @@ Deloitte Investment Monitor; Grattan analysis%
 }
 \end{figure}
 
+<<phase-when-initially-announced>>=
+completed_transport_projects %>%
+  group_by(Grattan_record) %>%
+  summarise(first_phase = min(pmax(Status_ordered, "Under consideration"))) %>%
+  ungroup %>%
+  arrange(first_phase) %>%
+  count(first_phase) %>%
+  mutate(nc = cumsum(n) - n/2) %>%
+  grplot(aes(x = 1, y = n, fill = first_phase)) + 
+  geom_bar(stat = "identity", position = "stack") + 
+  coord_polar(theta = "y") + 
+  scale_y_continuous(breaks = cumsum(c(223, 169, 192))) + 
+  geom_text(aes(y = nc, label = as.character(first_phase)), 
+            fontface = "bold") + 
+  theme_void() + 
+  theme(legend.position = "none")
+@
+
 <<overrun_pc_if_premature_announcment>>=
 overrun_pc_if_premature_announcment <-
     important_vars_by_GR %>%
