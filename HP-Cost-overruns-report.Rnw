@@ -685,6 +685,7 @@ important_vars_by_GR <-
             } else {
               first(State_new)
             },
+            # X && Y  X req else min produces warning
             Constructed_post_GFC = any(Status_ordered == "Under construction") && min(Record_date[Status_ordered == "Under construction"]) > as.Date("2008-09-12"), 
             log_First_cost_when_under_construction_real = if (any(Status_ordered == "Under construction")) 
               log(Cost_estimate_real[Status_ordered == "Under construction"][[1]])
@@ -701,7 +702,7 @@ important_vars_by_GR <-
          election_within_180_days = Grattan_record %in% grattan_records_180days_before_election) 
 @
 
-<<logit_co_all>>=
+<<fit_logit_co_all_v7>>=
 important_vars_by_GR %>%
   merge(cost_overrun_by_GR) %>%
     glm(factor(cost_overrun > 0) ~ premature_announcement + 
@@ -718,43 +719,7 @@ important_vars_by_GR %>%
 
 <<fit_logit_co_all_v7_mfx>>=
 fit_logit_co_all_v7_mfx <- 
-  completed_transport_projects %>%
-  # Premature announcment means the announcement was made
-  # in public before the status was committed.
-  group_by(Grattan_record) %>%
-  summarise(premature_announcement = any(Status_ordered <= "Under consideration"), 
-            log_Total_days_pre_construction = 
-              if (any(Status == "Under construction")){
-                log(1 + as.numeric(difftime(min(Record_date[Status_ordered == "Under construction"]), 
-                                            min(Record_date), 
-                                            units = "days")))
-              } else {
-                {
-                  # Impute the value based total days before construction
-                  completed_transport_projects %>% 
-                    group_by(Grattan_record) %>%
-                    filter(any(Status == "Under construction")) %>%
-                    mutate(days_before_constr = difftime(min(Record_date[Status_ordered == "Under construction"]), 
-                                                         min(Record_date), 
-                                                         units = "days")) %$%
-                    log(mean(as.numeric(days_before_constr)) + 1)
-                }
-              }, 
-            big_states = if (any(!(State_new %in% c("Vic", 
-                                                    "Qld", 
-                                                    "WA", 
-                                                    "NSW")))){
-              "Small state"
-            } else {
-              first(State_new)
-            },
-            Constructed_post_GFC = if (any(Status_ordered == "Under construction")) min(Record_date[Status_ordered == "Under construction"]) > as.Date("2008-09-12") else FALSE, 
-            log_First_cost_when_under_construction_real = log(first(Cost_estimate_real[Status_ordered == "Under construction"], 
-                                                                    order_by = Record_date)), 
-            # Due to violation of 3NF
-            Sub_industry = first(`Sub-industry`)) %>%
-  ungroup %>%
-  mutate(election_within_180_days = Grattan_record %in% grattan_records_180days_before_election) %>%
+  important_vars_by_GR %>%
   merge(cost_overrun_by_GR) %>%
   logitmfx(factor(cost_overrun > 0) ~ premature_announcement + 
              log_Total_days_pre_construction + 
@@ -792,7 +757,8 @@ cost_overrun_by_GR_phase <-
          final_cost_change = final_cost - lag(final_cost)) %>%
   ungroup %>%
   filter(prev_status_existed) %>%
-  mutate(phase_cost_overrun = coalesce(first_cost_change, 0)) %>%
+  mutate(phase_cost_overrun = coalesce(first_cost_change, 0), 
+         phase_cost_overrun_pc = phase_cost_overrun / first_cost) %>%
   mutate(change_was_from = factor(change_was_from, 
                                     levels = c("Possible to Under consideration", 
                                                "Possible to Committed", 
@@ -805,7 +771,7 @@ cost_overrun_by_GR_phase <-
   # to omit outliers
   setkey(Grattan_record) %>%
   merge(cost_overrun_by_GR) %>%
-  select(Grattan_record, change_was_from, phase_cost_overrun, project_cost_overrun = cost_overrun)
+  select(Grattan_record, change_was_from, phase_cost_overrun, phase_cost_overrun_pc, project_cost_overrun = cost_overrun)
   
 @
 
@@ -1124,36 +1090,29 @@ Projects that are announced when more mature are much more likely to be complete
 \section {Why predict unavoidable risks?}
 \subsection {More complex projects are riskier}
 
-The likelihood of a cost overrun increases markedly as project size increases, after consideration of other factors. For every extra 10 per cent in a project’s size (measured by cost estimate when first under construction), there is a \Sexpr{round(marginal_effects_logit_co_all_v7$mfxest[9]*100*10,0)}  per cent higher chance of a cost overrun, and for the projects with an overrun, greater project size leads is linked to much greater overrun size during the pre-construction period .
-
-<<>>=
-# For the last claim, see the coefficients of log_first_cost_when_under_construction in:
-summary(fit_logistic_co_all_v4_t1)
-summary(fit_logistic_co_all_v4_t2)
+<<extra_prob_cost_overrun_given_10pc_increase_in_project_size>>=
+extra_prob_cost_overrun_given_10pc_increase_in_project_size <-
+  fit_logit_co_all_v7_mfx %>%
+  use_series("fit") %>%
+  tidy %>%
+  filter(term == "log_First_cost_when_under_construction_real") %$%
+  estimate
 @
 
- Figure 4.2.1
-<<>>=
-                           
-pc_overruns_and_project_size_states
-@
+The likelihood of a cost overrun increases markedly as project size increases, after consideration of other factors. 
+For every extra 10 per cent in a project’s size (measured by cost estimate when first under construction), there is a \Sexpr{grattan_percent(extra_prob_cost_overrun_given_10pc_increase_in_project_size)} higher chance of a cost overrun, 
+and for the projects with an overrun, greater project size leads is linked to much greater overrun size during the pre-construction period .
 
 
 \subsection{Singular projects are riskier}
 
-Figure 4.2.2
-<<>>=
 
-Cost_overruns_by_mode
-
-@
 
 
 
 \section {How can avoidable risks be managed?}
 
-Note: this figure does not exist (and can't be estimated) and will be removed from the draft:
-The following three sections identify three major places where improvements could be made so as to save a substantial share of the $18 billion of overruns occurring after the formal funding commitment. 
+
 
 \subsection {Learn from past experience}
 
@@ -1168,10 +1127,88 @@ Almost \Sexpr{grattan_percent(prop_projects_w_overrun_gt(0.90))} of projects end
 This needs to be changed to:
 "Over \Sexpr{grattan_percent(prop_projects_w_overrun)} of projects end up costing more than the “worst case” or (P75-P90) cost estimate." It also needs to be clarified and moved to chapter 1..
 
-\chapter{Charts that will probably be added in}
+\chapter{Cost overruns are much more predictable than people think}
+The previous chapter examined how cost overruns can be prevented or minimised. But some risks are unavoidable, or only avoidable at excessively high cost. This chapter is about those risks – how to predict and manage them.
 
+Predicting unavoidable risks is worthwhile because it makes it more feasible to manage them; risks that are foreseen may be less expensive than risks that come as a surprise. 
 
+Governments can deal with anticipated risks by introducing what are known as mitigations. These include modifying the project design, introducing more safeguards or innovations in project management, or on-selling risks. 
 
+Hedging is another way that governments can deal with anticipated risks. A state can choose to limit how many high-risk projects it takes on at any one time, for instance. It can use its contingency funds to recognise the amount of risk it is taking on the suite of projects on its books (see Section xx).
+
+Both mitigating and hedging risks are ways of constraining the costs of unavoidable project risk. While risk estimation is still difficult, it is difficult in predictable ways.
+
+\section{What makes a project high risk?}
+
+\section{More complex projects are riskier}
+<<prop_overrun_by_size>>=
+cost_overrun_by_GR %>%
+  filter(!outlier) %>%
+  group_by(Project_size = cut(first_cost_estimate_real, 
+                              breaks = c(-Inf, 50e6, 100e6, 200e6, 300e6, Inf), 
+                              labels = c("< $50 million", 
+                                         "$50 to\n$100 million", 
+                                         "$100 to\n$200 million", 
+                                         "$200 to\n$300 million", 
+                                         "Over $300 million"), 
+                              ordered = TRUE)) %>%
+  summarise(cost_overrun_pc = mean(Final_cost_over_initial > 1)) %>%
+  grplot(aes(x = Project_size, y = cost_overrun_pc)) + 
+  geom_bar(stat = "identity")
 @
+
+<<mode_by_GR>>=
+mode_by_GR <- 
+  completed_transport_projects %>%
+  select(Grattan_record, Mode = `Sub-industry`) %>%
+  distinct(Grattan_record, Mode)
+@
+
+<<cost-overrun-pc-by-phase-mode>>=
+cost_overrun_by_GR_phase %>%
+  merge(mode_by_GR) %>%
+  merge(cost_overrun_by_GR) %>%
+  filter(!outlier) %>%
+  group_by(change_was_from, Mode) %>%
+  summarise(phase_cost_overrun = sum(phase_cost_overrun) / sum(first_cost_estimate_real)) %>%
+  arrange(change_was_from) %>%
+  mutate(to_phase = gsub("^.*(to .*)$", "\\1", as.character(change_was_from))) %>%
+  grplot(aes(x = change_was_from, y = phase_cost_overrun, fill = Mode)) + 
+  geom_bar(stat = "identity", position = "dodge") + 
+  theme(legend.position = c(0, 1), 
+        legend.justification = c(0, 1)) + 
+  facet_grid(~to_phase, scales = "free_x", space = "free_x")
+@
+
+
+\subsection{Insufficient data to execute guidelines}
+\begin{figure}
+\captionwithunits{Experts systematically underestimate the likelihood of cost overruns}%
+{Assumed and observed probability distributions of cost overruns, per cent}
+<<probability-density-function-cost-overrun>>=
+cost_overrun_by_GR %>%
+  filter(!outlier) %>%
+  grplot(aes(x = Final_cost_over_initial)) + 
+  geom_density(fill = Orange, bw = 0.15)
+@
+\end{figure}
+
+\begin{figure}
+\caption{Cumulative density function of cost overruns}
+<<>>=
+cost_overrun_by_GR %>%
+  filter(!outlier) %>%
+  arrange(Final_cost_over_initial) %>%
+  mutate(y = (1:.N) / .N) %>% 
+  grplot(aes(x = Final_cost_over_initial, y = y)) + 
+  geom_line(color = gpal(2)[1]) +
+  geom_abline(intercept = -0.25, slope = 1, color = gpal(2)[2], size = 1.5)
+@
+\end{figure}
+
+
+
+
+
 \end{document}
 
