@@ -29,6 +29,9 @@ library(ggplot2)
 library(scales)
 library(devtools)
 library(CostOverrunsData)
+if (packageVersion("CostOverrunsData") < package_version('0.2.0')){
+  stop("Update the CostOverrunsData package. Pull from github master then build locally.")
+}
 library(grattan)
 if (texNum(1.25, dollar = TRUE) != "\\$1.25"){
   stop("Update the grattan package")  # recent bugfix
