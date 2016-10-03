@@ -2620,9 +2620,12 @@ prop_projects_on_budget <-
 pc_of_projects_w_overrun<- (co_all %>% filter(co_initial_final_category =="Cost overrun") %>% summarise(n()))/(co_all %>% summarise(n()))
 pc_of_projects_w_overrun_gt_0.5<- ((co_all %>% filter(Final_cost_over_initial > 1.5) %>% nrow) / (co_all %>% nrow))*100
 pc_of_co_value_from_projects_w_overrun_gt_0.5 <- (sum(overrun_gt_50_pc$Final_cost_real)-sum(overrun_gt_50_pc$Initial_cost_real))/(sum(overruns$Final_cost_real)-sum(overruns$Initial_cost_real))*100
+value_B_of_co_gt_0.5<- (sum(overrun_gt_50_pc$Final_cost_real)-sum(overrun_gt_50_pc$Initial_cost_real))/1000
+
 pc_of_projects_w_overrun_gt_2<- (co_all %>% filter(Final_cost_over_initial > 3) %>% nrow) / (co_all %>% nrow)*100
 pc_of_co_value_from_projects_w_overrun_gt_2 <- (sum(huge_overruns$Final_cost_real)-sum(huge_overruns$Initial_cost_real))/(sum(overruns$Final_cost_real)-sum(overruns$Initial_cost_real))*100
 value_B_of_co_gt_2<- (sum(huge_overruns$Final_cost_real)-sum(huge_overruns$Initial_cost_real))/1000
+
 spending_per_dollar_budgeted<-sum(co_all$Final_cost_real)/sum(co_all$Initial_cost_real)
 pc_lower_ROI<-1-(1*sum(co_all$Initial_cost_real)/sum(co_all$Final_cost_real)) # My working: (Initial_BCR - BCR_after_COs)/Initial_BCR, where BCR_after_COs = Benefits/(Initial costs*(sum(Final_costs)/sum(Initial_costs))) and Initial_BCR = Benefits/Initial_costs. 
 cost_of_overruns_gt_50_pc<- sum(overrun_gt_50_pc$Final_cost_real) - sum(overrun_gt_50_pc$Initial_cost_real)
@@ -4181,12 +4184,16 @@ Cost_overruns_by_mode
 
 @
 
+<<>>=
 
+
+
+@
 
 \section {How can avoidable risks be managed?}
 
 Note: this figure does not exist (and can't be estimated) and will be removed from the draft:
-The following three sections identify three major places where improvements could be made so as to save a substantial share of the $18 billion of overruns occurring after the formal funding commitment. 
+The following three sections identify three major places where improvements could be made so as to save a substantial share of the $\Sexpr{round(sum(co_all$Final_cost - co_all$First_cost_when_Committed_a_z)/1000,0)} billion of overruns occurring after the formal funding commitment. 
 
 \subsection {Learn from past experience}
 
@@ -4230,6 +4237,10 @@ series = data.frame(x, y)
 Final_over_initial_density<-density((co_all$Final_cost_over_initial-1), bw = 0.3)
 plot(Final_over_initial_density, xlim = c(-2,5), ylim = c(0,1), lwd=3, col = "orange", main = "PDF: Probability that a random CO is = X", xlab = "Magnitude of cost overrun (Final cost / Initial)", ylab = "Probability")
 lines(series, lwd=2, lty=2)
+
+@
+
+<<>>=
 
 
 @
