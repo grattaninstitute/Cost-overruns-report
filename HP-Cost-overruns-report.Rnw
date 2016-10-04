@@ -278,6 +278,16 @@ completed_transport_projects <-
 
 @
 
+<<first_date_by_status>>=
+first_date_by_status <- 
+  completed_transport_projects %>%
+  group_by(Grattan_record, Status_ordered) %>%
+  summarise(first_date = min(Record_date)) %>%
+  spread(Status_ordered, first_date) %>%
+  setnames(old = names(.)[names(.) != "Grattan_record"], new = paste0("Date_first_as_", names(.)[names(.) != "Grattan_record"])) %>%
+  setkey(Grattan_record)
+@
+
 <<completed_transport_project_date_range>>=
 completed_transport_project_date_range <- 
   completed_transport_projects %>% 
@@ -574,9 +584,6 @@ State_decoder <- readRDS("./data/State_decoding.rds")
 @
 
 <<election_by_GR>>=
-
-election_any_date %>%   filter(election_flag == TRUE) %>% nrow / election_any_date %>%   nrow
-
 election_any_date <-
   bind_rows({
     elections %>%
@@ -609,7 +616,7 @@ election_any_date <-
 
 @
 
-<<rolling_join_test>>=
+<<rolling_join_test>>= # This is just a test.
 {
   Elections <- data.table(x = letters[1:5], y = (1:10) * 5, key = "y")
   RDs <- data.table(z = letters[11:20], y = c(1, 9, 39, 41, 24, 29, 38, 13, 45, 7), key = "y")
@@ -633,6 +640,28 @@ grattan_records_180days_before_election <-
   unique(Grattan_record)
 
 @
+
+<<grattan_records_near_election_LDs_attempt>>=
+# This doesn't work yet..
+
+gov_commitment_date<-
+  first_date_by_status %>%
+  mutate(gov_commitment_date =if_else(!is.na(Date_first_as_Committed),Date_first_as_Committed, 
+                     if_else(!is.na(`Date_first_as_Under construction`),`Date_first_as_Under construction`, 
+                             first(completed_transport_projects %>% group_by(Grattan_record)%$% Record_date)))) %>%
+  summarise(Grattan_record, gov_commitment_date) %>%
+  setkey(Grattan_record)
+
+completed_transport_projects %>%
+  merge(gov_commitment_date) %>%
+  mutate(.gov_commitment_date.num = as.numeric(gov_commitment_date)) %>%
+  setkey(State_new, .gov_commitment_date.num) %>%
+  election_any_date[.,roll=-180] %>%
+  filter(election_flag, is_federal) %$%
+  unique(Grattan_record)
+
+@
+
 
 <<grattan_records_180days_before_state_election>>=
 grattan_records_180days_before_state_election <- 
@@ -698,7 +727,7 @@ important_vars_by_GR %>%
           election_within_180_days, 
         data = ., 
         family = binomial(link = "logit")) -> 
-  fit_logit_co_all_v7
+  summary(fit_logit_co_all_v7)
 @
 
 <<fit_logit_co_all_v7_mfx>>=
