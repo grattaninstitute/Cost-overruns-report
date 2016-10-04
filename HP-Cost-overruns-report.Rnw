@@ -289,14 +289,13 @@ completed_transport_project_date_range <-
 <<completed_transport_projects_by_GR>>=
 completed_transport_projects_by_GR <-
   completed_transport_projects %>%
+  setkey(Grattan_record) %>%
   unique()
 @
 
 <<total_cost_overruns>>=
 total_cost_overruns <- 
   completed_transport_projects_by_GR %>%
-  setkey(Grattan_record) %>%
-  unique() %>%
   summarise(sum(final_cost_estimate_real - first_cost_estimate_real))
 @
 
@@ -327,24 +326,22 @@ n_completed_transport_projects_gt_20M <-
 <<savings_if_every_proj_with_CO_had_CO_le_10pc>>=
 savings_if_every_proj_with_CO_had_CO_le_10pc <-
   completed_transport_projects_by_GR %>%
-  filter(final_cost_estimate_real > first_cost_estimate_real) %>%
-  mutate(value_of_overrun_lt_10_pc = 0.1 * first_cost_estimate_real, 
-         value_of_overrun_gt_10_pc = cost_overrun - value_of_overrun_lt_10_pc) %>%
-  arrange(desc(value_of_overrun_gt_10_pc)) %$%
-  # Assume every overrun is 10% (even if some were under)
-  sum(value_of_overrun_gt_10_pc)
+  filter(final_cost_estimate_real > 1.1*first_cost_estimate_real) %>%
+  mutate(value_of_10_pc_overrun = 0.1 * first_cost_estimate_real, 
+         value_of_overruns_gt_10_pc = cost_overrun - value_of_10_pc_overrun) %>%
+  summarise(sum(value_of_overruns_gt_10_pc))
 @
 
-<<prop_projects_on_budget>>=
-prop_projects_on_budget <- 
-  completed_transport_projects_by_GR %>%
+<<prop_projects_on_or_under_budget>>=
+prop_projects_on_or_under_budget <- 
+  completed_transport_projects_by_GR %$%
   mean(final_cost_estimate_real <= first_cost_estimate_real)
 
 @
 
 <<prop_projects_exactly_on_budget>>=
 prop_projects_exactly_on_budget <- 
-  completed_transport_projects_by_GR %>%
+  completed_transport_projects_by_GR %$%
   mean(near(final_cost_estimate_real, first_cost_estimate_real))
 @
 
@@ -379,15 +376,13 @@ pc_lower_ROI <-
   {1 - (sum(first_cost_estimate_real) / sum(final_cost_estimate_real))}
 @
 
-
 <<spending_per_dollar_budgeted>>=
 spending_per_dollar_budgeted <- 
-  completed_transport_projects %>%
+  completed_transport_projects_by_GR %>%
   setkey(Grattan_record, Record_date) %>%
   group_by(Grattan_record) %>%
-  summarise(overrun_per_dollar = (last(Cost_estimate_real)) / first(Cost_estimate_real)) %$%
+  summarise(overrun_per_dollar = final_cost_estimate_real / first_cost_estimate_real) %$%
   mean(overrun_per_dollar)
-
 @
 
 <<temp>>=
@@ -396,16 +391,15 @@ warning("Using temp vars")
 
 <<prop_projects_w_overrun>>=
 prop_projects_w_overrun <- 
-  completed_transport_projects_by_GR %>%
+  completed_transport_projects_by_GR %$%
   mean(Final_cost_over_initial > 1)
 @
-
 
 
 \begin{overview}[-40pt]
 Most of the time, Australia isn’t bad at managing transport infrastructure projects. But when one goes wrong, it can be spectacular. Australia could have saved \Sexpr{texNum(savings_if_every_proj_with_CO_had_CO_le_10pc, dollar = TRUE)} over the past 15 years if every transport infrastructure project with a cost overrun had gone no more than ten per cent over budget. 
 
-Policymakers appear to be complacent about this outcome. At first glance, this is understandable: \Sexpr{grattan_percent(prop_projects_on_budget)} of projects finish on budget, and we are assured that every extreme cost blowout comes with its own story. 
+Policymakers appear to be complacent about this outcome. At first glance, this is understandable: \Sexpr{grattan_percent(prop_projects_on_or_under_budget)} of projects finish on budget, and we are assured that every extreme cost blowout comes with its own story. 
 
 However, data on the cost overruns incurred over the \Sexpr{n_completed_transport_projects_gt_20M} $20m+ transport infrastructure projects built in Australia since 2000 reveals that these stories are misleading: Australia’s cost overruns are larger and far more common than could be considered ‘normal’, and more predictable than their surprised proponents realise. 
 
@@ -560,6 +554,13 @@ prop_value_scope_changes <-
   ungroup %>%
   filter(Capacity_mentioned) %>%
   arrange(desc(Capacity_increase))
+
+(prop_value_scope_changes %>% filter(Capacity_increase >0) %>%nrow)/(prop_value_scope_changes %>% nrow)
+(completed_transport_projects %>% filter(!is.na(Capacity)) %>%nrow)/(completed_transport_projects %>% nrow)
+View(completed_transport_projects$Capacity_mentioned)
+ 
+# We use the Grattan dataset, rather than the IM dataset, to make this claim because of the poor quality of this variable in the IM dataset. 
+ 
 @
 
 \subsection{Escalation in costs is not a significant cause of cost overruns}
@@ -573,6 +574,9 @@ State_decoder <- readRDS("./data/State_decoding.rds")
 @
 
 <<election_by_GR>>=
+
+election_any_date %>%   filter(election_flag == TRUE) %>% nrow / election_any_date %>%   nrow
+
 election_any_date <-
   bind_rows({
     elections %>%
@@ -627,6 +631,8 @@ grattan_records_180days_before_election <-
   election_any_date[., roll=-180] %>%
   filter(election_flag) %$%
   unique(Grattan_record)
+
+as.data.table(grattan_records_180days_before_election) %>% nrow
 @
 
 <<grattan_records_180days_before_state_election>>=
