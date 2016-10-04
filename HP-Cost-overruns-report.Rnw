@@ -240,7 +240,7 @@ transport_projects <-
   group_by(Grattan_record) %>%
   # See Issue #3.
   # filter(first(Cost_estimate, order_by = Record_date) >= 20e6) 
-  filter(first(Cost_estimate_real, order_by = Record_date) >= 20e6)
+  filter(last(Cost_estimate_real, order_by = Record_date) >= 20e6)
 
 
 # Correcting errors in the Lucille_ownership variable
