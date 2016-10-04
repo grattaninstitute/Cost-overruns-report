@@ -240,7 +240,17 @@ transport_projects <-
   group_by(Grattan_record) %>%
   # See Issue #3.
   # filter(first(Cost_estimate, order_by = Record_date) >= 20e6) 
-  filter(last(Cost_estimate_real, order_by = Record_date) >= 20e6)
+  filter(last(Cost_estimate_real, order_by = Record_date) >= 20e6) %>%
+  mutate(outlier = !between(Final_cost_over_initial,
+                            0.5, # This is a generous definition of outliers as the biggest underrun we observe 
+                            # is the 34% underrun on the Springfield to Richlands line. 
+                            
+                            5.2  # Any overrun greater than 5.2 is suspect of a data error. This is because the 
+                            # Peel deviation is the project with the largest overrun that we have been able 
+                            # to verify with certainty. A bunch of the extreme outliers were all redcorded 
+                            # on the same day, which looks suspicious too.
+  )) %>%
+  filter(!outlier)
 
 
 # Correcting errors in the Lucille_ownership variable
