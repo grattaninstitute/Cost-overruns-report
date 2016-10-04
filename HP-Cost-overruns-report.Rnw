@@ -298,40 +298,27 @@ total_cost_overruns <-
   setkey(Grattan_record) %>%
   unique() %>%
   summarise(sum(final_cost_estimate_real - first_cost_estimate_real))
-
 @
 
-<<Final_cost_over_initial_by_record>>=
-Final_cost_over_initial_by_record <- 
+<<Final_cost_over_initial_by_GR>>=
+Final_cost_over_initial_by_GR <- 
   completed_transport_projects %>%
-  # first and last should refer to the first non-NA value
-  #  (Does not appear to be necessary)
-  # mutate(Cost_estimate_filled = pmax(na.locf(Cost_estimate, na.rm = FALSE), 
-  #                                    na.locf(Cost_estimate, na.rm = FALSE, fromLast = TRUE), 
-  #                                    na.rm = TRUE)) %>%
   group_by(Grattan_record) %>%
   mutate(Final_cost_over_initial = 
            last(Cost_estimate, order_by = Record_date) / 
-           first(Cost_estimate, order_by = Record_date)) %>%
-  filter(between(Final_cost_over_initial,
-                 0.5, # This is a generous definition of outliers as the biggest underrun we observe 
-                      # is the 34% underrun on the Springfield to Richlands line. 
-                 
-                 5.2  # Any overrun greater than 5.2 is suspect of a data error. This is because the 
-                      # Peel deviation is the project with the largest overrun that we have been able 
-                      # to verify with certainty. A bunch of the extreme outliers were all redcorded 
-                      # on the same day, which looks suspicious too.
-                 )) %>%
+           first(Cost_estimate, order_by = Record_date)) %>% 
   setkey(Grattan_record) %>%
-  unique %>%
+  unique %>% 
   select(Grattan_record, Final_cost_over_initial)
+
+
 @
 
 <<n_completed_transport_projects_gt_20M>>=
 n_completed_transport_projects_gt_20M <- 
   completed_transport_projects %>%
   # inner join (strict)
-  merge(Final_cost_over_initial_by_record) %$%
+  merge(Final_cost_over_initial_by_GR) %$%
   uniqueN(Grattan_record)
 @
 
