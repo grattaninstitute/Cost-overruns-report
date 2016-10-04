@@ -320,6 +320,8 @@ n_completed_transport_projects_gt_20M <-
   # inner join (strict)
   merge(Final_cost_over_initial_by_GR) %$%
   uniqueN(Grattan_record)
+
+# Note: all projects in completed transport projects are > $20m.
 @
 
 <<savings_if_every_proj_with_CO_had_CO_le_10pc>>=
