@@ -328,17 +328,18 @@ n_completed_transport_projects_gt_20M <-
 savings_if_every_proj_with_CO_had_CO_le_10pc <-
   completed_transport_projects_by_GR %>%
   filter(final_cost_estimate_real > first_cost_estimate_real) %>%
-  mutate(overrun_threshold = 1.1 * first_cost_estimate_real, 
-         overrun_cf_capped = cost_overrun - overrun_threshold) %>%
-  arrange(desc(overrun_cf_capped)) %$%
+  mutate(value_of_overrun_lt_10_pc = 0.1 * first_cost_estimate_real, 
+         value_of_overrun_gt_10_pc = cost_overrun - value_of_overrun_lt_10_pc) %>%
+  arrange(desc(value_of_overrun_gt_10_pc)) %$%
   # Assume every overrun is 10% (even if some were under)
-  sum(overrun_cf_capped)
+  sum(value_of_overrun_gt_10_pc)
 @
 
 <<prop_projects_on_budget>>=
 prop_projects_on_budget <- 
   completed_transport_projects_by_GR %>%
   mean(final_cost_estimate_real <= first_cost_estimate_real)
+
 @
 
 <<prop_projects_exactly_on_budget>>=
@@ -386,7 +387,7 @@ spending_per_dollar_budgeted <-
   group_by(Grattan_record) %>%
   summarise(overrun_per_dollar = (last(Cost_estimate_real)) / first(Cost_estimate_real)) %$%
   mean(overrun_per_dollar)
-  
+
 @
 
 <<temp>>=
