@@ -16,9 +16,6 @@ opts_chunk$set(error = FALSE, echo = FALSE, fig.width=11, fig.height=7, out.widt
 
 <<loadPackages, cache=FALSE>>=
 library(testthat)
-library(xlsx)
-library(readxl)
-library(openxlsx)
 library(dplyr)
 library(data.table)
 library(dtplyr)
@@ -190,7 +187,7 @@ transport_projects <-
   # molten state no longer needed
   select(-variable) %>%
   {
-    warning("Assuming cost columns not marked ($m) are nonetheless in millions")
+    # Warning("Assuming cost columns not marked ($m) are nonetheless in millions") - yes, that's a fine assumption. 
     mutate(., Cost_estimate = Cost_estimate * 10^6) 
   } %>%
   setkey(Grattan_record) %>%
@@ -244,6 +241,15 @@ transport_projects <-
   # See Issue #3.
   # filter(first(Cost_estimate, order_by = Record_date) >= 20e6) 
   filter(first(Cost_estimate_real, order_by = Record_date) >= 20e6)
+
+
+# Correcting errors in the Lucille_ownership variable
+transport_projects %<>%
+  mutate(Lucille_Ownership = ifelse(Grattan_record==10218 | Grattan_record==10858 | Grattan_record==11043 | Grattan_record==11127 | Grattan_record==8267 | Grattan_record==9757 | Grattan_record==7952, "Private", Lucille_Ownership))
+
+  
+
+
 @
 
 <<completed_transport_projects>>=
