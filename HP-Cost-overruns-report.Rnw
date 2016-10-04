@@ -629,10 +629,9 @@ grattan_records_180days_before_election <-
   mutate(.Record_date.num = as.numeric(Record_date)) %>%
   setkey(State_new, .Record_date.num) %>%
   election_any_date[., roll=-180] %>%
-  filter(election_flag) %$%
+  filter(election_flag, is_federal) %$%
   unique(Grattan_record)
 
-as.data.table(grattan_records_180days_before_election) %>% nrow
 @
 
 <<grattan_records_180days_before_state_election>>=
@@ -644,6 +643,7 @@ grattan_records_180days_before_state_election <-
   election_any_date[., roll=-180] %>%
   filter(election_flag, !is_federal) %$%
   unique(Grattan_record)
+
 @
 
 
@@ -660,18 +660,7 @@ important_vars_by_GR <-
                 log(1 + as.numeric(difftime(min(Record_date[Status_ordered == "Under construction"]), 
                                             min(Record_date), 
                                             units = "days")))
-              } else {
-                {
-                  # Impute the value based total days before construction
-                  completed_transport_projects %>% 
-                    group_by(Grattan_record) %>%
-                    filter(any(Status == "Under construction")) %>%
-                    mutate(days_before_constr = difftime(min(Record_date[Status_ordered == "Under construction"]), 
-                                                         min(Record_date), 
-                                                         units = "days")) %$%
-                    log(mean(as.numeric(days_before_constr)) + 1)
-                }
-              }, 
+              } else {0}, 
             big_states = if (any(!(State_new %in% c("Vic", 
                                                     "Qld", 
                                                     "WA", 
