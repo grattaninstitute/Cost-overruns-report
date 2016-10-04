@@ -611,7 +611,8 @@ election_any_date <-
 
 @
 
-<<rolling_join_test>>= # This is just a test.
+<<rolling_join_test>>= 
+# This is just a test.
 {
   Elections <- data.table(x = letters[1:5], y = (1:10) * 5, key = "y")
   RDs <- data.table(z = letters[11:20], y = c(1, 9, 39, 41, 24, 29, 38, 13, 45, 7), key = "y")
