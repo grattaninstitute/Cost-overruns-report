@@ -303,10 +303,10 @@ completed_transport_projects_by_GR <-
   unique()
 @
 
-<<total_cost_overruns>>=
-total_cost_overruns <- 
-  completed_transport_projects_by_GR %>%
-  summarise(sum(final_cost_estimate_real - first_cost_estimate_real))
+<<total_cost_of_overruns>>=
+total_cost_of_overruns <- 
+  completed_transport_projects_by_GR %$%
+  sum(final_cost_estimate_real - first_cost_estimate_real)
 @
 
 <<Final_cost_over_initial_by_GR>>=
@@ -333,13 +333,13 @@ n_completed_transport_projects_gt_20M <-
 # Note: all projects in completed transport projects are > $20m.
 @
 
-<<savings_if_every_proj_with_CO_had_CO_le_10pc>>=
-savings_if_every_proj_with_CO_had_CO_le_10pc <-
+<<savings_if_every_cost_overrun_over_10pc_was_only_10pc>>=
+savings_if_every_cost_overrun_over_10pc_was_only_10pc <-
   completed_transport_projects_by_GR %>%
-  filter(final_cost_estimate_real > 1.1*first_cost_estimate_real) %>%
+  filter(final_cost_estimate_real > 1.1 * first_cost_estimate_real) %>%
   mutate(value_of_10_pc_overrun = 0.1 * first_cost_estimate_real, 
-         value_of_overruns_gt_10_pc = cost_overrun - value_of_10_pc_overrun) %>%
-  summarise(sum(value_of_overruns_gt_10_pc))
+         value_of_overruns_gt_10_pc = cost_overrun - value_of_10_pc_overrun) %$%
+  sum(value_of_overruns_gt_10_pc)
 @
 
 <<prop_projects_on_or_under_budget>>=
@@ -407,7 +407,7 @@ prop_projects_w_overrun <-
 
 
 \begin{overview}[-40pt]
-Most of the time, Australia isn’t bad at managing transport infrastructure projects. But when one goes wrong, it can be spectacular. Australia could have saved \Sexpr{texNum(savings_if_every_proj_with_CO_had_CO_le_10pc, dollar = TRUE)} over the past 15 years if every transport infrastructure project with a cost overrun had gone no more than ten per cent over budget. 
+Most of the time, Australia isn’t bad at managing transport infrastructure projects. But when one goes wrong, it can be spectacular. Australia could have saved \Sexpr{texNum(savings_if_every_cost_overrun_over_10pc_was_only_10pc, dollar = TRUE)} over the past 15 years if every transport infrastructure project with a cost overrun had gone no more than ten per cent over budget. 
 
 Policymakers appear to be complacent about this outcome. At first glance, this is understandable: \Sexpr{grattan_percent(prop_projects_on_or_under_budget)} of projects finish on budget, and we are assured that every extreme cost blowout comes with its own story. 
 
@@ -431,7 +431,7 @@ Instead of each project being a fresh start, the information exists to support p
 \end{overview}
 
 \chapter{Introduction}
-Cost overruns on transport infrastructure projects are nothing new. Some of the biggest examples are widely known, such as Western Australia’s Forrest Highway between Perth and Bunbury, which cost nearly six times its initial budget, or New South Wales’ Hunter Expressway, which cost nearly four times its initial budget. The amount of money at stake is very large: transport infrastructure over the past 15 years has cost \Sexpr{texNum(savings_if_every_proj_with_CO_had_CO_le_10pc, dollar = TRUE)} more than taxpayers were told it would. 
+Cost overruns on transport infrastructure projects are nothing new. Some of the biggest examples are widely known, such as Western Australia’s Forrest Highway between Perth and Bunbury, which cost nearly six times its initial budget, or New South Wales’ Hunter Expressway, which cost nearly four times its initial budget. The amount of money at stake is very large: transport infrastructure over the past 15 years has cost \Sexpr{texNum(savings_if_every_cost_overrun_over_10pc_was_only_10pc, dollar = TRUE)} more than taxpayers were told it would. 
 
 ...some more text...
 
@@ -446,7 +446,7 @@ Figure 1.1: Cost overruns are at least as large as 22 per cent of initial projec
 
 
 \chapter{People underestimate the extent of cost overruns}
-Cost overruns in \Sexpr{grattan_percent(prop_projects_w_overrun)} of the transport infrastructure budget have cost taxpayers \Sexpr{texNum(total_cost_overruns, dollar = TRUE)} over the past 15 years. 
+Cost overruns in \Sexpr{grattan_percent(prop_projects_w_overrun)} of the transport infrastructure budget have cost taxpayers \Sexpr{texNum(total_cost_of_overruns, dollar = TRUE)} over the past 15 years. 
 The absence of routine monitoring of cost outcomes and initiatives to prevent or minimise cost overruns indicates that Australian governments have been complacent. 
 Indeed, when the scarce information available to governments about cost overruns is considered, it’s easy to understand why. 
 
@@ -564,11 +564,6 @@ prop_value_scope_changes <-
   ungroup %>%
   filter(Capacity_mentioned) %>%
   arrange(desc(Capacity_increase))
-
-(prop_value_scope_changes %>% filter(Capacity_increase >0) %>%nrow)/(prop_value_scope_changes %>% nrow)
-(completed_transport_projects %>% filter(!is.na(Capacity)) %>%nrow)/(completed_transport_projects %>% nrow)
-View(completed_transport_projects$Capacity_mentioned)
- 
 # We use the Grattan dataset, rather than the IM dataset, to make this claim because of the poor quality of this variable in the IM dataset. 
  
 @
@@ -727,7 +722,7 @@ important_vars_by_GR %>%
           election_within_180_days, 
         data = ., 
         family = binomial(link = "logit")) -> 
-  summary(fit_logit_co_all_v7)
+  fit_logit_co_all_v7
 @
 
 <<fit_logit_co_all_v7_mfx>>=
@@ -861,7 +856,7 @@ overruns_during_construction_as_prop_of_final_value <-
                 last(Cost_estimate_real, order_by = Record_date) - 
                 first(Cost_estimate_real, order_by = Record_date)) 
   
-  merge(cost_overrun_during_construction_by_GR, completed_transport_projects_by_GR, by = "Grattan_record") %>%
+  merge(cost_overrun_during_construction_by_GR, completed_transport_projects_by_GR, by = "Grattan_record") %$%
     {sum(cost_overrun_during_construction) / sum(final_cost_estimate_real)}
 }
 @
