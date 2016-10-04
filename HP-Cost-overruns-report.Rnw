@@ -278,14 +278,12 @@ completed_transport_projects <-
 
 @
 
-<<first_date_by_status>>=
-first_date_by_status <- 
+<<first_date_by_Status_GR>>=
+first_date_by_Status_GR <- 
   completed_transport_projects %>%
   group_by(Grattan_record, Status_ordered) %>%
   summarise(first_date = min(Record_date)) %>%
-  spread(Status_ordered, first_date) %>%
-  setnames(old = names(.)[names(.) != "Grattan_record"], new = paste0("Date_first_as_", names(.)[names(.) != "Grattan_record"])) %>%
-  setkey(Grattan_record)
+  setkey(Grattan_record, Status_ordered)
 @
 
 <<completed_transport_project_date_range>>=
@@ -637,25 +635,28 @@ grattan_records_180days_before_election <-
 
 @
 
-<<grattan_records_near_election_LDs_attempt>>=
-# This doesn't work yet..
+<<date_first_committed_by_GR>>=
+date_first_committed_by_GR <- 
+  first_date_by_Status_GR %>%
+  filter(Status_ordered == "Committed") %>%
+  mutate(.Record_date.num = as.numeric(first_date)) %>%
+  setkey(Grattan_record, .Record_date.num)
+@
 
-gov_commitment_date<-
-  first_date_by_status %>%
-  mutate(gov_commitment_date =if_else(!is.na(Date_first_as_Committed),Date_first_as_Committed, 
-                     if_else(!is.na(`Date_first_as_Under construction`),`Date_first_as_Under construction`, 
-                             first(completed_transport_projects %>% group_by(Grattan_record)%$% Record_date)))) %>%
-  summarise(Grattan_record, gov_commitment_date) %>%
-  setkey(Grattan_record)
+<<State_new_by_GR>>=
+State_new_by_GR <- 
+  completed_transport_projects %>%
+  distinct(Grattan_record, State_new)
+@
 
-completed_transport_projects %>%
-  merge(gov_commitment_date) %>%
-  mutate(.gov_commitment_date.num = as.numeric(gov_commitment_date)) %>%
-  setkey(State_new, .gov_commitment_date.num) %>%
+<<grattan_records_near_state_election>>=
+grattan_records_near_state_election <- 
+  date_first_committed_by_GR %>%
+  merge(State_new_by_GR, by = "Grattan_record") %>%
+  setkey(State_new, .Record_date.num) %>%
   election_any_date[.,roll=-180] %>%
-  filter(election_flag, is_federal) %$%
-  unique(Grattan_record)
-
+  filter(!is_federal) %>%
+  .[["Grattan_record"]]
 @
 
 
