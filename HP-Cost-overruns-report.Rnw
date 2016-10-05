@@ -689,7 +689,6 @@ grattan_records_180days_before_state_election <-
   election_any_date[., roll=-180] %>%
   filter(election_flag, !is_federal) %$%
   unique(Grattan_record)
-
 @
 
 
