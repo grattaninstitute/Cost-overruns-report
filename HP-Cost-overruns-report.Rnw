@@ -775,16 +775,42 @@ completed_transport_projects_by_GR_phase <-
                                                "Possible to Under construction", 
                                                "Under consideration to Committed",
                                                "Under consideration to Under construction", 
-                                               "Committed to Under construction"), 
+                                               "Committed to Under construction", 
+                                               "Under construction to Completed"), 
                                     ordered = TRUE))  %>%
   # to compare cost overrun, but also
   # to omit outliers
   setkey(Grattan_record) %>%
   merge(completed_transport_projects_by_GR) %>%
-  select(Grattan_record, change_was_from, phase_cost_overrun, phase_cost_overrun_pc, project_cost_overrun = cost_overrun)
-  
+  select(Grattan_record, change_was_from, 
+         phase_cost_overrun, phase_cost_overrun_pc, 
+         project_cost_overrun = cost_overrun) %>%
+  # For Under construction to Completed
+  bind_rows({
+    completed_transport_projects %>%
+      filter(Status_ordered == "Under construction") %>%
+      group_by(Grattan_record) %>%
+      summarise(first_estimate = first(Cost_estimate_real, order_by = Record_date), 
+                final_estimate = last(Cost_estimate_real, order_by = Record_date)) %>%
+      mutate(phase_cost_overrun = first_estimate - final_estimate, 
+             phase_cost_overrun_pc = phase_cost_overrun / first_estimate) %>%
+      ungroup %>%
+      mutate(change_was_from = factor("Under construction to Completed", 
+                                      levels = c("Possible to Under consideration", 
+                                                 "Possible to Committed", 
+                                                 "Possible to Under construction", 
+                                                 "Under consideration to Committed",
+                                                 "Under consideration to Under construction", 
+                                                 "Committed to Under construction", 
+                                                 "Under construction to Completed"), 
+                                      ordered = TRUE)) %>%
+      setkey(Grattan_record) %>%
+      merge(completed_transport_projects_by_GR) %>%
+      select(Grattan_record, change_was_from, phase_cost_overrun, phase_cost_overrun_pc, project_cost_overrun = cost_overrun)
+  }) %>%
+  setkey(Grattan_record, change_was_from) %>% 
+  .[]
 @
-
 
 <<waterfall, eval=FALSE>>= 
 completed_transport_projects %>%
