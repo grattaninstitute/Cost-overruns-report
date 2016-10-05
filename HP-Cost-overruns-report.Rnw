@@ -772,8 +772,9 @@ important_vars_by_GR %>%
           election_within_180_days, 
         data = .) -> 
   fit_logistic_co_all_v4
-    
-avPlots(fit_logistic_co_all_v4)
+
+if (interactive())
+  avPlots(fit_logistic_co_all_v4)
 @
 
 \subsection{Early overruns do not prevent later overruns}
@@ -813,7 +814,7 @@ cost_overruns_by_GR_phase <-
   # to compare cost overrun, but also
   # to omit outliers
   setkey(Grattan_record) %>%
-  merge(completed_transport_projects_by_GR) %>%
+  merge(cost_overruns_by_GR) %>%
   select(Grattan_record, change_was_from, 
          phase_cost_overrun, phase_cost_overrun_pc, 
          project_cost_overrun = cost_overrun) %>%
