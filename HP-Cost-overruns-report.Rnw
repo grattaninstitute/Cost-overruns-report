@@ -656,7 +656,6 @@ grattan_records_near_state_election <-
   election_any_date[.,roll=-180] %>%
   filter(!is_federal) %>%
   .[["Grattan_record"]]
-
 @
 
 <<grattan_records_near_federal_election>>=
@@ -667,7 +666,6 @@ grattan_records_near_federal_election <-
   election_any_date[.,roll=-180] %>%
   filter(is_federal) %>%
   .[["Grattan_record"]]
-
 @
 
 <<grattan_records_near_election>>=
