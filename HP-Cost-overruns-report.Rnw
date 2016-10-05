@@ -620,7 +620,7 @@ election_any_date <-
 }
 @
 
-<<!!!!!! grattan_records_near_election>>=
+<<grattan_records_near_election>>=
 # Vector of Grattan_records within 180 days of an election
 # This code is defined relative to projects having status = committed, not ENTERING committed
 grattan_records_180days_before_election <- 
@@ -631,7 +631,6 @@ grattan_records_180days_before_election <-
   election_any_date[., roll=-180] %>%
   filter(election_flag, is_federal) %$%
   unique(Grattan_record)
-
 @
 
 <<date_first_committed_by_GR>>=
