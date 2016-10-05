@@ -356,7 +356,7 @@ prop_projects_exactly_on_budget <-
 
 <<prop_projects_w_overrun_gt>>=
 prop_projects_w_overrun_gt <- function(percentage_over){
-  cost_overruns_by_GR %>%
+  cost_overruns_by_GR %$%
     mean(Final_cost_over_initial > 1 + percentage_over)
 }
 @
