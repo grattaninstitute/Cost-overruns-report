@@ -139,13 +139,19 @@ test_that("convert_million_cols", {
 })
 @
 
+<<project_dataset>>=
+project_dataset %<>%
+  mutate(Status_4 = Status) %>% # 4 stands for four stages: "Possible", "Under consideration", "Committed", "Under construction"
+  mutate(Status = if_else(Status %in% c("Possible", "Under consideration"), "Possible or under consideration", Status)) %>%
+  mutate(Grattan_record = coalesce(`Project No.`, `Record No`)) %>%
+  filter(!is.na(Grattan_record))
+  @
+
 <<first_status_by_GR>>=
 first_status_by_GR <-
   project_dataset %>%
-  mutate(Grattan_record = coalesce(`Project No.`,
-                                   `Record No`),
-         Status_ordered = factor(Status, 
-                                 levels = c("Possible", "Under consideration", "Committed", "Under construction"), 
+  mutate(Status_ordered = factor(Status, 
+                                 levels = c("Possible or under consideration", "Committed", "Under construction"), 
                                  ordered = TRUE)) %>%
     mutate(Record_date = as.Date(paste("1", sheet), 
                                format = "%d %b %Y")) %>%
@@ -168,7 +174,7 @@ final_status_by_GR <-
   merge(transport_projects) %>%
   group_by(Grattan_record) %>%
   mutate(final_pipeline_status = last(Status_ordered, order_by = Record_date),
-         Final_status_historical =  if_else(is.na(Final_status_historical) & final_pipeline_status %in% c("Possible", "Under considertaion", "Committed"), 
+         Final_status_historical =  if_else(is.na(Final_status_historical) & final_pipeline_status %in% c("Possible or under considertaion", "Committed"), 
                                             "Deleted", Final_status_historical),
          Final_status_historical =  if_else(is.na(Final_status_historical) & final_pipeline_status=="Under construction", 
                                             "Completed", Final_status_historical)) %>%
@@ -185,7 +191,7 @@ transport_projects_with_outliers <-
          `Sub-industry` %in% c("Road", "Rail")) %>%
   filter(Status != "Deleted") %>%
   mutate(Status_ordered = factor(Status, 
-                                 levels = c("Possible", "Under consideration", "Committed", "Under construction"), 
+                                 levels = c("Possible or under consideration", "Committed", "Under construction"), 
                                  ordered = TRUE)) %>%
   mutate(Grattan_record = coalesce(`Project No.`,
                                    `Record No`)) %>%
@@ -300,7 +306,6 @@ transport_projects_with_outliers %>%
 @
 
 <<cancellation_by_project_stage>>=
-
 cancellation_by_project_stage <-
   transport_projects %>%
   setkey(Grattan_record) %>%
@@ -308,31 +313,27 @@ cancellation_by_project_stage <-
   select(Grattan_record) %>%
   merge(first_status_by_GR) %>%
   merge(final_status_by_GR) %>%
-  mutate(n_first_status_possible = length(which(first_pipeline_status == "Possible")),
-         n_first_status_under_consideration = length(which(first_pipeline_status == "Under consideration")),
+  mutate(n_first_status_possible_or_under_consideration = length(which(first_pipeline_status == "Possible or under consideration")),
          n_first_status_committted = length(which(first_pipeline_status == "Committed")),
          n_first_status_under_construction = length(which(first_pipeline_status == "Under construction")),
-         n_deleted_as_possible = length(which(final_pipeline_status == "Possible" & Final_status_historical == "Deleted")),
-         n_deleted_as_under_consideration = length(which(final_pipeline_status == "Under consideration" & Final_status_historical == "Deleted")),
+         
+         n_deleted_as_possible_or_under_consideration = length(which(final_pipeline_status == "Possible or under consideration" & Final_status_historical == "Deleted")),
          n_deleted_as_committted = length(which(final_pipeline_status == "Committed" & Final_status_historical == "Deleted")),
          n_deleted_as_under_construction = length(which(final_pipeline_status == "Under construction" & Final_status_historical == "Deleted")),
-         n_projects_w_possible = n_first_status_possible, 
-         n_projects_w_under_consideration = n_projects_w_possible + n_first_status_under_consideration - n_deleted_as_possible,
-         n_projects_w_possible_or_under_consideration = n_projects_w_possible + n_first_status_under_consideration,
-         n_projects_w_committted = n_projects_w_under_consideration + n_first_status_committted - n_deleted_as_under_consideration,
+         
+         n_projects_w_possible_or_under_consideration = n_first_status_possible_or_under_consideration, 
+         n_projects_w_committted = n_first_status_possible_or_under_consideration + n_first_status_committted - n_first_status_possible_or_under_consideration,
          n_projects_w_under_construction = n_projects_w_committted + n_first_status_under_construction - n_deleted_as_committted,
-         possible_cancellation_rate = n_deleted_as_possible/n_projects_w_possible, 
-         under_consideration_cancellation_rate = n_deleted_as_under_consideration/n_projects_w_under_consideration,
-         possible_or_under_consideration_cancellation_rate = (n_deleted_as_possible+n_deleted_as_under_consideration)/n_projects_w_possible_or_under_consideration,
+         
+         possible_or_under_consideration_cancellation_rate = n_deleted_as_possible_or_under_consideration/n_projects_w_possible_or_under_consideration, 
          committed_cancellation_rate = n_deleted_as_committted/n_projects_w_committted,
          under_construction_cancellation_rate = n_deleted_as_under_construction/n_projects_w_under_construction, 
          overrall_cancellation_rate = length(which(Final_status_historical == "Deleted"))/length(Final_status_historical)) %>%
-  select(possible_cancellation_rate, under_consideration_cancellation_rate, possible_or_under_consideration_cancellation_rate, committed_cancellation_rate, under_construction_cancellation_rate, overrall_cancellation_rate) %>%
+  select(possible_or_under_consideration_cancellation_rate, possible_or_under_consideration_cancellation_rate, committed_cancellation_rate, under_construction_cancellation_rate, overrall_cancellation_rate) %>%
   unique
- 
 @
 
-<<cancellation_and_cost_overruns>>=
+<<WORK IN PROGRESS cancellation_and_cost_overruns>>=
 cancellation_and_cost_overruns <-
   transport_projects_with_outliers_and_cost_overrun_variables %>%
   filter(!outlier) %>%
@@ -340,8 +341,7 @@ cancellation_and_cost_overruns <-
   merge(final_status_by_GR) %>%
   mutate(cancellation_state = if_else(Final_status_historical== "Completed" , "None", as.character(final_pipeline_status)), 
          cancellation_state = factor(cancellation_state, 
-                                 levels = c("Possible",
-                                      "Under consideration",
+                                 levels = c("Possible or under consideration",
                                       "Committed",
                                       "Under construction",
                                       "None"), 
@@ -349,18 +349,26 @@ cancellation_and_cost_overruns <-
   mutate()
 
   # I'm going to write out each of the regressions, then work out a way to do all of this within the table and just report the relevant mfx's and pvals
-  cancellation_reg_P <- logitmfx(factor(cancellation_state== "Possible")~ Final_cost_over_initial, cancellation_and_cost_overruns) # This needs to be based off cost overruns up to that point, not overrall
+  #cancellation_reg_P <- logitmfx(factor(cancellation_state== "Possible")~ Final_cost_over_initial, cancellation_and_cost_overruns) # This needs to be based off cost overruns up to that point, not overrall
 
-         
-         
+
   
 @
 
+<<cost_when_completed>>=
+cost_when_completed <-
+  historical_dataset %>%
+  as.data.table %>%
+  mutate(cost_when_completed = `Total cost $m`*10^6, Grattan_record = `Project No.`) %>%
+  setkey(Grattan_record) %>%
+  select(cost_when_completed, Grattan_record)
+@
 
 <<completed_transport_projects>>=
 completed_transport_projects <- 
   transport_projects %>%
-  merge(final_status_by_Grattan_record) %>%
+  merge(final_status_by_GR) %>%
+  merge(cost_when_completed) %>%
   filter(Final_status_historical == "Completed")
 
 @
@@ -659,7 +667,7 @@ Hugh: This finding comes the eight regression models listed below.
 State_decoder <- readRDS("./data/State_decoding.rds")
 @
 
-<<election_by_GR>>=
+<<election_any_date>>=
 election_any_date <-
   bind_rows({
     elections %>%
@@ -783,7 +791,7 @@ important_vars_by_GR <-
   # in public before the status was committed.
   setkey(Grattan_record, Record_date) %>%
   group_by(Grattan_record) %>%
-  summarise(premature_announcement = any(Status_ordered <= "Under consideration"), 
+  summarise(premature_announcement = any(Status_ordered == "Possible or under consideration"), 
             log_Total_days_pre_construction = 
               if (any(Status == "Under construction")){
                 log(1 + as.numeric(difftime(min(Record_date[Status_ordered == "Under construction"]), 
@@ -866,6 +874,72 @@ Figure 2.3.3:
 #' @return  A data table for each Grattan record and each status change (for which a
 #'          a cost was recorded before and after).  The cost change between the first
 #'          instance of the lagged status and the first instance of the lead status.
+
+table(cost_overruns_by_GR_phase$cost_change_over_stage, cost_overruns_by_GR_phase$change_was_from)
+
+cost_overruns_by_GR_phase <-
+  completed_transport_projects %>% 
+  mutate(initial_project_cost = first(Cost_estimate_real)) %>%
+  setkey(Grattan_record, Status_ordered, Record_date) %>%
+  select(Grattan_record, Status_ordered, Record_date, Cost_estimate_real, initial_project_cost, cost_when_completed) %>% 
+  group_by(Grattan_record, Status_ordered) %>%
+  summarise(first_cost = first(Cost_estimate_real), 
+            final_cost = last(Cost_estimate_real)) %>%
+  group_by(Grattan_record) %>%
+  mutate(change_was_from = paste(Status_ordered, "to", lag(Status_ordered,k=-1))) %>%
+  mutate(first_cost_change = first_cost - lag(first_cost), 
+         final_cost_change = final_cost - lag(final_cost), 
+         cost_change_over_stage = final_cost - first_cost) %>%
+  ungroup %>%
+
+  mutate(phase_cost_overrun = coalesce(first_cost_change, 0), 
+         phase_cost_overrun_pc = phase_cost_overrun / first_cost) %>%
+  mutate(change_was_from = factor(change_was_from, 
+                                    levels = c("Possible or under consideration to Committed", 
+                                               "Possible or under consideration to Under construction", 
+                                               "Possible or under consideration to Completed", 
+                                               "Committed to Under construction",
+                                               "Committed to Completed",
+                                               "Under construction to Completed"), 
+                                    ordered = TRUE))  %>%
+  # to compare cost overrun, but also
+  # to omit outliers
+  setkey(Grattan_record) %>%
+  merge(cost_overruns_by_GR) %>%
+  select(Grattan_record, change_was_from, 
+         phase_cost_overrun, phase_cost_overrun_pc, 
+         project_cost_overrun = cost_overrun) %>%
+  # For Under construction to Completed
+  bind_rows({
+    completed_transport_projects %>%
+      filter(Status_ordered == "Under construction") %>%
+      group_by(Grattan_record) %>%
+      summarise(first_estimate = first(Cost_estimate_real, order_by = Record_date), 
+                final_estimate = last(Cost_estimate_real, order_by = Record_date)) %>%
+      mutate(phase_cost_overrun = first_estimate - final_estimate, 
+             phase_cost_overrun_pc = phase_cost_overrun / first_estimate) %>%
+      ungroup %>%
+      mutate(change_was_from = factor("Under construction to Completed", 
+                                    levels = c("Possible or under consideration to Committed", 
+                                               "Possible or under consideration to Under construction", 
+                                               "Possible or under consideration to Completed", 
+                                               "Committed to Under construction",
+                                               "Committed to Completed",
+                                               "Under construction to Completed"), 
+                                      ordered = TRUE)) %>%
+      setkey(Grattan_record) %>%
+      merge(cost_overruns_by_GR) %>%
+      select(Grattan_record, change_was_from, phase_cost_overrun, phase_cost_overrun_pc, project_cost_overrun = cost_overrun)
+  }) %>%
+  setkey(Grattan_record, change_was_from) %>% 
+  .[]
+
+@
+
+<<LD's cost_overruns_by_GR_phase>>=
+#' @return  A data table for each Grattan record and each status change (for which a
+#'          a cost was recorded before and after).  The cost change between the first
+#'          instance of the lagged status and the first instance of the lead status.
 cost_overruns_by_GR_phase <-
   completed_transport_projects %>% 
   setkey(Grattan_record, Status_ordered, Record_date) %>%
@@ -924,8 +998,10 @@ cost_overruns_by_GR_phase <-
   setkey(Grattan_record, change_was_from) %>% 
   .[]
 
+        
 
 @
+
 
 <<waterfall, eval=FALSE>>= 
 completed_transport_projects %>%
@@ -1179,20 +1255,14 @@ overrun_underrun_net_by_Initial_status <-
   completed_transport_projects %>%
   group_by(Grattan_record) %>%
   summarise(Initial_status = min(Status_ordered)) %>%
-  mutate(
-    # Combine
-    Initial_status = factor(if_else(Initial_status %in% c("Possible", "Under consideration"), 
-                                    "Possible or\nUnder consideration", 
-                                    as.character(Initial_status)), 
-                            levels = c("Possible or\nUnder consideration", 
-                                       "Committed", 
-                                       "Under construction"), 
-                            ordered = TRUE)) %>%
   merge(cost_overruns_by_GR) %>%
   group_by(Initial_status) %>%
   summarise(avg_overrun = mean_of_positive(Final_cost_over_initial - 1), 
             avg_underrun = mean_of_negative(Final_cost_over_initial - 1), 
             avg_net_overrun = mean(Final_cost_over_initial) - 1)
+
+
+overrun_underrun_net_by_Initial_status$Initial_status
 @
 
 <<overrun_pc_if_initial_status_committed>>=
@@ -1249,7 +1319,7 @@ prop_announced_early_which_completed <-
   transport_projects %>%
   group_by(Grattan_record) %>%
   summarise(announced_prematurely = any(Status_ordered <= "Under consideration")) %>%
-  merge(final_status_by_Grattan_record) %>%
+  merge(final_status_by_GR) %>%
   filter(announced_prematurely, !is.na(Final_status_historical)) %$%
   mean(Final_status_historical == "Completed")
 @
