@@ -391,9 +391,6 @@ spending_per_dollar_budgeted <-
   {sum(final_cost_estimate_real) / sum(first_cost_estimate_real)}
 @
 
-<<temp>>=
-warning("Using temp vars")
-@
 
 <<prop_projects_w_overrun>>=
 prop_projects_w_overrun <- 
@@ -769,8 +766,8 @@ important_vars_by_GR %>%
         data = .) -> 
   fit_logistic_co_all_v4
 
-if (interactive())
-  avPlots(fit_logistic_co_all_v4)
+# if (interactive())
+#   avPlots(fit_logistic_co_all_v4)
 @
 
 \subsection{Early overruns do not prevent later overruns}
@@ -877,7 +874,9 @@ val_overruns_between_announcment_and_commitment <-
   filter(grepl("to Committed", change_was_from, fixed = TRUE), 
          project_cost_overrun > 0) %$%
   sum(phase_cost_overrun)
+@
 
+<<other, eval=FALSE>>=
 CO_announcement_commitment_LD <-
   cost_overruns_by_GR_phase %>%
   filter(change_was_from == "")
