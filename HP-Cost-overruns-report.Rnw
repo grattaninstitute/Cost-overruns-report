@@ -332,6 +332,29 @@ cancellation_by_project_stage <-
  
 @
 
+<<cancellation_and_cost_overruns>>=
+cancellation_and_cost_overruns <-
+  transport_projects_with_outliers_and_cost_overrun_variables %>%
+  filter(!outlier) %>%
+  merge(first_status_by_GR) %>%
+  merge(final_status_by_GR) %>%
+  mutate(cancellation_state = if_else(Final_status_historical== "Completed" , "None", as.character(final_pipeline_status)), 
+         cancellation_state = factor(cancellation_state, 
+                                 levels = c("Possible",
+                                      "Under consideration",
+                                      "Committed",
+                                      "Under construction",
+                                      "None"), 
+                                 ordered = TRUE)) %>%
+  mutate()
+
+  # I'm going to write out each of the regressions, then work out a way to do all of this within the table and just report the relevant mfx's and pvals
+  cancellation_reg_P <- logitmfx(factor(cancellation_state== "Possible")~ Final_cost_over_initial, cancellation_and_cost_overruns) # This needs to be based off cost overruns up to that point, not overrall
+
+         
+         
+  
+@
 
 
 <<completed_transport_projects>>=
