@@ -888,18 +888,17 @@ cost_overruns_by_GR_phase <-
   group_by(Grattan_record, Status_ordered) %>%
   summarise(first_cost = first(Cost_estimate_real), 
             final_cost = last(Cost_estimate_real), 
-            initial_project_cost, Cost_estimate_real) %>%
+            initial_cost = last(initial_project_cost)) %>%
   group_by(Grattan_record) %>%
   mutate(change_was_from = paste(lag(Status_ordered), "to", Status_ordered),
          prev_status_existed = !is.na(lag(Status_ordered))) %>%
-  filter(prev_status_existed) %>%
   mutate(first_cost_change = first_cost - lag(first_cost), 
          final_cost_change = final_cost - lag(final_cost), 
          cost_change_over_stage = final_cost - first_cost) %>%
   ungroup %>%
-
+  filter(prev_status_existed) %>%
   mutate(phase_cost_overrun = coalesce(first_cost_change, 0), 
-         phase_cost_overrun_pc = phase_cost_overrun / first_cost) %>%
+         phase_cost_overrun_pc = phase_cost_overrun / initial_cost) %>%
   mutate(change_was_from = factor(change_was_from, 
                                     levels = c("Possible or under consideration to Committed", 
                                                "Possible or under consideration to Under construction", 
@@ -914,14 +913,14 @@ cost_overruns_by_GR_phase <-
   # For Under construction to Completed
   bind_rows({
     completed_transport_projects %>%
-      mutate(initial_project_cost = first(Cost_estimate_real)) %>%
       filter(Status_ordered == "Under construction") %>%
       group_by(Grattan_record) %>%
       summarise(first_estimate = first(Cost_estimate_real, order_by = Record_date), 
-                final_estimate = cost_when_completed_real, 
-                initial_project_cost)%>%
+                final_estimate = last(cost_when_completed_real)) %>%
+      ungroup %>%
+      merge(cost_overruns_by_GR) %>%
       mutate(phase_cost_overrun = final_estimate - first_estimate, 
-             phase_cost_overrun_pc = phase_cost_overrun / initial_project_cost) %>%
+             phase_cost_overrun_pc = phase_cost_overrun / first_cost_estimate_real) %>%
       ungroup %>%
       mutate(change_was_from = factor("Under construction to Completed", 
                                     levels = c("Possible or under consideration to Committed", 
@@ -932,7 +931,6 @@ cost_overruns_by_GR_phase <-
                                                "Under construction to Completed"), 
                                       ordered = TRUE)) %>%
       setkey(Grattan_record) %>%
-      merge(cost_overruns_by_GR) %>%
       select(Grattan_record, change_was_from, phase_cost_overrun, phase_cost_overrun_pc, project_cost_overrun = cost_overrun)
   }) %>%
   setkey(Grattan_record, change_was_from) %>% 
@@ -945,74 +943,6 @@ cost_overruns_by_GR_phase_unique<-
   unique
 
 @
-
-<<LD's cost_overruns_by_GR_phase>>=
-#' @return  A data table for each Grattan record and each status change (for which a
-#'          a cost was recorded before and after).  The cost change between the first
-#'          instance of the lagged status and the first instance of the lead status.
-cost_overruns_by_GR_phase <-
-  completed_transport_projects %>% 
-  setkey(Grattan_record, Status_ordered, Record_date) %>%
-  select(Grattan_record, Status_ordered, Record_date, Cost_estimate_real) %>% 
-  group_by(Grattan_record, Status_ordered) %>%
-  summarise(first_cost = first(Cost_estimate_real), 
-            final_cost = last(Cost_estimate_real), 
-            Cost_estimate_real) %>%
-  group_by(Grattan_record) %>%
-  mutate(change_was_from = paste(lag(Status_ordered), "to", Status_ordered),
-         prev_status_existed = !is.na(lag(Status_ordered)),
-         first_cost_change = first_cost - lag(first_cost), 
-         final_cost_change = final_cost - lag(final_cost)) %>%
-  ungroup %>%
-  filter(prev_status_existed) %>%
-  mutate(phase_cost_overrun = coalesce(first_cost_change, 0), 
-         phase_cost_overrun_pc = phase_cost_overrun / first_cost) %>%
-  mutate(change_was_from = factor(change_was_from, 
-                                    levels = c("Possible to Under consideration", 
-                                               "Possible to Committed", 
-                                               "Possible to Under construction", 
-                                               "Under consideration to Committed",
-                                               "Under consideration to Under construction", 
-                                               "Committed to Under construction", 
-                                               "Under construction to Completed"), 
-                                    ordered = TRUE))  %>%
-  # to compare cost overrun, but also
-  # to omit outliers
-  setkey(Grattan_record) %>%
-  merge(cost_overruns_by_GR) %>%
-  select(Grattan_record, change_was_from, 
-         phase_cost_overrun, phase_cost_overrun_pc, 
-         project_cost_overrun = cost_overrun, Cost_estimate_real) %>%
-  # For Under construction to Completed
-  bind_rows({
-    completed_transport_projects %>%
-      filter(Status_ordered == "Under construction") %>%
-      group_by(Grattan_record) %>%
-      summarise(first_estimate = first(Cost_estimate_real, order_by = Record_date), 
-                final_estimate = last(Cost_estimate_real, order_by = Record_date)) %>%
-      mutate(phase_cost_overrun = final_estimate - first_estimate, 
-             phase_cost_overrun_pc = phase_cost_overrun / first_estimate) %>%
-      ungroup %>%
-      mutate(change_was_from = factor("Under construction to Completed", 
-                                      levels = c("Possible to Under consideration", 
-                                                 "Possible to Committed", 
-                                                 "Possible to Under construction", 
-                                                 "Under consideration to Committed",
-                                                 "Under consideration to Under construction", 
-                                                 "Committed to Under construction", 
-                                                 "Under construction to Completed"), 
-                                      ordered = TRUE)) %>%
-      setkey(Grattan_record) %>%
-      merge(cost_overruns_by_GR) %>%
-      select(Grattan_record, change_was_from, phase_cost_overrun, phase_cost_overrun_pc, project_cost_overrun = cost_overrun)
-  }) %>%
-  setkey(Grattan_record, change_was_from) %>% 
-  .[]
-
-head(cost_overruns_by_GR_phase, 30)        
-
-@
-
 
 <<waterfall, eval=FALSE>>= 
 completed_transport_projects %>%
@@ -1071,10 +1001,17 @@ overruns_between_announcement_commitment_as_prop_of_proj_val <-
   cost_overruns_by_GR_phase %>%
   merge(cost_overruns_by_GR) %>%
   group_by(change_was_from) %>%
-  summarise(x = sum(phase_cost_overrun) / sum(final_cost_estimate_real) ) %>%
+  summarise(x = sum(phase_cost_overrun) / sum(first_cost_estimate_real) ) %>% 
   ungroup %>%
   filter(grepl("to Committed", change_was_from, fixed = TRUE)) %$%
   sum(x)
+
+cost_overruns_by_GR_phase %>%
+  filter(change_was_from == "Possible or under consideration to Committed") %>%
+  setkey(Grattan_record) %>%
+  unique %>%
+  summarise(mean(phase_cost_overrun_pc))
+
 @
 
 <<overruns_after_commitment_before_construction_as_prop_of_proj_val>>=
