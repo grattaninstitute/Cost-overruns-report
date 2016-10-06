@@ -718,6 +718,19 @@ election_any_date <-
 }
 @
 
+<<grattan_records_180days_before_election>>=
+# Vector of Grattan_records within 180 days of an election
+# This code is defined relative to projects having status = committed, not ENTERING committed
+grattan_records_180days_before_election <- 
+  completed_transport_projects %>%
+  filter(Status_ordered == "Committed") %>%
+  mutate(.Record_date.num = as.numeric(Record_date)) %>%
+  setkey(State_new, .Record_date.num) %>%
+  election_any_date[., roll=-180] %>%
+  filter(election_flag, is_federal) %$%
+  unique(Grattan_record)
+@
+
 <<date_first_committed_by_GR>>=
 date_first_committed_by_GR <- 
   first_date_by_Status_GR %>%
@@ -762,6 +775,18 @@ grattan_records_near_election <-
   filter(election_flag) %>%
   .[["Grattan_record"]]
 
+@
+
+<<grattan_records_180days_before_state_election>>=
+# This code is old and now incorrect
+grattan_records_180days_before_state_election <- 
+  completed_transport_projects %>%
+  filter(Status_ordered == "Committed") %>%
+  mutate(.Record_date.num = as.numeric(Record_date)) %>%
+  setkey(State_new, .Record_date.num) %>%
+  election_any_date[., roll=-180] %>%
+  filter(election_flag, !is_federal) %$%
+  unique(Grattan_record)
 @
 
 <<important_vars_by_GR>>=
