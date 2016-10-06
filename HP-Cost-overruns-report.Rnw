@@ -905,7 +905,7 @@ cost_overruns_by_GR_phase <-
       group_by(Grattan_record) %>%
       summarise(first_estimate = first(Cost_estimate_real, order_by = Record_date), 
                 final_estimate = last(Cost_estimate_real, order_by = Record_date)) %>%
-      mutate(phase_cost_overrun = first_estimate - final_estimate, 
+      mutate(phase_cost_overrun = final_estimate - first_estimate, 
              phase_cost_overrun_pc = phase_cost_overrun / first_estimate) %>%
       ungroup %>%
       mutate(change_was_from = factor("Under construction to Completed", 
