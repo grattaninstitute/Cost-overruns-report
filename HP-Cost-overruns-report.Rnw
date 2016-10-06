@@ -889,9 +889,7 @@ cost_overruns_by_GR_phase <-
   summarise(first_cost = first(Cost_estimate_real), 
             final_cost = last(Cost_estimate_real)) %>%
   group_by(Grattan_record) %>%
-  mutate(change_was_from = paste(lag(Status_ordered), "to", Status_ordered),
-         prev_status_existed = !is.na(lag(Status_ordered))) %>%
-  filter(prev_status_existed) %>%
+  mutate(change_was_from = paste(Status_ordered, "to", lag(Status_ordered,k=-1))) %>%
   mutate(first_cost_change = first_cost - lag(first_cost), 
          final_cost_change = final_cost - lag(final_cost), 
          cost_change_over_stage = final_cost - first_cost) %>%
