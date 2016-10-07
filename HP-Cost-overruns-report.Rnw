@@ -153,7 +153,7 @@ first_status_by_GR <-
   mutate(Status_ordered = factor(Status, 
                                  levels = c("Possible or under consideration", "Committed", "Under construction"), 
                                  ordered = TRUE)) %>%
-    mutate(Record_date = as.Date(paste("1", sheet), 
+  mutate(Record_date = as.Date(paste("1", sheet), 
                                format = "%d %b %Y")) %>%
   group_by(Grattan_record) %>%
   mutate(first_pipeline_status = first(Status_ordered, order_by = Record_date)) %>%
@@ -163,25 +163,7 @@ first_status_by_GR <-
 
 @
 
-<<final_status_by_GR>>=
-final_status_by_GR <- 
-  historical_dataset %>% 
-  mutate(Grattan_record = `Project No.`, 
-         Final_status_historical = Status) %>%
-  as.data.table %>%
-  setkey(Grattan_record) %>%
-  select(Grattan_record, Final_status_historical) %>%
-  merge(transport_projects) %>%
-  group_by(Grattan_record) %>%
-  mutate(final_pipeline_status = last(Status_ordered, order_by = Record_date),
-         Final_status_historical =  if_else(is.na(Final_status_historical) & final_pipeline_status %in% c("Possible or under considertaion", "Committed"), 
-                                            "Deleted", Final_status_historical),
-         Final_status_historical =  if_else(is.na(Final_status_historical) & final_pipeline_status=="Under construction", 
-                                            "Completed", Final_status_historical)) %>%
-  setkey(Grattan_record) %>%
-  unique() %>%
-  select(Grattan_record, final_pipeline_status, Final_status_historical)
-@
+
 
 <<transport_projects_with_outliers>>=
 transport_projects_with_outliers <- 
@@ -300,9 +282,29 @@ transport_projects_with_outliers_and_cost_overrun_variables <-
 
 <<transport_projects>>= 
 transport_projects <-
-transport_projects_with_outliers %>%
+  transport_projects_with_outliers %>%
   merge(transport_projects_with_outliers_and_cost_overrun_variables) %>%
   filter(!outlier)
+@
+
+<<final_status_by_GR>>=
+final_status_by_GR <- 
+  historical_dataset %>% 
+  mutate(Grattan_record = `Project No.`, 
+         Final_status_historical = Status) %>%
+  as.data.table %>%
+  setkey(Grattan_record) %>%
+  select(Grattan_record, Final_status_historical) %>%
+  merge(transport_projects) %>%
+  group_by(Grattan_record) %>%
+  mutate(final_pipeline_status = last(Status_ordered, order_by = Record_date),
+         Final_status_historical =  if_else(is.na(Final_status_historical) & final_pipeline_status %in% c("Possible or under considertaion", "Committed"), 
+                                            "Deleted", Final_status_historical),
+         Final_status_historical =  if_else(is.na(Final_status_historical) & final_pipeline_status=="Under construction", 
+                                            "Completed", Final_status_historical)) %>%
+  setkey(Grattan_record) %>%
+  unique() %>%
+  select(Grattan_record, final_pipeline_status, Final_status_historical)
 @
 
 <<cancellation_by_project_stage>>=
@@ -333,7 +335,7 @@ cancellation_by_project_stage <-
   unique
 @
 
-<<WORK IN PROGRESS cancellation_and_cost_overruns>>=
+<<cancellation_and_cost_overruns, eval=FALSE>>=
 cancellation_and_cost_overruns <-
   transport_projects_with_outliers_and_cost_overrun_variables %>%
   filter(!outlier) %>%
