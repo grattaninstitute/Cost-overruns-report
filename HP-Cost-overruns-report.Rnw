@@ -163,8 +163,6 @@ first_status_by_GR <-
 
 @
 
-
-
 <<transport_projects_with_outliers>>=
 transport_projects_with_outliers <- 
   project_dataset %>%
@@ -289,9 +287,9 @@ transport_projects <-
 
 <<final_status_by_GR>>=
 final_status_by_GR <- 
-  historical_dataset %>% 
-  mutate(Grattan_record = `Project No.`, 
-         Final_status_historical = Status) %>%
+  completed_project_list %>% 
+  #mutate(Grattan_record = `Project No.`, 
+  #       Final_status_historical = Status) %>%
   as.data.table %>%
   setkey(Grattan_record) %>%
   select(Grattan_record, Final_status_historical) %>%
@@ -304,7 +302,18 @@ final_status_by_GR <-
                                             "Completed", Final_status_historical)) %>%
   setkey(Grattan_record) %>%
   unique() %>%
-  select(Grattan_record, final_pipeline_status, Final_status_historical)
+  select(Grattan_record,  final_pipeline_status, Final_status_historical) 
+
+@
+
+
+<<Historical_completed_dataset_comparisons, eval=FALSE>>=
+completed_subset <-
+
+
+historical_dataset %>%
+  nrow
+
 @
 
 <<cancellation_by_project_stage>>=
@@ -324,15 +333,38 @@ cancellation_by_project_stage <-
          n_deleted_as_under_construction = length(which(final_pipeline_status == "Under construction" & Final_status_historical == "Deleted")),
          
          n_projects_w_possible_or_under_consideration = n_first_status_possible_or_under_consideration, 
-         n_projects_w_committted = n_first_status_possible_or_under_consideration + n_first_status_committted - n_first_status_possible_or_under_consideration,
+         n_projects_w_committted = n_projects_w_possible_or_under_consideration + n_first_status_committted - n_deleted_as_possible_or_under_consideration,
          n_projects_w_under_construction = n_projects_w_committted + n_first_status_under_construction - n_deleted_as_committted,
          
          possible_or_under_consideration_cancellation_rate = n_deleted_as_possible_or_under_consideration/n_projects_w_possible_or_under_consideration, 
          committed_cancellation_rate = n_deleted_as_committted/n_projects_w_committted,
          under_construction_cancellation_rate = n_deleted_as_under_construction/n_projects_w_under_construction, 
          overrall_cancellation_rate = length(which(Final_status_historical == "Deleted"))/length(Final_status_historical)) %>%
-  select(possible_or_under_consideration_cancellation_rate, possible_or_under_consideration_cancellation_rate, committed_cancellation_rate, under_construction_cancellation_rate, overrall_cancellation_rate) %>%
+  select(possible_or_under_consideration_cancellation_rate, possible_or_under_consideration_cancellation_rate, committed_cancellation_rate, under_construction_cancellation_rate,   overrall_cancellation_rate) %>%
   unique
+
+@
+
+<<Prop_projects_w_each_project_stage>>=
+Prop_projects_w_each_project_stage <-
+  completed_transport_projects %>%
+  setkey(Grattan_record) %>%
+  unique() %>%
+  select(Grattan_record) %>%
+  merge(first_status_by_GR) %>%
+  merge(final_status_by_GR) %>%
+  mutate(total_n_projects = length(Grattan_record), 
+         
+         n_first_status_possible_or_under_consideration = length(which(first_pipeline_status == "Possible or under consideration")),
+         n_first_status_committted = length(which(first_pipeline_status == "Committed")),
+         n_first_status_under_construction = length(which(first_pipeline_status == "Under construction")),
+
+         prop_projects_w_possible_or_under_consideration = n_first_status_possible_or_under_consideration/total_n_projects, 
+         prop_projects_w_committted = (n_first_status_possible_or_under_consideration + n_first_status_committted)/total_n_projects,
+         prop_projects_w_under_construction = (n_first_status_possible_or_under_consideration + n_first_status_committted+ n_first_status_under_construction )/total_n_projects) %>%
+  select(prop_projects_w_possible_or_under_consideration, prop_projects_w_committted, prop_projects_w_under_construction) %>%
+  unique()
+         
 @
 
 <<cancellation_and_cost_overruns, eval=FALSE>>=
@@ -364,6 +396,8 @@ cost_when_completed <-
   mutate(cost_when_completed = `Total cost $m`*10^6, Grattan_record = `Project No.`) %>%
   setkey(Grattan_record) %>%
   select(cost_when_completed, Grattan_record)
+
+
 @
 
 <<completed_transport_projects>>=
@@ -398,6 +432,7 @@ cost_overruns_by_GR <-
   select(Grattan_record, cost_overrun, Final_cost_over_initial, final_cost_estimate_real, first_cost_estimate_real) %>%
   setkey(Grattan_record) %>%
   unique()
+
 @
 
 <<total_cost_of_overruns>>=
@@ -489,13 +524,11 @@ spending_per_dollar_budgeted <-
   {sum(final_cost_estimate_real) / sum(first_cost_estimate_real)}
 @
 
-
 <<prop_projects_w_overrun>>=
 prop_projects_w_overrun <- 
   cost_overruns_by_GR %$%
   mean(Final_cost_over_initial > 1)
 @
-
 
 
 \begin{overview}[-40pt]
@@ -1006,13 +1039,13 @@ overruns_between_announcement_commitment_as_prop_of_proj_val <-
   summarise(x = sum(phase_cost_overrun) / sum(first_cost_estimate_real) ) %>% 
   ungroup %>%
   filter(grepl("to Committed", change_was_from, fixed = TRUE)) %$%
-  sum(x)
+  sum(x*Prop_projects_w_each_project_stage$prop_projects_w_possible_or_under_consideration)
 
 cost_overruns_by_GR_phase %>%
   filter(change_was_from == "Possible or under consideration to Committed") %>%
   setkey(Grattan_record) %>%
   unique %>%
-  summarise(mean(phase_cost_overrun_pc))
+  summarise(mean(phase_cost_overrun_pc)*Prop_projects_w_each_project_stage$prop_projects_w_possible_or_under_consideration)
 
 @
 
