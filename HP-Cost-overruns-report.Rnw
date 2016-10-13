@@ -524,6 +524,12 @@ spending_per_dollar_budgeted <-
   {sum(final_cost_estimate_real) / sum(first_cost_estimate_real)}
 @
 
+<<average_mag_of_CO>>=
+average_mag_of_CO <- 
+  cost_overruns_by_GR %$%
+  {mean(final_cost_estimate_real/first_cost_estimate_real)}
+@
+
 <<prop_projects_w_overrun>>=
 prop_projects_w_overrun <- 
   cost_overruns_by_GR %$%
@@ -948,14 +954,16 @@ cost_overruns_by_GR_phase <-
   # For Under construction to Completed
   bind_rows({
     completed_transport_projects %>%
+      mutate(initial_project_cost = first(Cost_estimate_real)) %>%
       filter(Status_ordered == "Under construction") %>%
       group_by(Grattan_record) %>%
       summarise(first_estimate = first(Cost_estimate_real, order_by = Record_date), 
-                final_estimate = last(cost_when_completed_real)) %>%
+                final_estimate = last(Cost_estimate_real, order_by = Record_date), 
+                initial_project_cost = last(initial_project_cost)) %>%
       ungroup %>%
       merge(cost_overruns_by_GR) %>%
       mutate(phase_cost_overrun = final_estimate - first_estimate, 
-             phase_cost_overrun_pc = phase_cost_overrun / first_cost_estimate_real) %>%
+             phase_cost_overrun_pc = phase_cost_overrun / initial_project_cost) %>%
       ungroup %>%
       mutate(change_was_from = factor("Under construction to Completed", 
                                     levels = c("Possible or under consideration to Committed", 
@@ -970,12 +978,6 @@ cost_overruns_by_GR_phase <-
   }) %>%
   setkey(Grattan_record, change_was_from) %>% 
   .[]
-
-cost_overruns_by_GR_phase_unique<-
-  cost_overruns_by_GR_phase%>%
-  filter(!is.na(change_was_from)) %>%
-  setkey(Grattan_record, change_was_from) %>%
-  unique
 
 @
 
@@ -1031,6 +1033,77 @@ table(cost_overruns_by_GR_phase$change_was_from)
 
 @
 
+<<CO12_a_z_project_level>>=
+CO12_a_z_project_level <-
+  cost_overruns_by_GR_phase %>%
+  filter(change_was_from == "Possible or under consideration to Committed") %>%
+  setkey(Grattan_record) %>%
+  unique %>%
+  summarise(mean(phase_cost_overrun_pc) * Prop_projects_w_each_project_stage$prop_projects_w_possible_or_under_consideration)
+
+@
+
+<<CO23_a_z_project_level>>=
+CO23_a_z_project_level <-
+cost_overruns_by_GR_phase %>%
+  filter(change_was_from == "Committed to Under construction") %>%
+  setkey(Grattan_record) %>%
+  unique %>%
+  summarise(mean(phase_cost_overrun_pc)*Prop_projects_w_each_project_stage$prop_projects_w_committted)
+@
+
+<<CO34_a_z_project_level>>=
+CO34_a_z_project_level <-
+cost_overruns_by_GR_phase %>%
+  filter(change_was_from == "Under construction to Completed") %>%
+  setkey(Grattan_record) %>%
+  unique %>%
+  summarise(mean(phase_cost_overrun_pc))
+@
+
+<<CO_a_z_project_CHECK, eval = FALSE>>=
+test_that("Check that indices are additive", {
+  expect_equal(CO12_a_z_project_level + CO23_a_z_project_level + CO34_a_z_project_level - average_mag_of_CO, 0)
+})
+@
+
+<<CO12_a_z_portfolio_level>>=
+CO12_a_z_portfolio_level <- 
+  cost_overruns_by_GR_phase %>%
+  merge(cost_overruns_by_GR) %>%
+  group_by(change_was_from) %>%
+  summarise(x = sum(phase_cost_overrun) / sum(first_cost_estimate_real) ) %>%
+  ungroup %>%
+  filter(change_was_from == "Possible or under consideration to Committed") %$%
+  sum(x*Prop_projects_w_each_project_stage$prop_projects_w_possible_or_under_consideration)
+@
+
+<<CO23_a_z_portfolio_level>>=
+CO23_a_z_portfolio_level <- 
+  cost_overruns_by_GR_phase %>%
+  merge(cost_overruns_by_GR) %>%
+  group_by(change_was_from) %>%
+  summarise(x = sum(phase_cost_overrun) / sum(first_cost_estimate_real) ) %>%
+  ungroup %>%
+  filter(change_was_from == "Committed to Under construction") %$%
+  sum(x*Prop_projects_w_each_project_stage$prop_projects_w_committted)
+@
+
+<<CO34_a_z_portfolio_level>>=
+CO34_a_z_portfolio_level <- 
+  cost_overruns_by_GR_phase %>%
+  merge(cost_overruns_by_GR) %>%
+  group_by(change_was_from) %>%
+  summarise(x = sum(phase_cost_overrun) / sum(first_cost_estimate_real) ) %>%
+  ungroup %>%
+  filter(change_was_from == "Under construction to Completed") %$%
+  sum(x)
+@
+
+<<CO_a_z_portfolio_CHECK, eval = FALSE>>=
+if_else(CO12_a_z_portfolio_level+CO23_a_z_portfolio_level+CO34_a_z_portfolio_level- spending_per_dollar_budgeted ==0, "PASS: INDICES ARE ADDITIVE", "WARNING: INDICES ARE NOT ADDITIVE") 
+@
+
 <<overruns_between_announcement_commitment_as_prop_of_proj_val>>=
 overruns_between_announcement_commitment_as_prop_of_proj_val <- 
   cost_overruns_by_GR_phase %>%
@@ -1039,13 +1112,13 @@ overruns_between_announcement_commitment_as_prop_of_proj_val <-
   summarise(x = sum(phase_cost_overrun) / sum(first_cost_estimate_real) ) %>% 
   ungroup %>%
   filter(grepl("to Committed", change_was_from, fixed = TRUE)) %$%
-  sum(x*Prop_projects_w_each_project_stage$prop_projects_w_possible_or_under_consideration)
+  sum(x)
 
 cost_overruns_by_GR_phase %>%
   filter(change_was_from == "Possible or under consideration to Committed") %>%
   setkey(Grattan_record) %>%
   unique %>%
-  summarise(mean(phase_cost_overrun_pc)*Prop_projects_w_each_project_stage$prop_projects_w_possible_or_under_consideration)
+  summarise(mean(phase_cost_overrun_pc))
 
 @
 
@@ -1054,7 +1127,7 @@ overruns_after_commitment_before_construction_as_prop_of_proj_val <-
   cost_overruns_by_GR_phase %>%
   merge(cost_overruns_by_GR) %>%
   group_by(change_was_from) %>%
-  summarise(x = sum(phase_cost_overrun) / sum(final_cost_estimate_real) ) %>%
+  summarise(x = sum(phase_cost_overrun) / sum(first_cost_estimate_real) ) %>%
   ungroup %>%
   filter(change_was_from == "Committed to Under construction") %$%
   sum(x)
@@ -1073,7 +1146,7 @@ overruns_during_construction_as_prop_of_final_value <-
                 first(Cost_estimate_real, order_by = Record_date)) 
   
   merge(cost_overrun_during_construction_by_GR, cost_overruns_by_GR, by = "Grattan_record") %$%
-    {sum(cost_overrun_during_construction) / sum(final_cost_estimate_real)}
+    {sum(cost_overrun_during_construction) / sum(first_cost_estimate_real)}
 }
 @
 
