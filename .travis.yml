@@ -95,11 +95,11 @@ before_script:
     - tlmgr update biber
 
 script: 
-  - Rscript -e "knitr::knit('Assessing-the-2016-super-tax-reforms.Rnw')"
-  - pdflatex -draftmode Assessing-the-2016-super-tax-reforms.tex
-  - biber Assessing-the-2016-super-tax-reforms
+  - Rscript -e "knitr::knit('HP-Cost-overruns-report.Rnw')"
+  - pdflatex -draftmode HP-Cost-overruns-report.tex
+  - biber HP-Cost-overruns-report
   - Rscript CheckBiber.R
-  - pdflatex -draftmode Assessing-the-2016-super-tax-reforms.tex
+  - pdflatex -draftmode HP-Cost-overruns-report.tex
 
 notifications:
   email: false
