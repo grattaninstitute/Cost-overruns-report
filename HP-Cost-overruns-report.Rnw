@@ -286,26 +286,104 @@ transport_projects <-
 @
 
 <<final_status_by_GR>>=
+
+# ISSUES: historical dataset \neq completed projects list
+# Can't get rid of all the NA's in completed project list's Final_status_historical
+historical_dataset_working_copy <-
+historical_dataset %>%
+  filter(`Major industry` == "Transport & Storage",
+         `Sub-industry` %in% c("Road", "Rail")) %>% 
+  mutate(Grattan_record = `Project No.`) %>%
+  as.data.table 
+
+historical_dataset_working_copy %>%
+  setkey(Grattan_record) %>% unique %>% nrow
+
+transport_projects %>% setkey(Grattan_record) %>% unique %>% nrow
+
+completed_project_list %>% as.data.table %>% setkey(Grattan_record) %>% unique %>% nrow
+
+transport_projects %>%
+  merge(historical_dataset_working_copy) %>%
+  unique %>% nrow
+
+transport_projects %>%
+  merge(completed_project_list) %>%
+  unique %>% nrow
+
+historical_dataset %>%
+  merge(completed_project_list) %>%
+  unique %>% nrow
+
+
+
+
 final_status_by_GR <- 
-  completed_project_list %>% 
-  #mutate(Grattan_record = `Project No.`, 
-  #       Final_status_historical = Status) %>%
+  historical_dataset %>% 
+  mutate(Grattan_record = `Project No.`, 
+         Final_status_historical = Status) %>%
   as.data.table %>%
   setkey(Grattan_record) %>%
   select(Grattan_record, Final_status_historical) %>%
   merge(transport_projects) %>%
   group_by(Grattan_record) %>%
-  mutate(final_pipeline_status = last(Status_ordered, order_by = Record_date),
-         Final_status_historical =  if_else(is.na(Final_status_historical) & final_pipeline_status %in% c("Possible or under considertaion", "Committed"), 
-                                            "Deleted", Final_status_historical),
-         Final_status_historical =  if_else(is.na(Final_status_historical) & final_pipeline_status=="Under construction", 
-                                            "Completed", Final_status_historical)) %>%
+  mutate(final_pipeline_status = last(Status_ordered, order_by = Record_date)) %>%
   setkey(Grattan_record) %>%
   unique() %>%
   select(Grattan_record,  final_pipeline_status, Final_status_historical) 
 
+
+final_status_by_GR_no_NAs <-
+  final_status_by_GR %>%
+  mutate(Final_status_historical =  if_else(is.na(Final_status_historical) & as.character(final_pipeline_status) == "Possible or under considertaion", 
+                                            "Deleted", Final_status_historical),
+         Final_status_historical = if_else(is.na(Final_status_historical) & final_pipeline_status == "Committed", "Deleted", Final_status_historical),
+         Final_status_historical =  if_else(is.na(Final_status_historical) & final_pipeline_status=="Under construction", 
+                                            "Completed", Final_status_historical), 
+         Final_status_historical = if_else(is.na(Final_status_historical), as.character(final_pipeline_status), Final_status_historical)) %>%
+  select(Grattan_record, Final_status_historical)
+
+
+table((final_status_by_GR_no_NAs$Final_status_historical))
+
+
+table((final_status_by_GR$final_pipeline_status))
+
+
+
+
+
 @
 
+<<sample_sizes_by_historical_status>>=
+sample_size <-
+  transport_projects %>% 
+  setkey(Grattan_record) %>%
+  unique() %>% nrow()
+
+sample_size_deleted <-
+  transport_projects %>% 
+  setkey(Grattan_record) %>%
+  unique() %>% 
+  merge(final_status_by_GR) %>% 
+  filter(Final_status_historical == "Deleted") %>%
+  nrow()
+
+sample_size_completed <-
+  transport_projects %>% 
+  setkey(Grattan_record) %>%
+  unique() %>% 
+  merge(final_status_by_GR) %>% 
+  filter(Final_status_historical == "Completed") %>%
+  nrow()
+
+  merge(final_status_by_GR) %>% 
+  mutate(total_sample_size = nrow()) %>% 
+  filter(Final_status_historical== "Deleted") %>% 
+  mutate(sample_size_deleted = nrow()) %>% 
+  select(total_sample_size,sample_size_deleted )
+
+@
 
 <<Historical_completed_dataset_comparisons, eval=FALSE>>=
 completed_subset <-
@@ -500,6 +578,7 @@ val_projects_w_overrun_gt <- function(percentage_over){
     mutate(is_over = (final_cost_estimate_real / first_cost_estimate_real) > (1 + percentage_over)) %$%
     sum(is_over * cost_overrun)
 }
+  
 @
 
 <<prop_val_projects_w_overrun_gt>>=
@@ -536,9 +615,45 @@ prop_projects_w_overrun <-
   mean(Final_cost_over_initial > 1)
 @
 
-<<CO_and_project_size>>=
+<<CO_and_project_size_scatter>>=
+CO_and_project_size_scatter <-
+  completed_transport_projects %>%
+  filter(Status == "Under construction") %>%
+  setkey(Grattan_record) %>%
+  unique() %>%
+  setkey(Grattan_record, Record_date) %>%
+  group_by(Grattan_record) %>%
+  mutate(project_size = first(Cost_estimate_real)) %>%
+  select(Grattan_record, project_size, Final_cost_over_initial)
+
+plot(CO_and_project_size_scatter$Final_cost_over_initial, (CO_and_project_size_scatter$project_size))
 
 @
+
+<<CO_and_project_size_categories, eval= FALSE>>=
+library(plyr)
+library(DescTools)
+
+View(CO_and_project_size_scatter$Grattan_record, CO_and_project_size_scatter$Cost_estimate_real)
+
+
+CO_and_project_size_scatter$project_size
+
+Cost_overruns_by_project_size<-
+  CO_and_project_size_scatter %>%
+  mutate(experienced_overrun = if_else(Final_cost_over_initial>1, 1, 0),
+        Project_size_category = DescTools::RoundTo(project_size, 100000000, ceiling),
+        Project_size_category = if_else(Project_size_category>300, "gt 300", as.character(Project_size_category)), 
+        Project_size_category = if_else(Project_size_category!=100, as.character(Project_size_category), if_else(project_size<=50, "50", "100"))) %>%
+  group_by(Project_size_category) %>%
+  mutate(Mean_overrun = mean(Final_cost_over_initial), 
+         pc_w_overrun = mean(experienced_overrun)) %>%
+  summarise(Project_size_category, Mean_overrun, pc_w_overrun) %>%
+  unique
+  
+
+@
+
 
 \begin{overview}[-40pt]
 Most of the time, Australia isn’t bad at managing transport infrastructure projects. But when one goes wrong, it can be spectacular. Australia could have saved \Sexpr{texNum(savings_if_every_cost_overrun_over_10pc_was_only_10pc, dollar = TRUE)} over the past 15 years if every transport infrastructure project with a cost overrun had gone no more than ten per cent over budget. 
@@ -907,7 +1022,7 @@ important_vars_by_GR %>%
   fit_logistic_co_all_v4
 
 # if (interactive())
-#   avPlots(fit_logistic_co_all_v4)
+#   avPlots(fit_logit_co_all_v7)
 @
 
 \subsection{Early overruns do not prevent later overruns}
