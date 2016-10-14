@@ -95,6 +95,7 @@ before_script:
     - tlmgr update biber
 
 script: 
+  - set -e
   - Rscript -e "knitr::knit('HP-Cost-overruns-report.Rnw')"
   - pdflatex -draftmode HP-Cost-overruns-report.tex
   - biber HP-Cost-overruns-report
