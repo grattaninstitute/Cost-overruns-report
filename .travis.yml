@@ -41,6 +41,7 @@ r_packages:
  - memoise
  - munsell
  - mfx
+ - nloptr
  - nnet
  - plyr
  - quadprog
@@ -82,6 +83,9 @@ before_install:
   - tlmgr update --all
   - sudo apt-get update
   - sudo apt-get install texlive-bibtex-extra
+  - sudo apt-get install libnlopt-dev  # for nloptr
+  - Rscript -e "if (!requireNamespace('littler')) install.packages('littler')"
+  - install.r nloptr
   - Rscript -e "if (!requireNamespace('knitr')) install.packages('knitr')"
 
 install: echo Installation step #do not remove this line!
