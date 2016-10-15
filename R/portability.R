@@ -1,7 +1,7 @@
 
 portability <- function(){
   requiredPackages <- c("assertthat", "betareg", "broom", "car", "chron", "codetools", 
-                        "colorspace", "CostOverrunsData", "crayon", "curl", "data.table", 
+                        "colorspace", "crayon", "curl", "data.table", 
                         "DBI", "devtools", "digest", "dplyr", "dtplyr", "evaluate", "flexmix", 
                         "foreach", "foreign", "formatR", "Formula", "ggplot2", "glmnet", 
                         "grattan", "gtable", "iterators", "knitr", "lattice", "lazyeval", 
@@ -16,6 +16,7 @@ portability <- function(){
   
   if (Sys.getenv("CI") == "true" && Sys.getenv("TRAVIS") == "true") {
     if (length(PackagesRequiredByUser) != 0){
+      install.packages("data/CostOverrunsData_0.2.0.tar.gz", repos = NULL, type = "source")
       install.packages(requiredPackages)
       devtools::install_github("hughparsonage/grattan")
     }

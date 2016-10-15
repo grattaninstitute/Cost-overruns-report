@@ -103,4 +103,7 @@ script:
   - pdflatex -draftmode HP-Cost-overruns-report.tex
 
 notifications:
-  email: false
+  email: 
+    recipients: 
+      - hugh.parsonage+CostOverruns@gmail.com
+      - 
