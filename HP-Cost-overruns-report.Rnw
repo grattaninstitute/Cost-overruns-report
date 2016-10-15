@@ -9,6 +9,11 @@
 \catcode`\$=12
 \begin{document}
 
+<<portability>>=
+source("R/portability.R")
+portability()
+@
+
 <<knitrOpts>>=
 library(knitr)
 opts_chunk$set(error = FALSE, echo = FALSE, fig.width=11, fig.height=7, out.width="\\columnwidth", out.height=paste0("0.6363\\columnwidth"))
