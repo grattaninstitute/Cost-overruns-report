@@ -16,9 +16,9 @@ portability <- function(){
   
   if (Sys.getenv("CI") == "true" && Sys.getenv("TRAVIS") == "true") {
     if (length(PackagesRequiredByUser) != 0){
-      install.packages("data/CostOverrunsData_0.2.0.tar.gz", repos = NULL, type = "source")
       install.packages(requiredPackages[requiredPackages != "CostOverrunsData"])
       devtools::install_github("hughparsonage/grattan")
+      install.packages("./data/CostOverrunsData_0.2.0.tar.gz", repos = NULL, type = "source")
     }
   }
 }
