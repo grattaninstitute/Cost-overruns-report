@@ -363,6 +363,7 @@ table((final_status_by_GR$final_pipeline_status))
 <<sample_sizes_by_historical_status>>=
 sample_size <-
   transport_projects %>% 
+  as.data.table() %>%
   setkey(Grattan_record) %>%
   unique() %>% nrow()
 
