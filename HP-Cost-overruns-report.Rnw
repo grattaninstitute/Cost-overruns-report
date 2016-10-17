@@ -301,7 +301,7 @@ final_status_by_GR <-
   summarise(Final_status = 
               # i.e. it is not in historical_dataset:
               if (all(is.na(Status_according_to_historical_dataset))){
-                if (any(Status_ordered == "Under construction")){
+                if (any(Status_ordered == "Under construction") && year(max(Record_date)) < 2015){
                   "Completed"
                 } else {
                   "Deleted"
@@ -335,15 +335,6 @@ sample_size_completed <-
   merge(final_status_by_GR) %>% 
   filter(Final_status == "Completed") %>%
   nrow()
-
-@
-
-<<Historical_completed_dataset_comparisons, eval=FALSE>>=
-completed_subset <-
-
-
-historical_dataset %>%
-  nrow
 
 @
 
