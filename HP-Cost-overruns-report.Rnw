@@ -304,7 +304,7 @@ final_status_by_GR <-
                 if (any(Status_ordered == "Under construction") && year(max(Record_date)) < 2015){
                   "Completed"
                 } else {
-                  "Deleted"
+                  NA_character_
                 }
               } else {
                 last(Status_according_to_historical_dataset, order_by = Record_date)
