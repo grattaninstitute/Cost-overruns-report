@@ -298,6 +298,23 @@ last_Cost_estimate_real_by_GR <-
   setkey(Grattan_record)
 @
 
+<<outlier_by_GR>>=
+outlier_by_GR <- 
+  first_Cost_estimate_real_by_GR %>%
+  merge(last_Cost_estimate_real_by_GR) %>%
+  mutate(outlier = !between(last_Cost_estimate_real / first_Cost_estimate_real,
+                            0.5, # This is a generous definition of outliers as the biggest underrun we observe 
+                            # is the 34% underrun on the Springfield to Richlands line. 
+                            
+                            5.2  # Any overrun greater than 5.2 is suspect of a data error. This is because the 
+                            # Peel deviation is the project with the largest overrun that we have been able 
+                            # to verify with certainty. A bunch of the extreme outliers were all redcorded 
+                            # on the same day, which looks suspicious too.
+  ) | is.na(first_Cost_estimate_real) | is.na(last_Cost_estimate_real)) %>%
+  select(Grattan_record, outlier) %>%
+  setkey(Grattan_record)
+@
+
 <<transport_projects_with_outliers>>=
 transport_projects_with_outliers <- 
   project_dataset %>%
