@@ -158,7 +158,8 @@ project_dataset %<>%
 <<first_status_by_GR>>=
 first_status_by_GR <-
   project_dataset %>%
-  as.data.table %>%
+  as.data.table %T>%
+  {warning("What about DELETED?")} %>%
   mutate(Status_ordered = factor(Status, 
                                  levels = c("Possible or under consideration", "Committed", "Under construction"), 
                                  ordered = TRUE)) %>%
