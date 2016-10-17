@@ -149,7 +149,9 @@ project_dataset %<>%
   as.data.table %>%
   mutate(Status_4 = Status) %>% # 4 stands for four stages: "Possible", "Under consideration", "Committed", "Under construction"
   mutate(Status = if_else(Status %in% c("Possible", "Under consideration"), "Possible or under consideration", Status)) %>%
-  mutate(Grattan_record = coalesce(`Project No.`, `Record No`)) %>%
+  mutate(Grattan_record = coalesce(`Project No.`, `Record No`), 
+         Record_date = as.Date(paste("1", sheet), 
+                               format = "%d %b %Y")) %>%
   filter(!is.na(Grattan_record))
 @
 
@@ -160,10 +162,32 @@ first_status_by_GR <-
   mutate(Status_ordered = factor(Status, 
                                  levels = c("Possible or under consideration", "Committed", "Under construction"), 
                                  ordered = TRUE)) %>%
-  mutate(Record_date = as.Date(paste("1", sheet), 
-                               format = "%d %b %Y")) %>%
   group_by(Grattan_record) %>%
   summarise(first_pipeline_status = first(Status_ordered, order_by = Record_date)) %>%
+  setkey(Grattan_record)
+@
+
+<<final_status_by_GR>>=
+#' @return Data table of **all** records by their final status as recorded. 
+final_status_by_GR <- 
+  historical_dataset %>% 
+  as.data.table %>%
+  select(Grattan_record = `Project No.`, 
+         Status_according_to_historical_dataset = Status) %>%
+  # See https://github.com/grattaninstitute/Cost-overruns-report/issues/20 
+  right_join(project_dataset, by = "Grattan_record") %>%
+  group_by(Grattan_record) %>%
+  summarise(Final_status = 
+              # i.e. it is not in historical_dataset:
+              if (all(is.na(Status_according_to_historical_dataset))){
+                if (any(Status == "Under construction") && year(max(Record_date)) < 2015){
+                  "Completed"
+                } else {
+                  NA_character_
+                }
+              } else {
+                last(Status_according_to_historical_dataset, order_by = Record_date)
+              }) %>%
   setkey(Grattan_record)
 @
 
