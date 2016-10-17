@@ -146,26 +146,25 @@ test_that("convert_million_cols", {
 
 <<project_dataset>>=
 project_dataset %<>%
+  as.data.table %>%
   mutate(Status_4 = Status) %>% # 4 stands for four stages: "Possible", "Under consideration", "Committed", "Under construction"
   mutate(Status = if_else(Status %in% c("Possible", "Under consideration"), "Possible or under consideration", Status)) %>%
   mutate(Grattan_record = coalesce(`Project No.`, `Record No`)) %>%
   filter(!is.na(Grattan_record))
-  @
+@
 
 <<first_status_by_GR>>=
 first_status_by_GR <-
   project_dataset %>%
+  as.data.table %>%
   mutate(Status_ordered = factor(Status, 
                                  levels = c("Possible or under consideration", "Committed", "Under construction"), 
                                  ordered = TRUE)) %>%
   mutate(Record_date = as.Date(paste("1", sheet), 
                                format = "%d %b %Y")) %>%
   group_by(Grattan_record) %>%
-  mutate(first_pipeline_status = first(Status_ordered, order_by = Record_date)) %>%
-  setkey(Grattan_record) %>%
-  unique() %>%
-  select(Grattan_record, first_pipeline_status)
-
+  summarise(first_pipeline_status = first(Status_ordered, order_by = Record_date)) %>%
+  setkey(Grattan_record)
 @
 
 <<transport_projects_with_outliers>>=
@@ -295,11 +294,19 @@ transport_projects <-
 # ISSUES: historical dataset \neq completed projects list
 # Can't get rid of all the NA's in completed project list's Final_status_historical
 historical_dataset_working_copy <-
-historical_dataset %>%
+  historical_dataset %>%
+  as.data.table %>%
   filter(`Major industry` == "Transport & Storage",
          `Sub-industry` %in% c("Road", "Rail")) %>% 
-  mutate(Grattan_record = `Project No.`) %>%
-  as.data.table 
+  mutate(Grattan_record = `Project No.`)
+
+completed_project_list_working_copy <- 
+  completed_project_list %>%
+  as.data.table %>%
+  filter(#`Major industry` == "Transport & Storage",
+         `Sub-industry` %in% c("Road", "Rail"))
+  
+  
 
 historical_dataset_working_copy %>%
   setkey(Grattan_record) %>% unique %>% nrow
@@ -309,11 +316,11 @@ transport_projects %>% setkey(Grattan_record) %>% unique %>% nrow
 completed_project_list %>% as.data.table %>% setkey(Grattan_record) %>% unique %>% nrow
 
 transport_projects %>%
-  merge(historical_dataset_working_copy) %>%
+  merge(historical_dataset_working_copy, by = "Grattan_record") %>%
   unique %>% nrow
 
 transport_projects %>%
-  merge(completed_project_list) %>%
+  merge(completed_project_list, by = "Grattan_record") %>%
   unique %>% nrow
 
 historical_dataset %>%
@@ -325,6 +332,7 @@ historical_dataset %>%
 
 final_status_by_GR <- 
   historical_dataset %>% 
+  copy %>%
   mutate(Grattan_record = `Project No.`, 
          Final_status_historical = Status) %>%
   as.data.table %>%
