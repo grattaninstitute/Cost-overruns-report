@@ -312,39 +312,20 @@ transport_projects <-
   filter(!outlier)
 @
 
-<<final_status_by_GR>>=
-final_status_by_GR <- 
-  historical_dataset %>% 
-  as.data.table %>%
-  select(Grattan_record = `Project No.`, 
-         Status_according_to_historical_dataset = Status) %>%
-  # See https://github.com/grattaninstitute/Cost-overruns-report/issues/20 
-  right_join(transport_projects, by = "Grattan_record") %>%
-  group_by(Grattan_record) %>%
-  summarise(Final_status = 
-              # i.e. it is not in historical_dataset:
-              if (all(is.na(Status_according_to_historical_dataset))){
-                if (any(Status_ordered == "Under construction") && year(max(Record_date)) < 2015){
-                  "Completed"
-                } else {
-                  NA_character_
-                }
-              } else {
-                last(Status_according_to_historical_dataset, order_by = Record_date)
-              }) %>%
-  setkey(Grattan_record)
-@
-
-<<sample_sizes_by_historical_status>>=
-sample_size <-
+<<n_transport_projects>>=
+n_transport_projects <-
   transport_projects %$% 
   uniqueN(Grattan_record)
+@
 
-sample_size_deleted <-
+<<n_deleted_transport_projects>>=
+n_deleted_transport_projects <-
   final_status_by_GR %$% 
   sum(Final_status == "Deleted") 
+@
 
-sample_size_completed <-
+<<n_completed_transport_projects>>=
+n_completed_transport_projects <-
   final_status_by_GR %$% 
   sum(Final_status == "Completed") 
 @
