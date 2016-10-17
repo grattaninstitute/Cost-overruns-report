@@ -314,28 +314,16 @@ final_status_by_GR <-
 
 <<sample_sizes_by_historical_status>>=
 sample_size <-
-  transport_projects %>% 
-  as.data.table() %>%
-  setkey(Grattan_record) %>%
-  unique() %>% 
-  nrow()
+  transport_projects %$% 
+  uniqueN(Grattan_record)
 
 sample_size_deleted <-
-  transport_projects %>% 
-  setkey(Grattan_record) %>%
-  unique() %>% 
-  merge(final_status_by_GR) %>% 
-  filter(Final_status == "Deleted") %>%
-  nrow()
+  final_status_by_GR %$% 
+  sum(Final_status == "Deleted") 
 
 sample_size_completed <-
-  transport_projects %>% 
-  setkey(Grattan_record) %>%
-  unique() %>% 
-  merge(final_status_by_GR) %>% 
-  filter(Final_status == "Completed") %>%
-  nrow()
-
+  final_status_by_GR %$% 
+  sum(Final_status == "Completed") 
 @
 
 <<cancellation_by_project_stage>>=
