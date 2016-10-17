@@ -149,9 +149,16 @@ test_that("convert_million_cols", {
 })
 @
 
+<<project_dataset_orig>>=
+project_dataset_orig <- copy(project_dataset)
+@
+
 <<project_dataset>>=
-project_dataset %<>%
+project_dataset <-
+  project_dataset_orig %>%
   as.data.table %>%
+  # case-sensitivity
+  mutate(Status = if_else(Status == "Under Construction", "Under construction", Status)) %>%
   mutate(Status_4 = Status) %>% # 4 stands for four stages: "Possible", "Under consideration", "Committed", "Under construction"
   mutate(Status = if_else(Status %in% c("Possible", "Under consideration"), "Possible or under consideration", Status)) %>%
   mutate(Grattan_record = coalesce(`Project No.`, `Record No`), 
