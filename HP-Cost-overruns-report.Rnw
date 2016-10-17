@@ -290,74 +290,26 @@ transport_projects <-
 @
 
 <<final_status_by_GR>>=
-
-# ISSUES: historical dataset \neq completed projects list
-# Can't get rid of all the NA's in completed project list's Final_status_historical
-historical_dataset_working_copy <-
-  historical_dataset %>%
-  as.data.table %>%
-  filter(`Major industry` == "Transport & Storage",
-         `Sub-industry` %in% c("Road", "Rail")) %>% 
-  mutate(Grattan_record = `Project No.`)
-
-completed_project_list_working_copy <- 
-  completed_project_list %>%
-  as.data.table %>%
-  filter(#`Major industry` == "Transport & Storage",
-         `Sub-industry` %in% c("Road", "Rail"))
-  
-  
-
-historical_dataset_working_copy %>%
-  setkey(Grattan_record) %>% unique %>% nrow
-
-transport_projects %>% setkey(Grattan_record) %>% unique %>% nrow
-
-completed_project_list %>% as.data.table %>% setkey(Grattan_record) %>% unique %>% nrow
-
-transport_projects %>%
-  merge(historical_dataset_working_copy, by = "Grattan_record") %>%
-  unique %>% nrow
-
-transport_projects %>%
-  merge(completed_project_list, by = "Grattan_record") %>%
-  unique %>% nrow
-
-historical_dataset %>%
-  merge(completed_project_list) %>%
-  unique %>% nrow
-
-
-
-
 final_status_by_GR <- 
   historical_dataset %>% 
-  copy %>%
-  mutate(Grattan_record = `Project No.`, 
-         Final_status_historical = Status) %>%
   as.data.table %>%
-  setkey(Grattan_record) %>%
-  select(Grattan_record, Final_status_historical) %>%
-  merge(transport_projects) %>%
+  select(Grattan_record = `Project No.`, 
+         Status_according_to_historical_dataset = Status) %>%
+  # See https://github.com/grattaninstitute/Cost-overruns-report/issues/20 
+  right_join(transport_projects, by = "Grattan_record") %>%
   group_by(Grattan_record) %>%
-  mutate(final_pipeline_status = last(Status_ordered, order_by = Record_date)) %>%
-  setkey(Grattan_record) %>%
-  unique() %>%
-  select(Grattan_record,  final_pipeline_status, Final_status_historical) 
-
-
-final_status_by_GR_no_NAs <-
-  final_status_by_GR %>%
-  mutate(Final_status_historical =  if_else(is.na(Final_status_historical) & as.character(final_pipeline_status) == "Possible or under considertaion", 
-                                            "Deleted", Final_status_historical),
-         Final_status_historical = if_else(is.na(Final_status_historical) & final_pipeline_status == "Committed", "Deleted", Final_status_historical),
-         Final_status_historical =  if_else(is.na(Final_status_historical) & final_pipeline_status=="Under construction", 
-                                            "Completed", Final_status_historical), 
-         Final_status_historical = if_else(is.na(Final_status_historical), as.character(final_pipeline_status), Final_status_historical)) %>%
-  select(Grattan_record, Final_status_historical)
-
-
-
+  summarise(Final_status = 
+              # i.e. it is not in historical_dataset:
+              if (all(is.na(Status_according_to_historical_dataset))){
+                if (any(Status_ordered == "Under construction")){
+                  "Completed"
+                } else {
+                  "Deleted"
+                }
+              } else {
+                last(Status_according_to_historical_dataset, order_by = Record_date)
+              }) %>%
+  setkey(Grattan_record)
 @
 
 <<sample_sizes_by_historical_status>>=
@@ -373,7 +325,7 @@ sample_size_deleted <-
   setkey(Grattan_record) %>%
   unique() %>% 
   merge(final_status_by_GR) %>% 
-  filter(Final_status_historical == "Deleted") %>%
+  filter(Final_status == "Deleted") %>%
   nrow()
 
 sample_size_completed <-
@@ -381,7 +333,7 @@ sample_size_completed <-
   setkey(Grattan_record) %>%
   unique() %>% 
   merge(final_status_by_GR) %>% 
-  filter(Final_status_historical == "Completed") %>%
+  filter(Final_status == "Completed") %>%
   nrow()
 
 @
@@ -407,9 +359,9 @@ cancellation_by_project_stage <-
          n_first_status_committted = length(which(first_pipeline_status == "Committed")),
          n_first_status_under_construction = length(which(first_pipeline_status == "Under construction")),
          
-         n_deleted_as_possible_or_under_consideration = length(which(final_pipeline_status == "Possible or under consideration" & Final_status_historical == "Deleted")),
-         n_deleted_as_committted = length(which(final_pipeline_status == "Committed" & Final_status_historical == "Deleted")),
-         n_deleted_as_under_construction = length(which(final_pipeline_status == "Under construction" & Final_status_historical == "Deleted")),
+         n_deleted_as_possible_or_under_consideration = length(which(final_pipeline_status == "Possible or under consideration" & Final_status == "Deleted")),
+         n_deleted_as_committted = length(which(final_pipeline_status == "Committed" & Final_status == "Deleted")),
+         n_deleted_as_under_construction = length(which(final_pipeline_status == "Under construction" & Final_status == "Deleted")),
          
          n_projects_w_possible_or_under_consideration = n_first_status_possible_or_under_consideration, 
          n_projects_w_committted = n_projects_w_possible_or_under_consideration + n_first_status_committted - n_deleted_as_possible_or_under_consideration,
@@ -418,7 +370,7 @@ cancellation_by_project_stage <-
          possible_or_under_consideration_cancellation_rate = n_deleted_as_possible_or_under_consideration/n_projects_w_possible_or_under_consideration, 
          committed_cancellation_rate = n_deleted_as_committted/n_projects_w_committted,
          under_construction_cancellation_rate = n_deleted_as_under_construction/n_projects_w_under_construction, 
-         overrall_cancellation_rate = length(which(Final_status_historical == "Deleted"))/length(Final_status_historical)) %>%
+         overrall_cancellation_rate = length(which(Final_status == "Deleted"))/length(Final_status)) %>%
   select(possible_or_under_consideration_cancellation_rate, possible_or_under_consideration_cancellation_rate, committed_cancellation_rate, under_construction_cancellation_rate,   overrall_cancellation_rate) %>%
   unique
 
@@ -430,7 +382,7 @@ cancellation_and_cost_overruns <-
   filter(!outlier) %>%
   merge(first_status_by_GR) %>%
   merge(final_status_by_GR) %>%
-  mutate(cancellation_state = if_else(Final_status_historical== "Completed" , "None", as.character(final_pipeline_status)), 
+  mutate(cancellation_state = if_else(Final_status== "Completed" , "None", as.character(final_pipeline_status)), 
          cancellation_state = factor(cancellation_state, 
                                  levels = c("Possible or under consideration",
                                       "Committed",
@@ -463,7 +415,7 @@ completed_transport_projects <-
   merge(final_status_by_GR) %>%
   merge(cost_when_completed) %>%
   mutate(cost_when_completed_real = construction_inflator(cost_when_completed, from = inflation_origin, to = as.Date("2015-12-01"))) %>%
-  filter(Final_status_historical == "Completed")
+  filter(Final_status == "Completed")
 
 @
 
@@ -1495,8 +1447,8 @@ prop_announced_early_which_completed <-
   group_by(Grattan_record) %>%
   summarise(announced_prematurely = any(Status_ordered <= "Under consideration")) %>%
   merge(final_status_by_GR) %>%
-  filter(announced_prematurely, !is.na(Final_status_historical)) %$%
-  mean(Final_status_historical == "Completed")
+  filter(announced_prematurely, !is.na(Final_status)) %$%
+  mean(Final_status == "Completed")
 @
 
 
