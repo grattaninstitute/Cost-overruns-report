@@ -745,39 +745,31 @@ prop_projects_w_overrun <-
 CO_and_project_size_scatter <-
   completed_transport_projects %>%
   filter(Status == "Under construction") %>%
+  filter(Final_cost_over_initial>0) %>%
   setkey(Grattan_record) %>%
   unique() %>%
   setkey(Grattan_record, Record_date) %>%
   group_by(Grattan_record) %>%
-  mutate(project_size = first(Cost_estimate_real)) %>%
+  mutate(project_size = first(Cost_estimate_real), 
+         log_Final_cost_over_initial = if_else(Final_cost_over_initial>0, log(Final_cost_over_initial), 0)) %>%
   select(Grattan_record, project_size, Final_cost_over_initial)
 
-plot(CO_and_project_size_scatter$Final_cost_over_initial, (CO_and_project_size_scatter$project_size))
+plot(CO_and_project_size_scatter$project_size, CO_and_project_size_scatter$log_Final_cost_over_initial)
 
 @
 
 <<CO_and_project_size_categories, eval= FALSE>>=
-library(plyr)
-library(DescTools)
-
-View(CO_and_project_size_scatter$Grattan_record, CO_and_project_size_scatter$Cost_estimate_real)
-
-
-CO_and_project_size_scatter$project_size
-
-Cost_overruns_by_project_size<-
+cost_overruns_by_project_size <-
   CO_and_project_size_scatter %>%
   mutate(experienced_overrun = if_else(Final_cost_over_initial>1, 1, 0),
-        Project_size_category = DescTools::RoundTo(project_size, 100000000, ceiling),
-        Project_size_category = if_else(Project_size_category>300, "gt 300", as.character(Project_size_category)), 
-        Project_size_category = if_else(Project_size_category!=100, as.character(Project_size_category), if_else(project_size<=50, "50", "100"))) %>%
+        Project_size_category = if_else(project_size<300000000, "lt 300m", if_else(project_size<600000000, "300m - 600m", "600+"))) %>%
   group_by(Project_size_category) %>%
   mutate(Mean_overrun = mean(Final_cost_over_initial), 
-         pc_w_overrun = mean(experienced_overrun)) %>%
-  summarise(Project_size_category, Mean_overrun, pc_w_overrun) %>%
+         n = n(), 
+         pc_w_CO = mean(experienced_overrun)) %>%
+  summarise(Project_size_category, Mean_overrun, pc_w_CO, n) %>%
   unique
   
-
 @
 
 
