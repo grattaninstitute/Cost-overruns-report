@@ -116,6 +116,11 @@ public_private_by_Grattan_record <-
   mutate(Lucille_Ownership = if_else(as.logical(Public_project_Grattan), 
                                      "Public", 
                                      "Private")) %>%
+  # Manual done by Lucille
+  # Correcting errors in the Lucille_ownership variable
+  mutate(Lucille_Ownership = if_else(Grattan_record %in% c(10218, 10858, 11043, 11127, 8267, 9757, 7952), 
+                                     "Private", 
+                                     Lucille_Ownership)) %>%
   select(Grattan_record, Lucille_Ownership)
 @
 
@@ -189,6 +194,100 @@ final_status_by_GR <-
               } else {
                 last(Status_according_to_historical_dataset, order_by = Record_date)
               }) %>%
+  setkey(Grattan_record)
+@
+
+<<isTransport_by_GR>>=
+isTransport_by_GR <- 
+  project_dataset %>%
+  mutate(isTransport = `&`(`Major industry` == "Transport & Storage",
+                           `Sub-industry` %in% c("Road", "Rail"))) %>%
+  select(Grattan_record, isTransport) %>%
+  setkey(Grattan_record) %>%
+  unique
+@
+
+<<Cost_estimate_by_GR_Record_date>>=
+Cost_estimate_by_GR_Record_date <- 
+  project_dataset %>%
+  as.data.table %>%
+  select(Grattan_record, Record_date, sheet, Status, grep("Cost", names(.), ignore.case = TRUE, value = FALSE)) %>%
+  melt.data.table(measure.vars = grep("Cost", names(.), ignore.case = TRUE, value = TRUE), 
+                  na.rm = TRUE, 
+                  value.name = "Cost_estimate") %>%
+  setkey(Grattan_record) %T>%
+  ## Testing:
+  {
+    dot <- copy(.)
+    test_that("Each cost variable is unique", {
+      nrows_not_unique <- 
+        setkey(dot, 
+               Grattan_record, 
+               variable, 
+               sheet) %>% 
+        unique %>% 
+        group_by(Grattan_record, sheet) %>% 
+        mutate(n = uniqueN(variable)) %>% 
+        filter(n > 1) %>%
+        nrow
+      expect_equal(nrows_not_unique, 0)
+    })
+  } %>%
+  # molten state no longer needed
+  select(-variable) %>%
+  {
+    # Warning("Assuming cost columns not marked ($m) are nonetheless in millions") - yes, that's a fine assumption. 
+    mutate(., Cost_estimate = Cost_estimate * 10^6) 
+  } %>%
+  {
+    dot <- .
+    
+    # What date should we choose to inflate
+    # cost estimates by? A: construction phase, 
+    # as defined below.
+    inflation_origin_by_GR <- 
+      dot %>%
+      # Is the status under construction in this quarter?
+      mutate(.co = grepl("under.*construction", Status, ignore.case = TRUE)) %>%
+      group_by(Grattan_record) %>%
+      # For each grattan record, 
+      #  1.  Is the project ever under construction?  If so, take
+      #      the value nearest the mean of those dates which were
+      #      under construction.
+      #  2.  If the project is never under construction, take the
+      #      the val_nrst_mean of all dates.
+      summarise(
+        inflation_origin = 
+          if (any(.co)) { 
+            val_nrst_mean(Record_date[.co]) 
+          } else { 
+            val_nrst_mean(Record_date)
+          }
+      ) %>%
+      select(Grattan_record, inflation_origin) %>%
+      setkey(Grattan_record)
+    
+    # Return to the top-level pipe:
+    merge(dot, inflation_origin_by_GR)
+  } %>%
+  mutate(Cost_estimate_real = construction_inflator(Cost_estimate, from = inflation_origin, to = as.Date("2015-12-01"))) %>% 
+  select(Grattan_record, Record_date, Cost_estimate, Cost_estimate_real) %>%
+  setkey(Grattan_record, Record_date)
+@
+
+<<first_Cost_estimate_real_by_GR>>=
+first_Cost_estimate_real_by_GR <- 
+  Cost_estimate_by_GR_Record_date %>%
+  group_by(Grattan_record) %>%
+  summarise(last_Cost_estimate_real = first(Cost_estimate_real, order_by = Record_date)) %>%
+  setkey(Grattan_record)
+@
+
+<<last_Cost_estimate_real_by_GR>>=
+last_Cost_estimate_real_by_GR <- 
+  Cost_estimate_by_GR_Record_date %>%
+  group_by(Grattan_record) %>%
+  summarise(last_Cost_estimate_real = last(Cost_estimate_real, order_by = Record_date)) %>%
   setkey(Grattan_record)
 @
 
@@ -307,9 +406,17 @@ transport_projects_with_outliers_and_cost_overrun_variables <-
 
 <<transport_projects>>= 
 transport_projects <-
-  transport_projects_with_outliers %>%
-  merge(transport_projects_with_outliers_and_cost_overrun_variables) %>%
-  filter(!outlier)
+  project_dataset %>%
+  as.data.table %>% 
+  setkey(Grattan_record, Record_date) %>% 
+  merge(Cost_estimate_by_GR_Record_date) %>% 
+  setkey(Grattan_record) %>% 
+  merge(isTransport_by_GR) %>% 
+  merge(public_private_by_Grattan_record) %>% 
+  filter(isTransport, 
+         Lucille_Ownership == "Public") %>% 
+  group_by(Grattan_record) %>% 
+  filter(last(Cost_estimate, order_by = Record_date) >= 20e6)
 @
 
 <<n_transport_projects>>=
@@ -320,14 +427,16 @@ n_transport_projects <-
 
 <<n_deleted_transport_projects>>=
 n_deleted_transport_projects <-
-  final_status_by_GR %$% 
-  sum(Final_status == "Deleted") 
+  final_status_by_GR %>%
+  merge(transport_projects) %$% 
+  sum(Final_status == "Deleted", na.rm = TRUE) 
 @
 
 <<n_completed_transport_projects>>=
 n_completed_transport_projects <-
-  final_status_by_GR %$% 
-  sum(Final_status == "Completed") 
+  final_status_by_GR %>%
+  merge(transport_projects) %$% 
+  sum(Final_status == "Completed", na.rm = TRUE) 
 @
 
 <<cancellation_by_project_stage>>=
