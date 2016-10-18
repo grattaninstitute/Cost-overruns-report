@@ -948,10 +948,11 @@ We take this approach to differentiate genuinely additional infrastructure from 
 
 Changes to scope are only a problem if they are not appraised on their merits as to whether they are worth the money and are better than alternative ways to solve a problem or to spend public funds.
 
-Although it appears to be common for scope changes to be made without proper appraisal of the new work,\footnote{Love et al (201), p185.} in fact scope changes only account for about 11 per cent of cost overruns on transport infrastructure projects (Figure 1.5).
+Although it appears to be common for scope changes to be made without proper appraisal of the new work,\footnote{Love et al (201), p185.} in fact scope changes only account for about 11 per cent of cost overruns on transport infrastructure projects (\Vref{fig:most-cost-overruns-were-not-attrib-to-scope-changes}).
 
-\protect\hypertarget{ux5fRef462916066}{}\textbf{Figure 1.5: Most cost overruns were not attributable to scope changes\\
-}Average proportion of cost overruns by cause, per cent
+\begin{figure}
+\captionwithunits{Most cost overruns were not attributable to scope changes\label{fig:most-cost-overruns-were-not-attrib-to-scope-changes}}
+{Average proportion of cost overruns by cause, per cent}
 
 % \includegraphics{media/image7.emf}
 
