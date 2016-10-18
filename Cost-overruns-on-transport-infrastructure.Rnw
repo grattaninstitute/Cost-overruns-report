@@ -862,7 +862,7 @@ A small number of researchers and state auditors general have analysed aspects o
 The drawback with small samples is that their findings may be less representative, and so policymakers cannot rely upon their findings as much as they can with larger or more comprehensive studies.
 
 \begin{figure}
-\captionwithunits{This report analyses upwards of nine times more Australian projects than previous studies\label{fig:this-report-analyses-9-times-more-projects-than-previous-studies}%
+\captionwithunits{This report analyses upwards of nine times more Australian projects than previous studies\label{fig:this-report-analyses-9-times-more-projects-than-previous-studies}}%
 {Sample sizes of studies into cost overruns on Australian transport infrastructure projects} % \includegraphics{media/image4.png}\emph{\\
 \source{Cited studies and Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
@@ -887,11 +887,13 @@ The variation in the average size of overruns observed across these small sample
 
 This report considers the entire project lifecycle from when ministers or opposition politicians first announce a project to when they make a formal funding commitment; from the formal funding commitment to the start of construction; and from the start to the end of construction (\Vref{fig:proj-lifecycle-begins-when-proj-announced}).
 
-\protect\hypertarget{ux5fRef319919015}{}\textbf{Figure 1.3: Project lifecycle begins when the project is announced}
+\begin{figure}
+\caption{Project lifecycle begins when the project is announced\label{fig:proj-lifecycle-begins-when-proj-announced}}
 
 % \includegraphics{media/image5.tiff}
 
-\emph{Source: Grattan analysis.}
+\source{Grattan analysis}
+\end{figure}
 
 We define a cost overrun as the amount by which the actual cost at the end of a particular phase exceeded the estimated cost at the start of that phase, expressed as a percentage of the cost estimated at the start of that phase.
 
