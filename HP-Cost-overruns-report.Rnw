@@ -204,6 +204,44 @@ final_status_by_GR <-
   setkey(Grattan_record)
 @
 
+<<date_first_Deleted_by_GR>>=
+date_first_Deleted_by_GR <-
+  historical_dataset %>% 
+  as.data.table %>%
+  select(Grattan_record = `Project No.`, 
+         Status_according_to_historical_dataset = Status) %>%
+  # See https://github.com/grattaninstitute/Cost-overruns-report/issues/20 
+  right_join(project_dataset, by = "Grattan_record") %>%
+  mutate(Status = coalesce(Status_according_to_historical_dataset, Status)) %>%
+  mutate(isDeleted = Status == "Deleted") %>%
+  group_by(Grattan_record) %>%
+  summarise(date_first_Deleted = if (any(isDeleted)) min(Record_date[which(isDeleted)]) else as.Date(Inf))
+@
+
+<<final_status_by_GR>>=
+#' @return Data table of **all** records by their final status as recorded. 
+final_status_by_GR <- 
+  historical_dataset %>% 
+  as.data.table %>%
+  select(Grattan_record = `Project No.`, 
+         Status_according_to_historical_dataset = Status) %>%
+  # See https://github.com/grattaninstitute/Cost-overruns-report/issues/20 
+  right_join(project_dataset, by = "Grattan_record") %>%
+  group_by(Grattan_record) %>%
+  summarise(Final_status = 
+              # i.e. it is not in historical_dataset:
+              if (all(is.na(Status_according_to_historical_dataset))){
+                if (any(Status == "Under construction") && year(max(Record_date)) < 2015){
+                  "Completed"
+                } else {
+                  NA_character_
+                }
+              } else {
+                last(Status_according_to_historical_dataset, order_by = Record_date)
+              }) %>%
+  setkey(Grattan_record)
+@
+
 <<isTransport_by_GR>>=
 isTransport_by_GR <- 
   project_dataset %>%
@@ -281,7 +319,6 @@ Cost_estimate_by_GR_Record_date <-
   select(Grattan_record, Record_date, Cost_estimate, Cost_estimate_real) %>%
   setkey(Grattan_record, Record_date)
 @
-
 
 <<Status_ordered_by_GR>>=
 #' @details Note that 'Deleted' is confusing: it really should be a separate field.
