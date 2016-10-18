@@ -282,6 +282,26 @@ Cost_estimate_by_GR_Record_date <-
   setkey(Grattan_record, Record_date)
 @
 
+
+<<Status_ordered_by_GR>>=
+#' @details Note that 'Deleted' is confusing: it really should be a separate field.
+#'          Deleted is a property of the project with respect to the dataset, whereas
+#'          the other statuses are properties of the project independent of the dataset. 
+Status_ordered_by_GR_Record_date <- 
+  project_dataset %>%
+  copy %>%
+  select(Grattan_record, Record_date, Status) %>%
+  filter(Status != "Deleted") %>%
+  mutate(Status_ordered = factor(Status, 
+                                 levels = c("Possible or under consideration", 
+                                            "Committed", 
+                                            "Under construction"), 
+                                 ordered = TRUE)) %>%
+  select(Grattan_record, Record_date, Status) %>%
+  setkey(Grattan_record, Record_date) %>%
+  unique
+@
+
 <<first_Cost_estimate_real_by_GR>>=
 first_Cost_estimate_real_by_GR <- 
   Cost_estimate_by_GR_Record_date %>%
