@@ -100,11 +100,11 @@ before_script:
 
 script: 
   - set -e
-  - Rscript -e "knitr::knit('HP-Cost-overruns-report.Rnw')"
-  - pdflatex -draftmode HP-Cost-overruns-report.tex
-  - biber HP-Cost-overruns-report
+  - Rscript -e "knitr::knit('Cost-overruns-on-transport-infrastructure.Rnw')"
+  - pdflatex -draftmode Cost-overruns-on-transport-infrastructure.tex
+  - biber Cost-overruns-on-transport-infrastructure
   - Rscript CheckBiber.R
-  - pdflatex -draftmode HP-Cost-overruns-report.tex
+  - pdflatex -draftmode Cost-overruns-on-transport-infrastructure.tex
 
 notifications:
   email: 
