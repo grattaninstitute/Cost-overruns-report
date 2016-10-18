@@ -1002,7 +1002,7 @@ Before building began, estimated project costs skyrocketed: to \$337 million in 
 
 \subsubsection*{What caused these cost changes?}
 
-The initial funding commitments (\$136m, \$337m, \$370m) were for a road 20 per cent shorter.\footcite[][40]{GovWA2005MainRoads} By the time the road was contracted in 2006, an enhancement of a section of the existing Kwinana Highway between Baldavis and Karnup was included.\footcites[][87]{GHDPerthtoBunbury,AusGov2012InfrastructurePlanningDelivery}
+The initial funding commitments (\$136m, \$337m, \$370m) were for a road 20 per cent shorter.\footcite[][40]{GovWA2005MainRoads} By the time the road was contracted in 2006, an enhancement of a section of the existing Kwinana Highway between Baldavis and Karnup was included.\footcites{GHDPerthtoBunbury}[][87]{AusGov2012InfrastructurePlanningDelivery}
 
 In official documents, little is revealed about the reasons for the cost increases. There were design enhancements that occurred at some 
 point, including an extra \$40m to fund a change in materials from those specified in the business case.\footcite[][92]{AusGov2012InfrastructurePlanningDelivery}
@@ -1010,8 +1010,8 @@ point, including an extra \$40m to fund a change in materials from those specifi
 But even reducing the final cost by 20 per cent (to account for the extended road length) and subtracting \$40m from the final estimate (to exclude the additions) leaves a cost of around \$500m to build the originally specified road – 400 per cent higher than the initial cost estimate.
 
 \begin{figure}[H]
- \caption{Project cost estimates, millions of dollars}
- \includegraphics[page=2]{atlas/CaseStudies.pdf}\label{fig:CS_Forrest}
+ \caption{Project cost estimates, millions of dollars\label{fig:CS_Forrest}}
+ \includegraphics[page=2]{atlas/CaseStudies.pdf}
 \end{figure}
 
 
