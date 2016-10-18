@@ -2,6 +2,8 @@
 \input{tex/preamble}
 \input{tex/recommendations}
 
+\addbibresource{bib/transport_bibliography.bib}
+
 
 \title{Cost overruns}
 \author{Marion Terrill}
@@ -917,15 +919,17 @@ For the xx projects where data on their early costs is missing in our dataset, w
 This assumption appears to be extremely conservative.
 Detailed analysis of a subset of the projects which are missing early cost data indicates that these projects experience cost overruns at approximately the same rate as projects which are not missing data on projects' early costs\footnote{Of the 55 projects investigated, 19 were missing early cost data and 37\% were identified to have experienced cost overruns in this early period.
 This prevalence rate is comparable to the XX\% observed across the XX\% of projects which are not missing early cost data.}.
-Consequently, the rate of overruns presented as the upper bound of \textbf{Figure 1.4} appears to be more likely than the lower bound, which underpins this report's analysis.
+Consequently, the rate of overruns presented as the upper bound of \Vref{fig:cost-overruns-are-likely-to-be-higher-than-reported} appears to be more likely than the lower bound, which underpins this report's analysis.
 
-\protect\hypertarget{ux5fRef462914253}{}\textbf{Figure 1.4: Cost overruns are likely to be higher than reported\\
-}Average cost overrun rates as a proportion of initial costs, by project stage
+\begin{figure}
+\captionwithunits{Cost overruns are likely to be higher than reported\label{fig:cost-overruns-are-likely-to-be-higher-than-reported}}
+{Average cost overrun rates as a proportion of initial costs, by project stage}
 
 % \includegraphics{media/image6.png}
 
-Notes: Australian transport projects completed between 2001 and 2015\\
-Source: Deloitte Investment Monitor, Grattan analysis.
+\noteswithsource{Australian transport projects completed between 2001 and 2015}
+{Deloitte Investment Monitor, Grattan analysis.}
+\end{figure}
 
 The analysis in this report relies upon public sources of data, such as publicly available government documents, company, media and other reports and announcements.
 This information is imperfect.
@@ -983,6 +987,36 @@ Most studies of cost overruns focus on contract compliance and engineering, whic
 Our public finance perspective takes the starting point of a project as the initial cost announcement, as this is the point at which a government becomes de facto committed.
 
 The following chapter shows that premature announcement is in fact the key underlying cause of ongoing cost overruns.
+
+
+\catcode`\$=3
+\begin{bigbox*}{Case study -- Forrest Highway (Peel deviation) -- 588 per cent cost overrun}{box:forrest_highway}
+
+%\setlength{\parskip}{5pt minus 2pt}
+
+\subsubsection*{Poorly scoped election promises end badly}
+
+The Western Australian Liberal government promised to build the Peel deviation from Perth to Bunbury during the 2001 election campaign. The project was priced at \$136 million.\footcite{GovWA2000Premier} Yet in an indication of the lack of clarity surrounding the cost, it was shortly afterwards included in a \$100 million package of works, along with other works in the package estimated to cost \$87 million in total.\footcite[][285]{TreasurersAdvanceAuthBill2001}
+
+Before building began, estimated project costs skyrocketed: to \$337 million in May 2005,\footcite[][662]{WABudget200506Statements} then to \$370 million in August 2005,\footcite[][40]{GovWA2005MainRoads} \$511 million in 2006\footcite{GHDPerthtoBunbury} and \$631 million in 2007.\footcite[][794]{WABudget200708Statements} During construction, the price increased further to \$705 million,\footcite[][85]{AusGov2012InfrastructurePlanningDelivery} before finishing at \$688 million.\footcite[][13]{WALISRealisingPowerLocation}
+
+\subsubsection*{What caused these cost changes?}
+
+The initial funding commitments (\$136m, \$337m, \$370m) were for a road 20 per cent shorter.\footcite[][40]{GovWA2005MainRoads} By the time the road was contracted in 2006, an enhancement of a section of the existing Kwinana Highway between Baldavis and Karnup was included.\footcites[][87]{GHDPerthtoBunbury,AusGov2012InfrastructurePlanningDelivery}
+
+In official documents, little is revealed about the reasons for the cost increases. There were design enhancements that occurred at some 
+point, including an extra \$40m to fund a change in materials from those specified in the business case.\footcite[][92]{AusGov2012InfrastructurePlanningDelivery}
+
+But even reducing the final cost by 20 per cent (to account for the extended road length) and subtracting \$40m from the final estimate (to exclude the additions) leaves a cost of around \$500m to build the originally specified road – 400 per cent higher than the initial cost estimate.
+
+\begin{figure}[H]
+ \caption{Project cost estimates, millions of dollars}
+ \includegraphics[page=2]{atlas/CaseStudies.pdf}\label{fig:CS_Forrest}
+\end{figure}
+
+
+\end{bigbox*}
+\catcode`\$=12
 
 \end{document}
 
