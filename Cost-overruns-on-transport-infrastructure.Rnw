@@ -500,7 +500,7 @@ n_completed_transport_projects <-
   sum(Final_status == "Completed", na.rm = TRUE) 
 @
 
-<<cancellation_by_project_stage>>=
+<<cancellation_by_project_stage, eval=FALSE>>=
 cancellation_by_project_stage <-
   transport_projects %>%
   setkey(Grattan_record) %>%
@@ -564,9 +564,9 @@ cost_when_completed <-
 
 <<completed_transport_projects>>=
 completed_transport_projects <- 
-  transport_projects %>%
-  merge(final_status_by_GR) %>%
+ final_status_by_GR %>%
   merge(cost_when_completed) %>%
+  merge(inflation_origin_by_GR) %>%
   mutate(cost_when_completed_real = construction_inflator(cost_when_completed, from = inflation_origin, to = as.Date("2015-12-01"))) %>%
   filter(Final_status == "Completed")
 
