@@ -348,6 +348,30 @@ outlier_by_GR <-
   setkey(Grattan_record)
 @
 
+<<inflation_origin_by_GR>>=
+inflation_origin_by_GR <- 
+  project_dataset %>%
+  # Is the status under construction in this quarter?
+  mutate(.co = grepl("under.*construction", Status, ignore.case = TRUE)) %>%
+  group_by(Grattan_record) %>%
+  # For each grattan record, 
+  #  1.  Is the project ever under construction?  If so, take
+  #      the value nearest the mean of those dates which were
+  #      under construction.
+  #  2.  If the project is never under construction, take the
+  #      the val_nrst_mean of all dates.
+  summarise(
+    inflation_origin = 
+      if (any(.co)) { 
+        val_nrst_mean(Record_date[.co]) 
+      } else { 
+        val_nrst_mean(Record_date)
+      }
+  ) %>%
+  select(Grattan_record, inflation_origin) %>%
+  setkey(Grattan_record)
+@
+
 <<transport_projects_with_outliers>>=
 transport_projects_with_outliers <- 
   project_dataset %>%
