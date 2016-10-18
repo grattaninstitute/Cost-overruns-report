@@ -3,7 +3,6 @@
 
 \LoadClass[%
 a4paper,
-oneside,
 11pt,
 titlepage,
 headings=big,
@@ -370,8 +369,8 @@ top=2.70cm, bottom=2.65cm,
 % Furthermore, optional arguments are required: they appear in Chapter 
 % heading pages. Leaving them out will reset the titles on pages with 
 % \chapter{}
-\lehead[\normalfont\textcolor{theGrey}{\fulltitle}{\huge\strut}]{\normalfont\textcolor{theGrey}{\fulltitle}{\huge\strut}}
-\lohead[\normalfont\textcolor{theGrey}{\fulltitle}{\huge\strut}]{\normalfont\textcolor{theGrey}{\fulltitle}{\huge\strut}}
+\lehead[\normalfont\textcolor{theGrey}{\mytitle}{\huge\strut}]{\normalfont\textcolor{theGrey}{\mytitle}{\huge\strut}}
+\lohead[\normalfont\textcolor{theGrey}{\mytitle}{\huge\strut}]{\normalfont\textcolor{theGrey}{\mytitle}{\huge\strut}}
 \cehead[\classification]{\classification}
 \cohead[\classification]{\classification}
 \ifoot[{\textcolor{theGrey}{\normalfont Grattan Institute \@YEAR {\Large\strut}}}]{\textcolor{theGrey}{\normalfont Grattan Institute \@YEAR}{\Large\strut}}
@@ -518,14 +517,11 @@ top=2.70cm, bottom=2.65cm,
 \RequirePackage{tabularx}
 \AtBeginEnvironment{tabular}{\small}
 \AtBeginEnvironment{tabularx}{\small}
-
-\newcommand{\fulltitle}{\mytitle: \firstToLow\mysubtitle}
   
 \AtBeginDocument{%
 \pagestyle{empty}
 	\let\mytitle\@title
 	\let\myauthor\@author
-  \let\mysubtitle\@subtitle
 	
 	% TitlePage
 	\onecolumn
@@ -618,9 +614,11 @@ top=2.70cm, bottom=2.65cm,
 % We define a new environment that take as its contents the text of the 
 % overview, placing it with a chapter* heading 'Overview' all on the same
 % page. 
+\newlength{\overviewExtra}
+\setlength{\overviewExtra}{0pt}
 \newenvironment{overview}[1][]%
-  {\onecolumn\vtop to 0pt\bgroup\ifstrempty{#1}{\vspace{-23.4pt}}{\vspace{#1}}\addchap{Overview}\begin{multicols}{2}}%
-  {\end{multicols}\vss\egroup\hfill\twocolumn}
+  {\onecolumn\vtop to 0pt\bgroup\ifstrempty{#1}{\vspace{-23.4pt}}{\vspace{#1}}\addchap{Overview}\addtolength{\columnsep}{\overviewExtra}\begin{multicols}{2}}%
+  {\end{multicols}\addtolength{\columnsep}{-\overviewExtra}\vss\egroup\hfill\twocolumn}
   
 \newenvironment{summary}%
   {\onecolumn\vtop to 0pt\bgroup\vspace{-25pt}\chapter*{Summary}\begin{multicols}{2}}%

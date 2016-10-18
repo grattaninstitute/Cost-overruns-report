@@ -6,22 +6,23 @@
 \title{Cost overruns}
 \author{Marion Terrill}
 
-\GrattanReportNumber{\Sexpr{warning("Needs Report Number")}}
+\GrattanReportNumber{XX}
+
+\acknowledgements{..}
 
 
 
 
 \catcode`\$=12
 \begin{document}
-
-<<portability>>=
+<<portability, echo=FALSE>>=
 source("R/portability.R")
 portability()
 @
 
-<<knitrOpts>>=
+<<knitrOpts, echo=FALSE>>=
 library(knitr)
-opts_chunk$set(error = FALSE, echo = FALSE, fig.width=11, fig.height=7, out.width="\\columnwidth", out.height=paste0("0.6363\\columnwidth"))
+opts_chunk$set(error = FALSE, echo = FALSE, message = FALSE, fig.width=11, fig.height=7, out.width="\\columnwidth", out.height=paste0("0.6363\\columnwidth"))
 @
 
 <<loadPackages, cache=FALSE>>=
@@ -505,6 +506,11 @@ n_completed_transport_projects <-
   sum(Final_status == "Completed", na.rm = TRUE) 
 @
 
+<<cease-knit>>=
+warning("Ceasing")
+knitr::opts_chunk$set(eval = FALSE)
+@
+
 <<cancellation_by_project_stage, eval=FALSE>>=
 cancellation_by_project_stage <-
   transport_projects %>%
@@ -598,6 +604,7 @@ Prop_projects_w_each_project_stage <-
   unique()
          
 @
+
 
 <<first_date_by_Status_GR>>=
 first_date_by_Status_GR <- 
@@ -766,7 +773,8 @@ Cost_overruns_by_project_size<-
 @
 
 
-\begin{overview}[-40pt]
+\setlength{\overviewExtra}{-4mm}
+\begin{overview}
 Over the past 15 years, Australian governments have spent \$25~billion more on transport infrastructure than they told taxpayers they would spend.
 The cost overruns amounted to nearly a quarter of total project budgets.
 Western Australia's Forrest Highway between Perth and Bunbury cost nearly five times, and New South Wales' Hunter Expressway cost nearly four times, the amounts initially promised.
@@ -779,10 +787,10 @@ Eighty eight per cent of Australia's cost overrun problem is explained by the 17
 
 Much of the problem is entirely preventable.
 Premature announcements -- when a politician promises to build a road or rail line at a certain cost, often in the lead-up to an election -- are the biggest culprits.
-Although only 31 per cent of projects are announced early, early announcements account for 82 per cent of the value of cost overruns over the past 15 years.
+Although only 31 per cent of projects are announced early, early announcements account for 82 per cent of the value of cost overruns over the past 15~years.
 Prematurely announced projects need larger cost upgrades not just early on, but throughout their funding approval and construction phases.
 
-For the first time in Australia, we report on all 800 projects valued at \$20 million or more and planned or built since 2000.
+For the first time in Australia, we report on all 800 projects valued at \$20~million or more and planned or built since 2000.
 We also report on the full project lifecycle from its first funding promise, because, once politicians have announced a project, they and the public treat that announcement as a commitment.
 They are right to do so: 80 per cent of these projects end up being built.
 
@@ -808,7 +816,7 @@ Our infrastructure systems should promise what is worth having, and then deliver
 
 \contentspage
 
-\chapter{}
+\chapter{a}
 
 
 \end{document}
