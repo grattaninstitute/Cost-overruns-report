@@ -425,27 +425,7 @@ transport_projects_with_outliers <-
     # What date should we choose to inflate
     # cost estimates by? A: construction phase, 
     # as defined below.
-    inflation_origin_by_GR <- 
-      dot %>%
-      # Is the status under construction in this quarter?
-      mutate(.co = grepl("under.*construction", Status, ignore.case = TRUE)) %>%
-      group_by(Grattan_record) %>%
-      # For each grattan record, 
-      #  1.  Is the project ever under construction?  If so, take
-      #      the value nearest the mean of those dates which were
-      #      under construction.
-      #  2.  If the project is never under construction, take the
-      #      the val_nrst_mean of all dates.
-      summarise(
-        inflation_origin = 
-          if (any(.co)) { 
-            val_nrst_mean(Record_date[.co]) 
-          } else { 
-            val_nrst_mean(Record_date)
-          }
-      ) %>%
-      select(Grattan_record, inflation_origin) %>%
-      setkey(Grattan_record)
+    
     
     # Return to the top-level pipe:
     merge(dot, inflation_origin_by_GR)
