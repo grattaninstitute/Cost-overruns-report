@@ -141,15 +141,19 @@ numbers=noenddot,
     backgroundcolor=OrangeBackground
     }
 
+\newcommand{\@boxcaption}[1]{%
+\captionsetup{labelfont={bf,Orange},font={bf,Orange},format=plain,justification=raggedright,singlelinecheck=false, skip=0ex, position=above}
+\caption{#1}
+\captionsetup{format=plain,font={small,bf,theGrey},labelfont={small,bf,theGrey}, position=above, skip=0pt}
+}
+
 % The verysmallbox is intended to be a fraction of one column.
 \newenvironment{verysmallbox}[3][htb]{%
 \setlength{\currentparskip}{\parskip}% save the value
 \begin{boxe}[#1]
 \begin{mdframed}[style=GrattanFrameBox]%
 \setlength{\parskip}{\currentparskip} % restore the value
-\captionsetup{labelfont={bf,Orange},font={bf,Orange},format=plain,justification=raggedright,singlelinecheck=false}
-\caption{#2}\label{#3}
-\vspace{-1.5ex}
+\@boxcaption{#2\label{#3}}
 \RaggedRight
 }{\end{mdframed}\end{boxe}} 
     
@@ -160,10 +164,8 @@ numbers=noenddot,
 \begin{minipage}[\textheight]{\linewidth}
 \begin{mdframed}[style=GrattanFrameBox]%
 \setlength{\parskip}{\currentparskip} % restore the value
-\captionsetup{labelfont={bf,Orange},font={bf,Orange},format=plain,justification=raggedright,singlelinecheck=false}
-\caption{#2}\label{#3}
+\@boxcaption{#2\label{#3}}
 \RaggedRight
-\vspace{-1.5ex}
 }{\end{mdframed}\null\vfill\null\end{minipage}\end{boxe}} 
 
 
@@ -186,8 +188,7 @@ numbers=noenddot,
   \setlength{\currentparskip}{\parskip}
   \@dblfloat{boxe}%
   \begin{mdframed}[style=GrattanFrameBox]
- \captionsetup{labelfont={bf,Orange}, font={bf,Orange}, format=plain,justification=raggedright,singlelinecheck=false, aboveskip=0pt}
- \caption{#1}\label{#2}%
+  \@boxcaption{#1\label{#2}}%
    \setlength{\columnsep}{33pt}
   \begin{multicols}{2}
   \setlength{\parskip}{\currentparskip}% restore the value
@@ -393,7 +394,7 @@ top=2.70cm, bottom=2.65cm,
   \oldtryfcolumn}
 \setlength{\@fpbot}{36.64366pt plus 1fil minus 36.64366pt}
 \setlength{\textfloatsep}{11pt plus 22pt minus 11pt}
-
+\setkeys{Gin}{width=\columnwidth}
 
 \newenvironment{figureTop}{
 \begin{figure}
