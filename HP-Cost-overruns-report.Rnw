@@ -306,7 +306,7 @@ Status_ordered_by_GR_Record_date <-
 first_Cost_estimate_real_by_GR <- 
   Cost_estimate_by_GR_Record_date %>%
   group_by(Grattan_record) %>%
-  summarise(last_Cost_estimate_real = first(Cost_estimate_real, order_by = Record_date)) %>%
+  summarise(first_Cost_estimate_real = first(Cost_estimate_real, order_by = Record_date)) %>%
   setkey(Grattan_record)
 @
 
