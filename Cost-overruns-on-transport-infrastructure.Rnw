@@ -1,6 +1,6 @@
 \documentclass{grattan}
 \input{tex/preamble}
-
+\input{tex/recommendations}
 
 
 \title{Cost overruns}
@@ -816,8 +816,169 @@ Our infrastructure systems should promise what is worth having, and then deliver
 
 \contentspage
 
-\chapter{a}
+\chapter{Recommendations}
+\recommendEvaluateBeforeSpending
 
+\chapter{The extent of cost overruns\label{chap:extent-of-cost-overruns}}
+The Peel Deviation is a stretch of the Forrest Highway running between Perth and Bunbury.
+It was first promised during the 2001 state election campaign at a cost of \$136 million.
+Many twists and turns later, in 2010, the road was completed at a cost of \$688 million -- over 400 per cent more than its originally promised cost.
+
+Such budget blowouts like this are disturbing but they do not hit the media or public eye vey often.
+People could therefore be forgiven for thinking they are rare.
+
+Unfortunately, they are not rare enough.
+This report finds that the transport infrastructure projects valued at \$20 million or more and planned or built in Australia in the past 15 years cost \$25 billion more than their promised costs.
+This is 24 per cent more than the costs that were announced.
+
+The 24 per cent over and above the original cost promise does not stem from the accumulation of small cost overruns on most projects.
+Rather, most projects come in reasonably close to their promised cost, as Figure 0.1 shows.
+The problem is that when projects do exceed their promised costs, the overruns can be spectacular: 88 per cent of Australia's cost overruns problem is explained by the 17 per cent of projects that overran their cost promise by more than 50 per cent.
+
+Overruns are not matched by underruns.
+Only 9 per cent of projects finished under their announced cost, and these cost underruns were, on average, only a quarter of the size of the average cost overrun, amounting to a total of \$8 billion.
+The majority of projects come in close to their announced costs, and underruns do little to offset overruns.
+
+\begin{figure}
+\captionwithunits{Large cost overruns are uncommon, but expensive\label{fig:large-cost-overruns-uncommon-but-expensive}}
+{Per cent}
+
+% \includegraphics{media/image3.tiff}\emph{\\
+\noteswithsource{Australian transport projects completed between 2001 and 2015}%
+{Deloitte Investment Monitor, Grattan analysis.}
+\end{figure}
+
+\section{This is the first comprehensive Australian analysis of transport project cost overruns}\label{this-is-the-first-comprehensive-australian-analysis-of-transport-project-cost-overruns}
+
+This report is the first comprehensive Australian analysis of cost overruns on transport infrastructure projects.
+It is comprehensive in two ways: it includes the entire portfolio of transport infrastructure projects valued at \$20~million or more and built or planned in Australia since 2000; and it examines the entire project lifecycle, from first announcement through to completion of construction.
+This section explains why each of these features of the report matter.
+
+\subsection{We analyse the entire portfolio of projects since 2000}\label{we-analyse-the-entire-portfolio-of-projects-since-2000}
+
+This report is the first study of cost overruns in Australia that includes all 836 transport infrastructure projects valued at \$20 million or more planned or built in the past 15 years.
+
+A small number of researchers and state auditors general have analysed aspects of this problem in recent years, but they have studied small numbers of projects (\Vref{fig:this-report-analyses-9-times-more-projects-than-previous-studies}).
+The drawback with small samples is that their findings may be less representative, and so policymakers cannot rely upon their findings as much as they can with larger or more comprehensive studies.
+
+\begin{figure}
+\captionwithunits{This report analyses upwards of nine times more Australian projects than previous studies\label{fig:this-report-analyses-9-times-more-projects-than-previous-studies}%
+{Sample sizes of studies into cost overruns on Australian transport infrastructure projects} % \includegraphics{media/image4.png}\emph{\\
+\source{Cited studies and Deloitte Investment Monitor, Grattan analysis.}
+\end{figure}
+
+The findings of these small studies present a mixed view.
+Two key studies in 2007 and 2008 of infrastructure projects valued at more than \$20 million found overruns ranging from 12 to 35 per cent from formal funding commitment to completion\footnote{; Allen Consulting Group, Duffield, C. and Raisbeck, P. (2007) \emph{Performance of PPPs and traditional procurement in Australia}, Infrastructure Partnerships Australia, p5.}and 24 to 52 per cent\footnote{Duffield, C., Raisbeck, P. and Xu, M. (2008) \emph{Report on the performance of PPP projects in Australia when compared with a representative sample of traditionally procured infrastructure projects}, p15.
+Costs over the full project life mean originally announced to actual final costs.} over the full project life.
+Another study of 58 projects found an average 12 per cent overrun.%
+\footnote{Love (2012).} A further study of 46 projects found overruns of 5 to 11 per cent of project costs.%
+\footnote{Wood, P. (2010) \emph{Comparing cost uplift in infrastructure delivery methods: a case based approach}, http://eprints.qut.edu.au/47529/1/Peter\_Wood\_Thesis.pdf.} A 2015 study of 44 projects each valued at \$1 billion or more found cost overruns of 14 per cent on the \$44 billion budget.%
+\footnote{Australian Contractors Association (2015) \emph{Changing the game: how Australia can achieve success in the new world of mega-projects},
+
+  \url{http://www.constructors.com.au/wp-content/uploads/2015/11/Changing-the-Game-Mega-Projects-Final1.pdf}, p7.}
+
+While not seeking to be representative, an investigation by the Victorian Auditor General found a 5 per cent cost overrun across seven road and rail projects valued at more than \$40 million.%
+\footnote{Victorian Auditor General (2010), \emph{Management of major rail projects}, \url{http://www.audit.vic.gov.au/publications/2009-10/20100623-major-rail-full-report.pdf}, p22; Victorian Auditor General (2011), Management of major road projects, \url{http://www.audit.vic.gov.au/publications/2010-11/20110601-Major-Roads.pdf}, p12.} The New South Wales Auditor General reported a 7 per cent cost overrun across 50 transport and other infrastructure projects valued above \$50 million.%
+\footnote{NSW Auditor General (2015) \emph{Large construction projects: Independent assurance}, https://www.audit.nsw.gov.au/ArticleDocuments/362/01\_Large\_Construction\_Projects\_Independent\_Assurance\_Complete\_Full\_Report.pdf.aspx?Embed=Y, p5.} These two studies did not consider scope changes or overruns between project announcement and formal contract.
+
+The variation in the average size of overruns observed across these small sample studies illustrates the value of a large sample when analysing extreme events.
+
+\subsection{We analyse the entire project lifecycle}\label{we-analyse-the-entire-project-lifecycle}
+
+This report considers the entire project lifecycle from when ministers or opposition politicians first announce a project to when they make a formal funding commitment; from the formal funding commitment to the start of construction; and from the start to the end of construction (Figure 1.3).
+
+\protect\hypertarget{ux5fRef319919015}{}\textbf{Figure 1.3: Project lifecycle begins when the project is announced}
+
+% \includegraphics{media/image5.tiff}
+
+\emph{Source: Grattan analysis.}
+
+We define a cost overrun as the amount by which the actual cost at the end of a particular phase exceeded the estimated cost at the start of that phase, expressed as a percentage of the cost estimated at the start of that phase.
+
+Some argue that cost overruns should only be measured from the point that a formal cost benefit analysis is completed or a funding commitment made.%
+\footnote{Love, P., Smith, J., Simpson, I., Regan, M., Olatunji, O. (2014) \emph{Understanding the landscape of overruns in transport infrastructure projects}, Environment and Planning B: Planning and Design 2015, volume 42, p; 493-4; Love, P., Ahiaga-Dagbui, D., Irani, Z. (2016) \emph{Cost overruns in transportation infrastructure projects: sowing the seeds for a probabilistic theory of causation}, Transportation Research Part A: Policy and Practice, volume 92, p185.} But this ignores the realpolitik of infrastructure funding.
+Politicians often promise to pursue infrastructure projects before a detailed cost benefit study is completed.
+Indeed, the vast majority of project commitments made in the last federal election were in this category.%
+\footnote{https://theconversation.com/election-2016-will-the-infrastructure-promises-meet-australias-needs-61140} Once an elected government has made such a commitment, it is unusual for the project not to proceed.
+Indeed, it appears that cost benefit analyses are sometimes retrofitted to justify such commitments.%
+\footnote{Australian Constructors Association (2015) \emph{Changing the game: how Australia can achieve success in the new world of mega-projects}, \url{http://www.constructors.com.au/wp-content/uploads/2015/11/Changing-the-Game-Mega-Projects-Final1.pdf}, p20.}
+
+This report takes politicians' commitments seriously.
+We treat a promise to build a particular project for a particular cost as a real promise.
+Even when politicians promise infrastructure that is at a very early stage of development, the politician and the public both regard the promise as binding.
+
+\section{Cost overruns may be even bigger than we claim}\label{cost-overruns-may-be-even-bigger-than-we-claim}
+
+This finding and others in this report may well be understated.
+For the xx projects where data on their early costs is missing in our dataset, we have made the assumption that no early cost overruns occurred.
+
+This assumption appears to be extremely conservative.
+Detailed analysis of a subset of the projects which are missing early cost data indicates that these projects experience cost overruns at approximately the same rate as projects which are not missing data on projects' early costs\footnote{Of the 55 projects investigated, 19 were missing early cost data and 37\% were identified to have experienced cost overruns in this early period.
+This prevalence rate is comparable to the XX\% observed across the XX\% of projects which are not missing early cost data.}.
+Consequently, the rate of overruns presented as the upper bound of \textbf{Figure 1.4} appears to be more likely than the lower bound, which underpins this report's analysis.
+
+\protect\hypertarget{ux5fRef462914253}{}\textbf{Figure 1.4: Cost overruns are likely to be higher than reported\\
+}Average cost overrun rates as a proportion of initial costs, by project stage
+
+% \includegraphics{media/image6.png}
+
+Notes: Australian transport projects completed between 2001 and 2015\\
+Source: Deloitte Investment Monitor, Grattan analysis.
+
+The analysis in this report relies upon public sources of data, such as publicly available government documents, company, media and other reports and announcements.
+This information is imperfect.
+Only governments can provide full information for all public infrastructure projects.
+It would be a big step forward if they did.
+
+\section{Dispelling myths}\label{dispelling-myths}
+
+This report's large scale Australian analysis of project cost overruns debunks myths about infrastructure in this country.
+Two prominent myths are that scope changes are the main reason for cost overruns, and that Australian projects are less prone to overruns than those in other countries.
+This section explains the challenge to these two views.
+
+\subsection{Scope changes explain only a small share of overruns}\label{scope-changes-explain-only-a-small-share-of-overruns}
+
+The early period of a project's lifecycle, from its first announcement by a government or potential government until a formal funding commitment, is the best time to settle its scope -- that is, exactly what infrastructure is planned, where it will be and at what quality.
+
+Scope changes might add extra length to a road, or an extra station to a rail line.
+This report defines scope changes as additions to functionality, such as additional road length, but not quality improvements, such as higher sound barriers to a new highway.
+We take this approach to differentiate genuinely additional infrastructure from refinements.
+
+Changes to scope are only a problem if they are not appraised on their merits as to whether they are worth the money and are better than alternative ways to solve a problem or to spend public funds.
+
+Although it appears to be common for scope changes to be made without proper appraisal of the new work,\footnote{Love et al (201), p185.} in fact scope changes only account for about 11 per cent of cost overruns on transport infrastructure projects (Figure 1.5).
+
+\protect\hypertarget{ux5fRef462916066}{}\textbf{Figure 1.5: Most cost overruns were not attributable to scope changes\\
+}Average proportion of cost overruns by cause, per cent
+
+% \includegraphics{media/image7.emf}
+
+\emph{Notes:} \emph{Based upon detailed investigation of 56 Australian transport infrastructure projects completed between 2008 and 2013, using publicly available data sources.\\
+The value of scope changes have been estimated where possible as the percentage of the total project cost (where scope changes were described as a percentage of project scope), or else by the total value of cost overruns incurred during the period the scope change took place.\\
+Sources: Grattan analysis. }
+
+\subsection{Australia does not compare especially well internationally}\label{australia-does-not-compare-especially-well-internationally}
+
+The scarcity of Australian studies of cost overruns has fed a misperception that this country does well at avoiding or minimising cost overruns compared to other countries.
+
+The best-known international studies of `megaprojects' have found road projects overrunning by 24 per cent and rail by 40 per cent.
+These findings emerge from a study of infrastructure project cost overruns on 1603 road and rail projects of all sizes, each valued at between US\$1.5~million and US\$8.5 billion, in 20 countries between 1927 and 2013.%
+\footnote{Flyvbjerg 2016, methodology described in Flyvbjerg et al 2003} The findings led the leader of the study, Danish economic geographer Bent Flyvbjerg to invent what he called ``the iron law of megaprojects: over budget, over time, over and over again.''\footnote{Flyvbjerg 2011}
+
+Yet Flyvbjerg's findings, while credible, cannot be generalised.
+His overrun estimates are markedly higher than the average overrun of 14 per cent reported across the next four biggest academic studies, or the 15 per cent reported across the four largest studies completed by auditors of road projects.%
+\footnote{Seimiatycki, 2009}
+
+Other studies emphasise the importance of not assuming that Flyvbjerg's international studies are representative of each of the countries included in the sample.
+For instance, a study of the Dutch projects in the Flyvbjerg sample shows an average cost overrun of 16.5 per cent.%
+\footnote{Cantarelli, 2012} Many other studies have demonstrated variations in the size of overruns across different countries.%
+\footnote{Jenpanitsub 2011; Berechman and Wu, 2006}
+
+When cost overruns around the world are compared from the time of the formal funding commitment or contract, Australia generally ranks in, or slightly worse than, the mid range.
+Most studies of cost overruns focus on contract compliance and engineering, which are most relevant from the time of the contract, rather than the time a government or would-be government first announces the project.
+Our public finance perspective takes the starting point of a project as the initial cost announcement, as this is the point at which a government becomes de facto committed.
+
+The following chapter shows that premature announcement is in fact the key underlying cause of ongoing cost overruns.
 
 \end{document}
 
