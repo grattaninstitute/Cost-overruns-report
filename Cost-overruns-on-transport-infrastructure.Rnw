@@ -956,9 +956,10 @@ Although it appears to be common for scope changes to be made without proper app
 
 % \includegraphics{media/image7.emf}
 
-\emph{Notes:} \emph{Based upon detailed investigation of 56 Australian transport infrastructure projects completed between 2008 and 2013, using publicly available data sources.\\
-The value of scope changes have been estimated where possible as the percentage of the total project cost (where scope changes were described as a percentage of project scope), or else by the total value of cost overruns incurred during the period the scope change took place.\\
-Sources: Grattan analysis. }
+\noteswithsource{Based upon detailed investigation of 56 Australian transport infrastructure projects completed between 2008 and 2013, using publicly available data sources.\\
+The value of scope changes have been estimated where possible as the percentage of the total project cost (where scope changes were described as a percentage of project scope), or else by the total value of cost overruns incurred during the period the scope change took place.}
+{Grattan analysis.}
+\end{figure}
 
 \subsection{Australia does not compare especially well internationally}\label{australia-does-not-compare-especially-well-internationally}
 
