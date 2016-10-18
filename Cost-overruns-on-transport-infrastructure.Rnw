@@ -885,7 +885,7 @@ The variation in the average size of overruns observed across these small sample
 
 \subsection{We analyse the entire project lifecycle}\label{we-analyse-the-entire-project-lifecycle}
 
-This report considers the entire project lifecycle from when ministers or opposition politicians first announce a project to when they make a formal funding commitment; from the formal funding commitment to the start of construction; and from the start to the end of construction (Figure 1.3).
+This report considers the entire project lifecycle from when ministers or opposition politicians first announce a project to when they make a formal funding commitment; from the formal funding commitment to the start of construction; and from the start to the end of construction (\Vref{fig:proj-lifecycle-begins-when-proj-announced}).
 
 \protect\hypertarget{ux5fRef319919015}{}\textbf{Figure 1.3: Project lifecycle begins when the project is announced}
 
