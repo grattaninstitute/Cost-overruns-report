@@ -832,7 +832,7 @@ This report finds that the transport infrastructure projects valued at \$20 mill
 This is 24 per cent more than the costs that were announced.
 
 The 24 per cent over and above the original cost promise does not stem from the accumulation of small cost overruns on most projects.
-Rather, most projects come in reasonably close to their promised cost, as Figure 0.1 shows.
+Rather, most projects come in reasonably close to their promised cost, as \Vref{fig:large-cost-overruns-uncommon-but-expensive} shows.
 The problem is that when projects do exceed their promised costs, the overruns can be spectacular: 88 per cent of Australia's cost overruns problem is explained by the 17 per cent of projects that overran their cost promise by more than 50 per cent.
 
 Overruns are not matched by underruns.
