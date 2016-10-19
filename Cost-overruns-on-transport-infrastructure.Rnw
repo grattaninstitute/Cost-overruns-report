@@ -967,12 +967,8 @@ If even half this reduction was avoided by switching to alternative investments 
 
 
 
-  \begin{enumerate}
-  \def\labelenumi{\arabic{enumi}.}
-  \item ~
-    \section{Australia could do better at reappraising projects after cost overruns}\label{australia-could-do-better-at-reappraising-projects-after-cost-overruns}
-  \end{enumerate}
-\end{itemize}
+\section{Australia could do better at reappraising projects after cost overruns}\label{australia-could-do-better-at-reappraising-projects-after-cost-overruns}
+
 
 Cost overruns that occur early in a project's life should prompt a reassessment of the project's costs relative to its benefits.
 The magnitude of some cost overruns suggests that not all projects will still be worth building.
