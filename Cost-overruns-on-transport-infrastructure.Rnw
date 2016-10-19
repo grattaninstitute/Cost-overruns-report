@@ -1076,14 +1076,17 @@ But there is a substantial gap between estimated and actual costs on transport i
 In that period, cost estimators expected between 10 and 25 per cent of projects to exceed their budget.
 In fact, 34 per cent did so (Figure \Vref{fig:5-1}).
 Moreover, these overruns were not offset by underruns.%
+\GenericWarning{Footnote undefined}{LaTeX Warning: Footnote not complete}%
 \footnote{Give examples of guidelines which explicitly assume symmetry, and those that state the distribution should be asymmetric but do not recommend any use of this information.}
 
-\emph{\textbf{Figure 4.1: Experts systematically underestimate the likelihood of cost overruns\\
-}Assumed and observed probability distributions of cost overruns, per cent}
+\begin{figure}
+\captionwithunits{Experts systematically underestimate the likelihood of cost overruns\label{fig:assumed-and-observed-prob-distr-of-cost-overruns}}
+{Assumed and observed probability distributions of cost overruns, per cent}
 
 % \includegraphics{media/image13.png}
 
-Notes:
+\notes{}
+\end{figure}
 
 Although it is not possible to perfectly predict the costs of any individual project, where cost estimates are wrong on average, there is clearly scope to improve.
 
