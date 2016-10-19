@@ -873,6 +873,259 @@ Reports should detail any scope changes and their justification, agreed and actu
 \end{enumerate}
 \end{recommendation}
 
+\chapter{How to improve cost estimation}\label{how-to-improve-cost-estimation}
+
+The previous chapter highlighted the costs to the community of cost overruns on transport infrastructure projects.
+While cost estimation on any given project is uncertain, on average cost estimates should correspond to reality.
+
+But there is a substantial gap between estimated and actual costs on transport infrastructure projects over the past 15 years.
+In that period, cost estimators expected between 10 and 25 per cent of projects to exceed their budget.
+In fact, 34 per cent did so (Figure 5.1).
+Moreover, these overruns were not offset by underruns.%
+\footnote{Give examples of guidelines which explicitly assume symmetry, and those that state the distribution should be asymmetric but do not recommend any use of this information.}
+
+\emph{\textbf{Figure 4.1: Experts systematically underestimate the likelihood of cost overruns\\
+}Assumed and observed probability distributions of cost overruns, per cent}
+
+\includegraphics{media/image13.png}
+
+Notes:
+
+Although it is not possible to perfectly predict the costs of any individual project, where cost estimates are wrong on average, there is clearly scope to improve.
+
+This chapter identifies three concrete opportunities to improve cost estimation.
+First, cost estimates should reflect predictable patterns in the types of projects that overrun their budgets; second, project risks should be assessed comprehensively; and third, the assumptions employed in cost estimation should be aligned with historical experience.
+
+\section{Cost estimates should reflect predictable patterns }\label{cost-estimates-should-reflect-predictable-patterns}
+
+There is an element of chance to any project finishing on budget.
+Yet the overall historical performance of Australian transport projects in aggregate suggests that we could be coming up with much better guesses of likely costs.
+
+For example, large road projects are more likely to come in over the cost initially announced than they are to finish on budget.
+Being a large road is not a subtle characteristic that could easily go unnoticed.
+Rather, it is an example of the tangible project characteristics that affect the likelihood of a project finishing on budget.
+The fact that projects with these characteristics are less likely to finish on budget than others indicates that their obvious risks are not adequately factored into project cost estimates.
+
+This section discusses three tangible project characteristics associated with high risks.
+Properly accounting for the risk associated with them characteristics is a simple illustration of how we could come up with much better estimates of project costs.
+
+\subsection{Large and complex projects are more prone to cost overruns}\label{large-and-complex-projects-are-more-prone-to-cost-overruns}
+
+Complex projects are prone to cost overruns because they tend to have many interdependent components that can be disrupted if one element falls behind time, and multiple interfaces with existing infrastructure.
+These risks are amplified when the existing infrastructure continues operating during construction.%
+\footnote{Eg Overseas: Hinze et al 1992; Flyvbjerg; in Australia: Engineers Australia (2014) Mastering complex projects: principles for success and reliable performance, p3.
+Although Love et al 2013 also find big overruns for smaller projects - check}
+
+The most complex projects also tend to be large.
+Because of this, large projects are more likely to incur cost overruns, and these overruns are likely to be particularly big (Figure 4.2).
+In fact, a 10 per cent increase in a project's size (measured by cost estimate when first under construction) is associated with a 58 per cent higher chance of a cost overrun.\protect\hypertarget{ux5fRef462916523}{}
+
+\textbf{Figure 4.2: Cost overruns are more common and larger on average among big projects\\
+}Prevalence and average magnitude of cost overruns as a percentage of initial project costs by project size, per cent
+
+\includegraphics{media/image14.png}
+
+\emph{Notes:} \emph{Australian transport projects completed between 2001 and 2015.
+Project size is defined by project value at the commencement of construction.\\
+Sources: Deloitte Investment Monitor; Grattan analysis}
+
+Given that project size is such a clear predictor of the size of cost overruns, cost overruns could be reduced by routinely amending the cost estimates of large projects so that they are more conservative.
+Some states have recently done this by instituting special cost estimation guidance for ``high value, high risk'' projects.
+However, in most jurisdictions, cost estimates are arrived at under the assumption that large projects face the same risk of cost overruns as small projects.
+
+High-risk projects should be more closely scrutinised, and parties promoting them should seek to negotiate bipartisan support.
+Before they proceed, public infrastructure projects that are anticipated to cost \$1 billion or more should need the support of the parliament, not just the party in or seeking office (see Recommendation 4).
+
+Recommendation 4 -- Special legislation for big projects
+
+When a transport infrastructure project has an estimated cost to that jurisdiction of \$1 billion or more, any Commonwealth, state or territory government should be required to introduce standalone legislation before it commits funds to that project.
+
+\subsection{Road and rail projects overrun at different stages}\label{road-and-rail-projects-overrun-at-different-stages}
+
+Unusual projects are also more prone to cost overruns.
+This is because the more unusual a project is, the more difficult it is to estimate its cost and to build it to budget.
+Understanding when and where a project is unusual can help project proponents identify which projects are at particularly high risk of cost overruns.
+
+For example, rail projects tend to be relatively homogeneous during the planning stage, as many key components are standardised and can be purchased for a known price\footnote{Reference the NSW Legislative committee's review into rail costs.}.
+However, these projects tend to incur disparate construction problems, because they are usually built on brownfield sites, around ongoing operations.
+
+The inverse is true for roads.
+They often involve bespoke designs and complex interfaces with existing infrastructure.
+However, roads are less often constructed on brownfield sites with poor accessibility.
+
+The timing of cost overruns on rail and road projects is aligned with the stages in which projects of these types are expected to be most bespoke.
+Cost overruns are larger for road projects during the planning stage, when road projects tend to be more bespoke than rail, and larger for rail projects during the construction period, when rail projects tend to be more bespoke (Figure 4.3).
+
+\protect\hypertarget{ux5fRef462916582}{}\textbf{Figure 4.3: Road and rail projects have different patterns of cost overruns\\
+}Cost overruns by project stage and mode, per cent\includegraphics{media/image15.tiff}
+
+\emph{Notes:} \emph{Australian transport projects completed between 2000 and 2015\\
+Sources: Deloitte Investment Monitor; Grattan analysis}
+
+These differences in the size and timing of cost overruns by project mode illustrate another opportunity to improve cost estimates.
+Project proponents are always aware of their project's mode, and their project's mode provides substantial information about the project's likely cost risks.
+However, Australian risk management guidance does not currently advise project proponents to account for mode-specific differences in projects' cost risks\footnote{The guidelines cite National Transport Council (2016) National Guidelines for Transport System Management in Australia, chapters 2, 3 and 4.}.
+
+\subsection{Contract type may affect the risk of cost overruns}\label{contract-type-may-affect-the-risk-of-cost-overruns}
+
+Contract type is a third characteristic that affects a project's cost risk.
+Traditionally, projects have been built under Design-Bid-Build and Design-Build contracts, where private companies have engaged with government in a typical contractor-client relationship.
+In recent years, there has been significant innovation in contract design for public infrastructure projects, resulting in increased use of public private partnerships and alliancing.
+
+Public Private Partnerships, known as PPPs, have been used extensively over the past generation in an effort to bring commercial discipline to infrastructure construction and operations.
+PPPs encourage integrated trade-offs between construction and maintenance.
+They also tend to require clearer definition in advance of construction.
+Relative to traditional delivery models, PPPs can reduce costs if the additional commercial discipline is greater than the higher costs of private capital that PPPs incur.
+
+A newer form of contract type, known as alliancing, creates a partnership between the government buyer and the contracting company or companies.
+Alliancing has become common over the past decade or so for projects in which it is particularly difficult to define risks prior to tendering, as this contract type allows for greater ongoing negotiation between the private contractor and government body.
+
+Alliancing and public private partnerships are designed to allocate project risk differently and more effectively than traditional delivery models.
+Consequently, the average size of cost overruns is likely to vary by contract type.
+However, there limited evidence on whether this is the case in practice.
+
+A 2007 study of 54 projects and a 2008 study of 67 projects both concluded that PPPs are less prone to cost overruns than are traditionally procured projects.%
+\footnote{Duffield et al (2007); Duffield (2008)} Another study of 38 projects found no statistically significant difference in cost outcomes between PPP and non-PPP projects.%
+\footnote{Elaurant and Louise (2015)} A 2010 study of 14 alliance projects found significantly greater cost overruns than in traditional delivery methods.%
+\footnote{Wood (2010)}
+
+Given the small sample sizes and varying results of these studies, it is difficult to generalise about whether the average size of cost overruns is different under different types of contracts.
+However, this is an important field of research because it has the potential to identify more cost efficient ways to deliver infrastructure projects and to improve our ability to anticipate cost overruns.
+
+\section{Risk assessment should be comprehensive}\label{risk-assessment-should-be-comprehensive}
+
+At present, cost estimators at present are hampered by weaknesses in official guidance on cost estimation.
+
+Every state produces its own guidance on how to estimate project costs.
+The Commonwealth produces guidance too.
+There are more than 50 current guideline documents and handbooks around the country.
+
+Ultimately all cost estimates use some combination of four tools: expected value, sensitivity analysis, probability pricing, and reference class forecasting (see Box xx).
+The various guidance documents present the same basic tools in a wide variety of ways.
+They are inconsistent in which of the main tools they recommend and in how they guide the user through the relationships among the various tools (see Figure xx).
+
+\textbf{Figure 4.4: Australia's various guidelines on risk measurement do not recommend any approach consistently.\\
+}Proportion of guidelines on quantitative risk assessment on transport infrastructure projects that recommend the use of each key risk assessment tool, per cent\includegraphics{media/image16.png}
+
+\emph{Notes:} \emph{Australian transport projects completed between 2000 and 2015\\
+Sources: Deloitte Investment Monitor; Grattan analysis}
+
+A project's expected value is the most obvious gap in cost estimation guidance.
+Most thinking about risk measurement is predicated on some measure of expected value or expected cost, so expected value is an important component of the risk manager's toolkit.
+It can be calculated using project information alone, or using historical information on completed projects.
+The expected value methodology or a reasonable substitute\footnote{Defined as the official guidelines applicable to transport infrastructure projects that define a recommended or required approach to quantifying unavoidable project risk.} is missing from the Commonwealth's ``comprehensive'' \footnote{BPCESfPFR: p.4, section 3.3} \emph{Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction.} It is also missing in official guidelines for key gateways such as Infrastructure Australia's \emph{Detailed} \emph{Technical Guidance} and \emph{Business Case Template}, and in some key state documents such as the South Australian \emph{Estimating Manual} and Western Australian \emph{Business Case Template.}
+
+While there is more than one valid approach to measuring project risk, it is not obvious why different Australian jurisdictions need different approaches to the same basic tools.
+Different approaches make it difficult or impossible to collect data on a consistent basis so that project managers can draw on a large pool of past projects around Australia to improve their understanding of cost and risk.
+It would be better for all jurisdictions to adopt a standard approach, and for the Commonwealth to assist them to do so (see Recommendation 5).
+
+Recommendation 5 -- Improve risk measurement guidance
+
+The Commonwealth should provide model guidelines that states and territories may adopt or adapt.
+The guidelines should recommend a consistent approach to measuring and managing project risk, including a statement of seniority where specific guidelines would otherwise conflict with one another.
+
+\begin{longtable}[c]{@{}ll@{}}
+\toprule
+\textbf{Box xx: The risk manager's toolkit}
+
+\textbf{Expected value}: The expected value of project cost is an estimate of the most likely, average or mean cost of a project.
+It is calculated by assigning a single probability to each potential cost outcome, and multiplying this probability by the cost of that particular outcome if did occur.
+This is the simplest approach to estimating the likely size of cost overruns.
+To be useful, the approach should include all of the risks involved in a project.
+Its main shortcoming is that it does not include the costs posed by any unknown risks. & \vtop{\hbox{\strut Figure 4.5: Key risk measurement and management concepts}\hbox{\strut Illustrative probability distribution of cost outcomes on individual projects, per cent \includegraphics{media/image17.png} \emph{Notes: This diagram is a stylized representation of the differences between project and portfolio level risks.
+Figure XX in appendix XX presents the raw data underpinning this.}}}
+
+Figure 4.4 illustrates these tools for the costs of a group of completed projects: expected value (or mean); variance (assessed by sensitivity analysis) and probability pricing levels.
+The fourth tool, reference class forecasting, offers a way to improve the quality of expected value, sensitivity analysis and probability pricing by relying on historical experience.\tabularnewline
+\midrule
+\endhead
+\bottomrule
+\end{longtable}
+
+\section{Risk assessment should be based on actual Australian data on past projects}\label{risk-assessment-should-be-based-on-actual-australian-data-on-past-projects}
+
+Cost estimates are produced from combining two types of information: one is building an estimate from adding up the costs of materials, equipment, labour and other inputs; the other is comparing a particular project to others like it.
+While information on the cost of inputs is widely available, the opposite is true when it comes to comparative information on projects.
+
+The gap lies in the lack of actual Australian data on past projects.
+There is no consistent post-implementation review of projects, nor are data collected on how projects of various kinds performed against the original cost and benefit estimates.
+
+This lack of data is concerning for two reasons.
+One is the poor accountability for project delivery and the unfortunate incentives it creates for governments to promise to build projects for unrealistic costs.
+Section 2.x discusses this problem.
+
+The second concern is that lack of data makes it impossible for those estimating project costs to do so properly.
+They can estimate the costs of inputs, but they lack the data to make robust comparisons with past projects - to use the cost estimation toolkit properly.
+
+The cost estimation toolkit relies upon historical cost outcomes to calculate key aspects of a cost estimate.
+Probability pricing and reference class forecasting depend entirely on knowing the historical outcomes of similar projects.
+Not knowing these has three important consequences.
+
+The first is that xx per cent of guidelines tell cost estimators that overruns and underruns are equally likely.
+They do so by recommending that symmetric probability distributions should underpin the typical approach to estimating probability prices, known as Monte Carlo simulation.
+This advice contradicts Australian experience (see Box xx on current projects).
+
+Box xx: Failure to learn from history continues to affect current projects
+
+For transport infrastructure projects valued at \$20 million or more, the difference between the median cost estimate, or ``P50'', and the ``worst case'', or ``P90'' cost estimates, has averaged 21 per cent over the past 15 years.
+
+But cost estimates for current projects do not reflect this difference.
+Instead, the difference between median and ``worst case'' estimates is generally about a third this size.
+Judging by recent history, this indicates that either the median cost estimate is too high, or - more likely - the ``worst case'' cost estimate is too low.
+If the latter is the case, more than the expected 10 per cent of these projects will be likely to experience overruns.
+This report has found that these will be larger, on average, than expected.
+
+Table xx shows that the difference between median and ``worst case'' estimates appears to be too small for several massive projects currently under way, each of which is valued at close to a billion dollars or more.
+They show a ``worst case'' cost estimate far lower than 21 per cent above the median estimate that history should have led us to expect.
+
+\begin{longtable}[c]{@{}llll@{}}
+\toprule
+\textbf{Project} & \textbf{Median cost estimate (known as ``P50'')}
+
+\textbf{(nominal)} & \textbf{``Worst case'' cost estimate (known as ``P90'')}
+
+\textbf{(nominal)} & \textbf{Difference (\%)}\tabularnewline
+\midrule
+\endhead
+Melbourne Metro (Vic)\footnote{``The expected value of each risk was then calculated based on the probability of the risk occurring and the sum of the products of the impact (either as a percentage of the cost driver or delay costs) and their
+
+  probabilities in each of the three defined states.
+Correlation between key risks was calculated using a correlation matrix.
+A Monte Carlo analysis was then used to calculate the P50 and P90 values.''} & \$10,154 million & \$10,837 million & 6.7\%\tabularnewline
+Western Distributor (Vic)\footnote{``Total nominal dollars over the construction period, assuming construction commences during the year ended 30 June 2018.''} & \$5226m & \$5548m & 6.2\%\tabularnewline
+Westconnex (NSW) & \$16800 & n/a & 6\%\footnote{``The Infrastructure Australia assessment makes reference to a six per cent difference between the P50 and P90 on the Stage 2'' (SGS, February 2016, page 23)}\tabularnewline
+Inland Rail (National) & \$9890 & \$10,660m & 7.8\%\tabularnewline
+Canberra Light Rail (ACT) & \$759 & \$806m & 6.5\%\tabularnewline
+Princes Highway West Duplication (Vic) & \$334.3 & \$363.5m & 8.7\%\tabularnewline
+Main Road, St Albans Level Crossing Removal Project (Vic) & \$222.9 & \$231.5m & 3.9\%\tabularnewline
+Bruce Highway Upgrade~(Qld) & \$841.2 & \$929.3m & 10.5\%\tabularnewline
+M1 Pacific Motorway - Gateway Mway Merge Upgrade (Qld) & \$197.7 & \$207.9m & 5.2\%\tabularnewline
+Mitchell Freeway extension (WA) & \$297.9 & \$322.6m & 8.3\%\tabularnewline
+North West Coastal Highway (WA) & \$148 & \$179m & 20.9\%\tabularnewline
+Great Northern Highway (WA) & \$301.5 & \$361m & 19.7\%\tabularnewline
+\textbf{Observed average over past 15 years} & & & \textbf{21.0\%}\tabularnewline
+\bottomrule
+\end{longtable}
+
+A second consequence of not knowing historical outcomes of similar projects is that it deprives cost estimators of an effective counter to known psychological biases.
+Just as trains or aeroplanes more often arrive late than early, so too do cost estimates tend to ramp upwards more often and to a greater degree than downwards.
+The psychological tendency to believe that project outcomes will be better than they turn out to be is known as `optimism bias', and arises from the combined impacts of cost underestimation and benefits overestimation.%
+\footnote{Kahnemann and Tversky (1979); Flyvbjerg (2014) p14.} Unfortunately, optimism bias is especially acute when the most money is at stake, in the larger and more complex projects where the interdependence of risks is particularly hard for experts to judge accurately.
+
+A third consequence of not knowing historical outcomes is that cost estimators lack an effective counter to `strategic misrepresentation' -- when proponents deliberately manipulate the cost estimates to make them look more favourable than they really are.
+Project proponents have an incentive for strategic misrepresentation to the extent that they are judged more on how much they build than how well they manage their budget.
+Lack of historical outcomes data makes this behaviour hard to counter.
+
+The discrepancy between expert expectations and historical experience shows that the reliability of risk assessments on Australian transport infrastructure projects would be substantially improved by equipping risk experts with better information.
+The Productivity Commission's 2014 Public Infrastructure inquiry report highlights the need for an accurate database of historical cost outcomes for Australian projects.
+The Commonwealth, which supports this recommendation,\footnote{Productivity Commission (2014), recommendation 9.2, http://www.pc.gov.au/\_\_data/assets/pdf\_file/0003/137280/infrastructure-volume1.pdf; Department of Infrastructure and Regional Development (2014), p 19, https://infrastructure.gov.au/infrastructure/publications/files/Productivity\_Commission\_Inquiry\_Report\_into\_Public\_Infrastructure.pdf.} should create such a database, using the information on completed projects from all states on a consistent basis.
+The change would help cost estimation experts to create better quality estimates.
+
+Recommendation 6 -- compile Australian database of completed projects
+
+The Commonwealth should seek cooperation from the states to create new benchmarking data to improve risk measurement in new project proposals and public accountability.
+It should use data collected through mechanisms described in Recommendation 3.
+
 \appendix
 \chapter{Methodological appendix}
 \section{Expected difference between P50 and P90 costs\label{appendix:Expected-difference-between-P50-and-P90}}
