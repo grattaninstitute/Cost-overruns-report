@@ -1284,9 +1284,9 @@ Not knowing these has three important consequences.
 
 The first is that xx per cent of guidelines tell cost estimators that overruns and underruns are equally likely.
 They do so by recommending that symmetric probability distributions should underpin the typical approach to estimating probability prices, known as Monte Carlo simulation.
-This advice contradicts Australian experience (see Box xx on current projects).
+This advice contradicts Australian experience (see \Vref{box:failure-to-learn-continues-to-affect-current-projects} on current projects).
 
-Box xx: Failure to learn from history continues to affect current projects
+\begin{smallbox}{Failure to learn from history continues to affect current projects}{box:failure-to-learn-continues-to-affect-current-projects}
 
 For transport infrastructure projects valued at \$20 million or more, the difference between the median cost estimate, or ``P50'', and the ``worst case'', or ``P90'' cost estimates, has averaged 21 per cent over the past 15 years.
 
@@ -1298,6 +1298,8 @@ This report has found that these will be larger, on average, than expected.
 
 Table xx shows that the difference between median and ``worst case'' estimates appears to be too small for several massive projects currently under way, each of which is valued at close to a billion dollars or more.
 They show a ``worst case'' cost estimate far lower than 21 per cent above the median estimate that history should have led us to expect.
+\end{smallbox}
+
 
 \begin{tabular}[c]{@{}llll@{}}
 \toprule
