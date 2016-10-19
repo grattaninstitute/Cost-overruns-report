@@ -1343,10 +1343,11 @@ The Productivity Commission's 2014 Public Infrastructure inquiry report highligh
 The Commonwealth, which supports this recommendation,\footnote{Productivity Commission (2014), recommendation 9.2, http://www.pc.gov.au/\_\_data/assets/pdf\_file/0003/137280/infrastructure-volume1.pdf; Department of Infrastructure and Regional Development (2014), p 19, https://infrastructure.gov.au/infrastructure/publications/files/Productivity\_Commission\_Inquiry\_Report\_into\_Public\_Infrastructure.pdf.} should create such a database, using the information on completed projects from all states on a consistent basis.
 The change would help cost estimation experts to create better quality estimates.
 
-Recommendation 6 -- compile Australian database of completed projects
+\begin{recommendation}{Compile Australian database of completed projects}
 
 The Commonwealth should seek cooperation from the states to create new benchmarking data to improve risk measurement in new project proposals and public accountability.
-It should use data collected through mechanisms described in Recommendation 3.
+It should use data collected through mechanisms described in \Cref{reco:Publish-post-completion-data}.
+\end{recommendation}
 
 \appendix
 
