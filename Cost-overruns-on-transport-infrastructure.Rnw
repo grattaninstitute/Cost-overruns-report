@@ -1480,6 +1480,30 @@ To improve the cost-efficiency of risk management, governments should divide pro
 
 
 
+\chapter{Conclusion}\label{conclusion}
+
+Taxpayers have paid \$25 billion more on transport infrastructure in the past 15 years than they were told they would pay.
+This is 24 per cent above the promised cost.
+
+Premature announcements are the main causes of these cost overruns.
+Projects that are announced prematurely more often cost overruns and larger overruns than those announced at a more mature stage of development.
+This is true not just in the run-up to a formal cost assessment but throughout the project lifecycle.
+Limiting premature announcements could substantially reduce cost overruns.
+
+If premature announcements were reduced or eliminated, further overruns could be addressed through more comprehensive risk measurement.
+More accurate cost estimates would give governments realistic information that they could use to establish the size of the infrastructure building program and the priorities within it.
+
+They cannot do this until they collect information on past projects.
+Cost estimation and risk management must allow for unforeseen as well as known risks, and the best way to prepare for unforeseen events is to learn from history.
+It is essential to collect and publish Australian data on historical project outcomes, to allow better risk measurement and account to the public for decisions made.
+
+There are no grounds for believing that the problem has been fixed.
+On the contrary, projects currently in the planning and delivery stages have cost estimates that do not take account of the experience of the past 15 years, and many may well be at risk of significant cost overruns.
+
+With actual Australian data on past projects, we would no longer need to be surprised by what is predictable.
+Instead, our infrastructure systems could promise what is worth having, and then deliver what is promised.
+
+
 
 \appendix
 
