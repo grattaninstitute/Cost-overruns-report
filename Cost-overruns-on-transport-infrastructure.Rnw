@@ -817,8 +817,10 @@ Our infrastructure systems should promise what is worth having, and then deliver
 
 \contentspage
 
-\chapter{Recommendations}
+\begin{Recommendations}
 \recommendEvaluateBeforeSpending
+
+\end{Recommendations}
 
 \chapter{The extent of cost overruns\label{chap:extent-of-cost-overruns}}
 The Peel Deviation is a stretch of the Forrest Highway running between Perth and Bunbury.
@@ -1041,7 +1043,7 @@ Rather, premature cost announcements appear to haunt projects not only in the le
 
 \begin{figure}
 \captionwithunits{Projects announced earlier have larger percentage cost overruns at all stages of the project lifecycle\label{fig:projs-announced-early-have-larger-cost-overruns-at}}
-{Cost estimates}
+{Average project size at each project stage by cohort, \$2016 millions}
 
 
 \noteswithsource{Australian transport projects, completed between 2001 and 2015.
@@ -1150,19 +1152,14 @@ Both of these shortcomings should be fixed.
 Both Commonwealth and state governments commonly commit to infrastructure projects without an evaluation.
 If there is no evaluation, then politicians' claims about a project's costs and benefits -- or even when it will open - cannot be scrutinised until much later if at all (see Box xx on Bulahdelah bypass).
 
-Box xx: Case study - Bulahdelah Bypass -- 111 per cent overrun
+\begin{verysmallbox}{Case study -- Bulahdelah Bypass -- 111 per cent cost overrun}{box:bulahdelah}
+\subsubsection*{Road opened before it was finished}
 
-Road opened before it was finished
+In June 2013, New South Wales’ Bulahdelah Bypass was running six months behind its revised schedule\footnote{1} and still wasn't finished, so the state government decided to hold a ribbon cutting ceremony and announce its completion anyway.
 
-In June 2013, New South Wales' Bulahdelah Bypass was running six months behind its revised schedule\textsuperscript{1} and~still wasn't finished, so the state government decided to hold a ribbon cutting ceremony and announce its completion anyway.
-
-Official sources say that construction finished in June 2013.\textsuperscript{2} Yet the road was closed for further construction immediately after the ceremony and opened properly a month later.\textsuperscript{3}
-
-1. http://bit.ly/1YIdixx
-
-2. \url{http://investment.infrastructure.gov.au/publications/historical/pdf/NSW_Completed_Projects_June_2015.pdf}
-
-3. \url{http://www.greatlakesadvocate.com.au/story/1613335/bypass-officially-opens-and-closes-again-within-days/}; \url{http://www.smh.com.au/nsw/sun-sets-on-little-town-of-bottlenecks-and-pies-20130719-2q9rw.html}; https://au.prime7.yahoo.com/n1/news/a/-/local/17775444/bypass-opened-by-construction-not-finished-video/
+Official sources say that construction finished in June 2013.\footnote{2} 
+Yet the road was closed for further construction immediately after the ceremony and opened properly a month later.\footnote{3} 
+\end{verysmallbox}
 
 Governments are responsible for investment decisions, they should not spend public money without due care for how the spending will benefit the community.
 Cost benefit analysis has limitations, but it remains the best way for making like-for-like comparisons of projects.%
@@ -1177,11 +1174,11 @@ Politicians frequently bemoan waste in the welfare system and the need to reduce
 They rarely do the same for transport infrastructure.
 
 The system would be improved if governments were not able to commit public money until the project evaluation and the business case had been tabled in parliament.
-Ministers would then be free to commit to the projects that best met their priorities, and to explain to the public any differences between their priorities and the findings of project assessments (see Recommendation 1).
+Ministers would then be free to commit to the projects that best met their priorities, and to explain to the public any differences between their priorities and the findings of project assessments (see \Vref{reco:Evaluate-before-spending}).
 
-Recommendation 1 -- Evaluate before spending
-
+\begin{recommendation}{Evaluate before spending\label{reco:Evaluate-before-spending}}%
 Governments should not be able to commit public money to transport infrastructure until a rigorous, independent like-for-like evaluation and the underlying business case have been tabled in the state or federal parliament.
+\end{recommendation}
 
 Keeping an evaluation secret also protects cost claims from scrutiny and debate.
 
@@ -1196,15 +1193,18 @@ Where no business case or cost benefit analysis has been developed, or where the
 We have found no evidence that governments are routinely offered a set of developed and feasible options to choose from.
 To the extent that this lack of evidence points to a gap in planning department processes, it is relevant for the public to understand the shortcomings in the basis of government infrastructure decisions.
 This would be most effective if done at a national level, with data published on a consistent and comparable basis.
-Recommendation 2 proposes mechanisms to do this.
+\Vref{reco:Publish-evaluations} proposes mechanisms to do this.
 
-Recommendation 2 -- Publish evaluations of new infrastructure commitments
-
+\begin{recommendation}{Publish evaluations of new infrastructure commitments\label{reco:Publish-evaluations}}
 The Commonwealth should enable and facilitate better public understanding of infrastructure commitments by:
 
-a) requiring Infrastructure Australia to publish (i) summaries of \emph{all} transport infrastructure projects funded by the Commonwealth within the previous quarter, completed to the extent that Infrastructure Australia has the information to do so and otherwise left blank; and (ii) business cases and cost benefit analyses for all transport infrastructure proposals receiving Commonwealth funding during the previous quarter, if these have not already been published by a state government; and
+\begin{enumerate}
+\renewcommand{\labelenumi}{\alph{enumi}) }
+\item requiring Infrastructure Australia to publish (i) summaries of \emph{all} transport infrastructure projects funded by the Commonwealth within the previous quarter, completed to the extent that Infrastructure Australia has the information to do so and otherwise left blank; and (ii) business cases and cost benefit analyses for all transport infrastructure proposals receiving Commonwealth funding during the previous quarter, if these have not already been published by a state government; and
 
-b) requiring the Productivity Commission to publish reliability ratings of all transport infrastructure business cases within one month of Infrastructure Australia publishing them.
+\item requiring the Productivity Commission to publish reliability ratings of all transport infrastructure business cases within one month of Infrastructure Australia publishing them.
+\end{enumerate}
+\end{recommendation}
 
 \section{There is no accountability for poorly founded cost promises }\label{there-is-no-accountability-for-poorly-founded-cost-promises}
 
