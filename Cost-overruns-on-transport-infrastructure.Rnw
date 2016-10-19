@@ -1018,5 +1018,287 @@ But even reducing the final cost by 20 per cent (to account for the extended roa
 \end{bigbox*}
 \catcode`\$=12
 
+\chapter{Premature announcements cause larger and more persistent cost overruns}\label{premature-announcements-cause-larger-and-more-persistent-cost-overruns}
+
+Ministers and opposition spokespeople often promise to build a road or bridge or rail line, for a particular cost.
+They are especially prone to doing so in the lead-up to elections (see Box xx on the Forrest Highway).
+
+It is normally premature and unwise to announce project costs this early in the planning process.
+History shows that projects with costs announced prior to a formal budget commitment experience far larger cost overruns than projects with later cost announcements.
+Over the past 15 years, 82 per cent of the total value of cost overruns is explained by the 31 per cent of projects with early cost announcements (see Figure xx).
+
+\textbf{Figure xx: The projects with early initial cost announced account for most of the value of cost overruns\\
+}Per cent
+
+\textbf{\\
+}\includegraphics{media/image8.png}
+
+\emph{Notes:} \emph{Australian transport projects completed between 2001 and 2015\\
+Source: Deloitte Investment Monitor, Grattan analysis.}
+
+It comes as no surprise that ad hoc announcements prior to formal budget commitments tend to be extremely optimistic.
+Once such announcements are scrutinised as part of the budget process, their early cost estimates need to be upwardly revised by an average of xx per cent.
+
+However, the poor cost performance of projects with early cost announcements is not just a warning to mistrust the infrastructure announcements of politicians.
+Rather, premature cost announcements appear to haunt projects not only in the lead-up to a formal budget commitment, but throughout their lives (see Figure xx).
+
+\textbf{Figure xx: Projects announced earlier have larger percentage cost overruns at all stages of the project lifecycle}
+
+\includegraphics{media/image9.png}
+
+\emph{Notes: Australian transport projects, completed between 2001 and 2015.
+Projects' maturities at the time of initial cost announcements are inferred from each project's stated maturity when the project entered the Deloitte Investment Monitor.
+Where initial cost announcements were very low profile, it is possible that the Deloitte Investment Monitor may have missed the announcement and erroneously recorded the first cost announcement as having occurred when the project reached a more mature stage.
+Given this data collection methodology, it should be noted late initial cost announcements may in fact reflect that earlier cost announcements were of a particularly low profile.\\
+Source: Deloitte Investment Monitor, Grattan analysis.}
+
+Figure xx shows that projects announced early tend to perform worse against their cost estimates, not only in the early stages but also later in the project's life than do those announced at more mature stages of development.
+This suggests that overly optimistic initial cost estimates are rarely adequately adjusted straight away - reliable project cost estimates may only eventuate half way through construction.
+
+Another reason why early cost announcements often have a large overruns is that these low quality cost estimates are often imposed on the highest risk projects.
+Figure xx shows that projects with early cost estimates are substantially bigger, on average, than projects with later cost announcements.
+Section xx of this report confirms that large projects are more prone to cost overruns than smaller projects in Australia, as is consistently the case internationally.
+
+The rest of this chapter explains the incentives and lack of penalties that lead to premature announcements (see Box xx on the Alstonville bypass).
+
+Box xx: Case study - Alstonville bypass -- 162 per cent overrun
+
+An under-cooked election promise
+
+In 2002, the Federal Coalition Government promised to contributing \$12 million to the \$36 million cost of an upgrade to the Bruxner Highway in Northern New South Wales, in order to bypass Alstonville.\textsuperscript{1} The following year, the then Labor Premier, Bob Carr, promised in a New South Wales election campaign to build the bypass by the end of 2006, at a cost of \$36 million.\textsuperscript{2}
+
+Yet the project was not confirmed until 2009, when a contract was awarded for \$101 million.\textsuperscript{3}
+
+Savings of \$6.7 million were made during the construction period, and the project was declared to have come in ``under budget''\textsuperscript{4} when it was completed in 2011,\textsuperscript{5} six months after the contracted completion date,\textsuperscript{6} five years after the promised completion date, and nine years after the first commitment.
+
+1. \href{http://23.101.218.132/Prod/parlment/hansart.nsf/V3Key/LA20021119038?open\&refNavID=HA8_1}{http://}\href{http://23.101.218.132/Prod/parlment/hansart.nsf/V3Key/LA20021119038?open\&refNavID=HA8_1}{23.101.218.132/Prod/parlment/hansart.nsf/V3Key/LA20021119038?open\&refNavID=HA8\_1},
+
+2. http://mobile.abc.net.au/news/2003-06-20/plan-for-bruxner-highway-bypass-by-2006/1873482 ,
+
+3. http://www.abc.net.au/news/2009-02-19/alstonville-bypass-funds-announced/300720; \url{http://www.treasury.nsw.gov.au/__data/assets/pdf_file/0004/17581/bp4_infrastructure_statement.pdf}
+
+4. \url{http://bit.ly/26vTJ1j}.
+
+5. http://www.northernstar.com.au/news/alstonville-traffic-to-use-new-bypass-lismore/861128
+
+\emph{6}\href{file:///C:/Users/Hugh\%20Parsonage/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/QRM3IFT6/6}{6}\emph{. http://www.abc.net.au/news/2009-02-19/alstonville-bypass-funds-announced/300720}
+
+\section{Premature announcements are made for electoral gain }\label{premature-announcements-are-made-for-electoral-gain}
+
+Governments and would-be governments are very fond of promising infrastructure.
+But while these promises might give them political advantage, politicised announcements that ignore proper process have particularly poor outcomes.
+Cost overruns are 23 per cent higher on average for projects announced close to a state or federal election than for similar projects announced at other times.
+Previous Grattan work shows how politicians commit to poor quality projects for political benefit.%
+\footnote{Terrill, Emslie and Coates (2016) \emph{Roads to Riches;} Terrill (2016) \url{http://grattan.edu.au/news/election-2016-will-the-infrastructure-promises-meet-australias-needs/}.}
+
+Politicians continue to make infrastructure promises for political advantage even though their parties have made strong statements recognising the need to spend infrastructure money better.
+Among such statements:
+
+\begin{itemize}
+\item
+  The current Commonwealth Government maintains that ``\href{http://parlinfo.aph.gov.au/parlInfo/genpdf/chamber/hansardr/e674bc2a-82df-4a25-981b-1f2bab3d0b16/0005/hansard_frag.pdf;fileType=application\%2Fpdf}{\emph{it is critical to base project selection on rigorous analysis and sound planning to avoid wasteful investment}}\emph{\ldots{}{[}t{]}he advice provided by Infrastructure Australia will be a key input in guiding the Australian, state and territory governments when making major investment decisions}.''\footnote{http://infrastructureaustralia.gov.au/about/files/IA-Statement-of-Expectations-2015-17.pdf}
+\item
+  The Federal Labor Opposition, which established Infrastructure Australia when it was in office in 2008, promises to take the politics out of infrastructure by ensuring that \emph{``Infrastructure Australia independently assesses all major infrastructure projects on the basis of the benefits they provide to the economy and society as a whole, their commercial viability and their capacity to enhance national productivity}.''\footnote{http://www.100positivepolicies.org.au/empowering\_infrastructure\_australia}
+\item
+  The Greens contend that ``\emph{{[}t{]}oo often, major infrastructure decisions are made for short-term, politically expedient reasons, rather than in the long-term public interest}.''\footnote{Ref} They would like to see comprehensive cost-benefit analysis for large projects submitted to Infrastructure Australia for evaluation, and with the recommendation made public at the same time it is given to government.%
+\footnote{Ref}
+\end{itemize}
+
+But even though parties make such statements, the behaviour of politicians exposes the hollowness of their claims.
+In the 2016 federal election campaign, Labor, the Coalition and the Greens all promised to build a large number of projects that had not been properly assessed.
+Between a quarter and a half of their promises were for projects that had not been submitted to Infrastructure Australia for assessment, or had been assessed and judged as not worth doing.%
+\footnote{http://grattan.edu.au/news/election-2016-will-the-infrastructure-promises-meet-australias-needs/} Many others were only an ``initiative'' on Infrastructure Australia's list; in other words, Infrastructure Australia was yet to be convinced that the project was worthwhile.
+The proportions of the promised money that were for projects that had been assessed as nationally significant and worth doing ranged from 15 per cent for the Coalition to none for the Greens (see Figure xx).
+
+\textbf{Figure xx: The vast majority of committed money from\\
+all 3 major parties is for projects not endorsed by Infrastructure Australia\\
+}Value of specific election commitments to transport infrastructure projects, \$billion
+
+\includegraphics{media/image10.png}
+
+\emph{Notes: Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of the coalition, from the 2016-17 budget papers.
+Excludes projects for which construction has already commenced.\\
+Source: Liberal Party (2016); Australian Labor Party (2016); Australian Greens (2016); Treasury (2016); Treasury (2014); Infrastructure Australia (2016); Grattan analysis }
+
+This pattern of promising poor quality or under-developed project ideas in election campaigns is troubling because politicians find it very hard to back down from promises, even when it becomes apparent that the original assumptions about the project were not well founded (see Box xx on the Hunter Expressway).
+
+\begin{longtable}[c]{@{}ll@{}}
+\toprule
+\textbf{Box xx: Case study - Hunter Expressway -- more than 350 per cent over budget }
+
+Government reluctance to change course when facts change
+
+A plan to build a Maitland bypass as part of the New England Highway in northern New South Wales was floated as early as 1983.\textsuperscript{1} The preferred route for what eventually became the Hunter Expressway was decided in 2001 and expected to cost ``more than \$335 million'' in 2002.\textsuperscript{2}
+
+In 2007 the Federal Coalition Government increased the funding commitment to \$887 million by the Federal coalition Government as an election pledge.\textsuperscript{3} After winning the 2007 election, the new Labor Government cooled on the idea.
+Joel Fitzgibbon, the then Labor Member for Hunter, observed in 2008 that: ``First, the F3 link was conceived in the mid 1980s and there have been big changes in traffic movements and residential and commercial settlement patterns since then.
+Second, the cost of the project is now \$1,700 million (\$1.7 billion) and it has a very low benefit to cost ratio (meaning it provides tax-payers with a low-value solution).''\textsuperscript{4}
+
+The government commissioned a review in 2008,\textsuperscript{5} after which it committed of \$1.7 billion in 2009.\textsuperscript{6} The federal Liberal member for nearby Paterson, Bob Baldwin criticised the government's prevarication ``because we (the coalition) had committed to it as a government''.\textsuperscript{7} Mr Baldwin emphasised the persistence of Support the Link, a local lobby group that pushed hard for the road.\textsuperscript{8}
+
+The project was completed in 2014 at a cost of xx.\textsuperscript{9} & While the final benefit cost ratio has not been published, these comments from politicians reveal the difficulty governments experience in reneging on commitments made very early in a project's life, even after the facts of the project change significantly.
+
+1. \url{http://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id\%3A\%22chamber\%2Fhansardr\%2F2009-06-01\%2F0011\%22}
+
+2. \href{https://infrastructure.gov.au/department/statements/2002_2003/media/a03_budget_02.aspx}{https://}\href{https://infrastructure.gov.au/department/statements/2002_2003/media/a03_budget_02.aspx}{infrastructure.gov.au/department/statements/2002\_2003/media/a03\_budget\_02.aspx}
+
+3. \href{http://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id:\%22chamber/hansardr/2009-06-01/0011\%22}{http://}\href{http://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id:\%22chamber/hansardr/2009-06-01/0011\%22}{parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id\%3A\%22chamber\%2Fhansardr\%2F2009-06-01\%2F0011\%22}
+
+4. ibid
+
+5. http://investment.infrastructure.gov.au/publications/policies/pdf/Lower\_Hunter\_TermsOfReference.pdf
+
+6. \href{http://www.rms.nsw.gov.au/documents/projects/hunter/the-hunter-expressway/project-documents/hunter-expressway-comm-update-jul2010.pdf}{http://}\href{http://www.rms.nsw.gov.au/documents/projects/hunter/the-hunter-expressway/project-documents/hunter-expressway-comm-update-jul2010.pdf}{www.rms.nsw.gov.au/documents/projects/hunter/the-hunter-expressway/project-documents/hunter-expressway-comm-update-jul2010.pdf}
+
+7. \href{http://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id:\%22chamber/hansardr/2009-06-01/0011\%22}{http://}\href{http://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id:\%22chamber/hansardr/2009-06-01/0011\%22}{parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id\%3A\%22chamber\%2Fhansardr\%2F2009-06-01\%2F0011\%22}
+
+8. ibid
+
+9. http://www.rms.nsw.gov.au/projects/hunter/the-hunter-expressway/index.html\tabularnewline
+\midrule
+\endhead
+\bottomrule
+\end{longtable}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item ~
+  \section{}\label{section-1}
+\item ~
+  \section{Premature cost claims cannot be disputed}\label{premature-cost-claims-cannot-be-disputed}
+\end{enumerate}
+
+There is currently no effective curb on premature announcements.
+Politicians either promise projects that have not been evaluated, or they promise projects with an evaluation that is not available to the public.
+Both of these shortcomings should be fixed.
+
+Both Commonwealth and state governments commonly commit to infrastructure projects without an evaluation.
+If there is no evaluation, then politicians' claims about a project's costs and benefits -- or even when it will open - cannot be scrutinised until much later if at all (see Box xx on Bulahdelah bypass).
+
+Box xx: Case study - Bulahdelah Bypass -- 111 per cent overrun
+
+Road opened before it was finished
+
+In June 2013, New South Wales' Bulahdelah Bypass was running six months behind its revised schedule\textsuperscript{1} and~still wasn't finished, so the state government decided to hold a ribbon cutting ceremony and announce its completion anyway.
+
+Official sources say that construction finished in June 2013.\textsuperscript{2} Yet the road was closed for further construction immediately after the ceremony and opened properly a month later.\textsuperscript{3}
+
+1. http://bit.ly/1YIdixx
+
+2. \url{http://investment.infrastructure.gov.au/publications/historical/pdf/NSW_Completed_Projects_June_2015.pdf}
+
+3. \url{http://www.greatlakesadvocate.com.au/story/1613335/bypass-officially-opens-and-closes-again-within-days/}; \url{http://www.smh.com.au/nsw/sun-sets-on-little-town-of-bottlenecks-and-pies-20130719-2q9rw.html}; https://au.prime7.yahoo.com/n1/news/a/-/local/17775444/bypass-opened-by-construction-not-finished-video/
+
+Governments are responsible for investment decisions, they should not spend public money without due care for how the spending will benefit the community.
+Cost benefit analysis has limitations, but it remains the best way for making like-for-like comparisons of projects.%
+\footnote{Eliasson and Fosgerau (2013)} Even with such a process, politicians will be tempted to pressure evaluators to massage assessments to fit political priorities.
+This is not just a theoretical concern.
+For example, EWL story.
+
+Other spheres of government spending offer far less scope for discretionary decisions.
+For example, payments to unemployed people are worth \$108 billion since 2000 -- about the same amount as has been spent on transport infrastructure.
+The \emph{Social Security Act 1991} lays out in exhaustive detail the conditions under which an unemployed person may qualify for Newstart or Youth Allowance, the rate at which they may be paid, and the arrangements for recovering incorrect payments.
+Politicians frequently bemoan waste in the welfare system and the need to reduce fraud, improve compliance and get better value for money.
+They rarely do the same for transport infrastructure.
+
+The system would be improved if governments were not able to commit public money until the project evaluation and the business case had been tabled in parliament.
+Ministers would then be free to commit to the projects that best met their priorities, and to explain to the public any differences between their priorities and the findings of project assessments (see Recommendation 1).
+
+Recommendation 1 -- Evaluate before spending
+
+Governments should not be able to commit public money to transport infrastructure until a rigorous, independent like-for-like evaluation and the underlying business case have been tabled in the state or federal parliament.
+
+Keeping an evaluation secret also protects cost claims from scrutiny and debate.
+
+The best incentive for high quality disinterested project analysis is detailed, timely publication.
+Although some will be concerned that publication may reduce the competitiveness of tenders by anchoring expectations, the cost of poor project selection is likely to far outweigh a marginal reduction in tendering competitiveness.
+
+Consequently, before a government decides to build infrastructure, the public should have access to the business case, cost benefit analysis and evaluation summary.
+The information should include disclosure of the key assumptions made in the cost benefit case, sensitivity analysis of these assumptions, and the evidence justifying them.
+Without this detail, there is no public check on the quality of assessments.
+
+Where no business case or cost benefit analysis has been developed, or where these assessments are not reliable or robust, the public should know.
+We have found no evidence that governments are routinely offered a set of developed and feasible options to choose from.
+To the extent that this lack of evidence points to a gap in planning department processes, it is relevant for the public to understand the shortcomings in the basis of government infrastructure decisions.
+This would be most effective if done at a national level, with data published on a consistent and comparable basis.
+Recommendation 2 proposes mechanisms to do this.
+
+Recommendation 2 -- Publish evaluations of new infrastructure commitments
+
+The Commonwealth should enable and facilitate better public understanding of infrastructure commitments by:
+
+a) requiring Infrastructure Australia to publish (i) summaries of \emph{all} transport infrastructure projects funded by the Commonwealth within the previous quarter, completed to the extent that Infrastructure Australia has the information to do so and otherwise left blank; and (ii) business cases and cost benefit analyses for all transport infrastructure proposals receiving Commonwealth funding during the previous quarter, if these have not already been published by a state government; and
+
+b) requiring the Productivity Commission to publish reliability ratings of all transport infrastructure business cases within one month of Infrastructure Australia publishing them.
+
+\section{There is no accountability for poorly founded cost promises }\label{there-is-no-accountability-for-poorly-founded-cost-promises}
+
+There is at present no systematic public reporting on the effectiveness of government spending on infrastructure projects.
+In particular, there is no public reporting on how well government-funded transport infrastructure projects perform against the costs and benefits, such as travel time savings, used to make the investment decision.
+This is a serious gap.
+
+Infrastructure Australia, according to the law that establishes it, is supposed to evaluate whether projects met targets set before or during delivery, and to promote public awareness of its monitoring role, in part by publishing information on its website.%
+\footnote{\emph{Infrastructure Australia Act 2008} (Cwlth), s5C} This does not happen.
+Nor do state governments, including their infrastructure bodies, publish information about how well projects performed against their estimated costs and benefits.
+Post-implementation reviews seldom take place or are made public when they do.%
+\footnote{ACA (20xx) Changing the game, p26; Ellis (2015) How to increase the chance of project success, section 13; VAGO (2015) p10-11.} For such reporting to be effective, it must be done in a standard way to allow like-for-like comparisons.
+
+Other spheres of government investment require much stricter reporting on outcomes.
+For instance, the \$123 billion Future Fund,\footnote{http://www.futurefund.gov.au/-/media/Files/FutureFund/05--\/-Portfolio-Updates/Portfolio-update-at-30-June-2016.pdf?la=en} is governed by the \emph{Future Fund Act 2006} and overseen by a board of independent guardians.
+The Act ensures that investment decisions and activities are conducted at arm's length from government.
+It requires the tabling in Parliament of an annual report and audited financial statements.
+The Future Fund publishes quarterly portfolio updates to provide details of the investment activity and performance of the fund.
+Transport infrastructure investment by Australian governments is a similarly large element of the budget, and could be governed with similar scrutiny and assurance, but it is not.
+
+In the absence of such reporting for infrastructure projects, the public is not equipped to understand whether any particular infrastructure turned out to offer value for money in the terms in which it was originally promised.
+Ministers overseeing projects with significant cost overruns over time commonly end up claiming that the project came in under budget.
+Both Governments and oppositions feel free to make claims that the media and public cannot verify.
+Box xx provides background on some extreme examples of overstated benefits that have come to light through legal action.
+
+Box xx: Unreliable traffic forecasts
+
+Several successful lawsuits reveal the most extreme cases of inaccurate forecasting.
+
+Brisbane's CLEM 7 tunnel was forecast to carry more than 100,000 vehicles per day within two years of opening, but in fact only about 22,000 went through.\textsuperscript{1} A successful class action was brought against the forecaster, AECOM.\textsuperscript{2} The tunnel's owner, RiverCity Motorway, went into administration in 2011, after the traffic failed to generate enough revenue for the company to pay its debts.\textsuperscript{3}
+
+The traffic forecasts for Sydney's Lane Cove tunnel were in contention in a lawsuit brought against the companies, Parsons Brinckerhoff and Booz Allen.
+They settled in 2014.
+The case concerned allegations that the forecasters ``reverse engineered'' the predictions, working backwards from commercial objectives in estimating traffic volumes.\textsuperscript{4}
+
+Similarly, when traffic volumes were far below expectations on the Brisbane Airport Link, toll road owner Brisconnections launched litigation against forecaster Arup.\textsuperscript{5} This action was settled in 2015.\textsuperscript{6}
+
+1. \url{https://www.mauriceblackburn.com.au/media/2403/14-03-31-second-further-amended-statement-of-claim-with-schedules-a-and-b-clean-sealed.pdf}, p.9-11
+
+2. https://www.mauriceblackburn.com.au/norewrite/current-class-actions/rivercity-class-action/
+
+3. \url{http://www.brisbanetimes.com.au/business/rivercity-ipo-investors-secure-121m-in-successful-clem7-class-action-20160601-gp8qu4.html}
+
+4. \url{http://www.afr.com/news/politics/national/traffic-forecasters-settle-with-ampover-lane-cove-20140923-jftpp}
+
+5. \url{http://www.afr.com/business/brisconnections-receivers-sue-arup-over-brisbane-airport-link-20140528-iv1qo}
+
+6. http://www.imf.com.au/cases/detail/brisconnections
+
+The current opacity of investment planning processes means that the public cannot readily judge the success of projects.
+This means that there is little political cost associated with announcing project costs prematurely, even when this creates a significant risk of promising projects with poor payoffs.
+
+Moreover, the absence of outcomes reporting limits the ability of project proponents and managers to learn from the experiences of other project managers around the country and over time.
+Like appraisals of new commitments, post-completion information is most useful when it enables comparisons of different projects.
+For this reason, the mechanisms proposed in Recommendation 3 are actions that Commonwealth entities should adopt.
+
+Recommendation 3 -- Publish post-completion data
+
+To enable learning from past experience, and to improve accountability:
+
+a) The Commonwealth Department of Infrastructure should be required to publish to data.gov.au the post-completion report it already requires from state governments as a condition of providing final milestone payments for transport infrastructure projects.\textsuperscript{1} Reports should detail any scope changes and their justification, agreed and actual construction start and finish dates, actual project costs, reasons for overruns or under-runs, and progress against performance indicators.
+
+b) Infrastructure Australia should be asked to provide the Joint Committee of Public Accounts and Audit with a post-completion appraisal of the benefits and costs of each infrastructure project with Commonwealth funding of \$50 million or more.
+
+c) The Council of Australian Governments should add a new category of infrastructure services to the terms of reference for the annual Report on Government Services, produced by the Productivity Commission.
+
+\emph{1.
+As detailed in Appendix D3 of the Notes on Administration of the National Partnership Agreement on Land Transport Infrastructure Projects}.
+
+
 \end{document}
 
