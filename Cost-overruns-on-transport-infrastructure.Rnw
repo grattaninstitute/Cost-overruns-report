@@ -1249,7 +1249,7 @@ The average size of cost overruns observed across the sample can be used as an e
 The key advantages of reference class forecasting are that it incorporates the likely costs of unknown risks and does not suffer from optimism bias, as it relies on objective historical information. 
 Its main shortcoming is that it does not account for the ways in which a project’s risk profile is unique.  
 
-Figure 4.4 illustrates these tools for the costs of a group of completed projects: expected value (or mean); variance (assessed by sensitivity analysis) and probability pricing levels.
+\Vref{fig:Key-risk-measurement-and-management-concepts} illustrates these tools for the costs of a group of completed projects: expected value (or mean); variance (assessed by sensitivity analysis) and probability pricing levels.
 The fourth tool, reference class forecasting, offers a way to improve the quality of expected value, sensitivity analysis and probability pricing by relying on historical experience.
 
 \begin{figure}[H]
