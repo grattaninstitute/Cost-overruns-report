@@ -1153,13 +1153,15 @@ They often involve bespoke designs and complex interfaces with existing infrastr
 However, roads are less often constructed on brownfield sites with poor accessibility.
 
 The timing of cost overruns on rail and road projects is aligned with the stages in which projects of these types are expected to be most bespoke.
-Cost overruns are larger for road projects during the planning stage, when road projects tend to be more bespoke than rail, and larger for rail projects during the construction period, when rail projects tend to be more bespoke (Figure 4.3).
+Cost overruns are larger for road projects during the planning stage, when road projects tend to be more bespoke than rail, and larger for rail projects during the construction period, when rail projects tend to be more bespoke (\Vref{fig:cost-overruns-by-proj-stage-mode}).
 
-\protect\hypertarget{ux5fRef462916582}{}\textbf{Figure 4.3: Road and rail projects have different patterns of cost overruns\\
-}Cost overruns by project stage and mode, per cent%\includegraphics{media/image15.tiff}
+\begin{figure}
+\captionwithunits{Road and rail projects have different patterns of cost overruns\label{fig:cost-overruns-by-proj-stage-mode}}
+{Cost overruns by project stage and mode, per cent}%\includegraphics{media/image15.tiff}
 
-\emph{Notes:} \emph{Australian transport projects completed between 2000 and 2015\\
-Sources: Deloitte Investment Monitor; Grattan analysis}
+\noteswithsource{Australian transport projects completed between 2000 and 2015}
+{Deloitte Investment Monitor; Grattan analysis}
+\end{figure}
 
 These differences in the size and timing of cost overruns by project mode illustrate another opportunity to improve cost estimates.
 Project proponents are always aware of their project's mode, and their project's mode provides substantial information about the project's likely cost risks.
@@ -1199,15 +1201,17 @@ Every state produces its own guidance on how to estimate project costs.
 The Commonwealth produces guidance too.
 There are more than 50 current guideline documents and handbooks around the country.
 
-Ultimately all cost estimates use some combination of four tools: expected value, sensitivity analysis, probability pricing, and reference class forecasting (see Box xx).
+Ultimately all cost estimates use some combination of four tools: expected value, sensitivity analysis, probability pricing, and reference class forecasting (see \Vref{box:REFCLASSFORECAST}).
 The various guidance documents present the same basic tools in a wide variety of ways.
-They are inconsistent in which of the main tools they recommend and in how they guide the user through the relationships among the various tools (see Figure xx).
+They are inconsistent in which of the main tools they recommend and in how they guide the user through the relationships among the various tools (see \Vref{fig:prop-guidelines-that-reco-use-of-each-key-risk-assessment-tool}).
 
-\textbf{Figure 4.4: Australia's various guidelines on risk measurement do not recommend any approach consistently.\\
-}Proportion of guidelines on quantitative risk assessment on transport infrastructure projects that recommend the use of each key risk assessment tool, per cent%\includegraphics{media/image16.png}
+\begin{figure}
+\captionwithunits{Australia's various guidelines on risk measurement do not recommend any approach consistently\label{fig:prop-guidelines-that-reco-use-of-each-key-risk-assessment-tool}}%
+{Proportion of guidelines on quantitative risk assessment on transport infrastructure projects that recommend the use of each key risk assessment tool, per cent}%\includegraphics{media/image16.png}
 
-\emph{Notes:} \emph{Australian transport projects completed between 2000 and 2015\\
-Sources: Deloitte Investment Monitor; Grattan analysis}
+\noteswithsource{Australian transport projects completed between 2000 and 2015}%
+{Deloitte Investment Monitor; Grattan analysis}
+\end{figure}
 
 A project's expected value is the most obvious gap in cost estimation guidance.
 Most thinking about risk measurement is predicated on some measure of expected value or expected cost, so expected value is an important component of the risk manager's toolkit.
@@ -1218,10 +1222,11 @@ While there is more than one valid approach to measuring project risk, it is not
 Different approaches make it difficult or impossible to collect data on a consistent basis so that project managers can draw on a large pool of past projects around Australia to improve their understanding of cost and risk.
 It would be better for all jurisdictions to adopt a standard approach, and for the Commonwealth to assist them to do so (see Recommendation 5).
 
-Recommendation 5 -- Improve risk measurement guidance
+\begin{recommendation}{Improve risk measurement guidance\label{reco:improve-risk-measurement-guidance}}
 
 The Commonwealth should provide model guidelines that states and territories may adopt or adapt.
 The guidelines should recommend a consistent approach to measuring and managing project risk, including a statement of seniority where specific guidelines would otherwise conflict with one another.
+\end{recommendation}
 
 %\begin{longtable}[c]{@{}ll@{}}
 %\toprule
