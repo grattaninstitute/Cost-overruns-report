@@ -1259,7 +1259,7 @@ This means that there is little political cost associated with announcing projec
 
 Moreover, the absence of outcomes reporting limits the ability of project proponents and managers to learn from the experiences of other project managers around the country and over time.
 Like appraisals of new commitments, post-completion information is most useful when it enables comparisons of different projects.
-For this reason, the mechanisms proposed in Recommendation 3 are actions that Commonwealth entities should adopt.
+For this reason, the mechanisms proposed in \Vref{reco:Publish-post-completion-data} are actions that Commonwealth entities should adopt.
 
 \begin{recommendation}{Publish post-completion data\label{reco:Publish-post-completion-data}}
 
