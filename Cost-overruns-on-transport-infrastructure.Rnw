@@ -1025,16 +1025,15 @@ They are especially prone to doing so in the lead-up to elections (see \Vref{box
 
 It is normally premature and unwise to announce project costs this early in the planning process.
 History shows that projects with costs announced prior to a formal budget commitment experience far larger cost overruns than projects with later cost announcements.
-Over the past 15 years, 82 per cent of the total value of cost overruns is explained by the 31 per cent of projects with early cost announcements (see Figure xx).
+Over the past 15 years, 82 per cent of the total value of cost overruns is explained by the 31 per cent of projects with early cost announcements (see \Vref{fig:projects-with-early-initial-cost-announced-accont-for-most-of-the-value-of-cost-overruns}).
 
-\textbf{Figure xx: The projects with early initial cost announced account for most of the value of cost overruns\\
-}Per cent
+\begin{figure}
+\captionwithunits{The projects with early initial cost announced account for most of the value of cost overruns\label{fig:projects-with-early-initial-cost-announced-accont-for-most-of-the-value-of-cost-overruns}}%
+{Per cent}
 
-\textbf{\\
-}\includegraphics{media/image8.png}
-
-\emph{Notes:} \emph{Australian transport projects completed between 2001 and 2015\\
-Source: Deloitte Investment Monitor, Grattan analysis.}
+\noteswithsource{Australian transport projects completed between 2001 and 2015}
+{Deloitte Investment Monitor, Grattan analysis.}
+\end{figure}
 
 It comes as no surprise that ad hoc announcements prior to formal budget commitments tend to be extremely optimistic.
 Once such announcements are scrutinised as part of the budget process, their early cost estimates need to be upwardly revised by an average of xx per cent.
