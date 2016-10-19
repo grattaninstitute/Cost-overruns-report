@@ -1114,17 +1114,19 @@ These risks are amplified when the existing infrastructure continues operating d
 Although Love et al 2013 also find big overruns for smaller projects - check}
 
 The most complex projects also tend to be large.
-Because of this, large projects are more likely to incur cost overruns, and these overruns are likely to be particularly big (Figure 4.2).
-In fact, a 10 per cent increase in a project's size (measured by cost estimate when first under construction) is associated with a 58 per cent higher chance of a cost overrun.\protect\hypertarget{ux5fRef462916523}{}
+Because of this, large projects are more likely to incur cost overruns, and these overruns are likely to be particularly big (\Vref{fig:prevalence-avg-magnitude-cost-overruns-by-project-size}).
+In fact, a 10 per cent increase in a project's size (measured by cost estimate when first under construction) is associated with a 58 per cent higher chance of a cost overrun.
 
-\textbf{Figure 4.2: Cost overruns are more common and larger on average among big projects\\
-}Prevalence and average magnitude of cost overruns as a percentage of initial project costs by project size, per cent
+\begin{figure}
+\captionwithunits{Cost overruns are more common and larger on average among big projects\label{fig:prevalence-avg-magnitude-cost-overruns-by-project-size}}
+{Prevalence and average magnitude of cost overruns as a percentage of initial project costs by project size, per cent}
 
 % \includegraphics{media/image14.png}
 
-\emph{Notes:} \emph{Australian transport projects completed between 2001 and 2015.
-Project size is defined by project value at the commencement of construction.\\
-Sources: Deloitte Investment Monitor; Grattan analysis}
+\noteswithsource{Australian transport projects completed between 2001 and 2015.
+Project size is defined by project value at the commencement of construction.}
+{Deloitte Investment Monitor; Grattan analysis}
+\end{figure}
 
 Given that project size is such a clear predictor of the size of cost overruns, cost overruns could be reduced by routinely amending the cost estimates of large projects so that they are more conservative.
 Some states have recently done this by instituting special cost estimation guidance for ``high value, high risk'' projects.
