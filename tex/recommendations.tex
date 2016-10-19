@@ -1,0 +1,55 @@
+
+\newenvironment{Recommendations}{
+\addchap{Recommendations}
+}{%
+\setcounter{recom}{0}
+}
+
+\newcommand{\Recommendation}[2]{%
+\subsection*{Recommendation \stepcounter{recom}\arabic{recom}\relax\space \textendash\ #1}
+#2
+}
+
+\newcounter{recom}
+\newcommand{\recommendEvaluateBeforeSpending}[1]{%
+\phantomsection #1
+\Recommendation{Evaluate before spending}%
+{Governments should not be able to commit public money to transport infrastructure until a rigorous, independent like-for-like evaluation and the underlying business case have been tabled in the state or federal parliament.}
+}
+
+\newcommand{\recommendPublishEvaluations}[1]{
+\phantomsection #1
+\Recommendation{Publish evaluations of new infrastructure commitments}
+
+The Commonwealth should enable and facilitate better public understanding of infrastructure commitments by:
+
+\begin{enumerate}
+\renewcommand{\labelenumi}{\alph{enumi}) }
+\item requiring Infrastructure Australia to publish (i) summaries of \emph{all} transport infrastructure projects funded by the Commonwealth within the previous quarter, completed to the extent that Infrastructure Australia has the information to do so and otherwise left blank; and (ii) business cases and cost benefit analyses for all transport infrastructure proposals receiving Commonwealth funding during the previous quarter, if these have not already been published by a state government; and
+
+\item requiring the Productivity Commission to publish reliability ratings of all transport infrastructure business cases within one month of Infrastructure Australia publishing them.
+\end{enumerate}
+}
+
+% For the main matter
+% Floates
+\crefname{reco}{Recommendation}{Recommendations}
+\Crefname{reco}{Recommendation}{Recommendations}
+\DeclareFloatingEnvironment[listname={List of recommendations}, name = {Recommendation}]{reco}
+
+\counterwithout{reco}{chapter}
+
+\newenvironment{recommendation}[2][htbp]{%
+\setlength{\currentparskip}{\parskip}%
+\begin{reco}[#1]
+\begin{mdframed}[style=GrattanFrameBox]
+\setlength{\parskip}{\currentparskip}
+\captionsetup{labelfont={bf,Orange},font={bf,Orange},format=plain,justification=raggedright,singlelinecheck=false, skip=0ex, position=above}
+\caption{#2}
+\raggedright
+}{
+\end{mdframed}\end{reco}%
+}
+
+
+

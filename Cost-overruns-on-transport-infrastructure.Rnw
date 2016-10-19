@@ -1,0 +1,973 @@
+\documentclass{grattan}
+\input{tex/preamble}
+\input{tex/recommendations}
+
+\addbibresource{bib/transport_bibliography.bib}
+
+
+\title{Cost overruns}
+\author{Marion Terrill}
+
+\GrattanReportNumber{XX}
+
+\acknowledgements{..}
+
+
+
+
+\begin{document}
+<<portability, echo=FALSE>>=
+source("R/portability.R")
+portability()
+@
+
+<<knitrOpts, echo=FALSE>>=
+library(knitr)
+opts_chunk$set(error = FALSE, echo = FALSE, cache=FALSE, message = FALSE, fig.width=11, fig.height=7, out.width="\\columnwidth", out.height=paste0("0.6363\\columnwidth"))
+@
+
+<<loadPackages, cache=FALSE>>=
+library(xtable)
+library(testthat)
+library(dplyr)
+library(data.table)
+library(dtplyr)
+library(magrittr)
+library(tidyr)
+library(zoo)
+library(ggplot2)
+library(scales)
+library(devtools)
+library(CostOverrunsData)
+if (packageVersion("CostOverrunsData") < package_version('0.2.0')){
+  stop("Update the CostOverrunsData package. Pull from github master then build locally.")
+}
+library(grattan)
+if (texNum(1.25, dollar = TRUE) != "\\$1.25"){
+  stop("Update the grattan package")  # recent bugfix
+}
+library(broom)
+library(sandwich)
+library(car)
+library(mfx)
+library(logistf)
+library(curl)
+library(digest)
+library(glmnet)
+# Namespace
+select <- function(...) dplyr::select(...)
+rename <- function(...) dplyr::rename(...)
+@
+
+<<n2w>>=
+#' @title Numbers to words
+#' @source \url{https://github.com/ateucher/useful_code/blob/master/R/numbers2words.r}
+n2w <- function(x){
+  c("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten")[x]
+}
+@
+
+<<val_nrst_mean>>=
+#' Returns the value in a set nearest to its mean
+#' @param x A numeric vector
+#' @param ... Arguments passed to \code{mean}.
+val_nrst_mean <- function(x, ...){
+  avg <- mean(x, ...)
+  diffs <- abs(avg - x)
+  # floating point precision not an issue
+  if (any(diffs == 0)){
+    return(avg)
+  } else {
+    return(x[which.min(diffs)])
+  }
+}
+
+test_that("Returns mean if there", {
+  expect_equal(mean(c(0.1, 0.3, 0.5)), val_nrst_mean(c(0.1, 0.3, 0.5)))
+})
+
+test_that("Returns nearest otherwise", {
+  expect_equal(val_nrst_mean(c(0.1, 0.35, 0.5)), 0.35)
+})
+@
+
+<<construction_inflator>>=
+# This will equal 1.661184 if the inflator's working correctly:
+# general_inflator(from = as.yearqtr("1998 Q1"), to = as.yearqtr("2013 Q1"), inflator_table = construction_indices)
+construction_indices2 <- 
+  construction_indices %>%
+  as.data.table %>%
+  copy %>%
+  .[, Time := as.Date(Time)]
+
+construction_inflator <- function(x = 1, from, to){
+  general_inflator(x = x, from = from, to = to, inflator_table = construction_indices2)
+}
+
+test_that("Construction inflator returns single correct value", {
+  expect_equal(construction_inflator(1, from = as.Date("1998-03-01"), to = as.Date("2013-03-01")), 1.66118421052632)
+})
+
+test_that("Construction inflator works multiply", {
+  expect_equal(construction_inflator(c(1, 2), from = as.Date(c("1998-03-01", "2000-03-01")), to = as.Date("2013-03-01")), 
+               c(1.66118421052632, 3.05135951661631))
+})
+@
+
+<<public_private_by_Grattan_record>>=
+public_private_by_Grattan_record <- 
+  completed_project_list  %>%
+  as.data.table %>%
+  setkey(Grattan_record) %>%
+  unique %>%
+  # no need to spread info over two columns
+  mutate(Lucille_Ownership = if_else(as.logical(Public_project_Grattan), 
+                                     "Public", 
+                                     "Private")) %>%
+  # Manual done by Lucille
+  # Correcting errors in the Lucille_ownership variable
+  mutate(Lucille_Ownership = if_else(Grattan_record %in% c(10218, 10858, 11043, 11127, 8267, 9757, 7952), 
+                                     "Private", 
+                                     Lucille_Ownership)) %>%
+  select(Grattan_record, Lucille_Ownership)
+@
+
+<<convert_million_cols>>=
+convert_million_cols <- function(.data){
+  stopifnot(is.data.table(.data))
+  cols_in_millions <- grep("$m", names(.data), fixed = TRUE)
+  
+  for (j in cols_in_millions){
+    set(.data, j = j, value = .data[[j]] * 10^6)
+  }
+  
+  # Update the names also
+  setnames(.data, 
+           old = names(.data)[cols_in_millions], 
+           trimws(gsub("$m", "", fixed = TRUE, gsub("($m)", "", names(.data)[cols_in_millions], fixed = TRUE))))
+  .data
+}
+
+test_that("convert_million_cols", {
+  example.dt <- data.table(x = 1:5, y = 1:5)
+  setnames(example.dt, "x", "x ($m)")
+  
+  expect_identical(convert_million_cols(example.dt), 
+                   data.table(x = seq(1e6, 5e6, by = 1e6), y = 1:5))
+})
+@
+
+<<project_dataset_orig>>=
+project_dataset_orig <- copy(project_dataset)
+@
+
+<<project_dataset>>=
+project_dataset <-
+  project_dataset_orig %>%
+  as.data.table %>%
+  # case-sensitivity
+  mutate(Status = if_else(Status == "Under Construction", "Under construction", Status)) %>%
+  mutate(Status_4 = Status) %>% # 4 stands for four stages: "Possible", "Under consideration", "Committed", "Under construction"
+  mutate(Status = if_else(Status %in% c("Possible", "Under consideration"), "Possible or under consideration", Status)) %>%
+  mutate(Grattan_record = coalesce(`Project No.`, `Record No`), 
+         Record_date = as.Date(paste("1", sheet), 
+                               format = "%d %b %Y")) %>%
+  filter(!is.na(Grattan_record))
+@
+
+<<first_status_by_GR>>=
+first_status_by_GR <-
+  project_dataset %>%
+  as.data.table %T>%
+  {warning("What about DELETED?")} %>%
+  mutate(Status_ordered = factor(Status, 
+                                 levels = c("Possible or under consideration", "Committed", "Under construction"), 
+                                 ordered = TRUE)) %>%
+  group_by(Grattan_record) %>%
+  summarise(first_pipeline_status = first(Status_ordered, order_by = Record_date)) %>%
+  setkey(Grattan_record)
+@
+
+<<final_status_by_GR>>=
+#' @return Data table of **all** records by their final status as recorded. 
+final_status_by_GR <- 
+  historical_dataset %>% 
+  as.data.table %>%
+  select(Grattan_record = `Project No.`, 
+         Status_according_to_historical_dataset = Status) %>%
+  # See https://github.com/grattaninstitute/Cost-overruns-report/issues/20 
+  right_join(project_dataset, by = "Grattan_record") %>%
+  group_by(Grattan_record) %>%
+  summarise(Final_status = 
+              # i.e. it is not in historical_dataset:
+              if (all(is.na(Status_according_to_historical_dataset))){
+                if (any(Status == "Under construction") && year(max(Record_date)) < 2015){
+                  "Completed"
+                } else {
+                  NA_character_
+                }
+              } else {
+                last(Status_according_to_historical_dataset, order_by = Record_date)
+              }) %>%
+  setkey(Grattan_record)
+@
+
+<<date_first_Deleted_by_GR>>=
+date_first_Deleted_by_GR <-
+  historical_dataset %>% 
+  as.data.table %>%
+  select(Grattan_record = `Project No.`, 
+         Status_according_to_historical_dataset = Status) %>%
+  # See https://github.com/grattaninstitute/Cost-overruns-report/issues/20 
+  right_join(project_dataset, by = "Grattan_record") %>%
+  mutate(Status = coalesce(Status_according_to_historical_dataset, Status)) %>%
+  mutate(isDeleted = Status == "Deleted") %>%
+  group_by(Grattan_record) %>%
+  summarise(date_first_Deleted = if (any(isDeleted)) min(Record_date[which(isDeleted)]) else as.Date(Inf))
+@
+
+<<isTransport_by_GR>>=
+isTransport_by_GR <- 
+  project_dataset %>%
+  mutate(isTransport = `&`(`Major industry` == "Transport & Storage",
+                           `Sub-industry` %in% c("Road", "Rail"))) %>%
+  select(Grattan_record, isTransport) %>%
+  setkey(Grattan_record) %>%
+  unique
+@
+
+<<inflation_origin_by_GR>>=
+inflation_origin_by_GR <- 
+  project_dataset %>%
+  # Is the status under construction in this quarter?
+  mutate(.co = grepl("under.*construction", Status, ignore.case = TRUE)) %>%
+  group_by(Grattan_record) %>%
+  # For each grattan record, 
+  #  1.  Is the project ever under construction?  If so, take
+  #      the value nearest the mean of those dates which were
+  #      under construction.
+  #  2.  If the project is never under construction, take the
+  #      the val_nrst_mean of all dates.
+  summarise(inflation_origin = 
+              if (any(.co)) { 
+                val_nrst_mean(Record_date[.co]) 
+              } else { 
+                val_nrst_mean(Record_date)
+              }) %>%
+  select(Grattan_record, inflation_origin) %>%
+  setkey(Grattan_record)
+@
+
+<<Cost_estimate_by_GR_Record_date>>=
+Cost_estimate_by_GR_Record_date <- 
+  project_dataset %>%
+  as.data.table %>%
+  select(Grattan_record, Record_date, sheet, Status, grep("Cost", names(.), ignore.case = TRUE, value = FALSE)) %>%
+  melt.data.table(measure.vars = grep("Cost", names(.), ignore.case = TRUE, value = TRUE), 
+                  na.rm = TRUE, 
+                  value.name = "Cost_estimate") %>%
+  setkey(Grattan_record) %T>%
+  ## Testing:
+  {
+    dot <- copy(.)
+    test_that("Each cost variable is unique", {
+      nrows_not_unique <- 
+        setkey(dot, 
+               Grattan_record, 
+               variable, 
+               sheet) %>% 
+        unique %>% 
+        group_by(Grattan_record, sheet) %>% 
+        mutate(n = uniqueN(variable)) %>% 
+        filter(n > 1) %>%
+        nrow
+      expect_equal(nrows_not_unique, 0)
+    })
+  } %>%
+  # molten state no longer needed
+  select(-variable) %>%
+  {
+    # Warning("Assuming cost columns not marked ($m) are nonetheless in millions") - yes, that's a fine assumption. 
+    mutate(., Cost_estimate = Cost_estimate * 10^6) 
+  } %>%
+  merge(inflation_origin_by_GR) %>%
+  mutate(Cost_estimate_real = construction_inflator(Cost_estimate, from = inflation_origin, to = as.Date("2015-12-01"))) %>% 
+  select(Grattan_record, Record_date, Cost_estimate, Cost_estimate_real) %>%
+  setkey(Grattan_record, Record_date)
+@
+
+<<Status_ordered_by_GR>>=
+#' @details Note that 'Deleted' is confusing: it really should be a separate field.
+#'          Deleted is a property of the project with respect to the dataset, whereas
+#'          the other statuses are properties of the project independent of the dataset. 
+Status_ordered_by_GR_Record_date <- 
+  project_dataset %>%
+  copy %>%
+  select(Grattan_record, Record_date, Status) %>%
+  filter(Status != "Deleted") %>%
+  mutate(Status_ordered = factor(Status, 
+                                 levels = c("Possible or under consideration", 
+                                            "Committed", 
+                                            "Under construction"), 
+                                 ordered = TRUE)) %>%
+  select(Grattan_record, Record_date, Status_ordered) %>%
+  setkey(Grattan_record, Record_date) %>%
+  unique
+@
+
+<<first_Cost_estimate_real_by_GR>>=
+first_Cost_estimate_real_by_GR <- 
+  Cost_estimate_by_GR_Record_date %>%
+  group_by(Grattan_record) %>%
+  summarise(first_Cost_estimate_real = first(Cost_estimate_real, order_by = Record_date)) %>%
+  setkey(Grattan_record)
+@
+
+<<last_Cost_estimate_real_by_GR>>=
+last_Cost_estimate_real_by_GR <- 
+  Cost_estimate_by_GR_Record_date %>%
+  group_by(Grattan_record) %>%
+  summarise(last_Cost_estimate_real = last(Cost_estimate_real, order_by = Record_date)) %>%
+  setkey(Grattan_record)
+@
+
+<<Status_by_GR_Record_date>>=
+Status_by_GR_Record_date <- 
+  project_dataset %>%
+  select(Grattan_record, Record_date, Status) %>%
+  setkey(Grattan_record, Record_date)
+@
+
+<<first_Cost_estimate_real_by_GR_Status_ordered>>=
+first_Cost_estimate_real_by_GR_Status_ordered <- 
+  Status_ordered_by_GR_Record_date %>%
+  merge(Cost_estimate_by_GR_Record_date) %>%
+  group_by(Grattan_record, Status_ordered) %>%
+  summarise(first_Cost_estimate_real = first(Cost_estimate_real, order_by = Record_date)) %>%
+  ungroup %>%
+  setkey(Grattan_record, Status_ordered)
+@
+
+<<outlier_by_GR>>=
+outlier_by_GR <- 
+  first_Cost_estimate_real_by_GR %>%
+  merge(last_Cost_estimate_real_by_GR) %>%
+  mutate(outlier = !between(last_Cost_estimate_real / first_Cost_estimate_real,
+                            0.5, # This is a generous definition of outliers as the biggest underrun we observe 
+                            # is the 34% underrun on the Springfield to Richlands line. 
+                            
+                            5.2  # Any overrun greater than 5.2 is suspect of a data error. This is because the 
+                            # Peel deviation is the project with the largest overrun that we have been able 
+                            # to verify with certainty. A bunch of the extreme outliers were all redcorded 
+                            # on the same day, which looks suspicious too.
+  ) | is.na(first_Cost_estimate_real) | is.na(last_Cost_estimate_real)) %>%
+  select(Grattan_record, outlier) %>%
+  setkey(Grattan_record)
+@
+
+
+
+
+
+
+
+\setlength{\overviewExtra}{-4mm}
+\begin{overview}
+Over the past 15 years, Australian governments have spent \$25~billion more on transport infrastructure than they told taxpayers they would spend.
+The cost overruns amounted to nearly a quarter of total project budgets.
+Western Australia's Forrest Highway between Perth and Bunbury cost nearly five times, and New South Wales' Hunter Expressway cost nearly four times, the amounts initially promised.
+Yet despite their sometimes staggering size, cost overruns attract little public attention.
+They are seen as a fact of life in infrastructure building.
+This perception can and must be changed.
+
+Cost overruns are a problem less because of how often they happen than their cost when they do.
+Eighty eight per cent of Australia's cost overrun problem is explained by the 17 per cent of projects that exceed their promised cost by more than half.
+
+Much of the problem is entirely preventable.
+Premature announcements -- when a politician promises to build a road or rail line at a certain cost, often in the lead-up to an election -- are the biggest culprits.
+Although only 31 per cent of projects are announced early, early announcements account for 82 per cent of the value of cost overruns over the past 15~years.
+Prematurely announced projects need larger cost upgrades not just early on, but throughout their funding approval and construction phases.
+
+For the first time in Australia, we report on all 800 projects valued at \$20~million or more and planned or built since 2000.
+We also report on the full project lifecycle from its first funding promise, because, once politicians have announced a project, they and the public treat that announcement as a commitment.
+They are right to do so: 80 per cent of these projects end up being built.
+
+Promising to build infrastructure for a lower sum than it finally costs systematically represents infrastructure projects as more attractive than they really are.
+Much of the money might be better spent on other priorities.
+Understatement of costs also prevents decision-makers from choosing projects with the highest net community benefits, and leads them to choose the wrong ones.
+
+All main political parties have committed to sound analysis and planning of infrastructure, to avoiding waste, and to making decisions with broad social benefit.
+Governments should not be able to commit public money before tabling proper evaluation and the underlying business case in parliament.
+Once a project is completed, governments should report to the public on how it performed against the cost-benefit estimates behind the original investment decision.
+Stand-alone legislation for big projects would encourage bipartisanship when risk and complexity are high.
+
+Not all overruns can be prevented.
+Anticipated risks and unforeseen events sometimes come to pass.
+The best way to predict and prepare for such events is to learn from history.
+But Australian governments do not collect and share information about completed projects, and as a result, project experts systematically under-estimate project costs.
+
+The impact of not learning from history continues to be felt.
+Multi-billion dollar projects such as Melbourne's Western Distributor, Sydney's WestConnex and the Inland Rail between Melbourne and Brisbane have much more optimistic cost estimate profiles than those that history would lead us to expect.
+We can do better.
+Our infrastructure systems should promise what is worth having, and then deliver what is promised.
+\end{overview}
+
+\contentspage
+
+\begin{Recommendations}
+\recommendEvaluateBeforeSpending
+
+\end{Recommendations}
+
+\chapter{The extent of cost overruns\label{chap:extent-of-cost-overruns}}
+The Peel Deviation is a stretch of the Forrest Highway running between Perth and Bunbury.
+It was first promised during the 2001 state election campaign at a cost of \$136~million.
+Many twists and turns later, in 2010, the road was completed at a cost of \$688~million -- over 400 per cent more than its originally promised cost.
+
+Such budget blowouts like this are disturbing but they do not hit the media or public eye very often.
+People could therefore be forgiven for thinking they are rare.
+
+Unfortunately, they are not rare enough.
+This report finds that the transport infrastructure projects valued at \$20~million or more and planned or built in Australia in the past 15 years cost \$25~billion more than their promised costs.
+This is 24 per cent more than the costs that were announced.
+
+The 24 per cent over and above the original cost promise does not stem from the accumulation of small cost overruns on most projects.
+Rather, most projects come in reasonably close to their promised cost, as \Vref{fig:large-cost-overruns-uncommon-but-expensive} shows.
+The problem is that when projects do exceed their promised costs, the overruns can be spectacular: 88 per cent of Australia's cost overruns problem is explained by the 17 per cent of projects that overran their cost promise by more than 50 per cent.
+
+Overruns are not matched by underruns.
+Only 9 per cent of projects finished under their announced cost, and these cost underruns were, on average, only a quarter of the size of the average cost overrun, amounting to a total of \$8~billion.
+The majority of projects come in close to their announced costs, and underruns do little to offset overruns.
+
+\begin{figure}
+\captionwithunits{Large cost overruns are uncommon, but expensive\label{fig:large-cost-overruns-uncommon-but-expensive}}
+{Per cent}
+
+% \includegraphics{media/image3.tiff}\emph{\\
+\noteswithsource{Australian transport projects completed between 2001 and 2015}%
+{Deloitte Investment Monitor, Grattan analysis.}
+\end{figure}
+
+\section{This is the first comprehensive Australian analysis of transport project cost overruns}\label{this-is-the-first-comprehensive-australian-analysis-of-transport-project-cost-overruns}
+
+This report is the first comprehensive Australian analysis of cost overruns on transport infrastructure projects.
+It is comprehensive in two ways: it includes the entire portfolio of transport infrastructure projects valued at \$20~million or more and built or planned in Australia since 2000; and it examines the entire project lifecycle, from first announcement through to completion of construction.
+This section explains why each of these features of the report matter.
+
+\subsection{We analyse the entire portfolio of projects since 2000}\label{we-analyse-the-entire-portfolio-of-projects-since-2000}
+
+This report is the first study of cost overruns in Australia that includes all 836 transport infrastructure projects valued at \$20~million or more planned or built in the past 15 years.
+
+A small number of researchers and state auditors general have analysed aspects of this problem in recent years, but they have studied small numbers of projects (\Vref{fig:this-report-analyses-9-times-more-projects-than-previous-studies}).
+The drawback with small samples is that their findings may be less representative, and so policymakers cannot rely upon their findings as much as they can with larger or more comprehensive studies.
+
+\begin{figure}
+\captionwithunits{This report analyses upwards of nine times more Australian projects than previous studies\label{fig:this-report-analyses-9-times-more-projects-than-previous-studies}}%
+{Sample sizes of studies into cost overruns on Australian transport infrastructure projects} % \includegraphics{media/image4.png}\emph{\\
+\source{Cited studies and Deloitte Investment Monitor, Grattan analysis.}
+\end{figure}
+
+The findings of these small studies present a mixed view.
+Two key studies in 2007 and 2008 of infrastructure projects valued at more than \$20~million found overruns ranging from 12 to 35 per cent from formal funding commitment to completion\footnote{; Allen Consulting Group, Duffield, C. and Raisbeck, P. (2007) \emph{Performance of PPPs and traditional procurement in Australia}, Infrastructure Partnerships Australia, p5.}and 24 to 52 per cent\footnote{Duffield, C., Raisbeck, P. and Xu, M. (2008) \emph{Report on the performance of PPP projects in Australia when compared with a representative sample of traditionally procured infrastructure projects}, p15.
+Costs over the full project life mean originally announced to actual final costs.} over the full project life.
+Another study of 58 projects found an average 12 per cent overrun.%
+\footnote{Love (2012).} A further study of 46 projects found overruns of 5 to 11 per cent of project costs.%
+\footnote{Wood, P. (2010) \emph{Comparing cost uplift in infrastructure delivery methods: a case based approach}, http://eprints.qut.edu.au/47529/1/Peter\_Wood\_Thesis.pdf.} A 2015 study of 44 projects each valued at \$1~billion or more found cost overruns of 14 per cent on the \$44~billion budget.%
+\footnote{Australian Contractors Association (2015) \emph{Changing the game: how Australia can achieve success in the new world of mega-projects},
+
+  \url{http://www.constructors.com.au/wp-content/uploads/2015/11/Changing-the-Game-Mega-Projects-Final1.pdf}, p7.}
+
+While not seeking to be representative, an investigation by the Victorian Auditor General found a 5 per cent cost overrun across seven road and rail projects valued at more than \$40~million.%
+\footnote{Victorian Auditor General (2010), \emph{Management of major rail projects}, \url{http://www.audit.vic.gov.au/publications/2009-10/20100623-major-rail-full-report.pdf}, p22; Victorian Auditor General (2011), Management of major road projects, \url{http://www.audit.vic.gov.au/publications/2010-11/20110601-Major-Roads.pdf}, p12.} The New South Wales Auditor General reported a 7 per cent cost overrun across 50 transport and other infrastructure projects valued above \$50~million.%
+\footnote{NSW Auditor General (2015) \emph{Large construction projects: Independent assurance}, https://www.audit.nsw.gov.au/ArticleDocuments/362/01\_Large\_Construction\_Projects\_Independent\_Assurance\_Complete\_Full\_Report.pdf.aspx?Embed=Y, p5.} These two studies did not consider scope changes or overruns between project announcement and formal contract.
+
+The variation in the average size of overruns observed across these small sample studies illustrates the value of a large sample when analysing extreme events.
+
+\subsection{We analyse the entire project lifecycle}\label{we-analyse-the-entire-project-lifecycle}
+
+This report considers the entire project lifecycle from when ministers or opposition politicians first announce a project to when they make a formal funding commitment; from the formal funding commitment to the start of construction; and from the start to the end of construction (\Vref{fig:proj-lifecycle-begins-when-proj-announced}).
+
+\begin{figure}
+\caption{Project lifecycle begins when the project is announced\label{fig:proj-lifecycle-begins-when-proj-announced}}
+
+% \includegraphics{media/image5.tiff}
+
+\source{Grattan analysis}
+\end{figure}
+
+We define a cost overrun as the amount by which the actual cost at the end of a particular phase exceeded the estimated cost at the start of that phase, expressed as a percentage of the cost estimated at the start of that phase.
+
+Some argue that cost overruns should only be measured from the point that a formal cost benefit analysis is completed or a funding commitment made.%
+\footnote{Love, P., Smith, J., Simpson, I., Regan, M., Olatunji, O. (2014) \emph{Understanding the landscape of overruns in transport infrastructure projects}, Environment and Planning B: Planning and Design 2015, volume 42, p; 493-4; Love, P., Ahiaga-Dagbui, D., Irani, Z. (2016) \emph{Cost overruns in transportation infrastructure projects: sowing the seeds for a probabilistic theory of causation}, Transportation Research Part A: Policy and Practice, volume 92, p185.} But this ignores the realpolitik of infrastructure funding.
+Politicians often promise to pursue infrastructure projects before a detailed cost benefit study is completed.
+Indeed, the vast majority of project commitments made in the last federal election were in this category.%
+\footnote{https://theconversation.com/election-2016-will-the-infrastructure-promises-meet-australias-needs-61140} Once an elected government has made such a commitment, it is unusual for the project not to proceed.
+Indeed, it appears that cost benefit analyses are sometimes retrofitted to justify such commitments.%
+\footnote{Australian Constructors Association (2015) \emph{Changing the game: how Australia can achieve success in the new world of mega-projects}, \url{http://www.constructors.com.au/wp-content/uploads/2015/11/Changing-the-Game-Mega-Projects-Final1.pdf}, p20.}
+
+This report takes politicians' commitments seriously.
+We treat a promise to build a particular project for a particular cost as a real promise.
+Even when politicians promise infrastructure that is at a very early stage of development, the politician and the public both regard the promise as binding.
+
+\section{Cost overruns may be even bigger than we claim}\label{cost-overruns-may-be-even-bigger-than-we-claim}
+
+This finding and others in this report may well be understated.
+For the xx projects where data on their early costs is missing in our dataset, we have made the assumption that no early cost overruns occurred.
+
+This assumption appears to be extremely conservative.
+Detailed analysis of a subset of the projects which are missing early cost data indicates that these projects experience cost overruns at approximately the same rate as projects which are not missing data on projects' early costs\footnote{Of the 55 projects investigated, 19 were missing early cost data and 37\% were identified to have experienced cost overruns in this early period.
+This prevalence rate is comparable to the XX\% observed across the XX\% of projects which are not missing early cost data.}.
+Consequently, the rate of overruns presented as the upper bound of \Vref{fig:cost-overruns-are-likely-to-be-higher-than-reported} appears to be more likely than the lower bound, which underpins this report's analysis.
+
+\begin{figure}
+\captionwithunits{Cost overruns are likely to be higher than reported\label{fig:cost-overruns-are-likely-to-be-higher-than-reported}}
+{Average cost overrun rates as a proportion of initial costs, by project stage}
+
+% \includegraphics{media/image6.png}
+
+\noteswithsource{Australian transport projects completed between 2001 and 2015}
+{Deloitte Investment Monitor, Grattan analysis.}
+\end{figure}
+
+The analysis in this report relies upon public sources of data, such as publicly available government documents, company, media and other reports and announcements.
+This information is imperfect.
+Only governments can provide full information for all public infrastructure projects.
+It would be a big step forward if they did.
+
+\section{Dispelling myths}\label{dispelling-myths}
+
+This report's large scale Australian analysis of project cost overruns debunks myths about infrastructure in this country.
+Two prominent myths are that scope changes are the main reason for cost overruns, and that Australian projects are less prone to overruns than those in other countries.
+This section explains the challenge to these two views.
+
+\subsection{Scope changes explain only a small share of overruns}\label{scope-changes-explain-only-a-small-share-of-overruns}
+
+The early period of a project's lifecycle, from its first announcement by a government or potential government until a formal funding commitment, is the best time to settle its scope -- that is, exactly what infrastructure is planned, where it will be and at what quality.
+
+Scope changes might add extra length to a road, or an extra station to a rail line.
+This report defines scope changes as additions to functionality, such as additional road length, but not quality improvements, such as higher sound barriers to a new highway.
+We take this approach to differentiate genuinely additional infrastructure from refinements.
+
+Changes to scope are only a problem if they are not appraised on their merits as to whether they are worth the money and are better than alternative ways to solve a problem or to spend public funds.
+
+Although it appears to be common for scope changes to be made without proper appraisal of the new work,\footnote{Love et al (201), p185.} in fact scope changes only account for about 11 per cent of cost overruns on transport infrastructure projects (\Vref{fig:most-cost-overruns-were-not-attrib-to-scope-changes}).
+
+\begin{figure}
+\captionwithunits{Most cost overruns were not attributable to scope changes\label{fig:most-cost-overruns-were-not-attrib-to-scope-changes}}
+{Average proportion of cost overruns by cause, per cent}
+
+% \includegraphics{media/image7.emf}
+
+\noteswithsource{Based upon detailed investigation of 56 Australian transport infrastructure projects completed between 2008 and 2013, using publicly available data sources.\\
+The value of scope changes have been estimated where possible as the percentage of the total project cost (where scope changes were described as a percentage of project scope), or else by the total value of cost overruns incurred during the period the scope change took place.}
+{Grattan analysis.}
+\end{figure}
+
+\subsection{Australia does not compare especially well internationally}\label{australia-does-not-compare-especially-well-internationally}
+
+The scarcity of Australian studies of cost overruns has fed a misperception that this country does well at avoiding or minimising cost overruns compared to other countries.
+
+The best-known international studies of `megaprojects' have found road projects overrunning by 24 per cent and rail by 40 per cent.
+These findings emerge from a study of infrastructure project cost overruns on 1603 road and rail projects of all sizes, each valued at between US\$1.5~million and US\$8.5~billion, in 20 countries between 1927 and 2013.%
+\footnote{Flyvbjerg 2016, methodology described in Flyvbjerg et al 2003} The findings led the leader of the study, Danish economic geographer Bent Flyvbjerg to invent what he called ``the iron law of megaprojects: over budget, over time, over and over again.''\footnote{Flyvbjerg 2011}
+
+Yet Flyvbjerg's findings, while credible, cannot be generalised.
+His overrun estimates are markedly higher than the average overrun of 14 per cent reported across the next four biggest academic studies, or the 15 per cent reported across the four largest studies completed by auditors of road projects.%
+\footnote{Seimiatycki, 2009}
+
+Other studies emphasise the importance of not assuming that Flyvbjerg's international studies are representative of each of the countries included in the sample.
+For instance, a study of the Dutch projects in the Flyvbjerg sample shows an average cost overrun of 16.5 per cent.%
+\footnote{Cantarelli, 2012} Many other studies have demonstrated variations in the size of overruns across different countries.%
+\footnote{Jenpanitsub 2011; Berechman and Wu, 2006}
+
+When cost overruns around the world are compared from the time of the formal funding commitment or contract, Australia generally ranks in, or slightly worse than, the mid range.
+Most studies of cost overruns focus on contract compliance and engineering, which are most relevant from the time of the contract, rather than the time a government or would-be government first announces the project.
+Our public finance perspective takes the starting point of a project as the initial cost announcement, as this is the point at which a government becomes de facto committed.
+
+The following chapter shows that premature announcement is in fact the key underlying cause of ongoing cost overruns.
+
+
+\begin{bigbox*}{Case study -- Forrest Highway (Peel deviation) -- 588 per cent cost overrun}{box:forrest_highway}
+
+%\setlength{\parskip}{5pt minus 2pt}
+
+\subsubsection*{Poorly scoped election promises end badly}
+
+The Western Australian Liberal government promised to build the Peel deviation from Perth to Bunbury during the 2001 election campaign. The project was priced at \$136 million.\footcite{GovWA2000Premier} Yet in an indication of the lack of clarity surrounding the cost, it was shortly afterwards included in a \$100 million package of works, along with other works in the package estimated to cost \$87 million in total.\footcite[][285]{TreasurersAdvanceAuthBill2001}
+
+Before building began, estimated project costs skyrocketed: to \$337 million in May 2005,\footcite[][662]{WABudget200506Statements} then to \$370 million in August 2005,\footcite[][40]{GovWA2005MainRoads} \$511 million in 2006\footcite{GHDPerthtoBunbury} and \$631 million in 2007.\footcite[][794]{WABudget200708Statements} During construction, the price increased further to \$705 million,\footcite[][85]{AusGov2012InfrastructurePlanningDelivery} before finishing at \$688 million.\footcite[][13]{WALISRealisingPowerLocation}
+
+\subsubsection*{What caused these cost changes?}
+
+The initial funding commitments (\$136m, \$337m, \$370m) were for a road 20 per cent shorter.\footcite[][40]{GovWA2005MainRoads} By the time the road was contracted in 2006, an enhancement of a section of the existing Kwinana Highway between Baldavis and Karnup was included.\footcites{GHDPerthtoBunbury}[][87]{AusGov2012InfrastructurePlanningDelivery}
+
+In official documents, little is revealed about the reasons for the cost increases. There were design enhancements that occurred at some 
+point, including an extra \$40m to fund a change in materials from those specified in the business case.\footcite[][92]{AusGov2012InfrastructurePlanningDelivery}
+
+But even reducing the final cost by 20 per cent (to account for the extended road length) and subtracting \$40m from the final estimate (to exclude the additions) leaves a cost of around \$500m to build the originally specified road – 400 per cent higher than the initial cost estimate.
+
+\begin{figure}[H]
+ \caption{Project cost estimates, millions of dollars\label{fig:CS_Forrest}}
+ \includegraphics[page=2]{atlas/CaseStudies.pdf}
+\end{figure}
+
+
+\end{bigbox*}
+
+
+\chapter{Premature announcements cause larger and more persistent cost overruns}\label{premature-announcements-cause-larger-and-more-persistent-cost-overruns}
+
+Ministers and opposition spokespeople often promise to build a road or bridge or rail line, for a particular cost.
+They are especially prone to doing so in the lead-up to elections (see \Vref{box:forrest_highway} on the Forrest Highway).
+
+It is normally premature and unwise to announce project costs this early in the planning process.
+History shows that projects with costs announced prior to a formal budget commitment experience far larger cost overruns than projects with later cost announcements.
+Over the past 15 years, 82 per cent of the total value of cost overruns is explained by the 31 per cent of projects with early cost announcements (see \Vref{fig:projects-with-early-initial-cost-announced-accont-for-most-of-the-value-of-cost-overruns}).
+
+\begin{figure}
+\captionwithunits{The projects with early initial cost announced account for most of the value of cost overruns\label{fig:projects-with-early-initial-cost-announced-accont-for-most-of-the-value-of-cost-overruns}}%
+{Per cent}
+
+\noteswithsource{Australian transport projects completed between 2001 and 2015}
+{Deloitte Investment Monitor, Grattan analysis.}
+\end{figure}
+
+It comes as no surprise that ad hoc announcements prior to formal budget commitments tend to be extremely optimistic.
+Once such announcements are scrutinised as part of the budget process, their early cost estimates need to be upwardly revised by an average of xx per cent.
+
+However, the poor cost performance of projects with early cost announcements is not just a warning to mistrust the infrastructure announcements of politicians.
+Rather, premature cost announcements appear to haunt projects not only in the lead-up to a formal budget commitment, but throughout their lives (see \Vref{fig:projs-announced-early-have-larger-cost-overruns-at}).
+
+\begin{figure}
+\captionwithunits{Projects announced earlier have larger percentage cost overruns at all stages of the project lifecycle\label{fig:projs-announced-early-have-larger-cost-overruns-at}}
+{Average project size at each project stage by cohort, \$2016 millions}
+
+
+\noteswithsource{Australian transport projects, completed between 2001 and 2015.
+Projects' maturities at the time of initial cost announcements are inferred from each project's stated maturity when the project entered the Deloitte Investment Monitor.
+Where initial cost announcements were very low profile, it is possible that the Deloitte Investment Monitor may have missed the announcement and erroneously recorded the first cost announcement as having occurred when the project reached a more mature stage.
+Given this data collection methodology, it should be noted late initial cost announcements may in fact reflect that earlier cost announcements were of a particularly low profile.}
+{Deloitte Investment Monitor, Grattan analysis.}
+\end{figure}
+
+\Cref{fig:projs-announced-early-have-larger-cost-overruns-at} shows that projects announced early tend to perform worse against their cost estimates, not only in the early stages but also later in the project's life than do those announced at more mature stages of development.
+This suggests that overly optimistic initial cost estimates are rarely adequately adjusted straight away -- reliable project cost estimates may only eventuate half way through construction.
+
+Another reason why early cost announcements often have a large overruns is that these low quality cost estimates are often imposed on the highest risk projects.
+\Cref{fig:projs-announced-early-have-larger-cost-overruns-at} shows that projects with early cost estimates are substantially bigger, on average, than projects with later cost announcements.
+Section xx of this report confirms that large projects are more prone to cost overruns than smaller projects in Australia, as is consistently the case internationally.
+
+The rest of this chapter explains the incentives and lack of penalties that lead to premature announcements (see \Vref{box:alstonville} on the Alstonville bypass).
+
+\begin{bigbox*}{Case study -- Alstonville bypass -- 162 per cent cost overrun}{box:alstonville}
+
+\subsubsection*{An under-cooked election promise}
+
+In 2002, the Federal Coalition Government committed to contributing \$12 million to the \$36 million cost of an upgrade to the Bruxner Highway in Northern New South Wales, to bypass Alstonville.\footnote{1} The following year, the then Labor Premier, Bob Carr, promised in a New South Wales election campaign to build the bypass by the end of 2006, at a cost of \$36 million.\footnote{2}
+
+Yet the project was not confirmed until 2009, when a contract was awarded for \$101 million.\footnote{3}
+
+Savings of \$6.7 million were made during the construction period, and the project was declared to have come in ``under budget''\footnote{4} when it was completed in 2011,\footnote{5} six months after the contracted completion date,\footnote{6} five years after the promised completion date, and nine years after the first commitment.
+
+\begin{figure}[H]
+ \caption{Project cost estimates, millions of dollars}
+ \includegraphics[page=3]{atlas/CaseStudies.pdf}\label{fig:CS_Alstonville}
+\end{figure}
+
+\end{bigbox*}
+
+\section{Premature announcements are made for electoral gain}\label{premature-announcements-are-made-for-electoral-gain}
+
+Governments and would-be governments are very fond of promising infrastructure.
+But while these promises might give them political advantage, politicised announcements that ignore proper process have particularly poor outcomes.
+Cost overruns are 23 per cent higher on average for projects announced close to a state or federal election than for similar projects announced at other times.
+Previous Grattan work shows how politicians commit to poor quality projects for political benefit.%
+\footnote{Terrill, Emslie and Coates (2016) \emph{Roads to Riches;} Terrill (2016) \url{http://grattan.edu.au/news/election-2016-will-the-infrastructure-promises-meet-australias-needs/}.}
+
+Politicians continue to make infrastructure promises for political advantage even though their parties have made strong statements recognising the need to spend infrastructure money better.
+Among such statements:
+
+\begin{itemize}
+\item
+  The current Commonwealth Government maintains that ``\href{http://parlinfo.aph.gov.au/parlInfo/genpdf/chamber/hansardr/e674bc2a-82df-4a25-981b-1f2bab3d0b16/0005/hansard_frag.pdf;fileType=application\%2Fpdf}{\emph{it is critical to base project selection on rigorous analysis and sound planning to avoid wasteful investment}}\emph{\ldots{}{[}t{]}he advice provided by Infrastructure Australia will be a key input in guiding the Australian, state and territory governments when making major investment decisions}.''\footnote{http://infrastructureaustralia.gov.au/about/files/IA-Statement-of-Expectations-2015-17.pdf}
+\item
+  The Federal Labor Opposition, which established Infrastructure Australia when it was in office in 2008, promises to take the politics out of infrastructure by ensuring that \emph{``Infrastructure Australia independently assesses all major infrastructure projects on the basis of the benefits they provide to the economy and society as a whole, their commercial viability and their capacity to enhance national productivity}.''\footnote{http://www.100positivepolicies.org.au/empowering\_infrastructure\_australia}
+\item
+  The Greens contend that ``\emph{{[}t{]}oo often, major infrastructure decisions are made for short-term, politically expedient reasons, rather than in the long-term public interest}.''\footnote{Ref} They would like to see comprehensive cost-benefit analysis for large projects submitted to Infrastructure Australia for evaluation, and with the recommendation made public at the same time it is given to government.%
+\footnote{Ref}
+\end{itemize}
+
+But even though parties make such statements, the behaviour of politicians exposes the hollowness of their claims.
+In the 2016 federal election campaign, Labor, the Coalition and the Greens all promised to build a large number of projects that had not been properly assessed.
+Between a quarter and a half of their promises were for projects that had not been submitted to Infrastructure Australia for assessment, or had been assessed and judged as not worth doing.%
+\footnote{http://grattan.edu.au/news/election-2016-will-the-infrastructure-promises-meet-australias-needs/} Many others were only an ``initiative'' on Infrastructure Australia's list; in other words, Infrastructure Australia was yet to be convinced that the project was worthwhile.
+The proportions of the promised money that were for projects that had been assessed as nationally significant and worth doing ranged from 15 per cent for the Coalition to none for the Greens (see Figure xx).
+
+\begin{figure}
+\captionwithunits{The vast majority of committed money from all 3 major parties is for projects not endorsed by Infrastructure Australia}%
+{Value of specific election commitments to transport infrastructure projects, \$billion}
+
+%\includegraphics{media/image10.png}
+
+\noteswithsource{Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of the coalition, from the 2016-17 budget papers.
+Excludes projects for which construction has already commenced.}
+{Liberal Party (2016); Australian Labor Party (2016); Australian Greens (2016); Treasury (2016); Treasury (2014); Infrastructure Australia (2016); Grattan analysis }
+\end{figure}
+
+
+This pattern of promising poor quality or under-developed project ideas in election campaigns is troubling because politicians find it very hard to back down from promises, even when it becomes apparent that the original assumptions about the project were not well founded (see \Vref{box:hunter} on the Hunter Expressway).
+
+\begin{bigbox*}{Case study -- Hunter Expressway -- more than 350 per cent over budget}{box:hunter}
+
+\subsubsection*{Government reluctance to change course when facts change}
+
+A plan to build a Maitland bypass as part of the New England Highway in northern New South Wales was floated as early as 1983.\footnote{1} The preferred route for what eventually became the Hunter Expressway was decided in 2001 and expected to cost ``more than \$335 million'' in 2002.\footnote{2}
+
+In 2007 the funding commitment was increased to \$887 million by the Federal coalition Government as an election pledge.\footnote{3} After winning the 2007 election, the new Labor Government cooled on the idea. In 2008,Joel Fitzgibbon, the then Labor Member for Hunter, observed that: ``First, the F3 link was conceived in the mid 1980s and there have been big changes in traffic movements and residential and commercial settlement patterns since then. Second, the cost of the project is now \$1,700 million (\$1.7 billion) and it has a very low benefit to cost ratio (meaning it provides tax-payers with a low-value solution).''\footnote{4}
+
+The government commissioned a review in 2008,\footnote{5} following which funding of \$1.7 billion was committed in 2009.\footnote{6} Federal Liberal Member for nearby Paterson, Bob Baldwin criticised the government's prevarication ``because we (the coalition) had committed to it as a 
+\begin{figure}[H]
+ \caption{Project cost estimates, millions of dollars\label{fig:CS_Hunter}}
+ \includegraphics[page=5]{atlas/CaseStudies.pdf}
+\end{figure}\vspace{-12pt}
+government''.\footnote{7} Mr Baldwin emphasised the persistence of Support the Link, a local lobby group that pushed hard for the road.\footnote{8}
+
+The project was completed in 2014.\footnote{9}
+
+While the final benefit cost ratio has not been published, these comments from politicians reveal the difficulty governments experience in reneging on commitments made very early in a project’s life, even after the facts of the project change significantly.
+
+\end{bigbox*}
+
+
+\section{Premature cost claims cannot be disputed}\label{premature-cost-claims-cannot-be-disputed}
+
+
+There is currently no effective curb on premature announcements.
+Politicians either promise projects that have not been evaluated, or they promise projects with an evaluation that is not available to the public.
+Both of these shortcomings should be fixed.
+
+Both Commonwealth and state governments commonly commit to infrastructure projects without an evaluation.
+If there is no evaluation, then politicians' claims about a project's costs and benefits -- or even when it will open -- cannot be scrutinised until much later if at all (see \Vref{box:bulahdelah} on Bulahdelah bypass).
+
+\begin{verysmallbox}{Case study -- Bulahdelah Bypass -- 111 per cent cost overrun}{box:bulahdelah}
+\subsubsection*{Road opened before it was finished}
+
+In June 2013, New South Wales’ Bulahdelah Bypass was running six months behind its revised schedule\footnote{1} and still wasn't finished, so the state government decided to hold a ribbon cutting ceremony and announce its completion anyway.
+
+Official sources say that construction finished in June 2013.\footnote{2} 
+Yet the road was closed for further construction immediately after the ceremony and opened properly a month later.\footnote{3} 
+\end{verysmallbox}
+
+Governments are responsible for investment decisions, they should not spend public money without due care for how the spending will benefit the community.
+Cost benefit analysis has limitations, but it remains the best way for making like-for-like comparisons of projects.%
+\footnote{Eliasson and Fosgerau (2013)} Even with such a process, politicians will be tempted to pressure evaluators to massage assessments to fit political priorities.
+This is not just a theoretical concern.
+For example, EWL story.
+
+Other spheres of government spending offer far less scope for discretionary decisions.
+For example, payments to unemployed people are worth \$108 billion since 2000 -- about the same amount as has been spent on transport infrastructure.
+The \emph{Social Security Act 1991} lays out in exhaustive detail the conditions under which an unemployed person may qualify for Newstart or Youth Allowance, the rate at which they may be paid, and the arrangements for recovering incorrect payments.
+Politicians frequently bemoan waste in the welfare system and the need to reduce fraud, improve compliance and get better value for money.
+They rarely do the same for transport infrastructure.
+
+The system would be improved if governments were not able to commit public money until the project evaluation and the business case had been tabled in parliament.
+Ministers would then be free to commit to the projects that best met their priorities, and to explain to the public any differences between their priorities and the findings of project assessments (see \Vref{reco:Evaluate-before-spending}).
+
+\begin{recommendation}{Evaluate before spending\label{reco:Evaluate-before-spending}}%
+Governments should not be able to commit public money to transport infrastructure until a rigorous, independent like-for-like evaluation and the underlying business case have been tabled in the state or federal parliament.
+\end{recommendation}
+
+Keeping an evaluation secret also protects cost claims from scrutiny and debate.
+
+The best incentive for high quality disinterested project analysis is detailed, timely publication.
+Although some will be concerned that publication may reduce the competitiveness of tenders by anchoring expectations, the cost of poor project selection is likely to far outweigh a marginal reduction in tendering competitiveness.
+
+Consequently, before a government decides to build infrastructure, the public should have access to the business case, cost benefit analysis and evaluation summary.
+The information should include disclosure of the key assumptions made in the cost benefit case, sensitivity analysis of these assumptions, and the evidence justifying them.
+Without this detail, there is no public check on the quality of assessments.
+
+Where no business case or cost benefit analysis has been developed, or where these assessments are not reliable or robust, the public should know.
+We have found no evidence that governments are routinely offered a set of developed and feasible options to choose from.
+To the extent that this lack of evidence points to a gap in planning department processes, it is relevant for the public to understand the shortcomings in the basis of government infrastructure decisions.
+This would be most effective if done at a national level, with data published on a consistent and comparable basis.
+\Vref{reco:Publish-evaluations} proposes mechanisms to do this.
+
+\begin{recommendation}{Publish evaluations of new infrastructure commitments\label{reco:Publish-evaluations}}
+The Commonwealth should enable and facilitate better public understanding of infrastructure commitments by:
+
+\begin{enumerate}
+\renewcommand{\labelenumi}{\alph{enumi}) }
+\item requiring Infrastructure Australia to publish (i) summaries of \emph{all} transport infrastructure projects funded by the Commonwealth within the previous quarter, completed to the extent that Infrastructure Australia has the information to do so and otherwise left blank; and (ii) business cases and cost benefit analyses for all transport infrastructure proposals receiving Commonwealth funding during the previous quarter, if these have not already been published by a state government; and
+
+\item requiring the Productivity Commission to publish reliability ratings of all transport infrastructure business cases within one month of Infrastructure Australia publishing them.
+\end{enumerate}
+\end{recommendation}
+
+\section{There is no accountability for poorly founded cost promises }\label{there-is-no-accountability-for-poorly-founded-cost-promises}
+
+There is at present no systematic public reporting on the effectiveness of government spending on infrastructure projects.
+In particular, there is no public reporting on how well government-funded transport infrastructure projects perform against the costs and benefits, such as travel time savings, used to make the investment decision.
+This is a serious gap.
+
+Infrastructure Australia, according to the law that establishes it, is supposed to evaluate whether projects met targets set before or during delivery, and to promote public awareness of its monitoring role, in part by publishing information on its website.%
+\footnote{\emph{Infrastructure Australia Act 2008} (Cwlth), s5C} This does not happen.
+Nor do state governments, including their infrastructure bodies, publish information about how well projects performed against their estimated costs and benefits.
+Post-implementation reviews seldom take place or are made public when they do.%
+\footnote{ACA (20xx) Changing the game, p26; Ellis (2015) How to increase the chance of project success, section 13; VAGO (2015) p10-11.} For such reporting to be effective, it must be done in a standard way to allow like-for-like comparisons.
+
+Other spheres of government investment require much stricter reporting on outcomes.
+For instance, the \$123 billion Future Fund,\footnote{http://www.futurefund.gov.au/-/media/Files/FutureFund/05--\/-Portfolio-Updates/Portfolio-update-at-30-June-2016.pdf?la=en} is governed by the \emph{Future Fund Act 2006} and overseen by a board of independent guardians.
+The Act ensures that investment decisions and activities are conducted at arm's length from government.
+It requires the tabling in Parliament of an annual report and audited financial statements.
+The Future Fund publishes quarterly portfolio updates to provide details of the investment activity and performance of the fund.
+Transport infrastructure investment by Australian governments is a similarly large element of the budget, and could be governed with similar scrutiny and assurance, but it is not.
+
+In the absence of such reporting for infrastructure projects, the public is not equipped to understand whether any particular infrastructure turned out to offer value for money in the terms in which it was originally promised.
+Ministers overseeing projects with significant cost overruns over time commonly end up claiming that the project came in under budget.
+Both Governments and oppositions feel free to make claims that the media and public cannot verify.
+\Vref{box:unreliable-forecasts} provides background on some extreme examples of overstated benefits that have come to light through legal action.
+
+\begin{smallbox}{Unreliable traffic forecasts}{box:unreliable-forecasts}
+Several successful lawsuits reveal the most extreme cases of inaccurate forecasting.
+
+Brisbane's CLEM 7 tunnel was forecast to carry more than 100,000 vehicles per day within two years of opening, but in fact only about 22,000 went through.\textsuperscript{1} A successful class action was brought against the forecaster, AECOM.\textsuperscript{2} The tunnel's owner, RiverCity Motorway, went into administration in 2011, after the traffic failed to generate enough revenue for the company to pay its debts.\textsuperscript{3}
+
+The traffic forecasts for Sydney's Lane Cove tunnel were in contention in a lawsuit brought against the companies, Parsons Brinckerhoff and Booz Allen.
+They settled in 2014.
+The case concerned allegations that the forecasters ``reverse engineered'' the predictions, working backwards from commercial objectives in estimating traffic volumes.\textsuperscript{4}
+
+Similarly, when traffic volumes were far below expectations on the Brisbane Airport Link, toll road owner Brisconnections launched litigation against forecaster Arup.\textsuperscript{5} This action was settled in 2015.\textsuperscript{6}
+
+1. \url{https://www.mauriceblackburn.com.au/media/2403/14-03-31-second-further-amended-statement-of-claim-with-schedules-a-and-b-clean-sealed.pdf}, p.9-11
+
+2. https://www.mauriceblackburn.com.au/norewrite/current-class-actions/rivercity-class-action/
+
+3. \url{http://www.brisbanetimes.com.au/business/rivercity-ipo-investors-secure-121m-in-successful-clem7-class-action-20160601-gp8qu4.html}
+
+4. \url{http://www.afr.com/news/politics/national/traffic-forecasters-settle-with-ampover-lane-cove-20140923-jftpp}
+
+5. \url{http://www.afr.com/business/brisconnections-receivers-sue-arup-over-brisbane-airport-link-20140528-iv1qo}
+
+6. http://www.imf.com.au/cases/detail/brisconnections
+\end{smallbox}
+
+The current opacity of investment planning processes means that the public cannot readily judge the success of projects.
+This means that there is little political cost associated with announcing project costs prematurely, even when this creates a significant risk of promising projects with poor payoffs.
+
+Moreover, the absence of outcomes reporting limits the ability of project proponents and managers to learn from the experiences of other project managers around the country and over time.
+Like appraisals of new commitments, post-completion information is most useful when it enables comparisons of different projects.
+For this reason, the mechanisms proposed in \Vref{reco:Publish-post-completion-data} are actions that Commonwealth entities should adopt.
+
+\begin{recommendation}{Publish post-completion data\label{reco:Publish-post-completion-data}}
+
+To enable learning from past experience, and to improve accountability:
+
+\begin{enumerate}
+  \renewcommand{\labelenumi}{\alph{enumi}) }
+\item The Commonwealth Department of Infrastructure should be required to publish to data.gov.au the post-completion report it already requires from state governments as a condition of providing final milestone payments for transport infrastructure projects.\footnote{As detailed in Appendix D3 of the Notes on Administration of the National Partnership Agreement on Land Transport Infrastructure Projects} 
+Reports should detail any scope changes and their justification, agreed and actual construction start and finish dates, actual project costs, reasons for overruns or under-runs, and progress against performance indicators.
+
+\item Infrastructure Australia should be asked to provide the Joint Committee of Public Accounts and Audit with a post-completion appraisal of the benefits and costs of each infrastructure project with Commonwealth funding of \$50 million or more.
+
+\item The Council of Australian Governments should add a new category of infrastructure services to the terms of reference for the annual Report on Government Services, produced by the Productivity Commission.
+\end{enumerate}
+\end{recommendation}
+
+\appendix
+\chapter{Methodological appendix}
+\section{Expected difference between P50 and P90 costs\label{appendix:Expected-difference-between-P50-and-P90}}
+
+<<knitrOptsAppendix, eval=TRUE>>=
+warning("Remove finally")
+opts_chunk$set(eval = TRUE)
+@
+
+\begin{table}
+\caption{Bias}
+<<bias_inherent_in_the_system>>=
+bias_inherent_in_the_system <- 
+  first_Cost_estimate_real_by_GR_Status_ordered %>%
+  filter(Status_ordered >= "Committed") %>%
+  group_by(Grattan_record) %>%
+  summarise(first_Cost_estimate_real_when_committed = first(first_Cost_estimate_real[Status_ordered >= "Committed"])) %>%
+  setkey(Grattan_record) %>%
+  merge(last_Cost_estimate_real_by_GR) %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  merge(public_private_by_Grattan_record) %>%
+  merge(final_status_by_GR) %>%
+  filter(complete.cases(.)) %>%
+  filter(isTransport, 
+         !outlier, 
+         last_Cost_estimate_real >= 20e6, 
+         Lucille_Ownership == "Public", 
+         Final_status == "Completed") %>%
+  mutate(r = last_Cost_estimate_real / first_Cost_estimate_real_when_committed) %>%
+  mutate(ptile = ntile(r, 100)) %$%
+  # Assuming P75 should be r == 1
+  {75 - max(ptile[r <= 1])}
+@
+
+<<percentile_at_mean_overrun>>=
+percentile_at_mean_overrun <- 
+  first_Cost_estimate_real_by_GR_Status_ordered %>%
+  filter(Status_ordered >= "Committed") %>%
+  group_by(Grattan_record) %>%
+  summarise(first_Cost_estimate_real_when_committed = first(first_Cost_estimate_real[Status_ordered >= "Committed"])) %>%
+  setkey(Grattan_record) %>%
+  merge(last_Cost_estimate_real_by_GR) %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  merge(public_private_by_Grattan_record) %>%
+  merge(final_status_by_GR) %>%
+  filter(complete.cases(.)) %>%
+  filter(isTransport, 
+         !outlier, 
+         last_Cost_estimate_real >= 20e6, 
+         first_Cost_estimate_real_when_committed > 0, 
+         Lucille_Ownership == "Public", 
+         Final_status == "Completed") %>%
+  mutate(r = last_Cost_estimate_real / first_Cost_estimate_real_when_committed) %$%
+  mean(r <= mean(r))
+@
+
+<<appendix-table, results='asis'>>=
+data.table(P = c(50, 75, round(100 * percentile_at_mean_overrun), 90, 99) / 100) %>%
+  mutate(`Proportion of projects less than` = grattan_percent((P - bias_inherent_in_the_system / 100))) %>%
+  mutate(`Estimated probability price` = sprintf("P%s", 100 * P)) %>%
+  select(`Estimated probability price`, `Proportion of projects less than`) %>%
+  xtable(align = "llr") %>%
+  print.xtable(floating = FALSE, booktabs = TRUE,
+               tabular.environment = "tabularx", 
+               width = "\\columnwidth", 
+               include.rownames = FALSE, 
+               sanitize.text.function = function(x){x}, 
+               sanitize.colnames.function = function(x){paste0("\\textbf{", x, "}")})
+@
+
+<<p90_vs_p50, eval=FALSE>>=
+first_Cost_estimate_real_by_GR_Status_ordered %>%
+  filter(Status_ordered >= "Committed") %>%
+  group_by(Grattan_record) %>%
+  summarise(first_Cost_estimate_real_when_committed = first(first_Cost_estimate_real[Status_ordered >= "Committed"])) %>%
+  setkey(Grattan_record) %>%
+  merge(last_Cost_estimate_real_by_GR) %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  merge(public_private_by_Grattan_record) %>%
+  merge(final_status_by_GR) %>%
+  filter(complete.cases(.)) %>%
+  filter(isTransport, 
+         !outlier, 
+         last_Cost_estimate_real >= 20e6, 
+         Lucille_Ownership == "Public", 
+         Final_status == "Completed") %>%
+  mutate(r = last_Cost_estimate_real / first_Cost_estimate_real_when_committed) %>%
+  mutate(inferred_ptile = ntile(r, 100) + bias_inherent_in_the_system) %>%
+  mutate(`% projects with cost overruns exceeding` = inferred_ptile) 
+@
+\source{Grattan analysis}
+\end{table}
+
+\end{document}
+

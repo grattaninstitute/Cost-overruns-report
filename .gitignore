@@ -184,3 +184,4 @@ TSWLatexianTemp*
 *.tex
 *.pdf
 figure/
+cache/
