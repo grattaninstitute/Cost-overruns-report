@@ -928,7 +928,7 @@ But the risk of cost overruns is an inherent feature of all infrastructure proje
 This chapter discusses the rationale for intervening in projects that may be on a path towards substantial cost overruns.
 
 Close to two thirds of cost overruns occur before construction begins.
-When overruns occur during these early stages, there is an opportunity for projects' merits to be actively reappraised, in order to determine whether projects still appear to be good investments (Figure xx).
+When overruns occur during these early stages, there is an opportunity for projects' merits to be actively reappraised, in order to determine whether projects still appear to be good investments (\Vref{fig:cost-overruns-by-project-stage}).
 
 \begin{figure}
 \captionwithunits{A third of cost overruns occur prior to budget commitments\label{fig:cost-overruns-by-project-stage}}%
