@@ -977,15 +977,16 @@ Fortunately, there is ample opportunity for Australian jurisdictions to identify
 However, such active reappraisals do not appear to be happening enough.
 
 Over the last 15 years, about 80 per cent of all announced projects have been completed.
-Even those announced before a formal government funding commitment are usually completed (Figure xx).
+Even those announced before a formal government funding commitment are usually completed (\Vref{fig:perc-projects-cancelled-each-proj-stage}).
 
-\textbf{Figure 3.2: Few projects are cancelled once announced\\
-}Percentage of projects cancelled at each project stage
+\begin{figure}
+\captionwithunits{Few projects are cancelled once announced\label{fig:perc-projects-cancelled-each-proj-stage}}%
+{Percentage of projects cancelled at each project stage}
 
-\includegraphics{media/image12.png}
+\noteswithsource{Australian transport projects completed between 2000 and 2015}%
+{Deloitte Investment Monitor; Grattan analysis}
+\end{figure}
 
-\emph{Notes:} \emph{Australian transport projects completed between 2000 and 2015\\
-Sources: Deloitte Investment Monitor; Grattan analysis}
 
 The cancellation rate of xx seems lower than it should be.
 One indication that it is too low is that this cancellation rate is less than the proportion of projects that would be expected to have benefit cost ratios less than one, given the average magnitude of cost overruns (see appendix X.X for details).
