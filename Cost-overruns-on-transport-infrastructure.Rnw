@@ -1037,50 +1037,47 @@ It comes as no surprise that ad hoc announcements prior to formal budget commitm
 Once such announcements are scrutinised as part of the budget process, their early cost estimates need to be upwardly revised by an average of xx per cent.
 
 However, the poor cost performance of projects with early cost announcements is not just a warning to mistrust the infrastructure announcements of politicians.
-Rather, premature cost announcements appear to haunt projects not only in the lead-up to a formal budget commitment, but throughout their lives (see Figure xx).
+Rather, premature cost announcements appear to haunt projects not only in the lead-up to a formal budget commitment, but throughout their lives (see \Vref{fig:projs-announced-early-have-larger-cost-overruns-at}).
 
-\textbf{Figure xx: Projects announced earlier have larger percentage cost overruns at all stages of the project lifecycle}
+\begin{figure}
+\captionwithunits{Projects announced earlier have larger percentage cost overruns at all stages of the project lifecycle\label{fig:projs-announced-early-have-larger-cost-overruns-at}}
+{Cost estimates}
 
-\includegraphics{media/image9.png}
 
-\emph{Notes: Australian transport projects, completed between 2001 and 2015.
+\noteswithsource{Australian transport projects, completed between 2001 and 2015.
 Projects' maturities at the time of initial cost announcements are inferred from each project's stated maturity when the project entered the Deloitte Investment Monitor.
 Where initial cost announcements were very low profile, it is possible that the Deloitte Investment Monitor may have missed the announcement and erroneously recorded the first cost announcement as having occurred when the project reached a more mature stage.
-Given this data collection methodology, it should be noted late initial cost announcements may in fact reflect that earlier cost announcements were of a particularly low profile.\\
-Source: Deloitte Investment Monitor, Grattan analysis.}
+Given this data collection methodology, it should be noted late initial cost announcements may in fact reflect that earlier cost announcements were of a particularly low profile.}
+{Deloitte Investment Monitor, Grattan analysis.}
+\end{figure}
 
-Figure xx shows that projects announced early tend to perform worse against their cost estimates, not only in the early stages but also later in the project's life than do those announced at more mature stages of development.
-This suggests that overly optimistic initial cost estimates are rarely adequately adjusted straight away - reliable project cost estimates may only eventuate half way through construction.
+\Cref{fig:projs-announced-early-have-larger-cost-overruns-at} shows that projects announced early tend to perform worse against their cost estimates, not only in the early stages but also later in the project's life than do those announced at more mature stages of development.
+This suggests that overly optimistic initial cost estimates are rarely adequately adjusted straight away -- reliable project cost estimates may only eventuate half way through construction.
 
 Another reason why early cost announcements often have a large overruns is that these low quality cost estimates are often imposed on the highest risk projects.
-Figure xx shows that projects with early cost estimates are substantially bigger, on average, than projects with later cost announcements.
+\Cref{fig:projs-announced-early-have-larger-cost-overruns-at} shows that projects with early cost estimates are substantially bigger, on average, than projects with later cost announcements.
 Section xx of this report confirms that large projects are more prone to cost overruns than smaller projects in Australia, as is consistently the case internationally.
 
-The rest of this chapter explains the incentives and lack of penalties that lead to premature announcements (see Box xx on the Alstonville bypass).
+The rest of this chapter explains the incentives and lack of penalties that lead to premature announcements (see \Vref{box:alstonville} on the Alstonville bypass).
 
-Box xx: Case study - Alstonville bypass -- 162 per cent overrun
+\begin{bigbox*}{Case study -- Alstonville bypass -- 162 per cent cost overrun}{box:alstonville}
 
-An under-cooked election promise
+\subsubsection*{An under-cooked election promise}
 
-In 2002, the Federal Coalition Government promised to contributing \$12 million to the \$36 million cost of an upgrade to the Bruxner Highway in Northern New South Wales, in order to bypass Alstonville.\textsuperscript{1} The following year, the then Labor Premier, Bob Carr, promised in a New South Wales election campaign to build the bypass by the end of 2006, at a cost of \$36 million.\textsuperscript{2}
+In 2002, the Federal Coalition Government committed to contributing \$12 million to the \$36 million cost of an upgrade to the Bruxner Highway in Northern New South Wales, to bypass Alstonville.\footnote{1} The following year, the then Labor Premier, Bob Carr, promised in a New South Wales election campaign to build the bypass by the end of 2006, at a cost of \$36 million.\footnote{2}
 
-Yet the project was not confirmed until 2009, when a contract was awarded for \$101 million.\textsuperscript{3}
+Yet the project was not confirmed until 2009, when a contract was awarded for \$101 million.\footnote{3}
 
-Savings of \$6.7 million were made during the construction period, and the project was declared to have come in ``under budget''\textsuperscript{4} when it was completed in 2011,\textsuperscript{5} six months after the contracted completion date,\textsuperscript{6} five years after the promised completion date, and nine years after the first commitment.
+Savings of \$6.7 million were made during the construction period, and the project was declared to have come in ``under budget''\footnote{4} when it was completed in 2011,\footnote{5} six months after the contracted completion date,\footnote{6} five years after the promised completion date, and nine years after the first commitment.
 
-1. \href{http://23.101.218.132/Prod/parlment/hansart.nsf/V3Key/LA20021119038?open\&refNavID=HA8_1}{http://}\href{http://23.101.218.132/Prod/parlment/hansart.nsf/V3Key/LA20021119038?open\&refNavID=HA8_1}{23.101.218.132/Prod/parlment/hansart.nsf/V3Key/LA20021119038?open\&refNavID=HA8\_1},
+\begin{figure}[H]
+ \caption{Project cost estimates, millions of dollars}
+ \includegraphics[page=3]{atlas/CaseStudies.pdf}\label{fig:CS_Alstonville}
+\end{figure}
 
-2. http://mobile.abc.net.au/news/2003-06-20/plan-for-bruxner-highway-bypass-by-2006/1873482 ,
+\end{bigbox*}
 
-3. http://www.abc.net.au/news/2009-02-19/alstonville-bypass-funds-announced/300720; \url{http://www.treasury.nsw.gov.au/__data/assets/pdf_file/0004/17581/bp4_infrastructure_statement.pdf}
-
-4. \url{http://bit.ly/26vTJ1j}.
-
-5. http://www.northernstar.com.au/news/alstonville-traffic-to-use-new-bypass-lismore/861128
-
-\emph{6}\href{file:///C:/Users/Hugh\%20Parsonage/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/QRM3IFT6/6}{6}\emph{. http://www.abc.net.au/news/2009-02-19/alstonville-bypass-funds-announced/300720}
-
-\section{Premature announcements are made for electoral gain }\label{premature-announcements-are-made-for-electoral-gain}
+\section{Premature announcements are made for electoral gain}\label{premature-announcements-are-made-for-electoral-gain}
 
 Governments and would-be governments are very fond of promising infrastructure.
 But while these promises might give them political advantage, politicised announcements that ignore proper process have particularly poor outcomes.
@@ -1107,55 +1104,40 @@ Between a quarter and a half of their promises were for projects that had not be
 \footnote{http://grattan.edu.au/news/election-2016-will-the-infrastructure-promises-meet-australias-needs/} Many others were only an ``initiative'' on Infrastructure Australia's list; in other words, Infrastructure Australia was yet to be convinced that the project was worthwhile.
 The proportions of the promised money that were for projects that had been assessed as nationally significant and worth doing ranged from 15 per cent for the Coalition to none for the Greens (see Figure xx).
 
-\textbf{Figure xx: The vast majority of committed money from\\
-all 3 major parties is for projects not endorsed by Infrastructure Australia\\
-}Value of specific election commitments to transport infrastructure projects, \$billion
+\begin{figure}
+\captionwithunits{The vast majority of committed money from all 3 major parties is for projects not endorsed by Infrastructure Australia}%
+{Value of specific election commitments to transport infrastructure projects, \$billion}
 
-\includegraphics{media/image10.png}
+%\includegraphics{media/image10.png}
 
-\emph{Notes: Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of the coalition, from the 2016-17 budget papers.
-Excludes projects for which construction has already commenced.\\
-Source: Liberal Party (2016); Australian Labor Party (2016); Australian Greens (2016); Treasury (2016); Treasury (2014); Infrastructure Australia (2016); Grattan analysis }
+\noteswithsource{Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of the coalition, from the 2016-17 budget papers.
+Excludes projects for which construction has already commenced.}
+{Liberal Party (2016); Australian Labor Party (2016); Australian Greens (2016); Treasury (2016); Treasury (2014); Infrastructure Australia (2016); Grattan analysis }
+\end{figure}
+
 
 This pattern of promising poor quality or under-developed project ideas in election campaigns is troubling because politicians find it very hard to back down from promises, even when it becomes apparent that the original assumptions about the project were not well founded (see Box xx on the Hunter Expressway).
 
-\begin{longtable}[c]{@{}ll@{}}
-\toprule
-\textbf{Box xx: Case study - Hunter Expressway -- more than 350 per cent over budget }
+\begin{bigbox*}{Case study -- Hunter Expressway -- more than 350 per cent over budget}{box:hunter}
 
-Government reluctance to change course when facts change
+\subsubsection*{Government reluctance to change course when facts change}
 
-A plan to build a Maitland bypass as part of the New England Highway in northern New South Wales was floated as early as 1983.\textsuperscript{1} The preferred route for what eventually became the Hunter Expressway was decided in 2001 and expected to cost ``more than \$335 million'' in 2002.\textsuperscript{2}
+A plan to build a Maitland bypass as part of the New England Highway in northern New South Wales was floated as early as 1983.\footnote{1} The preferred route for what eventually became the Hunter Expressway was decided in 2001 and expected to cost ``more than \$335 million'' in 2002.\footnote{2}
 
-In 2007 the Federal Coalition Government increased the funding commitment to \$887 million by the Federal coalition Government as an election pledge.\textsuperscript{3} After winning the 2007 election, the new Labor Government cooled on the idea.
-Joel Fitzgibbon, the then Labor Member for Hunter, observed in 2008 that: ``First, the F3 link was conceived in the mid 1980s and there have been big changes in traffic movements and residential and commercial settlement patterns since then.
-Second, the cost of the project is now \$1,700 million (\$1.7 billion) and it has a very low benefit to cost ratio (meaning it provides tax-payers with a low-value solution).''\textsuperscript{4}
+In 2007 the funding commitment was increased to \$887 million by the Federal coalition Government as an election pledge.\footnote{3} After winning the 2007 election, the new Labor Government cooled on the idea. In 2008,Joel Fitzgibbon, the then Labor Member for Hunter, observed that: ``First, the F3 link was conceived in the mid 1980s and there have been big changes in traffic movements and residential and commercial settlement patterns since then. Second, the cost of the project is now \$1,700 million (\$1.7 billion) and it has a very low benefit to cost ratio (meaning it provides tax-payers with a low-value solution).''\footnote{4}
 
-The government commissioned a review in 2008,\textsuperscript{5} after which it committed of \$1.7 billion in 2009.\textsuperscript{6} The federal Liberal member for nearby Paterson, Bob Baldwin criticised the government's prevarication ``because we (the coalition) had committed to it as a government''.\textsuperscript{7} Mr Baldwin emphasised the persistence of Support the Link, a local lobby group that pushed hard for the road.\textsuperscript{8}
+The government commissioned a review in 2008,\footnote{5} following which funding of \$1.7 billion was committed in 2009.\footnote{6} Federal Liberal Member for nearby Paterson, Bob Baldwin criticised the government's prevarication ``because we (the coalition) had committed to it as a 
+\begin{figure}[H]
+ \caption{Project cost estimates, millions of dollars\label{fig:CS_Hunter}}
+ \includegraphics[page=5]{atlas/CaseStudies.pdf}
+\end{figure}\vspace{-12pt}
+government''.\footnote{7} Mr Baldwin emphasised the persistence of Support the Link, a local lobby group that pushed hard for the road.\footnote{8}
 
-The project was completed in 2014 at a cost of xx.\textsuperscript{9} & While the final benefit cost ratio has not been published, these comments from politicians reveal the difficulty governments experience in reneging on commitments made very early in a project's life, even after the facts of the project change significantly.
+The project was completed in 2014.\footnote{9}
 
-1. \url{http://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id\%3A\%22chamber\%2Fhansardr\%2F2009-06-01\%2F0011\%22}
+While the final benefit cost ratio has not been published, these comments from politicians reveal the difficulty governments experience in reneging on commitments made very early in a project’s life, even after the facts of the project change significantly.
 
-2. \href{https://infrastructure.gov.au/department/statements/2002_2003/media/a03_budget_02.aspx}{https://}\href{https://infrastructure.gov.au/department/statements/2002_2003/media/a03_budget_02.aspx}{infrastructure.gov.au/department/statements/2002\_2003/media/a03\_budget\_02.aspx}
-
-3. \href{http://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id:\%22chamber/hansardr/2009-06-01/0011\%22}{http://}\href{http://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id:\%22chamber/hansardr/2009-06-01/0011\%22}{parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id\%3A\%22chamber\%2Fhansardr\%2F2009-06-01\%2F0011\%22}
-
-4. ibid
-
-5. http://investment.infrastructure.gov.au/publications/policies/pdf/Lower\_Hunter\_TermsOfReference.pdf
-
-6. \href{http://www.rms.nsw.gov.au/documents/projects/hunter/the-hunter-expressway/project-documents/hunter-expressway-comm-update-jul2010.pdf}{http://}\href{http://www.rms.nsw.gov.au/documents/projects/hunter/the-hunter-expressway/project-documents/hunter-expressway-comm-update-jul2010.pdf}{www.rms.nsw.gov.au/documents/projects/hunter/the-hunter-expressway/project-documents/hunter-expressway-comm-update-jul2010.pdf}
-
-7. \href{http://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id:\%22chamber/hansardr/2009-06-01/0011\%22}{http://}\href{http://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id:\%22chamber/hansardr/2009-06-01/0011\%22}{parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id\%3A\%22chamber\%2Fhansardr\%2F2009-06-01\%2F0011\%22}
-
-8. ibid
-
-9. http://www.rms.nsw.gov.au/projects/hunter/the-hunter-expressway/index.html\tabularnewline
-\midrule
-\endhead
-\bottomrule
-\end{longtable}
+\end{bigbox*}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
