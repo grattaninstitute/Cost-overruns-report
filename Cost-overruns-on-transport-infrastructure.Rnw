@@ -91,7 +91,7 @@ test_that("Returns nearest otherwise", {
 })
 @
 
-<<>>=
+<<construction_inflator>>=
 # This will equal 1.661184 if the inflator's working correctly:
 # general_inflator(from = as.yearqtr("1998 Q1"), to = as.yearqtr("2013 Q1"), inflator_table = construction_indices)
 construction_indices2 <- 
