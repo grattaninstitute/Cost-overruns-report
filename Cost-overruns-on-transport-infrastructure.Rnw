@@ -1261,19 +1261,20 @@ Moreover, the absence of outcomes reporting limits the ability of project propon
 Like appraisals of new commitments, post-completion information is most useful when it enables comparisons of different projects.
 For this reason, the mechanisms proposed in Recommendation 3 are actions that Commonwealth entities should adopt.
 
-Recommendation 3 -- Publish post-completion data
+\begin{recommendation}{Publish post-completion data\label{reco:Publish-post-completion-data}}
 
 To enable learning from past experience, and to improve accountability:
 
-a) The Commonwealth Department of Infrastructure should be required to publish to data.gov.au the post-completion report it already requires from state governments as a condition of providing final milestone payments for transport infrastructure projects.\textsuperscript{1} Reports should detail any scope changes and their justification, agreed and actual construction start and finish dates, actual project costs, reasons for overruns or under-runs, and progress against performance indicators.
+\begin{enumerate}
+  \renewcommand{\labelenumi}{\alph{enumi}) }
+\item The Commonwealth Department of Infrastructure should be required to publish to data.gov.au the post-completion report it already requires from state governments as a condition of providing final milestone payments for transport infrastructure projects.\footnote{As detailed in Appendix D3 of the Notes on Administration of the National Partnership Agreement on Land Transport Infrastructure Projects} 
+Reports should detail any scope changes and their justification, agreed and actual construction start and finish dates, actual project costs, reasons for overruns or under-runs, and progress against performance indicators.
 
-b) Infrastructure Australia should be asked to provide the Joint Committee of Public Accounts and Audit with a post-completion appraisal of the benefits and costs of each infrastructure project with Commonwealth funding of \$50 million or more.
+\item Infrastructure Australia should be asked to provide the Joint Committee of Public Accounts and Audit with a post-completion appraisal of the benefits and costs of each infrastructure project with Commonwealth funding of \$50 million or more.
 
-c) The Council of Australian Governments should add a new category of infrastructure services to the terms of reference for the annual Report on Government Services, produced by the Productivity Commission.
-
-\emph{1.
-As detailed in Appendix D3 of the Notes on Administration of the National Partnership Agreement on Land Transport Infrastructure Projects}.
-
+\item The Council of Australian Governments should add a new category of infrastructure services to the terms of reference for the annual Report on Government Services, produced by the Productivity Commission.
+\end{enumerate}
+\end{recommendation}
 
 \end{document}
 

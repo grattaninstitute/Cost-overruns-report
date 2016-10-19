@@ -39,13 +39,13 @@ The Commonwealth should enable and facilitate better public understanding of inf
 
 \counterwithout{reco}{chapter}
 
-\newenvironment{recommendation}[1]{%
+\newenvironment{recommendation}[2][htbp]{%
 \setlength{\currentparskip}{\parskip}%
-\begin{reco}
+\begin{reco}[#1]
 \begin{mdframed}[style=GrattanFrameBox]
 \setlength{\parskip}{\currentparskip}
 \captionsetup{labelfont={bf,Orange},font={bf,Orange},format=plain,justification=raggedright,singlelinecheck=false, skip=0ex, position=above}
-\caption{#1}
+\caption{#2}
 \raggedright
 }{
 \end{mdframed}\end{reco}%
