@@ -1435,28 +1435,31 @@ The second is that holding contingencies against individual projects makes it ea
 Holding contingencies entirely against an individual project is more expensive because a larger amount needs to be put aside for exceptional circumstances if managers cannot also call upon unused contingency funds from other projects when risks eventuate.
 By contrast, pooling contingencies from a portfolio of projects is cheaper, for the same level of protection, because the same funds provide protection for multiple projects at the same time.
 
-Figure 5.1 illustrates the difference between the contingency funds that would have been needed on average for projects valued at \$20 million or more and planned or built over the past 15 years, according to whether the contingency was set for an individual project or for a whole portfolio.
+\Vref{fig:value-contingencies-req-to-cover--} illustrates the difference between the contingency funds that would have been needed on average for projects valued at \$20 million or more and planned or built over the past 15 years, according to whether the contingency was set for an individual project or for a whole portfolio.
 The figure illustrates how different the results are at these extremes, both of which are designed to ensure that the average cost overrun is zero.
 In practice, the best way to manage the contingency would lie somewhere between these two extremes.
 
-\textbf{Figure 5.1: Small contingencies can achieve a lot when they are managed at the portfolio level\\
-}Value of the contingencies required to cover the costs of 90\% of the cost overruns that occur after a formal budget commitment, under different contingency management schemes
+\begin{figure}
+\captionwithunits{Small contingencies can achieve a lot when they are managed at the portfolio level\label{fig:value-contingencies-req-to-cover--}}
+{Value of the contingencies required to cover the costs of 90\% of the cost overruns that occur after a formal budget commitment, under different contingency management schemes}
 
-\includegraphics{media/image18.png}
 
-\emph{Notes:} \emph{Australian transport projects completed between 2000 and 2015\\
-Sources: Deloitte Investment Monitor; Grattan analysis}
 
-The second main disadvantage of holding most or all of the contingency at the individual project level is the risk that the money is used on other things (see Box xx on the Pacific Motorway).
+\noteswithsource{Australian transport projects completed between 2000 and 2015}%
+{Deloitte Investment Monitor; Grattan analysis}
+\end{figure}
 
-Box xx: Case study -- Pacific Motorway - 14 per cent under-run
+The second main disadvantage of holding most or all of the contingency at the individual project level is the risk that the money is used on other things (see \Vref{box:Pacific-Motorway} on the Pacific Motorway).
 
-Unused contingencies are often funnelled into scope increases and other projects
+\begin{smallbox}{Case study -- Pacific Motorway -- 14 per cent under-run}{box:Pacific-Motorway}
+
+\subsubsection*{Unused contingencies are often funnelled into scope increases and other projects}
 
 The Pacific Motorway (Springwood South to Daisy Hill) upgrade project in southern Brisbane finished under budget.
 Then Federal Infrastructure Minister Anthony Albanese announced that the ``savings achieved on the Springwood South to Daisy Hill upgrade will be used to construct an auxiliary lane between Fitzgerald Avenue and Aranda Street in Springwood as well as undertake the land acquisitions and planning work associated with the future widening of the Motorway between Daisy Hill and the Logan Motorway."
 
-1. http://anthonyalbanese.com.au/category/ministerial-media-releases/page/26
+1. \url{http://anthonyalbanese.com.au/category/ministerial-media-releases/page/26}
+\end{smallbox}
 
 While holding the contingency against an individual project allows a more nimble response to unexpected events, this very nimbleness is also a disadvantage.
 It makes it easier for contingency funds to be spent on scope extensions, quality upgrades, or even on completely different purposes.
@@ -1468,11 +1471,11 @@ Individual project managers may face reputational damage, however unfairly, if t
 
 It is not easy to establish how much of the contingency should be held against the individual project, and how much against the portfolio.
 But managing all risk at the project level is unnecessarily expensive.
-Australian governments would do well to far more rigorously define their risk preferences at both levels, to document which risks each agency or organisation has accommodated and on what basis risks have been quantified is important (see Recommendation 7).
+Australian governments would do well to far more rigorously define their risk preferences at both levels, to document which risks each agency or organisation has accommodated and on what basis risks have been quantified is important (see \Vref{reco:half-proj-contingency-in-portfolio-pool}).
 
-Recommendation 7 -- Hold half the project contingency in a portfolio pool
-
+\begin{recommendation}{Hold half the project contingency in a portfolio pool\label{reco:half-proj-contingency-in-portfolio-pool}}
 To improve the cost-efficiency of risk management, governments should divide project contingencies between project management agencies and central agencies, and formalise the conditions governing contingency drawdown, to improve the cost-efficiency of risk management.
+\end{recommendation}
 
 
 
