@@ -1021,7 +1021,7 @@ But even reducing the final cost by 20 per cent (to account for the extended roa
 \chapter{Premature announcements cause larger and more persistent cost overruns}\label{premature-announcements-cause-larger-and-more-persistent-cost-overruns}
 
 Ministers and opposition spokespeople often promise to build a road or bridge or rail line, for a particular cost.
-They are especially prone to doing so in the lead-up to elections (see Box xx on the Forrest Highway).
+They are especially prone to doing so in the lead-up to elections (see \Vref{box:forrest_highway} on the Forrest Highway).
 
 It is normally premature and unwise to announce project costs this early in the planning process.
 History shows that projects with costs announced prior to a formal budget commitment experience far larger cost overruns than projects with later cost announcements.
