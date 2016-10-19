@@ -15,7 +15,6 @@
 
 
 
-\catcode`\$=12
 \begin{document}
 <<portability, echo=FALSE>>=
 source("R/portability.R")
@@ -989,7 +988,6 @@ Our public finance perspective takes the starting point of a project as the init
 The following chapter shows that premature announcement is in fact the key underlying cause of ongoing cost overruns.
 
 
-\catcode`\$=3
 \begin{bigbox*}{Case study -- Forrest Highway (Peel deviation) -- 588 per cent cost overrun}{box:forrest_highway}
 
 %\setlength{\parskip}{5pt minus 2pt}
@@ -1016,7 +1014,7 @@ But even reducing the final cost by 20 per cent (to account for the extended roa
 
 
 \end{bigbox*}
-\catcode`\$=12
+
 
 \chapter{Premature announcements cause larger and more persistent cost overruns}\label{premature-announcements-cause-larger-and-more-persistent-cost-overruns}
 
