@@ -1311,18 +1311,18 @@ They show a ``worst case'' cost estimate far lower than 21 per cent above the me
 \cmidrule(lr){3-4}
 \textbf{Project} & \textbf{State} & \textbf{Median (or ``P50'')} & \textbf{``Worst case'' (or ``P90'')} & \textbf{Difference (\%)} \\
 \midrule
+Inland Rail & National & \possibleTextDollar9\,890\dz & \possibleTextDollar10\,660\dz & 7.8\%\tabularnewline[1.245ex]
+Westconnex & NSW & \possibleTextDollar16\,800\dz & n/a & 6\%\tablefootnote{``The Infrastructure Australia assessment makes reference to a six per cent difference between the P50 and P90 on the Stage 2'' (SGS, February 2016, page 23)}\tabularnewline[1.245ex]
 Melbourne Metro & Vic\tablefootnote{``The expected value of each risk was then calculated based on the probability of the risk occurring and the sum of the products of the impact (either as a percentage of the cost driver or delay costs) and their probabilities in each of the three defined states. Correlation between key risks was calculated using a correlation matrix. A Monte Carlo analysis was then used to calculate the P50 and P90 values.''} & \possibleTextDollar10\,154\dz & \possibleTextDollar10\,837\dz & 6.7\%\tabularnewline
 Western Distributor & Vic\tablefootnote{``Total nominal dollars over the construction period, assuming construction commences during the year ended 30 June 2018.''} & \possibleTextDollar5\,226\dz & \possibleTextDollar5\,548\dz & 6.2\%\tabularnewline
-Westconnex & NSW & \possibleTextDollar16\,800\dz & n/a & 6\%\tablefootnote{``The Infrastructure Australia assessment makes reference to a six per cent difference between the P50 and P90 on the Stage 2'' (SGS, February 2016, page 23)}\tabularnewline
-Inland Rail & National & \possibleTextDollar9\,890\dz & \possibleTextDollar10\,660\dz & 7.8\%\tabularnewline
-Canberra Light Rail & ACT & \possibleTextDollar759\dz & \possibleTextDollar806\dz & 6.5\%\tabularnewline
 Princes Highway West Duplication & Vic & \possibleTextDollar334.3 & \possibleTextDollar363.5 & 8.7\%\tabularnewline
-Main Road, St Albans Level Crossing Removal Project & Vic & \possibleTextDollar222.9 & \possibleTextDollar231.5 & 3.9\%\tabularnewline
+Main Road, St Albans Level Crossing Removal Project & Vic & \possibleTextDollar222.9 & \possibleTextDollar231.5 & 3.9\%\tabularnewline[1.245ex]
 Bruce Highway Upgrade~& Qld & \possibleTextDollar841.2 & \possibleTextDollar929.3 & 10.5\%\tabularnewline
-M1 Pacific Motorway - Gateway Mway Merge Upgrade & Qld & \possibleTextDollar197.7 & \possibleTextDollar207.9 & 5.2\%\tabularnewline
+M1 Pacific Motorway - Gateway Mway Merge Upgrade & Qld & \possibleTextDollar197.7 & \possibleTextDollar207.9 & 5.2\%\tabularnewline[1.245ex]
 Mitchell Freeway extension & WA & \possibleTextDollar297.9 & \possibleTextDollar322.6 & 8.3\%\tabularnewline
-North West Coastal Highway & WA & \possibleTextDollar148\dz & \possibleTextDollar179\dz & 20.9\%\tabularnewline
 Great Northern Highway & WA & \possibleTextDollar301.5 & \possibleTextDollar361\dz & 19.7\%\tabularnewline
+North West Coastal Highway & WA & \possibleTextDollar148\dz & \possibleTextDollar179\dz & 20.9\%\tabularnewline[1.245ex]
+Canberra Light Rail & ACT & \possibleTextDollar759\dz & \possibleTextDollar806\dz & 6.5\%\tabularnewline
 \midrule 
 \textbf{Observed average over past 15 years} & & & & \textbf{21.0\%}\tabularnewline
 \bottomrule
