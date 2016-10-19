@@ -419,6 +419,22 @@ Our infrastructure systems should promise what is worth having, and then deliver
 
 \end{Recommendations}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \chapter{The extent of cost overruns\label{chap:extent-of-cost-overruns}}
 The Peel Deviation is a stretch of the Forrest Highway running between Perth and Bunbury.
 It was first promised during the 2001 state election campaign at a cost of \$136~million.
@@ -613,6 +629,22 @@ But even reducing the final cost by 20 per cent (to account for the extended roa
 
 
 \end{bigbox*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \chapter{Premature announcements cause larger and more persistent cost overruns}\label{premature-announcements-cause-larger-and-more-persistent-cost-overruns}
@@ -873,6 +905,22 @@ Reports should detail any scope changes and their justification, agreed and actu
 \end{enumerate}
 \end{recommendation}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \chapter{The costs of cost overruns}\label{the-costs-of-cost-overruns}
 
 Reducing premature announcements would go a long way towards reducing cost overruns.
@@ -1014,6 +1062,22 @@ On completion in 2012, the project came in 10 per cent lower than the contracted
 \endhead
 \bottomrule
 \end{longtable}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \chapter{How to improve cost estimation}\label{how-to-improve-cost-estimation}
 
@@ -1269,6 +1333,22 @@ The Commonwealth should seek cooperation from the states to create new benchmark
 It should use data collected through mechanisms described in Recommendation 3.
 
 \appendix
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \chapter{Methodological appendix}
 \section{Expected difference between P50 and P90 costs\label{appendix:Expected-difference-between-P50-and-P90}}
 
