@@ -873,6 +873,148 @@ Reports should detail any scope changes and their justification, agreed and actu
 \end{enumerate}
 \end{recommendation}
 
+\chapter{The costs of cost overruns}\label{the-costs-of-cost-overruns}
+
+Reducing premature announcements would go a long way towards reducing cost overruns.
+But the risk of cost overruns is an inherent feature of all infrastructure projects, not just those that are announced prematurely.
+This chapter discusses the rationale for intervening in projects that may be on a path towards substantial cost overruns.
+
+Close to two thirds of cost overruns occur before construction begins.
+When overruns occur during these early stages, there is an opportunity for projects' merits to be actively reappraised, in order to determine whether projects still appear to be good investments (Figure xx).
+
+\emph{\textbf{Figure 3.1: A third of cost overruns occur prior to budget commitments\\
+}Cost overruns by project stage, per cent}
+
+\includegraphics{media/image11.emf}
+
+The following two sections identify why it is important that projects' investment merits are reappraised after early cost overruns, and whether Australia's project appraisal processes could be doing a better job at this.
+
+\section{Failure to reappraise projects after early cost overruns are expensive}\label{failure-to-reappraise-projects-after-early-cost-overruns-are-expensive}
+
+Over the last 15 years, the costs of transport infrastructure projects over and above what was promised have cost taxpayers \$25 billion.
+There is insufficient data to determine how often these overruns were a consequence of announced costs that were unfeasibly low, and how often construction costs were excessively high.
+However, all of this \$25 billion is problematic because it has caused substantial distortions to investment planning processes.
+These distortions take three forms.
+
+First, cost overruns distort decisions regarding how much to invest in transport infrastructure relative to other spending priorities, such as hospitals, schools and pensions.
+Transport infrastructure projects have been systematically represented as if they were more attractive and better value for money than they really are.
+At the portfolio level, this misrepresentation has amounted to a 21 per cent reduction in the transport infrastructure portfolio's anticipated return on investment.
+
+Second, cost overruns distort decisions regarding which transport infrastructure projects to invest in.
+At the project level, cost overruns have reduced projects' returns on investment by as much as XXX per cent.
+When returns on investments are distorted to this degree, it is impossible for decision-makers to choose the projects with the highest net benefits to the community.
+
+In fact, as inaccurate cost estimates inflate benefit cost ratios, projects with inaccurate cost estimates are systematically advantaged in the project selection process.
+This phenomenon is known as the ``winner's curse'', meaning that the projects that are funded are more likely to be afflicted with the ``curse'' of poor quality cost estimates than those that are not.%
+\footnote{Eliasson, J. and Fosgerau, M. (2013) \emph{Cost overruns and demand shortfalls -- deception or selection?,}Transportation Research Part B 57, pp 105-113.}
+
+Third, cost overruns distort decisions regarding the types of transport infrastructure to invest in.
+The most obvious case of this phenomenon is multi-billion dollar projects.
+As these projects are particularly prone to cost overruns, the benefit cost ratios for these projects are systematically more optimistic than those of smaller projects.
+Together with politicians' penchant for iconic and legacy projects, this distortion biases politicians towards funding large projects like the Dinmore to Goodna bypass (see Box XX), at the expense of smaller projects with more certain returns.
+
+The reduction to the transport infrastructure portfolio's return on investment caused by these distortions to investment decisions is sizable.
+If even half this reduction was avoided by switching to alternative investments when project costs skyrocket prior to construction, the benefits to taxpayers would be at least \$XXX billion.
+
+Calc:
+
+\begin{itemize}
+\item
+  Reductions to BCRs as a \% of BCR
+\item
+  Value of benefits associated with half this reduction on a portfolio of \$120 billion, given the average BCR.
+\item
+  My guess: \textasciitilde{}20\% / 2 * 300\% * 120 = \$36 billion.
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \item ~
+    \section{Australia could do better at reappraising projects after cost overruns}\label{australia-could-do-better-at-reappraising-projects-after-cost-overruns}
+  \end{enumerate}
+\end{itemize}
+
+Cost overruns that occur early in a project's life should prompt a reassessment of the project's costs relative to its benefits.
+The magnitude of some cost overruns suggests that not all projects will still be worth building.
+
+Fortunately, there is ample opportunity for Australian jurisdictions to identify these projects, as 63 per cent of cost overruns occur before construction begins, and 38 per cent before a formal budget commitment.
+However, such active reappraisals do not appear to be happening enough.
+
+Over the last 15 years, about 80 per cent of all announced projects have been completed.
+Even those announced before a formal government funding commitment are usually completed (Figure xx).
+
+\textbf{Figure 3.2: Few projects are cancelled once announced\\
+}Percentage of projects cancelled at each project stage
+
+\includegraphics{media/image12.png}
+
+\emph{Notes:} \emph{Australian transport projects completed between 2000 and 2015\\
+Sources: Deloitte Investment Monitor; Grattan analysis}
+
+The cancellation rate of xx seems lower than it should be.
+One indication that it is too low is that this cancellation rate is less than the proportion of projects that would be expected to have benefit cost ratios less than one, given the average magnitude of cost overruns (see appendix X.X for details).
+
+A second indication that the cancellation rate is too low is that many projects with low net benefits are not being cancelled.
+Over the last 15 years, projects that incurred cost overruns were just as likely to be cancelled as those that did not.
+This either means that the project appraisal process is not being used to cancel the projects with investment merits that have been eroded by cost overruns, or that cancelled projects are cancelled because of cost overruns but these overruns are not announced -- in other words, that cost overruns are higher than reported.%
+\footnote{This argument is explained in more detail in Appendix xx.} Both of these interpretations suggest that not enough projects are cancelled.
+
+Projects should be cancelled when their estimated benefits are found to be lower than their estimated costs.
+Given that benefits are probably overstated much of the time,\footnote{Elaurant} just as costs are understated, it is entirely fitting that projects be cancelled if their estimated benefits are only slightly more than their estimated costs (see Box xx).
+
+The early timing of Australia's cost overruns offers a substantial and unrealised opportunity to reduce cost overruns on transport infrastructure projects.
+If more projects were to be cancelled when cost overruns eroded the projects' investment merits, the indirect costs associated with distortions to investment planning processes could be materially reduced.
+
+A corollary of this conclusion is that, until the project appraisal process can be demonstrated to reliably cancel projects when it becomes apparent that they are poor investments, premature cost announcements remain a reckless practice.
+This is because, even though cost estimates announced prior to a budget commitment have been demonstrated to be of poor quality, in the absence of a robust mechanism for cancelling projects, such cost announcements constitute de facto commitments to build.
+
+Box xx: Case study -- overstated benefits
+
+Several successful lawsuits show the most extreme cases of inaccurate forecasting of project benefits.
+
+Brisbane's CLEM 7 tunnel was forecast to carry over 100,000 vehicles per day within 2 years of opening, but the reality was only around 22,000.\textsuperscript{1} A successful class action was brought against the forecaster, AECOM.\textsuperscript{2} The tunnel's owner, RiverCity Motorway, went into administration in 2011, as the traffic had not generated enough revenue for the company to pay its debts.\textsuperscript{3}
+
+The traffic forecasts for Sydney's Lane Cove tunnel were in contention in a lawsuit brought against the companies, Parsons Brinckerhoff and Booz Allen, settled in 2014.
+The case concerned allegations that the forecasters ``reverse engineered'' the predictions, working backwards from commercial objectives in estimating traffic volumes.\textsuperscript{4}
+
+The Brisbane Airport Link is another example of a road for which traffic volumes were far below expectations.
+This also resulted in litigation being launched, by toll road owners Brisconnections against forecaster Arup.\textsuperscript{5} This action was settled in 2015.\textsuperscript{6}
+
+1. \url{https://www.mauriceblackburn.com.au/media/2403/14-03-31-second-further-amended-statement-of-claim-with-schedules-a-and-b-clean-sealed.pdf}, p.9-11
+
+2. https://www.mauriceblackburn.com.au/norewrite/current-class-actions/rivercity-class-action/
+
+3. \url{http://www.brisbanetimes.com.au/business/rivercity-ipo-investors-secure-121m-in-successful-clem7-class-action-20160601-gp8qu4.html}
+
+4. \url{http://www.afr.com/news/politics/national/traffic-forecasters-settle-with-ampover-lane-cove-20140923-jftpp}
+
+5. \url{http://www.afr.com/business/brisconnections-receivers-sue-arup-over-brisbane-airport-link-20140528-iv1qo}
+
+6. http://www.imf.com.au/cases/detail/brisconnections
+
+\begin{longtable}[c]{@{}ll@{}}
+\toprule
+\textbf{Box xx: Case study -- Ipswich Motorway Dinmore to Goodna upgrade -- 196 per cent overrun }
+
+``Under budget'', and no return of contingency
+
+An upgrade of the Ipswich Motorway between Dinmore and Goodna in Southern Queensland was announced in 2003, at a cost of \$594 million, based on a cost-benefit analysis.\textsuperscript{1}
+
+In the 2007 federal election campaign, Labor promised to provide the upgrade for \$1.1 billion.\textsuperscript{2} Although this figure was far higher than the initial cost proposed, it turned out to be far lower than the 2008 contracted cost of \$1.95 billion.\textsuperscript{3}
+
+On completion in 2012, the project came in 10 per cent lower than the contracted cost.\textsuperscript{4} Rather than being returned to the Commonwealth, the contingency was diverted to other Queensland roads, including the Bruce Highway.\textsuperscript{5} & 1. \href{https://web.archive.org/web/20160902045709/http:/parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;db=CHAMBER;id=chamber/hansardr/2006-02-14/0163;query=Id:\%22chamber/hansardr/2006-02-14/0000\%22}{https}\href{https://web.archive.org/web/20160902045709/http:/parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;db=CHAMBER;id=chamber/hansardr/2006-02-14/0163;query=Id:\%22chamber/hansardr/2006-02-14/0000\%22}{://web.archive.org/web/20160902045709/http://}\href{https://web.archive.org/web/20160902045709/http:/parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;db=CHAMBER;id=chamber/hansardr/2006-02-14/0163;query=Id:\%22chamber/hansardr/2006-02-14/0000\%22}{parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;db=CHAMBER;id=chamber\%2Fhansardr\%2F2006-02-14\%2F0163;query=Id\%3A\%22chamber\%2Fhansardr\%2F2006-02-14\%2F0000\%22}
+
+2. \href{http://www.roadsaustralia.com.au/news/show-arf-insider/22}{http://}\href{http://www.roadsaustralia.com.au/news/show-arf-insider/22}{www.roadsaustralia.com.au/news/show-arf-insider/22},
+
+3. \url{http://www.exactal.com/en/our-clients/case-studies/origin-alliance}
+
+4. \url{http://www.excellenceawards.org.au/ipswich-motorway-upgrade-dinmore-to-goodna-d2g-project}
+
+5. http://www.brisbanetimes.com.au/queensland/five-stages-down-one-to-go-28b-road-upgrade-completion-in-sight-20120515-1yo56.html\tabularnewline
+\midrule
+\endhead
+\bottomrule
+\end{longtable}
+
 \chapter{How to improve cost estimation}\label{how-to-improve-cost-estimation}
 
 The previous chapter highlighted the costs to the community of cost overruns on transport infrastructure projects.
