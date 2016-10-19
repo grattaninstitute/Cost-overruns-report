@@ -1139,13 +1139,9 @@ While the final benefit cost ratio has not been published, these comments from p
 
 \end{bigbox*}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item ~
-  \section{}\label{section-1}
-\item ~
-  \section{Premature cost claims cannot be disputed}\label{premature-cost-claims-cannot-be-disputed}
-\end{enumerate}
+
+\section{Premature cost claims cannot be disputed}\label{premature-cost-claims-cannot-be-disputed}
+
 
 There is currently no effective curb on premature announcements.
 Politicians either promise projects that have not been evaluated, or they promise projects with an evaluation that is not available to the public.
