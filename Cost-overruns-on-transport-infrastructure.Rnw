@@ -23,7 +23,7 @@ portability()
 
 <<knitrOpts, echo=FALSE>>=
 library(knitr)
-opts_chunk$set(error = FALSE, echo = FALSE, message = FALSE, fig.width=11, fig.height=7, out.width="\\columnwidth", out.height=paste0("0.6363\\columnwidth"))
+opts_chunk$set(error = FALSE, echo = FALSE, cache=FALSE, message = FALSE, fig.width=11, fig.height=7, out.width="\\columnwidth", out.height=paste0("0.6363\\columnwidth"))
 @
 
 <<loadPackages, cache=FALSE>>=
