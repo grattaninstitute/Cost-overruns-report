@@ -1074,7 +1074,7 @@ While cost estimation on any given project is uncertain, on average cost estimat
 
 But there is a substantial gap between estimated and actual costs on transport infrastructure projects over the past 15 years.
 In that period, cost estimators expected between 10 and 25 per cent of projects to exceed their budget.
-In fact, 34 per cent did so (Figure 5.1).
+In fact, 34 per cent did so (Figure \Vref{fig:5-1}).
 Moreover, these overruns were not offset by underruns.%
 \footnote{Give examples of guidelines which explicitly assume symmetry, and those that state the distribution should be asymmetric but do not recommend any use of this information.}
 
