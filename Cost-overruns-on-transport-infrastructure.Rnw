@@ -930,10 +930,11 @@ This chapter discusses the rationale for intervening in projects that may be on 
 Close to two thirds of cost overruns occur before construction begins.
 When overruns occur during these early stages, there is an opportunity for projects' merits to be actively reappraised, in order to determine whether projects still appear to be good investments (Figure xx).
 
-\emph{\textbf{Figure 3.1: A third of cost overruns occur prior to budget commitments\\
-}Cost overruns by project stage, per cent}
+\begin{figure}
+\captionwithunits{A third of cost overruns occur prior to budget commitments\label{fig:cost-overruns-by-project-stage}}%
+{Cost overruns by project stage, per cent}
 
-\includegraphics{media/image11.emf}
+\end{figure}
 
 The following two sections identify why it is important that projects' investment merits are reappraised after early cost overruns, and whether Australia's project appraisal processes could be doing a better job at this.
 
