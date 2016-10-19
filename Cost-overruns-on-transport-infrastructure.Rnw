@@ -1298,8 +1298,31 @@ bias_inherent_in_the_system <-
   {75 - max(ptile[r <= 1])}
 @
 
+<<percentile_at_mean_overrun>>=
+percentile_at_mean_overrun <- 
+  first_Cost_estimate_real_by_GR_Status_ordered %>%
+  filter(Status_ordered >= "Committed") %>%
+  group_by(Grattan_record) %>%
+  summarise(first_Cost_estimate_real_when_committed = first(first_Cost_estimate_real[Status_ordered >= "Committed"])) %>%
+  setkey(Grattan_record) %>%
+  merge(last_Cost_estimate_real_by_GR) %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  merge(public_private_by_Grattan_record) %>%
+  merge(final_status_by_GR) %>%
+  filter(complete.cases(.)) %>%
+  filter(isTransport, 
+         !outlier, 
+         last_Cost_estimate_real >= 20e6, 
+         first_Cost_estimate_real_when_committed > 0, 
+         Lucille_Ownership == "Public", 
+         Final_status == "Completed") %>%
+  mutate(r = last_Cost_estimate_real / first_Cost_estimate_real_when_committed) %$%
+  mean(r <= mean(r))
+@
+
 <<appendix-table, results='asis'>>=
-data.table(P = c(50, 75, 82, 90, 99) / 100) %>%
+data.table(P = c(50, 75, round(100 * percentile_at_mean_overrun), 90, 99) / 100) %>%
   mutate(`Proportion of projects less than` = grattan_percent((P - bias_inherent_in_the_system / 100))) %>%
   mutate(`Estimated probability price` = sprintf("P%s", 100 * P)) %>%
   select(`Estimated probability price`, `Proportion of projects less than`) %>%
