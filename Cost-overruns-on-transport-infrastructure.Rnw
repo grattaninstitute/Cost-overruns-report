@@ -1228,10 +1228,9 @@ Transport infrastructure investment by Australian governments is a similarly lar
 In the absence of such reporting for infrastructure projects, the public is not equipped to understand whether any particular infrastructure turned out to offer value for money in the terms in which it was originally promised.
 Ministers overseeing projects with significant cost overruns over time commonly end up claiming that the project came in under budget.
 Both Governments and oppositions feel free to make claims that the media and public cannot verify.
-Box xx provides background on some extreme examples of overstated benefits that have come to light through legal action.
+\Vref{box:unreliable-forecasts} provides background on some extreme examples of overstated benefits that have come to light through legal action.
 
-Box xx: Unreliable traffic forecasts
-
+\begin{smallbox}{Unreliable traffic forecasts}{box:unreliable-forecasts}
 Several successful lawsuits reveal the most extreme cases of inaccurate forecasting.
 
 Brisbane's CLEM 7 tunnel was forecast to carry more than 100,000 vehicles per day within two years of opening, but in fact only about 22,000 went through.\textsuperscript{1} A successful class action was brought against the forecaster, AECOM.\textsuperscript{2} The tunnel's owner, RiverCity Motorway, went into administration in 2011, after the traffic failed to generate enough revenue for the company to pay its debts.\textsuperscript{3}
@@ -1253,6 +1252,7 @@ Similarly, when traffic volumes were far below expectations on the Brisbane Airp
 5. \url{http://www.afr.com/business/brisconnections-receivers-sue-arup-over-brisbane-airport-link-20140528-iv1qo}
 
 6. http://www.imf.com.au/cases/detail/brisconnections
+\end{smallbox}
 
 The current opacity of investment planning processes means that the public cannot readily judge the success of projects.
 This means that there is little political cost associated with announcing project costs prematurely, even when this creates a significant risk of promising projects with poor payoffs.
