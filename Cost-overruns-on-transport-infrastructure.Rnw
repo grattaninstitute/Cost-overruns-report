@@ -921,6 +921,7 @@ Reports should detail any scope changes and their justification, agreed and actu
 
 
 
+
 \chapter{The costs of cost overruns}\label{the-costs-of-cost-overruns}
 
 Reducing premature announcements would go a long way towards reducing cost overruns.
