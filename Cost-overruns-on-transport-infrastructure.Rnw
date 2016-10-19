@@ -27,6 +27,7 @@ opts_chunk$set(error = FALSE, echo = FALSE, cache=FALSE, message = FALSE, fig.wi
 @
 
 <<loadPackages, cache=FALSE>>=
+library(xtable)
 library(testthat)
 library(dplyr)
 library(data.table)
@@ -235,6 +236,28 @@ isTransport_by_GR <-
   unique
 @
 
+<<inflation_origin_by_GR>>=
+inflation_origin_by_GR <- 
+  project_dataset %>%
+  # Is the status under construction in this quarter?
+  mutate(.co = grepl("under.*construction", Status, ignore.case = TRUE)) %>%
+  group_by(Grattan_record) %>%
+  # For each grattan record, 
+  #  1.  Is the project ever under construction?  If so, take
+  #      the value nearest the mean of those dates which were
+  #      under construction.
+  #  2.  If the project is never under construction, take the
+  #      the val_nrst_mean of all dates.
+  summarise(inflation_origin = 
+              if (any(.co)) { 
+                val_nrst_mean(Record_date[.co]) 
+              } else { 
+                val_nrst_mean(Record_date)
+              }) %>%
+  select(Grattan_record, inflation_origin) %>%
+  setkey(Grattan_record)
+@
+
 <<Cost_estimate_by_GR_Record_date>>=
 Cost_estimate_by_GR_Record_date <- 
   project_dataset %>%
@@ -267,37 +290,7 @@ Cost_estimate_by_GR_Record_date <-
     # Warning("Assuming cost columns not marked ($m) are nonetheless in millions") - yes, that's a fine assumption. 
     mutate(., Cost_estimate = Cost_estimate * 10^6) 
   } %>%
-  {
-    dot <- .
-    
-    # What date should we choose to inflate
-    # cost estimates by? A: construction phase, 
-    # as defined below.
-    inflation_origin_by_GR <- 
-      dot %>%
-      # Is the status under construction in this quarter?
-      mutate(.co = grepl("under.*construction", Status, ignore.case = TRUE)) %>%
-      group_by(Grattan_record) %>%
-      # For each grattan record, 
-      #  1.  Is the project ever under construction?  If so, take
-      #      the value nearest the mean of those dates which were
-      #      under construction.
-      #  2.  If the project is never under construction, take the
-      #      the val_nrst_mean of all dates.
-      summarise(
-        inflation_origin = 
-          if (any(.co)) { 
-            val_nrst_mean(Record_date[.co]) 
-          } else { 
-            val_nrst_mean(Record_date)
-          }
-      ) %>%
-      select(Grattan_record, inflation_origin) %>%
-      setkey(Grattan_record)
-    
-    # Return to the top-level pipe:
-    merge(dot, inflation_origin_by_GR)
-  } %>%
+  merge(inflation_origin_by_GR) %>%
   mutate(Cost_estimate_real = construction_inflator(Cost_estimate, from = inflation_origin, to = as.Date("2015-12-01"))) %>% 
   select(Grattan_record, Record_date, Cost_estimate, Cost_estimate_real) %>%
   setkey(Grattan_record, Record_date)
@@ -317,7 +310,7 @@ Status_ordered_by_GR_Record_date <-
                                             "Committed", 
                                             "Under construction"), 
                                  ordered = TRUE)) %>%
-  select(Grattan_record, Record_date, Status) %>%
+  select(Grattan_record, Record_date, Status_ordered) %>%
   setkey(Grattan_record, Record_date) %>%
   unique
 @
@@ -338,6 +331,23 @@ last_Cost_estimate_real_by_GR <-
   setkey(Grattan_record)
 @
 
+<<Status_by_GR_Record_date>>=
+Status_by_GR_Record_date <- 
+  project_dataset %>%
+  select(Grattan_record, Record_date, Status) %>%
+  setkey(Grattan_record, Record_date)
+@
+
+<<first_Cost_estimate_real_by_GR_Status_ordered>>=
+first_Cost_estimate_real_by_GR_Status_ordered <- 
+  Status_ordered_by_GR_Record_date %>%
+  merge(Cost_estimate_by_GR_Record_date) %>%
+  group_by(Grattan_record, Status_ordered) %>%
+  summarise(first_Cost_estimate_real = first(Cost_estimate_real, order_by = Record_date)) %>%
+  ungroup %>%
+  setkey(Grattan_record, Status_ordered)
+@
+
 <<outlier_by_GR>>=
 outlier_by_GR <- 
   first_Cost_estimate_real_by_GR %>%
@@ -355,29 +365,6 @@ outlier_by_GR <-
   setkey(Grattan_record)
 @
 
-<<inflation_origin_by_GR>>=
-inflation_origin_by_GR <- 
-  project_dataset %>%
-  # Is the status under construction in this quarter?
-  mutate(.co = grepl("under.*construction", Status, ignore.case = TRUE)) %>%
-  group_by(Grattan_record) %>%
-  # For each grattan record, 
-  #  1.  Is the project ever under construction?  If so, take
-  #      the value nearest the mean of those dates which were
-  #      under construction.
-  #  2.  If the project is never under construction, take the
-  #      the val_nrst_mean of all dates.
-  summarise(
-    inflation_origin = 
-      if (any(.co)) { 
-        val_nrst_mean(Record_date[.co]) 
-      } else { 
-        val_nrst_mean(Record_date)
-      }
-  ) %>%
-  select(Grattan_record, inflation_origin) %>%
-  setkey(Grattan_record)
-@
 
 <<transport_projects_with_outliers>>=
 transport_projects_with_outliers <- 
@@ -1275,6 +1262,102 @@ Reports should detail any scope changes and their justification, agreed and actu
 \item The Council of Australian Governments should add a new category of infrastructure services to the terms of reference for the annual Report on Government Services, produced by the Productivity Commission.
 \end{enumerate}
 \end{recommendation}
+
+\appendix
+\chapter{Methodological appendix}
+\section{Expected difference between P50 and P90 costs\label{appendix:Expected-difference-between-P50-and-P90}}
+
+<<knitrOptsAppendix, eval=TRUE>>=
+warning("Remove finally")
+opts_chunk$set(eval = TRUE)
+@
+
+\begin{table}
+\caption{Bias}
+<<bias_inherent_in_the_system>>=
+bias_inherent_in_the_system <- 
+  first_Cost_estimate_real_by_GR_Status_ordered %>%
+  filter(Status_ordered >= "Committed") %>%
+  group_by(Grattan_record) %>%
+  summarise(first_Cost_estimate_real_when_committed = first(first_Cost_estimate_real[Status_ordered >= "Committed"])) %>%
+  setkey(Grattan_record) %>%
+  merge(last_Cost_estimate_real_by_GR) %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  merge(public_private_by_Grattan_record) %>%
+  merge(final_status_by_GR) %>%
+  filter(complete.cases(.)) %>%
+  filter(isTransport, 
+         !outlier, 
+         last_Cost_estimate_real >= 20e6, 
+         Lucille_Ownership == "Public", 
+         Final_status == "Completed") %>%
+  mutate(r = last_Cost_estimate_real / first_Cost_estimate_real_when_committed) %>%
+  mutate(ptile = ntile(r, 100)) %$%
+  # Assuming P75 should be r == 1
+  {75 - max(ptile[r <= 1])}
+@
+
+<<percentile_at_mean_overrun>>=
+percentile_at_mean_overrun <- 
+  first_Cost_estimate_real_by_GR_Status_ordered %>%
+  filter(Status_ordered >= "Committed") %>%
+  group_by(Grattan_record) %>%
+  summarise(first_Cost_estimate_real_when_committed = first(first_Cost_estimate_real[Status_ordered >= "Committed"])) %>%
+  setkey(Grattan_record) %>%
+  merge(last_Cost_estimate_real_by_GR) %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  merge(public_private_by_Grattan_record) %>%
+  merge(final_status_by_GR) %>%
+  filter(complete.cases(.)) %>%
+  filter(isTransport, 
+         !outlier, 
+         last_Cost_estimate_real >= 20e6, 
+         first_Cost_estimate_real_when_committed > 0, 
+         Lucille_Ownership == "Public", 
+         Final_status == "Completed") %>%
+  mutate(r = last_Cost_estimate_real / first_Cost_estimate_real_when_committed) %$%
+  mean(r <= mean(r))
+@
+
+<<appendix-table, results='asis'>>=
+data.table(P = c(50, 75, round(100 * percentile_at_mean_overrun), 90, 99) / 100) %>%
+  mutate(`Proportion of projects less than` = grattan_percent((P - bias_inherent_in_the_system / 100))) %>%
+  mutate(`Estimated probability price` = sprintf("P%s", 100 * P)) %>%
+  select(`Estimated probability price`, `Proportion of projects less than`) %>%
+  xtable(align = "llr") %>%
+  print.xtable(floating = FALSE, booktabs = TRUE,
+               tabular.environment = "tabularx", 
+               width = "\\columnwidth", 
+               include.rownames = FALSE, 
+               sanitize.text.function = function(x){x}, 
+               sanitize.colnames.function = function(x){paste0("\\textbf{", x, "}")})
+@
+
+<<p90_vs_p50, eval=FALSE>>=
+first_Cost_estimate_real_by_GR_Status_ordered %>%
+  filter(Status_ordered >= "Committed") %>%
+  group_by(Grattan_record) %>%
+  summarise(first_Cost_estimate_real_when_committed = first(first_Cost_estimate_real[Status_ordered >= "Committed"])) %>%
+  setkey(Grattan_record) %>%
+  merge(last_Cost_estimate_real_by_GR) %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  merge(public_private_by_Grattan_record) %>%
+  merge(final_status_by_GR) %>%
+  filter(complete.cases(.)) %>%
+  filter(isTransport, 
+         !outlier, 
+         last_Cost_estimate_real >= 20e6, 
+         Lucille_Ownership == "Public", 
+         Final_status == "Completed") %>%
+  mutate(r = last_Cost_estimate_real / first_Cost_estimate_real_when_committed) %>%
+  mutate(inferred_ptile = ntile(r, 100) + bias_inherent_in_the_system) %>%
+  mutate(`% projects with cost overruns exceeding` = inferred_ptile) 
+@
+\source{Grattan analysis}
+\end{table}
 
 \end{document}
 
