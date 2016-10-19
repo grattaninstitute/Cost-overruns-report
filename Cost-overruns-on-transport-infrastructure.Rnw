@@ -235,6 +235,28 @@ isTransport_by_GR <-
   unique
 @
 
+<<inflation_origin_by_GR>>=
+inflation_origin_by_GR <- 
+  project_dataset %>%
+  # Is the status under construction in this quarter?
+  mutate(.co = grepl("under.*construction", Status, ignore.case = TRUE)) %>%
+  group_by(Grattan_record) %>%
+  # For each grattan record, 
+  #  1.  Is the project ever under construction?  If so, take
+  #      the value nearest the mean of those dates which were
+  #      under construction.
+  #  2.  If the project is never under construction, take the
+  #      the val_nrst_mean of all dates.
+  summarise(inflation_origin = 
+              if (any(.co)) { 
+                val_nrst_mean(Record_date[.co]) 
+              } else { 
+                val_nrst_mean(Record_date)
+              }) %>%
+  select(Grattan_record, inflation_origin) %>%
+  setkey(Grattan_record)
+@
+
 <<Cost_estimate_by_GR_Record_date>>=
 Cost_estimate_by_GR_Record_date <- 
   project_dataset %>%
@@ -338,6 +360,21 @@ last_Cost_estimate_real_by_GR <-
   setkey(Grattan_record)
 @
 
+<<Status_by_GR_Record_date>>=
+Status_by_GR_Record_date <- 
+  project_dataset %>%
+  select(Grattan_record, Record_date, Status) %>%
+  setkey(Grattan_record, Record_date)
+@
+
+<<first_Cost_estimate_real_by_GR_Status>>=
+first_Cost_estimate_real_by_GR_Status <- 
+  Status_by_GR_Record_date %>%
+  merge(Cost_estimate_by_GR_Record_date) %>%
+  group_by(Grattan_record, Status) %>%
+  summarise(first_Cost_estimate_real = first(Cost_estimate_real, order_by = Record_date))
+@
+
 <<outlier_by_GR>>=
 outlier_by_GR <- 
   first_Cost_estimate_real_by_GR %>%
@@ -352,30 +389,6 @@ outlier_by_GR <-
                             # on the same day, which looks suspicious too.
   ) | is.na(first_Cost_estimate_real) | is.na(last_Cost_estimate_real)) %>%
   select(Grattan_record, outlier) %>%
-  setkey(Grattan_record)
-@
-
-<<inflation_origin_by_GR>>=
-inflation_origin_by_GR <- 
-  project_dataset %>%
-  # Is the status under construction in this quarter?
-  mutate(.co = grepl("under.*construction", Status, ignore.case = TRUE)) %>%
-  group_by(Grattan_record) %>%
-  # For each grattan record, 
-  #  1.  Is the project ever under construction?  If so, take
-  #      the value nearest the mean of those dates which were
-  #      under construction.
-  #  2.  If the project is never under construction, take the
-  #      the val_nrst_mean of all dates.
-  summarise(
-    inflation_origin = 
-      if (any(.co)) { 
-        val_nrst_mean(Record_date[.co]) 
-      } else { 
-        val_nrst_mean(Record_date)
-      }
-  ) %>%
-  select(Grattan_record, inflation_origin) %>%
   setkey(Grattan_record)
 @
 
