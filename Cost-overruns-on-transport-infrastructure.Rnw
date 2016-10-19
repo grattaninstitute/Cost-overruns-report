@@ -1133,11 +1133,11 @@ Some states have recently done this by instituting special cost estimation guida
 However, in most jurisdictions, cost estimates are arrived at under the assumption that large projects face the same risk of cost overruns as small projects.
 
 High-risk projects should be more closely scrutinised, and parties promoting them should seek to negotiate bipartisan support.
-Before they proceed, public infrastructure projects that are anticipated to cost \$1 billion or more should need the support of the parliament, not just the party in or seeking office (see Recommendation 4).
+Before they proceed, public infrastructure projects that are anticipated to cost \$1 billion or more should need the support of the parliament, not just the party in or seeking office (see \Vref{reco:special-legis-for-big-projects}).
 
-Recommendation 4 -- Special legislation for big projects
-
+\begin{recommendation}{Special legislation for big projects\label{reco:special-legis-for-big-projects}}
 When a transport infrastructure project has an estimated cost to that jurisdiction of \$1 billion or more, any Commonwealth, state or territory government should be required to introduce standalone legislation before it commits funds to that project.
+\end{recommendation}
 
 \subsection{Road and rail projects overrun at different stages}\label{road-and-rail-projects-overrun-at-different-stages}
 
