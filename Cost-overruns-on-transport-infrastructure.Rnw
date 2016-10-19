@@ -1118,7 +1118,7 @@ Excludes projects for which construction has already commenced.}
 \end{figure}
 
 
-This pattern of promising poor quality or under-developed project ideas in election campaigns is troubling because politicians find it very hard to back down from promises, even when it becomes apparent that the original assumptions about the project were not well founded (see Box xx on the Hunter Expressway).
+This pattern of promising poor quality or under-developed project ideas in election campaigns is troubling because politicians find it very hard to back down from promises, even when it becomes apparent that the original assumptions about the project were not well founded (see \Vref{box:hunter} on the Hunter Expressway).
 
 \begin{bigbox*}{Case study -- Hunter Expressway -- more than 350 per cent over budget}{box:hunter}
 
@@ -1150,7 +1150,7 @@ Politicians either promise projects that have not been evaluated, or they promis
 Both of these shortcomings should be fixed.
 
 Both Commonwealth and state governments commonly commit to infrastructure projects without an evaluation.
-If there is no evaluation, then politicians' claims about a project's costs and benefits -- or even when it will open - cannot be scrutinised until much later if at all (see Box xx on Bulahdelah bypass).
+If there is no evaluation, then politicians' claims about a project's costs and benefits -- or even when it will open - cannot be scrutinised until much later if at all (see \Vref{box:bulahdelah} on Bulahdelah bypass).
 
 \begin{verysmallbox}{Case study -- Bulahdelah Bypass -- 111 per cent cost overrun}{box:bulahdelah}
 \subsubsection*{Road opened before it was finished}
