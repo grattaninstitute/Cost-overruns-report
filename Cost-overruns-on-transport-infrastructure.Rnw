@@ -10,7 +10,7 @@
 
 \GrattanReportNumber{XX}
 
-\acknowledgements{..}
+\acknowledgements{...}
 
 
 
@@ -484,7 +484,7 @@ The drawback with small samples is that their findings may be less representativ
 \end{figure}
 
 The findings of these small studies present a mixed view.
-Two key studies in 2007 and 2008 of infrastructure projects valued at more than \$20~million found overruns ranging from 12 to 35 per cent from formal funding commitment to completion\footnote{; Allen Consulting Group, Duffield, C. and Raisbeck, P. (2007) \emph{Performance of PPPs and traditional procurement in Australia}, Infrastructure Partnerships Australia, p5.}and 24 to 52 per cent\footnote{Duffield, C., Raisbeck, P. and Xu, M. (2008) \emph{Report on the performance of PPP projects in Australia when compared with a representative sample of traditionally procured infrastructure projects}, p15.
+Two key studies in 2007 and 2008 of infrastructure projects valued at more than \$20~million found overruns ranging from 12 to 35 per cent from formal funding commitment to completion\footcite{Group2007PerformancePPPsTraditional} and 24 to 52 per cent\footnote{Duffield, C., Raisbeck, P. and Xu, M. (2008) \emph{Report on the performance of PPP projects in Australia when compared with a representative sample of traditionally procured infrastructure projects}, p15.
 Costs over the full project life mean originally announced to actual final costs.} over the full project life.
 Another study of 58 projects found an average 12 per cent overrun.%
 \footnote{Love (2012).} A further study of 46 projects found overruns of 5 to 11 per cent of project costs.%
@@ -1504,6 +1504,7 @@ With actual Australian data on past projects, we would no longer need to be surp
 Instead, our infrastructure systems could promise what is worth having, and then deliver what is promised.
 
 
+\printbibliography
 
 \appendix
 
