@@ -392,6 +392,36 @@ n_valid_transport_projects_geq_20M <-
   uniqueN(Grattan_record)
 @
 
+<<prop_projects_announced_early>>=
+prop_projects_announced_early <- 
+  final_status_by_GR %>%
+  merge(first_status_by_GR) %>%
+  merge(last_Cost_estimate_real_by_GR) %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  filter(last_Cost_estimate_real >= 20e6, 
+         isTransport, 
+         !outlier, 
+         !is.na(Final_status)) %$%
+  mean(first_pipeline_status < "Committed")
+@
+
+<<prop_value_overruns_due_to_early_projects>>=
+prop_value_overruns_due_to_early_projects <- 
+  final_status_by_GR %>%
+  merge(first_status_by_GR) %>%
+  merge(first_Cost_estimate_real_by_GR) %>%
+  merge(last_Cost_estimate_real_by_GR) %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  filter(last_Cost_estimate_real >= 20e6, 
+         isTransport, 
+         !outlier, 
+         !is.na(Final_status)) %>%
+  mutate(cost_overrun_value = last_Cost_estimate_real - first_Cost_estimate_real) %$%
+  weighted.mean(first_pipeline_status < "Committed", cost_overrun_value)
+@
+
 <<prop_projects_before_committed_which_are_completed>>=
 prop_projects_before_committed_which_are_completed <- 
   final_status_by_GR %>%
@@ -424,7 +454,7 @@ Eighty eight per cent of Australia's cost overrun problem is explained by the 17
 
 Much of the problem is entirely preventable.
 Premature announcements -- when a politician promises to build a road or rail line at a certain cost, often in the lead-up to an election -- are the biggest culprits.
-Although only 31 per cent of projects are announced early, early announcements account for 82 per cent of the value of cost overruns over the past 15~years.
+Although only \Sexpr{grattan_percent(prop_projects_announced_early)} of projects are announced early, early announcements account for \Sexpr{grattan_percent(prop_value_overruns_due_to_early_projects)} of the value of cost overruns over the past 15~years.
 Prematurely announced projects need larger cost upgrades not just early on, but throughout their funding approval and construction phases.
 
 For the first time in Australia, we report on all \Sexpr{round(n_valid_transport_projects_geq_20M, -2)} projects valued at \$20~million or more and planned or built since 2000.
