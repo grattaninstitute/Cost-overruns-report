@@ -852,18 +852,18 @@ This pattern of promising poor quality or under-developed project ideas in elect
 
 \subsubsection*{Government reluctance to change course when facts change}
 
-A plan to build a Maitland bypass as part of the New England Highway in northern New South Wales was floated as early as 1983.\footnote{1} The preferred route for what eventually became the Hunter Expressway was decided in 2001 and expected to cost ``more than \$335 million'' in 2002.\footnote{2}
+A plan to build a Maitland bypass as part of the New England Highway in northern New South Wales was floated as early as 1983.\footcite{Bill2009NationBuildingProgramAmendment} The preferred route for what eventually became the Hunter Expressway was decided in 2001 and expected to cost ``more than \$335 million'' in 2002.\footcite{DIRD2002FedGovkeepsNSWMoving}
 
-In 2007 the funding commitment was increased to \$887 million by the Federal coalition Government as an election pledge.\footnote{3} After winning the 2007 election, the new Labor Government cooled on the idea. In 2008,Joel Fitzgibbon, the then Labor Member for Hunter, observed that: ``First, the F3 link was conceived in the mid 1980s and there have been big changes in traffic movements and residential and commercial settlement patterns since then. Second, the cost of the project is now \$1,700 million (\$1.7 billion) and it has a very low benefit to cost ratio (meaning it provides tax-payers with a low-value solution).''\footnote{4}
+In 2007 the funding commitment was increased to \$887 million by the Federal coalition Government as an election pledge.\footcite{Bill2009NationBuildingProgramAmendment} After winning the 2007 election, the new Labor Government cooled on the idea. In 2008,Joel Fitzgibbon, the then Labor Member for Hunter, observed that: ``First, the F3 link was conceived in the mid 1980s and there have been big changes in traffic movements and residential and commercial settlement patterns since then. Second, the cost of the project is now \$1,700 million (\$1.7 billion) and it has a very low benefit to cost ratio (meaning it provides tax-payers with a low-value solution).''\footcite{Bill2009NationBuildingProgramAmendment}
 
-The government commissioned a review in 2008,\footnote{5} following which funding of \$1.7 billion was committed in 2009.\footnote{6} Federal Liberal Member for nearby Paterson, Bob Baldwin criticised the government's prevarication ``because we (the coalition) had committed to it as a 
+The government commissioned a review in 2008,\footcite{DIRD2008LowerHunterTransportNeedsStudy} following which funding of \$1.7 billion was committed in 2009.\footcite{RMS2010Hunter} Federal Liberal Member for nearby Paterson, Bob Baldwin criticised the government's prevarication ``because we (the coalition) had committed to it as a 
 \begin{figure}[H]
  \caption{Project cost estimates, millions of dollars\label{fig:CS_Hunter}}
  \includegraphics[page=5]{atlas/CaseStudies.pdf}
 \end{figure}\vspace{-12pt}
-government''.\footnote{7} Mr Baldwin emphasised the persistence of Support the Link, a local lobby group that pushed hard for the road.\footnote{8}
+government''.\footcite{Bill2009NationBuildingProgramAmendment} Mr Baldwin emphasised the persistence of Support the Link, a local lobby group that pushed hard for the road.\footcite{Bill2009NationBuildingProgramAmendment}
 
-The project was completed in 2014.\footnote{9}
+The project was completed in 2014.\footcite{RMS2016Hunter}
 
 While the final benefit cost ratio has not been published, these comments from politicians reveal the difficulty governments experience in reneging on commitments made very early in a project’s life, even after the facts of the project change significantly.
 
@@ -883,10 +883,10 @@ If there is no evaluation, then politicians' claims about a project's costs and 
 \begin{verysmallbox}{Case study -- Bulahdelah Bypass -- 111 per cent cost overrun}{box:bulahdelah}
 \subsubsection*{Road opened before it was finished}
 
-In June 2013, New South Wales’ Bulahdelah Bypass was running six months behind its revised schedule\footnote{1} and still wasn't finished, so the state government decided to hold a ribbon cutting ceremony and announce its completion anyway.
+In June 2013, New South Wales’ Bulahdelah Bypass was running six months behind its revised schedule\footcite{RATLC2010AnswersQuestionsNotice} and still wasn't finished, so the state government decided to hold a ribbon cutting ceremony and announce its completion anyway.
 
-Official sources say that construction finished in June 2013.\footnote{2} 
-Yet the road was closed for further construction immediately after the ceremony and opened properly a month later.\footnote{3} 
+Official sources say that construction finished in June 2013.\footcite{DIRD2015NSWCompletedProjects} 
+Yet the road was closed for further construction immediately after the ceremony and opened properly a month later.\footcites{GreatLakesAdvocate2013BypassOpensandCloses}{SMH2013SunSetsonLittleTown}{Prime72013Bypassopenedbutconstructionnotfinished}
 \end{verysmallbox}
 
 Governments are responsible for investment decisions, they should not spend public money without due care for how the spending will benefit the community.
