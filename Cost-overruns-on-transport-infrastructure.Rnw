@@ -484,10 +484,10 @@ The drawback with small samples is that their findings may be less representativ
 \end{figure}
 
 The findings of these small studies present a mixed view.
-Two key studies in 2007 and 2008 of infrastructure projects valued at more than \$20~million found overruns ranging from 12 to 35 per cent from formal funding commitment to completion\footcite[][5]{Group2007PerformancePPPsTraditional} and 24 to 52 per cent\footnote{\textcite[][15]{Duffield2008ReportperformancePPP} Costs over the full project life mean originally announced to actual final costs.} over the full project life.
+Two key studies in 2007 and 2008 of infrastructure projects valued at more than \$20~million found overruns ranging from 12 to 35 per cent from formal funding commitment to completion\footcite[][5]{Group2007PerformancePPPsTraditional} and 24 to 52 per cent\footnote{\textcite[][15]{Duffield2008ReportperformancePPP}. Costs over the full project life mean originally announced to actual final costs.} over the full project life.
 Another study of 58 projects found an average 12 per cent overrun.%
-\footnote{Love (2012).} A further study of 46 projects found overruns of 5 to 11 per cent of project costs.%
-\footnote{Wood, P. (2010) \emph{Comparing cost uplift in infrastructure delivery methods: a case based approach}, http://eprints.qut.edu.au/47529/1/Peter\_Wood\_Thesis.pdf.} A 2015 study of 44 projects each valued at \$1~billion or more found cost overruns of 14 per cent on the \$44~billion budget.%
+\footcite[][157]{Love2012Overrunstransportationinfrastructure} A further study of 46 projects found overruns of 5 to 11 per cent of project costs.%
+\footcite{Wood2010Comparingcostuplift} A 2015 study of 44 projects each valued at \$1~billion or more found cost overruns of 14 per cent on the \$44~billion budget.%
 \footnote{Australian Contractors Association (2015) \emph{Changing the game: how Australia can achieve success in the new world of mega-projects},
 
   \url{http://www.constructors.com.au/wp-content/uploads/2015/11/Changing-the-Game-Mega-Projects-Final1.pdf}, p7.}
