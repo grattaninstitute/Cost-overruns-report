@@ -844,7 +844,7 @@ Post-implementation reviews seldom take place or are made public when they do.%
 \footcites[][26]{AustralianConstructorsAssociation2015}{Ellis2015HowToIncrease}[][10--11]{General2015Followupofmanagingmajorprojects} For such reporting to be effective, it must be done in a standard way to allow like-for-like comparisons.
 
 Other spheres of government investment require much stricter reporting on outcomes.
-For instance, the \$123 billion Future Fund,\footnote{http://www.futurefund.gov.au/-/media/Files/FutureFund/05--\/-Portfolio-Updates/Portfolio-update-at-30-June-2016.pdf?la=en} is governed by the \emph{Future Fund Act 2006} and overseen by a board of independent guardians.
+For instance, the \$123 billion Future Fund,\footcite{FutureFund2016PortfolioUpdate} is governed by the \emph{Future Fund Act 2006} and overseen by a board of independent guardians.
 The Act ensures that investment decisions and activities are conducted at arm's length from government.
 It requires the tabling in Parliament of an annual report and audited financial statements.
 The Future Fund publishes quarterly portfolio updates to provide details of the investment activity and performance of the fund.
@@ -952,7 +952,7 @@ When returns on investments are distorted to this degree, it is impossible for d
 
 In fact, as inaccurate cost estimates inflate benefit cost ratios, projects with inaccurate cost estimates are systematically advantaged in the project selection process.
 This phenomenon is known as the ``winner's curse'', meaning that the projects that are funded are more likely to be afflicted with the ``curse'' of poor quality cost estimates than those that are not.%
-\footnote{Eliasson, J. and Fosgerau, M. (2013) \emph{Cost overruns and demand shortfalls -- deception or selection?,}Transportation Research Part B 57, pp 105-113.}
+\footcite{Eliasson2013CostOverrunsandDemandShortfalls}
 
 Third, cost overruns distort decisions regarding the types of transport infrastructure to invest in.
 The most obvious case of this phenomenon is multi-billion dollar projects.
@@ -994,7 +994,7 @@ This either means that the project appraisal process is not being used to cancel
 \footnote{This argument is explained in more detail in Appendix xx.} Both of these interpretations suggest that not enough projects are cancelled.
 
 Projects should be cancelled when their estimated benefits are found to be lower than their estimated costs.
-Given that benefits are probably overstated much of the time,\footnote{Elaurant} just as costs are understated, it is entirely fitting that projects be cancelled if their estimated benefits are only slightly more than their estimated costs (see \Vref{box:overstated-benefits}).
+Given that benefits are probably overstated much of the time,\footcite{Elaurant2015POLITICSFINANCETRANSPORT} just as costs are understated, it is entirely fitting that projects be cancelled if their estimated benefits are only slightly more than their estimated costs (see \Vref{box:overstated-benefits}).
 
 The early timing of Australia's cost overruns offers a substantial and unrealised opportunity to reduce cost overruns on transport infrastructure projects.
 If more projects were to be cancelled when cost overruns eroded the projects' investment merits, the indirect costs associated with distortions to investment planning processes could be materially reduced.
@@ -1106,7 +1106,7 @@ Properly accounting for the risk associated with them characteristics is a simpl
 
 Complex projects are prone to cost overruns because they tend to have many interdependent components that can be disrupted if one element falls behind time, and multiple interfaces with existing infrastructure.
 These risks are amplified when the existing infrastructure continues operating during construction.%
-\footnote{Eg Overseas: Hinze et al 1992; Flyvbjerg; in Australia: Engineers Australia (2014) Mastering complex projects: principles for success and reliable performance, p3.
+\footnote{Eg \textcite{Hinze1992CostOverrunsonStateofWashington}; Flyvbjerg; in Australia: Engineers Australia (2014) Mastering complex projects: principles for success and reliable performance, p3.
 Although Love et al 2013 also find big overruns for smaller projects - check}
 
 The most complex projects also tend to be large.
