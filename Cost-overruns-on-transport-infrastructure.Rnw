@@ -10,7 +10,7 @@
 
 \GrattanReportNumber{XX}
 
-\acknowledgements{..}
+\acknowledgements{...}
 
 
 
@@ -587,18 +587,14 @@ The drawback with small samples is that their findings may be less representativ
 \end{figure}
 
 The findings of these small studies present a mixed view.
-Two key studies in 2007 and 2008 of infrastructure projects valued at more than \$20~million found overruns ranging from 12 to 35 per cent from formal funding commitment to completion\footnote{; Allen Consulting Group, Duffield, C. and Raisbeck, P. (2007) \emph{Performance of PPPs and traditional procurement in Australia}, Infrastructure Partnerships Australia, p5.}and 24 to 52 per cent\footnote{Duffield, C., Raisbeck, P. and Xu, M. (2008) \emph{Report on the performance of PPP projects in Australia when compared with a representative sample of traditionally procured infrastructure projects}, p15.
-Costs over the full project life mean originally announced to actual final costs.} over the full project life.
+Two key studies in 2007 and 2008 of infrastructure projects valued at more than \$20~million found overruns ranging from 12 to 35 per cent from formal funding commitment to completion\footcite[][5]{Group2007PerformancePPPsTraditional} and 24 to 52 per cent\footnote{\textcite[][15]{Duffield2008ReportperformancePPP}. Costs over the full project life mean originally announced to actual final costs.} over the full project life.
 Another study of 58 projects found an average 12 per cent overrun.%
-\footnote{Love (2012).} A further study of 46 projects found overruns of 5 to 11 per cent of project costs.%
-\footnote{Wood, P. (2010) \emph{Comparing cost uplift in infrastructure delivery methods: a case based approach}, http://eprints.qut.edu.au/47529/1/Peter\_Wood\_Thesis.pdf.} A 2015 study of 44 projects each valued at \$1~billion or more found cost overruns of 14 per cent on the \$44~billion budget.%
-\footnote{Australian Contractors Association (2015) \emph{Changing the game: how Australia can achieve success in the new world of mega-projects},
-
-  \url{http://www.constructors.com.au/wp-content/uploads/2015/11/Changing-the-Game-Mega-Projects-Final1.pdf}, p7.}
-
-While not seeking to be representative, an investigation by the Victorian Auditor General found a 5 per cent cost overrun across seven road and rail projects valued at more than \$40~million.%
-\footnote{Victorian Auditor General (2010), \emph{Management of major rail projects}, \url{http://www.audit.vic.gov.au/publications/2009-10/20100623-major-rail-full-report.pdf}, p22; Victorian Auditor General (2011), Management of major road projects, \url{http://www.audit.vic.gov.au/publications/2010-11/20110601-Major-Roads.pdf}, p12.} The New South Wales Auditor General reported a 7 per cent cost overrun across 50 transport and other infrastructure projects valued above \$50~million.%
-\footnote{NSW Auditor General (2015) \emph{Large construction projects: Independent assurance}, https://www.audit.nsw.gov.au/ArticleDocuments/362/01\_Large\_Construction\_Projects\_Independent\_Assurance\_Complete\_Full\_Report.pdf.aspx?Embed=Y, p5.} These two studies did not consider scope changes or overruns between project announcement and formal contract.
+\footcite[][157]{Love2012Overrunstransportationinfrastructure} A further study of 46 projects found overruns of 5 to 11 per cent of project costs.%
+\footcite{Wood2010Comparingcostuplift} A 2015 study of 44 projects each valued at \$1~billion or more found cost overruns of 14 per cent on the \$44~billion budget.%
+\footcite[][7]{AustralianConstructorsAssociation2015}
+While not seeking to be representative, an investigation by the Victorian Auditor General found a 5 per cent cost overrun across seven road and rail projects valued at more than \$40~million.\footcites[][22]{General2010Managementmajorrail}[][12]{General2011ManagementMajorRoad} %
+ The New South Wales Auditor General reported a 7 per cent cost overrun across 50 transport and other infrastructure projects valued above \$50~million.%
+\footcite[][5]{General2015Largeconstructionprojects} These two studies did not consider scope changes or overruns between project announcement and formal contract.
 
 The variation in the average size of overruns observed across these small sample studies illustrates the value of a large sample when analysing extreme events.
 
@@ -616,13 +612,12 @@ This report considers the entire project lifecycle from when ministers or opposi
 
 We define a cost overrun as the amount by which the actual cost at the end of a particular phase exceeded the estimated cost at the start of that phase, expressed as a percentage of the cost estimated at the start of that phase.
 
-Some argue that cost overruns should only be measured from the point that a formal cost benefit analysis is completed or a funding commitment made.%
-\footnote{Love, P., Smith, J., Simpson, I., Regan, M., Olatunji, O. (2014) \emph{Understanding the landscape of overruns in transport infrastructure projects}, Environment and Planning B: Planning and Design 2015, volume 42, p; 493-4; Love, P., Ahiaga-Dagbui, D., Irani, Z. (2016) \emph{Cost overruns in transportation infrastructure projects: sowing the seeds for a probabilistic theory of causation}, Transportation Research Part A: Policy and Practice, volume 92, p185.} But this ignores the realpolitik of infrastructure funding.
+Some argue that cost overruns should only be measured from the point that a formal cost benefit analysis is completed or a funding commitment made.\footcites[][493-494]{Love2014Understandinglandscapeoverruns}[][185]{Love2016CostOverrunsinTransportationInfrastructure}[][144-145]{Seimiatycki2009AcademicsauditorsComparing} But this ignores the realpolitik of infrastructure funding.
 Politicians often promise to pursue infrastructure projects before a detailed cost benefit study is completed.
 Indeed, the vast majority of project commitments made in the last federal election were in this category.%
-\footnote{https://theconversation.com/election-2016-will-the-infrastructure-promises-meet-australias-needs-61140} Once an elected government has made such a commitment, it is unusual for the project not to proceed.
+\footcite{Terrill2016ElectionPromises} Once an elected government has made such a commitment, it is unusual for the project not to proceed.
 Indeed, it appears that cost benefit analyses are sometimes retrofitted to justify such commitments.%
-\footnote{Australian Constructors Association (2015) \emph{Changing the game: how Australia can achieve success in the new world of mega-projects}, \url{http://www.constructors.com.au/wp-content/uploads/2015/11/Changing-the-Game-Mega-Projects-Final1.pdf}, p20.}
+\footcite[][20]{AustralianConstructorsAssociation2015}
 
 This report takes politicians' commitments seriously.
 We treat a promise to build a particular project for a particular cost as a real promise.
@@ -669,7 +664,7 @@ We take this approach to differentiate genuinely additional infrastructure from 
 
 Changes to scope are only a problem if they are not appraised on their merits as to whether they are worth the money and are better than alternative ways to solve a problem or to spend public funds.
 
-Although it appears to be common for scope changes to be made without proper appraisal of the new work,\footnote{Love et al (201), p185.} in fact scope changes only account for about 11 per cent of cost overruns on transport infrastructure projects (\Vref{fig:most-cost-overruns-were-not-attrib-to-scope-changes}).
+Although it appears to be common for scope changes to be made without proper appraisal of the new work,\footcite[][185]{Love2016CostOverrunsinTransportationInfrastructure} in fact scope changes only account for about 11 per cent of cost overruns on transport infrastructure projects (\Vref{fig:most-cost-overruns-were-not-attrib-to-scope-changes}).
 
 \begin{figure}
 \captionwithunits{Most cost overruns were not attributable to scope changes\label{fig:most-cost-overruns-were-not-attrib-to-scope-changes}}
@@ -688,16 +683,16 @@ The scarcity of Australian studies of cost overruns has fed a misperception that
 
 The best-known international studies of `megaprojects' have found road projects overrunning by 24 per cent and rail by 40 per cent.
 These findings emerge from a study of infrastructure project cost overruns on 1603 road and rail projects of all sizes, each valued at between US\$1.5~million and US\$8.5~billion, in 20 countries between 1927 and 2013.%
-\footnote{Flyvbjerg 2016, methodology described in Flyvbjerg et al 2003} The findings led the leader of the study, Danish economic geographer Bent Flyvbjerg to invent what he called ``the iron law of megaprojects: over budget, over time, over and over again.''\footnote{Flyvbjerg 2011}
+\footnote{\textcite{Flyvbjerg2016fallacybeneficialignorance}, methodology described in \textcite{Flyvbjerg2003Megaprojectsriskanatomy}} The findings led the leader of the study, Danish economic geographer Bent Flyvbjerg to invent what he called ``the iron law of megaprojects: over budget, over time, over and over again.''\footcite[][9-11]{Flyvbjerg2014Whatyoushould}
 
 Yet Flyvbjerg's findings, while credible, cannot be generalised.
 His overrun estimates are markedly higher than the average overrun of 14 per cent reported across the next four biggest academic studies, or the 15 per cent reported across the four largest studies completed by auditors of road projects.%
-\footnote{Seimiatycki, 2009}
+\footcite{Seimiatycki2009AcademicsauditorsComparing}
 
 Other studies emphasise the importance of not assuming that Flyvbjerg's international studies are representative of each of the countries included in the sample.
 For instance, a study of the Dutch projects in the Flyvbjerg sample shows an average cost overrun of 16.5 per cent.%
-\footnote{Cantarelli, 2012} Many other studies have demonstrated variations in the size of overruns across different countries.%
-\footnote{Jenpanitsub 2011; Berechman and Wu, 2006}
+\footcite{Cantarelli2012Geographicalvariationproject} Many other studies have demonstrated variations in the size of overruns across different countries.%
+\footcites{Jenpanitsub2011CostoverrunsTransport}{Berechman2006CostOverrunsRisk}
 
 When cost overruns around the world are compared from the time of the formal funding commitment or contract, Australia generally ranks in, or slightly worse than, the mid range.
 Most studies of cost overruns focus on contract compliance and engineering, which are most relevant from the time of the contract, rather than the time a government or would-be government first announces the project.
@@ -798,11 +793,11 @@ The rest of this chapter explains the incentives and lack of penalties that lead
 
 \subsubsection*{An under-cooked election promise}
 
-In 2002, the Federal Coalition Government committed to contributing \$12 million to the \$36 million cost of an upgrade to the Bruxner Highway in Northern New South Wales, to bypass Alstonville.\footnote{1} The following year, the then Labor Premier, Bob Carr, promised in a New South Wales election campaign to build the bypass by the end of 2006, at a cost of \$36 million.\footnote{2}
+In 2002, the Federal Coalition Government committed to contributing \$12 million to the \$36 million cost of an upgrade to the Bruxner Highway in Northern New South Wales, to bypass Alstonville.\footcite{NSWHansardAlstonville} The following year, the then Labor Premier, Bob Carr, promised in a New South Wales election campaign to build the bypass by the end of 2006, at a cost of \$36 million.\footcite{ABCNews2003PlanforBruxnerHighway}
 
-Yet the project was not confirmed until 2009, when a contract was awarded for \$101 million.\footnote{3}
+Yet the project was not confirmed until 2009, when a contract was awarded for \$101 million.\footcites{ABCNews2009AlstonvilleBypassFundsAnnounced}{NSWBudget200910Statement}
 
-Savings of \$6.7 million were made during the construction period, and the project was declared to have come in ``under budget''\footnote{4} when it was completed in 2011,\footnote{5} six months after the contracted completion date,\footnote{6} five years after the promised completion date, and nine years after the first commitment.
+Savings of \$6.7 million were made during the construction period, and the project was declared to have come in ``under budget''\footcite{RuralandRegionalAffairs2014} when it was completed in 2011,\footcite{NorthernStar2011ThroughTrafficToUseNewBypass} six months after the contracted completion date,\footcite{ABCNews2009AlstonvilleBypassFundsAnnounced} five years after the promised completion date, and nine years after the first commitment.
 
 \begin{figure}[H]
  \caption{Project cost estimates, millions of dollars}
@@ -817,25 +812,26 @@ Governments and would-be governments are very fond of promising infrastructure.
 But while these promises might give them political advantage, politicised announcements that ignore proper process have particularly poor outcomes.
 Cost overruns are 23 per cent higher on average for projects announced close to a state or federal election than for similar projects announced at other times.
 Previous Grattan work shows how politicians commit to poor quality projects for political benefit.%
-\footnote{Terrill, Emslie and Coates (2016) \emph{Roads to Riches;} Terrill (2016) \url{http://grattan.edu.au/news/election-2016-will-the-infrastructure-promises-meet-australias-needs/}.}
+\footcites{Terrill2016Roadsrichesbetter}{Terrill2016ElectionPromises}
 
 Politicians continue to make infrastructure promises for political advantage even though their parties have made strong statements recognising the need to spend infrastructure money better.
 Among such statements:
 
 \begin{itemize}
 \item
-  The current Commonwealth Government maintains that ``\href{http://parlinfo.aph.gov.au/parlInfo/genpdf/chamber/hansardr/e674bc2a-82df-4a25-981b-1f2bab3d0b16/0005/hansard_frag.pdf;fileType=application\%2Fpdf}{\emph{it is critical to base project selection on rigorous analysis and sound planning to avoid wasteful investment}}\emph{\ldots{}{[}t{]}he advice provided by Infrastructure Australia will be a key input in guiding the Australian, state and territory governments when making major investment decisions}.''\footnote{http://infrastructureaustralia.gov.au/about/files/IA-Statement-of-Expectations-2015-17.pdf}
+  The current Commonwealth Government maintains that ``\href{http://parlinfo.aph.gov.au/parlInfo/genpdf/chamber/hansardr/e674bc2a-82df-4a25-981b-1f2bab3d0b16/0005/hansard_frag.pdf;fileType=application\%2Fpdf}{\emph{it is critical to base project selection on rigorous analysis and sound planning to avoid wasteful investment}}\emph{\ldots{}{[}t{]}he advice provided by Infrastructure Australia will be a key input in guiding the Australian, state and territory governments when making major investment decisions}.''
+  \footcite{Fletcher2015StatementofExpectations}
 \item
-  The Federal Labor Opposition, which established Infrastructure Australia when it was in office in 2008, promises to take the politics out of infrastructure by ensuring that \emph{``Infrastructure Australia independently assesses all major infrastructure projects on the basis of the benefits they provide to the economy and society as a whole, their commercial viability and their capacity to enhance national productivity}.''\footnote{http://www.100positivepolicies.org.au/empowering\_infrastructure\_australia}
+  The Federal Labor Opposition, which established Infrastructure Australia when it was in office in 2008, promises to take the politics out of infrastructure by ensuring that \emph{``Infrastructure Australia independently assesses all major infrastructure projects on the basis of the benefits they provide to the economy and society as a whole, their commercial viability and their capacity to enhance national productivity}.''\footcite{ALP2016EmpoweringInfrastructureAustralia}
 \item
-  The Greens contend that ``\emph{{[}t{]}oo often, major infrastructure decisions are made for short-term, politically expedient reasons, rather than in the long-term public interest}.''\footnote{Ref} They would like to see comprehensive cost-benefit analysis for large projects submitted to Infrastructure Australia for evaluation, and with the recommendation made public at the same time it is given to government.%
-\footnote{Ref}
+  The Greens contend that ``\emph{{[}t{]}oo often, major infrastructure decisions are made for short-term, politically expedient reasons, rather than in the long-term public interest}.''\footcite{Greens2016AustralianInfrastructureBank} They would like to see comprehensive cost-benefit analysis for large projects submitted to Infrastructure Australia for evaluation, and with the recommendation made public at the same time it is given to government.%
+\footcite{Greens2016AustralianInfrastructureBank}
 \end{itemize}
 
 But even though parties make such statements, the behaviour of politicians exposes the hollowness of their claims.
 In the 2016 federal election campaign, Labor, the Coalition and the Greens all promised to build a large number of projects that had not been properly assessed.
 Between a quarter and a half of their promises were for projects that had not been submitted to Infrastructure Australia for assessment, or had been assessed and judged as not worth doing.%
-\footnote{http://grattan.edu.au/news/election-2016-will-the-infrastructure-promises-meet-australias-needs/} Many others were only an ``initiative'' on Infrastructure Australia's list; in other words, Infrastructure Australia was yet to be convinced that the project was worthwhile.
+\footcite{Terrill2016ElectionPromises} Many others were only an ``initiative'' on Infrastructure Australia's list; in other words, Infrastructure Australia was yet to be convinced that the project was worthwhile.
 The proportions of the promised money that were for projects that had been assessed as nationally significant and worth doing ranged from 15 per cent for the Coalition to none for the Greens (see Figure xx).
 
 \begin{figure}
@@ -895,7 +891,7 @@ Yet the road was closed for further construction immediately after the ceremony 
 
 Governments are responsible for investment decisions, they should not spend public money without due care for how the spending will benefit the community.
 Cost benefit analysis has limitations, but it remains the best way for making like-for-like comparisons of projects.%
-\footnote{Eliasson and Fosgerau (2013)} Even with such a process, politicians will be tempted to pressure evaluators to massage assessments to fit political priorities.
+\footcite{Eliasson2013CostOverrunsandDemandShortfalls} Even with such a process, politicians will be tempted to pressure evaluators to massage assessments to fit political priorities.
 This is not just a theoretical concern.
 For example, EWL story.
 
@@ -945,13 +941,13 @@ In particular, there is no public reporting on how well government-funded transp
 This is a serious gap.
 
 Infrastructure Australia, according to the law that establishes it, is supposed to evaluate whether projects met targets set before or during delivery, and to promote public awareness of its monitoring role, in part by publishing information on its website.%
-\footnote{\emph{Infrastructure Australia Act 2008} (Cwlth), s5C} This does not happen.
+\footcite{Act2008InfrastructureAustraliaAct} This does not happen.
 Nor do state governments, including their infrastructure bodies, publish information about how well projects performed against their estimated costs and benefits.
 Post-implementation reviews seldom take place or are made public when they do.%
-\footnote{ACA (20xx) Changing the game, p26; Ellis (2015) How to increase the chance of project success, section 13; VAGO (2015) p10-11.} For such reporting to be effective, it must be done in a standard way to allow like-for-like comparisons.
+\footcites[][26]{AustralianConstructorsAssociation2015}{Ellis2015HowToIncrease}[][10--11]{General2015Followupofmanagingmajorprojects} For such reporting to be effective, it must be done in a standard way to allow like-for-like comparisons.
 
 Other spheres of government investment require much stricter reporting on outcomes.
-For instance, the \$123 billion Future Fund,\footnote{http://www.futurefund.gov.au/-/media/Files/FutureFund/05--\/-Portfolio-Updates/Portfolio-update-at-30-June-2016.pdf?la=en} is governed by the \emph{Future Fund Act 2006} and overseen by a board of independent guardians.
+For instance, the \$123 billion Future Fund,\footcite{FutureFund2016PortfolioUpdate} is governed by the \emph{Future Fund Act 2006} and overseen by a board of independent guardians.
 The Act ensures that investment decisions and activities are conducted at arm's length from government.
 It requires the tabling in Parliament of an annual report and audited financial statements.
 The Future Fund publishes quarterly portfolio updates to provide details of the investment activity and performance of the fund.
@@ -1059,7 +1055,7 @@ When returns on investments are distorted to this degree, it is impossible for d
 
 In fact, as inaccurate cost estimates inflate benefit cost ratios, projects with inaccurate cost estimates are systematically advantaged in the project selection process.
 This phenomenon is known as the ``winner's curse'', meaning that the projects that are funded are more likely to be afflicted with the ``curse'' of poor quality cost estimates than those that are not.%
-\footnote{Eliasson, J. and Fosgerau, M. (2013) \emph{Cost overruns and demand shortfalls -- deception or selection?,}Transportation Research Part B 57, pp 105-113.}
+\footcite{Eliasson2013CostOverrunsandDemandShortfalls}
 
 Third, cost overruns distort decisions regarding the types of transport infrastructure to invest in.
 The most obvious case of this phenomenon is multi-billion dollar projects.
@@ -1101,7 +1097,7 @@ This either means that the project appraisal process is not being used to cancel
 \footnote{This argument is explained in more detail in Appendix xx.} Both of these interpretations suggest that not enough projects are cancelled.
 
 Projects should be cancelled when their estimated benefits are found to be lower than their estimated costs.
-Given that benefits are probably overstated much of the time,\footnote{Elaurant} just as costs are understated, it is entirely fitting that projects be cancelled if their estimated benefits are only slightly more than their estimated costs (see \Vref{box:overstated-benefits}).
+Given that benefits are probably overstated much of the time,\footcite{Elaurant2015POLITICSFINANCETRANSPORT} just as costs are understated, it is entirely fitting that projects be cancelled if their estimated benefits are only slightly more than their estimated costs (see \Vref{box:overstated-benefits}).
 
 The early timing of Australia's cost overruns offers a substantial and unrealised opportunity to reduce cost overruns on transport infrastructure projects.
 If more projects were to be cancelled when cost overruns eroded the projects' investment merits, the indirect costs associated with distortions to investment planning processes could be materially reduced.
@@ -1213,8 +1209,7 @@ Properly accounting for the risk associated with them characteristics is a simpl
 
 Complex projects are prone to cost overruns because they tend to have many interdependent components that can be disrupted if one element falls behind time, and multiple interfaces with existing infrastructure.
 These risks are amplified when the existing infrastructure continues operating during construction.%
-\footnote{Eg Overseas: Hinze et al 1992; Flyvbjerg; in Australia: Engineers Australia (2014) Mastering complex projects: principles for success and reliable performance, p3.
-Although Love et al 2013 also find big overruns for smaller projects - check}
+\footnote{Eg \textcites{Hinze1992CostOverrunsonStateofWashington}[][9--11]{Flyvbjerg2014Whatyoushould}; in Australia: \textcite[][3]{EngineersAustralia2014Masteringcomplexprojects}}
 
 The most complex projects also tend to be large.
 Because of this, large projects are more likely to incur cost overruns, and these overruns are likely to be particularly big (\Vref{fig:prevalence-avg-magnitude-cost-overruns-by-project-size}).
@@ -1248,7 +1243,7 @@ Unusual projects are also more prone to cost overruns.
 This is because the more unusual a project is, the more difficult it is to estimate its cost and to build it to budget.
 Understanding when and where a project is unusual can help project proponents identify which projects are at particularly high risk of cost overruns.
 
-For example, rail projects tend to be relatively homogeneous during the planning stage, as many key components are standardised and can be purchased for a known price\footnote{Reference the NSW Legislative committee's review into rail costs.}.
+For example, rail projects tend to be relatively homogeneous during the planning stage, as many key components are standardised and can be purchased for a known price.\footcite{StandingCommittee2012Railinfrastructureprojectcosting}
 However, these projects tend to incur disparate construction problems, because they are usually built on brownfield sites, around ongoing operations.
 
 The inverse is true for roads.
@@ -1268,7 +1263,7 @@ Cost overruns are larger for road projects during the planning stage, when road 
 
 These differences in the size and timing of cost overruns by project mode illustrate another opportunity to improve cost estimates.
 Project proponents are always aware of their project's mode, and their project's mode provides substantial information about the project's likely cost risks.
-However, Australian risk management guidance does not currently advise project proponents to account for mode-specific differences in projects' cost risks\footnote{The guidelines cite National Transport Council (2016) National Guidelines for Transport System Management in Australia, chapters 2, 3 and 4.}.
+However, Australian risk management guidance does not currently advise project proponents to account for mode-specific differences in projects' cost risks.\footnote{The recently updated Australian Transport and Planning guidelines cite the importance of mode specific cost estimation differences, but only contain placeholder sections.\textcite{ATAP2016Guidelines} Placeholder sections cite the NGTSM guidelines which preceded the ATAP guidelines, but the relevant sections of this document do not note modal differences in cost risk, or how to accommodate them.\textcites{ATC2006NGTSM3}{ATC2006NGTSM5}}
 
 \subsection{Contract type may affect the risk of cost overruns}\label{contract-type-may-affect-the-risk-of-cost-overruns}
 
@@ -1289,9 +1284,9 @@ Consequently, the average size of cost overruns is likely to vary by contract ty
 However, there limited evidence on whether this is the case in practice.
 
 A 2007 study of 54 projects and a 2008 study of 67 projects both concluded that PPPs are less prone to cost overruns than are traditionally procured projects.%
-\footnote{Duffield et al (2007); Duffield (2008)} Another study of 38 projects found no statistically significant difference in cost outcomes between PPP and non-PPP projects.%
-\footnote{Elaurant and Louise (2015)} A 2010 study of 14 alliance projects found significantly greater cost overruns than in traditional delivery methods.%
-\footnote{Wood (2010)}
+\footcites{Group2007PerformancePPPsTraditional}{Duffield2008ReportperformancePPP} Another study of 38 projects found no statistically significant difference in cost outcomes between PPP and non-PPP projects.%
+\footcite{Elaurant2015POLITICSFINANCETRANSPORT} A 2010 study of 14 alliance projects found significantly greater cost overruns than in traditional delivery methods.%
+\footcite{Wood2010Comparingcostuplift}
 
 Given the small sample sizes and varying results of these studies, it is difficult to generalise about whether the average size of cost overruns is different under different types of contracts.
 However, this is an important field of research because it has the potential to identify more cost efficient ways to deliver infrastructure projects and to improve our ability to anticipate cost overruns.
@@ -1319,7 +1314,7 @@ They are inconsistent in which of the main tools they recommend and in how they 
 A project's expected value is the most obvious gap in cost estimation guidance.
 Most thinking about risk measurement is predicated on some measure of expected value or expected cost, so expected value is an important component of the risk manager's toolkit.
 It can be calculated using project information alone, or using historical information on completed projects.
-The expected value methodology or a reasonable substitute\footnote{Defined as the official guidelines applicable to transport infrastructure projects that define a recommended or required approach to quantifying unavoidable project risk.} is missing from the Commonwealth's ``comprehensive'' \footnote{BPCESfPFR: p.4, section 3.3} \emph{Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction.} It is also missing in official guidelines for key gateways such as Infrastructure Australia's \emph{Detailed} \emph{Technical Guidance} and \emph{Business Case Template}, and in some key state documents such as the South Australian \emph{Estimating Manual} and Western Australian \emph{Business Case Template.}
+The expected value methodology or a reasonable substitute\footnote{Defined as the official guidelines applicable to transport infrastructure projects that define a recommended or required approach to quantifying unavoidable project risk.} is missing from the Commonwealth's ``comprehensive''\footcite{DIRD2008BPCEPFRRC} \emph{Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction.} It is also missing in official guidelines for key gateways such as Infrastructure Australia's \emph{Detailed} \emph{Technical Guidance} and \emph{Business Case Template}, and in some key state documents such as the South Australian \emph{Estimating Manual} and Western Australian \emph{Business Case Template.}
 
 While there is more than one valid approach to measuring project risk, it is not obvious why different Australian jurisdictions need different approaches to the same basic tools.
 Different approaches make it difficult or impossible to collect data on a consistent basis so that project managers can draw on a large pool of past projects around Australia to improve their understanding of cost and risk.
@@ -1607,6 +1602,7 @@ With actual Australian data on past projects, we would no longer need to be surp
 Instead, our infrastructure systems could promise what is worth having, and then deliver what is promised.
 
 
+\printbibliography
 
 \appendix
 
