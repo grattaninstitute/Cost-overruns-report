@@ -690,9 +690,9 @@ The rest of this chapter explains the incentives and lack of penalties that lead
 
 \subsubsection*{An under-cooked election promise}
 
-In 2002, the Federal Coalition Government committed to contributing \$12 million to the \$36 million cost of an upgrade to the Bruxner Highway in Northern New South Wales, to bypass Alstonville.\footnote{1} The following year, the then Labor Premier, Bob Carr, promised in a New South Wales election campaign to build the bypass by the end of 2006, at a cost of \$36 million.\footnote{2}
+In 2002, the Federal Coalition Government committed to contributing \$12 million to the \$36 million cost of an upgrade to the Bruxner Highway in Northern New South Wales, to bypass Alstonville.\footcite{NSWHansardAlstonville} The following year, the then Labor Premier, Bob Carr, promised in a New South Wales election campaign to build the bypass by the end of 2006, at a cost of \$36 million.\footcite{ABCNews2003PlanforBruxnerHighway}
 
-Yet the project was not confirmed until 2009, when a contract was awarded for \$101 million.\footnote{3}
+Yet the project was not confirmed until 2009, when a contract was awarded for \$101 million.\footcites{ABCNews2009AlstonvilleBypassFundsAnnounced}{NSWBudget200910Statement}
 
 Savings of \$6.7 million were made during the construction period, and the project was declared to have come in ``under budget''\footnote{4} when it was completed in 2011,\footnote{5} six months after the contracted completion date,\footnote{6} five years after the promised completion date, and nine years after the first commitment.
 
@@ -709,7 +709,7 @@ Governments and would-be governments are very fond of promising infrastructure.
 But while these promises might give them political advantage, politicised announcements that ignore proper process have particularly poor outcomes.
 Cost overruns are 23 per cent higher on average for projects announced close to a state or federal election than for similar projects announced at other times.
 Previous Grattan work shows how politicians commit to poor quality projects for political benefit.%
-\footnote{Terrill, Emslie and Coates (2016) \emph{Roads to Riches;} Terrill (2016) \url{http://grattan.edu.au/news/election-2016-will-the-infrastructure-promises-meet-australias-needs/}.}
+\footcites{Terrill2016Roadsrichesbetter}{Terrill2016ElectionPromises}
 
 Politicians continue to make infrastructure promises for political advantage even though their parties have made strong statements recognising the need to spend infrastructure money better.
 Among such statements:
