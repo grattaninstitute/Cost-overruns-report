@@ -392,6 +392,20 @@ n_valid_transport_projects_geq_20M <-
   uniqueN(Grattan_record)
 @
 
+<<prop_projects_before_committed_which_are_completed>>=
+prop_projects_before_committed_which_are_completed <- 
+  final_status_by_GR %>%
+  merge(first_status_by_GR) %>%
+  merge(last_Cost_estimate_real_by_GR) %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  filter(last_Cost_estimate_real >= 20e6, 
+         isTransport, 
+         !outlier,
+         first_pipeline_status < "Committed") %$%
+  mean(Final_status == "Completed", na.rm = TRUE)
+@
+
 
 
 
@@ -415,7 +429,7 @@ Prematurely announced projects need larger cost upgrades not just early on, but 
 
 For the first time in Australia, we report on all \Sexpr{round(n_valid_transport_projects_geq_20M, -2)} projects valued at \$20~million or more and planned or built since 2000.
 We also report on the full project lifecycle from its first funding promise, because, once politicians have announced a project, they and the public treat that announcement as a commitment.
-They are right to do so: 80 per cent of these projects end up being built.
+They are right to do so: \Sexpr{grattan_percent(prop_projects_before_committed_which_are_completed)} of these projects end up being built.
 
 Promising to build infrastructure for a lower sum than it finally costs systematically represents infrastructure projects as more attractive than they really are.
 Much of the money might be better spent on other priorities.
