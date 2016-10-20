@@ -588,8 +588,8 @@ His overrun estimates are markedly higher than the average overrun of 14 per cen
 
 Other studies emphasise the importance of not assuming that Flyvbjerg's international studies are representative of each of the countries included in the sample.
 For instance, a study of the Dutch projects in the Flyvbjerg sample shows an average cost overrun of 16.5 per cent.%
-\footnote{Cantarelli, 2012} Many other studies have demonstrated variations in the size of overruns across different countries.%
-\footnote{Jenpanitsub 2011; Berechman and Wu, 2006}
+\footcite{Cantarelli2012Geographicalvariationproject} Many other studies have demonstrated variations in the size of overruns across different countries.%
+\footcites{Jenpanitsub2011CostoverrunsTransport}{Berechman2006CostOverrunsRisk}
 
 When cost overruns around the world are compared from the time of the formal funding commitment or contract, Australia generally ranks in, or slightly worse than, the mid range.
 Most studies of cost overruns focus on contract compliance and engineering, which are most relevant from the time of the contract, rather than the time a government or would-be government first announces the project.
