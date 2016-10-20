@@ -491,7 +491,7 @@ Another study of 58 projects found an average 12 per cent overrun.%
 \footcite[][7]{AustralianConstructorsAssociation2015}
 While not seeking to be representative, an investigation by the Victorian Auditor General found a 5 per cent cost overrun across seven road and rail projects valued at more than \$40~million.\footcites[][22]{General2010Managementmajorrail}[][12]{General2011ManagementMajorRoad} %
  The New South Wales Auditor General reported a 7 per cent cost overrun across 50 transport and other infrastructure projects valued above \$50~million.%
-\footnote{NSW Auditor General (2015) \emph{Large construction projects: Independent assurance}, https://www.audit.nsw.gov.au/ArticleDocuments/362/01\_Large\_Construction\_Projects\_Independent\_Assurance\_Complete\_Full\_Report.pdf.aspx?Embed=Y, p5.} These two studies did not consider scope changes or overruns between project announcement and formal contract.
+\footcite[][5]{General2015Largeconstructionprojects} These two studies did not consider scope changes or overruns between project announcement and formal contract.
 
 The variation in the average size of overruns observed across these small sample studies illustrates the value of a large sample when analysing extreme events.
 
@@ -509,13 +509,12 @@ This report considers the entire project lifecycle from when ministers or opposi
 
 We define a cost overrun as the amount by which the actual cost at the end of a particular phase exceeded the estimated cost at the start of that phase, expressed as a percentage of the cost estimated at the start of that phase.
 
-Some argue that cost overruns should only be measured from the point that a formal cost benefit analysis is completed or a funding commitment made.%
-\footnote{Love, P., Smith, J., Simpson, I., Regan, M., Olatunji, O. (2014) \emph{Understanding the landscape of overruns in transport infrastructure projects}, Environment and Planning B: Planning and Design 2015, volume 42, p; 493-4; Love, P., Ahiaga-Dagbui, D., Irani, Z. (2016) \emph{Cost overruns in transportation infrastructure projects: sowing the seeds for a probabilistic theory of causation}, Transportation Research Part A: Policy and Practice, volume 92, p185.} But this ignores the realpolitik of infrastructure funding.
+Some argue that cost overruns should only be measured from the point that a formal cost benefit analysis is completed or a funding commitment made.\footcites[][493-494]{Love2014Understandinglandscapeoverruns}[][185]{Love2016CostOverrunsinTransportationInfrastructure}[][144-145]{Seimiatycki2009AcademicsauditorsComparing} But this ignores the realpolitik of infrastructure funding.
 Politicians often promise to pursue infrastructure projects before a detailed cost benefit study is completed.
 Indeed, the vast majority of project commitments made in the last federal election were in this category.%
-\footnote{https://theconversation.com/election-2016-will-the-infrastructure-promises-meet-australias-needs-61140} Once an elected government has made such a commitment, it is unusual for the project not to proceed.
+\footcite{Terrill2016ElectionPromises} Once an elected government has made such a commitment, it is unusual for the project not to proceed.
 Indeed, it appears that cost benefit analyses are sometimes retrofitted to justify such commitments.%
-\footnote{Australian Constructors Association (2015) \emph{Changing the game: how Australia can achieve success in the new world of mega-projects}, \url{http://www.constructors.com.au/wp-content/uploads/2015/11/Changing-the-Game-Mega-Projects-Final1.pdf}, p20.}
+\footcite[][20]{AustralianConstructorsAssociation2015}
 
 This report takes politicians' commitments seriously.
 We treat a promise to build a particular project for a particular cost as a real promise.
