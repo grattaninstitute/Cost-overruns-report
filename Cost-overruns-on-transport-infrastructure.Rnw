@@ -995,7 +995,7 @@ To enable learning from past experience, and to improve accountability:
 
 \begin{enumerate}
   \renewcommand{\labelenumi}{\alph{enumi}) }
-\item The Commonwealth Department of Infrastructure should be required to publish to data.gov.au the post-completion report it already requires from state governments as a condition of providing final milestone payments for transport infrastructure projects.\footnote{As detailed in Appendix D3 of the Notes on Administration of the National Partnership Agreement on Land Transport Infrastructure Projects} 
+\item The Commonwealth Department of Infrastructure should be required to publish to data.gov.au the post-completion report it already requires from state governments as a condition of providing final milestone payments for transport infrastructure projects.\footnote{As detailed in \textcite{DIRD2013NotesonAdministration}, Appendix D3.} 
 Reports should detail any scope changes and their justification, agreed and actual construction start and finish dates, actual project costs, reasons for overruns or under-runs, and progress against performance indicators.
 
 \item Infrastructure Australia should be asked to provide the Joint Committee of Public Accounts and Audit with a post-completion appraisal of the benefits and costs of each infrastructure project with Commonwealth funding of \$50 million or more.
@@ -1124,21 +1124,13 @@ This also resulted in litigation being launched, by toll road owners Brisconnect
 \begin{bigbox*}{Case study -- Ipswich Motorway Dinmore to Goodna upgrade -- 196 per cent overrun}{box:Ipswich-motorway}
 \subsubsection*{``Under budget'', and no return of contingency}
 
-An upgrade of the Ipswich Motorway between Dinmore and Goodna in Southern Queensland was announced in 2003, at a cost of \$594 million, based on a cost-benefit analysis.\textsuperscript{1}
+An upgrade of the Ipswich Motorway between Dinmore and Goodna in Southern Queensland was announced in 2003, at a cost of \$594 million, based on a cost-benefit analysis.\footcite{Parliament2006QuestionsinWritingIpswich}
 
-In the 2007 federal election campaign, Labor promised to provide the upgrade for \$1.1 billion.\textsuperscript{2} Although this figure was far higher than the initial cost proposed, it turned out to be far lower than the 2008 contracted cost of \$1.95 billion.\textsuperscript{3}
+In the 2007 federal election campaign, Labor promised to provide the upgrade for \$1.1 billion.\footcite{RoadsAustralia2007News} Although this figure was far higher than the initial cost proposed, it turned out to be far lower than the 2008 contracted cost of \$1.95 billion.\footcite{AEEA2016IpswichMotorway}
 
-On completion in 2012, the project came in 10 per cent lower than the contracted cost.\textsuperscript{4} Rather than being returned to the Commonwealth, the contingency was diverted to other Queensland roads, including the Bruce Highway.\textsuperscript{5} 
+On completion in 2012, the project came in 10 per cent lower than the contracted cost.\footcite{AEEA2016IpswichMotorway} Rather than being returned to the Commonwealth, the contingency was diverted to other Queensland roads, including the Bruce Highway.\footcite{BrisbaneTimes2012FiveStagesDown} 
 
-1. \href{https://web.archive.org/web/20160902045709/http:/parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;db=CHAMBER;id=chamber/hansardr/2006-02-14/0163;query=Id:\%22chamber/hansardr/2006-02-14/0000\%22}{https}\href{https://web.archive.org/web/20160902045709/http:/parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;db=CHAMBER;id=chamber/hansardr/2006-02-14/0163;query=Id:\%22chamber/hansardr/2006-02-14/0000\%22}{://web.archive.org/web/20160902045709/http://}\href{https://web.archive.org/web/20160902045709/http:/parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;db=CHAMBER;id=chamber/hansardr/2006-02-14/0163;query=Id:\%22chamber/hansardr/2006-02-14/0000\%22}{parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;db=CHAMBER;id=chamber\%2Fhansardr\%2F2006-02-14\%2F0163;query=Id\%3A\%22chamber\%2Fhansardr\%2F2006-02-14\%2F0000\%22}
-
-2. \href{http://www.roadsaustralia.com.au/news/show-arf-insider/22}{http://}\href{http://www.roadsaustralia.com.au/news/show-arf-insider/22}{www.roadsaustralia.com.au/news/show-arf-insider/22},
-
-3. \url{http://www.exactal.com/en/our-clients/case-studies/origin-alliance}
-
-4. \url{http://www.excellenceawards.org.au/ipswich-motorway-upgrade-dinmore-to-goodna-d2g-project}
-
-5. http://www.brisbanetimes.com.au/queensland/five-stages-down-one-to-go-28b-road-upgrade-completion-in-sight-20120515-1yo56.html\tabularnewline
+\tabularnewline
 \end{bigbox*}
 
 
@@ -1545,9 +1537,8 @@ The second main disadvantage of holding most or all of the contingency at the in
 \subsubsection*{Unused contingencies are often funnelled into scope increases and other projects}
 
 The Pacific Motorway (Springwood South to Daisy Hill) upgrade project in southern Brisbane finished under budget.
-Then Federal Infrastructure Minister Anthony Albanese announced that the ``savings achieved on the Springwood South to Daisy Hill upgrade will be used to construct an auxiliary lane between Fitzgerald Avenue and Aranda Street in Springwood as well as undertake the land acquisitions and planning work associated with the future widening of the Motorway between Daisy Hill and the Logan Motorway."
+Then Federal Infrastructure Minister Anthony Albanese announced that the ``savings achieved on the Springwood South to Daisy Hill upgrade will be used to construct an auxiliary lane between Fitzgerald Avenue and Aranda Street in Springwood as well as undertake the land acquisitions and planning work associated with the future widening of the Motorway between Daisy Hill and the Logan Motorway."\footcite{Albanese2013PacificMotorway}
 
-1. \url{http://anthonyalbanese.com.au/category/ministerial-media-releases/page/26}
 \end{smallbox}
 
 While holding the contingency against an individual project allows a more nimble response to unexpected events, this very nimbleness is also a disadvantage.
