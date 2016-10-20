@@ -1108,25 +1108,16 @@ This is because, even though cost estimates announced prior to a budget commitme
 \begin{smallbox}{Case study -- overstated benefits}{box:overstated-benefits}
 Several successful lawsuits show the most extreme cases of inaccurate forecasting of project benefits.
 
-Brisbane's CLEM 7 tunnel was forecast to carry over 100,000 vehicles per day within 2 years of opening, but the reality was only around 22,000.\textsuperscript{1} A successful class action was brought against the forecaster, AECOM.\textsuperscript{2} The tunnel's owner, RiverCity Motorway, went into administration in 2011, as the traffic had not generated enough revenue for the company to pay its debts.\textsuperscript{3}
+Brisbane's CLEM 7 tunnel was forecast to carry over 100,000 vehicles per day within 2 years of opening, but the reality was only around 22,000.\footcite[][9--11]{CLEM7-lawsuit-against-AECOM-statement-of-claim} A successful class action was brought against the forecaster, AECOM.\footcite{CLEM7-lawsuit-successful-media-release} The tunnel's owner, RiverCity Motorway, went into administration in 2011, as the traffic had not generated enough revenue for the company to pay its debts.\footcite{BrisTimes-RiverCity-IPO-secure-121M}
 
 The traffic forecasts for Sydney's Lane Cove tunnel were in contention in a lawsuit brought against the companies, Parsons Brinckerhoff and Booz Allen, settled in 2014.
-The case concerned allegations that the forecasters ``reverse engineered'' the predictions, working backwards from commercial objectives in estimating traffic volumes.\textsuperscript{4}
+The case concerned allegations that the forecasters ``reverse engineered'' the predictions, working backwards from commercial objectives in estimating traffic volumes.\footcite{AFR-Traffic-forecasters-settle-with-AMP-over-Lane-Cover-tunnel}
 
 The Brisbane Airport Link is another example of a road for which traffic volumes were far below expectations.
-This also resulted in litigation being launched, by toll road owners Brisconnections against forecaster Arup.\textsuperscript{5} This action was settled in 2015.\textsuperscript{6}
+This also resulted in litigation being launched, by toll road owners Brisconnections against forecaster Arup.\footcite{AFR-BrisConnections-receivers-sue-Arup-over-Brisbane-airport-link} This action was settled in 2015.\footcite{IMFBentham-BrisConnections-vs-Arup-Settled-notice}
 
-1. \url{https://www.mauriceblackburn.com.au/media/2403/14-03-31-second-further-amended-statement-of-claim-with-schedules-a-and-b-clean-sealed.pdf}, p.9-11
 
-2. https://www.mauriceblackburn.com.au/norewrite/current-class-actions/rivercity-class-action/
 
-3. \url{http://www.brisbanetimes.com.au/business/rivercity-ipo-investors-secure-121m-in-successful-clem7-class-action-20160601-gp8qu4.html}
-
-4. \url{http://www.afr.com/news/politics/national/traffic-forecasters-settle-with-ampover-lane-cove-20140923-jftpp}
-
-5. \url{http://www.afr.com/business/brisconnections-receivers-sue-arup-over-brisbane-airport-link-20140528-iv1qo}
-
-6. http://www.imf.com.au/cases/detail/brisconnections
 \end{smallbox}
 
 
