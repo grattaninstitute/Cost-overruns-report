@@ -694,7 +694,7 @@ In 2002, the Federal Coalition Government committed to contributing \$12 million
 
 Yet the project was not confirmed until 2009, when a contract was awarded for \$101 million.\footcites{ABCNews2009AlstonvilleBypassFundsAnnounced}{NSWBudget200910Statement}
 
-Savings of \$6.7 million were made during the construction period, and the project was declared to have come in ``under budget''\footnote{4} when it was completed in 2011,\footnote{5} six months after the contracted completion date,\footnote{6} five years after the promised completion date, and nine years after the first commitment.
+Savings of \$6.7 million were made during the construction period, and the project was declared to have come in ``under budget''\footcite{RuralandRegionalAffairs2014} when it was completed in 2011,\footnote{5} six months after the contracted completion date,\footnote{6} five years after the promised completion date, and nine years after the first commitment.
 
 \begin{figure}[H]
  \caption{Project cost estimates, millions of dollars}
