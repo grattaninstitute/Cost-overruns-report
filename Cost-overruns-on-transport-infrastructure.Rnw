@@ -1106,8 +1106,7 @@ Properly accounting for the risk associated with them characteristics is a simpl
 
 Complex projects are prone to cost overruns because they tend to have many interdependent components that can be disrupted if one element falls behind time, and multiple interfaces with existing infrastructure.
 These risks are amplified when the existing infrastructure continues operating during construction.%
-\footnote{Eg \textcite{Hinze1992CostOverrunsonStateofWashington}; Flyvbjerg; in Australia: Engineers Australia (2014) Mastering complex projects: principles for success and reliable performance, p3.
-Although Love et al 2013 also find big overruns for smaller projects - check}
+\footnote{Eg \textcites{Hinze1992CostOverrunsonStateofWashington}[][9--11]{Flyvbjerg2014Whatyoushould}; in Australia: \textcite[][3]{EngineersAustralia2014Masteringcomplexprojects}}
 
 The most complex projects also tend to be large.
 Because of this, large projects are more likely to incur cost overruns, and these overruns are likely to be particularly big (\Vref{fig:prevalence-avg-magnitude-cost-overruns-by-project-size}).
@@ -1141,7 +1140,7 @@ Unusual projects are also more prone to cost overruns.
 This is because the more unusual a project is, the more difficult it is to estimate its cost and to build it to budget.
 Understanding when and where a project is unusual can help project proponents identify which projects are at particularly high risk of cost overruns.
 
-For example, rail projects tend to be relatively homogeneous during the planning stage, as many key components are standardised and can be purchased for a known price\footnote{Reference the NSW Legislative committee's review into rail costs.}.
+For example, rail projects tend to be relatively homogeneous during the planning stage, as many key components are standardised and can be purchased for a known price.\footcite{StandingCommittee2012Railinfrastructureprojectcosting}
 However, these projects tend to incur disparate construction problems, because they are usually built on brownfield sites, around ongoing operations.
 
 The inverse is true for roads.
@@ -1161,7 +1160,7 @@ Cost overruns are larger for road projects during the planning stage, when road 
 
 These differences in the size and timing of cost overruns by project mode illustrate another opportunity to improve cost estimates.
 Project proponents are always aware of their project's mode, and their project's mode provides substantial information about the project's likely cost risks.
-However, Australian risk management guidance does not currently advise project proponents to account for mode-specific differences in projects' cost risks\footnote{The guidelines cite National Transport Council (2016) National Guidelines for Transport System Management in Australia, chapters 2, 3 and 4.}.
+However, Australian risk management guidance does not currently advise project proponents to account for mode-specific differences in projects' cost risks.\footnote{The recently updated Australian Transport and Planning guidelines cite the importance of mode specific cost estimation differences, but only contain placeholder sections.\textcite{ATAP2016Guidelines} Placeholder sections cite the NGTSM guidelines which preceded the ATAP guidelines, but the relevant sections of this document do not note modal differences in cost risk, or how to accommodate them.\textcites{ATC2006NGTSM3}{ATC2006NGTSM5}}
 
 \subsection{Contract type may affect the risk of cost overruns}\label{contract-type-may-affect-the-risk-of-cost-overruns}
 
@@ -1182,9 +1181,9 @@ Consequently, the average size of cost overruns is likely to vary by contract ty
 However, there limited evidence on whether this is the case in practice.
 
 A 2007 study of 54 projects and a 2008 study of 67 projects both concluded that PPPs are less prone to cost overruns than are traditionally procured projects.%
-\footnote{Duffield et al (2007); Duffield (2008)} Another study of 38 projects found no statistically significant difference in cost outcomes between PPP and non-PPP projects.%
-\footnote{Elaurant and Louise (2015)} A 2010 study of 14 alliance projects found significantly greater cost overruns than in traditional delivery methods.%
-\footnote{Wood (2010)}
+\footcites{Group2007PerformancePPPsTraditional}{Duffield2008ReportperformancePPP} Another study of 38 projects found no statistically significant difference in cost outcomes between PPP and non-PPP projects.%
+\footcite{Elaurant2015POLITICSFINANCETRANSPORT}} A 2010 study of 14 alliance projects found significantly greater cost overruns than in traditional delivery methods.%
+\footcite{Wood2010Comparingcostuplift}
 
 Given the small sample sizes and varying results of these studies, it is difficult to generalise about whether the average size of cost overruns is different under different types of contracts.
 However, this is an important field of research because it has the potential to identify more cost efficient ways to deliver infrastructure projects and to improve our ability to anticipate cost overruns.
