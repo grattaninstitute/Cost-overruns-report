@@ -392,6 +392,39 @@ n_valid_transport_projects_geq_20M <-
   uniqueN(Grattan_record)
 @
 
+<<prop_projects_having_big_overruns>>=
+prop_projects_having_big_overruns <- 
+  final_status_by_GR %>%
+  merge(first_status_by_GR) %>%
+  merge(first_Cost_estimate_real_by_GR) %>%
+  merge(last_Cost_estimate_real_by_GR) %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  filter(last_Cost_estimate_real >= 20e6, 
+         isTransport, 
+         !outlier, 
+         !is.na(Final_status)) %>%
+  mutate(cost_overrun_perc = last_Cost_estimate_real / first_Cost_estimate_real - 1) %$% 
+  mean(cost_overrun_perc > 0.5)
+@
+
+<<prop_value_overruns_due_to_big_overruns>>=
+prop_value_overruns_due_to_big_overruns <- 
+  final_status_by_GR %>%
+  merge(first_status_by_GR) %>%
+  merge(first_Cost_estimate_real_by_GR) %>%
+  merge(last_Cost_estimate_real_by_GR) %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  filter(last_Cost_estimate_real >= 20e6, 
+         isTransport, 
+         !outlier, 
+         !is.na(Final_status)) %>%
+  mutate(cost_overrun_perc = last_Cost_estimate_real / first_Cost_estimate_real - 1, 
+         cost_overrun_value = last_Cost_estimate_real - first_Cost_estimate_real) %$%
+  weighted.mean(cost_overrun_perc > 0.5, cost_overrun_value)
+@
+
 <<prop_projects_announced_early>>=
 prop_projects_announced_early <- 
   final_status_by_GR %>%
@@ -442,6 +475,7 @@ prop_projects_before_committed_which_are_completed <-
 
 \setlength{\overviewExtra}{-4mm}
 \begin{overview}
+\nonfrenchspacing
 Over the past 15 years, Australian governments have spent \Sexpr{texNum(total_cost_of_cost_overruns, sig.figs = 2L, dollar = TRUE)} more on transport infrastructure than they told taxpayers they would spend.
 The cost overruns amounted to nearly a quarter of total project budgets.
 Western Australia's Forrest Highway between Perth and Bunbury cost nearly five times, and New South Wales' Hunter Expressway cost nearly four times, the amounts initially promised.
@@ -450,7 +484,7 @@ They are seen as a fact of life in infrastructure building.
 This perception can and must be changed.
 
 Cost overruns are a problem less because of how often they happen than their cost when they do.
-Eighty eight per cent of Australia's cost overrun problem is explained by the 17 per cent of projects that exceed their promised cost by more than half.
+\Sexpr{grattan_percent(prop_value_overruns_due_to_big_overruns)} of Australia's cost overrun problem is explained by the \Sexpr{grattan_percent(prop_projects_having_big_overruns)} of projects that exceed their promised cost by more than half.
 
 Much of the problem is entirely preventable.
 Premature announcements -- when a politician promises to build a road or rail line at a certain cost, often in the lead-up to an election -- are the biggest culprits.
