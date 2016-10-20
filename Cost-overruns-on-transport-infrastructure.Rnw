@@ -365,6 +365,20 @@ outlier_by_GR <-
   setkey(Grattan_record)
 @
 
+<<total_cost_of_cost_overruns>>=
+total_cost_of_cost_overruns <- 
+  last_Cost_estimate_real_by_GR %>%
+  merge(first_Cost_estimate_real_by_GR) %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  merge(final_status_by_GR) %>%
+  filter(last_Cost_estimate_real >= 20e6, 
+         isTransport, 
+         !outlier, 
+         !is.na(Final_status)) %$%
+  sum(last_Cost_estimate_real - first_Cost_estimate_real)
+@
+
 <<n_valid_transport_projects_geq_20M>>=
 n_valid_transport_projects_geq_20M <-
   last_Cost_estimate_real_by_GR %>%
@@ -384,7 +398,7 @@ n_valid_transport_projects_geq_20M <-
 
 \setlength{\overviewExtra}{-4mm}
 \begin{overview}
-Over the past 15 years, Australian governments have spent \$25~billion more on transport infrastructure than they told taxpayers they would spend.
+Over the past 15 years, Australian governments have spent \Sexpr{texNum(total_cost_of_cost_overruns, sig.figs = 2L, dollar = TRUE)} more on transport infrastructure than they told taxpayers they would spend.
 The cost overruns amounted to nearly a quarter of total project budgets.
 Western Australia's Forrest Highway between Perth and Bunbury cost nearly five times, and New South Wales' Hunter Expressway cost nearly four times, the amounts initially promised.
 Yet despite their sometimes staggering size, cost overruns attract little public attention.
