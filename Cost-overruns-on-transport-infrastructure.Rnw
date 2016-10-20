@@ -561,7 +561,7 @@ We take this approach to differentiate genuinely additional infrastructure from 
 
 Changes to scope are only a problem if they are not appraised on their merits as to whether they are worth the money and are better than alternative ways to solve a problem or to spend public funds.
 
-Although it appears to be common for scope changes to be made without proper appraisal of the new work,\footnote{Love et al (201), p185.} in fact scope changes only account for about 11 per cent of cost overruns on transport infrastructure projects (\Vref{fig:most-cost-overruns-were-not-attrib-to-scope-changes}).
+Although it appears to be common for scope changes to be made without proper appraisal of the new work,\footcite[][185]{Love2016CostOverrunsinTransportationInfrastructure} in fact scope changes only account for about 11 per cent of cost overruns on transport infrastructure projects (\Vref{fig:most-cost-overruns-were-not-attrib-to-scope-changes}).
 
 \begin{figure}
 \captionwithunits{Most cost overruns were not attributable to scope changes\label{fig:most-cost-overruns-were-not-attrib-to-scope-changes}}
@@ -580,11 +580,11 @@ The scarcity of Australian studies of cost overruns has fed a misperception that
 
 The best-known international studies of `megaprojects' have found road projects overrunning by 24 per cent and rail by 40 per cent.
 These findings emerge from a study of infrastructure project cost overruns on 1603 road and rail projects of all sizes, each valued at between US\$1.5~million and US\$8.5~billion, in 20 countries between 1927 and 2013.%
-\footnote{Flyvbjerg 2016, methodology described in Flyvbjerg et al 2003} The findings led the leader of the study, Danish economic geographer Bent Flyvbjerg to invent what he called ``the iron law of megaprojects: over budget, over time, over and over again.''\footnote{Flyvbjerg 2011}
+\footnote{\textcite{Flyvbjerg2016fallacybeneficialignorance}, methodology described in \textcite{Flyvbjerg2003Megaprojectsriskanatomy}} The findings led the leader of the study, Danish economic geographer Bent Flyvbjerg to invent what he called ``the iron law of megaprojects: over budget, over time, over and over again.''\footcite[][9-11]{Flyvbjerg2014Whatyoushould}
 
 Yet Flyvbjerg's findings, while credible, cannot be generalised.
 His overrun estimates are markedly higher than the average overrun of 14 per cent reported across the next four biggest academic studies, or the 15 per cent reported across the four largest studies completed by auditors of road projects.%
-\footnote{Seimiatycki, 2009}
+\footcite{Seimiatycki2009AcademicsauditorsComparing}
 
 Other studies emphasise the importance of not assuming that Flyvbjerg's international studies are representative of each of the countries included in the sample.
 For instance, a study of the Dutch projects in the Flyvbjerg sample shows an average cost overrun of 16.5 per cent.%
