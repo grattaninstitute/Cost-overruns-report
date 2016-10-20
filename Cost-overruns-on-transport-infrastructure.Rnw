@@ -1430,7 +1430,7 @@ Canberra Light Rail & ACT & \possibleTextDollar759\dz & \possibleTextDollar806\d
 A second consequence of not knowing historical outcomes of similar projects is that it deprives cost estimators of an effective counter to known psychological biases.
 Just as trains or aeroplanes more often arrive late than early, so too do cost estimates tend to ramp upwards more often and to a greater degree than downwards.
 The psychological tendency to believe that project outcomes will be better than they turn out to be is known as `optimism bias', and arises from the combined impacts of cost underestimation and benefits overestimation.%
-\footnote{Kahnemann and Tversky (1979); Flyvbjerg (2014) p14.} Unfortunately, optimism bias is especially acute when the most money is at stake, in the larger and more complex projects where the interdependence of risks is particularly hard for experts to judge accurately.
+\footcites{Kahneman2012Thinkingfastslow}[][14]{Flyvbjerg2014Whatyoushould} Unfortunately, optimism bias is especially acute when the most money is at stake, in the larger and more complex projects where the interdependence of risks is particularly hard for experts to judge accurately.
 
 A third consequence of not knowing historical outcomes is that cost estimators lack an effective counter to `strategic misrepresentation' -- when proponents deliberately manipulate the cost estimates to make them look more favourable than they really are.
 Project proponents have an incentive for strategic misrepresentation to the extent that they are judged more on how much they build than how well they manage their budget.
@@ -1438,7 +1438,7 @@ Lack of historical outcomes data makes this behaviour hard to counter.
 
 The discrepancy between expert expectations and historical experience shows that the reliability of risk assessments on Australian transport infrastructure projects would be substantially improved by equipping risk experts with better information.
 The Productivity Commission's 2014 Public Infrastructure inquiry report highlights the need for an accurate database of historical cost outcomes for Australian projects.
-The Commonwealth, which supports this recommendation,\footnote{Productivity Commission (2014), recommendation 9.2, http://www.pc.gov.au/\_\_data/assets/pdf\_file/0003/137280/infrastructure-volume1.pdf; Department of Infrastructure and Regional Development (2014), p 19, https://infrastructure.gov.au/infrastructure/publications/files/Productivity\_Commission\_Inquiry\_Report\_into\_Public\_Infrastructure.pdf.} should create such a database, using the information on completed projects from all states on a consistent basis.
+The Commonwealth, which supports this recommendation,\footnote{\textcite{Commission2014PublicInfastructure}, volume 1, recommendation 9.2; and \textcite[][19]{Infrastructure2014AUSTRALIANGOVERNMENTRESPONSE}.} should create such a database, using the information on completed projects from all states on a consistent basis.
 The change would help cost estimation experts to create better quality estimates.
 
 \begin{recommendation}{Compile Australian database of completed projects}
