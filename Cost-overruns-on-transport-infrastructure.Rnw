@@ -838,10 +838,10 @@ In particular, there is no public reporting on how well government-funded transp
 This is a serious gap.
 
 Infrastructure Australia, according to the law that establishes it, is supposed to evaluate whether projects met targets set before or during delivery, and to promote public awareness of its monitoring role, in part by publishing information on its website.%
-\footnote{\emph{Infrastructure Australia Act 2008} (Cwlth), s5C} This does not happen.
+\footcite{Act2008InfrastructureAustraliaAct} This does not happen.
 Nor do state governments, including their infrastructure bodies, publish information about how well projects performed against their estimated costs and benefits.
 Post-implementation reviews seldom take place or are made public when they do.%
-\footnote{ACA (20xx) Changing the game, p26; Ellis (2015) How to increase the chance of project success, section 13; VAGO (2015) p10-11.} For such reporting to be effective, it must be done in a standard way to allow like-for-like comparisons.
+\footcites[][26]{AustralianConstructorsAssociation2015}{Ellis2015HowToIncrease}[][10--11]{General2015Followupofmanagingmajorprojects} For such reporting to be effective, it must be done in a standard way to allow like-for-like comparisons.
 
 Other spheres of government investment require much stricter reporting on outcomes.
 For instance, the \$123 billion Future Fund,\footnote{http://www.futurefund.gov.au/-/media/Files/FutureFund/05--\/-Portfolio-Updates/Portfolio-update-at-30-June-2016.pdf?la=en} is governed by the \emph{Future Fund Act 2006} and overseen by a board of independent guardians.
