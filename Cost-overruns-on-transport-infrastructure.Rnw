@@ -1182,7 +1182,7 @@ However, there limited evidence on whether this is the case in practice.
 
 A 2007 study of 54 projects and a 2008 study of 67 projects both concluded that PPPs are less prone to cost overruns than are traditionally procured projects.%
 \footcites{Group2007PerformancePPPsTraditional}{Duffield2008ReportperformancePPP} Another study of 38 projects found no statistically significant difference in cost outcomes between PPP and non-PPP projects.%
-\footcite{Elaurant2015POLITICSFINANCETRANSPORT}} A 2010 study of 14 alliance projects found significantly greater cost overruns than in traditional delivery methods.%
+\footcite{Elaurant2015POLITICSFINANCETRANSPORT} A 2010 study of 14 alliance projects found significantly greater cost overruns than in traditional delivery methods.%
 \footcite{Wood2010Comparingcostuplift}
 
 Given the small sample sizes and varying results of these studies, it is difficult to generalise about whether the average size of cost overruns is different under different types of contracts.
