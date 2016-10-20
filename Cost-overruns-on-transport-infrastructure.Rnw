@@ -1570,7 +1570,7 @@ Instead, our infrastructure systems could promise what is worth having, and then
 \begin{figure}
 \captionwithunits{Title }
 {Subtitle}
-\includegraphics{Example-image}\label{}
+% \includegraphics{}\label{}
 \noteswithsource{Notes}
 {Source}
 \end{figure}
