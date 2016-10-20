@@ -489,7 +489,7 @@ Another study of 58 projects found an average 12 per cent overrun.%
 \footcite[][157]{Love2012Overrunstransportationinfrastructure} A further study of 46 projects found overruns of 5 to 11 per cent of project costs.%
 \footcite{Wood2010Comparingcostuplift} A 2015 study of 44 projects each valued at \$1~billion or more found cost overruns of 14 per cent on the \$44~billion budget.%
 \footcite[][7]{AustralianConstructorsAssociation2015}
-While not seeking to be representative, an investigation by the Victorian Auditor General found a 5 per cent cost overrun across seven road and rail projects valued at more than \$40~million.\footnote{\textcite[][22]{General2010Managementmajorrail}; \textcite[][12]{General2011ManagementMajorRoad}.}
+While not seeking to be representative, an investigation by the Victorian Auditor General found a 5 per cent cost overrun across seven road and rail projects valued at more than \$40~million.\footcites[][22]{General2010Managementmajorrail}[][12]{General2011ManagementMajorRoad} %
  The New South Wales Auditor General reported a 7 per cent cost overrun across 50 transport and other infrastructure projects valued above \$50~million.%
 \footnote{NSW Auditor General (2015) \emph{Large construction projects: Independent assurance}, https://www.audit.nsw.gov.au/ArticleDocuments/362/01\_Large\_Construction\_Projects\_Independent\_Assurance\_Complete\_Full\_Report.pdf.aspx?Embed=Y, p5.} These two studies did not consider scope changes or overruns between project announcement and formal contract.
 
