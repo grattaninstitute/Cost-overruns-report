@@ -415,7 +415,53 @@ Our infrastructure systems should promise what is worth having, and then deliver
 \contentspage
 
 \begin{Recommendations}
-\recommendEvaluateBeforeSpending
+\subsubsection*{Recommendation 1: Evaluate before spending}%
+Governments should not be able to commit public money to transport infrastructure until a rigorous, independent like-for-like evaluation and the underlying business case have been tabled in the state or federal parliament.
+
+\subsubsection*{Recommendation 2: Publish evaluations of new infrastructure commitments}
+
+The Commonwealth should enable and facilitate better public understanding of infrastructure commitments by:
+
+\begin{enumerate}
+  \renewcommand{\labelenumi}{\alph{enumi})}
+  \item requiring Infrastructure Australia to publish 
+  \begin{enumerate}
+    \renewcommand{\labelenumii}{(\roman{enumii})}
+    \item summaries of \emph{all} transport infrastructure projects funded by the Commonwealth within the previous quarter, populated to the extent that Infrastructure Australia has the information to do so and otherwise left blank; and 
+    \item business cases and cost benefit analyses for all transport infrastructure proposals receiving Commonwealth funding during the previous quarter, if these have not already been published by a state government; and
+  \end{enumerate}
+  \item requiring the Parliamentary Budget Officer to publish reliability ratings of all transport infrastructure business cases within one month of Infrastructure Australia publishing them.
+\end{enumerate}
+
+\subsubsection*{Recommendation 3: Publish post-completion data}
+
+To enable learning from past experience, and to improve accountability:
+\begin{enumerate}
+  \renewcommand{\labelenumi}{\alph{enumi})}
+  \item The Commonwealth Department of Infrastructure should be required to publish to data.gov.au the post-completion report it already requires from state governments as a condition of providing final milestone payments for transport infrastructure projects.
+Reports should detail any scope changes and their justification, agreed and actual construction start and finish dates, actual project costs, reasons for overruns or under-runs, and progress against performance indicators.
+
+  \item Infrastructure Australia should be asked to provide the Joint Committee of Public Accounts and Audit with a post-completion appraisal of the benefits and costs of each infrastructure project with Commonwealth funding of \$50 million or more.
+
+  \item The Council of Australian Governments should add a new category of infrastructure services to the terms of reference for the annual Report on Government Services, produced by the Productivity Commission.
+\end{enumerate}
+
+\subsubsection*{Recommendation 4: Special arrangements for big projects}
+
+When the estimated construction cost to that jurisdiction is \$1 billion or more, Commonwealth, state or territory governments should be required to introduce standalone legislation for any transport infrastructure.
+
+\subsubsection*{Recommendation 5: Improve risk measurement guidance}
+
+The Commonwealth should provide model guidelines that states and territories may adopt or adapt, that recommend a consistent approach to measuring and managing project risk, including a statement of seniority where specific guidelines would otherwise conflict with one another.
+
+\subsubsection*{Recommendation 6: compile Australian database of completed projects}
+
+The Commonwealth should seek cooperation from the states to create new benchmarking data to improve risk measurement in new project proposals and public accountability.
+They should do so using data collected through mechanisms described in Recommendation 3.
+
+\subsubsection*{Recommendation 7: Hold half the project contingency in a portfolio pool}
+
+Governments should divide project contingencies between project management agencies and central agencies, and formalise the conditions governing contingency drawdown, to improve the cost-efficiency of risk management.
 
 \end{Recommendations}
 
