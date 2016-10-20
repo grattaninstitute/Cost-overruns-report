@@ -365,7 +365,18 @@ outlier_by_GR <-
   setkey(Grattan_record)
 @
 
-
+<<n_valid_transport_projects_geq_20M>>=
+n_valid_transport_projects_geq_20M <-
+  last_Cost_estimate_real_by_GR %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  merge(final_status_by_GR) %>%
+  filter(last_Cost_estimate_real >= 20e6, 
+         isTransport, 
+         !outlier, 
+         !is.na(Final_status)) %$%
+  uniqueN(Grattan_record)
+@
 
 
 
@@ -388,7 +399,7 @@ Premature announcements -- when a politician promises to build a road or rail li
 Although only 31 per cent of projects are announced early, early announcements account for 82 per cent of the value of cost overruns over the past 15~years.
 Prematurely announced projects need larger cost upgrades not just early on, but throughout their funding approval and construction phases.
 
-For the first time in Australia, we report on all 800 projects valued at \$20~million or more and planned or built since 2000.
+For the first time in Australia, we report on all \Sexpr{round(n_valid_transport_projects_geq_20M, -2)} projects valued at \$20~million or more and planned or built since 2000.
 We also report on the full project lifecycle from its first funding promise, because, once politicians have announced a project, they and the public treat that announcement as a commitment.
 They are right to do so: 80 per cent of these projects end up being built.
 
