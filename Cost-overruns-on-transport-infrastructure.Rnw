@@ -721,8 +721,8 @@ Among such statements:
 \item
   The Federal Labor Opposition, which established Infrastructure Australia when it was in office in 2008, promises to take the politics out of infrastructure by ensuring that \emph{``Infrastructure Australia independently assesses all major infrastructure projects on the basis of the benefits they provide to the economy and society as a whole, their commercial viability and their capacity to enhance national productivity}.''\footcite{ALP2016EmpoweringInfrastructureAustralia}
 \item
-  The Greens contend that ``\emph{{[}t{]}oo often, major infrastructure decisions are made for short-term, politically expedient reasons, rather than in the long-term public interest}.''\footnote{Ref} They would like to see comprehensive cost-benefit analysis for large projects submitted to Infrastructure Australia for evaluation, and with the recommendation made public at the same time it is given to government.%
-\footnote{Ref}
+  The Greens contend that ``\emph{{[}t{]}oo often, major infrastructure decisions are made for short-term, politically expedient reasons, rather than in the long-term public interest}.''\footcite{Greens2016AustralianInfrastructureBank} They would like to see comprehensive cost-benefit analysis for large projects submitted to Infrastructure Australia for evaluation, and with the recommendation made public at the same time it is given to government.%
+\footcite{Greens2016AustralianInfrastructureBank}
 \end{itemize}
 
 But even though parties make such statements, the behaviour of politicians exposes the hollowness of their claims.
