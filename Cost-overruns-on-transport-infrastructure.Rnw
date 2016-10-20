@@ -365,7 +365,109 @@ outlier_by_GR <-
   setkey(Grattan_record)
 @
 
+<<total_cost_of_cost_overruns>>=
+total_cost_of_cost_overruns <- 
+  last_Cost_estimate_real_by_GR %>%
+  merge(first_Cost_estimate_real_by_GR) %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  merge(final_status_by_GR) %>%
+  filter(last_Cost_estimate_real >= 20e6, 
+         isTransport, 
+         !outlier, 
+         !is.na(Final_status)) %$%
+  sum(last_Cost_estimate_real - first_Cost_estimate_real)
+@
 
+<<n_valid_transport_projects_geq_20M>>=
+n_valid_transport_projects_geq_20M <-
+  last_Cost_estimate_real_by_GR %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  merge(final_status_by_GR) %>%
+  filter(last_Cost_estimate_real >= 20e6, 
+         isTransport, 
+         !outlier, 
+         !is.na(Final_status)) %$%
+  uniqueN(Grattan_record)
+@
+
+<<prop_projects_having_big_overruns>>=
+prop_projects_having_big_overruns <- 
+  final_status_by_GR %>%
+  merge(first_status_by_GR) %>%
+  merge(first_Cost_estimate_real_by_GR) %>%
+  merge(last_Cost_estimate_real_by_GR) %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  filter(last_Cost_estimate_real >= 20e6, 
+         isTransport, 
+         !outlier, 
+         !is.na(Final_status)) %>%
+  mutate(cost_overrun_perc = last_Cost_estimate_real / first_Cost_estimate_real - 1) %$% 
+  mean(cost_overrun_perc > 0.5)
+@
+
+<<prop_value_overruns_due_to_big_overruns>>=
+prop_value_overruns_due_to_big_overruns <- 
+  final_status_by_GR %>%
+  merge(first_status_by_GR) %>%
+  merge(first_Cost_estimate_real_by_GR) %>%
+  merge(last_Cost_estimate_real_by_GR) %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  filter(last_Cost_estimate_real >= 20e6, 
+         isTransport, 
+         !outlier, 
+         !is.na(Final_status)) %>%
+  mutate(cost_overrun_perc = last_Cost_estimate_real / first_Cost_estimate_real - 1, 
+         cost_overrun_value = last_Cost_estimate_real - first_Cost_estimate_real) %$%
+  weighted.mean(cost_overrun_perc > 0.5, cost_overrun_value)
+@
+
+<<prop_projects_announced_early>>=
+prop_projects_announced_early <- 
+  final_status_by_GR %>%
+  merge(first_status_by_GR) %>%
+  merge(last_Cost_estimate_real_by_GR) %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  filter(last_Cost_estimate_real >= 20e6, 
+         isTransport, 
+         !outlier, 
+         !is.na(Final_status)) %$%
+  mean(first_pipeline_status < "Committed")
+@
+
+<<prop_value_overruns_due_to_early_projects>>=
+prop_value_overruns_due_to_early_projects <- 
+  final_status_by_GR %>%
+  merge(first_status_by_GR) %>%
+  merge(first_Cost_estimate_real_by_GR) %>%
+  merge(last_Cost_estimate_real_by_GR) %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  filter(last_Cost_estimate_real >= 20e6, 
+         isTransport, 
+         !outlier, 
+         !is.na(Final_status)) %>%
+  mutate(cost_overrun_value = last_Cost_estimate_real - first_Cost_estimate_real) %$%
+  weighted.mean(first_pipeline_status < "Committed", cost_overrun_value)
+@
+
+<<prop_projects_before_committed_which_are_completed>>=
+prop_projects_before_committed_which_are_completed <- 
+  final_status_by_GR %>%
+  merge(first_status_by_GR) %>%
+  merge(last_Cost_estimate_real_by_GR) %>%
+  merge(isTransport_by_GR) %>%
+  merge(outlier_by_GR) %>%
+  filter(last_Cost_estimate_real >= 20e6, 
+         isTransport, 
+         !outlier,
+         first_pipeline_status < "Committed") %$%
+  mean(Final_status == "Completed", na.rm = TRUE)
+@
 
 
 
@@ -373,7 +475,8 @@ outlier_by_GR <-
 
 \setlength{\overviewExtra}{-4mm}
 \begin{overview}
-Over the past 15 years, Australian governments have spent \$25~billion more on transport infrastructure than they told taxpayers they would spend.
+\nonfrenchspacing
+Over the past 15 years, Australian governments have spent \Sexpr{texNum(total_cost_of_cost_overruns, sig.figs = 2L, dollar = TRUE)} more on transport infrastructure than they told taxpayers they would spend.
 The cost overruns amounted to nearly a quarter of total project budgets.
 Western Australia's Forrest Highway between Perth and Bunbury cost nearly five times, and New South Wales' Hunter Expressway cost nearly four times, the amounts initially promised.
 Yet despite their sometimes staggering size, cost overruns attract little public attention.
@@ -381,16 +484,16 @@ They are seen as a fact of life in infrastructure building.
 This perception can and must be changed.
 
 Cost overruns are a problem less because of how often they happen than their cost when they do.
-Eighty eight per cent of Australia's cost overrun problem is explained by the 17 per cent of projects that exceed their promised cost by more than half.
+\Sexpr{grattan_percent(prop_value_overruns_due_to_big_overruns)} of Australia's cost overrun problem is explained by the \Sexpr{grattan_percent(prop_projects_having_big_overruns)} of projects that exceed their promised cost by more than half.
 
 Much of the problem is entirely preventable.
 Premature announcements -- when a politician promises to build a road or rail line at a certain cost, often in the lead-up to an election -- are the biggest culprits.
-Although only 31 per cent of projects are announced early, early announcements account for 82 per cent of the value of cost overruns over the past 15~years.
+Although only \Sexpr{grattan_percent(prop_projects_announced_early)} of projects are announced early, early announcements account for \Sexpr{grattan_percent(prop_value_overruns_due_to_early_projects)} of the value of cost overruns over the past 15~years.
 Prematurely announced projects need larger cost upgrades not just early on, but throughout their funding approval and construction phases.
 
-For the first time in Australia, we report on all 800 projects valued at \$20~million or more and planned or built since 2000.
+For the first time in Australia, we report on all \Sexpr{round(n_valid_transport_projects_geq_20M, -2)} projects valued at \$20~million or more and planned or built since 2000.
 We also report on the full project lifecycle from its first funding promise, because, once politicians have announced a project, they and the public treat that announcement as a commitment.
-They are right to do so: 80 per cent of these projects end up being built.
+They are right to do so: \Sexpr{grattan_percent(prop_projects_before_committed_which_are_completed)} of these projects end up being built.
 
 Promising to build infrastructure for a lower sum than it finally costs systematically represents infrastructure projects as more attractive than they really are.
 Much of the money might be better spent on other priorities.
