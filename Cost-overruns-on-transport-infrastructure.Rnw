@@ -896,7 +896,8 @@ Yet the road was closed for further construction immediately after the ceremony 
 Governments are responsible for investment decisions, they should not spend public money without due care for how the spending will benefit the community.
 Cost benefit analysis has limitations, but it remains the best way for making like-for-like comparisons of projects.%
 \footcite{Eliasson2013CostOverrunsandDemandShortfalls} Even with such a process, politicians will be tempted to pressure evaluators to massage assessments to fit political priorities.
-This is not just a theoretical concern.
+
+This is not just a theoretical concern. For example, the Victorian Auditor-General highlighted in his audit of the East West Link project, “advice that … gave too much emphasis to the benefits of approaches that were in line with the governments’ preferred outcome and too little to alternative options that could be argued were more aligned with the state’s best interests.” He further noted that “[s]ome public officials involved in this audit indicated that providing frank and fearless advice when they believe a government does not want to receive it will negatively impact their influence or career opportunities.”\footnote{Victorian Auditor-General (2015) East West Link Project, PP No. 108, http://www.audit.vic.gov.au/publications/20151209-East-West-Link/20151209-East-West-Link.pdf, ppxiv-xv.}
 
 Other spheres of government spending offer far less scope for discretionary decisions.
 For example, payments to unemployed people are worth \$108 billion since 2000 -- about the same amount as has been spent on transport infrastructure.
