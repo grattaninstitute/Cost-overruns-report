@@ -984,31 +984,31 @@ Transport infrastructure investment by Australian governments is a similarly lar
 In the absence of such reporting for infrastructure projects, the public is not equipped to understand whether any particular infrastructure turned out to offer value for money in the terms in which it was originally promised.
 Ministers overseeing projects with significant cost overruns over time commonly end up claiming that the project came in under budget.
 Both Governments and oppositions feel free to make claims that the media and public cannot verify.
-\Vref{box:unreliable-forecasts} provides background on some extreme examples of overstated benefits that have come to light through legal action.
+\Vref{box:overstated-benefits} provides background on some extreme examples of overstated benefits that have come to light through legal action.
 
-\begin{smallbox}{Unreliable traffic forecasts}{box:unreliable-forecasts}
-Several successful lawsuits reveal the most extreme cases of inaccurate forecasting.
+% \begin{smallbox}{Unreliable traffic forecasts}{box:unreliable-forecasts}
+% Several successful lawsuits reveal the most extreme cases of inaccurate forecasting.
 
-Brisbane's CLEM 7 tunnel was forecast to carry more than 100,000 vehicles per day within two years of opening, but in fact only about 22,000 went through.\textsuperscript{1} A successful class action was brought against the forecaster, AECOM.\textsuperscript{2} The tunnel's owner, RiverCity Motorway, went into administration in 2011, after the traffic failed to generate enough revenue for the company to pay its debts.\textsuperscript{3}
+% Brisbane's CLEM 7 tunnel was forecast to carry more than 100,000 vehicles per day within two years of opening, but in fact only about 22,000 went through.\textsuperscript{1} A successful class action was brought against the forecaster, AECOM.\textsuperscript{2} The tunnel's owner, RiverCity Motorway, went into administration in 2011, after the traffic failed to generate enough revenue for the company to pay its debts.\textsuperscript{3}
 
-The traffic forecasts for Sydney's Lane Cove tunnel were in contention in a lawsuit brought against the companies, Parsons Brinckerhoff and Booz Allen.
-They settled in 2014.
-The case concerned allegations that the forecasters ``reverse engineered'' the predictions, working backwards from commercial objectives in estimating traffic volumes.\textsuperscript{4}
+% The traffic forecasts for Sydney's Lane Cove tunnel were in contention in a lawsuit brought against the companies, Parsons Brinckerhoff and Booz Allen.
+% They settled in 2014.
+% The case concerned allegations that the forecasters ``reverse engineered'' the predictions, working backwards from commercial objectives in estimating traffic volumes.\textsuperscript{4}
 
-Similarly, when traffic volumes were far below expectations on the Brisbane Airport Link, toll road owner Brisconnections launched litigation against forecaster Arup.\textsuperscript{5} This action was settled in 2015.\textsuperscript{6}
+% Similarly, when traffic volumes were far below expectations on the Brisbane Airport Link, toll road owner Brisconnections launched litigation against forecaster Arup.\textsuperscript{5} This action was settled in 2015.\textsuperscript{6}
 
-1. \url{https://www.mauriceblackburn.com.au/media/2403/14-03-31-second-further-amended-statement-of-claim-with-schedules-a-and-b-clean-sealed.pdf}, p.9-11
+% 1. \url{https://www.mauriceblackburn.com.au/media/2403/14-03-31-second-further-amended-statement-of-claim-with-schedules-a-and-b-clean-sealed.pdf}, p.9-11
 
-2. https://www.mauriceblackburn.com.au/norewrite/current-class-actions/rivercity-class-action/
+% 2. https://www.mauriceblackburn.com.au/norewrite/current-class-actions/rivercity-class-action/
 
-3. \url{http://www.brisbanetimes.com.au/business/rivercity-ipo-investors-secure-121m-in-successful-clem7-class-action-20160601-gp8qu4.html}
+% 3. \url{http://www.brisbanetimes.com.au/business/rivercity-ipo-investors-secure-121m-in-successful-clem7-class-action-20160601-gp8qu4.html}
 
-4. \url{http://www.afr.com/news/politics/national/traffic-forecasters-settle-with-ampover-lane-cove-20140923-jftpp}
+% 4. \url{http://www.afr.com/news/politics/national/traffic-forecasters-settle-with-ampover-lane-cove-20140923-jftpp}
 
-5. \url{http://www.afr.com/business/brisconnections-receivers-sue-arup-over-brisbane-airport-link-20140528-iv1qo}
+% 5. \url{http://www.afr.com/business/brisconnections-receivers-sue-arup-over-brisbane-airport-link-20140528-iv1qo}
 
-6. http://www.imf.com.au/cases/detail/brisconnections
-\end{smallbox}
+% 6. http://www.imf.com.au/cases/detail/brisconnections
+% \end{smallbox}
 
 The current opacity of investment planning processes means that the public cannot readily judge the success of projects.
 This means that there is little political cost associated with announcing project costs prematurely, even when this creates a significant risk of promising projects with poor payoffs.
