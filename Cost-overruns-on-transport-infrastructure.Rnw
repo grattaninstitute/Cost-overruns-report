@@ -655,7 +655,7 @@ Even when politicians promise infrastructure that is at a very early stage of de
 
 \section{Cost overruns may be even bigger than we claim}\label{cost-overruns-may-be-even-bigger-than-we-claim}
 
-This finding and others in this report may well be understated. For the 68 per cent \footnote{Early cost data is not wholly missing for all of these projects. Only 41 per cent of projects have no cost estimates recorded prior to construction commencing.} of projects where data on their early costs is missing in our dataset, we have made the assumption that no early cost overruns occurred.
+This finding and others in this report may well be understated. For the 68 per cent\footnote{Early cost data is not wholly missing for all of these projects. Only 41 per cent of projects have no cost estimates recorded prior to construction commencing.} of projects where data on their early costs is missing in our dataset, we have made the assumption that no early cost overruns occurred.
 
 This assumption appears to be extremely conservative. Detailed analysis of a subset of the projects which are missing early cost data indicates that these projects experience cost overruns at approximately the same rate as projects which are not missing data on projects' early costs.\footnote{Of the 55 projects investigated, 19 were missing early cost data and 37\% were identified to have experienced cost overruns in this early period. This prevalence rate is comparable to the 51\% observed across the 32\% of projects which are not missing early cost data.} Consequently, the rate of overruns presented as the upper bound of \Vref{fig:cost-overruns-are-likely-to-be-higher-than-reported} appears to be more likely than the lower bound, which underpins this report's analysis.
 
