@@ -606,9 +606,11 @@ The majority of projects come in close to their announced costs, and underruns d
 
 \begin{figure}
 \captionwithunits{Large cost overruns are uncommon, but expensive\label{fig:large-cost-overruns-uncommon-but-expensive}}
-{Per cent}
+{Frequency of cost overruns as a proportion of all projects, per cent}
 
-% \includegraphics{media/image3.tiff}\emph{\\
+\includegraphics{atlas/Freq_CO.pdf}
+\units{Value of cost overruns as a proportion of total cost overruns, per cent}
+\includegraphics{atlas/Value_CO.pdf}
 \noteswithsource{Australian transport projects completed between 2001 and 2015}%
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
@@ -628,7 +630,8 @@ The drawback with small samples is that their findings may be less representativ
 
 \begin{figure}
 \captionwithunits{This report analyses upwards of nine times more Australian projects than previous studies\label{fig:this-report-analyses-9-times-more-projects-than-previous-studies}}%
-{Sample sizes of studies into cost overruns on Australian transport infrastructure projects} % \includegraphics{media/image4.png}\emph{\\
+{Sample sizes of studies into cost overruns on Australian transport infrastructure projects}
+\includegraphics[page=3]{atlas/Charts_CO}
 \source{Cited studies and Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
@@ -651,7 +654,7 @@ This report considers the entire project lifecycle from when ministers or opposi
 \begin{figure}
 \caption{Project lifecycle begins when the project is announced\label{fig:proj-lifecycle-begins-when-proj-announced}}
 
-% \includegraphics{media/image5.tiff}
+\includegraphics{atlas/ProjectStages}
 
 \source{Grattan analysis}
 \end{figure}
@@ -683,9 +686,9 @@ Consequently, the rate of overruns presented as the upper bound of \Vref{fig:cos
 \captionwithunits{Cost overruns are likely to be higher than reported\label{fig:cost-overruns-are-likely-to-be-higher-than-reported}}
 {Average cost overrun rates as a proportion of initial costs, by project stage}
 
-% \includegraphics{media/image6.png}
+\includegraphics[page=5]{atlas/Charts_CO}
 
-\noteswithsource{Australian transport projects completed between 2001 and 2015}
+\noteswithsource{All cost overrun estimates contained elsewhere in this report have been estimated under the assumption that no overrun occurred where not observed directly, which is the illustrated by the lower bound illustrated in this graph. Australian transport projects completed between 2001 and 2015.}
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
@@ -713,10 +716,10 @@ Changes to scope are only a problem if they are not appraised on their merits as
 Although it appears to be common for scope changes to be made without proper appraisal of the new work,\footcite[][185]{Love2016CostOverrunsinTransportationInfrastructure} in fact scope changes only account for about 11 per cent of cost overruns on transport infrastructure projects (\Vref{fig:most-cost-overruns-were-not-attrib-to-scope-changes}).
 
 \begin{figure}
-\captionwithunits{Most cost overruns were not attributable to scope changes\label{fig:most-cost-overruns-were-not-attrib-to-scope-changes}}
-{Average proportion of cost overruns by cause, per cent}
+\captionwithunits{Most cost overruns were not attributable to substantive scope changes\label{fig:most-cost-overruns-were-not-attrib-to-scope-changes}}
+{Proportion of cost overruns attributable to scope change, per cent}
 
-% \includegraphics{media/image7.emf}
+\includegraphics[page=6]{atlas/Charts_CO}
 
 \noteswithsource{Based upon detailed investigation of 56 Australian transport infrastructure projects completed between 2008 and 2013, using publicly available data sources.\\
 The value of scope changes have been estimated where possible as the percentage of the total project cost (where scope changes were described as a percentage of project scope), or else by the total value of cost overruns incurred during the period the scope change took place.}
@@ -803,7 +806,7 @@ Over the past 15 years, 82 per cent of the total value of cost overruns is expla
 \begin{figure}
 \captionwithunits{The projects with early initial cost announced account for most of the value of cost overruns\label{fig:projects-with-early-initial-cost-announced-accont-for-most-of-the-value-of-cost-overruns}}%
 {Per cent}
-
+\includegraphics[page=7]{atlas/Charts_CO}
 \noteswithsource{Australian transport projects completed between 2001 and 2015}
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
