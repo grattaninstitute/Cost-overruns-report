@@ -624,8 +624,8 @@ The findings of these small studies present a mixed view. Two key studies in 200
 \footcite{Wood2010Comparingcostuplift} A 2015 study of 44 projects each valued at \$1~billion or more found cost overruns of 14 per cent on the \$44~billion budget.%
 \footcite[][7]{AustralianConstructorsAssociation2015}
 
-While not seeking to be representative, an investigation by the Victorian Auditor General found a 5 per cent cost overrun across seven road and rail projects valued at more than \$40~million.\footcites[][22]{General2010Managementmajorrail}[][12]{General2011ManagementMajorRoad} % 
- The New South Wales Auditor General reported a 7 per cent cost overrun across 50 transport and other infrastructure projects valued above \$50~million.%
+While not seeking to be representative, an investigation by the Victorian Auditor-General found a 5 per cent cost overrun across seven road and rail projects valued at more than \$40~million.\footcites[][22]{General2010Managementmajorrail}[][12]{General2011ManagementMajorRoad} % 
+ The New South Wales Auditor-General reported a 7 per cent cost overrun across 50 transport and other infrastructure projects valued above \$50~million.%
 \footcite[][5]{General2015Largeconstructionprojects} These two studies did not consider scope changes or overruns between project announcement and formal contract.
 
 The variation in the average size of overruns observed across these small sample studies illustrates the value of a large sample when analysing extreme events.
