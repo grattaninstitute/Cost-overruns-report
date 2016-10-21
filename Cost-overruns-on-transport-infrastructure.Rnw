@@ -1415,9 +1415,12 @@ They show a ``worst case'' cost estimate far lower than 21 per cent above the me
 \textbf{Project} & \textbf{State} & \textbf{Median (or ``P50'')} & \textbf{``Worst case'' (or ``P90'')} & \textbf{Difference (\%)} \\
 \midrule
 Inland Rail & National & \possibleTextDollar9\,890\dz & \possibleTextDollar10\,660\dz & 7.8\%\tabularnewline[1.245ex]
-Westconnex & NSW & \possibleTextDollar16\,800\dz & n/a & 6\%\tablefootnote{``The Infrastructure Australia assessment makes reference to a six per cent difference between the P50 and P90 on the Stage 2'' (\textcite[][23]{SGS2016WestConnexreview})}\tabularnewline[1.245ex]
-Melbourne Metro & Vic\tablefootnote{``The expected value of each risk was then calculated based on the probability of the risk occurring and the sum of the products of the impact (either as a percentage of the cost driver or delay costs) and their probabilities in each of the three defined states. Correlation between key risks was calculated using a correlation matrix. A Monte Carlo analysis was then used to calculate the P50 and P90 values.''} & \possibleTextDollar10\,154\dz & \possibleTextDollar10\,837\dz & 6.7\%\tabularnewline
-Western Distributor & Vic\tablefootnote{``Total nominal dollars over the construction period, assuming construction commences during the year ended 30 June 2018.''} & \possibleTextDollar5\,226\dz & \possibleTextDollar5\,548\dz & 6.2\%\tabularnewline
+Westconnex & NSW & \possibleTextDollar16\,800\dz & n/a & 6\%%\tablefootnote{``The Infrastructure Australia assessment makes reference to a six per cent difference between the P50 and P90 on the Stage 2'' (\textcite[][23]{SGS2016WestConnexreview})}
+\tabularnewline[1.245ex]
+Melbourne Metro & Vic%\tablefootnote{``The expected value of each risk was then calculated based on the probability of the risk occurring and the sum of the products of the impact (either as a percentage of the cost driver or delay costs) and their probabilities in each of the three defined states. Correlation between key risks was calculated using a correlation matrix. A Monte Carlo analysis was then used to calculate the P50 and P90 values.''} 
+ & \possibleTextDollar10\,154\dz & \possibleTextDollar10\,837\dz & 6.7\%\tabularnewline
+Western Distributor & Vic%\tablefootnote{``Total nominal dollars over the construction period, assuming construction commences during the year ended 30 June 2018.''} 
+& \possibleTextDollar5\,226\dz & \possibleTextDollar5\,548\dz & 6.2\%\tabularnewline
 Princes Highway West Duplication & Vic & \possibleTextDollar334.3 & \possibleTextDollar363.5 & 8.7\%\tabularnewline
 Main Road, St Albans Level Crossing Removal Project & Vic & \possibleTextDollar222.9 & \possibleTextDollar231.5 & 3.9\%\tabularnewline[1.245ex]
 Bruce Highway Upgrade~& Qld & \possibleTextDollar841.2 & \possibleTextDollar929.3 & 10.5\%\tabularnewline
@@ -1604,7 +1607,7 @@ With actual Australian data on past projects, we would no longer need to be surp
 Instead, our infrastructure systems could promise what is worth having, and then deliver what is promised.
 
 
-\printbibliography
+
 
 \appendix
 
@@ -2195,7 +2198,8 @@ The guidance regarding what type of probability price should be used in budget s
 Table ref{probability-pricing-table} reports the percentage of projects observed to have cost overruns greater than each estimated probability price. This comparison is founded on the assumption that budgeted costs are P75 cost estimates, which we know to be exceeded by 34 per cent of projects. This means that cost estimates that have been defined to be P75 costs should, on average, be P66 costs.
 
 
-\begin{table}\label{probability-pricing-table}
+\begin{table}
+\caption{\label{probability-pricing-table}}
 \begin{tabularx}{\columnwidth}{Xll}
 \toprule
 Estimated probability price & Per cent of projects with cost overruns greater than each probability price & Difference, as a per cent of budget commitment project costs, between the P50 and other estimated probability prices\tabularnewline
@@ -2226,9 +2230,9 @@ Building off this finding, we also conclude that the average difference between 
 The uplift required to convert a P50 cost estimate to a P90 cost estimate may actually be far higher than this. Under an accurate probability pricing methodology, this difference could actually be as large as 69 per cent. We refrain from making this claim so as to only interpret observed outcomes in relation to the probability price estimates that prevailed when the cost outcomes were generated. This is because switching to an accurate probability price estimation methodology could change cost behaviour.
 
 
-\begin{figure}
+%\begin{figure}
 % Chevron chart
-\end{figure}
+%\end{figure}
 
 
 
@@ -2340,6 +2344,8 @@ first_Cost_estimate_real_by_GR_Status_ordered %>%
 @
 \source{Grattan analysis}
 \end{table}
+
+\printbibliography
 
 \end{document}
 
