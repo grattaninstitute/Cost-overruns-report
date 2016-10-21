@@ -836,13 +836,13 @@ The proportions of the promised money that were for projects that had been asses
 
 \begin{figure}
 \captionwithunits{The vast majority of committed money from all 3 major parties is for projects not endorsed by Infrastructure Australia}%
-{Value of specific election commitments to transport infrastructure projects, \$billion}
+{Value of specific election commit{}ments to transport infrastructure projects, \$billion}
 
 %\includegraphics{media/image10.png}
 
 \noteswithsource{Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of the coalition, from the 2016-17 budget papers.
 Excludes projects for which construction has already commenced.}
-{Liberal Party (2016); Australian Labor Party (2016); Australian Greens (2016); Treasury (2016); Treasury (2014); Infrastructure Australia (2016); Grattan analysis }
+{\textcite{Liberal2016Policy}; \textcite{ALP2016Policy}; \textcite{Greens2016Policy}; \textcite{Treasury2016CommonwealthBudgetPapers} \textcite{Treasury2014CommonwealthBudgetPapers}; \textcite{InfrastructureAustralia2016}; and Grattan analysis.}
 \end{figure}
 
 
@@ -852,18 +852,18 @@ This pattern of promising poor quality or under-developed project ideas in elect
 
 \subsubsection*{Government reluctance to change course when facts change}
 
-A plan to build a Maitland bypass as part of the New England Highway in northern New South Wales was floated as early as 1983.\footnote{1} The preferred route for what eventually became the Hunter Expressway was decided in 2001 and expected to cost ``more than \$335 million'' in 2002.\footnote{2}
+A plan to build a Maitland bypass as part of the New England Highway in northern New South Wales was floated as early as 1983.\footcite{Bill2009NationBuildingProgramAmendment} The preferred route for what eventually became the Hunter Expressway was decided in 2001 and expected to cost ``more than \$335 million'' in 2002.\footcite{DIRD2002FedGovkeepsNSWMoving}
 
-In 2007 the funding commitment was increased to \$887 million by the Federal coalition Government as an election pledge.\footnote{3} After winning the 2007 election, the new Labor Government cooled on the idea. In 2008,Joel Fitzgibbon, the then Labor Member for Hunter, observed that: ``First, the F3 link was conceived in the mid 1980s and there have been big changes in traffic movements and residential and commercial settlement patterns since then. Second, the cost of the project is now \$1,700 million (\$1.7 billion) and it has a very low benefit to cost ratio (meaning it provides tax-payers with a low-value solution).''\footnote{4}
+In 2007 the funding commitment was increased to \$887 million by the Federal coalition Government as an election pledge.\footcite{Bill2009NationBuildingProgramAmendment} After winning the 2007 election, the new Labor Government cooled on the idea. In 2008,Joel Fitzgibbon, the then Labor Member for Hunter, observed that: ``First, the F3 link was conceived in the mid 1980s and there have been big changes in traffic movements and residential and commercial settlement patterns since then. Second, the cost of the project is now \$1,700 million (\$1.7 billion) and it has a very low benefit to cost ratio (meaning it provides tax-payers with a low-value solution).''\footcite{Bill2009NationBuildingProgramAmendment}
 
-The government commissioned a review in 2008,\footnote{5} following which funding of \$1.7 billion was committed in 2009.\footnote{6} Federal Liberal Member for nearby Paterson, Bob Baldwin criticised the government's prevarication ``because we (the coalition) had committed to it as a 
+The government commissioned a review in 2008,\footcite{DIRD2008LowerHunterTransportNeedsStudy} following which funding of \$1.7 billion was committed in 2009.\footcite{RMS2010Hunter} Federal Liberal Member for nearby Paterson, Bob Baldwin criticised the government's prevarication ``because we (the coalition) had committed to it as a 
 \begin{figure}[H]
  \caption{Project cost estimates, millions of dollars\label{fig:CS_Hunter}}
  \includegraphics[page=5]{atlas/CaseStudies.pdf}
 \end{figure}\vspace{-12pt}
-government''.\footnote{7} Mr Baldwin emphasised the persistence of Support the Link, a local lobby group that pushed hard for the road.\footnote{8}
+government''.\footcite{Bill2009NationBuildingProgramAmendment} Mr Baldwin emphasised the persistence of Support the Link, a local lobby group that pushed hard for the road.\footcite{Bill2009NationBuildingProgramAmendment}
 
-The project was completed in 2014.\footnote{9}
+The project was completed in 2014.\footcite{RMS2016Hunter}
 
 While the final benefit cost ratio has not been published, these comments from politicians reveal the difficulty governments experience in reneging on commitments made very early in a project’s life, even after the facts of the project change significantly.
 
@@ -883,10 +883,10 @@ If there is no evaluation, then politicians' claims about a project's costs and 
 \begin{verysmallbox}{Case study -- Bulahdelah Bypass -- 111 per cent cost overrun}{box:bulahdelah}
 \subsubsection*{Road opened before it was finished}
 
-In June 2013, New South Wales’ Bulahdelah Bypass was running six months behind its revised schedule\footnote{1} and still wasn't finished, so the state government decided to hold a ribbon cutting ceremony and announce its completion anyway.
+In June 2013, New South Wales’ Bulahdelah Bypass was running six months behind its revised schedule\footcite{RATLC2010AnswersQuestionsNotice} and still wasn't finished, so the state government decided to hold a ribbon cutting ceremony and announce its completion anyway.
 
-Official sources say that construction finished in June 2013.\footnote{2} 
-Yet the road was closed for further construction immediately after the ceremony and opened properly a month later.\footnote{3} 
+Official sources say that construction finished in June 2013.\footcite{DIRD2015NSWCompletedProjects} 
+Yet the road was closed for further construction immediately after the ceremony and opened properly a month later.\footcites{GreatLakesAdvocate2013BypassOpensandCloses}{SMH2013SunSetsonLittleTown}{Prime72013Bypassopenedbutconstructionnotfinished}
 \end{verysmallbox}
 
 Governments are responsible for investment decisions, they should not spend public money without due care for how the spending will benefit the community.
@@ -995,7 +995,7 @@ To enable learning from past experience, and to improve accountability:
 
 \begin{enumerate}
   \renewcommand{\labelenumi}{\alph{enumi}) }
-\item The Commonwealth Department of Infrastructure should be required to publish to data.gov.au the post-completion report it already requires from state governments as a condition of providing final milestone payments for transport infrastructure projects.\footnote{As detailed in Appendix D3 of the Notes on Administration of the National Partnership Agreement on Land Transport Infrastructure Projects} 
+\item The Commonwealth Department of Infrastructure should be required to publish to data.gov.au the post-completion report it already requires from state governments as a condition of providing final milestone payments for transport infrastructure projects.\footnote{As detailed in \textcite{DIRD2013NotesonAdministration}, Appendix D3.} 
 Reports should detail any scope changes and their justification, agreed and actual construction start and finish dates, actual project costs, reasons for overruns or under-runs, and progress against performance indicators.
 
 \item Infrastructure Australia should be asked to provide the Joint Committee of Public Accounts and Audit with a post-completion appraisal of the benefits and costs of each infrastructure project with Commonwealth funding of \$50 million or more.
@@ -1108,46 +1108,29 @@ This is because, even though cost estimates announced prior to a budget commitme
 \begin{smallbox}{Case study -- overstated benefits}{box:overstated-benefits}
 Several successful lawsuits show the most extreme cases of inaccurate forecasting of project benefits.
 
-Brisbane's CLEM 7 tunnel was forecast to carry over 100,000 vehicles per day within 2 years of opening, but the reality was only around 22,000.\textsuperscript{1} A successful class action was brought against the forecaster, AECOM.\textsuperscript{2} The tunnel's owner, RiverCity Motorway, went into administration in 2011, as the traffic had not generated enough revenue for the company to pay its debts.\textsuperscript{3}
+Brisbane's CLEM 7 tunnel was forecast to carry over 100,000 vehicles per day within 2 years of opening, but the reality was only around 22,000.\footcite[][9--11]{CLEM7-lawsuit-against-AECOM-statement-of-claim} A successful class action was brought against the forecaster, AECOM.\footcite{CLEM7-lawsuit-successful-media-release} The tunnel's owner, RiverCity Motorway, went into administration in 2011, as the traffic had not generated enough revenue for the company to pay its debts.\footcite{BrisTimes-RiverCity-IPO-secure-121M}
 
 The traffic forecasts for Sydney's Lane Cove tunnel were in contention in a lawsuit brought against the companies, Parsons Brinckerhoff and Booz Allen, settled in 2014.
-The case concerned allegations that the forecasters ``reverse engineered'' the predictions, working backwards from commercial objectives in estimating traffic volumes.\textsuperscript{4}
+The case concerned allegations that the forecasters ``reverse engineered'' the predictions, working backwards from commercial objectives in estimating traffic volumes.\footcite{AFR-Traffic-forecasters-settle-with-AMP-over-Lane-Cover-tunnel}
 
 The Brisbane Airport Link is another example of a road for which traffic volumes were far below expectations.
-This also resulted in litigation being launched, by toll road owners Brisconnections against forecaster Arup.\textsuperscript{5} This action was settled in 2015.\textsuperscript{6}
+This also resulted in litigation being launched, by toll road owners Brisconnections against forecaster Arup.\footcite{AFR-BrisConnections-receivers-sue-Arup-over-Brisbane-airport-link} This action was settled in 2015.\footcite{IMFBentham-BrisConnections-vs-Arup-Settled-notice}
 
-1. \url{https://www.mauriceblackburn.com.au/media/2403/14-03-31-second-further-amended-statement-of-claim-with-schedules-a-and-b-clean-sealed.pdf}, p.9-11
 
-2. https://www.mauriceblackburn.com.au/norewrite/current-class-actions/rivercity-class-action/
 
-3. \url{http://www.brisbanetimes.com.au/business/rivercity-ipo-investors-secure-121m-in-successful-clem7-class-action-20160601-gp8qu4.html}
-
-4. \url{http://www.afr.com/news/politics/national/traffic-forecasters-settle-with-ampover-lane-cove-20140923-jftpp}
-
-5. \url{http://www.afr.com/business/brisconnections-receivers-sue-arup-over-brisbane-airport-link-20140528-iv1qo}
-
-6. http://www.imf.com.au/cases/detail/brisconnections
 \end{smallbox}
 
 
 \begin{bigbox*}{Case study -- Ipswich Motorway Dinmore to Goodna upgrade -- 196 per cent overrun}{box:Ipswich-motorway}
 \subsubsection*{``Under budget'', and no return of contingency}
 
-An upgrade of the Ipswich Motorway between Dinmore and Goodna in Southern Queensland was announced in 2003, at a cost of \$594 million, based on a cost-benefit analysis.\textsuperscript{1}
+An upgrade of the Ipswich Motorway between Dinmore and Goodna in Southern Queensland was announced in 2003, at a cost of \$594 million, based on a cost-benefit analysis.\footcite{Parliament2006QuestionsinWritingIpswich}
 
-In the 2007 federal election campaign, Labor promised to provide the upgrade for \$1.1 billion.\textsuperscript{2} Although this figure was far higher than the initial cost proposed, it turned out to be far lower than the 2008 contracted cost of \$1.95 billion.\textsuperscript{3}
+In the 2007 federal election campaign, Labor promised to provide the upgrade for \$1.1 billion.\footcite{RoadsAustralia2007News} Although this figure was far higher than the initial cost proposed, it turned out to be far lower than the 2008 contracted cost of \$1.95 billion.\footcite{AEEA2016IpswichMotorway}
 
-On completion in 2012, the project came in 10 per cent lower than the contracted cost.\textsuperscript{4} Rather than being returned to the Commonwealth, the contingency was diverted to other Queensland roads, including the Bruce Highway.\textsuperscript{5} 
+On completion in 2012, the project came in 10 per cent lower than the contracted cost.\footcite{AEEA2016IpswichMotorway} Rather than being returned to the Commonwealth, the contingency was diverted to other Queensland roads, including the Bruce Highway.\footcite{BrisbaneTimes2012FiveStagesDown} 
 
-1. \href{https://web.archive.org/web/20160902045709/http:/parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;db=CHAMBER;id=chamber/hansardr/2006-02-14/0163;query=Id:\%22chamber/hansardr/2006-02-14/0000\%22}{https}\href{https://web.archive.org/web/20160902045709/http:/parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;db=CHAMBER;id=chamber/hansardr/2006-02-14/0163;query=Id:\%22chamber/hansardr/2006-02-14/0000\%22}{://web.archive.org/web/20160902045709/http://}\href{https://web.archive.org/web/20160902045709/http:/parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;db=CHAMBER;id=chamber/hansardr/2006-02-14/0163;query=Id:\%22chamber/hansardr/2006-02-14/0000\%22}{parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;db=CHAMBER;id=chamber\%2Fhansardr\%2F2006-02-14\%2F0163;query=Id\%3A\%22chamber\%2Fhansardr\%2F2006-02-14\%2F0000\%22}
-
-2. \href{http://www.roadsaustralia.com.au/news/show-arf-insider/22}{http://}\href{http://www.roadsaustralia.com.au/news/show-arf-insider/22}{www.roadsaustralia.com.au/news/show-arf-insider/22},
-
-3. \url{http://www.exactal.com/en/our-clients/case-studies/origin-alliance}
-
-4. \url{http://www.excellenceawards.org.au/ipswich-motorway-upgrade-dinmore-to-goodna-d2g-project}
-
-5. http://www.brisbanetimes.com.au/queensland/five-stages-down-one-to-go-28b-road-upgrade-completion-in-sight-20120515-1yo56.html\tabularnewline
+\tabularnewline
 \end{bigbox*}
 
 
@@ -1410,7 +1393,7 @@ They show a ``worst case'' cost estimate far lower than 21 per cent above the me
 \textbf{Project} & \textbf{State} & \textbf{Median (or ``P50'')} & \textbf{``Worst case'' (or ``P90'')} & \textbf{Difference (\%)} \\
 \midrule
 Inland Rail & National & \possibleTextDollar9\,890\dz & \possibleTextDollar10\,660\dz & 7.8\%\tabularnewline[1.245ex]
-Westconnex & NSW & \possibleTextDollar16\,800\dz & n/a & 6\%\tablefootnote{``The Infrastructure Australia assessment makes reference to a six per cent difference between the P50 and P90 on the Stage 2'' (SGS, February 2016, page 23)}\tabularnewline[1.245ex]
+Westconnex & NSW & \possibleTextDollar16\,800\dz & n/a & 6\%\tablefootnote{``The Infrastructure Australia assessment makes reference to a six per cent difference between the P50 and P90 on the Stage 2'' (\textcite[][23]{SGS2016WestConnexreview})}\tabularnewline[1.245ex]
 Melbourne Metro & Vic\tablefootnote{``The expected value of each risk was then calculated based on the probability of the risk occurring and the sum of the products of the impact (either as a percentage of the cost driver or delay costs) and their probabilities in each of the three defined states. Correlation between key risks was calculated using a correlation matrix. A Monte Carlo analysis was then used to calculate the P50 and P90 values.''} & \possibleTextDollar10\,154\dz & \possibleTextDollar10\,837\dz & 6.7\%\tabularnewline
 Western Distributor & Vic\tablefootnote{``Total nominal dollars over the construction period, assuming construction commences during the year ended 30 June 2018.''} & \possibleTextDollar5\,226\dz & \possibleTextDollar5\,548\dz & 6.2\%\tabularnewline
 Princes Highway West Duplication & Vic & \possibleTextDollar334.3 & \possibleTextDollar363.5 & 8.7\%\tabularnewline
@@ -1430,7 +1413,7 @@ Canberra Light Rail & ACT & \possibleTextDollar759\dz & \possibleTextDollar806\d
 A second consequence of not knowing historical outcomes of similar projects is that it deprives cost estimators of an effective counter to known psychological biases.
 Just as trains or aeroplanes more often arrive late than early, so too do cost estimates tend to ramp upwards more often and to a greater degree than downwards.
 The psychological tendency to believe that project outcomes will be better than they turn out to be is known as `optimism bias', and arises from the combined impacts of cost underestimation and benefits overestimation.%
-\footnote{Kahnemann and Tversky (1979); Flyvbjerg (2014) p14.} Unfortunately, optimism bias is especially acute when the most money is at stake, in the larger and more complex projects where the interdependence of risks is particularly hard for experts to judge accurately.
+\footcites{Kahneman2012Thinkingfastslow}[][14]{Flyvbjerg2014Whatyoushould} Unfortunately, optimism bias is especially acute when the most money is at stake, in the larger and more complex projects where the interdependence of risks is particularly hard for experts to judge accurately.
 
 A third consequence of not knowing historical outcomes is that cost estimators lack an effective counter to `strategic misrepresentation' -- when proponents deliberately manipulate the cost estimates to make them look more favourable than they really are.
 Project proponents have an incentive for strategic misrepresentation to the extent that they are judged more on how much they build than how well they manage their budget.
@@ -1438,7 +1421,7 @@ Lack of historical outcomes data makes this behaviour hard to counter.
 
 The discrepancy between expert expectations and historical experience shows that the reliability of risk assessments on Australian transport infrastructure projects would be substantially improved by equipping risk experts with better information.
 The Productivity Commission's 2014 Public Infrastructure inquiry report highlights the need for an accurate database of historical cost outcomes for Australian projects.
-The Commonwealth, which supports this recommendation,\footnote{Productivity Commission (2014), recommendation 9.2, http://www.pc.gov.au/\_\_data/assets/pdf\_file/0003/137280/infrastructure-volume1.pdf; Department of Infrastructure and Regional Development (2014), p 19, https://infrastructure.gov.au/infrastructure/publications/files/Productivity\_Commission\_Inquiry\_Report\_into\_Public\_Infrastructure.pdf.} should create such a database, using the information on completed projects from all states on a consistent basis.
+The Commonwealth, which supports this recommendation,\footnote{\textcite{Commission2014PublicInfastructure}, volume 1, recommendation 9.2; and \textcite[][19]{Infrastructure2014AUSTRALIANGOVERNMENTRESPONSE}.} should create such a database, using the information on completed projects from all states on a consistent basis.
 The change would help cost estimation experts to create better quality estimates.
 
 \begin{recommendation}{Compile Australian database of completed projects}
@@ -1482,7 +1465,7 @@ This may be because constrained budgets shaped the culture and practice of gover
 
 There has been some debate as to whether constructors make unfeasibly low bids when the number of available projects shrinks, as is the case in some parts of Australia at present.
 This practice would only be a concern for government if contractors pursued contract changes that were in effect claims to recoup the revenue forgone by a low bid, and if governments were unable in practice to deny these changes because of political lock-in.%
-\footnote{Love (2014), p500; Hinze et al, pp87-88.} While this may occur on some projects, we do not find significant evidence of low initial bids leading to later overruns.
+\footcites[][500]{Love2014Understandinglandscapeoverruns}[][87--88]{Hinze1992CostOverrunsonStateofWashington} While this may occur on some projects, we do not find significant evidence of low initial bids leading to later overruns.
 However, pre-construction overruns have been higher since the global financial crisis, perhaps because some projects were rushed through early development stages so that they could stimulate the economy in the years immediately following the crisis.
 
 \section{Avoidable risks could be better managed}\label{avoidable-risks-could-be-better-managed}
@@ -1554,9 +1537,8 @@ The second main disadvantage of holding most or all of the contingency at the in
 \subsubsection*{Unused contingencies are often funnelled into scope increases and other projects}
 
 The Pacific Motorway (Springwood South to Daisy Hill) upgrade project in southern Brisbane finished under budget.
-Then Federal Infrastructure Minister Anthony Albanese announced that the ``savings achieved on the Springwood South to Daisy Hill upgrade will be used to construct an auxiliary lane between Fitzgerald Avenue and Aranda Street in Springwood as well as undertake the land acquisitions and planning work associated with the future widening of the Motorway between Daisy Hill and the Logan Motorway."
+Then Federal Infrastructure Minister Anthony Albanese announced that the ``savings achieved on the Springwood South to Daisy Hill upgrade will be used to construct an auxiliary lane between Fitzgerald Avenue and Aranda Street in Springwood as well as undertake the land acquisitions and planning work associated with the future widening of the Motorway between Daisy Hill and the Logan Motorway."\footcite{Albanese2013PacificMotorway}
 
-1. \url{http://anthonyalbanese.com.au/category/ministerial-media-releases/page/26}
 \end{smallbox}
 
 While holding the contingency against an individual project allows a more nimble response to unexpected events, this very nimbleness is also a disadvantage.
