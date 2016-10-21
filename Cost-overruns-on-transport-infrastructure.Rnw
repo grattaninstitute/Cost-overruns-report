@@ -1190,7 +1190,7 @@ Moreover, these overruns were not offset by underruns.%
 
 \includegraphics[page=12]{atlas/Charts_CO.pdf}
 
-\noteswithsource{The assumed prevalence of cost overruns is inferred from the common representation of cost risk as symmetrically distributed in cost estimation guidance, and the assumption that budget costs are P75 - P90 costs, which implies that no more than 25 per cent of projects being expected to experience cost overruns.}{Australian risk management guidelines referenced in Appendix xx and Deloitte Investment Monitor, Grattan analysis}
+\noteswithsource{The assumed prevalence of cost overruns is inferred from the common representation of cost risk as symmetrically distributed in cost estimation guidance, and the assumption that budget costs are P75 - P90 costs, which implies that no more than 25 per cent of projects being expected to experience cost overruns.}{Australian risk management guidelines referenced in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} and Deloitte Investment Monitor, Grattan analysis}
 \end{figure}
 
 Although it is not possible to perfectly predict the costs of any individual project, where cost estimates are wrong on average, there is clearly scope to improve.
@@ -1317,7 +1317,7 @@ They are inconsistent in which of the main tools they recommend and in how they 
 \includegraphics[page=15]{atlas/Charts_CO.pdf}
 
 \noteswithsource{Australian transport projects completed between 2000 and 2015}%
-{Australian risk management guidelines references in Appendix xx; Deloitte Investment Monitor; Grattan analysis}
+{Australian risk management guidelines references in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}; Deloitte Investment Monitor; Grattan analysis}
 \end{figure}
 
 A project's expected value is the most obvious gap in cost estimation guidance.
@@ -1357,7 +1357,7 @@ The average size of cost overruns observed across the sample can be used as an e
 {Illustrative probability distribution of cost outcomes on individual projects} 
 \includegraphics{atlas/Density.pdf} 
 \noteswithsource{The distribution of cost risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see appendix xx for details. This graph's illustrative purpose is to graphically present the relative distances between the median, 90th quantile and expected value of cost overruns.}{Deloitte Investment Monitor, Grattan analysis}
-\end{figure}\vspace{-12pt} % CC: manual vspace
+\end{figure}
 
 The key advantages of reference class forecasting are that it incorporates the likely costs of unknown risks and does not suffer from optimism bias, as it relies on objective historical information. 
 Its main shortcoming is that it does not account for the ways in which a project’s risk profile is unique.  
@@ -1667,7 +1667,7 @@ There are upwards of fifty sets of guidelines outlining required approaches to r
 
 \Vref{fig:quality-of-risk-management-guidance-chevrons} provides a high level summary of the quality of risk guidance across Australian jurisdictions. It identifies that the provided guidance regarding risk minimisation is generally of a far higher standard than that of risk measurement and ongoing risk monitoring. This is aligned with the nature of Australia's problem with cost overruns: most projects finish on budget, but the huge costs of uncommon events are poorly anticipated and accounted for.
 
-In this appendix we review the current practices of each state for each of these components of risk management, and highlight the opportunities for improvement. Full details of the Australian risk management guidelines analysed in this appendix are provided in section \ref{Reviewed-Australian-risk-measurement-guidelines}.
+In this appendix we review the current practices of each state for each of these components of risk management, and highlight the opportunities for improvement. Full details of the Australian risk management guidelines analysed in this appendix are provided in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}.
 
 
 \begin{figure}
@@ -1676,7 +1676,7 @@ In this appendix we review the current practices of each state for each of these
 \includegraphics[page=1]{atlas/AppendixCharts}
 
 \noteswithsource{}
-{See \Vref{sec:LAST-SECTION-OF-RISK-APPENDIX} for the list of reviewed guidelines, Grattan analysis}
+{See \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} for the list of reviewed guidelines, Grattan analysis}
 \end{figure}
 
 % \begin{longtable}[c]{@{}llll@{}}
@@ -1719,8 +1719,7 @@ Consistent use of risk matrices or like tools to identify and mitigate avoidable
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
-At least one set of risk management guidelines in each of Australia's state and Commonwealth government jurisdictions recommends the use of risk matrices and provides high level advice on how to mitigate common risks.\footnote{For example, Infrastructure Australia's \emph{Business Case Template}; NSW Treasury's \emph{Risk Management Toolkit}; the Victorian Managed Insurance Authority's \emph{Practice Guide}; Department of Transport and Main Roads Queensland's \emph{Project Cost Estimating Manual}; Department of Finance Western Australia's \emph{Gateway Process Business Case Workbook} and the South Australian State Procurement Board's \emph{Procurement Risk Management Plans}.} %
-For this reason, the guidance on risk identification and mitigation provided in every jurisdiction appears to be adequate.
+At least one set of risk management guidelines in each of Australia's state and Commonwealth government jurisdictions recommends the use of risk matrices and provides high level advice on how to mitigate common risks.\footnote{For example, \textcite{Australia2016InfrastructureAustraliaAssessmentc}; \textcite{NSWTreasury2012RiskManagementToolkit}; \textcite{VMIA2016PracticeGuide}; \textcite{QLDDepTransport2015ProjectCostEstimatingManual}; \textcite{WADFGP2016GatewayBusinessCaseWorkbook}; and \textcite{SASPB2015RiskManagementGuideline}.} For this reason, the guidance on risk identification and mitigation provided in every jurisdiction appears to be adequate.
 
 \subsection{Reduce estimation error}\label{reduce-estimation-error}
 
@@ -1728,7 +1727,7 @@ Some states also provide comprehensive guidance on the level of detail required 
 
 For example, the South Australian Department of Planning Transport and Infrastructure Estimating Manual sets out:
 
-\begin{itemize}
+\begin{itemize}{}
 \item
   the detail with which costs should be estimated, in terms of whether global benchmark, unit rate or first principles approaches should be used to price project inputs;
 \item
@@ -1771,17 +1770,19 @@ This section reviews each of these shortcomings in detail and provides state-spe
 
 \subsection{Guidance is inconsistent}\label{guidance-is-inconsistent}
 
-Guidelines which apply to the same jurisdiction often recommend different approaches to risk measurement. For instance, Probability pricing is required for federal funding, yet only half the risk measurement guidance provided at the federal level discusses probability pricing.\footnote{The \emph{National Partnerships Agreement on Land Transport Infrastructure Projects}, Australian Transport Council's \emph{National Guidelines for Transport System Management in Australia}, Infrastructure Australia's \emph{Business Case Template}, the \emph{Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction} and BITRE's \emph{Overview of Project Appraisal for Land Transport} require or discuss probability pricing. However, Infrastructure Australia's \emph{Assessment Framework}, the \emph{HB 158:2010 Handbook on delivering assurance based on ISO 31000:2009} and BITRE's \emph{Risk in Benefit Cost Analysis} paper do not.}
+Guidelines which apply to the same jurisdiction often recommend different approaches to risk measurement. For instance, Probability pricing is required for federal funding, yet only half the risk measurement guidance provided at the federal level discusses probability pricing.
+
+The \emph{National Partnerships Agreement on Land Transport Infrastructure Projects} \footcite{COAG2014NationalPartnershipAgreementInfrastructure}, the Australian Transport Council’s \emph{National Guidelines for Transport System Management in Australia} \footcite{ATC2006NGTSM3}, Infrastructure Australia’s \emph{Business Case Template} \footcite{Australia2016InfrastructureAustraliaAssessmentc}, the \emph{Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction} \footcite{DIRD2008BPCEPFRRC} and BITRE's \emph{Overview of Project Appraisal for Land Transport} \footcite{BITRE2014Overviewofprojectappraisalforlandtransport} require or discuss probability pricing. However, Infrastructure Australia's \emph{Assessment Framework} \footcite{Australia2016InfrastructureAustraliaAssessmentb}, the \emph{HB 158:2010 Handbook on delivering assurance based on ISO 31000:2009} \footcite{StandardsAustralia2010DeliveringassurancebasedonISO31000} and BITRE's \emph{Risk in Benefit Cost Analysis} \footcite{BITRE2005RiskinCostBenefitAnalysis} do not.
 
 In Victoria, three key guidelines on risk measurement each recommend only part of the toolkit, and a different part in each case:
 
 \begin{itemize}
 \item
-  the Department of Treasury and Finance's \emph{Technical Guidelines on Economic Evaluation of Business Cases} requires only sensitivity analysis,
+  the Department of Treasury and Finance's \emph{Technical Guidelines on Economic Evaluation of Business Cases}\footcite{VicDTF2013EconomicEvaluationforBusinessCasesTechnicalguidelines} requires only sensitivity analysis,
 \item
-  the Victorian Insurance Management Authority's \emph{Practice Guide} requires only the calculation of the expected value of project risks, and
+  the Victorian Insurance Management Authority's \emph{Practice Guide}\footcite{VMIA2016PracticeGuide} requires only the calculation of the expected value of project risks, and
 \item
-  the Department of Treasury and Finance's \emph{Business Case Template} and \emph{Gateway Review Process} only requires reference class forecasting.
+  the Department of Treasury and Finance's \emph{Business Case Template}\footcite{VicDTF2016Fullbusinesscasetemplate} and \emph{Gateway Review Process}\footcite{VicDTF2016GatewayReviewProcess} only requires reference class forecasting.
 \end{itemize}
 
 Such inconsistencies within jurisdictions obfuscate proper process and make the conceptual dependencies between tools unclear.
@@ -1821,9 +1822,9 @@ As it stands, risk measurement guidance is very inconsistent between each state 
 
 The inconsistencies observed across Australian risk measurement guidelines could be resolved by removing old guidance when new processes are implemented, consolidating existing guidelines and writing new guidance so that replaces, rather than augments, older guidance.
 
-For example, many of the inconsistencies within guidance that applies to all states were addressed through the 2016 release of the \emph{Australian Transport Assessment and Planning Guidelines}.\footnote{History of ATAP guidelines ref} These guidelines replaced \emph{Austroads' Guide to Project Evaluation} and the \emph{National Guidelines for Transport System Management in Australia}, and were written to be aligned with the guidance provided Infrastructure Australia's guidelines, The COAG-agreed \emph{National Guidance on Public Private Partnership Projects} and the \emph{National Charter of Integrated Land Use and Transport Planning}. A similar exercise should be undertaken within each of the states.
+For example, many of the inconsistencies within guidance that applies to all states were addressed through the 2016 release of the \emph{Australian Transport Assessment and Planning Guidelines}\footcite{ATAP2016Guidelines}. These guidelines replaced \emph{Austroads' Guide to Project Evaluation}\footcite{Austroads2014GuidetoProjectEvaluation} and the \emph{National Guidelines for Transport System Management in Australia}\footcite{ATC2006NGTSM3}, and were written to be aligned with Infrastructure Australia's guidelines, The COAG-agreed \emph{National Guidance on Public Private Partnership Projects} and the \emph{National Charter of Integrated Land Use and Transport Planning}. A similar exercise should be undertaken within each of the states.
 
-Where different institutions within jurisdictions require different amounts of risk analysis, guidance should be comprehensively reviewed so that the hierarchy relating guidance documents is clear and, where possible, analytical requirements are aligned. For example, Transport NSW's \emph{Principles and Guidelines for Economic Appraisal of Transport Initiatives} outlines what the document sets out to achieve and how it should be used in combination with other guidelines.\footnote{Transport NSW guidelines ref} 
+Where different institutions within jurisdictions require different amounts of risk analysis, guidance should be comprehensively reviewed so that the hierarchy relating guidance documents is clear and, where possible, analytical requirements are aligned. For example, Transport NSW's \emph{Principles and Guidelines for Economic Appraisal of Transport Initiatives}\footcite{TransportNSW2013PrinciplesandGuidelines} outlines what the document sets out to achieve and how it should be used in combination with other guidelines.\footnote{Transport NSW guidelines ref}
 
 \subsection{Guidance is incomplete}\label{guidance-is-incomplete}
 
@@ -1838,10 +1839,10 @@ There's no single ``right" way to measure risk, but for an approach to risk meas
   \textbf{comprehensive} if known, unknown, moderate and extreme risks are all accounted for.
 \end{itemize}
 
-As no single risk management tool achieves all these objectives, a combination of tools is required. Table \Vref{requirements-for-complete-risk-measurement} summarises how each risk measurement tool can, if used properly, contribute to a complete approach to risk measurement.
+As no single risk management tool achieves all these objectives, a combination of tools is required. \Vref{tbl:requirements-for-complete-risk-measurement} summarises how each risk measurement tool can, if used properly, contribute to a complete approach to risk measurement.
 
 %\begin{longtable}
-\label{requirements-for-complete-risk-measurement}
+% \label{tbl:requirements-for-complete-risk-measurement}
 % title: Complete approaches to risk measurement satisfy all the conditions for reliability and comprehensiveness by using a combination of tools
 % subtitle: Attributes of each risk management tool, where indicates that a tool can be used satisfy the criteria, indicates that a tool can be used to get part way towards the criteria and indicates that a tool cannot be used to achieve the criteria.
 % sources: See section [LAST SECTION OF RISK APPENDIX] for the list of reviewed guidelines, Grattan analysis
@@ -1950,7 +1951,7 @@ It should be noted that in the absence of such protocol, there are clear incenti
 Section \ref{contingencies-should-be-used-cost-efficiently} identified that contingency funds can be three times more cost effective when managed at the portfolio level. For this reason, it would be desirable for all states to adopt a stringent practice of managing contingency funds at the portfolio.
 
 
-\section{Reviewed Australian risk management guidelines }\label{Reviewed-Australian-risk-measurement-guidelines}
+\section{Reviewed Australian risk management guidelines \label{sec:Reviewed-Australian-risk-measurement-guidelines}}
 All the guidelines considered should be listed here. 
 
 
