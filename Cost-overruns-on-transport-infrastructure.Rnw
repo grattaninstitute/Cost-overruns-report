@@ -1083,8 +1083,19 @@ This phenomenon is known as the ``winner's curse'', meaning that the projects th
 
 Third, cost overruns distort decisions regarding the types of transport infrastructure to invest in.
 The most obvious case of this phenomenon is multi-billion dollar projects.
-As these projects are particularly prone to cost overruns, the benefit cost ratios for these projects are systematically more optimistic than those of smaller p{}rojects.
-Together with politicians' penchant for iconic and legacy projects, this distortion biases politicians towards funding large projects like the Dinmore to Goodna bypass (see Box xx)), at the expense of smaller projects with more certain returns.
+As these projects are particularly prone to cost overruns, the benefit cost ratios for these projects are systematically more optimistic than those of smaller projects.
+Together with politicians' penchant for iconic and legacy projects, this distortion biases politicians towards funding large projects like the Dinmore to Goodna bypass (\Vref{box:Ipswich-motorway}), at the expense of smaller projects with more certain returns.
+
+\begin{smallbox}{Case study -- Ipswich Motorway Dinmore to Goodna upgrade -- 196 per cent overrun}{box:Ipswich-motorway}
+\subsubsection*{``Under budget'', and no return of contingency}
+
+An upgrade of the Ipswich Motorway between Dinmore and Goodna in Southern Queensland was announced in 2003, at a cost of \$594 million, based on a cost-benefit analysis.\footcite{Parliament2006QuestionsinWritingIpswich}
+
+In the 2007 federal election campaign, Labor promised to provide the upgrade for \$1.1 billion.\footcite{RoadsAustralia2007News} Although this figure was far higher than the initial cost proposed, it turned out to be far lower than the 2008 contracted cost of \$1.95 billion.\footcite{AEEA2016IpswichMotorway}
+
+On completion in 2012, the project came in 10 per cent lower than the contracted cost.\footcite{AEEA2016IpswichMotorway} Rather than being returned to the Commonwealth, the contingency was diverted to other Queensland roads, including the Bruce Highway.\footcite{BrisbaneTimes2012FiveStagesDown} 
+
+\end{smallbox}
 
 The reduction to the transport infrastructure portfolio's return on investment caused by these distortions to investment decisions is sizable.
 If even half this reduction was avoided by switching to alternative investments when project costs skyrocket prior to construction, the benefits to taxpayers would be at least \$41 billion\footnote{This conclusion is based on the observation of an average benefit cost ratio of 2.95 across the 39 business cases for transport infrastructure published by Infrastructure Australia by the 12th of Feburary 2016. Please see appendix \ref{methodological-appendix} for further details}.
@@ -1143,17 +1154,7 @@ This also resulted in litigation being launched, by toll road owners Brisconnect
 \end{smallbox}
 
 
-\begin{smallbox}{Case study -- Ipswich Motorway Dinmore to Goodna upgrade -- 196 per cent overrun}{box:Ipswich-motorway}
-\subsubsection*{``Under budget'', and no return of contingency}
 
-An upgrade of the Ipswich Motorway between Dinmore and Goodna in Southern Queensland was announced in 2003, at a cost of \$594 million, based on a cost-benefit analysis.\footcite{Parliament2006QuestionsinWritingIpswich}
-
-In the 2007 federal election campaign, Labor promised to provide the upgrade for \$1.1 billion.\footcite{RoadsAustralia2007News} Although this figure was far higher than the initial cost proposed, it turned out to be far lower than the 2008 contracted cost of \$1.95 billion.\footcite{AEEA2016IpswichMotorway}
-
-On completion in 2012, the project came in 10 per cent lower than the contracted cost.\footcite{AEEA2016IpswichMotorway} Rather than being returned to the Commonwealth, the contingency was diverted to other Queensland roads, including the Bruce Highway.\footcite{BrisbaneTimes2012FiveStagesDown} 
-
-\tabularnewline
-\end{smallbox}
 
 
 
