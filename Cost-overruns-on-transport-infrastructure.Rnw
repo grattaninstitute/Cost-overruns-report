@@ -735,14 +735,14 @@ The following chapter shows that premature announcement is in fact the key under
 
 The Western Australian Liberal government promised to build the Peel deviation from Perth to Bunbury during the 2001 election campaign. The project was priced at \$136 million.\footcite{GovWA2000Premier} Yet in an indication of the lack of clarity surrounding the cost, it was shortly afterwards included in a \$100 million package of works, along with other works in the package estimated to cost \$87 million in total.\footcite[][285]{TreasurersAdvanceAuthBill2001}
 
-Before building began, estimated project costs skyrocketed: to \$337 million in May 2005,\footcite[][662]{WABudget200506Statements} then to \$370 million in August 2005,\footcite[][40]{GovWA2005MainRoads} \$511 million in 2006\footcite{GHDPerthtoBunbury} and \$631 million in 2007.\footcite[][794]{WABudget200708Statements} During construction, the price increased further to \$705 million,\footcite[][85]{AusGov2012InfrastructurePlanningDelivery} before finishing at \$688 million.\footcite[][13]{WALISRealisingPowerLocation}
+Before building began, estimated project costs skyrocketed: to \$337 million in May 2005, then to \$370 million in August 2005, \$511 million in 2006 and \$631 million in 2007.\footnote{For the May 2005 estimate, see \textcite[][662]{WABudget200506Statements}. For August 2005, \textcite[][40]{GovWA2005MainRoads}. For 2006, see \textcite{GHDPerthtoBunbury}. For 2007, see \textcite[][794]{WABudget200708Statements}.}  During construction, the price increased further to \$705 million,\footcite[][85]{AusGov2012InfrastructurePlanningDelivery} before finishing at \$688 million.\footcite[][13]{WALISRealisingPowerLocation}
 
 \subsubsection*{What caused these cost changes?}
 
 The initial funding commitments (\$136m, \$337m, \$370m) were for a road 20 per cent shorter.\footcite[][40]{GovWA2005MainRoads} By the time the road was contracted in 2006, an enhancement of a section of the existing Kwinana Highway between Baldavis and Karnup was included.\footcites{GHDPerthtoBunbury}[][87]{AusGov2012InfrastructurePlanningDelivery}
 
-In official documents, little is revealed about the reasons for the cost increases. There were design enhancements that occurred at some 
-point, including an extra \$40m to fund a change in materials from those specified in the business case.\footcite[][92]{AusGov2012InfrastructurePlanningDelivery}
+Official documents reveal little about the reasons for the cost increases. 
+There were design enhancements, including an extra \$40m to fund a change in materials from those specified in the business case.\footcite[][92]{AusGov2012InfrastructurePlanningDelivery}
 
 But even reducing the final cost by 20 per cent (to account for the extended road length) and subtracting \$40m from the final estimate (to exclude the additions) leaves a cost of around \$500m to build the originally specified road – 400 per cent higher than the initial cost estimate.
 
