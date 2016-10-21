@@ -31,9 +31,9 @@ numbers=noenddot,
 \RequirePackage{float}
 \RequirePackage{placeins}
 \RequirePackage{afterpage}
-\frenchspacing
+\nonfrenchspacing
 \RequirePackage[activate=true, expansion, final, kerning=true, spacing=true]{microtype}
-%\microtypecontext{spacing=nonfrench}
+\microtypecontext{spacing=nonfrench}
 % http://tex.stackexchange.com/questions/303457/setprotrusion-with-helvetica-on-specific-characters
 \SetProtrusion
    [ name     = T1-phv,      % the name is optional
@@ -124,7 +124,7 @@ numbers=noenddot,
     nobreak=true, % prevents page breaking
     outerlinewidth=0.5pt,
     innertopmargin=0.5\baselineskip,
-    innerbottommargin=\baselineskip,
+    innerbottommargin=0.5\baselineskip,
     innerrightmargin=11pt,
     innerleftmargin=11pt,
     backgroundcolor=OrangeBackground
@@ -135,7 +135,7 @@ numbers=noenddot,
     nobreak=true, % prevents page breaking
     outerlinewidth=0.5pt,
     innertopmargin=0.5\baselineskip,
-    innerbottommargin=\baselineskip,
+    innerbottommargin=0.5\baselineskip,
     innerrightmargin=11pt,
     innerleftmargin=11pt,
     backgroundcolor=OrangeBackground
