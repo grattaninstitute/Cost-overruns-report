@@ -24,7 +24,7 @@ This working paper may be cited as: Terrill, M. and Danks, L., 2016, \textit{\my
 
 ISBN: 
 
-All material published or otherwise created by Grattan Institute is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License 
+All material published or otherwise created by Grattan Institute is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License\par 
 }
 }
 
