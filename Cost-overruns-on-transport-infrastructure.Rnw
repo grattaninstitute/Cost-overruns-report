@@ -823,8 +823,8 @@ Yet the project was not confirmed until 2009, when a contract was awarded for \$
 Savings of \$6.7 million were made during the construction period, and the project was declared to have come in ``under budget''\footcite{RuralandRegionalAffairs2014} when it was completed in 2011,\footcite{NorthernStar2011ThroughTrafficToUseNewBypass} six months after the contracted completion date,\footcite{ABCNews2009AlstonvilleBypassFundsAnnounced} five years after the promised completion date, and nine years after the first commitment.
 
 \begin{figure}[H]
- \caption{Project cost estimates, millions of dollars}
- \includegraphics[page=3]{atlas/CaseStudies.pdf}\label{fig:CS_Alstonville}
+ \captionwithunits{Project cost estimates\label{fig:CS_Alstonville}}{millions of dollars}
+ \includegraphics[page=3]{atlas/CaseStudies.pdf}
 \end{figure}
 
 \end{bigbox*}
@@ -1356,7 +1356,7 @@ The average size of cost overruns observed across the sample can be used as an e
 \captionwithunits{Key risk measurement and management concepts\label{fig:Key-risk-measurement-and-management-concepts}}%
 {Illustrative probability distribution of cost outcomes on individual projects} 
 \includegraphics{atlas/Density.pdf} 
-\noteswithsource{The distribution of cost risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see appendix xx for details. This graph's illustrative purpose is to graphically present the relative distances between the median, 90th quantile and expected value of cost overruns.}{Deloitte Investment Monitor, Grattan analysis}
+\noteswithsource{The distribution of cost risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see \Vref{sec:guidance-is-incomplete} for details. This graph's illustrative purpose is to graphically present the relative distances between the median, 90th quantile and expected value of cost overruns.}{Deloitte Investment Monitor, Grattan analysis}
 \end{figure}
 
 The key advantages of reference class forecasting are that it incorporates the likely costs of unknown risks and does not suffer from optimism bias, as it relies on objective historical information. 
@@ -1826,7 +1826,7 @@ For example, many of the inconsistencies within guidance that applies to all sta
 
 Where different institutions within jurisdictions require different amounts of risk analysis, guidance should be comprehensively reviewed so that the hierarchy relating guidance documents is clear and, where possible, analytical requirements are aligned. For example, Transport NSW's \emph{Principles and Guidelines for Economic Appraisal of Transport Initiatives}\footcite{TransportNSW2013PrinciplesandGuidelines} outlines what the document sets out to achieve and how it should be used in combination with other guidelines.\footnote{Transport NSW guidelines ref}
 
-\subsection{Guidance is incomplete}\label{guidance-is-incomplete}
+\subsection{Guidance is incomplete}\label{sec:guidance-is-incomplete}
 
 Even if project proponents were to follow the guidance on risk measurement to the book, cost overruns would be underestimated. This is because the recommended approaches to risk measurement are incomplete.
 
