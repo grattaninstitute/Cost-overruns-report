@@ -14,7 +14,6 @@
 
 
 
-
 \begin{document}
 <<portability, echo=FALSE>>=
 source("R/portability.R")
@@ -585,6 +584,7 @@ Governments should divide project contingencies between project management agenc
 
 
 \chapter{The extent of cost overruns\label{chap:extent-of-cost-overruns}}
+
 The Peel Deviation is a stretch of the Forrest Highway running between Perth and Bunbury.
 It was first promised during the 2001 state election campaign at a cost of \$136~million.
 Many twists and turns later, in 2010, the road was completed at a cost of \$688~million -- over 400 per cent more than its originally promised cost.
@@ -1172,7 +1172,7 @@ This also resulted in litigation being launched, by toll road owners Brisconnect
 \end{smallbox}
 
 
-\begin{bigbox*}{Case study -- Ipswich Motorway Dinmore to Goodna upgrade -- 196 per cent overrun}{box:Ipswich-motorway}
+\begin{smallbox}{Case study -- Ipswich Motorway Dinmore to Goodna upgrade -- 196 per cent overrun}{box:Ipswich-motorway}
 \subsubsection*{``Under budget'', and no return of contingency}
 
 An upgrade of the Ipswich Motorway between Dinmore and Goodna in Southern Queensland was announced in 2003, at a cost of \$594 million, based on a cost-benefit analysis.\footcite{Parliament2006QuestionsinWritingIpswich}
@@ -1182,7 +1182,7 @@ In the 2007 federal election campaign, Labor promised to provide the upgrade for
 On completion in 2012, the project came in 10 per cent lower than the contracted cost.\footcite{AEEA2016IpswichMotorway} Rather than being returned to the Commonwealth, the contingency was diverted to other Queensland roads, including the Bruce Highway.\footcite{BrisbaneTimes2012FiveStagesDown} 
 
 \tabularnewline
-\end{bigbox*}
+\end{smallbox}
 
 
 
@@ -1386,7 +1386,7 @@ The average size of cost overruns observed across the sample can be used as an e
 {Illustrative probability distribution of cost outcomes on individual projects} 
 \includegraphics{atlas/Density.pdf} 
 \noteswithsource{The distribution of cost risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see appendix xx for details. This graph's illustrative purpose is to graphically present the relative distances between the median, 90th quantile and expected value of cost overruns.}{Deloitte Investment Monitor, Grattan analysis}
-\end{figure}\vspace{-12pt}
+\end{figure}\vspace{-12pt} % CC: manual vspace
 
 The key advantages of reference class forecasting are that it incorporates the likely costs of unknown risks and does not suffer from optimism bias, as it relies on objective historical information. 
 Its main shortcoming is that it does not account for the ways in which a project’s risk profile is unique.  
@@ -1654,13 +1654,7 @@ Instead, our infrastructure systems could promise what is worth having, and then
 % \end{figure}
 
 
-\begin{figure}
-\captionwithunits{Title }
-{Subtitle}
-% \includegraphics{}\label{}
-\noteswithsource{Notes}
-{Source}
-\end{figure}
+
 
 
 
@@ -2227,17 +2221,17 @@ P99 & 10 per cent & 69 per cent\tabularnewline
 \end{table}
 
 
-To identify the estimated probability prices for different levels of risk tolerance, we assumed that all probability price estimates are biased by the same amount, in the same direction\footnote{This is the most forgiving assumption that could be invoked regarding the average distance between each probability price under the current estimation methodology, as it is equivalent to assuming that the estimated probability prices were based off a probability distribution which takes the exact shape of the observed data.
+To identify the estimated probability prices for different levels of risk tolerance, we assumed that all probability price estimates are biased by the same amount, in the same direction.\footnote{This is the most forgiving assumption that could be invoked regarding the average distance between each probability price under the current estimation methodology, as it is equivalent to assuming that the estimated probability prices were based off a probability distribution which takes the exact shape of the observed data
 
   It is also the most conservative assumption that could be invoked for this purpose. The guidelines that recommend specific distributions all recommend symmetric distributions, which would cause the error in estimated probability prices to increase with each probability price above the median. By assuming that probability price estimates have been based off a correctly shaped probability distribution, we only claim probability prices are downwardly biased by the lower bound of the of bias implied by the cost estimation guidelines.}.
 
 That is, we know the P75 probability price estimate is downwardly biased by 9 percentage points because it is exceeded by 34 per cent, rather than 25 per cent, of observations. We invoke the assumption that this bias is consistent across the distribution implies, which implies that P50 estimates will be exceeded by 59 per cent of observations, rather than 50 per cent of observations, for example.
 
-The final column of table XX reports the the difference, as percentage of budget commitment project costs, between the P50 and other estimated probability prices. These figures have been calculated as the difference between the 90\textsuperscript{th} and 50\textsuperscript{th} quantiles of the observed distribution of final costs over budgeted costs, using the median-unbiased estimator of sample quantiles\footnote{Hyndman and Fan, 1996}.
+The final column of table XX reports the the difference, as percentage of budget commitment project costs, between the P50 and other estimated probability prices. These figures have been calculated as the difference between the 90\textsuperscript{th} and 50\textsuperscript{th} quantiles of the observed distribution of final costs over budgeted costs, using the median-unbiased estimator of sample quantiles.\footnote{Hyndman and Fan, 1996}
 
 We draw two conclusions from this analysis. The first conclusion is that expected value of cost overruns after budget commitments have been made is closer to a P90 cost estimate than a P50 cost estimates. This is based off the observation that the expected value of cost overruns after a budget commitment has been made is 21 per cent, and under the current probability price estimation methodology, a 21 per cent cost uplift is equivalent to a P87 cost estimate.
 
-Building off this finding, we also conclude that the average difference between P50 and P90 cost estimates as a percentage of budgeted project costs is approximately 21 per cent, under the current probability price estimation methodology. This is because, as budgeted cost estimates could also be interpreted as P50 cost estimates\footnote{34 per cent of projects finish above their budget commitment costs, but 91 per cent of projects finish on or above their budget commitment costs. This means that P9-P66 cost estimates should all be set equal to budget commitment costs.}, the 21 per cent cost uplift required to convert a budget commitment cost estimate to a P90 cost estimate is also the appropriate uplift rate for converting a P50 cost estimate to a P90 cost estimate.
+Building off this finding, we also conclude that the average difference between P50 and P90 cost estimates as a percentage of budgeted project costs is approximately 21 per cent, under the current probability price estimation methodology. This is because, as budgeted cost estimates could also be interpreted as P50 cost estimates,\footnote{34 per cent of projects finish above their budget commitment costs, but 91 per cent of projects finish on or above their budget commitment costs. This means that P9-P66 cost estimates should all be set equal to budget commitment costs.} the 21 per cent cost uplift required to convert a budget commitment cost estimate to a P90 cost estimate is also the appropriate uplift rate for converting a P50 cost estimate to a P90 cost estimate.
 
 The uplift required to convert a P50 cost estimate to a P90 cost estimate may actually be far higher than this. Under an accurate probability pricing methodology, this difference could actually be as large as 69 per cent. We refrain from making this claim so as to only interpret observed outcomes in relation to the probability price estimates that prevailed when the cost outcomes were generated. This is because switching to an accurate probability price estimation methodology could change cost behaviour.
 
