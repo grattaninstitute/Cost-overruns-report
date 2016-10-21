@@ -1082,7 +1082,8 @@ When overruns occur during these early stages, there is an opportunity for proje
 \begin{figure}
 \captionwithunits{A third of cost overruns occur prior to budget commitments\label{fig:cost-overruns-by-project-stage}}%
 {Cost overruns by project stage, per cent}
-
+\includegraphics[page=10]{atlas/Charts_CO}
+\noteswithsource{Australian transport projects, completed between 2001 and 2015.}{Deloitte Investment Monitor dataset; Grattan analysis}
 \end{figure}
 
 The following two sections identify why it is important that projects' investment merits are reappraised after early cost overruns, and whether Australia's project appraisal processes could be doing a better job at this.
@@ -1131,6 +1132,7 @@ Even those announced before a formal government funding commitment are usually c
 \begin{figure}
 \captionwithunits{Few projects are cancelled once announced\label{fig:perc-projects-cancelled-each-proj-stage}}%
 {Percentage of projects cancelled at each project stage}
+\includegraphics[page=11]{atlas/Charts_CO}
 
 \noteswithsource{Australian transport projects completed between 2000 and 2015}%
 {Deloitte Investment Monitor; Grattan analysis}
@@ -1205,7 +1207,7 @@ While cost estimation on any given project is uncertain, on average cost estimat
 
 But there is a substantial gap between estimated and actual costs on transport infrastructure projects over the past 15 years.
 In that period, cost estimators expected between 10 and 25 per cent of projects to exceed their budget.
-In fact, 34 per cent did so (Figure \Vref{fig:5-1}).
+In fact, 34 per cent did so (\Vref{fig:assumed-and-observed-prob-distr-of-cost-overruns}).
 Moreover, these overruns were not offset by underruns.%
 \GenericWarning{Footnote undefined}{LaTeX Warning: Footnote not complete}%
 \footnote{Give examples of guidelines which explicitly assume symmetry, and those that state the distribution should be asymmetric but do not recommend any use of this information.}
@@ -1214,9 +1216,9 @@ Moreover, these overruns were not offset by underruns.%
 \captionwithunits{Experts systematically underestimate the likelihood of cost overruns\label{fig:assumed-and-observed-prob-distr-of-cost-overruns}}
 {Assumed and observed probability distributions of cost overruns, per cent}
 
-% \includegraphics{media/image13.png}
+\includegraphics[page=12]{atlas/Charts_CO.pdf}
 
-\notes{}
+\noteswithsource{The assumed prevalence of cost overruns is inferred from the common representation of cost risk as symmetrically distributed in cost estimation guidance, and the assumption that budget costs are P75 - P90 costs, which implies that no more than 25 per cent of projects being expected to experience cost overruns.}{Australian risk management guidelines referenced in Appendix xx and Deloitte Investment Monitor, Grattan analysis}
 \end{figure}
 
 Although it is not possible to perfectly predict the costs of any individual project, where cost estimates are wrong on average, there is clearly scope to improve.
@@ -1248,10 +1250,10 @@ Because of this, large projects are more likely to incur cost overruns, and thes
 In fact, a 10 per cent increase in a project's size (measured by cost estimate when first under construction) is associated with a 58 per cent higher chance of a cost overrun.
 
 \begin{figure}
-\captionwithunits{Cost overruns are more common and larger on average among big projects\label{fig:prevalence-avg-magnitude-cost-overruns-by-project-size}}
+\captionwithunits{Cost overruns are more common and larger, on average, among big projects\label{fig:prevalence-avg-magnitude-cost-overruns-by-project-size}}
 {Prevalence and average magnitude of cost overruns as a percentage of initial project costs by project size, per cent}
 
-% \includegraphics{media/image14.png}
+\includegraphics[page=13]{atlas/Charts_CO.pdf}
 
 \noteswithsource{Australian transport projects completed between 2001 and 2015.
 Project size is defined by project value at the commencement of construction.}
@@ -1286,8 +1288,10 @@ The timing of cost overruns on rail and road projects is aligned with the stages
 Cost overruns are larger for road projects during the planning stage, when road projects tend to be more bespoke than rail, and larger for rail projects during the construction period, when rail projects tend to be more bespoke (\Vref{fig:cost-overruns-by-proj-stage-mode}).
 
 \begin{figure}
-\captionwithunits{Road and rail projects have different patterns of cost overruns\label{fig:cost-overruns-by-proj-stage-mode}}
-{Cost overruns by project stage and mode, per cent}%\includegraphics{media/image15.tiff}
+\captionwithunits{Both road and rail projects suffer from cost overruns, but at different stages
+\label{fig:cost-overruns-by-proj-stage-mode}}
+{Average magnitude of cost overruns on Australian transport infrastructure projects completed between 2000 and 2015 by project mode}
+\includegraphics[page=14]{atlas/Charts_CO.pdf}
 
 \noteswithsource{Australian transport projects completed between 2000 and 2015}
 {Deloitte Investment Monitor; Grattan analysis}
@@ -1337,10 +1341,11 @@ They are inconsistent in which of the main tools they recommend and in how they 
 
 \begin{figure}
 \captionwithunits{Australia's various guidelines on risk measurement do not recommend any approach consistently\label{fig:prop-guidelines-that-reco-use-of-each-key-risk-assessment-tool}}%
-{Proportion of guidelines on quantitative risk assessment on transport infrastructure projects that recommend the use of each key risk assessment tool, per cent}%\includegraphics{media/image16.png}
+{Proportion of guidelines on quantitative risk assessment on transport infrastructure projects that recommend the use of each key risk assessment tool, per cent}
+\includegraphics[page=15]{atlas/Charts_CO.pdf}
 
 \noteswithsource{Australian transport projects completed between 2000 and 2015}%
-{Deloitte Investment Monitor; Grattan analysis}
+{Australian risk management guidelines references in Appendix xx; Deloitte Investment Monitor; Grattan analysis}
 \end{figure}
 
 A project's expected value is the most obvious gap in cost estimation guidance.
@@ -1374,22 +1379,20 @@ Like the expected value methodology, it does not deal with unknown risks.
 For instance, most projects will have ‘P50’ and ‘P90’ cost estimates, which identify the prices for which it is expected that a project will meet or better its budget in 50 or 90 per cent of cases, respectively.
 
 \textbf{Reference class forecasting} compares cost estimates for one project to those on similar projects that have already been built. 
-The average size of cost overruns observed across the sample can be used as an estimate of the expected value of cost overruns; the variance of the outcomes on the comparison projects can be used to understand the range within which a cost estimate is likely to vary; and the different points within the observed distribution can be used to estimate probability prices. 
+The average size of cost overruns observed across the sample can be used as an estimate of the expected value of cost overruns; the variance of the outcomes on the comparison projects can be used to understand the range within which a cost estimate is likely to vary; and the different points within the observed distribution can be used to estimate probability prices.
+
+\begin{figure}[H]
+\captionwithunits{Key risk measurement and management concepts\label{fig:Key-risk-measurement-and-management-concepts}}%
+{Illustrative probability distribution of cost outcomes on individual projects} 
+\includegraphics{atlas/Density.pdf} 
+\noteswithsource{The distribution of cost risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see appendix xx for details. This graph's illustrative purpose is to graphically present the relative distances between the median, 90th quantile and expected value of cost overruns.}{Deloitte Investment Monitor, Grattan analysis}
+\end{figure}\vspace{-12pt}
 
 The key advantages of reference class forecasting are that it incorporates the likely costs of unknown risks and does not suffer from optimism bias, as it relies on objective historical information. 
 Its main shortcoming is that it does not account for the ways in which a project’s risk profile is unique.  
 
 \Vref{fig:Key-risk-measurement-and-management-concepts} illustrates these tools for the costs of a group of completed projects: expected value (or mean); variance (assessed by sensitivity analysis) and probability pricing levels.
 The fourth tool, reference class forecasting, offers a way to improve the quality of expected value, sensitivity analysis and probability pricing by relying on historical experience.
-
-\begin{figure}[H]
-\captionwithunits{Key risk measurement and management concepts\label{fig:Key-risk-measurement-and-management-concepts}}%
-{Illustrative probability distribution of cost outcomes on individual projects} 
-%\includegraphics{media/image17.png} 
-\notes{This diagram is a stylized representation of the differences between project and portfolio level risks.
-\Vref{fig:APPENDIX-UNDERPINNING-Risk-managers-toolkit} presents the raw data underpinning this.}
-\end{figure}
-
 
 \end{bigbox*}
 
@@ -1573,7 +1576,7 @@ In practice, the best way to manage the contingency would lie somewhere between 
 \captionwithunits{Small contingencies can achieve a lot when they are managed at the portfolio level\label{fig:value-contingencies-req-to-cover--}}
 {Value of the contingencies required to cover the costs of 90\% of the cost overruns that occur after a formal budget commitment, under different contingency management schemes}
 
-
+\includegraphics[page=17]{atlas/Charts_CO.pdf}
 
 \noteswithsource{Australian transport projects completed between 2000 and 2015}%
 {Deloitte Investment Monitor; Grattan analysis}
