@@ -1007,6 +1007,7 @@ To enable learning from past experience, and to improve accountability:
   \item Infrastructure Australia should be asked to provide the Joint Committee of Public Accounts and Audit with a post-completion appraisal of the benefits and costs of each infrastructure project with Commonwealth funding of \$50 million or more. 
 
   \item The Council of Australian Governments should add a new category of infrastructure services to the terms of reference for the annual Report on Government Services, produced by the Productivity Commission.
+\end{enumerate}
 \end{recommendation}
 
 
