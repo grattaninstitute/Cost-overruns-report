@@ -719,7 +719,7 @@ Although it appears to be common for scope changes to be made without proper app
 \captionwithunits{Most cost overruns were not attributable to substantive scope changes\label{fig:most-cost-overruns-were-not-attrib-to-scope-changes}}
 {Proportion of cost overruns attributable to scope change, per cent}
 
-\includegraphics[page=6]{atlas/Charts_CO}
+\includegraphics{atlas/PieChart}
 
 \noteswithsource{Based upon detailed investigation of 56 Australian transport infrastructure projects completed between 2008 and 2013, using publicly available data sources.\\
 The value of scope changes have been estimated where possible as the percentage of the total project cost (where scope changes were described as a percentage of project scope), or else by the total value of cost overruns incurred during the period the scope change took place.}
@@ -1707,6 +1707,7 @@ In this appendix we review the current practices of each state for each of these
 \begin{figure}
 \captionwithunits{The quality of risk management guidance varies\label{fig:quality-of-risk-management-guidance-chevrons}}
 {Guidance quality by jurisdiction and topic ranked as sufficient, incomplete and poor by green, orange and red, respectively.}
+\includegraphics[page=1]{atlas/AppendixCharts}
 
 \noteswithsource{}
 {See \Vref{sec:LAST-SECTION-OF-RISK-APPENDIX} for the list of reviewed guidelines, Grattan analysis}
@@ -1747,7 +1748,7 @@ Consistent use of risk matrices or like tools to identify and mitigate avoidable
 \begin{figure}
 \captionwithunits{Some avoidable risks can be mitigated \label{fig:Some-avoidable-risks-can-be-mitigated}}
 {Stylized representation of the probability of cost overruns of each size, per cent}
-% \includegraphics{media/image2.png}
+\includegraphics[page=3]{atlas/AppendixCharts}
 \noteswithsource{The distribution of unavoidable risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see appendix xx for details. The distribution of avoidable and unavoidable risks has been inferred by assuming that cost overruns would be larger if no effort was made to mitigate avoidable risks. This graph's illustrative purpose is to graphically present the common wisdom that cost risks can be reduced, but not eliminated, by mitigating avoidable risks.}
 {Sources: Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
@@ -1778,7 +1779,7 @@ Providing detailed guidance on how project costs should be estimated for each le
 \begin{figure}
 \captionwithunits{More projects finish on budget when estimation error has been minimised \label{fig:Reduce-estimation-error-diagram}}
 {Stylized representation of the probability of cost overruns of each size, per cent}
-%\includegraphics{media/image3.png}
+\includegraphics[page=4]{atlas/AppendixCharts}
 \noteswithsource{The distribution of unavoidable risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see appendix xx for details. The narrowing of the distribution of unavoidable risks associated with a reduction in estimation error has been inferred by assuming that extreme outcomes would be more common if the margin of error on cost estimates was wider. This graph's illustrative purpose is to graphically present the common wisdom that cost risks can be reduced, but not eliminated, by reducing estimation error.}
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
@@ -1823,6 +1824,12 @@ Risk measurement guidance should also be consistent across jurisdictions. This i
 For example, Victoria's business case on the Western Distributor has two sets of benefit cost ratios in order to conform to different guidance of the two levels of government.\footnote{"Western distributor ref"} Neither of these benefit cost ratios appears more correct than the other. Rather, they are two imperfect estimates of the same concept. As both estimates would have come at a significant financial cost, Australia's project appraisal processes could be made more cost efficient by aligning the analysis required across each jurisdiction.
 
 As it stands, risk measurement guidance is very inconsistent between each state and the Commonwealth. \Vref{consistency-table} shows that the expected value approach to estimating risks' costs is the only approach that is recommended consistently across all jurisdictions.
+
+\begin{figure}
+\captionwithunits{No state provides high quality risk measurement guidance}{Green = recommended\\ Yellow = recommended, but with insufficient information to be properly implemented\\ Red = not recommended}
+\includegraphics[page=2]{atlas/AppendixCharts}
+\source{Australia risk management guidelines, Grattan analysis}
+\end{figure}
 
 %\begin{longtable}\label{consistency-table}
 % Title: No state provides high quality risk measurement guidance
@@ -1895,6 +1902,11 @@ As no single risk management tool achieves all these objectives, a combination o
 % \bottomrule
 % \end{longtable}
 
+\begin{figure}
+\caption{Comparison of specific state guidelines}
+\includegraphics[page=5]{atlas/AppendixCharts}
+\end{figure}
+
 
 \subsection{Insufficient information is provided}\label{insufficient-information-is-provided}
 
@@ -1957,7 +1969,8 @@ However, this important component of risk management appears to be largely gover
 \captionwithunits{The recommended size of contingency funds varies substantially across guidelines\label{fig:Recommended-Size-of-contingency-funds-varies-considerably}}
 {Recommended contingency sizes at early and late stages of project development as a proportion of project costs, per cent}
 
-%\includegraphics{media/image4.png}\\
+\includegraphics[page=6]{atlas/AppendixCharts}
+
 \notes{The contingency ranges cited in the National Guidelines for Transport System Management refer specifically to road projects specifically, and are anticipated to be too conservative for projects which are one-off in nature.}%
 \end{figure}
 
@@ -2009,7 +2022,7 @@ Seeking to ascertain the quality of the Investment Monitor's cost estimates, we 
 \begin{figure}
 \captionwithunits{Cost estimates contained within the Investment Monitor data appear reliable overall\label{fig:value-projects-by-project-stage}}%
 {Total value of the portfolio of projects contained within the Grattan dataset by project stage, \$billion}
-
+\includegraphics[page=7]{atlas/AppendixCharts}
 
 \source{Deloitte-Access Investment Monitor; Grattan dataset; Grattan analysis.}
 \end{figure}
@@ -2021,6 +2034,7 @@ In line with this expectation, we observe far higher cost overruns across the Gr
 \begin{figure}
 \caption{Cost overrun by project stage in Investment Monitor and Grattan datasets\label{fig:cost-overrun-by-project-stage}}
 
+\includegraphics[page=8]{atlas/AppendixCharts}
 
 \noteswithsource{Cost overruns are defined as the percentage change over the period of interest as a proportion of the project's initial cost estimate.}%
 {Deloitte-Access Investment Monitor; Grattan dataset; Grattan analysis.}
@@ -2051,16 +2065,6 @@ During construction & 100 per cent\tabularnewline
 
 
 As discussed in section XX, a manual check of the history of 19 such projects with missing data indicated that this is assumption is quite conservative -- 37 per cent of these projects did experience public overruns during the unobserved period -- a proportion only marginally lower than the 46.5 per cent of projects with early cost estimates recorded that experienced early cost overruns.
-
-\begin{figure}
-\captionwithunits{Cost overruns are likely to be higher than reported}
-{Average cost overrun rates as a proportion of initial costs, by project stage}
-
-
-
-\noteswithsource{Australian transport projects completed between 2001 and 2015}%
-{Deloitte Investment Monitor, Grattan analysis.}
-\end{figure}
 
 This indicates that the missing data in the Investment Monitor dataset is associated with unobserved cost changes in some cases, as well as the absence of early cost estimates in others. Consequently, cost overruns may indeed be closer to the upper bound than the lower bound presented in figure XX. As this report's analysis assumes that no cost overrun occurred where not observed directly, we note that its conclusions are conservative.
 
@@ -2161,13 +2165,17 @@ The stylized representations of distribution of cost overruns feature a much sma
 
 \begin{figure}
 \caption{Probability distribution}
+\includegraphics[page=9]{atlas/AppendixCharts}
 \end{figure}
 
 Figure XX confirms that stylized distribution employed is a fair representation of the underlying data. As emphasised in Box XX, the expected value of cost overruns falls far closer to the distribution's 90\textsuperscript{th} percentile than its median.
 
 Though less immediately visible, the heaviness right tail of the observed distribution is also notably: XX percent of projects experienced cost overruns greater than the smallest cost underrun. In these ways, the stylized distribution of cost overruns provides a fair representation of the underlying data.
 
-{[}Insert an updated and annotated version of the observed distribution{]}
+\begin{figure}
+\caption{Probability distribution}
+\includegraphics[page=10]{atlas/AppendixCharts}
+\end{figure}
 
 
 \subsection{Contingency analysis}\label{contingency-analysis}
