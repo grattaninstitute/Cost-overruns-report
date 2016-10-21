@@ -819,8 +819,8 @@ Rather, premature cost announcements appear to haunt projects not only in the le
 
 \begin{figure}
 \captionwithunits{Projects announced earlier have larger percentage cost overruns at all stages of the project lifecycle\label{fig:projs-announced-early-have-larger-cost-overruns-at}}
-{Average project size at each project stage by cohort, \$2016 millions}
-
+{Average project size of each cohort, by project stage, \$2016 millions}
+\includegraphics[page=8]{atlas/Charts_CO}
 
 \noteswithsource{Australian transport projects, completed between 2001 and 2015.
 Projects' maturities at the time of initial cost announcements are inferred from each project's stated maturity when the project entered the Deloitte Investment Monitor.
@@ -884,12 +884,12 @@ Between a quarter and a half of their promises were for projects that had not be
 The proportions of the promised money that were for projects that had been assessed as nationally significant and worth doing ranged from 15 per cent for the Coalition to none for the Greens (see Figure xx).
 
 \begin{figure}
-\captionwithunits{The vast majority of committed money from all 3 major parties is for projects not endorsed by Infrastructure Australia}%
-{Value of specific election commit{}ments to transport infrastructure projects, \$billion}
+\captionwithunits{The vast majority of committed money from all three major parties is for projects not endorsed by Infrastructure Australia}%
+{Value of specific election commitments to transport infrastructure projects, \$2016 billion}
 
-%\includegraphics{media/image10.png}
+\includegraphics[page=9]{atlas/Charts_CO}
 
-\noteswithsource{Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of the coalition, from the 2016-17 budget papers.
+\noteswithsource{Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of The Coalition, from the 2016--17 budget papers.
 Excludes projects for which construction has already commenced.}
 {\textcite{Liberal2016Policy}; \textcite{ALP2016Policy}; \textcite{Greens2016Policy}; \textcite{Treasury2016CommonwealthBudgetPapers} \textcite{Treasury2014CommonwealthBudgetPapers}; \textcite{InfrastructureAustralia2016}; and Grattan analysis.}
 \end{figure}
