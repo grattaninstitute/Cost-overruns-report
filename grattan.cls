@@ -228,6 +228,11 @@ singlelinecheck=false,position=top,skip=0pt}
 \caption*{#2}
 }
 
+\newcommand{\units}[1]{%
+\captionsetup{font={small,color=theGrey}}
+\caption*{#1}
+}
+
 \newcommand{\captionoffigurewithunits}[2]{%
 \captionsetup{format=plain,font={small,bf,theGrey},labelfont={small,bf,theGrey}, justification=raggedright,
 singlelinecheck=false}
