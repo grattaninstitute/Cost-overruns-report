@@ -1140,7 +1140,7 @@ One indication that it is too low is that this cancellation rate is less than th
 A second indication that the cancellation rate is too low is that many projects with low net benefits are not being cancelled.
 Over the last 15 years, projects that incurred cost overruns were just as likely to be cancelled as those that did not.
 This either means that the project appraisal process is not being used to cancel the projects with investment merits that have been eroded by cost overruns, or that cancelled projects are cancelled because of cost overruns but these overruns are not announced -- in other words, that cost overruns are higher than reported.%
-\footnote{This argument is explained in more detail in Appendix xx.} Both of these interpretations suggest that not enough projects are cancelled.
+\footnote{This argument is explained in more detail in Appendix \ref{methodological-appendix}.} Both of these interpretations suggest that not enough projects are cancelled.
 
 Projects should be cancelled when their estimated benefits are found to be lower than their estimated costs.
 Given that benefits are probably overstated much of the time,\footcite{Elaurant2015POLITICSFINANCETRANSPORT} just as costs are understated, it is entirely fitting that projects be cancelled if their estimated benefits are only slightly more than their estimated costs (see \Vref{box:overstated-benefits}).
@@ -1503,7 +1503,7 @@ These are key times for managing risks.
 Some risks materialise through changes in the economy.
 The costs of public infrastructure tend to be higher in a faster-growing economy.
 Higher private sector demand for resources such as equipment, materials and workforce leads to higher costs that may not have been anticipated at the time a project budget was prepared.
-In Western Australia, the fact that there were often few or even only one bid for public sector works projects during the resources investment boom appears to have increased the likelihood of cost overruns in that state: Western Australia has tended to have larger overruns than those in New South Wales, Victoria and Queensland (details in Appendix xx).
+In Western Australia, the fact that there were often few or even only one bid for public sector works projects during the resources investment boom appears to have increased the likelihood of cost overruns in that state: Western Australia has tended to have larger overruns than those in New South Wales, Victoria and Queensland (details in Appendix \ref{methodological-appendix}).
 
 More generally, the global financial crisis seems to have reduced the likelihood of cost overruns.
 The probability of a cost overrun during construction approximately halved for otherwise similar projects begun since 2009.
@@ -1701,7 +1701,7 @@ There are upwards of fifty sets of guidelines outlining required approaches to r
 
 \Vref{fig:quality-of-risk-management-guidance-chevrons} provides a high level summary of the quality of risk guidance across Australian jurisdictions. It identifies that the provided guidance regarding risk minimisation is generally of a far higher standard than that of risk measurement and ongoing risk monitoring. This is aligned with the nature of Australia's problem with cost overruns: most projects finish on budget, but the huge costs of uncommon events are poorly anticipated and accounted for.
 
-In this appendix we review the current practices of each state for each of these components of risk management, and highlight the opportunities for improvement. Full details of the Australian risk management guidelines analysed in this appendix are provided in appendix XX.
+In this appendix we review the current practices of each state for each of these components of risk management, and highlight the opportunities for improvement. Full details of the Australian risk management guidelines analysed in this appendix are provided in section \ref{Reviewed-Australian-risk-measurement-guidelines}.
 
 
 \begin{figure}
@@ -1748,7 +1748,7 @@ Consistent use of risk matrices or like tools to identify and mitigate avoidable
 \captionwithunits{Some avoidable risks can be mitigated \label{fig:Some-avoidable-risks-can-be-mitigated}}
 {Stylized representation of the probability of cost overruns of each size, per cent}
 % \includegraphics{media/image2.png}
-\noteswithsource{The distribution of unavoidable risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see appendix xx for details. The distribution of avoidable and unavoidable risks has been inferred by assuming that cost overruns would be larger if no effort was made to mitigate avoidable risks. This graph's illustrative purpose is to graphically present the common wisdom that cost risks can be reduced, but not eliminated, by mitigating avoidable risks.}
+\noteswithsource{The distribution of unavoidable risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see appendix \ref{methodological-appendix} for details. The distribution of avoidable and unavoidable risks has been inferred by assuming that cost overruns would be larger if no effort was made to mitigate avoidable risks. This graph's illustrative purpose is to graphically present the common wisdom that cost risks can be reduced, but not eliminated, by mitigating avoidable risks.}
 {Sources: Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
@@ -1779,7 +1779,7 @@ Providing detailed guidance on how project costs should be estimated for each le
 \captionwithunits{More projects finish on budget when estimation error has been minimised \label{fig:Reduce-estimation-error-diagram}}
 {Stylized representation of the probability of cost overruns of each size, per cent}
 %\includegraphics{media/image3.png}
-\noteswithsource{The distribution of unavoidable risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see appendix xx for details. The narrowing of the distribution of unavoidable risks associated with a reduction in estimation error has been inferred by assuming that extreme outcomes would be more common if the margin of error on cost estimates was wider. This graph's illustrative purpose is to graphically present the common wisdom that cost risks can be reduced, but not eliminated, by reducing estimation error.}
+\noteswithsource{The distribution of unavoidable risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see appendix \ref{methodological-appendix} for details. The narrowing of the distribution of unavoidable risks associated with a reduction in estimation error has been inferred by assuming that extreme outcomes would be more common if the margin of error on cost estimates was wider. This graph's illustrative purpose is to graphically present the common wisdom that cost risks can be reduced, but not eliminated, by reducing estimation error.}
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
@@ -1788,9 +1788,9 @@ Providing detailed guidance on how project costs should be estimated for each le
 
 Australia's guidance on risk minimisation is generally of a high standard. However, this guidance is not sufficient, as it is inevitable that some cost risks will be impossible, or prohibitively expensive, to eliminate. These remaining risks need to be accurately measured, so that they can be factored into investment decisions and efficiently managed throughout a project's life.
 
-As discussed in chapter XX, the critical shortcoming of risk management on Australia's transport infrastructure projects is that the guidance regarding how to measure unavoidable project risks is uniformly poor. This is because the guidance on how to quantify project risks is:
+As discussed in section \ref{risk-assessment-should-be-comprehensive}, the critical shortcoming of risk management on Australia's transport infrastructure projects is that the guidance regarding how to measure unavoidable project risks is poor. This is because the guidance on how to quantify project risks is:
 
-\begin{itemize}
+\begin{itemize}{}
 \item
   inconsistent within and across jurisdictions,
 \item
@@ -1864,9 +1864,10 @@ There's no single ``right" way to measure risk, but for an approach to risk meas
   \textbf{comprehensive} if known, unknown, moderate and extreme risks are all accounted for.
 \end{itemize}
 
-As no single risk management tool achieves all these objectives, a combination of tools is required. Table XX summarises how each risk measurement tool can, if used properly, contribute to a complete approach to risk measurement.
+As no single risk management tool achieves all these objectives, a combination of tools is required. Table \ref{requirements-for-complete-risk-measurement} summarises how each risk measurement tool can, if used properly, contribute to a complete approach to risk measurement.
 
 %\begin{longtable}
+\label{requirements-for-complete-risk-measurement}
 % title: Complete approaches to risk measurement satisfy all the conditions for reliability and comprehensiveness by using a combination of tools
 % subtitle: Attributes of each risk management tool, where indicates that a tool can be used satisfy the criteria, indicates that a tool can be used to get part way towards the criteria and indicates that a tool cannot be used to achieve the criteria.
 % sources: See section [LAST SECTION OF RISK APPENDIX] for the list of reviewed guidelines, Grattan analysis
@@ -1895,6 +1896,7 @@ As no single risk management tool achieves all these objectives, a combination o
 % \bottomrule
 % \end{longtable}
 
+Add comparison of stylised distributions \label{fig:assumed-and-actual-distributions} 
 
 \subsection{Insufficient information is provided}\label{insufficient-information-is-provided}
 
@@ -1965,10 +1967,11 @@ Even more problematic is the frequent absence of strict requirements for conting
 
 It should be noted that in the absence of such protocol, there are clear incentives for contingencies to be managed at the project level. This is because changes to project budgets that involve state treasuries increasing projects' budget allocations are open to more public scrutiny. Consequently, project management teams are subject to lower reputational risk when contingency funds are included within initial budget allocations and managed at the project level.
 
-Chapter XX identified that contingency funds can be XX times more cost effective when managed at the portfolio level. For this reason, it would be desirable for all states to adopt a stringent practice of managing contingency funds at the portfolio.
+Section \ref{contingencies-should-be-used-cost-efficiently} identified that contingency funds can be three times more cost effective when managed at the portfolio level. For this reason, it would be desirable for all states to adopt a stringent practice of managing contingency funds at the portfolio.
 
 
-
+\section{Reviewed Australian risk management guidelines }\label{Reviewed-Australian-risk-measurement-guidelines}
+All the guidelines considered should be listed here. 
 
 
 
@@ -2028,7 +2031,7 @@ In line with this expectation, we observe far higher cost overruns across the Gr
 
 \subsection{Outliers}\label{outliers}
 
-The Investment Monitor dataset contains a number of extreme observations. The quality of these observations is difficult to ascertain because not all of the sources underpinning the Investment Monitor dataset are still accessible, and the search cost associated with finding the sources for these data points is high. For this reason, we take a conservative approach and exclude the XX projects with overruns that are greater than the largest overrun observed in the Grattan dataset, and the XX projects with underruns that are less than XX per cent of the smallest underrun observed in the Grattan dataset.
+The Investment Monitor dataset contains a number of extreme observations. The quality of these observations is difficult to ascertain because not all of the sources underpinning the Investment Monitor dataset are still accessible, and the search cost associated with finding the sources for these data points is high. For this reason, we take a conservative approach and exclude the 56 projects with overruns that are greater than the largest overrun observed in the Grattan dataset (520\% of project value) or underruns greater than 50\% of project value \footnote{Greater than 50\% is a generous definition of outlying underrun, as the largest underrun observed in the Grattan dataset is only 34\% of initial project value}.
 
 \subsection{Missing data}\label{missing-data}
 
@@ -2050,7 +2053,7 @@ During construction & 100 per cent\tabularnewline
 \end{table}
 
 
-As discussed in section XX, a manual check of the history of 19 such projects with missing data indicated that this is assumption is quite conservative -- 37 per cent of these projects did experience public overruns during the unobserved period -- a proportion only marginally lower than the 46.5 per cent of projects with early cost estimates recorded that experienced early cost overruns.
+As discussed in section \ref{cost-overruns-may-be-even-bigger-than-we-claim}, a manual check of the history of 19 such projects with missing data indicated that this is assumption is quite conservative -- 37 per cent of these projects did experience public overruns during the unobserved period -- a proportion only marginally lower than the 46.5 per cent of projects with early cost estimates recorded that experienced early cost overruns.
 
 \begin{figure}
 \captionwithunits{Cost overruns are likely to be higher than reported}
@@ -2062,7 +2065,7 @@ As discussed in section XX, a manual check of the history of 19 such projects wi
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
-This indicates that the missing data in the Investment Monitor dataset is associated with unobserved cost changes in some cases, as well as the absence of early cost estimates in others. Consequently, cost overruns may indeed be closer to the upper bound than the lower bound presented in figure XX. As this report's analysis assumes that no cost overrun occurred where not observed directly, we note that its conclusions are conservative.
+This indicates that the missing data in the Investment Monitor dataset is associated with unobserved cost changes in some cases, as well as the absence of early cost estimates in others. Consequently, cost overruns may indeed be closer to the upper bound than the lower bound presented in figure \ref{fig:cost-overruns-are-likely-to-be-higher-than-reported}. As this report's analysis assumes that no cost overrun occurred where not observed directly, we note that its conclusions are conservative.
 
 \section{Analysis}\label{analysis}
 
@@ -2074,7 +2077,7 @@ We measure the average magnitude of cost overruns using a weighted arithmetic me
 
 The key advantage of this approach is that it allows our cost overrun indices to be interpreted as the percentage increase in expected infrastructure expenditure incurred across the portfolio between two project stages, as \(CO_{12}\  = \frac{1}{N}\sum_{i \in N}^{}\frac{C2 - C1}{C1} \times \frac{C1_{i}}{\sum_{i \in N}^{}{C1}} = \frac{\sum_{i \in N}^{}\left( C2_{i} - C1_{i} \right)}{\sum_{i \in N}^{}{C1_{i}}}\).
 
-However, it should be noted that the estimates obtained through a weighted arithmetic mean of this kind and the unweighted arithmetic mean commonly used elsewhere in the literature is trivial -- only XX per cent.
+However, it should be noted that the estimates obtained through a weighted arithmetic mean of this kind and the unweighted arithmetic mean commonly used elsewhere in the literature is trivial -- only 2 per cent.
 
 Weighted arithmetic means:
 
@@ -2092,7 +2095,7 @@ Where:
 
 \subsection{Dependence between cost overruns over time}\label{dependence-between-cost-overruns-over-time}
 
-We partner this aggregate summary of cost overruns with analysis of the linear dependence between cost overruns over time. To do so, we estimate the Pearson coefficient between the indices CO12 and CO23, and CO23 and CO34, and ascertain the significance of these correlations at the XX per cent level of confidence through comparison to Chi-Squared critical values.
+We partner this aggregate summary of cost overruns with analysis of the linear dependence between cost overruns over time. To do so, we estimate the Pearson coefficient between the indices CO12 and CO23, and CO23 and CO34, and ascertain the significance of these correlations at the 10 per cent level of confidence through comparison to Chi-Squared critical values.
 
 This allows us to draw conclusions regarding whether individual projects are more or less likely to experience an overruns in a given period if it experienced an overrun in the previous period. We complete this analysis separately for each cohort, as defined by the project's maturity when the first cost estimate is announced.
 
@@ -2137,7 +2140,7 @@ Project cancellation rates for each stage were calculated as the percentage of t
 
 We also estimated the appropriate overall rate of cancellation, by calculating the proportion of the 39 business cases for transport infrastructure published by Infrastructure Australia by the 12\textsuperscript{th} of Feburary 2016 which would have benefit cost ratios less than 1 if project costs increased by the average amount observed across the Deloitte Investment Monitor projects.
 
-The overall cancellation rate of XX per cent observed across the Deloitte Investment Monitor projects was approximately equal to our estimate of 24 per cent for the appropriate overall rate of cancellation. From this comparison, we conclude that there are not enough projects being cancelled. This is because a greater proportion of projects should have been cancelled than were cancelled if the average benefit cost ratio observed across the Infrastructure Australia business cases is overestimated by as little as 2 per cent of the average benefit cost ratio of 2.95, and there are numerous reasons to suspect that this is the case.
+The overall cancellation rate of 35 per cent observed across the Deloitte Investment Monitor projects appears to be insufficient. This is because, given the observed distribution of the Infrastructure Australia business cases, even a two per cent reduction in the average benefit cost ratio would mean that some projects with benefit cost ratios below one would not be cancelled, and there are numerous reasons to suspect that this is the case.  
 
 For instance, the benefit cost ratios of cancelled projects are likely to be worse than the 39 projects that had undergone an advanced level of planning and voluntarily submitted their business cases for publishing. It is also reasonable to suspect that benefit cost ratios are overestimated by more than 2 per cent on average, as numerous studies have found that estimates of project benefits are routinely optimistic\footnote{FLYVBJERG, B. 2016b. The fallacy of beneficial ignorance: A test of hirschman's hiding hand. World Development, 84, 176-189.}. Finally, the business case for completing projects with benefit cost ratios that are only very marginally above one is contentious, given the existence of competing budget objectives and the marginal excess burden of raising taxes to fund infrastructure projects\footnote{TERRILL, M., EMSLIE, O. \& COATES, B. 2016. Roads to riches: better transport investment. Grattan Institute.}.
 
@@ -2155,17 +2158,17 @@ We find that the value of cost overruns incurred to date, expressed as a percent
 
 \subsection{Distributional analysis}\label{distributional-analysis}
 
-\Vref{box:risk-managers-toolkit} features a stylized representation of the distribution of cost overruns. This stylized distribution, presented as figure XX below, is also employed in figures XX, XX and XX of appendix 1.
+\Vref{box:risk-managers-toolkit} features a stylized representation of the distribution of cost overruns. This stylized distribution, presented as figure \ref{fig:probability-distribution} below, is also employed in figures \ref{fig:Some-avoidable-risks-can-be-mitigated}, \ref{reduce-estimation-error} and \ref{fig:assumed-and-actual-distributions} of appendix 1.
 
 The stylized representations of distribution of cost overruns feature a much smaller kurtosis that the observed distribution of cost overruns. This modification was made so that the diagrams were easier to label clearly and a key characteristic of the distribution - the heaviness of its right tail -- was more visible.
 
-\begin{figure}
+\begin{figure}\label{fig:probability-distribution}
 \caption{Probability distribution}
 \end{figure}
 
-Figure XX confirms that stylized distribution employed is a fair representation of the underlying data. As emphasised in Box XX, the expected value of cost overruns falls far closer to the distribution's 90\textsuperscript{th} percentile than its median.
+Figure \ref{fig:probability-distribution} confirms that stylized distribution employed is a fair representation of the underlying data. As emphasised in Box \Vref{box:risk-managers-toolkit}, the expected value of cost overruns falls far closer to the distribution's 90\textsuperscript{th} percentile than its median.
 
-Though less immediately visible, the heaviness right tail of the observed distribution is also notably: XX percent of projects experienced cost overruns greater than the smallest cost underrun. In these ways, the stylized distribution of cost overruns provides a fair representation of the underlying data.
+Though less immediately visible, the heaviness right tail of the observed distribution is also notable: 17 percent of projects experienced cost overruns greater than the smallest cost underrun. In these ways, the stylized distribution of cost overruns provides a fair representation of the underlying data.
 
 {[}Insert an updated and annotated version of the observed distribution{]}
 
@@ -2203,10 +2206,10 @@ We pick this point in the Investment Monitor because it corresponds to the point
 
 The guidance regarding what type of probability price should be used in budget statements is inconsistent. Mostly, it is requested that P90 cost estimates are used as budget estimates. However, in some cases budget estimates are P75 costs. To allow for this variation in practices, we make the conservative assumption that budget estimates are all P75 estimates. Under the less conservative assumption that budgets contain P90 cost estimates, probability prices would be downwardly biased by an additional 15 percent.
 
-Table XX reports the percentage of projects observed to have cost overruns greater than each estimated probability price. This comparison is founded on the assumption that budgeted costs are P75 cost estimates, which we know to be exceeded by 34 per cent of projects. This means that cost estimates that have been defined to be P75 costs should, on average, be P66 costs.
+Table ref{probability-pricing-table} reports the percentage of projects observed to have cost overruns greater than each estimated probability price. This comparison is founded on the assumption that budgeted costs are P75 cost estimates, which we know to be exceeded by 34 per cent of projects. This means that cost estimates that have been defined to be P75 costs should, on average, be P66 costs.
 
 
-\begin{table}
+\begin{table}\label{probability-pricing-table}
 \begin{tabularx}{\columnwidth}{Xll}
 \toprule
 Estimated probability price & Per cent of projects with cost overruns greater than each probability price & Difference, as a per cent of budget commitment project costs, between the P50 and other estimated probability prices\tabularnewline
@@ -2214,7 +2217,7 @@ Estimated probability price & Per cent of projects with cost overruns greater th
 P50 & 59 per cent & 0 per cent\tabularnewline
 P75 & 34 per cent & 0 per cent\tabularnewline
 P87 & 22 per cent & 21 per cent\tabularnewline
-P90 & 19 per cent & XX per cent\tabularnewline
+P90 & 19 per cent & 26 per cent\tabularnewline
 P99 & 10 per cent & 69 per cent\tabularnewline
 \bottomrule
 \end{tabularx}
@@ -2227,7 +2230,7 @@ To identify the estimated probability prices for different levels of risk tolera
 
 That is, we know the P75 probability price estimate is downwardly biased by 9 percentage points because it is exceeded by 34 per cent, rather than 25 per cent, of observations. We invoke the assumption that this bias is consistent across the distribution implies, which implies that P50 estimates will be exceeded by 59 per cent of observations, rather than 50 per cent of observations, for example.
 
-The final column of table XX reports the the difference, as percentage of budget commitment project costs, between the P50 and other estimated probability prices. These figures have been calculated as the difference between the 90\textsuperscript{th} and 50\textsuperscript{th} quantiles of the observed distribution of final costs over budgeted costs, using the median-unbiased estimator of sample quantiles\footnote{Hyndman and Fan, 1996}.
+The final column of table \ref{probability-pricing-table} reports the the difference, as percentage of budget commitment project costs, between the P50 and other estimated probability prices. These figures have been calculated as the difference between the 90\textsuperscript{th} and 50\textsuperscript{th} quantiles of the observed distribution of final costs over budgeted costs, using the median-unbiased estimator of sample quantiles\footnote{Hyndman and Fan, 1996}.
 
 We draw two conclusions from this analysis. The first conclusion is that expected value of cost overruns after budget commitments have been made is closer to a P90 cost estimate than a P50 cost estimates. This is based off the observation that the expected value of cost overruns after a budget commitment has been made is 21 per cent, and under the current probability price estimation methodology, a 21 per cent cost uplift is equivalent to a P87 cost estimate.
 
