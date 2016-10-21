@@ -789,7 +789,7 @@ Given this data collection methodology, it should be noted late initial cost ann
 \Cref{fig:projs-announced-early-have-larger-cost-overruns-at} shows that projects announced early tend to perform worse than average against their cost estimates, not only in the early stages but also later in the project's life. This suggests that overly optimistic initial cost estimates are rarely adequately adjusted straight away -- reliable project cost estimates may only eventuate half way through construction.
 
 Another reason why early cost announcements often have a large overruns is that these low quality cost estimates are often imposed on the highest risk projects.
-\Cref{fig:projs-announced-early-have-larger-cost-overruns-at} shows that projects with early cost estimates are substantially bigger, on average, than projects with later cost announcements. Section xx of this report confirms that large projects are more prone to cost overruns than smaller projects in Australia, as is consistently the case internationally.
+\Cref{fig:projs-announced-early-have-larger-cost-overruns-at} shows that projects with early cost estimates are substantially bigger, on average, than projects with later cost announcements. Section \ref{cost-estimates-should-reflect-predictable-patterns} of this report confirms that large projects are more prone to cost overruns than smaller projects in Australia, as is consistently the case internationally.
 
 The rest of this chapter explains the incentives and lack of penalties that lead to premature announcements (see \Vref{box:alstonville} on the Alstonville bypass).
 
@@ -836,11 +836,11 @@ But even though parties make such statements, the behaviour of politicians expos
 In the 2016 federal election campaign, Labor, the Coalition and the Greens all promised to build a large number of projects that had not been properly assessed.
 Between a quarter and a half of their promises were for projects that had not been submitted to Infrastructure Australia for assessment, or had been assessed and judged as not worth doing.%
 \footcite{Terrill2016ElectionPromises} Many others were only an ``initiative'' on Infrastructure Australia's list; in other words, Infrastructure Australia was yet to be convinced that the project was worthwhile.
-The proportions of the promised money that were for projects that had been assessed as nationally significant and worth doing ranged from 15 per cent for the Coalition to none for the Greens (see Figure xx).
+The proportions of the promised money that were for projects that had been assessed as nationally significant and worth doing ranged from 15 per cent for the Coalition to none for the Greens (see Figure \ref{fig:election-promises}).
 
 \begin{figure}
-\captionwithunits{The vast majority of committed money from all 3 major parties is for projects not endorsed by Infrastructure Australia}%
-{Value of specific election commit{}ments to transport infrastructure projects, \$billion}
+\captionwithunits{The vast majority of committed money from all 3 major parties is for projects not endorsed by Infrastructure Australia \label{fig:election-promises}}}%
+{Value of specific election commitments to transport infrastructure projects, \$billion}
 
 %\includegraphics{media/image10.png}
 
@@ -896,8 +896,8 @@ Yet the road was closed for further construction immediately after the ceremony 
 Governments are responsible for investment decisions, they should not spend public money without due care for how the spending will benefit the community.
 Cost benefit analysis has limitations, but it remains the best way for making like-for-like comparisons of projects.%
 \footcite{Eliasson2013CostOverrunsandDemandShortfalls} Even with such a process, politicians will be tempted to pressure evaluators to massage assessments to fit political priorities.
-This is not just a theoretical concern.
-For example, EWL story.
+
+This is not just a theoretical concern. For example, the Victorian Auditor-General highlighted in his audit of the East West Link project, “advice that … gave too much emphasis to the benefits of approaches that were in line with the governments’ preferred outcome and too little to alternative options that could be argued were more aligned with the state’s best interests.” He further noted that “[s]ome public officials involved in this audit indicated that providing frank and fearless advice when they believe a government does not want to receive it will negatively impact their influence or career opportunities.”\footnote{Victorian Auditor-General (2015) East West Link Project, PP No. 108, http://www.audit.vic.gov.au/publications/20151209-East-West-Link/20151209-East-West-Link.pdf, ppxiv-xv.}
 
 Other spheres of government spending offer far less scope for discretionary decisions.
 For example, payments to unemployed people are worth \$108 billion since 2000 -- about the same amount as has been spent on transport infrastructure.
@@ -1053,9 +1053,7 @@ These distortions take three forms.
 First, cost overruns distort decisions regarding how much to invest in transport infrastructure relative to other spending priorities, such as hospitals, schools and pensions.
 Transport infrastructure projects have been systematically represented as if they were more attractive and better value for money than they really are. At the portfolio level, this misrepresentation has amounted to a 20 per cent reduction in the transport infrastructure portfolio's anticipated return on investment.
 
-(Add a paragraph here that explains the ROI framing)
-
-Second, cost overruns distort decisions regarding which transport infrastructure projects to invest in.
+Second, cost overruns distort decisions regarding which {}transport infrastructure projects to invest in.
 At the project level, cost overruns have reduced projects' returns on investment by as much as 406 per cent. When returns on investments are distorted to this degree, it is impossible for decision-makers to choose the projects with the highest net benefits to the community.
 
 In fact, as inaccurate cost estimates inflate benefit cost ratios, projects with inaccurate cost estimates are systematically advantaged in the project selection process.
@@ -1064,8 +1062,8 @@ This phenomenon is known as the ``winner's curse'', meaning that the projects th
 
 Third, cost overruns distort decisions regarding the types of transport infrastructure to invest in.
 The most obvious case of this phenomenon is multi-billion dollar projects.
-As these projects are particularly prone to cost overruns, the benefit cost ratios for these projects are systematically more optimistic than those of smaller projects.
-Together with politicians' penchant for iconic and legacy projects, this distortion biases politicians towards funding large projects like the Dinmore to Goodna bypass (see Box XX), at the expense of smaller projects with more certain returns.
+As these projects are particularly prone to cost overruns, the benefit cost ratios for these projects are systematically more optimistic than those of smaller p{}rojects.
+Together with politicians' penchant for iconic and legacy projects, this distortion biases politicians towards funding large projects like the Dinmore to Goodna bypass (see Box xx)), at the expense of smaller projects with more certain returns.
 
 The reduction to the transport infrastructure portfolio's return on investment caused by these distortions to investment decisions is sizable.
 If even half this reduction was avoided by switching to alternative investments when project costs skyrocket prior to construction, the benefits to taxpayers would be at least \$41 billion\footnote{This conclusion is based on the observation of an average benefit cost ratio of 2.95 across the 39 business cases for transport infrastructure published by Infrastructure Australia by the 12th of Feburary 2016. Please see appendix \ref{methodological-appendix} for further details}.
@@ -1158,7 +1156,7 @@ While cost estimation on any given project is uncertain, on average cost estimat
 
 But there is a substantial gap between estimated and actual costs on transport infrastructure projects over the past 15 years.
 In that period, cost estimators expected between 10 and 25 per cent of projects to exceed their budget.
-In fact, 34 per cent did so (Figure \Vref{fig:5-1}).
+In fact, 34 per cent did so (Figure \Vref{fig:assumed-and-observed-prob-distr-of-cost-overruns}).
 Moreover, these overruns were not offset by underruns.%
 \GenericWarning{Footnote undefined}{LaTeX Warning: Footnote not complete}%
 \footnote{Give examples of guidelines which explicitly assume symmetry, and those that state the distribution should be asymmetric but do not recommend any use of this information.}
@@ -1355,7 +1353,7 @@ There is no consistent post-implementation review of projects, nor are data coll
 
 This lack of data is concerning for two reasons.
 One is the poor accountability for project delivery and the unfortunate incentives it creates for governments to promise to build projects for unrealistic costs.
-Section 2.x discusses this problem.
+
 
 The second concern is that lack of data makes it impossible for those estimating project costs to do so properly.
 They can estimate the costs of inputs, but they lack the data to make robust comparisons with past projects - to use the cost estimation toolkit properly.
