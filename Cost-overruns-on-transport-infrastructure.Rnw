@@ -1718,7 +1718,7 @@ Consistent use of risk matrices or like tools to identify and mitigate avoidable
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
-At least one set of risk management guidelines in each of Australia's state and Commonwealth government jurisdictions recommends the use of risk matrices and provides high level advice on how to mitigate common risks\footnote{For example, Infrastructure Australia's \emph{Business Case Template}; NSW Treasury's \emph{Risk Management Toolkit}; the Victorian Managed Insurance Authority's \emph{Practice Guide}; Department of Transport and Main Roads Queensland's \emph{Project Cost Estimating Manual}; Department of Finance Western Australia's \emph{Gateway Process Business Case Workbook} and the South Australian State Procurement Board's \emph{Procurement Risk Management Plans}.}. For this reason, the guidance on risk identification and mitigation provided in every jurisdiction appears to be adequate.
+At least one set of risk management guidelines in each of Australia's state and Commonwealth government jurisdictions recommends the use of risk matrices and provides high level advice on how to mitigate common risks.\footnote{For example, \textcite{Australia2016InfrastructureAustraliaAssessmentc}; \textcite{NSWTreasury2012RiskManagementToolkit}; \textcite{VMIA2016PracticeGuide}; \textcite{QLDDepTransport2015ProjectCostEstimatingManual}; \textcite{WADFGP2016GatewayBusinessCaseWorkbook}; and \textcite{SASPB2015RiskManagementGuideline}.} For this reason, the guidance on risk identification and mitigation provided in every jurisdiction appears to be adequate.
 
 \subsection{Reduce estimation error}\label{reduce-estimation-error}
 
@@ -1726,7 +1726,7 @@ Some states also provide comprehensive guidance on the level of detail required 
 
 For example, the South Australian Department of Planning Transport and Infrastructure Estimating Manual sets out:
 
-\begin{itemize}
+\begin{itemize}{}
 \item
   the detail with which costs should be estimated, in terms of whether global benchmark, unit rate or first principles approaches should be used to price project inputs;
 \item
@@ -1769,17 +1769,19 @@ This section reviews each of these shortcomings in detail and provides state-spe
 
 \subsection{Guidance is inconsistent}\label{guidance-is-inconsistent}
 
-Guidelines which apply to the same jurisdiction often recommend different approaches to risk measurement. For instance, Probability pricing is required for federal funding, yet only half the risk measurement guidance provided at the federal level discusses probability pricing \footnote{The \emph{National Partnerships Agreement on Land Transport Infrastructure Projects}, Australian Transport Council's \emph{National Guidelines for Transport System Management in Australia}, Infrastructure Australia's \emph{Business Case Template}, the \emph{Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction} and BITRE's \emph{Overview of Project Appraisal for Land Transport} require or discuss probability pricing. However, Infrastructure Australia's \emph{Assessment Framework}, the \emph{HB 158:2010 Handbook on delivering assurance based on ISO 31000:2009} and BITRE's \emph{Risk in Benefit Cost Analysis} paper do not.}.
+Guidelines which apply to the same jurisdiction often recommend different approaches to risk measurement. For instance, Probability pricing is required for federal funding, yet only half the risk measurement guidance provided at the federal level discusses probability pricing.
+
+The \emph{National Partnerships Agreement on Land Transport Infrastructure Projects} \footcite{COAG2014NationalPartnershipAgreementInfrastructure}, the Australian Transport Council’s \emph{National Guidelines for Transport System Management in Australia} \footcite{ATC2006NGTSM3}, Infrastructure Australia’s \emph{Business Case Template} \footcite{Australia2016InfrastructureAustraliaAssessmentc}, the \emph{Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction} \footcite{DIRD2008BPCEPFRRC} and BITRE's \emph{Overview of Project Appraisal for Land Transport} \footcite{BITRE2014Overviewofprojectappraisalforlandtransport} require or discuss probability pricing. However, Infrastructure Australia's \emph{Assessment Framework} \footcite{Australia2016InfrastructureAustraliaAssessmentb}, the \emph{HB 158:2010 Handbook on delivering assurance based on ISO 31000:2009} \footcite{StandardsAustralia2010DeliveringassurancebasedonISO31000} and BITRE's \emph{Risk in Benefit Cost Analysis} \footcite{BITRE2005RiskinCostBenefitAnalysis} do not.
 
 In Victoria, three key guidelines on risk measurement each recommend only part of the toolkit, and a different part in each case:
 
 \begin{itemize}
 \item
-  the Department of Treasury and Finance's \emph{Technical Guidelines on Economic Evaluation of Business Cases} requires only sensitivity analysis,
+  the Department of Treasury and Finance's \emph{Technical Guidelines on Economic Evaluation of Business Cases}\footcite{VicDTF2013EconomicEvaluationforBusinessCasesTechnicalguidelines} requires only sensitivity analysis,
 \item
-  the Victorian Insurance Management Authority's \emph{Practice Guide} requires only the calculation of the expected value of project risks, and
+  the Victorian Insurance Management Authority's \emph{Practice Guide}\footcite{VMIA2016PracticeGuide} requires only the calculation of the expected value of project risks, and
 \item
-  the Department of Treasury and Finance's \emph{Business Case Template} and \emph{Gateway Review Process} only requires reference class forecasting.
+  the Department of Treasury and Finance's \emph{Business Case Template}\footcite{VicDTF2016Fullbusinesscasetemplate} and \emph{Gateway Review Process}\footcite{VicDTF2016GatewayReviewProcess} only requires reference class forecasting.
 \end{itemize}
 
 Such inconsistencies within jurisdictions obfuscate proper process and make the conceptual dependencies between tools unclear.
@@ -1819,9 +1821,9 @@ As it stands, risk measurement guidance is very inconsistent between each state 
 
 The inconsistencies observed across Australian risk measurement guidelines could be resolved by removing old guidance when new processes are implemented, consolidating existing guidelines and writing new guidance so that replaces, rather than augments, older guidance.
 
-For example, many of the inconsistencies within guidance that applies to all states were addressed through the 2016 release of the \emph{Australian Transport Assessment and Planning Guidelines}\footnote{History of ATAP guidelines ref}. These guidelines replaced \emph{Austroads' Guide to Project Evaluation} and the \emph{National Guidelines for Transport System Management in Australia}, and were written to be aligned with the guidance provided Infrastructure Australia's guidelines, The COAG-agreed \emph{National Guidance on Public Private Partnership Projects} and the \emph{National Charter of Integrated Land Use and Transport Planning}. A similar exercise should be undertaken within each of the states.
+For example, many of the inconsistencies within guidance that applies to all states were addressed through the 2016 release of the \emph{Australian Transport Assessment and Planning Guidelines}\footcite{ATAP2016Guidelines}. These guidelines replaced \emph{Austroads' Guide to Project Evaluation}\footcite{Austroads2014GuidetoProjectEvaluation} and the \emph{National Guidelines for Transport System Management in Australia}\footcite{ATC2006NGTSM3}, and were written to be aligned with Infrastructure Australia's guidelines, The COAG-agreed \emph{National Guidance on Public Private Partnership Projects} and the \emph{National Charter of Integrated Land Use and Transport Planning}. A similar exercise should be undertaken within each of the states.
 
-Where different institutions within jurisdictions require different amounts of risk analysis, guidance should be comprehensively reviewed so that the hierarchy relating guidance documents is clear and, where possible, analytical requirements are aligned. For example, Transport NSW's \emph{Principles and Guidelines for Economic Appraisal of Transport Initiatives} outlines what the document sets out to achieve and how it should be used in combination with other guidelines\footnote{Transport NSW guidelines ref}. 
+Where different institutions within jurisdictions require different amounts of risk analysis, guidance should be comprehensively reviewed so that the hierarchy relating guidance documents is clear and, where possible, analytical requirements are aligned. For example, Transport NSW's \emph{Principles and Guidelines for Economic Appraisal of Transport Initiatives}\footcite{TransportNSW2013PrinciplesandGuidelines} outlines what the document sets out to achieve and how it should be used in combination with other guidelines.\footnote{Transport NSW guidelines ref}
 
 \subsection{Guidance is incomplete}\label{guidance-is-incomplete}
 
