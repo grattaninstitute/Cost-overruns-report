@@ -552,7 +552,7 @@ When the estimated construction cost to that jurisdiction is \$1 billion or more
 
 The Commonwealth should provide model guidelines that states and territories may adopt or adapt, that recommend a consistent approach to measuring and managing project risk, including a statement of seniority where specific guidelines would otherwise conflict with one another.
 
-\subsubsection*{Recommendation 6: Compile Australian database of completed projects}
+\subsubsection*{\mbox{Recommendation 6: Compile Australian database of completed projects}}
 
 The Commonwealth should seek cooperation from the states to create new benchmarking data to improve risk measurement in new project proposals and public accountability. They should do so using data collected through mechanisms described in Recommendation 3. 
 
