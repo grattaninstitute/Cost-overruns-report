@@ -1752,7 +1752,7 @@ Consistent use of risk matrices or like tools to identify and mitigate avoidable
 {Sources: Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
-At least one set of risk management guidelines in each of Australia's state and Commonwealth government jurisdictions recommends the use of risk matrices and provides high level advice on how to mitigate common risks\footnote{For example, Infrastructure Australia's \emph{Business Case Template}; NSW Treasury's \emph{Risk Management Toolkit}; the Victorian Managed Insurance Authority's \emph{Practice Guide}; Department of Transport and Main Roads Queensland's \emph{Project Cost Estimating Manual}; Department of Finance Western Australia's \emph{Gateway Process Business Case Workbook} and the South Australian State Procurement Board's \emph{Procurement Risk Management Plans}.}. For this reason, the guidance on risk identification and mitigation provided in every jurisdiction appears to be adequate.
+At least one set of risk management guidelines in each of Australia's state and Commonwealth government jurisdictions recommends the use of risk matrices and provides high level advice on how to mitigate common risks\footnote{For example, \textcite{Australia2016InfrastructureAustraliaAssessmentc}; \textcite{NSWTreasury2012RiskManagementToolkit}; \textcite{VMIA2016PracticeGuide}; \textcite{QLDDepTransport2015ProjectCostEstimatingManual}; \textcite{WADFGP2016GatewayBusinessCaseWorkbook}; and \textcite{SASPB2015RiskManagementGuideline}}. For this reason, the guidance on risk identification and mitigation provided in every jurisdiction appears to be adequate.
 
 \subsection{Reduce estimation error}\label{reduce-estimation-error}
 
@@ -1760,7 +1760,7 @@ Some states also provide comprehensive guidance on the level of detail required 
 
 For example, the South Australian Department of Planning Transport and Infrastructure Estimating Manual sets out:
 
-\begin{itemize}
+\begin{itemize}{}
 \item
   the detail with which costs should be estimated, in terms of whether global benchmark, unit rate or first principles approaches should be used to price project inputs;
 \item
