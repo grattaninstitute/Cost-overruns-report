@@ -1897,7 +1897,7 @@ A similar circumstance befalls \textbf{probability pricing}. Probability pricing
 
 \begin{itemize}
 \item
-  ``probabilistically'', which involves estimating the distribution of risks on a specific project from estimates of its component parts\footnote{For example. {[}Reference Peter Love's papers{]}.}, or
+  ``probabilistically'', which involves estimating the distribution of risks on a specific project from estimates of its component parts,\footnote{For example. {[}Reference Peter Love's papers{]}.} or
 \item
   ``deterministically'' which involves applying standard uplift rates that are -- like reference class forecasting -- derived from historical analysis of completed projects.\footnote{For example, {[}Reference eg SA guidelines{]}}
 \end{itemize}
@@ -1943,7 +1943,7 @@ However, this important component of risk management appears to be largely gover
 \notes{The contingency ranges cited in the National Guidelines for Transport System Management refer specifically to road projects specifically, and are anticipated to be too conservative for projects which are one-off in nature.}%
 \end{figure}
 
-Even more problematic is the frequent absence of strict requirements for contingency funds to be held at the portfolio level. New South Wales is the only jurisdiction which provides clear, strategic advice on how contingency funds should be managed\footnote{Infrastructure NSW Contingency Management Guidebook}, and Queensland appears to be the only state where there is a strict requirement for contingency funds to be managed at the portfolio level.\footnote{\url{https://www.treasury.qld.gov.au/publications-resources/project-assessment-framework/paf-policy-overview.pdf} and Financial and Performance Management Standard 2009}
+Even more problematic is the frequent absence of strict requirements for contingency funds to be held at the portfolio level. New South Wales is the only jurisdiction which provides clear, strategic advice on how contingency funds should be managed,\footnote{Infrastructure NSW Contingency Management Guidebook} and Queensland appears to be the only state where there is a strict requirement for contingency funds to be managed at the portfolio level.\footnote{\url{https://www.treasury.qld.gov.au/publications-resources/project-assessment-framework/paf-policy-overview.pdf} and Financial and Performance Management Standard 2009}
 
 It should be noted that in the absence of such protocol, there are clear incentives for contingencies to be managed at the project level. This is because changes to project budgets that involve state treasuries increasing projects' budget allocations are open to more public scrutiny. Consequently, project management teams are subject to lower reputational risk when contingency funds are included within initial budget allocations and managed at the project level.
 
