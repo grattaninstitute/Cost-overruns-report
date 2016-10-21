@@ -1632,17 +1632,13 @@ Instead, our infrastructure systems could promise what is worth having, and then
 
 \chapter{Risk appendix}\label{risk-appendix}
 
-\chapter{}\label{section}
-
 Construction projects inevitably involve a host of cost risks. The objective of risk management is to minimise the costs of these risks. This involves:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
 \item
   Risk minimisation
 
   \begin{enumerate}
-  \def\labelenumii{\alph{enumii}.}
   \item
     Identifying and mitigating avoidable risks
   \item
@@ -1652,7 +1648,6 @@ Construction projects inevitably involve a host of cost risks. The objective of 
   Risk measurement
 
   \begin{enumerate}
-  \def\labelenumii{\alph{enumii}.}
   \item
     Measuring the remaining risk
   \end{enumerate}
@@ -1660,7 +1655,6 @@ Construction projects inevitably involve a host of cost risks. The objective of 
   Ongoing risk monitoring
 
   \begin{enumerate}
-  \def\labelenumii{\alph{enumii}.}
   \item
     Accounting for this risk in investment decisions
   \item
