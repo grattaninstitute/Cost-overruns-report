@@ -747,7 +747,7 @@ point, including an extra \$40m to fund a change in materials from those specifi
 But even reducing the final cost by 20 per cent (to account for the extended road length) and subtracting \$40m from the final estimate (to exclude the additions) leaves a cost of around \$500m to build the originally specified road – 400 per cent higher than the initial cost estimate.
 
 \begin{figure}[H]
- \caption{Project cost estimates, millions of dollars\label{fig:CS_Forrest}}
+ \captionwithunits{Project cost estimates\label{fig:CS_Forrest}}{millions of dollars}
  \includegraphics[page=2]{atlas/CaseStudies.pdf}
 \end{figure}
 
@@ -1203,7 +1203,7 @@ First, cost estimates should reflect predictable patterns in the types of projec
 There is an element of chance to any project finishing on budget.
 Yet the overall historical performance of Australian transport projects in aggregate suggests that we could be coming up with much better guesses of likely costs.
 
-For example, large\footnote{Here we define "large" as valued above \$500~million at the commencement of construction} road projects are more likely to come in over the cost initially announced than they are to finish on budget.
+For example, large\footnote{Here we define ``large" as valued above \$500~million at the commencement of construction} road projects are more likely to come in over the cost initially announced than they are to finish on budget.
 Being a large road is not a subtle characteristic that could easily go unnoticed.
 Rather, it is an example of the tangible project characteristics that affect the likelihood of a project finishing on budget.
 The fact that projects with these characteristics are less likely to finish on budget than others indicates that their obvious risks are not adequately factored into project cost estimates.
