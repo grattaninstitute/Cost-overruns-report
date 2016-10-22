@@ -1,8 +1,17 @@
 \usetikzlibrary{chains,positioning,shapes.symbols}
 
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{Z}{>{$}r<{$}}
 \newcommand{\dz}{} %% for alignment in tables (poor man's siunitx)
 \newcommand{\possibleTextDollar}{}  % for table of projects
 
+\usepackage{longtable}
+\usepackage{ltxtable}
+\AtBeginEnvironment{longtable}{\small}
+
+% Natural numbers
+\newcommand*{\N}{\mathbb{N}}
+
+\newcommand{\mccl}[1]{\multicolumn{2}{l}{#1}}
 
 
