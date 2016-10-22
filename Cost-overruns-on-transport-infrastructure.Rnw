@@ -14,7 +14,7 @@
 This report was written by Marion Terrill, Transport Program Director, and Lucille Danks, Associate, Grattan Institute. Brendan Coates, Owain Emslie, Hugh Parsonage and James Button made substantial contributions to the report.
 
 We would like to thank Deloitte for access to the Deloitte Investment Monitor. We would also like to thank numerous people from the public policy community for their helpful comments.
-The opinions in this working paper are those of the authors and do not necessarily represent the views of Grattan Institute’s founding members, affiliates, individual board members, reference group members or reviewers. Any remaining errors or omissions are the responsibility of the authors.
+The opinions in this report are those of the authors and do not necessarily represent the views of Grattan Institute’s founding members, affiliates, individual board members, reference group members or reviewers. Any remaining errors or omissions are the responsibility of the authors.
 
 Grattan Institute is an independent think-tank focused on Australian public policy. Our work is independent, practical and rigorous. We aim to improve policy outcomes by engaging with both decision-makers and the community. 
 
@@ -492,7 +492,7 @@ prop_projects_before_committed_which_are_completed <-
 \nonfrenchspacing
 
 
-Over the past 15 years, Australian governments have spent \$28~billion more on transport infrastructure than they told taxpayers they would. The cost overruns amounted to nearly a quarter of total project budgets. Western Australia’s Forrest Highway between Perth and Bunbury cost nearly five times, and New South Wales’ Hunter Expressway cost nearly four times, the amounts initially promised. Yet despite their sometimes staggering size, cost overruns attract little public attention. There is little interest in understanding and fixing the underlying causes. 
+Over the past 15 years, Australian governments have spent \$28~billion more on transport infrastructure than they told taxpayers they would. The cost overruns amounted to nearly a quarter of total project budgets. Western Australia’s Forrest Highway between Perth and Bunbury cost nearly five times, and New South Wales’ Hunter Expressway cost over four times, the amounts initially promised. Yet despite their sometimes staggering size, cost overruns attract little public attention. There is little interest in understanding and fixing the underlying causes. 
 
 For the first time in Australia, this report investigates the cost outcomes of all 836 projects valued at \$20~million or more and planned or built since 2000. It finds that most problems are caused by a relatively small number of projects. Ninety per cent of Australia’s cost overrun problem is explained by 17 per cent of projects that exceed their promised cost by more than half.
 
@@ -526,10 +526,10 @@ The Commonwealth should enable and facilitate better public understanding of inf
   \item requiring Infrastructure Australia to publish 
   \begin{enumerate}
     \renewcommand{\labelenumii}{(\roman{enumii})}
-    \item summaries of \emph{all} transport infrastructure projects funded by the Commonwealth within the previous quarter, populated to the extent that Infrastructure Australia has the information to do so and otherwise left blank; and 
+    \item summaries of \emph{all} transport infrastructure projects funded by the Commonwealth within the previous quarter, completed to the extent that Infrastructure Australia has the information to do so and otherwise left blank; and 
     \item business cases and cost benefit analyses for all transport infrastructure proposals receiving Commonwealth funding during the previous quarter, if these have not already been published by a state government; and
   \end{enumerate}
-  \item requiring the Parliamentary Budget Officer to publish reliability ratings of all transport infrastructure business cases within one month of Infrastructure Australia publishing them.
+  \item requiring the Productivity Commission to publish reliability ratings of all transport infrastructure business cases within one month of Infrastructure Australia publishing them.
 \end{enumerate}
 
 \subsubsection*{Recommendation 3: Publish post-completion data}
@@ -579,7 +579,7 @@ Central agencies should hold project contingency funds at arm’s length from pr
 
 
 \chapter{The extent of cost overruns\label{chap:extent-of-cost-overruns}}
-The Peel Deviation is a stretch of the Forrest Highway running between Perth and Bunbury. 
+The Peel deviation is a stretch of the Forrest Highway running between Perth and Bunbury. 
 It was first promised during the 2001 state election campaign at a cost of \$136~million. 
 Many twists and turns later, in 2010, the road was completed at a cost of \$688~million -- over 400 per cent more than its originally promised cost.
 
@@ -587,18 +587,18 @@ Such budget blowouts like this are disturbing but they do not hit the media or p
 
 Unfortunately, they are not rare enough. This report finds that the transport infrastructure projects valued at \$20~million or more and planned or built in Australia in the past 15 years cost \$28~billion more than their promised costs.This is 24 per cent more than the costs that were announced.
 
-The 24 per cent over and above the original cost promise does not stem from the accumulation of small cost overruns on most projects. Rather, most projects come in reasonably close to their promised cost, as \Vref{fig:large-cost-overruns-uncommon-but-expensive} shows. The problem is that when projects do exceed their promised costs, the overruns can be spectacular: 90 per cent of Australia's cost overruns problem is explained by the 17 per cent of projects that overran their cost promise by more than 50 per cent.
+The 24 per cent over and above the original cost promise does not stem from the accumulation of small cost overruns on most projects. Rather, most projects come in reasonably close to their promised cost, as \Vref{fig:large-cost-overruns-uncommon-but-expensive} shows. The problem is that when projects do exceed their promised costs, the overruns can be spectacular: 90 per cent of Australia's cost overruns problem is explained by the 17 per cent of projects that overran their cost promise by more than 50 per cent\footnote{90 per cent of cost overruns are attributable to projects with cost overruns greater than 50 per cent of initial project value. It should be noted that these cost overruns explain 98 per cent of total cost differences, as illustrated in figure \Vref{fig:large-cost-overruns-uncommon-but-expensive} as small cost overruns are almost entirely offset by cost underruns.}.
 
 Overruns are not matched by underruns. Only 9 per cent of projects finished under their announced cost, and these cost underruns were, on average, only a quarter of the size of the average cost overrun, amounting to a total of \$41~million. The majority of projects come in close to their announced costs, and underruns do little to offset overruns.
 
 \begin{figure}
 \captionwithunits{Large cost overruns are uncommon, but expensive\label{fig:large-cost-overruns-uncommon-but-expensive}}
-{Frequency of cost overruns as a proportion of all projects, per cent}
+{Frequency of cost differences as a proportion of all projects, per cent}
 
 \includegraphics{atlas/Freq_CO.pdf}
-\units{Value of cost overruns as a proportion of total cost overruns, per cent}
+\units{Value of cost differences as a proportion of total cost overruns, per cent}
 \includegraphics{atlas/Value_CO.pdf}
-\noteswithsource{Australian transport projects completed between 2001 and 2015}%
+\noteswithsource{Australian transport projects completed between 2001 and 2015. \emph{Cost differences} are defined to refer to cost underruns and cost overruns collectively. }%
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
@@ -642,7 +642,7 @@ This report considers the entire project lifecycle from when ministers or opposi
 \source{Grattan analysis}
 \end{figure}
 
-We define a cost overrun as the amount by which the actual cost at the end of a particular phase exceeded the estimated cost at the start of that phase, expressed as a percentage of the cost estimated at the start of that phase.
+We define a cost overrun as the amount by which the actual cost at the end of a particular phase exceeded the estimated cost at the start of that phase, expressed as a percentage of each project's first cost.
 
 Some argue that cost overruns should only be measured from the point that a formal cost benefit analysis is completed or a funding commitment made.\footcites[][493-494]{Love2014Understandinglandscapeoverruns}[][185]{Love2016CostOverrunsinTransportationInfrastructure}[][144-145]{Seimiatycki2009AcademicsauditorsComparing} But this ignores the realpolitik of infrastructure funding. Politicians often promise to pursue infrastructure projects before a detailed cost benefit study is completed.
 Indeed, the vast majority of project commitments made in the last federal election were in this category.%
@@ -727,7 +727,7 @@ Our public finance perspective takes the starting point of a project as the init
 The following chapter shows that premature announcement is in fact the key underlying cause of ongoing cost overruns.
 
 
-\begin{bigbox*}{Case study -- Forrest Highway (Peel deviation) -- 588 per cent cost overrun}{box:forrest_highway}
+\begin{bigbox*}{Case study -- Forrest Highway (Peel deviation) -- 406 per cent cost overrun}{box:forrest_highway}
 
 %\setlength{\parskip}{5pt minus 2pt}
 
@@ -955,10 +955,10 @@ The Commonwealth should enable and facilitate better public understanding of inf
   \item requiring Infrastructure Australia to publish 
   \begin{enumerate}
     \renewcommand{\labelenumii}{(\roman{enumii})}
-    \item summaries of \emph{all} transport infrastructure projects funded by the Commonwealth within the previous quarter, populated to the extent that Infrastructure Australia has the information to do so and otherwise left blank; and 
+    \item summaries of \emph{all} transport infrastructure projects funded by the Commonwealth within the previous quarter, completed to the extent that Infrastructure Australia has the information to do so and otherwise left blank; and 
     \item business cases and cost benefit analyses for all transport infrastructure proposals receiving Commonwealth funding during the previous quarter, if these have not already been published by a state government; and
   \end{enumerate}
-  \item requiring the Parliamentary Budget Officer to publish reliability ratings of all transport infrastructure business cases within one month of Infrastructure Australia publishing them.
+  \item requiring the Productivity Commission to publish reliability ratings of all transport infrastructure business cases within one month of Infrastructure Australia publishing them.
 \end{enumerate}
 \end{recommendation}
 
