@@ -1154,7 +1154,7 @@ Reports should detail any scope changes and their justification, agreed and actu
 \chapter{The costs of cost overruns}\label{the-costs-of-cost-overruns}
 
 Reducing premature announcements would go a long way towards reducing cost overruns.
-But the risk of cost overruns is an inherent feature of all infrastructure projects, not just those that are announced prematurely.
+But the risk of cost overruns is inherent in all infrastructure projects, not just those that are announced prematurely.
 This chapter discusses the rationale for intervening in projects that may be on a path towards substantial cost overruns.
 
 Close to two thirds of cost overruns occur before construction begins.
