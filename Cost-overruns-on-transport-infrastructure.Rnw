@@ -1560,9 +1560,9 @@ They show a ``worst case'' cost estimate far lower than 21 per cent above the me
 Inland Rail & National & \possibleTextDollar9\,890\dz & \possibleTextDollar10\,660\dz & 7.8\%\tabularnewline[1.245ex]
 Westconnex & NSW & \possibleTextDollar16\,800\dz & \textcolor{theGrey}{n/a} & 6.0\%%\tablefootnote{``The Infrastructure Australia assessment makes reference to a six per cent difference between the P50 and P90 on the Stage 2'' (\textcite[][23]{SGS2016WestConnexreview})}
 \tabularnewline[1.245ex]
-Melbourne Metro & Vic%\tablefootnote{``The expected value of each risk was then calculated based on the probability of the risk occurring and the sum of the products of the impact (either as a percentage of the cost driver or delay costs) and their probabilities in each of the three defined states. Correlation between key risks was calculated using a correlation matrix. A Monte Carlo analysis was then used to calculate the P50 and P90 values.''} 
+Melbourne Metro & Vic% 
  & \possibleTextDollar10\,154\dz & \possibleTextDollar10\,837\dz & 6.7\%\tabularnewline
-Western Distributor & Vic%\tablefootnote{``Total nominal dollars over the construction period, assuming construction commences during the year ended 30 June 2018.''} 
+Western Distributor & Vic%
 & \possibleTextDollar5\,226\dz & \possibleTextDollar5\,548\dz & 6.2\%\tabularnewline
 Princes Highway West Duplication & Vic & \possibleTextDollar334 & \possibleTextDollar363 & 8.7\%\tabularnewline
 Main Road, St Albans Level Crossing Removal Project & Vic & \possibleTextDollar222 & \possibleTextDollar231 & 3.9\%\tabularnewline[1.245ex]
