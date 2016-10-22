@@ -1808,12 +1808,6 @@ Construction projects inevitably involve a host of cost risks. The objective of 
 
 There are upwards of fifty sets of guidelines outlining required approaches to risk management across Australian jurisdictions. In general, these documents are very detailed and well written. However, there are substantial blind spots in the guidance provided in each jurisdiction. This has resulted in risk management guidance that varies in quality across the components of risk management.
 
-
-\Vref{fig:quality-of-risk-management-guidance-chevrons} provides a high level summary of the quality of risk guidance across Australian jurisdictions for each of the aforementioned components of risk measurement. It identifies that the provided guidance regarding risk minimisation is generally of a far higher standard than that of risk measurement and ongoing risk monitoring. This is aligned with the nature of Australia’s problem with cost overruns: most projects finish on budget, but the huge costs of uncommon events are poorly anticipated and accounted for.
-
-In this appendix we review the current practices of each state for each of these components of risk management, and highlight the opportunities for improvement. Full details of the Australian risk management guidelines analysed in this appendix are provided in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}.
-
-
 \begin{figure}
 \captionwithunits{The quality of risk management guidance varies\label{fig:quality-of-risk-management-guidance-chevrons}}
 {Guidance quality by jurisdiction and topic ranked as sufficient, incomplete and poor by yellow, orange and red, respectively.}
@@ -1822,6 +1816,13 @@ In this appendix we review the current practices of each state for each of these
 \noteswithsource{}
 {See \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} for the list of reviewed guidelines, Grattan analysis}
 \end{figure}
+
+\Vref{fig:quality-of-risk-management-guidance-chevrons} provides a high level summary of the quality of risk guidance across Australian jurisdictions for each of the aforementioned components of risk measurement. It identifies that the provided guidance regarding risk minimisation is generally of a far higher standard than that of risk measurement and ongoing risk monitoring. This is aligned with the nature of Australia’s problem with cost overruns: most projects finish on budget, but the huge costs of uncommon events are poorly anticipated and accounted for.
+
+In this appendix we review the current practices of each state for each of these components of risk management, and highlight the opportunities for improvement. Full details of the Australian risk management guidelines analysed in this appendix are provided in \Cref{sec:Reviewed-Australian-risk-measurement-guidelines}.
+
+
+
 
 % \begin{tabular}[c]{@{}llll@{}}
 % \toprule
