@@ -961,13 +961,14 @@ A plan to build a Maitland bypass as part of the New England Highway in northern
 \footcite{Bill2009NationBuildingProgramAmendment} The preferred route for what eventually became the Hunter Expressway was decided in 2001 and expected to cost ``more than \$335 million'' in 2002.%
 \footcite{DIRD2002FedGovkeepsNSWMoving}
 
-In 2007 the funding commitment was increased to \$887 million by the Federal coalition Government as an election pledge.%
+In 2007 the Federal Coalition Government increased its funding commitment to \$887~million as an election pledge.%
 \footcite{Bill2009NationBuildingProgramAmendment} After winning the 2007 election, the new Labor Government cooled on the idea.
 In 2008, Joel Fitzgibbon, the then Labor Member for Hunter, observed that: ``First, the F3 link was conceived in the mid 1980s and there have been big changes in traffic movements and residential and commercial settlement patterns since then.
 Second, the cost of the project is now \$1,700 million (\$1.7 billion) and it has a very low benefit to cost ratio (meaning it provides tax-payers with a low-value solution).''\footcite{Bill2009NationBuildingProgramAmendment}
 
-The government commissioned a review in 2008,\footcite{DIRD2008LowerHunterTransportNeedsStudy} following which funding of \$1.7 billion was committed in 2009.%
-\footcite{RMS2010Hunter} Federal Liberal Member for nearby Paterson, Bob Baldwin criticised the government's prevarication ``because we (the coalition) had committed to it as a 
+The Government commissioned a review in 2008,\footcite{DIRD2008LowerHunterTransportNeedsStudy} after which it committed \$1.7 billion in 2009.%
+\footcite{RMS2010Hunter} 
+The Federal Liberal Member for nearby Paterson, Bob Baldwin, criticised the Government's prevarication ``because we [the Coalition] had committed to it as a 
 government''.%
 \footcite{Bill2009NationBuildingProgramAmendment} Mr Baldwin emphasised the persistence of Support the Link, a local lobby group that pushed hard for the road.%
 \footcite{Bill2009NationBuildingProgramAmendment}
