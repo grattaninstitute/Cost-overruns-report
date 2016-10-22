@@ -45,6 +45,8 @@ numbers=noenddot,
    }
 \RequirePackage{footmisc}
 \RequirePackage[document]{ragged2e}
+\setlength{\RaggedRightRightskip}{0pt plus 2.2em}  % slightly larger than 0pt plus 2em
+% \let\RaggedRight\raggedright
 % ------
 % Grattan colors
 \definecolor{Orange}{HTML}{F68B33}
@@ -222,7 +224,7 @@ numbers=noenddot,
 \newcommand{\captionwithunits}[2]{%
 \captionsetup{format=plain,font={small,bf,theGrey},labelfont={small,bf,theGrey}, justification=raggedright,
 singlelinecheck=false,position=top,skip=0pt}
-\caption{{\normalsize\strut}#1}
+\caption{{\small\strut}#1}
 %\vspace{-11pt}
 \captionsetup{font={small,color=theGrey}}
 \caption*{#2}
@@ -638,7 +640,7 @@ top=2.70cm, bottom=2.65cm,
 % Bibliography
 \RequirePackage[english]{babel}
 \RequirePackage{csquotes}
-\RequirePackage[backend=biber,style=authoryear-ibid,ibidtracker=strict, autocite=footnote, maxcitenames=2, maxbibnames=9, uniquelist=false, giveninits=true]{biblatex}
+\RequirePackage[backend=biber,style=authoryear-ibid,ibidtracker=strict, autocite=footnote, maxcitenames=2, maxbibnames=9, uniquelist=false, uniquename=init, giveninits=true]{biblatex}
 \DeclareLanguageMapping{english}{british-apa}
 \DeclareNameAlias{author}{last-first} % for last name, first name in bibliography
 
