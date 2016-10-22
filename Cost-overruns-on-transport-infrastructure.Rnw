@@ -1345,7 +1345,8 @@ Properly accounting for their risk characteristics is a straightforward way to i
 
 \subsection{Large and complex projects are more prone to cost overruns}\label{large-and-complex-projects-are-more-prone-to-cost-overruns}
 
-Complex projects are prone to cost overruns because they tend to have many interdependent components that can be disrupted if one element falls behind time, and multiple interfaces with existing infrastructure.
+It is not surprising that complex projects are prone to cost overruns.
+Such projects tend to have many interdependent components that can be disrupted if one element falls behind time, and multiple interfaces with existing infrastructure.
 These risks are amplified when the existing infrastructure continues operating during construction.%
 \footnote{Eg \textcites{Hinze1992CostOverrunsonStateofWashington}[][9--11]{Flyvbjerg2014Whatyoushould}; in Australia: \textcite[][3]{EngineersAustralia2014Masteringcomplexprojects}}
 
