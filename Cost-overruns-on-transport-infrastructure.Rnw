@@ -1627,18 +1627,26 @@ These are key times for managing risks.
 \section{Not all risks are avoidable}\label{not-all-risks-are-avoidable}
 
 Some risks materialise through changes in the economy.
-The costs of public infrastructure tend to be higher in a faster-growing economy.
-Higher private sector demand for resources such as equipment, materials and workforce leads to higher costs that may not have been anticipated at the time a project budget was prepared.
-In Western Australia, the fact that there were often few or even only one bid for public sector works projects during the resources investment boom appears to have increased the likelihood of cost overruns in that state: Western Australia has tended to have larger overruns than those in New South Wales, Victoria and Queensland (details in Appendix \ref{methodological-appendix}).
+Because the growth rate of the economy fluctuates, the costs of public infrastructure will always be uncertain.
+This is because a project's input costs may be higher than anticipated if private sector demand for resources such as equipment, materials and workforce is higher or lower than anticipated.
 
-More generally, the global financial crisis seems to have reduced the likelihood of cost overruns.
-The probability of a cost overrun during construction approximately halved for otherwise similar projects begun since 2009.
-This may be because constrained budgets shaped the culture and practice of governments, leading them to introduce more legal and regulatory requirements.
+This type of unavoidable cost risk may explain the higher rate of cost overruns experienced in Western Australia during the resources boom.
+With many construction companies deployed on mining projects, there were often few or even only one bid for public sector works projects.
+Not surprisingly Western Australia experienced larger overruns on average than those in New South Wales, Victoria and Queensland (details in \Vref{methodological-appendix}).
 
-There has been some debate as to whether constructors make unfeasibly low bids when the number of available projects shrinks, as is the case in some parts of Australia at present.
+By contrast, current economic conditions have led to more competition within the construction industry to build public infrastructure.
+Anecdotal evidence has suggested that constructors may make unfeasibly low bids when the number of available projects shrinks, as is the case in some parts of Australia at present.
 This practice would only be a concern for government if contractors pursued contract changes that were in effect claims to recoup the revenue forgone by a low bid, and if governments were unable in practice to deny these changes because of political lock-in.%
 \footcites[][500]{Love2014Understandinglandscapeoverruns}[][87--88]{Hinze1992CostOverrunsonStateofWashington} While this may occur on some projects, we do not find significant evidence of low initial bids leading to later overruns.
-However, pre-construction overruns have been higher since the global financial crisis, perhaps because some projects were rushed through early development stages so that they could stimulate the economy in the years immediately following the crisis.
+
+Budgetary environments also affect cost overruns by causing a general tightening of incentives to deliver projects within budget.
+This appears to have been the case in Australia since the global financial crisis, when the focus swung sharply from getting projects shovel-ready to balancing the budget.
+During this period, there have been substantial changes to the culture and practice of governments, and the probability of cost overruns during construction has approximately halved (although the same cannot be said of cost overruns before a formal funding commitment).
+
+There are numerous other unavoidable risks that are a part of major construction projects, like unexpected weather, ground conditions and industrial relation events.
+Each project also has its own idiosyncratic risks that cannot be avoided.
+These risks mean that it is impossible to eliminate cost risk entirely.
+Consequently, it's important that budgeting, reporting and contingency management practices are designed to minimise the cost of cost overruns when they occur.
 
 \section{Unavoidable risks could be better managed}\label{avoidable-risks-could-be-better-managed}
 
