@@ -931,7 +931,7 @@ Among such statements:
 
 \begin{figure}
 \captionwithunits{The vast majority of committed money from all three major parties is for projects not endorsed by Infrastructure Australia \label{fig:election-promises}}%
-{Proportion of 2016 federal election commitments to transport infrastructure projects by Infrastructure Australia review status, per cent}
+{Proportion of 2016 federal election commitments to transport infrastructure projects by Infrastructure Australia review status, per cent} 
 
 
 \includegraphics[page=9]{atlas/Charts_CO}
