@@ -14,4 +14,15 @@
 
 \newcommand{\mccl}[1]{\multicolumn{2}{l}{#1}}
 
+%% Patch for Issue #76 -- ibids not in mdframed
+\makeatletter
+\AtBeginDocument{%
+  \apptocmd\@floatboxreset
+    {\booltrue{citetracker}%
+     \booltrue{pagetracker}}
+    {}
+    {\blx@err@patch{floats}}
+}
+\makeatother
+
 
