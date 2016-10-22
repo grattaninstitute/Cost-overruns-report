@@ -1157,8 +1157,8 @@ Reducing premature announcements would go a long way towards reducing cost overr
 But the risk of cost overruns is inherent in all infrastructure projects, not just those that are announced prematurely.
 This chapter discusses the rationale for intervening in projects that may be on a path towards substantial cost overruns.
 
-Close to two thirds of cost overruns occur before construction begins.
-When overruns occur during these early stages, there is an opportunity for projects' merits to be actively reappraised, in order to determine whether projects still appear to be good investments (\Vref{fig:cost-overruns-by-project-stage}).
+In particular, close to two thirds of cost overruns occur before construction begins.
+These early and middle phase overruns could be used as a signal to actively reappraise projects, in order to determine whether they still appear to be good investments (\Vref{fig:cost-overruns-by-project-stage}).
 
 \begin{figure}
 \captionwithunits{A third of cost overruns occur prior to budget commitments\label{fig:cost-overruns-by-project-stage}}%
@@ -1167,7 +1167,7 @@ When overruns occur during these early stages, there is an opportunity for proje
 \noteswithsource{Australian transport projects, completed between 2001 and 2015.}{Deloitte Investment Monitor dataset; Grattan analysis}
 \end{figure}
 
-The following two sections identify why it is important that projects' investment merits are reappraised after early cost overruns, and whether Australia's project appraisal processes could be doing a better job at this.
+The following two sections identify why it is important that projects' investment merits are reappraised after early cost overruns, and the evidence that Australia's project appraisal processes could be better.
 
 \section{Failure to reappraise projects after early cost overruns is expensive}\label{failure-to-reappraise-projects-after-early-cost-overruns-are-expensive}
 
@@ -1215,11 +1215,14 @@ If even half this reduction was avoided by switching to alternative investments 
 Please see \Vref{methodological-appendix} for further details}
 
 
-\section{Australia could do better at reappraising projects after cost overruns}\label{australia-could-do-better-at-reappraising-projects-after-cost-overruns}
+\section{There is substantial scope for Australia to better reappraise projects after cost overruns}\label{australia-could-do-better-at-reappraising-projects-after-cost-overruns}
 
 
 Cost overruns that occur early in a project's life should prompt a reassessment of the project's costs relative to its benefits.
 The magnitude of some cost overruns suggests that not all projects will still be worth building.
+
+Projects should be cancelled when their estimated benefits are found to be lower than their estimated costs.
+Given that benefits are probably overstated much of the time,\footcite{Elaurant2015POLITICSFINANCETRANSPORT} just as costs are understated, it is entirely fitting that projects be cancelled if their estimated benefits are only slightly more than their estimated costs (see \Vref{box:overstated-benefits}).
 
 Fortunately, there is ample opportunity for Australian jurisdictions to identify these projects, as 63 per cent of cost overruns occur before construction begins, and 38 per cent before a formal budget commitment.
 However, such active reappraisals do not appear to be happening enough.
@@ -1241,17 +1244,15 @@ Even those announced before a formal government funding commitment are usually c
 This cancellation rate seems lower than it should be.
 One indication that it is too low is that this cancellation rate is less than the proportion of projects that would be expected to have benefit cost ratios less than one, given the average magnitude of cost overruns (see \Vref{appendix:X-X} for details).
 
-A second indication that the cancellation rate is too low is that many projects with low net benefits are not being cancelled.
+The reason the cancellation rate is probably too low is that many projects with low net benefits are not being cancelled.
 Over the last 15 years, projects that incurred cost overruns were just as likely to be cancelled as those that did not.
 This either means that the project appraisal process is not being used to cancel the projects with investment merits that have been eroded by cost overruns, or that cancelled projects are cancelled because of cost overruns but these overruns are not announced -- in other words, that cost overruns are higher than reported.%
 \footnote{This argument is explained in more detail in \Vref{methodological-appendix}.} 
-Both of these interpretations suggest that not enough projects are cancelled.
+Both of these interpretations suggest that too few projects are cancelled.
 
-Projects should be cancelled when their estimated benefits are found to be lower than their estimated costs.
-Given that benefits are probably overstated much of the time,\footcite{Elaurant2015POLITICSFINANCETRANSPORT} just as costs are understated, it is entirely fitting that projects be cancelled if their estimated benefits are only slightly more than their estimated costs (see \Vref{box:overstated-benefits}).
 
 The early timing of Australia's cost overruns offers a substantial and unrealised opportunity to reduce cost overruns on transport infrastructure projects.
-If more projects were to be cancelled when cost overruns eroded the projects' investment merits, the indirect costs associated with distortions to investment planning processes could be materially reduced.
+If more projects were to be cancelled when cost overruns eroded the projects' investment merits, the costs associated with distortions to investment planning processes could be materially reduced.
 
 A corollary of this conclusion is that, until the project appraisal process can be demonstrated to reliably cancel projects when it becomes apparent that they are poor investments, premature cost announcements remain a reckless practice.
 This is because, even though cost estimates announced prior to a budget commitment have been demonstrated to be of poor quality, in the absence of a robust mechanism for cancelling projects, such cost announcements constitute de facto commitments to build.
@@ -1299,12 +1300,12 @@ This also resulted in litigation being launched, by toll road owners Brisconnect
 \chapter{How to improve cost estimation}\label{how-to-improve-cost-estimation}
 
 The previous chapter highlighted the costs to the community of cost overruns on transport infrastructure projects.
-While cost estimation on any given project is uncertain, on average cost estimates should correspond to reality.
+While cost estimation on any given project is uncertain, cost estimates should on average correspond to cost outcomes.
 
 But there is a substantial gap between estimated and actual costs on transport infrastructure projects over the past 15 years.
 In that period, cost estimators expected between 10 and 25 per cent of projects to exceed their budget.
 In fact, 34 per cent did so (\Vref{fig:assumed-and-observed-prob-distr-of-cost-overruns}).
-Moreover, these overruns were not offset by underruns.%
+Moreover, these overruns are not offset by underrun, as cost estimation guidelines optimistically imply.%
 \GenericWarning{Footnote undefined}{LaTeX Warning: Footnote not complete}%
 \footnote{Give examples of guidelines which explicitly assume symmetry, and those that state the distribution should be asymmetric but do not recommend any use of this information.}
 
@@ -1327,19 +1328,27 @@ First, cost estimates should reflect predictable patterns in the types of projec
 There is an element of chance to any project finishing on budget.
 Yet the overall historical performance of Australian transport projects in aggregate suggests that we could be coming up with much better guesses of likely costs.
 
-For example, large\footnote{Here we define ``large" as valued above \$500~million at the commencement of construction} road projects are more likely to come in over the cost initially announced than they are to finish on budget.
+For example, large\footnote{Here we define ``large" as valued above \$500~million at the commencement of construction.} road projects are more likely to come in over the cost initially announced than they are to finish on budget.
 Being a large road is not a subtle characteristic that could easily go unnoticed.
 Rather, it is an example of the tangible project characteristics that affect the likelihood of a project finishing on budget.
 The fact that projects with these characteristics are less likely to finish on budget than others indicates that their obvious risks are not adequately factored into project cost estimates.
 
-This section discusses three tangible project characteristics associated with high risks.
-Properly accounting for the risk associated with them characteristics is a simple illustration of how we could come up with much better estimates of project costs.
+This section discusses three tangible project characteristics associated with high risks:
+\begin{enumerate}
+\item project complexity, 
+\item project mode, and
+\item contract type.
+\end{enumerate}
+
+Properly accounting for their risk characteristics is a straightforward way to improve project cost estimates. 
+
 
 \subsection{Large and complex projects are more prone to cost overruns}\label{large-and-complex-projects-are-more-prone-to-cost-overruns}
 
-Complex projects are prone to cost overruns because they tend to have many interdependent components that can be disrupted if one element falls behind time, and multiple interfaces with existing infrastructure.
+It is not surprising that complex projects are prone to cost overruns.
+Such projects tend to have many interdependent components that can be disrupted if one element falls behind time, and multiple interfaces with existing infrastructure.
 These risks are amplified when the existing infrastructure continues operating during construction.%
-\footnote{Eg \textcites{Hinze1992CostOverrunsonStateofWashington}[][9--11]{Flyvbjerg2014Whatyoushould}; in Australia: \textcite[][3]{EngineersAustralia2014Masteringcomplexprojects}}
+\footnote{For overseas examples, see \textcites{Hinze1992CostOverrunsonStateofWashington}[][9--11]{Flyvbjerg2014Whatyoushould}; for Australian examples, see \textcite[][3]{EngineersAustralia2014Masteringcomplexprojects}.}
 
 The most complex projects also tend to be large.
 Because of this, large projects are more likely to incur cost overruns, and these overruns are likely to be particularly big (\Vref{fig:prevalence-avg-magnitude-cost-overruns-by-project-size}).
@@ -1369,7 +1378,7 @@ When the estimated construction cost to that jurisdiction is \$1 billion or more
 
 \subsection{Road and rail projects overrun at different stages}\label{road-and-rail-projects-overrun-at-different-stages}
 
-Unusual projects are also more prone to cost overruns.
+It is also not surprising that unusual projects are also more prone to cost overruns.
 This is because the more unusual a project is, the more difficult it is to estimate its cost and to build it to budget.
 Understanding when and where a project is unusual can help project proponents identify which projects are at particularly high risk of cost overruns.
 
@@ -1379,7 +1388,8 @@ However, these projects tend to incur disparate construction problems, because t
 
 The inverse is true for roads.
 They often involve bespoke designs and complex interfaces with existing infrastructure.
-However, roads are less often constructed on brownfield sites with poor accessibility.
+However, roads are less often constructed on brownfield sites with poor accessibility.%
+\GenericWarning{LaTeX Warning: footnote is incomplete.}{LaTeX Warning: footnote is incomplete.}
 
 The timing of cost overruns on rail and road projects is aligned with the stages in which projects of these types are expected to be most bespoke.
 Cost overruns are larger for road projects during the planning stage, when road projects tend to be more bespoke than rail, and larger for rail projects during the construction period, when rail projects tend to be more bespoke (\Vref{fig:cost-overruns-by-proj-stage-mode}).
@@ -1401,20 +1411,20 @@ However, Australian risk management guidance does not currently advise project p
 
 \subsection{Contract type may affect the risk of cost overruns}\label{contract-type-may-affect-the-risk-of-cost-overruns}
 
-Contract type is a third characteristic that affects a project's cost risk.
-Traditionally, projects have been built under Design-Bid-Build and Design-Build contracts, where private companies have engaged with government in a typical contractor-client relationship.
-In recent years, there has been significant innovation in contract design for public infrastructure projects, resulting in increased use of public private partnerships and alliancing.
+A third characteristic that affects a project’s cost risk is its contract type. 
+Different types of contracts are used in order to allocate cost risks to the party best placed to manage them. 
 
-Public Private Partnerships, known as PPPs, have been used extensively over the past generation in an effort to bring commercial discipline to infrastructure construction and operations.
-PPPs encourage integrated trade-offs between construction and maintenance.
-They also tend to require clearer definition in advance of construction.
-Relative to traditional delivery models, PPPs can reduce costs if the additional commercial discipline is greater than the higher costs of private capital that PPPs incur.
+Traditionally, projects have been built under Design-Bid-Build and Design-Build contracts, where private companies have engaged with government in a typical contractor-client relationship. 
+In order to improve the cost-efficiency of construction and management, the past generation has seen significant innovation in contract design for public infrastructure projects, resulting in increased use of public private partnerships and alliancing.
+
+Public Private Partnerships, known as PPPs, have been used extensively to bring commercial discipline to infrastructure construction and operations. 
+PPPs encourage integrated trade-offs between construction and maintenance. They also tend to require clearer definition in advance of construction.\GenericWarning{LaTeX Warning: footnote not complete}{LaTeX Warning: footnote not complete} 
+Relative to traditional delivery models, PPPs can reduce costs if the additional commercial discipline is greater than the higher costs of private capital that PPPs incur.\GenericWarning{LaTeX Warning: footnote not complete}{LaTeX Warning: footnote not complete}  
 
 A newer form of contract type, known as alliancing, creates a partnership between the government buyer and the contracting company or companies.
-Alliancing has become common over the past decade or so for projects in which it is particularly difficult to define risks prior to tendering, as this contract type allows for greater ongoing negotiation between the private contractor and government body.
+Alliancing has become common over the past decade or so for projects in which it is particularly difficult to define risks prior to tendering, as this contract type allows for greater ongoing negotiation between the private contractor and government body.\GenericWarning{LaTeX Warning: footnote not complete}{LaTeX Warning: footnote not complete} 
 
-Alliancing and public private partnerships are designed to allocate project risk differently and more effectively than traditional delivery models.
-Consequently, the average size of cost overruns is likely to vary by contract type.
+Because different contract types are designed to allocate project risk in different ways, the average size of cost overruns is likely to vary by contract type. 
 However, there limited evidence on whether this is the case in practice.
 
 A 2007 study of 54 projects and a 2008 study of 67 projects both concluded that PPPs are less prone to cost overruns than are traditionally procured projects.%
@@ -1427,15 +1437,16 @@ However, this is an important field of research because it has the potential to 
 
 \section{Risk assessment should be comprehensive}\label{risk-assessment-should-be-comprehensive}
 
-At present, cost estimators at present are hampered by weaknesses in official guidance on cost estimation.
+Cost estimators are at present hampered by weaknesses in official guidance on cost estimation.
 
 Every state produces its own guidance on how to estimate project costs.
 The Commonwealth produces guidance too.
 There are more than 50 current guideline documents and handbooks around the country.
+The adequacy of these guidelines is reviewed in detail in \Cref{risk-appendix}.
 
 Ultimately all cost estimates use some combination of four tools: expected value, sensitivity analysis, probability pricing, and reference class forecasting (see \Vref{box:risk-managers-toolkit}).
 The various guidance documents present the same basic tools in a wide variety of ways.
-They are inconsistent in which of the main tools they recommend and in how they guide the user through the relationships among the various tools (see \Vref{fig:prop-guidelines-that-reco-use-of-each-key-risk-assessment-tool}).
+Yet they are inconsistent in terms of which tools they recommend and in how they guide the user through the relationships among the various tools (see \Vref{fig:prop-guidelines-that-reco-use-of-each-key-risk-assessment-tool}).
 
 \begin{figure}
 \captionwithunits{Australia's various guidelines on risk measurement do not recommend any approach consistently\label{fig:prop-guidelines-that-reco-use-of-each-key-risk-assessment-tool}}%
@@ -1449,10 +1460,11 @@ They are inconsistent in which of the main tools they recommend and in how they 
 A project's expected value is the most obvious gap in cost estimation guidance.
 Most thinking about risk measurement is predicated on some measure of expected value or expected cost, so expected value is an important component of the risk manager's toolkit.
 It can be calculated using project information alone, or using historical information on completed projects.
-The expected value methodology or a reasonable substitute\footnote{Defined as the official guidelines applicable to transport infrastructure projects that define a recommended or required approach to quantifying unavoidable project risk.} is missing from the Commonwealth's ``comprehensive''\footcite{DIRD2008BPCEPFRRC} \emph{Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction.} It is also missing in official guidelines for key gateways such as Infrastructure Australia's \emph{Detailed} \emph{Technical Guidance} and \emph{Business Case Template}, and in some key state documents such as the South Australian \emph{Estimating Manual} and Western Australian \emph{Business Case Template.}
+However, the expected value methodology, or a reasonable substitute is missing from the Commonwealth's ``comprehensive''\footcite{DIRD2008BPCEPFRRC} \emph{Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction.} 
+It is also missing from official guidelines for key gateways such as Infrastructure Australia's \emph{Detailed Technical Guidance} and \emph{Business Case Template}, and in some key state documents such as the South Australian \emph{Estimating Manual} and Western Australian \emph{Business Case Template}.
 
 While there is more than one valid approach to measuring project risk, it is not obvious why different Australian jurisdictions need different approaches to the same basic tools.
-Different approaches make it difficult or impossible to collect data on a consistent basis so that project managers can draw on a large pool of past projects around Australia to improve their understanding of cost and risk.
+Different approaches make it difficult or impossible to collect data on a consistent basis so that project managers can draw on a large pool of past projects around Australia to improve their understanding of cost and risk.\footnote{See \Vref{risk-appendix} for a comprehensive discussion.} %
 It would be better for all jurisdictions to adopt a standard approach, and for the Commonwealth to assist them to do so (see \Vref{reco:improve-risk-measurement-guidance}).
 
 \begin{recommendation}{Improve risk measurement guidance\label{reco:improve-risk-measurement-guidance}}
@@ -1473,7 +1485,7 @@ It involves specifying the range of values that critical inputs to project cost 
 Like the expected value methodology, it does not deal with unknown risks.
 
 \textbf{Probability pricing} identifies how large a project budget needs to be in order to accommodate a specific probability that the project will be completed within budget. 
-For instance, most projects will have ‘P50’ and ‘P90’ cost estimates, which identify the prices for which it is expected that a project will meet or better its budget in 50 or 90 per cent of cases, respectively.
+For instance, most projects have ‘P50’ and ‘P90’ cost estimates, which identify the prices for which it is expected that a project will meet or better its budget in 50 or 90 per cent of cases, respectively.
 
 \textbf{Reference class forecasting} compares cost estimates for one project to those on similar projects that have already been built. 
 The average size of cost overruns observed across the sample can be used as an estimate of the expected value of cost overruns; the variance of the outcomes on the comparison projects can be used to understand the range within which a cost estimate is likely to vary; and the different points within the observed distribution can be used to estimate probability prices.
@@ -1535,7 +1547,7 @@ They show a ``worst case'' cost estimate far lower than 21 per cent above the me
 \end{smallbox}
 
 
-\begin{table*}
+\begin{table*}[!t]
 \centering
 \captionsetup{margin = {0.075\textwidth,0.075\textwidth}}
 \caption{Large projects currently under development or construction\label{tbl:large-projects-cost-estimates}}
@@ -1575,14 +1587,17 @@ The psychological tendency to believe that project outcomes will be better than 
 
 A third consequence of not knowing historical outcomes is that cost estimators lack an effective counter to `strategic misrepresentation' -- when proponents deliberately manipulate the cost estimates to make them look more favourable than they really are.
 Project proponents have an incentive for strategic misrepresentation to the extent that they are judged more on how much they build than how well they manage their budget.
-Lack of historical outcomes data makes this behaviour hard to counter.
+Lack of historical outcomes data makes this behaviour hard to counter.\footnote{See \textcite[][100--102]{Commission2014PublicInfastructure} for a recent discussion.} %
 
 The discrepancy between expert expectations and historical experience shows that the reliability of risk assessments on Australian transport infrastructure projects would be substantially improved by equipping risk experts with better information.
 The Productivity Commission's 2014 Public Infrastructure inquiry report highlights the need for an accurate database of historical cost outcomes for Australian projects.
-The Commonwealth, which supports this recommendation,\footnote{\textcite{Commission2014PublicInfastructure}, volume 1, recommendation 9.2; and \textcite[][19]{Infrastructure2014AUSTRALIANGOVERNMENTRESPONSE}.} should create such a database, using the information on completed projects from all states on a consistent basis.
+The Commonwealth, which supports this recommendation,%
+\footnote{\textcites[][Volume~1, Recommendation~9.2]{Commission2014PublicInfastructure}[][19]{Infrastructure2014AUSTRALIANGOVERNMENTRESPONSE}. % 
+The focus of the Government's response is on cost benchmarking data, not on cost risk benchmarking data.} %
+should create such a database, using the information on completed projects from all states on a consistent basis.
 The change would help cost estimation experts to create better quality estimates.
 
-\begin{recommendation}{Compile Australian database of completed projects}
+\begin{recommendation}[H]{Compile Australian database of completed projects}
 The Commonwealth should seek cooperation from the states to create new benchmarking data to improve risk measurement in new project proposals and public accountability.
 They should do so using data collected through mechanisms described in \Cref{reco:Publish-post-completion-data}.
 \end{recommendation}
@@ -1612,45 +1627,52 @@ These are key times for managing risks.
 \section{Not all risks are avoidable}\label{not-all-risks-are-avoidable}
 
 Some risks materialise through changes in the economy.
-The costs of public infrastructure tend to be higher in a faster-growing economy.
-Higher private sector demand for resources such as equipment, materials and workforce leads to higher costs that may not have been anticipated at the time a project budget was prepared.
-In Western Australia, the fact that there were often few or even only one bid for public sector works projects during the resources investment boom appears to have increased the likelihood of cost overruns in that state: Western Australia has tended to have larger overruns than those in New South Wales, Victoria and Queensland (details in Appendix \ref{methodological-appendix}).
+Because the growth rate of the economy fluctuates, the costs of public infrastructure will always be uncertain.
+This is because a project's input costs may be higher than anticipated if private sector demand for resources such as equipment, materials and workforce is higher or lower than anticipated.
 
-More generally, the global financial crisis seems to have reduced the likelihood of cost overruns.
-The probability of a cost overrun during construction approximately halved for otherwise similar projects begun since 2009.
-This may be because constrained budgets shaped the culture and practice of governments, leading them to introduce more legal and regulatory requirements.
+This type of unavoidable cost risk may explain the higher rate of cost overruns experienced in Western Australia during the resources boom.
+With many construction companies deployed on mining projects, there were often few or even only one bid for public sector works projects.
+Not surprisingly Western Australia experienced larger overruns on average than those in New South Wales, Victoria and Queensland (details in \Vref{methodological-appendix}).
 
-There has been some debate as to whether constructors make unfeasibly low bids when the number of available projects shrinks, as is the case in some parts of Australia at present.
+By contrast, current economic conditions have led to more competition within the construction industry to build public infrastructure.
+Anecdotal evidence has suggested that constructors may make unfeasibly low bids when the number of available projects shrinks, as is the case in some parts of Australia at present.
 This practice would only be a concern for government if contractors pursued contract changes that were in effect claims to recoup the revenue forgone by a low bid, and if governments were unable in practice to deny these changes because of political lock-in.%
 \footcites[][500]{Love2014Understandinglandscapeoverruns}[][87--88]{Hinze1992CostOverrunsonStateofWashington} While this may occur on some projects, we do not find significant evidence of low initial bids leading to later overruns.
-However, pre-construction overruns have been higher since the global financial crisis, perhaps because some projects were rushed through early development stages so that they could stimulate the economy in the years immediately following the crisis.
 
-\section{Unavoidable risks could be better managed}\label{avoidable-risks-could-be-better-managed}
+Budgetary environments also affect cost overruns by causing a general tightening of incentives to deliver projects within budget.
+This appears to have been the case in Australia since the global financial crisis, when the focus swung sharply from getting projects shovel-ready to balancing the budget.
+During this period, there have been substantial changes to the culture and practice of governments, and the probability of cost overruns during construction has approximately halved (although the same cannot be said of cost overruns before a formal funding commitment).
 
-While broader economic shifts can affect project costs, many risks are specific to the individual project.
-But Australia's risk management practices appear to be better suited to managing risk to individuals' and agencies' reputations rather than improving cost efficiency.
-This is evident in two ways.
-First, the way that project outcomes are announced or described usually focuses on whether or not they came in on budget, not on how large any deviation was from that budget.
-Second, the way that projects' contingency funds are managed protects the reputations of project managers at the expense of cost efficiency.
-The following two sections explain these claims.
+There are numerous other unavoidable risks that are a part of major construction projects, like unexpected weather, ground conditions and industrial relation events.
+Each project also has its own idiosyncratic risks that cannot be avoided.
+These risks mean that it is impossible to eliminate cost risk entirely.
+Consequently, it's important that budgeting, reporting and contingency management practices are designed to minimise the cost of cost overruns when they occur.
+
+\section{We could better manage the risks that cannot be avoided}\label{we-could-better-manage-the-risks-that-cannot-be-avoided}
+
+Currently, unavoidable cost risks on transport infrastructure projects are more costly than they need be.
+This is because budgeting and reporting practices are targeting the wrong outcome and contingency funds are managed in an unnecessarily expensive manner.
+The following sections identify how these practices could be improved.
 
 \subsection{Manage budgets not reputations}\label{manage-budgets-not-reputations}
 
+Currently, reporting and budgeting process are designed to minimise the number of cost overruns that occur, rather than the cost of cost overruns.
 Politicians often announce whether a project finished on or under budget, but they rarely talk about how much over budget it ran unless they want to blame a rival from another party.
-This emphasis is mirrored in costing practice: projects are costed to reflect a low probability of going over budget.
+Similarly, projects are costed to reflect a low probability of going over budget rather than a zero net cost of cost overruns.
 
-Whether or not a project runs over budget matters, but it is only a small part of the story.
+This is problematic because whether or not a project runs over budget is only a small part of the story.
 What governments should really worry about is the cost of such overruns.
 Every project overrunning by a tiny amount would be much less troubling than a few blowing out by vast sums.
 
 The lack of data on project outcomes encourages this focus on the rate of cost overruns.
-It is easy to claim how many project came in on budget when there is not much data, rather than the magnitude of any overruns that did occur.
+It is easy to claim how many projects came in on budget when there is not much data, rather than the magnitude of any overruns that did occur.
 
 A more technical way of putting this is that current practice has encouraged the folly of managing the \emph{median} cost overrun rather than the \emph{mean}.
 While the median and mean are often one and the same, this is not the case for cost outcomes because the distribution of cost outcomes is extremely asymmetric -- that is, overruns are much more likely and much bigger than underruns.
+
 Over the past 15 years, Australia has delivered a median cost overrun of zero per cent, but a mean cost overrun of 24 per cent.
 The mean value is the figure that matters because it summarises how much more we spent on infrastructure than we intended.
-The median or ``P50'' outcome represents the less relevant statistic: the worst outcome observed among the 50 per cent of projects with the best cost performance.
+The median or ``P50'' outcome represents a less relevant statistic: the worst outcome observed among the 50 per cent of projects with the best cost performance.
 
 Reducing the size of cost overruns is much more important than reducing their rate.
 Collecting and aggregating project performance data is essential to reducing the size of overruns.
@@ -1658,24 +1680,17 @@ Governments should aggregate data across jurisdictions to make this possible.
 
 \subsection{Contingencies should be used cost efficiently}\label{contingencies-should-be-used-cost-efficiently}
 
+The costs of cost overruns could be reduced by managing contingency funds in a more cost efficient way.
+
 A project's contingency fund is a sum of money from the project's operating budget that is set aside for exceptional circumstances.
 The idea is that the contingency is there to be called upon if needed, but if it is not needed, it should be kept separate and used at some point on another infrastructure project that does need it.
 Most projects should not need to use their contingencies, but some inevitably will.
 
-Some or all of a project's contingency funds are held within the managing agency, and often by the project manager.
-Sometimes a treasury or finance department holds part of the contingency.
+In most jurisdictions, some or all of a project's contingency funds are held within the managing agency, often by the project manager.
+But managing contingency funds at the project level in this way is far more expensive than managing them at the portfolio level.
 
-There are more disadvantages than advantages to holding the entire contingency against the individual project, as opposed to holding it against a portfolio of projects.
-Two disadvantages stand out as particularly important.
-One is that it is substantially more costly to hold contingencies wholly against an individual project rather than to pool them across a portfolio of projects, even where both strategies offer the same level of protection against cost overruns.
-The second is that holding contingencies against individual projects makes it easier for them to be spent in other ways.
-
-Holding contingencies entirely against an individual project is more expensive because a larger amount needs to be put aside for exceptional circumstances if managers cannot also call upon unused contingency funds from other projects when risks eventuate.
+This is because a larger amount needs to be put aside for exceptional circumstances if managers cannot also call upon unused contingency funds from other projects when risks eventuate.
 By contrast, pooling contingencies from a portfolio of projects is cheaper, for the same level of protection, because the same funds provide protection for multiple projects at the same time.
-
-\Vref{fig:value-contingencies-req-to-cover--} illustrates the difference between the contingency funds that would have been needed on average for projects valued at \$20 million or more and planned or built over the past 15 years, according to whether the contingency was set for an individual project or for a whole portfolio.
-The figure illustrates how different the results are at these extremes, both of which are designed to ensure that the average cost overrun is zero.
-In practice, the best way to manage the contingency would lie somewhere between these two extremes.
 
 \begin{figure}
 \captionwithunits{Small contingencies can achieve a lot when they are managed at the portfolio level\label{fig:value-contingencies-req-to-cover--}}
@@ -1687,7 +1702,11 @@ In practice, the best way to manage the contingency would lie somewhere between 
 {Deloitte Investment Monitor; Grattan analysis}
 \end{figure}
 
-The second main disadvantage of holding most or all of the contingency at the individual project level is the risk that the money is used on other things (see \Vref{box:Pacific-Motorway} on the Pacific Motorway).
+\Vref{fig:value-contingencies-req-to-cover--} illustrates the difference between the contingency funds that would have been needed on average for projects valued at \$20 million or more and planned or built over the past 15 years, according to whether the contingency was set for an individual project or for a whole portfolio.
+The figure illustrates how different the results are at these extremes, both of which are designed to ensure that the average cost overrun is zero.
+In practice, the best way to manage the contingency would lie somewhere between these two extremes.
+
+A second reason why it is more expensive to hold most or all of the contingency at the individual project level is the risk that the money is used on other things (see \Cref{box:Pacific-Motorway} on the Pacific Motorway).
 
 \begin{smallbox}{Case study -- Pacific Motorway -- 14 per cent under-run}{box:Pacific-Motorway}
 
@@ -1706,9 +1725,9 @@ In fact, project managers arguably waste an opportunity when they \emph{do not} 
 It is in the project manager's interest to have the contingency accessible at the project level rather than held against a portfolio.
 Individual project managers may face reputational damage, however unfairly, if they preside over a project that runs over budget, even when it has been costed at, say, the P75 level, where by definition an overrun is expected to occur 25 per cent of the time at the P75 price estimate.
 
-It is not easy to establish how much of the contingency should be held against the individual project, and how much against the portfolio.
-But managing all risk at the project level is unnecessarily expensive.
-Australian governments would do well to far more rigorously define their risk preferences at both levels, to document which risks each agency or organisation has accommodated and on what basis risks have been quantified is important (see \Vref{reco:half-proj-contingency-in-portfolio-pool}).
+For these reasons, managing all risk at the project level is unnecessarily expensive.
+Australian governments would do well to introduce more explicit requirements for contingency funds to be managed by state departments of treasury or finance.
+Even managing a substantial portion of contingencies at the project level could deliver substantial savings, while maintaining the same level of risk coverage  (see \Vref{reco:half-proj-contingency-in-portfolio-pool}).
 
 \begin{recommendation}{Hold the project contingency in a portfolio pool\label{reco:half-proj-contingency-in-portfolio-pool}}
 Central agencies should hold project contingency funds at arm’s length from project management, and formalise the conditions governing contingency drawdown, to improve the cost-efficiency of risk management. 
@@ -1894,7 +1913,7 @@ As discussed in section \ref{risk-assessment-should-be-comprehensive}, the criti
 
 This section reviews each of these shortcomings in detail and provides state-specific examples of opportunities for improvement.
 
-\subsection{1.2.1 Guidance is inconsistent, within and across levels of government}\label{guidance-is-inconsistent}
+\subsection{Guidance is inconsistent, within and across levels of government}\label{guidance-is-inconsistent}
 
 Guidelines which apply to the same jurisdiction often recommend different approaches to risk measurement. For instance, probability pricing is required for federal funding, yet only half the risk measurement guidance provided at the federal level discusses probability pricing.
 
@@ -2186,7 +2205,7 @@ The high level review of the quality of risk management guidelines presented as 
 The conclusions drawn in this report are founded on thorough statistical analysis of transport projects completed in Australia since 2001. 
 This appendix provides the supporting details of the data sources and analysis contained in this report. 
 
-\section{2.1  Datasets used to measure cost overruns in this report}\label{data}
+\section{Datasets used to measure cost overruns in this report}\label{data}
 
 The analysis contained in this report is based on two unique datasets. 
 First, this report uses a time series dataset built from the archives of the Deloitte Access Investment Monitor which tracks the evolution of project costs over time for all Australian transport infrastructure projects constructed since 2001. 
@@ -2205,7 +2224,7 @@ We assume that the distribution of project costs across time is the same for all
 While only approximate, this approach is sufficient for controlling for the effect of inflation at the aggregate level under the assumption that the distribution of project costs over the construction period does not vary with time. 
 Importantly, the inflation adjustment procedure does not affect the estimates of the size of cost overruns in this report, only the relative size of projects that are constructed in different periods. 
 
-\subsection{2.1.2 Measuring cost overruns }\label{Measuring-cost-overruns}
+\subsection{Measuring cost overruns }\label{Measuring-cost-overruns}
 
 We measure cost overruns as the percentage change in project costs over a given period, as a proportion of a project’s initial cost. 
 Project costs are defined as the total cost of designing and constructing a given asset to the public sector, and so include public sector project management costs outside of the project contract and exclude any costs incurred beyond the contract price by the contractor. 
@@ -2312,9 +2331,10 @@ However, it should be noted that the estimates obtained through a weighted arith
 Weighted arithmetic means:
 
 \begin{align*}
-CO_{12}  &= \frac{1}{N}\sum_{i \in N}^{}\frac{C2_{i} - C1_{i}}{C1_{i}}w_{i}
-CO_{23}  &= \frac{1}{N}\sum_{i \in N}^{}\frac{C3_{i} - C2_{i}}{C1_{i}}w_{i} & CO_{34}  &= \frac{1}{N}\sum_{i \in N}^{}\frac{C4_{i} - C3_{i}}{C1_{i}}w_{i}
-CO_{14} &= \frac{1}{N}\sum_{i \in N}^{}\frac{C4_{i} - C1_{i}}{C1_{i}}w_{i}
+CO_{12}  &= \frac{1}{N}\sum_{i \in N}^{}\frac{C2_{i} - C1_{i}}{C1_{i}}w_{i} \\
+CO_{23}  &= \frac{1}{N}\sum_{i \in N}^{}\frac{C3_{i} - C2_{i}}{C1_{i}}w_{i} \\
+CO_{34}  &= \frac{1}{N}\sum_{i \in N}^{}\frac{C4_{i} - C3_{i}}{C1_{i}}w_{i} \\
+CO_{14} &= \frac{1}{N}\sum_{i \in N}^{}\frac{C4_{i} - C1_{i}}{C1_{i}}w_{i} \\
         &= CO12 + CO23 + CO34
 \end{align*}
 
