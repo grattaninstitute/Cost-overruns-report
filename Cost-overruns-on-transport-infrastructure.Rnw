@@ -585,7 +585,7 @@ Many twists and turns later, in 2010, the road was completed at a cost of \$688~
 
 Such budget blowouts like this are disturbing but they do not hit the media or public eye very often. People could therefore be forgiven for thinking they are rare.
 
-Unfortunately, they are not rare enough. This report finds that the transport infrastructure projects valued at \$20~million or more and planned or built in Australia in the past 15 years cost \$28~billion more than their promised costs.This is 24 per cent more than the costs that were announced.
+Unfortunately, they are not rare enough. This report finds that the transport infrastructure projects valued at \$20~million or more and planned or built in Australia in the past 15 years cost \$28~billion more than their promised costs. This is 24 per cent more than the costs that were announced.
 
 The 24 per cent over and above the original cost promise does not stem from the accumulation of small cost overruns on most projects. Rather, most projects come in reasonably close to their promised cost, as \Vref{fig:large-cost-overruns-uncommon-but-expensive} shows. 
 The problem is that when projects do exceed their promised costs, the overruns can be spectacular: 90 per cent of Australia's cost overruns problem is explained by the 17 per cent of projects that overran their cost promise by more than 50 per cent.%
