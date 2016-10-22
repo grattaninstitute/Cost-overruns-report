@@ -1023,7 +1023,7 @@ He further noted that:
 \end{quote}
 
 Other spheres of government spending offer far less scope for discretionary decisions.
-For example, payments to unemployed people are worth \$108 billion since 2000 -- about the same amount as has been spent on transport infrastructure.
+For example, payments to unemployed people have cost \$108 billion since 2000 -- substantially less than the \$141~billion spent on transport infrastructure.
 The \emph{Social Security Act 1991} lays out in exhaustive detail the conditions under which an unemployed person may qualify for Newstart or Youth Allowance, the rate at which they may be paid, and the arrangements for recovering incorrect payments.
 Politicians frequently bemoan waste in the welfare system and the need to reduce fraud, improve compliance and get better value for money.
 They rarely do the same for transport infrastructure.
