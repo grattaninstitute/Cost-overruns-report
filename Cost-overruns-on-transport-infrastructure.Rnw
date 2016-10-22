@@ -1411,9 +1411,8 @@ However, Australian risk management guidance does not currently advise project p
 
 \subsection{Contract type may affect the risk of cost overruns}\label{contract-type-may-affect-the-risk-of-cost-overruns}
 
-Contract type is a third characteristic that affects a project's cost risk.
-Traditionally, projects have been built under Design-Bid-Build and Design-Build contracts, where private companies have engaged with government in a typical contractor-client relationship.
-In recent years, there has been significant innovation in contract design for public infrastructure projects, resulting in increased use of public private partnerships and alliancing.
+A third characteristic that affects a project’s cost risk is its contract type. 
+Different types of contracts are used in order to allocate cost risks to the party best placed to manage them. 
 
 Public Private Partnerships, known as PPPs, have been used extensively over the past generation in an effort to bring commercial discipline to infrastructure construction and operations.
 PPPs encourage integrated trade-offs between construction and maintenance.
