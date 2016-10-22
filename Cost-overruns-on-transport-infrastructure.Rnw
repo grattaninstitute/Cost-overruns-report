@@ -1437,7 +1437,7 @@ However, this is an important field of research because it has the potential to 
 
 \section{Risk assessment should be comprehensive}\label{risk-assessment-should-be-comprehensive}
 
-At present, cost estimators at present are hampered by weaknesses in official guidance on cost estimation.
+Cost estimators are at present hampered by weaknesses in official guidance on cost estimation.
 
 Every state produces its own guidance on how to estimate project costs.
 The Commonwealth produces guidance too.
