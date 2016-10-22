@@ -978,7 +978,7 @@ The project was completed in 2014.%
 While the final benefit cost ratio has not been published, these comments from politicians reveal the difficulty governments experience in reneging on commitments made very early in a project’s life, even after the facts of the project change significantly.
 
 \begin{figure}[H]
- \captionwithunits{Project cost estimates\label{fig:CS_Hunter}}{millions of dollars}
+ \captionwithunits{Project cost estimates, Hunter Expressway\label{fig:CS_Hunter}}{millions of dollars}
  \includegraphics[page=5]{atlas/CaseStudies.pdf}
 \end{figure}
 
