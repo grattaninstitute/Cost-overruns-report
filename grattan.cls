@@ -45,6 +45,8 @@ numbers=noenddot,
    }
 \RequirePackage{footmisc}
 \RequirePackage[document]{ragged2e}
+\setlength{\RaggedRightRightskip}{0pt plus 2.2em}  % slightly larger than 0pt plus 2em
+% \let\RaggedRight\raggedright
 % ------
 % Grattan colors
 \definecolor{Orange}{HTML}{F68B33}
@@ -638,7 +640,7 @@ top=2.70cm, bottom=2.65cm,
 % Bibliography
 \RequirePackage[english]{babel}
 \RequirePackage{csquotes}
-\RequirePackage[backend=biber,style=authoryear-ibid,ibidtracker=strict, autocite=footnote, maxcitenames=2, maxbibnames=9, uniquelist=false, giveninits=true]{biblatex}
+\RequirePackage[backend=biber,style=authoryear-ibid,ibidtracker=strict, autocite=footnote, maxcitenames=2, maxbibnames=9, uniquelist=false, uniquename=init, giveninits=true]{biblatex}
 \DeclareLanguageMapping{english}{british-apa}
 \DeclareNameAlias{author}{last-first} % for last name, first name in bibliography
 
