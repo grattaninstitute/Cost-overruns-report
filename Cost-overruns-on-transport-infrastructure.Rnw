@@ -879,7 +879,7 @@ The rest of this chapter explains the incentives and lack of penalties that lead
 
 \subsubsection*{An under-cooked election promise}
 
-In 2002, the Federal Coalition Government committed to contributing \$12 million to the \$36 million cost of an upgrade to the Bruxner Highway in Northern New South Wales, to bypass Alstonville.%
+In 2002, the Federal Coalition Government committed \$12 million to the \$36 million cost of an upgrade to the Bruxner Highway in Northern New South Wales, to bypass Alstonville.%
 \footcite{NSWHansardAlstonville} The following year, the then Labor Premier, Bob Carr, promised in a New South Wales election campaign to build the bypass by the end of 2006, at a cost of \$36 million.%
 \footcite{ABCNews2003PlanforBruxnerHighway}
 
