@@ -1575,7 +1575,7 @@ Canberra Light Rail & ACT & \possibleTextDollar759\dz & \possibleTextDollar806\d
 \midrule 
 \multicolumn{4}{r}{Average difference of above estimates}    & 9.2\%\tabularnewline[1.245ex]
 %\cmidrule(lr){3-5}
-\multicolumn{4}{r}{\textbf{Average actual difference across all projects completed in the  past 15 years}} & \textbf{21.0\%}\tabularnewline%[1.245ex]
+\multicolumn{4}{r}{\textbf{Average actual difference across all projects completed in the  past 15 years}} & \textbf{21.0\% \footnote{Please see \Vref{expected-difference-between-p50-and-p90-costs} for details.}}\tabularnewline%[1.245ex]
 \bottomrule
 \end{tabularx}
 \end{table*}
