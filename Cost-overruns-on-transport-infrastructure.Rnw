@@ -1252,7 +1252,7 @@ Both of these interpretations suggest that too few projects are cancelled.
 
 
 The early timing of Australia's cost overruns offers a substantial and unrealised opportunity to reduce cost overruns on transport infrastructure projects.
-If more projects were to be cancelled when cost overruns eroded the projects' investment merits, the indirect costs associated with distortions to investment planning processes could be materially reduced.
+If more projects were to be cancelled when cost overruns eroded the projects' investment merits, the costs associated with distortions to investment planning processes could be materially reduced.
 
 A corollary of this conclusion is that, until the project appraisal process can be demonstrated to reliably cancel projects when it becomes apparent that they are poor investments, premature cost announcements remain a reckless practice.
 This is because, even though cost estimates announced prior to a budget commitment have been demonstrated to be of poor quality, in the absence of a robust mechanism for cancelling projects, such cost announcements constitute de facto commitments to build.
