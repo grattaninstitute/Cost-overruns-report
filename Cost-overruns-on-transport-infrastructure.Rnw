@@ -2190,7 +2190,7 @@ The high level review of the quality of risk management guidelines presented as 
 The conclusions drawn in this report are founded on thorough statistical analysis of transport projects completed in Australia since 2001. 
 This appendix provides the supporting details of the data sources and analysis contained in this report. 
 
-\section{2.1  Datasets used to measure cost overruns in this report}\label{data}
+\section{Datasets used to measure cost overruns in this report}\label{data}
 
 The analysis contained in this report is based on two unique datasets. 
 First, this report uses a time series dataset built from the archives of the Deloitte Access Investment Monitor which tracks the evolution of project costs over time for all Australian transport infrastructure projects constructed since 2001. 
