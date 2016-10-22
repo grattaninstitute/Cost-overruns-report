@@ -1723,16 +1723,7 @@ Instead, our infrastructure systems could promise what is worth having, and then
 
 
 
-%Example code to work off: 
 
-% \begin{figure}
-% \captionwithunits{Small contingencies can achieve a lot when they are managed at the portfolio level\label{fig:value-contingencies-req-to-cover--}}
-% {Value of the contingencies required to cover the costs of 90\% of the cost overruns that occur after a formal budget commitment, under different contingency management schemes}
-
-
-% \noteswithsource{Australian transport projects completed between 2000 and 2015}%
-% {Deloitte Investment Monitor; Grattan analysis}
-% \end{figure}
 
 
 
@@ -1742,9 +1733,7 @@ Instead, our infrastructure systems could promise what is worth having, and then
 
 \chapter{Risk appendix}\label{risk-appendix}
 
-Construction projects inevitably involve a host of cost risks.
-The objective of risk management is to minimise the costs of these risks.
-This involves:
+Construction projects inevitably involve a host of cost risks. The objective of risk management is to minimise the costs of these risks. This involves:
 
 \begin{enumerate}
 \item
@@ -1774,22 +1763,17 @@ This involves:
   \end{enumerate}
 \end{enumerate}
 
-There are upwards of fifty sets of guidelines outlining required approaches to risk management across Australian jurisdictions.
-In general, these documents are very detailed and well written.
-However, there are substantial blind spots in the guidance provided in each jurisdiction.
-This has resulted in risk management guidance that varies in quality across the components of risk management.
+There are upwards of fifty sets of guidelines outlining required approaches to risk management across Australian jurisdictions. In general, these documents are very detailed and well written. However, there are substantial blind spots in the guidance provided in each jurisdiction. This has resulted in risk management guidance that varies in quality across the components of risk management.
 
-\Vref{fig:quality-of-risk-management-guidance-chevrons} provides a high level summary of the quality of risk guidance across Australian jurisdictions.
-It identifies that the provided guidance regarding risk minimisation is generally of a far higher standard than that of risk measurement and ongoing risk monitoring.
-This is aligned with the nature of Australia's problem with cost overruns: most projects finish on budget, but the huge costs of uncommon events are poorly anticipated and accounted for.
 
-In this appendix we review the current practices of each state for each of these components of risk management, and highlight the opportunities for improvement.
-Full details of the Australian risk management guidelines analysed in this appendix are provided in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}.
+\Vref{fig:quality-of-risk-management-guidance-chevrons} provides a high level summary of the quality of risk guidance across Australian jurisdictions for each of the aforementioned components of risk measurement. It identifies that the provided guidance regarding risk minimisation is generally of a far higher standard than that of risk measurement and ongoing risk monitoring. This is aligned with the nature of Australia’s problem with cost overruns: most projects finish on budget, but the huge costs of uncommon events are poorly anticipated and accounted for.
+
+In this appendix we review the current practices of each state for each of these components of risk management, and highlight the opportunities for improvement. Full details of the Australian risk management guidelines analysed in this appendix are provided in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}.
 
 
 \begin{figure}
 \captionwithunits{The quality of risk management guidance varies\label{fig:quality-of-risk-management-guidance-chevrons}}
-{Guidance quality by jurisdiction and topic ranked as sufficient, incomplete and poor by green, orange and red, respectively.}
+{Guidance quality by jurisdiction and topic ranked as sufficient, incomplete and poor by yellow, orange and red, respectively.}
 \includegraphics[page=1]{atlas/AppendixCharts}
 
 \noteswithsource{}
@@ -1818,18 +1802,15 @@ Full details of the Australian risk management guidelines analysed in this appen
 
 \section{Risk minimisation}\label{risk-minimisation}
 
-The most critical component of risk management is reducing project risks where possible.
-This can be achieved by identifying and mitigating avoidable risks and reducing estimation error, as far as it is financially worthwhile to do so.
+The most critical component of risk management is reducing project risks where possible \footnote{Project risks include external factors such as market conditions and industrial relations, project-specific factors such as geotechnical conditions, cost estimation error and scope variation}. This can be achieved by identifying and mitigating avoidable risks and reducing estimation error, as far as it is financially worthwhile to do so.
 
-While there is scope to improve estimation error in many jurisdictions, the general quality of guidance provided on risk minimisation on transport infrastructure projects is high.
-This is a necessary component of a high quality risk management process, but risk minimisation alone is not sufficient.
+While there is scope to improve estimation error in many jurisdictions, the general quality of guidance provided on risk minimisation on transport infrastructure projects is high. This is a necessary component of a high quality risk management process, but risk minimisation alone is not sufficient. 
 
-This section provides a conceptual overview of Australia's risk minimisation practices with the objective of identifying both what risk minimisation can achieve, and highlighting the risk management tasks that remain after risks have effectively been minimised.
+This section provides a conceptual overview of Australia’s risk minimisation practices with the objective of identifying both what risk minimisation can achieve, and highlighting the risk management tasks that remain after risks have effectively been minimised.
 
 \subsection{Identify and mitigate avoidable risks}\label{identify-and-mitigate-avoidable-risks}
 
-Consistent use of risk matrices or like tools to identify and mitigate avoidable risks on construction projects is extremely important.
-This is because active mitigation of cost risks can reduce the frequency with which large cost overruns occur, as illustrated in \Vref{fig:Some-avoidable-risks-can-be-mitigated}.
+Consistent use of risk matrices or like tools to identify and mitigate avoidable risks on construction projects is extremely important. This is because active mitigation of cost risks can reduce the frequency with which large cost overruns occur, as illustrated in figure  \Vref{fig:Some-avoidable-risks-can-be-mitigated}.
 
 \begin{figure}
 \captionwithunits{Some avoidable risks can be mitigated \label{fig:Some-avoidable-risks-can-be-mitigated}}
@@ -1839,31 +1820,29 @@ This is because active mitigation of cost risks can reduce the frequency with wh
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
-At least one set of risk management guidelines in each of Australia's state and Commonwealth government jurisdictions recommends the use of risk matrices and provides high level advice on how to mitigate common risks.%
-\footnote{For example, \textcite{Australia2016InfrastructureAustraliaAssessmentc}; \textcite{NSWTreasury2012RiskManagementToolkit}; \textcite{VMIA2016PracticeGuide}; \textcite{QLDDepTransport2015ProjectCostEstimatingManual}; \textcite{WADFGP2016GatewayBusinessCaseWorkbook}; and \textcite{SASPB2015RiskManagementGuideline}.} For this reason, the guidance on risk identification and mitigation provided in every jurisdiction appears to be adequate.
+At least one set of risk management guidelines in each of Australia’s state and Commonwealth government jurisdictions recommends the use of risk matrices and provides high level advice on how to mitigate common risks%
+\footnote{Please see table XX in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}} For this reason, the guidance on risk identification and mitigation provided in every jurisdiction appears to be adequate.
 
 \subsection{Reduce estimation error}\label{reduce-estimation-error}
 
-Some states also provide comprehensive guidance on the level of detail required for risk estimation at each stage of a projects' development.
+Some states also provide comprehensive guidance on the level of detail required for risk estimation at each stage of a projects’ development. 
 
 For example, the South Australian Department of Planning Transport and Infrastructure Estimating Manual sets out:
 
 \begin{itemize}{}
 \item
-  the detail with which costs should be estimated, in terms of whether global benchmark, unit rate or first principles approaches should be used to price project inputs;
+  the \textbf{detail with which costs should be estimated}, in terms of whether global benchmark, unit rate or first principles approaches should be used to price project inputs;
 \item
-  the detail with which projects should be broken down into their components, defined relative to the Work Breakdown Schedule; and
+  the \textbf{detail with which projects should be broken down} into their components, defined relative to the Work Breakdown Schedule; and
 \item
-  the size of the contingency margin which should be added to estimates at each stage.
+  the \textbf{size of the contingency margin} which should be added to estimates at each stage.
 \end{itemize}
 
-It is important that every jurisdiction provides this level of guidance for two reasons.
-Firstly, the expense of arriving at more detailed cost estimates means that, where there are not clear requirements regarding the appropriate level of detail, incentives to produce insufficiently detailed cost estimates prevail.
+It is important that every jurisdiction provides this level of guidance for two reasons. Firstly, the expense of arriving at more detailed cost estimates means that, where there are not clear requirements regarding the appropriate level of detail, incentives to produce insufficiently detailed cost estimates prevail. 
 
-Secondly, the different margins of error associated with different cost estimation methodologies mean that cost estimates derived using different estimation methodologies are not directly comparable.
+Secondly, the different margins of error associated with different cost estimation methodologies mean that cost estimates derived using different estimation methodologies are not directly comparable. 
 
-Providing detailed guidance on how project costs should be estimated for each level of project maturity allows governments to increase their confidence that projects will come in on budget, as illustrated in \Vref{fig:Reduce-estimation-error-diagram}.
-Such increased cost certainty should be pursued insofar as the benefits outweigh the costs.
+Providing detailed guidance on how project costs should be estimated for each level of project maturity allows governments to increase their confidence that projects will come in on budget, as illustrated in  \Vref{fig:Reduce-estimation-error-diagram}. Such increased cost certainty should be pursued insofar as the benefits outweigh the costs.
 
 \begin{figure}
 \captionwithunits{More projects finish on budget when estimation error has been minimised \label{fig:Reduce-estimation-error-diagram}}
@@ -1876,12 +1855,9 @@ Such increased cost certainty should be pursued insofar as the benefits outweigh
 
 \section{Risk measurement}\label{risk-measurement}
 
-Australia's guidance on risk minimisation is generally of a high standard.
-However, this guidance is not sufficient, as it is inevitable that some cost risks will be impossible, or prohibitively expensive, to eliminate.
-These remaining risks need to be accurately measured, so that they can be factored into investment decisions and efficiently managed throughout a project's life.
+Australia’s guidance on risk minimisation is generally of a high standard. However, risk minimisation alone is not sufficient, as it is inevitable that some cost risks will be impossible, or prohibitively expensive, to eliminate. These remaining risks need to be accurately measured, so that they can be factored into investment decisions and efficiently managed throughout a project’s life.
 
-As discussed in section \ref{risk-assessment-should-be-comprehensive}, the critical shortcoming of risk management on Australia's transport infrastructure projects is that the guidance regarding how to measure unavoidable project risks is poor.
-This is because the guidance on how to quantify project risks is:
+As discussed in section \ref{risk-assessment-should-be-comprehensive}, the critical shortcoming of risk management on Australia’s transport infrastructure projects is that the guidance regarding how to measure unavoidable project risks is uniformly poor. This is because the guidance on how to quantify project risks is:
 
 \begin{itemize}{}
 \item
@@ -1894,43 +1870,38 @@ This is because the guidance on how to quantify project risks is:
 
 This section reviews each of these shortcomings in detail and provides state-specific examples of opportunities for improvement.
 
-\subsection{Guidance is inconsistent}\label{guidance-is-inconsistent}
+\subsection{1.2.1 Guidance is inconsistent, within and across levels of government}\label{guidance-is-inconsistent}
 
-Guidelines which apply to the same jurisdiction often recommend different approaches to risk measurement.
-For instance, Probability pricing is required for federal funding, yet only half the risk measurement guidance provided at the federal level discusses probability pricing.
+Guidelines which apply to the same jurisdiction often recommend different approaches to risk measurement. For instance, probability pricing is required for federal funding, yet only half the risk measurement guidance provided at the federal level discusses probability pricing.
 
 The \emph{National Partnerships Agreement on Land Transport Infrastructure Projects},\footcite{COAG2014NationalPartnershipAgreementInfrastructure} the Australian Transport Council’s \emph{National Guidelines for Transport System Management in Australia},\footcite{ATC2006NGTSM3} Infrastructure Australia’s \emph{Business Case Template},\footcite{Australia2016InfrastructureAustraliaAssessmentc} the \emph{Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction} \footcite{DIRD2008BPCEPFRRC} and BITRE's \emph{Overview of Project Appraisal for Land Transport} \footcite{BITRE2014Overviewofprojectappraisalforlandtransport} require or discuss probability pricing.
-However, Infrastructure Australia's \emph{Assessment Framework} \footcite{Australia2016InfrastructureAustraliaAssessmentb}, the \emph{HB 158:2010 Handbook on delivering assurance based on ISO 31000:2009} \footcite{StandardsAustralia2010DeliveringassurancebasedonISO31000} and BITRE's \emph{Risk in Benefit Cost Analysis} \footcite{BITRE2005RiskinCostBenefitAnalysis} do not.
+However, Infrastructure Australia's \emph{Assessment Framework} \footcite{Australia2016InfrastructureAustraliaAssessmentb}, the \emph{HB 158:2010 Handbook on delivering assurance based on ISO 31000:2009} \footcite{StandardsAustralia2010DeliveringassurancebasedonISO31000} and BITRE's \emph{Risk in Benefit Cost Analysis} \footcite{BITRE2005RiskinCostBenefitAnalysis} do not. 
 
 In Victoria, three key guidelines on risk measurement each recommend only part of the toolkit, and a different part in each case:
-
 \begin{itemize}
 \item
-  the Department of Treasury and Finance's \emph{Technical Guidelines on Economic Evaluation of Business Cases}\footcite{VicDTF2013EconomicEvaluationforBusinessCasesTechnicalguidelines} requires only sensitivity analysis,
+  the Victorian Insurance Management Authority's \emph{Practice Guide}\footcite{VMIA2016PracticeGuide} requires only the calculation of the expected value of project risks;
 \item
-  the Victorian Insurance Management Authority's \emph{Practice Guide}\footcite{VMIA2016PracticeGuide} requires only the calculation of the expected value of project risks, and
+  the Department of Treasury and Finance's \emph{Technical Guidelines on Economic Evaluation of Business Cases}\footcite{VicDTF2013EconomicEvaluationforBusinessCasesTechnicalguidelines} requires only sensitivity analysis; and
 \item
   the Department of Treasury and Finance's \emph{Business Case Template}\footcite{VicDTF2016Fullbusinesscasetemplate} and \emph{Gateway Review Process}\footcite{VicDTF2016GatewayReviewProcess} only requires reference class forecasting.
 \end{itemize}
 
-Such inconsistencies within jurisdictions obfuscate proper process and make the conceptual dependencies between tools unclear.
+Such fragmentation of guidance within jurisdictions obfuscates proper process and makes the conceptual dependencies between tools unclear. 
 
-Risk measurement guidance should also be consistent across jurisdictions.
-This is because each state must comply with both its own guidelines and the Commonwealth's whenever it seeks project funding from the Commonwealth to supplement its own funding of a project.
-Where state and commonwealth guidance differ, multiple versions of the same analysis are required.
+In some instances, inconsistencies also introduce contradictions within jurisdictions. For example, the National Guidelines on Transport System Management suggest that New Zealand’s narrow contingency margins are added to project budgets, whereas the Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction recommends that the UK’s extremely wide contingency margins are added to project budgets.
 
-For example, Victoria's business case on the Western Distributor has two sets of benefit cost ratios in order to conform to different guidance of the two levels of government.%
-\footnote{"Western distributor ref"} Neither of these benefit cost ratios appears more correct than the other.
-Rather, they are two imperfect estimates of the same concept.
-As both estimates would have come at a significant financial cost, Australia's project appraisal processes could be made more cost efficient by aligning the analysis required across each jurisdiction.
+Risk measurement guidance should also be consistent across jurisdictions. This is because each state must comply with both its own guidelines and the Commonwealth’s whenever it seeks project funding from the Commonwealth to supplement its own funding of a project. Where state and commonwealth guidance differs, multiple versions of the same analysis are required. 
 
-As it stands, risk measurement guidance is very inconsistent between each state and the Commonwealth. \Vref{consistency-table} shows that the expected value approach to estimating risks' costs is the only approach that is recommended consistently across all jurisdictions.
+For example, Victoria’s business case on the Western Distributor has two sets of benefit cost ratios in order to conform to different guidance of the two levels of government\footnote{"Western distributor ref"}.  Neither of these benefit cost ratios is more correct than the other. Rather, they are two imperfect estimates of the same concept. As cost estimates are expensive to produce, Australia’s project appraisal processes could be made more cost efficient by aligning the analysis required across each jurisdiction.  
 
-\begin{figure}
-\captionwithunits{No state provides high quality risk measurement guidance}{Green = recommended\\ Yellow = recommended, but with insufficient information to be properly implemented\\ Red = not recommended}
-\includegraphics[page=2]{atlas/AppendixCharts}
-\source{Australia risk management guidelines, Grattan analysis}
-\end{figure}
+The inconsistencies observed across Australian risk measurement guidelines could be resolved by removing old guidance when new processes are implemented, consolidating existing guidelines and writing new guidance so that replaces, rather than augments, older guidance. 
+
+For example, many of the inconsistencies within Commonwealth, COAG and Austroads were addressed through the 2016 release of the \emph{Australian Transport Assessment and Planning  Guidelines}.\footcite{ATAP2016Guidelines} These guidelines replaced \emph{Austroads' Guide to Project Evaluation}\footcite{Austroads2014GuidetoProjectEvaluation} and the \emph{National Guidelines for Transport System Management in Australia},\footcite{ATC2006NGTSM3} and were written to be aligned with Infrastructure Australia's guidelines, The COAG-agreed \emph{National Guidance on Public Private Partnership Projects} and the \emph{National Charter of Integrated Land Use and Transport Planning}.
+
+These guidelines replaced Austroads’ Guide to Project Evaluation and the National Guidelines for Transport System Management in Australia, and were written to be aligned with the guidance provided Infrastructure Australia’s guidelines, The COAG-agreed National Guidance on Public Private Partnership Projects and the National Charter of Integrated Land Use and Transport Planning. A similar exercise should be undertaken within each of the states, which should aim to align guidance with these federal guidelines. 
+
+Where different institutions within jurisdictions require different amounts of risk analysis, guidance should be comprehensively reviewed so that the hierarchy relating guidance documents is clear and, where possible, analytical requirements are aligned \footnote{Page 11 of Transport NSW’s Principles and Guidelines for Economic Appraisal of Transport Initiatives provides a useful example of how this can be done.}
 
 %\begin{longtable}\label{consistency-table}
 % Title: No state provides high quality risk measurement guidance
@@ -1953,7 +1924,7 @@ As it stands, risk measurement guidance is very inconsistent between each state 
 % \bottomrule
 % \end{longtable}
 
-The inconsistencies observed across Australian risk measurement guidelines could be resolved by removing old guidance when new processes are implemented, consolidating existing guidelines and writing new guidance so that replaces, rather than augments, older guidance.
+
 
 For example, many of the inconsistencies within guidance that applies to all states were addressed through the 2016 release of the \emph{Australian Transport Assessment and Planning Guidelines}.\footcite{ATAP2016Guidelines}
 These guidelines replaced \emph{Austroads' Guide to Project Evaluation}\footcite{Austroads2014GuidetoProjectEvaluation} and the \emph{National Guidelines for Transport System Management in Australia},\footcite{ATC2006NGTSM3} and were written to be aligned with Infrastructure Australia's guidelines, The COAG-agreed \emph{National Guidance on Public Private Partnership Projects} and the \emph{National Charter of Integrated Land Use and Transport Planning}.
