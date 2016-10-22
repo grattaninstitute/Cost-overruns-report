@@ -2209,7 +2209,7 @@ We assume that the distribution of project costs across time is the same for all
 While only approximate, this approach is sufficient for controlling for the effect of inflation at the aggregate level under the assumption that the distribution of project costs over the construction period does not vary with time. 
 Importantly, the inflation adjustment procedure does not affect the estimates of the size of cost overruns in this report, only the relative size of projects that are constructed in different periods. 
 
-\subsection{2.1.2 Measuring cost overruns }\label{Measuring-cost-overruns}
+\subsection{Measuring cost overruns }\label{Measuring-cost-overruns}
 
 We measure cost overruns as the percentage change in project costs over a given period, as a proportion of a project’s initial cost. 
 Project costs are defined as the total cost of designing and constructing a given asset to the public sector, and so include public sector project management costs outside of the project contract and exclude any costs incurred beyond the contract price by the contractor. 
