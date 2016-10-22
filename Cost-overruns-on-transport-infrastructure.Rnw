@@ -892,7 +892,7 @@ This suggests that overly optimistic initial cost estimates are rarely adequatel
 
 Another reason why projects with premature cost announcements repeatedly have large overruns is that these low quality cost estimates are often imposed on the highest risk projects.
 \Cref{fig:projs-announced-early-have-larger-cost-overruns-at} shows that projects with early cost estimates are substantially bigger, on average, than projects with later cost announcements.
-\Vref{sec:cost-estimates-should-reflect-predictable-patterns} of this report confirms that large projects are more prone to cost overruns than smaller projects in Australia, as is consistently the case internationally.
+\Vref{subsec:large-and-complex-projects-are-more-prone-to-cost-overruns} of this report confirms that large projects are more prone to cost overruns than smaller projects in Australia, as is consistently the case internationally.
 
 This chapter argues that premature announcements are often made for electoral gain (see \Vref{box:alstonville} on the Alstonville bypass).
 To counteract this problem, there needs to be better accountability at the time that promises are made and after projects are completed. 
@@ -1315,7 +1315,7 @@ Moreover, these overruns are not offset by underrun, as cost estimation guidelin
 
 \includegraphics[page=12]{atlas/Charts_CO.pdf}
 
-\noteswithsource{The assumed prevalence of cost overruns is inferred from the common representation of cost risk as symmetrically distributed in cost estimation guidance\footnote{Please see \Vref{distributional-analysis} for a discussion  of the sources underpinning this portrayal of risk management guidelines' assumed distribution of cost overruns.}, and the assumption that budget costs are P75 - P90 costs, which implies that no more than 25 per cent of projects being expected to experience cost overruns.}{Australian risk management guidelines referenced in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} and Deloitte Investment Monitor, Grattan analysis}
+\noteswithsource{The assumed prevalence of cost overruns is inferred from the common representation of cost risk as symmetrically distributed in cost estimation guidance (see \Vref{distributional-analysis} for a discussion  of the sources underpinning this portrayal of risk management guidelines' assumed distribution of cost overruns), and the assumption that budget costs are P75 - P90 costs, which implies that no more than 25 per cent of projects being expected to experience cost overruns.}{Australian risk management guidelines referenced in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} and Deloitte Investment Monitor, Grattan analysis}
 \end{figure}
 
 Although it is not possible to perfectly predict the costs of any individual project, where cost estimates are wrong on average, there is clearly scope to improve.
@@ -1343,7 +1343,7 @@ This section discusses three tangible project characteristics associated with hi
 Properly accounting for their risk characteristics is a straightforward way to improve project cost estimates. 
 
 
-\subsection{Large and complex projects are more prone to cost overruns}\label{large-and-complex-projects-are-more-prone-to-cost-overruns}
+\subsection{Large and complex projects are more prone to cost overruns}\label{subsec:large-and-complex-projects-are-more-prone-to-cost-overruns}
 
 It is not surprising that complex projects are prone to cost overruns.
 Such projects tend to have many interdependent components that can be disrupted if one element falls behind time, and multiple interfaces with existing infrastructure.
@@ -2390,10 +2390,43 @@ Where:
 
 {[}Regression results{]} \GenericWarning{LaTeX Warning: Regression results need insertion}{LaTeX Warning: Regression results need insertion}
 
+<<regression-results-1, eval=FALSE>>=
+library(readxl)
+library(dplyr)
+library(xtable)
+library(grattan)
+library(data.table)
+library(dtplyr)
+
+
+Regression_results_xtable <- 
+  read_excel("data/Regression-results.xlsx", sheet = "xtable") %>%
+  as.data.table
+
+for (j in grep("Coefficient", names(Regression_results_xtable))){
+  set(Regression_results_xtable, j =j, value = as.numeric(Regression_results_xtable[[j]]))
+}
+
+Regression_results_xtable %>%
+  mutate(SuperVar = if_else(grepl("__", Variable, fixed = TRUE), 
+                            gsub("^(.*)__.*$", "\\1", Variable, perl = TRUE), 
+                            NA_character_), 
+         Variable = gsub("^.*__", "", Variable)) %>% 
+  select(SuperVar, Variable, starts_with("t")) %>%
+  print_2heading_xtable()
+@
+
 \begin{table*}
 \centering
 \caption{Results of logistic regression with instance of cost overrun in given period as dependent variable\label{tbl:regression-results-logit}}
 \input{tex/regresion-results-logit}
+\source{Grattan analysis of Deloitte Investment Monitor}
+\end{table*}
+
+\begin{table*}
+\centering
+\caption{Results of logistic regression with instance of cost overrun in given period as dependent variable\label{tbl:regression-results-logit-normal}}
+\input{tex/regression-results-logit-normal}
 \source{Grattan analysis of Deloitte Investment Monitor}
 \end{table*}
 
