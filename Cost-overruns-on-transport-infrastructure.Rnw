@@ -1864,7 +1864,7 @@ Consistent use of risk matrices or like tools to identify and mitigate avoidable
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
-At least one set of risk management guidelines in each of Australia’s state and Commonwealth government jurisdictions recommends the use of risk matrices and provides high level advice on how to mitigate common risks%
+At least one set of risk management guidelines in each of Australia’s state and Commonwealth government jurisdictions recommends the use of risk matrices and provides high level advice on how to mitigate common risks.%
 \footnote{Please see table XX in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}} For this reason, the guidance on risk identification and mitigation provided in every jurisdiction appears to be adequate.
 
 \subsection{Reduce estimation error}\label{reduce-estimation-error}
