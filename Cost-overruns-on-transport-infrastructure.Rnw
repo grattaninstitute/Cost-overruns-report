@@ -1378,7 +1378,7 @@ When the estimated construction cost to that jurisdiction is \$1 billion or more
 
 \subsection{Road and rail projects overrun at different stages}\label{road-and-rail-projects-overrun-at-different-stages}
 
-Unusual projects are also more prone to cost overruns.
+It is also not surprising that unusual projects are also more prone to cost overruns.
 This is because the more unusual a project is, the more difficult it is to estimate its cost and to build it to budget.
 Understanding when and where a project is unusual can help project proponents identify which projects are at particularly high risk of cost overruns.
 
@@ -1388,7 +1388,8 @@ However, these projects tend to incur disparate construction problems, because t
 
 The inverse is true for roads.
 They often involve bespoke designs and complex interfaces with existing infrastructure.
-However, roads are less often constructed on brownfield sites with poor accessibility.
+However, roads are less often constructed on brownfield sites with poor accessibility.%
+\GenericWarning{LaTeX Warning: footnote is incomplete.}{LaTeX Warning: footnote is incomplete.}
 
 The timing of cost overruns on rail and road projects is aligned with the stages in which projects of these types are expected to be most bespoke.
 Cost overruns are larger for road projects during the planning stage, when road projects tend to be more bespoke than rail, and larger for rail projects during the construction period, when rail projects tend to be more bespoke (\Vref{fig:cost-overruns-by-proj-stage-mode}).
