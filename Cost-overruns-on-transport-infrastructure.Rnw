@@ -2009,9 +2009,7 @@ For example,
 the cost benefit analysis guidelines of Queensland Treasury's Project Assessment Framework recommend that cost estimates are adjusted for optimism bias using empirical evidence that is relevant to the project's type (2006, p.25).
 However, they do not provide any such evidence and, to the best of our knowledge, such empirical evidence is not readily available.
 
-Similarly, the Commonwealth's Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction identify that reference class forecasting should be used to counteract optimism bias, and refer to
-
-the United Kingdom's reference class forecasting uplift rates (appendix 11).
+Similarly, the Commonwealth's Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction identify that reference class forecasting should be used to counteract optimism bias, and refer to the United Kingdom's reference class forecasting uplift rates.\footnote{\textcite{DIRD2008BPCEPFRRC}, Appendix 7.}
 However, these uplift rates are not appropriate for use on Australian cost estimates, because they are designed to offset the average magnitude of cost overruns observed on British projects, relative to British cost estimation practices.
 
 A similar circumstance befalls \textbf{probability pricing}.
