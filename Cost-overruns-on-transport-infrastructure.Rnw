@@ -2316,9 +2316,10 @@ However, it should be noted that the estimates obtained through a weighted arith
 Weighted arithmetic means:
 
 \begin{align*}
-CO_{12}  &= \frac{1}{N}\sum_{i \in N}^{}\frac{C2_{i} - C1_{i}}{C1_{i}}w_{i}
-CO_{23}  &= \frac{1}{N}\sum_{i \in N}^{}\frac{C3_{i} - C2_{i}}{C1_{i}}w_{i} & CO_{34}  &= \frac{1}{N}\sum_{i \in N}^{}\frac{C4_{i} - C3_{i}}{C1_{i}}w_{i}
-CO_{14} &= \frac{1}{N}\sum_{i \in N}^{}\frac{C4_{i} - C1_{i}}{C1_{i}}w_{i}
+CO_{12}  &= \frac{1}{N}\sum_{i \in N}^{}\frac{C2_{i} - C1_{i}}{C1_{i}}w_{i} \\
+CO_{23}  &= \frac{1}{N}\sum_{i \in N}^{}\frac{C3_{i} - C2_{i}}{C1_{i}}w_{i} \\
+CO_{34}  &= \frac{1}{N}\sum_{i \in N}^{}\frac{C4_{i} - C3_{i}}{C1_{i}}w_{i} \\
+CO_{14} &= \frac{1}{N}\sum_{i \in N}^{}\frac{C4_{i} - C1_{i}}{C1_{i}}w_{i} \\
         &= CO12 + CO23 + CO34
 \end{align*}
 
