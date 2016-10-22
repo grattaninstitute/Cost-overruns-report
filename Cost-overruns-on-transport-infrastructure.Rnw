@@ -1065,7 +1065,7 @@ The Commonwealth should enable and facilitate better public understanding of inf
 \end{enumerate}
 \end{recommendation}
 
-\section{There is no accountability for poorly founded cost promises }\label{there-is-no-accountability-for-poorly-founded-cost-promises}
+\section{Politicians are not held accountable for poorly founded cost promises once projects are finished}\label{sec:there-is-no-accountability-for-poorly-founded-cost-promises}
 
 There is at present no systematic public reporting on the effectiveness of government spending on infrastructure projects.
 In particular, there is no public reporting on how well government-funded transport infrastructure projects perform against the costs and benefits, such as travel time savings, used to make the investment decision.
