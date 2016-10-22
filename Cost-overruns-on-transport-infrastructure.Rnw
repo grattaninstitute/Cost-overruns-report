@@ -2271,7 +2271,7 @@ This is because the Investment Monitor considers all projects valued over \$20 m
 In line with this expectation, we observe far higher cost overruns across the Grattan dataset than the Investment Monitor dataset.
 
 \begin{figure}
-\caption{Cost overrun by project stage in Investment Monitor and Grattan datasets\label{fig:cost-overrun-by-project-stage}}
+\caption{Cost overrun by project stage in Investment Monitor and Grattan datasets\label{fig:cost-overrun-by-project-stage}} 
 
 \includegraphics[page=8]{atlas/AppendixCharts}
 
