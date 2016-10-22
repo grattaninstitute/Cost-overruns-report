@@ -1648,32 +1648,31 @@ Each project also has its own idiosyncratic risks that cannot be avoided.
 These risks mean that it is impossible to eliminate cost risk entirely.
 Consequently, it's important that budgeting, reporting and contingency management practices are designed to minimise the cost of cost overruns when they occur.
 
-\section{Unavoidable risks could be better managed}\label{avoidable-risks-could-be-better-managed}
+\section{We could better manage the risks that cannot be avoided}\label{we-could-better-manage-the-risks-that-cannot-be-avoided}
 
-While broader economic shifts can affect project costs, many risks are specific to the individual project.
-But Australia's risk management practices appear to be better suited to managing risk to individuals' and agencies' reputations rather than improving cost efficiency.
-This is evident in two ways.
-First, the way that project outcomes are announced or described usually focuses on whether or not they came in on budget, not on how large any deviation was from that budget.
-Second, the way that projects' contingency funds are managed protects the reputations of project managers at the expense of cost efficiency.
-The following two sections explain these claims.
+Currently, unavoidable cost risks on transport infrastructure projects are more costly than they need be.
+This is because budgeting and reporting practices are targeting the wrong outcome and contingency funds are managed in an unnecessarily expensive manner.
+The following sections identify how these practices could be improved.
 
 \subsection{Manage budgets not reputations}\label{manage-budgets-not-reputations}
 
+Currently, reporting and budgeting process are designed to minimise the number of cost overruns that occur, rather than the cost of cost overruns.
 Politicians often announce whether a project finished on or under budget, but they rarely talk about how much over budget it ran unless they want to blame a rival from another party.
-This emphasis is mirrored in costing practice: projects are costed to reflect a low probability of going over budget.
+Similarly, projects are costed to reflect a low probability of going over budget rather than a zero net cost of cost overruns.
 
-Whether or not a project runs over budget matters, but it is only a small part of the story.
+This is problematic because whether or not a project runs over budget is only a small part of the story.
 What governments should really worry about is the cost of such overruns.
 Every project overrunning by a tiny amount would be much less troubling than a few blowing out by vast sums.
 
 The lack of data on project outcomes encourages this focus on the rate of cost overruns.
-It is easy to claim how many project came in on budget when there is not much data, rather than the magnitude of any overruns that did occur.
+It is easy to claim how many projects came in on budget when there is not much data, rather than the magnitude of any overruns that did occur.
 
 A more technical way of putting this is that current practice has encouraged the folly of managing the \emph{median} cost overrun rather than the \emph{mean}.
 While the median and mean are often one and the same, this is not the case for cost outcomes because the distribution of cost outcomes is extremely asymmetric -- that is, overruns are much more likely and much bigger than underruns.
+
 Over the past 15 years, Australia has delivered a median cost overrun of zero per cent, but a mean cost overrun of 24 per cent.
 The mean value is the figure that matters because it summarises how much more we spent on infrastructure than we intended.
-The median or ``P50'' outcome represents the less relevant statistic: the worst outcome observed among the 50 per cent of projects with the best cost performance.
+The median or ``P50'' outcome represents a less relevant statistic: the worst outcome observed among the 50 per cent of projects with the best cost performance.
 
 Reducing the size of cost overruns is much more important than reducing their rate.
 Collecting and aggregating project performance data is essential to reducing the size of overruns.
