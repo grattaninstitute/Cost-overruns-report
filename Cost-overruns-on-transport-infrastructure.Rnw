@@ -1467,7 +1467,7 @@ While there is more than one valid approach to measuring project risk, it is not
 Different approaches make it difficult or impossible to collect data on a consistent basis so that project managers can draw on a large pool of past projects around Australia to improve their understanding of cost and risk.\footnote{See \Vref{risk-appendix} for a comprehensive discussion.} %
 It would be better for all jurisdictions to adopt a standard approach, and for the Commonwealth to assist them to do so (see \Vref{reco:improve-risk-measurement-guidance}).
 
-\begin{recommendation}{Improve risk measurement guidance\label{reco:improve-risk-measurement-guidance}}
+\begin{recommendation}{Improve risk measurement guidance\label{reco:improve-risk-measurement-guidance}} 
 
 The Commonwealth should provide model guidelines that states and territories may adopt or adapt, that recommend a consistent approach to measuring and managing project risk, including a statement of seniority where specific guidelines would otherwise conflict with one another.
 \end{recommendation}
