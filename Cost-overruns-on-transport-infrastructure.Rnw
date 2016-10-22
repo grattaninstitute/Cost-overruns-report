@@ -850,8 +850,8 @@ Over the past 15 years, 74 per cent of the total value of cost overruns is expla
 It comes as no surprise that ad hoc announcements prior to formal budget commitments tend to be extremely optimistic.
 Once such announcements are scrutinised as part of the budget process, their early cost estimates need to be upwardly revised by an average of 25 per cent.
 
-However, the poor cost performance of projects with early cost announcements is not just a warning to mistrust the infrastructure announcements of politicians.
-Rather, premature cost announcements appear to haunt projects throughout out their lives.
+The poor cost performance of projects with early cost announcements is not just a warning to mistrust politicians' infrastructure promises.
+Rather, premature cost announcements appear to haunt projects throughout their lives.
 After formal budget commitments, the costs of projects with early cost announcements project typically increase by a further 26 per cent (see \Vref{fig:projs-announced-early-have-larger-cost-overruns-at}).
 
 \begin{figure}
@@ -871,9 +871,10 @@ This suggests that overly optimistic initial cost estimates are rarely adequatel
 
 Another reason why projects with premature cost announcements repeatedly have large overruns is that these low quality cost estimates are often imposed on the highest risk projects.
 \Cref{fig:projs-announced-early-have-larger-cost-overruns-at} shows that projects with early cost estimates are substantially bigger, on average, than projects with later cost announcements.
-Section \ref{cost-estimates-should-reflect-predictable-patterns} of this report confirms that large projects are more prone to cost overruns than smaller projects in Australia, as is consistently the case internationally.
+\Vref{sec:cost-estimates-should-reflect-predictable-patterns} of this report confirms that large projects are more prone to cost overruns than smaller projects in Australia, as is consistently the case internationally.
 
-The rest of this chapter explains the incentives and lack of penalties that lead to premature announcements (see \Vref{box:alstonville} on the Alstonville bypass).
+This chapter argues that premature announcements are often made for electoral gain (see \Vref{box:alstonville} on the Alstonville bypass).
+To counteract this problem, there needs to be better accountability at the time that promises are made and after projects are completed. 
 
 \begin{bigbox*}{Case study -- Alstonville bypass -- 162 per cent cost overrun}{box:alstonville}
 
@@ -917,11 +918,12 @@ Among such statements:
 \footcite{Greens2016AustralianInfrastructureBank}
 \end{itemize}
 
+The proportions of the promised money that were for projects that had been assessed as nationally significant and worth doing ranged from 15 per cent for the Coalition to none for the Greens (see \Vref{fig:election-promises}).
 But even though parties make such statements, the behaviour of politicians exposes the hollowness of their claims.
 In the 2016 federal election campaign, Labor, the Coalition and the Greens all promised to build a large number of projects that had not been properly assessed.
 Between a quarter and a half of their promises were for projects that had not been submitted to Infrastructure Australia for assessment, or had been assessed and judged as not worth doing.%
 \footcite{Terrill2016ElectionPromises} Many others were only an ``initiative'' on Infrastructure Australia's list; in other words, Infrastructure Australia was yet to be convinced that the project was worthwhile.
-The proportions of the promised money that were for projects that had been assessed as nationally significant and worth doing ranged from 15 per cent for the Coalition to none for the Greens (see Figure \ref{fig:election-promises}).
+
 
 \begin{figure}
 \captionwithunits{The vast majority of committed money from all three major parties is for projects not endorsed by Infrastructure Australia \label{fig:election-promises}}%
@@ -1297,7 +1299,7 @@ Although it is not possible to perfectly predict the costs of any individual pro
 This chapter identifies three concrete opportunities to improve cost estimation.
 First, cost estimates should reflect predictable patterns in the types of projects that overrun their budgets; second, project risks should be assessed comprehensively; and third, the assumptions employed in cost estimation should be aligned with historical experience.
 
-\section{Cost estimates should reflect predictable patterns }\label{cost-estimates-should-reflect-predictable-patterns}
+\section{Cost estimates should reflect predictable patterns }\label{sec:cost-estimates-should-reflect-predictable-patterns}
 
 There is an element of chance to any project finishing on budget.
 Yet the overall historical performance of Australian transport projects in aggregate suggests that we could be coming up with much better guesses of likely costs.
