@@ -604,14 +604,14 @@ Central agencies should hold project contingency funds at arm’s length from pr
 \chapter{The extent of cost overruns\label{chap:extent-of-cost-overruns}}
 The Peel deviation is a stretch of the Forrest Highway running between Perth and Bunbury. 
 It was first promised during the 2001 state election campaign at a cost of \$136~million. 
-Many twists and turns later, in 2010, the road was completed at a cost of \$688~million -- over 400 per cent more than its originally promised cost.
+Many twists and turns later, in 2010, the road was completed at a cost of \$688~million -- over 400 per cent more than its originally promised cost.\footnote{As detailed in \Vref{box:forrest_highway}.}
 
 Such budget blowouts like this are disturbing but they do not hit the media or public eye very often.
 People could therefore be forgiven for thinking they are rare.
 
 Unfortunately, they are not rare enough.
 This report finds that the transport infrastructure projects valued at \$20~million or more and planned or built in Australia in the past 15 years cost \$28~billion more than their promised costs.
-This is 24 per cent more than the costs that were announced.
+This is 24 per cent more than the costs that were announced.\footnote{This result and others not separately referenced in this report are based on Grattan analysis described in \Vref{methodological-appendix}.} 
 
 The 24 per cent over and above the original cost promise does not stem from the accumulation of small cost overruns on most projects.
 Rather, most projects come in reasonably close to their promised cost, as \Vref{fig:large-cost-overruns-uncommon-but-expensive} shows. 
@@ -647,7 +647,7 @@ This section explains why each of these features of the report matter.
 
 This report is the first study of cost overruns in Australia that includes all 836 transport infrastructure projects valued at \$20~million or more planned or built in the past 15 years.
 
-A small number of researchers and state auditors general have analysed aspects of this problem in recent years, but they have studied small numbers of projects (\Vref{fig:this-report-analyses-9-times-more-projects-than-previous-studies}).
+A small number of researchers and state auditors-general have analysed aspects of this problem in recent years, but they have studied small numbers of projects (\Vref{fig:this-report-analyses-9-times-more-projects-than-previous-studies}).
 The drawback with small samples is that their findings may be less representative, and so policymakers cannot rely upon their findings as much as they can with larger or more comprehensive studies.
 
 \begin{figure}
