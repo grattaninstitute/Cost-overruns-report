@@ -591,18 +591,21 @@ The 24 per cent over and above the original cost promise does not stem from the 
 The problem is that when projects do exceed their promised costs, the overruns can be spectacular: 90 per cent of Australia's cost overruns problem is explained by the 17 per cent of projects that overran their cost promise by more than 50 per cent.%
 \footnote{90 per cent of cost overruns are attributable to projects with cost overruns greater than 50 per cent of initial project value. It should be noted that these cost overruns explain 98 per cent of total cost differences, as illustrated in \Vref{fig:large-cost-overruns-uncommon-but-expensive} as small cost overruns are almost entirely offset by cost underruns.}
 
-Overruns are not matched by underruns. Only 9 per cent of projects finished under their announced cost, and these cost underruns were, on average, only a quarter of the size of the average cost overrun, amounting to a total of \$41~million. The majority of projects come in close to their announced costs, and underruns do little to offset overruns.
-
 \begin{figure}
 \captionwithunits{Large cost overruns are uncommon, but expensive\label{fig:large-cost-overruns-uncommon-but-expensive}}
 {Frequency of cost differences as a proportion of all projects, per cent}
 
 \includegraphics{atlas/Freq_CO.pdf}
+\vspace*{3pt}
 \units{Value of cost differences as a proportion of total cost overruns, per cent}
 \includegraphics{atlas/Value_CO.pdf}
 \noteswithsource{Australian transport projects completed between 2001 and 2015. \emph{Cost differences} are defined to refer to cost underruns and cost overruns collectively. }%
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
+
+Overruns are not matched by underruns. Only 9 per cent of projects finished under their announced cost, and these cost underruns were, on average, only a quarter of the size of the average cost overrun, amounting to a total of \$41~million. The majority of projects come in close to their announced costs, and underruns do little to offset overruns.
+
+
 
 \section{This is the first comprehensive Australian analysis of transport project cost overruns}\label{this-is-the-first-comprehensive-australian-analysis-of-transport-project-cost-overruns}
 
