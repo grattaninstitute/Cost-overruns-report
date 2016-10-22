@@ -1012,14 +1012,14 @@ Cost benefit analysis has limitations, but it remains the best way for making li
 
 Even when there is a cost benefit analysis, politicians will be tempted to pressure evaluators to massage assessments to fit political priorities. 
 This is not just a theoretical concern.
-For example, the Victorian Auditor-General highlighted in his audit of the East West Link project, 
+For example, the Victorian Auditor-General, in his audit of the East West Link project, highlighted several instances involving advice:
 \begin{quote}
-advice that \dots\ gave too much emphasis to the benefits of approaches that were in line with the governments’ preferred outcome and too little to alternative options that could be argued were more aligned with the state’s best interests. 
+that gave too much emphasis to the benefits of approaches that were in line with the governments’ preferred outcome and too little to alternative options that could be argued were more aligned with the state’s best interests.\footcite[][xiv]{General2015EastWestLink}  
 \end{quote}
 
-He further noted that 
+He further noted that: 
 \begin{quote}
-[s]ome public officials involved in this audit indicated that providing frank and fearless advice when they believe a government does not want to receive it will negatively impact their influence or career opportunities.”\footcite[][xiv--xv]{General2015EastWestLink} 
+[s]ome public officials involved in this audit indicated that providing frank and fearless advice when they believe a government does not want to receive it will negatively impact their influence or career opportunities.\footcite[][xv]{General2015EastWestLink} 
 \end{quote}
 
 Other spheres of government spending offer far less scope for discretionary decisions.
