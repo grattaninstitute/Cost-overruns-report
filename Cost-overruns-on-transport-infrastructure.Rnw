@@ -1244,12 +1244,11 @@ Even those announced before a formal government funding commitment are usually c
 This cancellation rate seems lower than it should be.
 One indication that it is too low is that this cancellation rate is less than the proportion of projects that would be expected to have benefit cost ratios less than one, given the average magnitude of cost overruns (see \Vref{appendix:X-X} for details).
 
-A second indication that the cancellation rate is too low is that many projects with low net benefits are not being cancelled.
+The reason the cancellation rate is probably too low is that many projects with low net benefits are not being cancelled.
 Over the last 15 years, projects that incurred cost overruns were just as likely to be cancelled as those that did not.
 This either means that the project appraisal process is not being used to cancel the projects with investment merits that have been eroded by cost overruns, or that cancelled projects are cancelled because of cost overruns but these overruns are not announced -- in other words, that cost overruns are higher than reported.%
 \footnote{This argument is explained in more detail in \Vref{methodological-appendix}.} 
-Both of these interpretations suggest that not enough projects are cancelled.
-
+Both of these interpretations suggest that too few projects are cancelled.
 
 
 The early timing of Australia's cost overruns offers a substantial and unrealised opportunity to reduce cost overruns on transport infrastructure projects.
