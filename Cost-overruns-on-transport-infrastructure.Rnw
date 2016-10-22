@@ -1314,7 +1314,7 @@ Moreover, these overruns were not offset by underruns.%
 
 \includegraphics[page=12]{atlas/Charts_CO.pdf}
 
-\noteswithsource{The assumed prevalence of cost overruns is inferred from the common representation of cost risk as symmetrically distributed in cost estimation guidance, and the assumption that budget costs are P75 - P90 costs, which implies that no more than 25 per cent of projects being expected to experience cost overruns.}{Australian risk management guidelines referenced in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} and Deloitte Investment Monitor, Grattan analysis}
+\noteswithsource{The assumed prevalence of cost overruns is inferred from the common representation of cost risk as symmetrically distributed in cost estimation guidance\footnote{Please see \Vref{distributional-analysis} for a discussion  of the sources underpinning this portrayal of risk management guidelines' assumed distribution of cost overruns.}, and the assumption that budget costs are P75 - P90 costs, which implies that no more than 25 per cent of projects being expected to experience cost overruns.}{Australian risk management guidelines referenced in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} and Deloitte Investment Monitor, Grattan analysis}
 \end{figure}
 
 Although it is not possible to perfectly predict the costs of any individual project, where cost estimates are wrong on average, there is clearly scope to improve.
@@ -1956,7 +1956,7 @@ A similar exercise should be undertaken within each of the states.
 
 Where different institutions within jurisdictions require different amounts of risk analysis, guidance should be comprehensively reviewed so that the hierarchy relating guidance documents is clear and, where possible, analytical requirements are aligned.
 For example, Transport NSW's \emph{Principles and Guidelines for Economic Appraisal of Transport Initiatives}\footcite{TransportNSW2013PrinciplesandGuidelines} outlines what the document sets out to achieve and how it should be used in combination with other guidelines.%
-\footnote{Transport NSW guidelines ref}
+
 
 \subsection{Guidance is incomplete}\label{sec:guidance-is-incomplete}
 
@@ -1998,8 +1998,7 @@ This is because none of the reviewed guidelines employ analysis of the outcomes 
 We suggest that the guidelines which recommend the use of Monte Carlo simulation do a better job at accounting for unknown unknowns than those that rely purely on expert judgement. 
 This is because the structure of probabilistic risk analysis imposes more structure upon expert judgement, and so is expected to dampen the effects of innate overconfidence biases. However, the effects of overconfidence could be fully protected against through routine use reference class forecasting. 
 
-\Vref{fig:assumed-and-actual-distributions} compares the distribution of cost risks recommended for use in Monte Carlo analysis in most risk management guidelines with the realised distribution of cost outcomes. 
-It illustrates that probabilistic risk analysis is also compromised by overconfidence bias. Specifically, the extreme risks underpinning the extreme cost overruns that account for 90 per cent of cost overruns’ value do not appear to be anticipated at all. 
+\Vref{fig:assumed-and-actual-distributions} compares the distribution of cost risks recommended for use in Monte Carlo analysis in most risk management guidelines with the realised distribution of cost outcomes. It illustrates that probabilistic risk analysis is also compromised by overconfidence bias. Specifically, the extreme risks underpinning the extreme cost overruns that account for 90 per cent of cost overruns’ value do not appear to be anticipated at all. 
 
 
 
@@ -2037,14 +2036,11 @@ It illustrates that probabilistic risk analysis is also compromised by overconfi
 \begin{figure}
 \caption{The probability of extreme cost overruns is systematically underestimated\label{fig:assumed-and-actual-distributions}}
 \includegraphics[page=5]{atlas/AppendixCharts}
-\notes{The distribution of cost risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see appendix xx for details. The assumed distribution of cost overruns is inferred from the assumptions that cost risk is symmetrically distributed and that less than 25 per cent of projects will experience a cost overrun above P75 prices. This graph’s illustrative purpose is to graphically present that a symmetric distribution with a lower bound of zero and 25 per cent probability of cost overruns drastically underestimates the probability and magnitude of extreme cost risks.}
+\notes{The distribution of cost risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see appendix xx for details. Please see \Vref{distributional-analysis} for a discussion  of the sources underpinning the typical risk management guidelines' assumed distribution of cost overruns. This graph’s illustrative purpose is to graphically present that a symmetric distribution with a lower bound of zero and 25 per cent probability of cost overruns drastically underestimates the probability and magnitude of extreme cost risks.}
 \end{figure}
 
-LUCILLE: COME BACK AND CHECK THAT THE ASSUMPTIONS UNDERPINNING THIS DIST ARE PROPERLY EXPLAINED. Should probably refer the interested reader to a section in the Methodological appendix.
-
 Even if unknown risks were accounted for and extreme risks were anticipated, the current approaches employed to measure risk do not consistently evaluate extreme risks. 
-Over the last 15 years, the expected value of cost overruns is 24 per cent of initial project costs – a figure which is approximately equivalent to the 21 per cent average difference observed between P50 and P90 costs. 
-This comparison makes clear that, for asymmetric distributions like that of cost overruns, measures of the costs of extreme outcomes cannot be inferred from extreme quantiles like P90 costs. 
+Over the last 15 years, the expected value of cost overruns is 24 per cent of initial project costs – a figure which is approximately equivalent to the 21 per cent average difference observed between P50 and P90 costs. This extreme asymmetry in the distribution of cost outcomes is in line with previous conclusions of the transport cost overruns literature,\footnote{Love2013Overrunstransportationinfrastructure, Flyvbjerg2016BigisFragile} and makes clear that measures of the costs of extreme outcomes cannot be inferred from extreme quantiles like P90 costs. 
 
 Risk management guidelines need to account for the likely costs of extreme risks, not just their likely prevalence. 
 Although the expected value doesn’t assess extreme risks exclusively, it is a critical component of risk measurement because it is the only common tool which accounts for the likely cost of extreme risks. 
@@ -2073,7 +2069,7 @@ The quality of risk measurements obtained using the other key risk measurement t
 For example, \textbf{sensitivity analysis} is a valuable tool for understanding the external drivers of cost uncertainty.
 However, only 43 per cent of guidelines which recommend sensitivity analysis specify variables should be subjected to sensitivity analysis and the range of values these variables regularly take. 
 In the absence of this information, there is opportunity for project proponents to retrofit their choices of variables and ranges of variation in order to achieve an acceptable level of cost uncertainty. 
-Because of this, more guidelines should suggest ranges for sensitivity analysis, or recommend that the sensitivity ranges specified in another set of guidelines are used\footnote{The Australian Transport Assessment Planning Guidelines provide a set of sensitivity ranges that could serve as a common point of reference, as the 1996 Austroad sensitivity ranges have done in the past.  For example, the Austroads 1996. p28: 2005. p27 (http://www.tmr.qld.gov.au/-/media/busind/techstdpubs/Project-delivery-and-maintenance/Cost-benefit-analysis-manual/Costbenefitanalysismanualroadprojects.pdf?la=en)}.
+Because of this, more guidelines should suggest ranges for sensitivity analysis, or recommend that the sensitivity ranges specified in another set of guidelines are used\footnote{The Australian Transport Assessment Planning Guidelines provide a set of sensitivity ranges that could serve as a common point of reference, as the Austroad sensitivity ranges have done in the past \textcite[27]{QLDDepTransport2011CostBenefitAnalysis}}.
 
 
 Even more egregious is that some guidelines recommend that \textbf{reference class forecasting} be employed, but do not provide data or key statistics on any reference classes.
@@ -2081,11 +2077,11 @@ Reference class forecasting is the practice of incorporating the rate of cost ov
 Consequently, reference class forecasting cannot be implemented to any degree without high quality data on historical cost outcomes.
 
 Yet this is what some of Australia’s risk management guidelines demand of project proponents. 
-For example, the cost benefit analysis guidelines of Queensland Treasury’s Project Assessment Framework recommend that cost estimates are adjusted for optimism bias using empirical evidence that is relevant to the project’s type (2006, p.25). However, they do not provide any such evidence and, to the best of our knowledge, such empirical evidence is not readily available.
+For example, the cost benefit analysis guidelines of Queensland Treasury’s Project Assessment Framework recommend that cost estimates are adjusted for optimism bias using empirical evidence that is relevant to the project’s type\footcite[25]{QLDTreasury2015Projectassessmentframeworkoverview}. However, they do not provide any such evidence and, to the best of our knowledge, such empirical evidence is not readily available.
 
 Similarly, the Commonwealth's Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction identify that reference class forecasting should be used to counteract optimism bias, and refer to the United Kingdom's reference class forecasting uplift rates.\footnote{\textcite{DIRD2008BPCEPFRRC}, Appendix 7.}
 However, these uplift rates are not appropriate for use on Australian cost estimates, because they are designed to offset the average magnitude of cost overruns observed on British projects, relative to British cost estimation practices.
-
+,
 A similar circumstance befalls \textbf{probability pricing}.
 Probability pricing is the practice of identifying the cost under which a project is expected to be completed with a given probability.
 Accordingly, probability pricing requires knowledge of the distribution of a project's cost risks.
@@ -2093,7 +2089,7 @@ Probability pricing can be conducted either:
 
 \begin{itemize}
 \item
-  ``probabilistically'', which involves estimating the distribution of risks on a specific project from estimates of its component parts,\footnote{For example. {[}Reference Peter Love's papers{]}.} or
+  ``probabilistically'', which involves estimating the distribution of risks on a specific project from estimates of its component parts,\footnote{For example, \textcite{QLDDepTransport2015ProjectCostEstimatingManual}} or
 \item
   ``deterministically'' which involves applying standard uplift rates that are -- like reference class forecasting -- derived from historical analysis of completed projects.%
 \footnote{For example, \textcite{SADTF2014GuidelinesfortheevaluationofpublicsectorinitiativesPartB}}
@@ -2102,11 +2098,11 @@ Probability pricing can be conducted either:
 More than 80\% of guidelines on probability pricing recommend that the probabilistic approach to probability pricing is employed, as the validity of the deterministic approach under active debated.%
 \footnote{Currently, institutions like Infrastructure Australia\footcite[][36]{Australia2016InfrastructureAustraliaAssessment} and Queensland's Department of Main Roads\footcite[][79]{QLDDepTransport2015ProjectCostEstimatingManual} assert that deterministic approaches to probability pricing are ``invalid'' and ``inaccurate'' while others still recommend its practice. For example, South Australian Department of Planning, Transport and Infrastructure's Estimating Manual\footcite{SADPTI2015EstimatingManual})} However, there appears little grounds to claim that the probabilistic approach, as currently practiced, is any more scientific.
 
-This is because only two guidelines\footnote{QLD and fed notes on administration} provide any guidance to project proponents on the expected distribution of project risks, and both of these guidelines overlook the most critical characteristic of the distribution of cost risk on transport infrastructure projects: that cost overruns are more likely and larger on average than cost underruns.
-
+This is because very few guidelines\footnote{\textcite{QLDDepTransport2015ProjectCostEstimatingManual}, \textcite{DIRD2013NotesonAdministration} and \textcite{VicDTF2015HighValueHighRisk} are honourable exceptions} provide any guidance to project proponents on the expected distribution of project risks, and these guidelines commonly overlook the most critical characteristic of the distribution of cost risk on transport infrastructure projects: that cost overruns are more likely and larger on average than cost underruns\footnote{Of the examples given, only the Victorian Department of Finance's High Value High Risk guidelines clearly indicated that probabilistic probability pricing should be conducted on the assumption that cost risks are asymmetrically distributed. While there are guidelines such as \textcite{DIRD2008BPCEPFRRC} that note that cost overruns are more likely than underruns, there are scarce instances of this information being presented alongside probability pricing guidance. Instead, uniform, triangular and PERT distributions are near uniformly recommended without any guidance on how correlation matrices could be employed to arrive at an asymmetric distribution. None of the reviewed Australian guidelines recommend the use of an asymmetric distribution like those identified by researchers like Love et al. (2014), despite multiple asymmetric distributions being readily available in the commonly used excel package for Monte Carlo simulation, \emph{@RISK}}.
+,
 The observed distributions of construction project risks are actively being researched in academic circles.%
 \footnote{For example. {[}Reference Peter Love's papers{]}.} This research is important, as the specific probability prices estimated through Monte Carlo simulation are only as reliable as the assumptions on which they are based.
-In order to obtain reliable probability prices using a probabilistic methodology, the distributions of key, or overarching, project risks need to be reliably estimated and clearly communicated in probability pricing guidelines.
+In order to obtain reliable probability prices using a probabilistic methodology, the distributions of key, or overarching, project risks need to be reliably estimated and clearly communicated in probability pricing guidelines.,
 
 \section{Risk management}\label{risk-management}
 
@@ -2126,8 +2122,8 @@ This increases the probability that cost overruns will distort project selection
 The impact of cost overruns on project selection can be minimised by including the expected value of project risks in the cost estimates used for cost benefit analysis.\footcite{BITRE2005RiskinCostBenefitAnalysis} While benefit cost ratios will still be more uncertain for risky projects than routine projects after this adjustment is made, the benefit cost ratios of risky projects will no longer be systematically biased in a way that makes projects appear more lucrative than they really are.
 For this reason, it is critical that the costs used in cost benefit analyses include the \emph{expected value} of project risks.
 
-Only the Commonwealth and NSW's risk management guidelines clearly recommend that the expected value of projects risks should be incorporated into the costs estimates used for benefit cost analysis.%
-\footnote{Reference Australian Transport Assessment and Planning Guidelines and \textcite{TransportNSW2013PrinciplesandGuidelines}, and others that DON'T.}
+Only the Commonwealth and NSW's risk management guidelines\footnote{\textcite{ATAP2016Guidelines} and \textcite{TransportNSW2013PrinciplesandGuidelines}} clearly recommend that the expected value of projects risks should be incorporated into the costs estimates used for benefit cost analysis.%
+
 
 It is not reasonable to assume that incorporation of the expected value of risks into cost estimates is implicitly expected by guidelines which do not comment on the type of costs that should be employed in cost benefit analysis.
 This is because previous Australian research regarding the treatment of risk in cost benefit analysis has found that there is substantial confusion on this matter.\footcite{BITRE2005RiskinCostBenefitAnalysis}
@@ -2148,6 +2144,7 @@ This conclusion is supported by the observations that the recommended size of co
 \includegraphics[page=6]{atlas/AppendixCharts}
 
 \notes{The contingency ranges cited in the National Guidelines for Transport System Management refer specifically to road projects specifically, and are anticipated to be too conservative for projects which are one-off in nature.}%
+\sources{\textcite{AssociationforAdvofCostEng2016}, \textcite{QLDDepTransport2015ProjectCostEstimatingManual}, \textcite{SADPTI2015EstimatingManual}, \textcite{ATC2006NGTSM4}}
 \end{figure}
 
 Even more problematic is the frequent absence of strict requirements for contingency funds to be held at the portfolio level.
@@ -2412,7 +2409,7 @@ We find that the value of cost overruns incurred to date, expressed as a percent
 \Vref{box:risk-managers-toolkit} features a stylized representation of the distribution of cost overruns.
 This stylized distribution, presented as figure \Vref{fig:probability-distribution} below, is also employed in figures \Cref{fig:Some-avoidable-risks-can-be-mitigated}, \Cref{reduce-estimation-error} and \Vref{fig:assumed-and-actual-distributions} of appendix 1.
 
-The stylized representations of distribution of cost overruns feature a much smaller kurtosis that the observed distribution of cost overruns.
+The stylized representations of distribution of cost overruns features a slightly smaller kurtosis that the observed distribution of cost overruns.
 This modification was made so that the diagrams were easier to label clearly and a key characteristic of the distribution - the heaviness of its right tail -- was more visible.
 
 \begin{figure}\label{fig:probability-distribution}
@@ -2423,8 +2420,23 @@ This modification was made so that the diagrams were easier to label clearly and
 Figure \Vref{fig:probability-distribution} confirms that stylized distribution employed is a fair representation of the underlying data.
 As emphasised in Box \Vref{box:risk-managers-toolkit}, the expected value of cost overruns falls far closer to the distribution's 90\textsuperscript{th} percentile than its median.
 
-Though less immediately visible, the heaviness right tail of the observed distribution is also notable: 17 percent of projects experienced cost overruns greater than the smallest cost underrun.
+Though less visible than in the stylized distribution, the heaviness right tail of the observed distribution is notable: 17 percent of projects experienced cost overruns greater than the smallest cost underrun.
 In these ways, the stylized distribution of cost overruns provides a fair representation of the underlying data.
+
+\Vref{assumed-and-observed-prob-distr-of-cost-overruns} and \Vref{fig:assumed-and-actual-distributions} compare the distribution of observed cost overruns against an illustration  of the distribution of cost overruns assumed in risk management guidance. This distribution is founded upon two key observations: 
+
+\begin{itemise}
+\item
+Costs quoted in state budget papers are typically at least P75 - P90 costs,\footnote{This implies that less than 25 per cent of projects are expected to overrun. For evidence of this practice, see, for instance \textcite[12]{QLDDepTransport2015ProjectCostEstimatingManual}.} and
+\item
+The distribution of cost overruns is assumed to be symmetric\footnote{As discussed in \Vref{insufficient-information-is-provided}, very few guidelines note that cost risk is asymmetrically distributed. Instead, most guidelines only suggest symmetric distributions for use in Monte Carlo simulation.}
+\end{itemise}
+
+As the lower bound of the distribution is necessarily equal to or greater than one, symmetric distributions that predict as little as 25 per cent of projects experiencing cost overruns must severely underestimate the likelihood and potential magnitude of extreme cost overruns. The assumed distributions presented in \Vref{assumed-and-observed-prob-distr-of-cost-overruns} and \Vref{fig:assumed-and-actual-distributions} reflect this key characteristic.\footnote{We note that this assumed distribution is consistent with all observed cost outcomes. That is, if cost risks were anticipated to take this distribution, the expected value of cost overruns would be substantially greater than 0 - approximately equal to the average observed cost overrun of 24 per cent; more projects would have cost overruns than anticipated - as per the observed difference between the expected prevalence of cost overruns of less than 25 per cent relative to the realised frequency of 34 per cent; and these unanticipated cost overruns that drive high expected value of cost overruns would be larger than the overruns anticipated.}
+
+LUCILLE: REVIEW THIS FOOTNOTE IN THE MORNING. 
+
+
 
 \begin{figure}
 \caption{Probability distribution}
