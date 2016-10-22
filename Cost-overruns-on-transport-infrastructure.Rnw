@@ -795,7 +795,7 @@ For 2007, see \textcite[][794]{WABudget200708Statements}.}  During construction,
 
 \subsubsection*{What caused these cost changes?}
 
-The initial funding commitments (\$136\,million, \$337\,million, \$370\,million) were for a road 20 per cent shorter.%
+The initial funding commitments (\$136\,million, \$337\,million, and \$370\,million) were for a road 20 per cent shorter.%
 \footcite[][40]{GovWA2005MainRoads} By the time the road was contracted in 2006, an enhancement of a section of the existing Kwinana Highway between Baldavis and Karnup was included.%
 \footcites{GHDPerthtoBunbury}[][87]{AusGov2012InfrastructurePlanningDelivery}
 
