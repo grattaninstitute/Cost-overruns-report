@@ -1958,10 +1958,32 @@ Assessments of project risks can be considered:
   \item
   \textbf{reliable} if expert opinion is used to tailor risk estimates to projects' specific characteristics, and objective information is used to counter the challenges of optimism bias and strategic misrepresentation; and
 \item
-  \textbf{comprehensive} if known, unknown, moderate and extreme risks are all accounted for.
+  \textbf{comprehensive} if known, unknown, moderate and extreme risks are all accounted for. 
 \end{itemize}
 
-As no single risk management tool achieves all these objectives, a combination of tools is required. \Vref{tbl:requirements-for-complete-risk-measurement} summarises how each risk measurement tool can, if used properly, contribute to a complete approach to risk measurement.
+As no single risk management tool achieves all these objectives, a combination of tools is required. 
+\Vref{tbl:requirements-for-complete-risk-measurement} summarises how each risk measurement tool can, if used properly, contribute to a complete approach to risk measurement. 
+\Vref{tbl:tbl:completeness-of-key-guidelines} illustrates that key Australian guidelines on risk measurement are systematically weak in their use of objective information and treatment of extreme and unknown risks. 
+
+\begin{longtable}
+\label{tbl:requirements-for-complete-risk-measurement}
+\end{longtable}
+
+\begin{longtable}
+\label{tbl:completeness-of-key-guidelines}
+\end{longtable}
+
+Most key guidelines recommend approaches to risk measurement that only go part way towards incorporating objective information and accounting for extreme and unknown risks.
+
+Unknown risks are the most poorly accounted for. 
+This is because none of the reviewed guidelines employ analysis of the outcomes that have been observed historically across a reference class of projects. 
+We suggest that the guidelines which recommend the use of Monte Carlo simulation do a better job at accounting for unknown unknowns than those that rely purely on expert judgement. 
+This is because the structure of probabilistic risk analysis imposes more structure upon expert judgement, and so is expected to dampen the effects of innate overconfidence biases. However, the effects of overconfidence could be fully protected against through routine use reference class forecasting. 
+
+\Vref{fig:assumed-and-actual-distributions} compares the distribution of cost risks recommended for use in Monte Carlo analysis in most risk management guidelines with the realised distribution of cost outcomes. 
+It illustrates that probabilistic risk analysis is also compromised by overconfidence bias. Specifically, the extreme risks underpinning the extreme cost overruns that account for 90 per cent of cost overruns’ value do not appear to be anticipated at all. 
+
+
 
 %\begin{longtable}
 % \label{tbl:requirements-for-complete-risk-measurement}
@@ -1995,10 +2017,25 @@ As no single risk management tool achieves all these objectives, a combination o
 
 
 \begin{figure}
-\caption{Comparison of specific state guidelines\label{fig:assumed-and-actual-distributions}}
+\caption{The probability of extreme cost overruns is systematically underestimated\label{fig:assumed-and-actual-distributions}}
 \includegraphics[page=5]{atlas/AppendixCharts}
+\notes{The distribution of cost risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see appendix xx for details. The assumed distribution of cost overruns is inferred from the assumptions that cost risk is symmetrically distributed and that less than 25 per cent of projects will experience a cost overrun above P75 prices. This graph’s illustrative purpose is to graphically present that a symmetric distribution with a lower bound of zero and 25 per cent probability of cost overruns drastically underestimates the probability and magnitude of extreme cost risks.}
 \end{figure}
 
+LUCILLE: COME BACK AND CHECK THAT THE ASSUMPTIONS UNDERPINNING THIS DIST ARE PROPERLY EXPLAINED. Should probably refer the interested reader to a section in the Methodological appendix.
+
+Even if unknown risks were accounted for and extreme risks were anticipated, the current approaches employed to measure risk do not consistently evaluate extreme risks. 
+Over the last 15 years, the expected value of cost overruns is 24 per cent of initial project costs – a figure which is approximately equivalent to the 21 per cent average difference observed between P50 and P90 costs. 
+This comparison makes clear that, for asymmetric distributions like that of cost overruns, measures of the costs of extreme outcomes cannot be inferred from extreme quantiles like P90 costs. 
+
+Risk management guidelines need to account for the likely costs of extreme risks, not just their likely prevalence. 
+Although the expected value doesn’t assess extreme risks exclusively, it is a critical component of risk measurement because it is the only common tool which accounts for the likely cost of extreme risks. 
+In other sectors like finance, Value at Risk (VaR) – the expected value of extreme risks above a particular threshold – is used to measure the costs of extreme risks. Given that 90 per cent of the value of Australia’s cost overruns over the last 15 years has been attributable to extreme cost overruns, adopting a more rigorous treatment of extreme risks seems warranted.
+
+Finally, most of the guidelines summarised in \Vref{tbl:tbl:completeness-of-key-guidelines} rely on sensitivity analysis and Monte Carlo simulation to incorporate objective information into cost estimates. 
+However, these approaches only achieve this objective if they employ high quality objective information. 
+The following section reviews the information provided for the execution of these approaches, and identifies that the quality of the objective data provided for implementing these tools is generally very poor. 
+There is substantial scope for the accuracy of existing risk measurement practices to be improved through the use of high quality data on historical cost outcomes. 
 
 \subsection{Insufficient information is provided}\label{insufficient-information-is-provided}
 
