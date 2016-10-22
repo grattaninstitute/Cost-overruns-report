@@ -1901,7 +1901,7 @@ Providing detailed guidance on how project costs should be estimated for each le
 
 Australia’s guidance on risk minimisation is generally of a high standard. However, risk minimisation alone is not sufficient, as it is inevitable that some cost risks will be impossible, or prohibitively expensive, to eliminate. These remaining risks need to be accurately measured, so that they can be factored into investment decisions and efficiently managed throughout a project’s life.
 
-As discussed in section \ref{risk-assessment-should-be-comprehensive}, the critical shortcoming of risk management on Australia’s transport infrastructure projects is that the guidance regarding how to measure unavoidable project risks is uniformly poor. This is because the guidance on how to quantify project risks is:
+As discussed in \Vref{risk-assessment-should-be-comprehensive}, the critical shortcoming of risk management on Australia’s transport infrastructure projects is that the guidance regarding how to measure unavoidable project risks is uniformly poor. This is because the guidance on how to quantify project risks is:
 
 \begin{itemize}{}
 \item
