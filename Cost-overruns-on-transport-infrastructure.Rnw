@@ -1315,7 +1315,7 @@ Moreover, these overruns are not offset by underrun, as cost estimation guidelin
 
 \includegraphics[page=12]{atlas/Charts_CO.pdf}
 
-\noteswithsource{The assumed prevalence of cost overruns is inferred from the common representation of cost risk as symmetrically distributed in cost estimation guidance\footnote{Please see \Vref{distributional-analysis} for a discussion  of the sources underpinning this portrayal of risk management guidelines' assumed distribution of cost overruns.}, and the assumption that budget costs are P75 - P90 costs, which implies that no more than 25 per cent of projects being expected to experience cost overruns.}{Australian risk management guidelines referenced in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} and Deloitte Investment Monitor, Grattan analysis}
+\noteswithsource{The assumed prevalence of cost overruns is inferred from the common representation of cost risk as symmetrically distributed in cost estimation guidance (see \Vref{distributional-analysis} for a discussion  of the sources underpinning this portrayal of risk management guidelines' assumed distribution of cost overruns), and the assumption that budget costs are P75 - P90 costs, which implies that no more than 25 per cent of projects being expected to experience cost overruns.}{Australian risk management guidelines referenced in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} and Deloitte Investment Monitor, Grattan analysis}
 \end{figure}
 
 Although it is not possible to perfectly predict the costs of any individual project, where cost estimates are wrong on average, there is clearly scope to improve.
@@ -2385,10 +2385,43 @@ Where:
 
 {[}Regression results{]} \GenericWarning{LaTeX Warning: Regression results need insertion}{LaTeX Warning: Regression results need insertion}
 
+<<regression-results-1, eval=FALSE>>=
+library(readxl)
+library(dplyr)
+library(xtable)
+library(grattan)
+library(data.table)
+library(dtplyr)
+
+
+Regression_results_xtable <- 
+  read_excel("data/Regression-results.xlsx", sheet = "xtable") %>%
+  as.data.table
+
+for (j in grep("Coefficient", names(Regression_results_xtable))){
+  set(Regression_results_xtable, j =j, value = as.numeric(Regression_results_xtable[[j]]))
+}
+
+Regression_results_xtable %>%
+  mutate(SuperVar = if_else(grepl("__", Variable, fixed = TRUE), 
+                            gsub("^(.*)__.*$", "\\1", Variable, perl = TRUE), 
+                            NA_character_), 
+         Variable = gsub("^.*__", "", Variable)) %>% 
+  select(SuperVar, Variable, starts_with("t")) %>%
+  print_2heading_xtable()
+@
+
 \begin{table*}
 \centering
 \caption{Results of logistic regression with instance of cost overrun in given period as dependent variable\label{tbl:regression-results-logit}}
 \input{tex/regresion-results-logit}
+\source{Grattan analysis of Deloitte Investment Monitor}
+\end{table*}
+
+\begin{table*}
+\centering
+\caption{Results of logistic regression with instance of cost overrun in given period as dependent variable\label{tbl:regression-results-logit-normal}}
+\input{tex/regression-results-logit-normal}
 \source{Grattan analysis of Deloitte Investment Monitor}
 \end{table*}
 
