@@ -1895,7 +1895,7 @@ As discussed in section \ref{risk-assessment-should-be-comprehensive}, the criti
 
 This section reviews each of these shortcomings in detail and provides state-specific examples of opportunities for improvement.
 
-\subsection{1.2.1 Guidance is inconsistent, within and across levels of government}\label{guidance-is-inconsistent}
+\subsection{Guidance is inconsistent, within and across levels of government}\label{guidance-is-inconsistent}
 
 Guidelines which apply to the same jurisdiction often recommend different approaches to risk measurement. For instance, probability pricing is required for federal funding, yet only half the risk measurement guidance provided at the federal level discusses probability pricing.
 
