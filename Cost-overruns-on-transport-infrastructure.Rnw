@@ -657,7 +657,7 @@ The drawback with small samples is that their findings may be less representativ
 \source{Cited studies and Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
-The findings of these small studies present a mixed view. Two key studies in 2007 and 2008 of infrastructure projects valued at more than \$20~million found overruns ranging from 12 to 35 per cent from formal funding commitment to completion\footcite[][5]{Group2007PerformancePPPsTraditional} and 24 to 52 per cent\footnote{\textcite[][15]{Duffield2008ReportperformancePPP}. Costs over the full project life mean originally announced to actual final costs.} over the full project life. Another study of 58 projects found an average 12 per cent overrun.%
+The findings of these small studies present a mixed view. Two key studies in 2007 and 2008 of infrastructure projects valued at more than \$20~million found overruns ranging from 12 to 35 per cent from formal funding commitment to completion\footcite[][5]{Group2007PerformancePPPsTraditional} and 24 to 52 per cent\footnote{\textcite[][15]{Duffield2008ReportperformancePPP}. Costs over the full project life mean originally announced to actual final costs.} over the full project life. Another study of 58 projects found an average 13 per cent overrun.%
 \footcite[][157]{Love2012Overrunstransportationinfrastructure} A further study of 46 projects found overruns of 5 to 11 per cent of project costs.%
 \footcite{Wood2010Comparingcostuplift} A 2015 study of 44 projects each valued at \$1~billion or more found cost overruns of 14 per cent on the \$44~billion budget.%
 \footcite[][7]{AustralianConstructorsAssociation2015}
@@ -722,13 +722,13 @@ This information is imperfect.
 Only governments can provide full information for all public infrastructure projects.
 It would be a big step forward if they did.
 
-\section{Dispelling myths}\label{dispelling-myths}
+\section{Common explanations for cost overruns are myths}\label{dispelling-myths}
 
 This report's large scale Australian analysis of project cost overruns debunks myths about infrastructure in this country.
 Two prominent myths are that scope changes are the main reason for cost overruns, and that Australian projects are less prone to overruns than those in other countries.
 This section explains the challenge to these two views.
 
-\subsection{Scope changes explain only a small share of overruns}\label{scope-changes-explain-only-a-small-share-of-overruns}
+\subsection{Scope changes actually explain only a small share of overruns}\label{scope-changes-explain-only-a-small-share-of-overruns}
 
 The early period of a project's lifecycle, from its first announcement by a government or potential government until a formal funding commitment, is the best time to settle its scope -- that is, exactly what infrastructure is planned, where it will be and at what quality.
 
@@ -748,16 +748,16 @@ Although it appears to be common for scope changes to be made without proper app
 
 \noteswithsource{Based upon detailed investigation of 56 Australian transport infrastructure projects completed between 2008 and 2013, using publicly available data sources.\\
 The value of scope changes have been estimated where possible as the percentage of the total project cost (where scope changes were described as a percentage of project scope), or else by the total value of cost overruns incurred during the period the scope change took place.}
-{Grattan analysis.}
+{Grattan analysis of .}
 \end{figure}
 
-\subsection{Australia does not compare especially well internationally}\label{australia-does-not-compare-especially-well-internationally}
+\subsection{Australia actually does not compare especially well internationally}\label{australia-does-not-compare-especially-well-internationally}
 
 The scarcity of Australian studies of cost overruns has fed a misperception that this country does well at avoiding or minimising cost overruns compared to other countries.
 
 The best-known international studies of `megaprojects' have found road projects overrunning by 24 per cent and rail by 40 per cent.
 These findings emerge from a study of infrastructure project cost overruns on 1603 road and rail projects of all sizes, each valued at between US\$1.5~million and US\$8.5~billion, in 20 countries between 1927 and 2013.%
-\footnote{\textcite{Flyvbjerg2016fallacybeneficialignorance}, methodology described in \textcite{Flyvbjerg2003Megaprojectsriskanatomy}} The findings led the leader of the study, Danish economic geographer Bent Flyvbjerg to invent what he called ``the iron law of megaprojects: over budget, over time, over and over again.''\footcite[][9-11]{Flyvbjerg2014Whatyoushould}
+\footnote{\textcite{Flyvbjerg2016fallacybeneficialignorance}, methodology described in \textcite{Flyvbjerg2003Megaprojectsriskanatomy}} The findings led the leader of the study, Danish economic geographer Bent Flyvbjerg, to invent what he called ``the iron law of megaprojects: over budget, over time, over and over again.''\footcite[][9-11]{Flyvbjerg2014Whatyoushould}
 
 Yet Flyvbjerg's findings, while credible, cannot be generalised.
 His overrun estimates are markedly higher than the average overrun of 14 per cent reported across the next four biggest academic studies, or the 15 per cent reported across the four largest studies completed by auditors of road projects.%
