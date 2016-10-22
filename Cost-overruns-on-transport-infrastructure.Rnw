@@ -1854,7 +1854,7 @@ This section provides a conceptual overview of Australia’s risk minimisation p
 
 \subsection{Identify and mitigate avoidable risks}\label{identify-and-mitigate-avoidable-risks}
 
-Consistent use of risk matrices or like tools to identify and mitigate avoidable risks on construction projects is extremely important. This is because active mitigation of cost risks can reduce the frequency with which large cost overruns occur, as illustrated in figure  \Vref{fig:Some-avoidable-risks-can-be-mitigated}.
+Consistent use of risk matrices or like tools to identify and mitigate avoidable risks on construction projects is extremely important. This is because active mitigation of cost risks can reduce the frequency with which large cost overruns occur, as illustrated in \Vref{fig:Some-avoidable-risks-can-be-mitigated}.
 
 \begin{figure}
 \captionwithunits{Some avoidable risks can be mitigated \label{fig:Some-avoidable-risks-can-be-mitigated}}
