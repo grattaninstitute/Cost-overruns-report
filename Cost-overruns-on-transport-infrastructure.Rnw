@@ -1199,6 +1199,7 @@ The magnitude of some cost overruns suggests that not all projects will still be
 Fortunately, there is ample opportunity for Australian jurisdictions to identify these projects, as 63 per cent of cost overruns occur before construction begins, and 38 per cent before a formal budget commitment.
 However, such active reappraisals do not appear to be happening enough.
 
+\GenericWarning{LaTeX Warning: does this match chart?}{LaTeX Warning: does this match chart?}
 Over the last 15 years, two thirds of all announced projects have been completed.
 Even those announced before a formal government funding commitment are usually completed (\Vref{fig:perc-projects-cancelled-each-proj-stage}).
 
@@ -1213,12 +1214,13 @@ Even those announced before a formal government funding commitment are usually c
 
 
 This cancellation rate seems lower than it should be.
-One indication that it is too low is that this cancellation rate is less than the proportion of projects that would be expected to have benefit cost ratios less than one, given the average magnitude of cost overruns (see appendix X.X for details).
+One indication that it is too low is that this cancellation rate is less than the proportion of projects that would be expected to have benefit cost ratios less than one, given the average magnitude of cost overruns (see \Vref{appendix:X-X} for details).
 
 A second indication that the cancellation rate is too low is that many projects with low net benefits are not being cancelled.
 Over the last 15 years, projects that incurred cost overruns were just as likely to be cancelled as those that did not.
 This either means that the project appraisal process is not being used to cancel the projects with investment merits that have been eroded by cost overruns, or that cancelled projects are cancelled because of cost overruns but these overruns are not announced -- in other words, that cost overruns are higher than reported.%
-\footnote{This argument is explained in more detail in Appendix \ref{methodological-appendix}.} Both of these interpretations suggest that not enough projects are cancelled.
+\footnote{This argument is explained in more detail in \Vref{methodological-appendix}.} 
+Both of these interpretations suggest that not enough projects are cancelled.
 
 Projects should be cancelled when their estimated benefits are found to be lower than their estimated costs.
 Given that benefits are probably overstated much of the time,\footcite{Elaurant2015POLITICSFINANCETRANSPORT} just as costs are understated, it is entirely fitting that projects be cancelled if their estimated benefits are only slightly more than their estimated costs (see \Vref{box:overstated-benefits}).
@@ -1696,7 +1698,7 @@ Taxpayers have paid \$28~billion more on transport infrastructure in the past 15
 This is 24 per cent above the promised cost.
 
 Premature announcements are the main causes of these cost overruns.
-Projects that are announced prematurely more often cost overruns and larger overruns than those announced at a more mature stage of development.
+Projects that are announced prematurely have larger and more frequent cost overruns than those announced at a more mature stage of development.
 This is true not just in the run-up to a formal cost assessment but throughout the project lifecycle.
 Limiting premature announcements could substantially reduce cost overruns.
 
