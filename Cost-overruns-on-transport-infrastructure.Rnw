@@ -1680,24 +1680,17 @@ Governments should aggregate data across jurisdictions to make this possible.
 
 \subsection{Contingencies should be used cost efficiently}\label{contingencies-should-be-used-cost-efficiently}
 
+The costs of cost overruns could be reduced by managing contingency funds in a more cost efficient way.
+
 A project's contingency fund is a sum of money from the project's operating budget that is set aside for exceptional circumstances.
 The idea is that the contingency is there to be called upon if needed, but if it is not needed, it should be kept separate and used at some point on another infrastructure project that does need it.
 Most projects should not need to use their contingencies, but some inevitably will.
 
-Some or all of a project's contingency funds are held within the managing agency, and often by the project manager.
-Sometimes a treasury or finance department holds part of the contingency.
+In most jurisdictions, some or all of a project's contingency funds are held within the managing agency, often by the project manager.
+But managing contingency funds at the project level in this way is far more expensive than managing them at the portfolio level.
 
-There are more disadvantages than advantages to holding the entire contingency against the individual project, as opposed to holding it against a portfolio of projects.
-Two disadvantages stand out as particularly important.
-One is that it is substantially more costly to hold contingencies wholly against an individual project rather than to pool them across a portfolio of projects, even where both strategies offer the same level of protection against cost overruns.
-The second is that holding contingencies against individual projects makes it easier for them to be spent in other ways.
-
-Holding contingencies entirely against an individual project is more expensive because a larger amount needs to be put aside for exceptional circumstances if managers cannot also call upon unused contingency funds from other projects when risks eventuate.
+This is because a larger amount needs to be put aside for exceptional circumstances if managers cannot also call upon unused contingency funds from other projects when risks eventuate.
 By contrast, pooling contingencies from a portfolio of projects is cheaper, for the same level of protection, because the same funds provide protection for multiple projects at the same time.
-
-\Vref{fig:value-contingencies-req-to-cover--} illustrates the difference between the contingency funds that would have been needed on average for projects valued at \$20 million or more and planned or built over the past 15 years, according to whether the contingency was set for an individual project or for a whole portfolio.
-The figure illustrates how different the results are at these extremes, both of which are designed to ensure that the average cost overrun is zero.
-In practice, the best way to manage the contingency would lie somewhere between these two extremes.
 
 \begin{figure}
 \captionwithunits{Small contingencies can achieve a lot when they are managed at the portfolio level\label{fig:value-contingencies-req-to-cover--}}
@@ -1709,7 +1702,11 @@ In practice, the best way to manage the contingency would lie somewhere between 
 {Deloitte Investment Monitor; Grattan analysis}
 \end{figure}
 
-The second main disadvantage of holding most or all of the contingency at the individual project level is the risk that the money is used on other things (see \Vref{box:Pacific-Motorway} on the Pacific Motorway).
+\Vref{fig:value-contingencies-req-to-cover--} illustrates the difference between the contingency funds that would have been needed on average for projects valued at \$20 million or more and planned or built over the past 15 years, according to whether the contingency was set for an individual project or for a whole portfolio.
+The figure illustrates how different the results are at these extremes, both of which are designed to ensure that the average cost overrun is zero.
+In practice, the best way to manage the contingency would lie somewhere between these two extremes.
+
+A second reason why it is more expensive to hold most or all of the contingency at the individual project level is the risk that the money is used on other things (see \Cref{box:Pacific-Motorway} on the Pacific Motorway).
 
 \begin{smallbox}{Case study -- Pacific Motorway -- 14 per cent under-run}{box:Pacific-Motorway}
 
@@ -1728,9 +1725,9 @@ In fact, project managers arguably waste an opportunity when they \emph{do not} 
 It is in the project manager's interest to have the contingency accessible at the project level rather than held against a portfolio.
 Individual project managers may face reputational damage, however unfairly, if they preside over a project that runs over budget, even when it has been costed at, say, the P75 level, where by definition an overrun is expected to occur 25 per cent of the time at the P75 price estimate.
 
-It is not easy to establish how much of the contingency should be held against the individual project, and how much against the portfolio.
-But managing all risk at the project level is unnecessarily expensive.
-Australian governments would do well to far more rigorously define their risk preferences at both levels, to document which risks each agency or organisation has accommodated and on what basis risks have been quantified is important (see \Vref{reco:half-proj-contingency-in-portfolio-pool}).
+For these reasons, managing all risk at the project level is unnecessarily expensive.
+Australian governments would do well to introduce more explicit requirements for contingency funds to be managed by state departments of treasury or finance.
+Even managing a substantial portion of contingencies at the project level could deliver substantial savings, while maintaining the same level of risk coverage  (see \Vref{reco:half-proj-contingency-in-portfolio-pool}).
 
 \begin{recommendation}{Hold the project contingency in a portfolio pool\label{reco:half-proj-contingency-in-portfolio-pool}}
 Central agencies should hold project contingency funds at arm’s length from project management, and formalise the conditions governing contingency drawdown, to improve the cost-efficiency of risk management. 
