@@ -1547,7 +1547,7 @@ They show a ``worst case'' cost estimate far lower than 21 per cent above the me
 \end{smallbox}
 
 
-\begin{table*}
+\begin{table*}[!t]
 \centering
 \captionsetup{margin = {0.075\textwidth,0.075\textwidth}}
 \caption{Large projects currently under development or construction\label{tbl:large-projects-cost-estimates}}
@@ -1591,10 +1591,13 @@ Lack of historical outcomes data makes this behaviour hard to counter.\footnote{
 
 The discrepancy between expert expectations and historical experience shows that the reliability of risk assessments on Australian transport infrastructure projects would be substantially improved by equipping risk experts with better information.
 The Productivity Commission's 2014 Public Infrastructure inquiry report highlights the need for an accurate database of historical cost outcomes for Australian projects.
-The Commonwealth, which supports this recommendation,\footnote{\textcite{Commission2014PublicInfastructure}, volume 1, recommendation 9.2; and \textcite[][19]{Infrastructure2014AUSTRALIANGOVERNMENTRESPONSE}.} should create such a database, using the information on completed projects from all states on a consistent basis.
+The Commonwealth, which supports this recommendation,%
+\footnote{\textcites[][Volume~1, Recommendation~9.2]{Commission2014PublicInfastructure}[][19]{Infrastructure2014AUSTRALIANGOVERNMENTRESPONSE}. % 
+The focus of the Government's response is on cost benchmarking data, not on cost risk benchmarking data.} %
+should create such a database, using the information on completed projects from all states on a consistent basis.
 The change would help cost estimation experts to create better quality estimates.
 
-\begin{recommendation}{Compile Australian database of completed projects}
+\begin{recommendation}[H]{Compile Australian database of completed projects}
 The Commonwealth should seek cooperation from the states to create new benchmarking data to improve risk measurement in new project proposals and public accountability.
 They should do so using data collected through mechanisms described in \Cref{reco:Publish-post-completion-data}.
 \end{recommendation}
