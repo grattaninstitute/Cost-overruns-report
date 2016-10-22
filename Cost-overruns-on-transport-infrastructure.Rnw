@@ -1845,7 +1845,8 @@ In this appendix we review the current practices of each state for each of these
 
 \section{Risk minimisation}\label{risk-minimisation}
 
-The most critical component of risk management is reducing project risks where possible \footnote{Project risks include external factors such as market conditions and industrial relations, project-specific factors such as geotechnical conditions, cost estimation error and scope variation}. This can be achieved by identifying and mitigating avoidable risks and reducing estimation error, as far as it is financially worthwhile to do so.
+The most critical component of risk management is reducing project risks where possible.\footnote{Project risks include external factors such as market conditions and industrial relations, project-specific factors such as geotechnical conditions, cost estimation error and scope variation} 
+This can be achieved by identifying and mitigating avoidable risks and reducing estimation error, as far as it is financially worthwhile to do so.
 
 While there is scope to improve estimation error in many jurisdictions, the general quality of guidance provided on risk minimisation on transport infrastructure projects is high. This is a necessary component of a high quality risk management process, but risk minimisation alone is not sufficient. 
 
