@@ -2059,7 +2059,7 @@ This is because the structure of probabilistic risk analysis imposes more struct
 \end{figure}
 
 Even if unknown risks were accounted for and extreme risks were anticipated, the current approaches employed to measure risk do not consistently evaluate extreme risks. 
-Over the last 15 years, the expected value of cost overruns is 24 per cent of initial project costs – a figure which is approximately equivalent to the 21 per cent average difference observed between P50 and P90 costs. This extreme asymmetry in the distribution of cost outcomes is in line with previous conclusions of the transport cost overruns literature,\footnote{Love2013Overrunstransportationinfrastructure, Flyvbjerg2016BigisFragile} and makes clear that measures of the costs of extreme outcomes cannot be inferred from extreme quantiles like P90 costs. 
+Over the last 15 years, the expected value of cost overruns is 24 per cent of initial project costs – a figure which is approximately equivalent to the 21 per cent average difference observed between P50 and P90 costs. This extreme asymmetry in the distribution of cost outcomes is in line with previous conclusions of the transport cost overruns literature,\footnote{For example, \textcite{Love2013Overrunstransportationinfrastructure, Flyvbjerg2016BigisFragile}.} and makes clear that measures of the costs of extreme outcomes cannot be inferred from extreme quantiles like P90 costs. 
 
 Risk management guidelines need to account for the likely costs of extreme risks, not just their likely prevalence. 
 Although the expected value doesn’t assess extreme risks exclusively, it is a critical component of risk measurement because it is the only common tool which accounts for the likely cost of extreme risks. 
