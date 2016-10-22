@@ -1952,8 +1952,8 @@ As it stands, risk measurement guidance is very inconsistent between each state 
 
 The inconsistencies observed across Australian risk measurement guidelines could be resolved by removing old guidance when new processes are implemented, consolidating existing guidelines and writing new guidance so that replaces, rather than augments, older guidance.
 
-For example, many of the inconsistencies within guidance that applies to all states were addressed through the 2016 release of the \emph{Australian Transport Assessment and Planning Guidelines}\footcite{ATAP2016Guidelines}.
-These guidelines replaced \emph{Austroads' Guide to Project Evaluation}\footcite{Austroads2014GuidetoProjectEvaluation} and the \emph{National Guidelines for Transport System Management in Australia}\footcite{ATC2006NGTSM3}, and were written to be aligned with Infrastructure Australia's guidelines, The COAG-agreed \emph{National Guidance on Public Private Partnership Projects} and the \emph{National Charter of Integrated Land Use and Transport Planning}.
+For example, many of the inconsistencies within guidance that applies to all states were addressed through the 2016 release of the \emph{Australian Transport Assessment and Planning Guidelines}.\footcite{ATAP2016Guidelines}
+These guidelines replaced \emph{Austroads' Guide to Project Evaluation}\footcite{Austroads2014GuidetoProjectEvaluation} and the \emph{National Guidelines for Transport System Management in Australia},\footcite{ATC2006NGTSM3} and were written to be aligned with Infrastructure Australia's guidelines, The COAG-agreed \emph{National Guidance on Public Private Partnership Projects} and the \emph{National Charter of Integrated Land Use and Transport Planning}.
 A similar exercise should be undertaken within each of the states.
 
 Where different institutions within jurisdictions require different amounts of risk analysis, guidance should be comprehensively reviewed so that the hierarchy relating guidance documents is clear and, where possible, analytical requirements are aligned.
@@ -1969,7 +1969,7 @@ There's no single ``right" way to measure risk, but for an approach to risk meas
 Assessments of project risks can be considered:
 
 \begin{itemize}
-\item
+  \item
   \textbf{reliable} if expert opinion is used to tailor risk estimates to projects' specific characteristics, and objective information is used to counter the challenges of optimism bias and strategic misrepresentation; and
 \item
   \textbf{comprehensive} if known, unknown, moderate and extreme risks are all accounted for.
@@ -2050,8 +2050,8 @@ Probability pricing can be conducted either:
   ``probabilistically'', which involves estimating the distribution of risks on a specific project from estimates of its component parts,\footnote{For example. {[}Reference Peter Love's papers{]}.} or
 \item
   ``deterministically'' which involves applying standard uplift rates that are -- like reference class forecasting -- derived from historical analysis of completed projects.%
-\footnote{For example, {[}Reference eg SA guidelines{]}}
-\end{itemize}
+\footnote{For example, \textcite{SADTF2014GuidelinesfortheevaluationofpublicsectorinitiativesPartB}}
+\end{itemize}{}
 
 More than 80\% of guidelines on probability pricing recommend that the probabilistic approach to probability pricing is employed, as the validity of the deterministic approach under active debated.%
 \footnote{Currently, institutions like Infrastructure Australia (year, page)and Queensland's Department of Main Roads (year, page) assert that deterministic approaches to probability pricing are ``invalid'' and ``inaccurate'' while others still recommend its practice. (p.36, \url{http://infrastructureaustralia.gov.au/projects/files/Assessment_Framework_Detailed_Technical_Guidance.pdf}; QLD Cost Estimation Manual, page 79; For example, South Australian Department of Planning, Transport and Infrastructure's Estimating Manual)} However, there appears little grounds to claim that the probabilistic approach, as currently practiced, is any more scientific.
