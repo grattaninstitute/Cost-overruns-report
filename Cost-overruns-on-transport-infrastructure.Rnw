@@ -1418,7 +1418,7 @@ But cost estimates for current projects do not reflect this experience. Instead,
 \textbf{Project} & \textbf{State} & \textbf{Median (or ``P50'')} & \textbf{``Worst case'' (or ``P90'')} & \textbf{Difference} \\
 \midrule
 Inland Rail & National & \possibleTextDollar9\,890\dz & \possibleTextDollar10\,660\dz & 7.8\%\tabularnewline[1.245ex]
-Westconnex & NSW & \possibleTextDollar16\,800\dz & n/a & 6\%%\tablefootnote{``The Infrastructure Australia assessment makes reference to a six per cent difference between the P50 and P90 on the Stage 2'' (\textcite[][23]{SGS2016WestConnexreview})}
+Westconnex & NSW & \possibleTextDollar16\,800\dz & \textcolor{theGrey}{n/a} & 6.0\%%\tablefootnote{``The Infrastructure Australia assessment makes reference to a six per cent difference between the P50 and P90 on the Stage 2'' (\textcite[][23]{SGS2016WestConnexreview})}
 \tabularnewline[1.245ex]
 Melbourne Metro & Vic%\tablefootnote{``The expected value of each risk was then calculated based on the probability of the risk occurring and the sum of the products of the impact (either as a percentage of the cost driver or delay costs) and their probabilities in each of the three defined states. Correlation between key risks was calculated using a correlation matrix. A Monte Carlo analysis was then used to calculate the P50 and P90 values.''} 
  & \possibleTextDollar10\,154\dz & \possibleTextDollar10\,837\dz & 6.7\%\tabularnewline
@@ -1427,13 +1427,15 @@ Western Distributor & Vic%\tablefootnote{``Total nominal dollars over the constr
 Princes Highway West Duplication & Vic & \possibleTextDollar334 & \possibleTextDollar363 & 8.7\%\tabularnewline
 Main Road, St Albans Level Crossing Removal Project & Vic & \possibleTextDollar222 & \possibleTextDollar231 & 3.9\%\tabularnewline[1.245ex]
 Bruce Highway Upgrade~& Qld & \possibleTextDollar841 & \possibleTextDollar929 & 10.5\%\tabularnewline
-M1 Pacific Motorway - Gateway Mway Merge Upgrade & Qld & \possibleTextDollar197 & \possibleTextDollar207 & 5.2\%\tabularnewline[1.245ex]
+M1 Pacific Motorway -- Gateway M'way Merge Upgrade & Qld & \possibleTextDollar197 & \possibleTextDollar207 & 5.2\%\tabularnewline[1.245ex]
 Mitchell Freeway extension & WA & \possibleTextDollar297 & \possibleTextDollar322 & 8.3\%\tabularnewline
 Great Northern Highway & WA & \possibleTextDollar301 & \possibleTextDollar361\dz & 19.7\%\tabularnewline
 North West Coastal Highway & WA & \possibleTextDollar148\dz & \possibleTextDollar179\dz & 20.9\%\tabularnewline[1.245ex]
-Canberra Light Rail & ACT & \possibleTextDollar759\dz & \possibleTextDollar806\dz & 6.5\%\tabularnewline
+Canberra Light Rail & ACT & \possibleTextDollar759\dz & \possibleTextDollar806\dz & 6.5\%\tabularnewline[1.245ex]
 \midrule 
-\textbf{Observed average over past 15 years} & & & & \textbf{21.0\%}\tabularnewline
+\multicolumn{4}{r}{Average difference of above estimates}    & 9.2\%\tabularnewline[1.245ex]
+%\cmidrule(lr){3-5}
+\multicolumn{4}{r}{\textbf{Average actual difference across all projects completed in the  past 15 years}} & \textbf{21.0\%}\tabularnewline%[1.245ex]
 \bottomrule
 \end{tabularx}
 \end{table*}
