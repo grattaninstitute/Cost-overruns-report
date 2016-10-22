@@ -931,7 +931,7 @@ Among such statements:
 
 \begin{figure}
 \captionwithunits{The vast majority of committed money from all three major parties is for projects not endorsed by Infrastructure Australia \label{fig:election-promises}}%
-{Value of specific election commitments to transport infrastructure projects, \$billion}
+{Proportion of 2016 federal election commitments to transport infrastructure projects by Infrastructure Australia review status, per cent}
 
 
 \includegraphics[page=9]{atlas/Charts_CO}
@@ -972,7 +972,7 @@ The Federal Liberal Member for nearby Paterson, Bob Baldwin, criticised the Gove
 government''.%
 \footcite{Bill2009NationBuildingProgramAmendment} Mr Baldwin emphasised the persistence of Support the Link, a local lobby group that pushed hard for the road.%
 \footcite{Bill2009NationBuildingProgramAmendment}
-The project was completed in 2014.%
+The project was completed in 2014 for \$1678~million.%
 \footcite{RMS2016Hunter}
 
 While the final benefit cost ratio has not been published, these comments from politicians reveal the difficulty governments experience in reneging on commitments made very early in a project’s life, even after the facts of the project change significantly.
@@ -1866,7 +1866,7 @@ Consistent use of risk matrices or like tools to identify and mitigate avoidable
 \end{figure}
 
 At least one set of risk management guidelines in each of Australia’s state and Commonwealth government jurisdictions recommends the use of risk matrices and provides high level advice on how to mitigate common risks.%
-\footnote{Please see table XX in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}} For this reason, the guidance on risk identification and mitigation provided in every jurisdiction appears to be adequate.
+\footnote{Please see \Vref{tab:risk-management-guidlines} in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}} For this reason, the guidance on risk identification and mitigation provided in every jurisdiction appears to be adequate.
 
 \subsection{Reduce estimation error}\label{reduce-estimation-error}
 
@@ -2057,7 +2057,7 @@ This is because the structure of probabilistic risk analysis imposes more struct
 \begin{figure}
 \caption{The probability of extreme cost overruns is systematically underestimated\label{fig:assumed-and-actual-distributions}}
 \includegraphics[page=5]{atlas/AppendixCharts2}
-\notes{The distribution of cost risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see appendix xx for details. Please see \Vref{distributional-analysis} for a discussion  of the sources underpinning the typical risk management guidelines' assumed distribution of cost overruns. This graph’s illustrative purpose is to graphically present that a symmetric distribution with a lower bound of zero and 25 per cent probability of cost overruns drastically underestimates the probability and magnitude of extreme cost risks.}
+\notes{The distribution of cost risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor. Please see \Vref{distributional-analysis} for details and a discussion  of the sources underpinning the typical risk management guidelines' assumed distribution of cost overruns. This graph’s illustrative purpose is to graphically present that a symmetric distribution with a lower bound of zero and 25 per cent probability of cost overruns drastically underestimates the probability and magnitude of extreme cost risks.}
 \end{figure}
 
 Even if unknown risks were accounted for and extreme risks were anticipated, the current approaches employed to measure risk do not consistently evaluate extreme risks. 
@@ -2182,7 +2182,13 @@ For this reason, it would be desirable for all states to adopt a stringent pract
 
 
 \section{Reviewed Australian risk management guidelines \label{sec:Reviewed-Australian-risk-measurement-guidelines}}
-This appendix, and the conclusions of the report that are founded upon its analysis, are based upon a thorough review of all the key documentation on cost estimation and risk management which could be identified to be publically available. Table XX lists the guidelines reviewed. 
+This appendix, and the conclusions of the report that are founded upon its analysis, are based upon a thorough review of all the key documentation on cost estimation and risk management which could be identified to be publically available. Table \Vref{tab:risk-management-guidlines} lists the guidelines reviewed. 
+
+\begin{table}
+\caption{Reviewed risk management guidelines}
+\label{tab:risk-management-guidlines}
+.
+\end{table}
 
 \begin{table}
 \caption{Criteria underpinning the ratings of jurisdictions’ risk management guidelines presented in \Vref{fig:quality-of-risk-management-guidance-chevrons}}
