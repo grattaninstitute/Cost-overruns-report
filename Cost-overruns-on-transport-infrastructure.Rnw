@@ -866,16 +866,7 @@ Given this data collection methodology, it should be noted late initial cost ann
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
-\Cref{fig:projs-announced-early-have-larger-cost-overruns-at} shows that projects announced early tend to perform worse than average against their cost estimates, not only in the early stages but also later in the project's life.
-This suggests that overly optimistic initial cost estimates are rarely adequately adjusted straight away -- reliable project cost estimates may only eventuate half way through construction.
-
-Another reason why projects with premature cost announcements repeatedly have large overruns is that these low quality cost estimates are often imposed on the highest risk projects.
-\Cref{fig:projs-announced-early-have-larger-cost-overruns-at} shows that projects with early cost estimates are substantially bigger, on average, than projects with later cost announcements.
-\Vref{sec:cost-estimates-should-reflect-predictable-patterns} of this report confirms that large projects are more prone to cost overruns than smaller projects in Australia, as is consistently the case internationally.
-
-This chapter argues that premature announcements are often made for electoral gain (see \Vref{box:alstonville} on the Alstonville bypass).
-To counteract this problem, there needs to be better accountability at the time that promises are made and after projects are completed. 
-
+% Put earlier than ref as better break
 \begin{bigbox*}{Case study -- Alstonville bypass -- 162 per cent cost overrun}{box:alstonville}
 
 \subsubsection*{An under-cooked election promise}
@@ -896,6 +887,16 @@ Savings of \$6.7 million were made during the construction period, and the proje
 
 \end{bigbox*}
 
+\Cref{fig:projs-announced-early-have-larger-cost-overruns-at} shows that projects announced early tend to perform worse than average against their cost estimates, not only in the early stages but also later in the project's life.
+This suggests that overly optimistic initial cost estimates are rarely adequately adjusted straight away -- reliable project cost estimates may only eventuate half way through construction.
+
+Another reason why projects with premature cost announcements repeatedly have large overruns is that these low quality cost estimates are often imposed on the highest risk projects.
+\Cref{fig:projs-announced-early-have-larger-cost-overruns-at} shows that projects with early cost estimates are substantially bigger, on average, than projects with later cost announcements.
+\Vref{sec:cost-estimates-should-reflect-predictable-patterns} of this report confirms that large projects are more prone to cost overruns than smaller projects in Australia, as is consistently the case internationally.
+
+This chapter argues that premature announcements are often made for electoral gain (see \Vref{box:alstonville} on the Alstonville bypass).
+To counteract this problem, there needs to be better accountability at the time that promises are made and after projects are completed. 
+
 \section{Premature announcements are made for electoral gain}\label{premature-announcements-are-made-for-electoral-gain}
 
 Governments and would-be governments are very fond of promising infrastructure.
@@ -909,11 +910,22 @@ Among such statements:
 
 \begin{itemize}
 \item
-  The current Commonwealth Government maintains that ``\href{http://parlinfo.aph.gov.au/parlInfo/genpdf/chamber/hansardr/e674bc2a-82df-4a25-981b-1f2bab3d0b16/0005/hansard_frag.pdf;fileType=application\%2Fpdf}{\emph{it is critical to base project selection on rigorous analysis and sound planning to avoid wasteful investment}}\emph{\ldots{}{[}t{]}he advice provided by Infrastructure Australia will be a key input in guiding the Australian, state and territory governments when making major investment decisions}.''\footcites{Truss-2013-Second-Reading-Infrastructure-Australia-Amendment-Bill}{Fletcher2015StatementofExpectations}
+  The current Commonwealth Government maintains that 
+  \begin{quote}
+  it is critical to base project selection on rigorous analysis and sound planning to avoid wasteful investment \ldots\ [t]he advice provided by Infrastructure Australia will be a key input in guiding the Australian, state and territory governments when making major investment decisions.\footcites{Truss-2013-Second-Reading-Infrastructure-Australia-Amendment-Bill}{Fletcher2015StatementofExpectations}
+  \end{quote}
 \item
-  The Federal Labor Opposition, which established Infrastructure Australia when it was in office in 2008, promises to take the politics out of infrastructure by ensuring that \emph{``Infrastructure Australia independently assesses all major infrastructure projects on the basis of the benefits they provide to the economy and society as a whole, their commercial viability and their capacity to enhance national productivity}.''\footcite{ALP2016EmpoweringInfrastructureAustralia}
+  The Federal Labor Opposition, which established Infrastructure Australia when it was in office in 2008, promises to take the politics out of infrastructure by ensuring that 
+\begin{quote}
+  Infrastructure Australia independently assesses all major infrastructure projects on the basis of the benefits they provide to the economy and society as a whole, their commercial viability and their capacity to enhance national productivity.\footcite{ALP2016EmpoweringInfrastructureAustralia}
+  \end{quote}
 \item
-  The Greens contend that ``\emph{{[}t{]}oo often, major infrastructure decisions are made for short-term, politically expedient reasons, rather than in the long-term public interest}.''\footcite{Greens2016AustralianInfrastructureBank} They would like to see comprehensive cost-benefit analysis for large projects submitted to Infrastructure Australia for evaluation, and with the recommendation made public at the same time it is given to government.%
+  The Greens contend that 
+  \begin{quote}
+  [t]oo often, major infrastructure decisions are made for short-term, politically expedient reasons, rather than in the long-term public interest.\footcite{Greens2016AustralianInfrastructureBank} 
+  \end{quote}
+
+  They would like to see comprehensive cost-benefit analysis for large projects submitted to Infrastructure Australia for evaluation, and with the recommendation made public at the same time it is given to government.%
 \footcite{Greens2016AustralianInfrastructureBank}
 \end{itemize}
 
