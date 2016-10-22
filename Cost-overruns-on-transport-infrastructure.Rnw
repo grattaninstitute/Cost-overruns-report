@@ -1363,6 +1363,7 @@ The average size of cost overruns observed across the sample can be used as an e
 \includegraphics{atlas/Density.pdf} 
 \noteswithsource{The distribution of cost risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see \Vref{sec:guidance-is-incomplete} for details. This graph's illustrative purpose is to graphically present the relative distances between the median, 90th quantile and expected value of cost overruns.}{Deloitte Investment Monitor, Grattan analysis}
 \end{figure}
+\vspace*{-11pt}
 
 The key advantages of reference class forecasting are that it incorporates the likely costs of unknown risks and does not suffer from optimism bias, as it relies on objective historical information. 
 Its main shortcoming is that it does not account for the ways in which a project’s risk profile is unique.  
