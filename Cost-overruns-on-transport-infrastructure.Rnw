@@ -1333,8 +1333,15 @@ Being a large road is not a subtle characteristic that could easily go unnoticed
 Rather, it is an example of the tangible project characteristics that affect the likelihood of a project finishing on budget.
 The fact that projects with these characteristics are less likely to finish on budget than others indicates that their obvious risks are not adequately factored into project cost estimates.
 
-This section discusses three tangible project characteristics associated with high risks.
-Properly accounting for the risk associated with them characteristics is a simple illustration of how we could come up with much better estimates of project costs.
+This section discusses three tangible project characteristics associated with high risks:
+\begin{enumerate}
+\item project complexity, 
+\item project mode, and
+\item contract type.
+\end{enumerate}
+
+Properly accounting for their risk characteristics is a straightforward way to improve project cost estimates. 
+
 
 \subsection{Large and complex projects are more prone to cost overruns}\label{large-and-complex-projects-are-more-prone-to-cost-overruns}
 
