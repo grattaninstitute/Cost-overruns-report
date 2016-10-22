@@ -2090,7 +2090,7 @@ The quality of risk measurements obtained using the other key risk measurement t
 For example, \textbf{sensitivity analysis} is a valuable tool for understanding the external drivers of cost uncertainty.
 However, only 43 per cent of guidelines which recommend sensitivity analysis specify variables should be subjected to sensitivity analysis and the range of values these variables regularly take. 
 In the absence of this information, there is opportunity for project proponents to retrofit their choices of variables and ranges of variation in order to achieve an acceptable level of cost uncertainty. 
-Because of this, more guidelines should suggest ranges for sensitivity analysis, or recommend that the sensitivity ranges specified in another set of guidelines are used\footnote{The Australian Transport Assessment Planning Guidelines provide a set of sensitivity ranges that could serve as a common point of reference, as the Austroad sensitivity ranges have done in the past \textcite[27]{QLDDepTransport2011CostBenefitAnalysis}}.
+Because of this, more guidelines should suggest ranges for sensitivity analysis, or recommend that the sensitivity ranges specified in another set of guidelines are used.\footnote{The Australian Transport Assessment Planning Guidelines provide a set of sensitivity ranges that could serve as a common point of reference, as the Austroad sensitivity ranges have done in the past \textcite[27]{QLDDepTransport2011CostBenefitAnalysis}}
 
 
 Even more egregious is that some guidelines recommend that \textbf{reference class forecasting} be employed, but do not provide data or key statistics on any reference classes.
