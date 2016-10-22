@@ -1023,7 +1023,7 @@ He further noted that:
 \end{quote}
 
 Other spheres of government spending offer far less scope for discretionary decisions.
-For example, payments to unemployed people are worth \$108 billion since 2000 -- about the same amount as has been spent on transport infrastructure.
+For example, payments to unemployed people have cost \$108 billion since 2000 -- substantially less than the \$141~billion spent on transport infrastructure.
 The \emph{Social Security Act 1991} lays out in exhaustive detail the conditions under which an unemployed person may qualify for Newstart or Youth Allowance, the rate at which they may be paid, and the arrangements for recovering incorrect payments.
 Politicians frequently bemoan waste in the welfare system and the need to reduce fraud, improve compliance and get better value for money.
 They rarely do the same for transport infrastructure.
@@ -1065,7 +1065,7 @@ The Commonwealth should enable and facilitate better public understanding of inf
 \end{enumerate}
 \end{recommendation}
 
-\section{There is no accountability for poorly founded cost promises }\label{there-is-no-accountability-for-poorly-founded-cost-promises}
+\section{Politicians are not held accountable for poorly founded cost promises once projects are finished}\label{sec:there-is-no-accountability-for-poorly-founded-cost-promises}
 
 There is at present no systematic public reporting on the effectiveness of government spending on infrastructure projects.
 In particular, there is no public reporting on how well government-funded transport infrastructure projects perform against the costs and benefits, such as travel time savings, used to make the investment decision.
@@ -1154,7 +1154,7 @@ Reports should detail any scope changes and their justification, agreed and actu
 \chapter{The costs of cost overruns}\label{the-costs-of-cost-overruns}
 
 Reducing premature announcements would go a long way towards reducing cost overruns.
-But the risk of cost overruns is an inherent feature of all infrastructure projects, not just those that are announced prematurely.
+But the risk of cost overruns is inherent in all infrastructure projects, not just those that are announced prematurely.
 This chapter discusses the rationale for intervening in projects that may be on a path towards substantial cost overruns.
 
 Close to two thirds of cost overruns occur before construction begins.
