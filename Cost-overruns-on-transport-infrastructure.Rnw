@@ -1718,7 +1718,7 @@ Consistent use of risk matrices or like tools to identify and mitigate avoidable
 \begin{figure}
 \captionwithunits{Some avoidable risks can be mitigated \label{fig:Some-avoidable-risks-can-be-mitigated}}
 {Stylized representation of the probability of cost overruns of each size, per cent}
-\includegraphics[page=3]{atlas/AppendixCharts}
+\includegraphics[page=3]{atlas/AppendixCharts2}
 \noteswithsource{The distribution of unavoidable risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see \Vref{methodological-appendix} for details. The distribution of avoidable and unavoidable risks has been inferred by assuming that cost overruns would be larger if no effort was made to mitigate avoidable risks. This graph's illustrative purpose is to graphically present the common wisdom that cost risks can be reduced, but not eliminated, by mitigating avoidable risks.}%
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
@@ -1749,7 +1749,7 @@ Providing detailed guidance on how project costs should be estimated for each le
 \begin{figure}
 \captionwithunits{More projects finish on budget when estimation error has been minimised \label{fig:Reduce-estimation-error-diagram}}
 {Stylized representation of the probability of cost overruns of each size, per cent}
-\includegraphics[page=4]{atlas/AppendixCharts}
+\includegraphics[page=4]{atlas/AppendixCharts2}
 \noteswithsource{The distribution of unavoidable risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see \Vref{methodological-appendix} for details. The distribution of avoidable and unavoidable risks has been inferred by assuming that cost overruns would be larger if no effort was made to mitigate avoidable risks. This graph's illustrative purpose is to graphically present the common wisdom that cost risks can be reduced, but not eliminated, by mitigating avoidable risks.}%
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
@@ -1878,7 +1878,7 @@ As no single risk management tool achieves all these objectives, a combination o
 
 \begin{figure}
 \caption{Comparison of specific state guidelines\label{fig:assumed-and-actual-distributions}}
-\includegraphics[page=5]{atlas/AppendixCharts}
+\includegraphics[page=5]{atlas/AppendixCharts2}
 \end{figure}
 
 
@@ -2150,7 +2150,7 @@ The stylized representations of distribution of cost overruns feature a much sma
 
 \begin{figure}\label{fig:probability-distribution}
 \caption{Probability distribution}
-\includegraphics[page=9]{atlas/AppendixCharts}
+\includegraphics[page=9]{atlas/AppendixCharts2}
 \end{figure}
 
 Figure \Vref{fig:probability-distribution} confirms that stylized distribution employed is a fair representation of the underlying data. As emphasised in Box \Vref{box:risk-managers-toolkit}, the expected value of cost overruns falls far closer to the distribution's 90\textsuperscript{th} percentile than its median.
