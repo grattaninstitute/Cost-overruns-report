@@ -2056,7 +2056,7 @@ Probability pricing can be conducted either:
 \end{itemize}{}
 
 More than 80\% of guidelines on probability pricing recommend that the probabilistic approach to probability pricing is employed, as the validity of the deterministic approach under active debated.%
-\footnote{Currently, institutions like Infrastructure Australia (year, page)and Queensland's Department of Main Roads (year, page) assert that deterministic approaches to probability pricing are ``invalid'' and ``inaccurate'' while others still recommend its practice. (p.36, \url{http://infrastructureaustralia.gov.au/projects/files/Assessment_Framework_Detailed_Technical_Guidance.pdf}; QLD Cost Estimation Manual, page 79; For example, South Australian Department of Planning, Transport and Infrastructure's Estimating Manual)} However, there appears little grounds to claim that the probabilistic approach, as currently practiced, is any more scientific.
+\footnote{Currently, institutions like Infrastructure Australia\footcite[][36]{Australia2016InfrastructureAustraliaAssessment} and Queensland's Department of Main Roads\footcite[][79]{QLDDepTransport2015ProjectCostEstimatingManual} assert that deterministic approaches to probability pricing are ``invalid'' and ``inaccurate'' while others still recommend its practice. For example, South Australian Department of Planning, Transport and Infrastructure's Estimating Manual\footcite{SADPTI2015EstimatingManual})} However, there appears little grounds to claim that the probabilistic approach, as currently practiced, is any more scientific.
 
 This is because only two guidelines\footnote{QLD and fed notes on administration} provide any guidance to project proponents on the expected distribution of project risks, and both of these guidelines overlook the most critical characteristic of the distribution of cost risk on transport infrastructure projects: that cost overruns are more likely and larger on average than cost underruns.
 
@@ -2079,22 +2079,20 @@ It is true that project costs, and hence projects' returns on their investments,
 However, when project risks are not priced into benefit cost ratios, returns on investments will routinely be lower than expected.
 This increases the probability that cost overruns will distort project selection.
 
-The impact of cost overruns on project selection can be minimised by including the expected value of project risks in the cost estimates used for cost benefit analysis (ref: BITRE, 2005).
-While benefit cost ratios will still be more uncertain for risky projects than routine projects after this adjustment is made, the benefit cost ratios of risky projects will no longer be systematically biased in a way that makes projects appear more lucrative than they really are.
+The impact of cost overruns on project selection can be minimised by including the expected value of project risks in the cost estimates used for cost benefit analysis.\footcite{BITRE2005RiskinCostBenefitAnalysis} While benefit cost ratios will still be more uncertain for risky projects than routine projects after this adjustment is made, the benefit cost ratios of risky projects will no longer be systematically biased in a way that makes projects appear more lucrative than they really are.
 For this reason, it is critical that the costs used in cost benefit analyses include the \emph{expected value} of project risks.
 
 Only the Commonwealth and NSW's risk management guidelines clearly recommend that the expected value of projects risks should be incorporated into the costs estimates used for benefit cost analysis.%
-\footnote{Reference Australian Transport Assessment and Planning Guidelines and Transport for NSW Principles and Guidelines for Economic Appraisal of Transport Investment Initiatives, and others that DON'T.}
+\footnote{Reference Australian Transport Assessment and Planning Guidelines and \textcite{TransportNSW2013PrinciplesandGuidelines}, and others that DON'T.}
 
 It is not reasonable to assume that incorporation of the expected value of risks into cost estimates is implicitly expected by guidelines which do not comment on the type of costs that should be employed in cost benefit analysis.
-This is because previous Australian research regarding the treatment of risk in cost benefit analysis has found that there is substantial confusion on this matter (BITRE, 2005).
+This is because previous Australian research regarding the treatment of risk in cost benefit analysis has found that there is substantial confusion on this matter.\footcite{BITRE2005RiskinCostBenefitAnalysis}
 
 The various guidance documents provided on cost benefit analysis for transport infrastructure projects in Australia should be amended to clearly recommend that the expected value of project risks be included in the costs employed in cost benefit analysis.
 
 \subsection{Manage project risks in a cost efficient manner}\label{manage-project-risks-in-a-cost-efficient-manner}
 
-Cost overruns are also problematic when they inflict unanticipated shocks on government budgets.
-In order to protect against this, it is routinely advised that project budgets are accompanied by contingency funds.
+Cost overruns are also problematic when they inflict unanticipated shocks on government budgets. In order to protect against this, it is routinely advised that project budgets are accompanied by contingency funds.
 
 However, this important component of risk management appears to be largely governed by rules of thumb.
 This conclusion is supported by the observations that the recommended size of contingencies varies widely across guidelines (\Vref{fig:Recommended-Size-of-contingency-funds-varies-considerably}), and the data underpinning guidelines' recommended contingency ranges is not routinely cited.
@@ -2109,8 +2107,8 @@ This conclusion is supported by the observations that the recommended size of co
 \end{figure}
 
 Even more problematic is the frequent absence of strict requirements for contingency funds to be held at the portfolio level.
-New South Wales is the only jurisdiction which provides clear, strategic advice on how contingency funds should be managed,\footnote{Infrastructure NSW Contingency Management Guidebook} and Queensland appears to be the only state where there is a strict requirement for contingency funds to be managed at the portfolio level.%
-\footnote{\url{https://www.treasury.qld.gov.au/publications-resources/project-assessment-framework/paf-policy-overview.pdf} and Financial and Performance Management Standard 2009}
+New South Wales is the only jurisdiction which provides clear, strategic advice on how contingency funds should be managed,\footcite{INSW2014ContingencyManagementGuidebook} and Queensland appears to be the only state where there is a strict requirement for contingency funds to be managed at the portfolio level.%
+\footcites{QLDTreasury2015Projectassessmentframeworkoverview}{QLDGov2015FinancialandPerformanceManagementStandard}
 
 It should be noted that in the absence of such protocol, there are clear incentives for contingencies to be managed at the project level.
 This is because changes to project budgets that involve state treasuries increasing projects' budget allocations are open to more public scrutiny.
@@ -2376,7 +2374,7 @@ In these ways, the stylized distribution of cost overruns provides a fair repres
 \Vref{fig:value-contingencies-req-to-cover--} presents the financial advantages of managing cost risk at the portfolio level relative to the project level.
 
 The value of contingencies required to provide assurance that 90 per cent of projects will finish within budget has been estimated as the 90\textsuperscript{th} quantile of the observed distribution of cost outcomes, using the median-unbiased sample quantile estimator.%
-\footnote{Hyndman and Fan, 1996}
+\footcite{HyndmanandFan1996SampleQuantilesinStatisticalPackages}
 
 To estimate the necessary size of a contingency fund to achieve this level of confidence at the project level, this analysis was conducted on the distribution of project's cost outcomes observed through the investment monitor.
 
@@ -2442,7 +2440,7 @@ We invoke the assumption that this bias is consistent across the distribution im
 
 The final column of \Vref{probability-pricing-table} reports the the difference, as percentage of budget commitment project costs, between the P50 and other estimated probability prices.
 These figures have been calculated as the difference between the 90\textsuperscript{th} and 50\textsuperscript{th} quantiles of the observed distribution of final costs over budgeted costs, using the median-unbiased estimator of sample quantiles.%
-\footnote{Hyndman and Fan, 1996}
+\footcite{HyndmanandFan1996SampleQuantilesinStatisticalPackages}
 
 
 We draw two conclusions from this analysis.
