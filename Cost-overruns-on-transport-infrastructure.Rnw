@@ -985,7 +985,7 @@ While the final benefit cost ratio has not been published, these comments from p
 \end{bigbox*}
 
 
-\section{Premature cost claims cannot be disputed}\label{premature-cost-claims-cannot-be-disputed}
+\section{Premature cost claims cannot be disputed at the time}\label{premature-cost-claims-cannot-be-disputed}
 
 
 There is currently no effective curb on premature announcements.
