@@ -1536,7 +1536,7 @@ The experience of the past 15 years has shown that the difference between the me
 
 But cost estimates for current projects do not reflect this experience.
 Instead, the difference between median and ``worst case'' estimates is generally about a third this size.
-Judging by recent history, this indicates that either the median cost estimate is too high, or - more likely - the ``worst case'' cost estimate is too low.
+Judging by recent history, this indicates that either the median cost estimate is too high, or -- more likely -- the ``worst case'' cost estimate is too low.
 If the latter is the case, more than the expected 10 per cent of these projects will be likely to experience overruns.
 This report has found that these will be larger, on average, than expected.
 
