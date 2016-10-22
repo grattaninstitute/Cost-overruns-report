@@ -2458,7 +2458,7 @@ In these ways, the stylized distribution of cost overruns provides a fair repres
 
 \begin{itemize}
 \item
-Costs quoted in state budget papers are typically at least P75 - P90 costs,\footnote{This implies that less than 25 per cent of projects are expected to overrun. For evidence of this practice, see, for instance \textcite[12]{QLDDepTransport2015ProjectCostEstimatingManual}.} and
+Costs quoted in state budget papers are typically at least P75 - P90 costs,\footnote{This implies that less than 25 per cent of projects are expected to overrun. For evidence of this practice, see, for instance that \textcite[12]{QLDDepTransport2015ProjectCostEstimatingManual} requires cost estimates to be P90 while initial designs are being completed, and then P75 thereafter; \textcite[56]{Treasury2007NSWGovernmentGuidelines} and \textcite{Victoria2014ProductivityCommissionPublic} also identifies that P90 costs often form the budget against which a project's success is assessed against. When projects are considered for federal funding, both P50 and P90 cost estimates are requested \textcite{DIRD2013NotesonAdministration}. However, a review of the 23 project summaries published by Infrastructure Australia as of 23rd of October 2016 reveals that the cost estimates submitted for funding requests are P79, on average.} and
 \item
 The distribution of cost overruns is assumed to be symmetric\footnote{As discussed in \Vref{insufficient-information-is-provided}, very few guidelines note that cost risk is asymmetrically distributed. Instead, most guidelines only suggest symmetric distributions for use in Monte Carlo simulation.}
 \end{itemize}
