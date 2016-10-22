@@ -2260,10 +2260,9 @@ The comparability of the Grattan and Deloitte datasets also holds at the individ
 \end{figure}
 
 Despite this similarity, we expect the average magnitude of cost overruns observed in the Investment Monitor will be substantially lower than observed in the Grattan dataset.
-This is because the Investment Monitor considers all projects valued over \$20 million, the Grattan dataset only considers projects valued above \$100 million and project size has been found in the literature to be a consistent predictor of the size of cost overruns (\protect\hyperlink{ux5fENREFux5f14}{Flyvbjerg et al., 2004}, \protect\hyperlink{ux5fENREFux5f19}{Koushki et al., 2005}, \protect\hyperlink{ux5fENREFux5f2}{Anastasopoulos et al., 2012}).
-\GenericWarning{LateX Warning: Lucille needs to do these references.}{LateX Warning: Lucille needs to do these references.}
+This is because the Investment Monitor considers all projects valued over \$20 million, the Grattan dataset only considers projects valued above \$100 million and project size has been found in the literature to be a consistent predictor of the size of cost overruns \footcite{Flyvbjerg2004Whatcausescost, Koushki2005Delayscostincreases, Anastasopoulos2012EmpiricalAssessmentLikelihood}.
 
-In line with this expectation, we observe far higher cost overruns across the Grattan dataset than the Investment Monitor dataset.
+In line with this expectation, we observe far higher cost overruns across the Grattan dataset than the Investment Monitor dataset.,
 
 \begin{figure}
 \caption{Cost overrun by project stage in Investment Monitor and Grattan datasets\label{fig:cost-overrun-by-project-stage}}
@@ -2454,19 +2453,15 @@ As emphasised in Box \Vref{box:risk-managers-toolkit}, the expected value of cos
 Though less visible than in the stylized distribution, the heaviness right tail of the observed distribution is notable: 17 percent of projects experienced cost overruns greater than the smallest cost underrun.
 In these ways, the stylized distribution of cost overruns provides a fair representation of the underlying data.
 
-\Vref{assumed-and-observed-prob-distr-of-cost-overruns} and \Vref{fig:assumed-and-actual-distributions} compare the distribution of observed cost overruns against an illustration  of the distribution of cost overruns assumed in risk management guidance. This distribution is founded upon two key observations: 
+\Vref{assumed-and-observed-prob-distr-of-cost-overruns} and \Vref{fig:assumed-and-actual-distributions} compare the distribution of observed cost overruns against an illustration  of the distribution of cost overruns assumed in risk management guidance. This distribution is founded upon two key observations.
 
-\begin{itemize}
-\item
-Costs quoted in state budget papers are typically at least P75 - P90 costs,\footnote{This implies that less than 25 per cent of projects are expected to overrun. For evidence of this practice, see, for instance that \textcite[12]{QLDDepTransport2015ProjectCostEstimatingManual} requires cost estimates to be P90 while initial designs are being completed, and then P75 thereafter; \textcite[56]{Treasury2007NSWGovernmentGuidelines} and \textcite{Victoria2014ProductivityCommissionPublic} also identifies that P90 costs often form the budget against which a project's success is assessed against. When projects are considered for federal funding, both P50 and P90 cost estimates are requested \textcite{DIRD2013NotesonAdministration}. However, a review of the 23 project summaries published by Infrastructure Australia as of 23rd of October 2016 reveals that the cost estimates submitted for funding requests are P79, on average.} and
-\item
-The distribution of cost overruns is assumed to be symmetric\footnote{As discussed in \Vref{insufficient-information-is-provided}, very few guidelines note that cost risk is asymmetrically distributed. Instead, most guidelines only suggest symmetric distributions for use in Monte Carlo simulation.}
-\end{itemize}
+Firstly, costs quoted in state budget papers are typically at least P75 - P90 costs. This implies that less than 25 per cent of projects are expected to overrun. For evidence of this practice, see, for instance that \textcite[12]{QLDDepTransport2015ProjectCostEstimatingManual} requires cost estimates to be P90 while initial designs are being completed, and then P75 thereafter; \textcite[56]{Treasury2007NSWGovernmentGuidelines} and \textcite{Victoria2014ProductivityCommissionPublic} also identifies that P90 costs often form the budget against which a project's success is assessed against. When projects are considered for federal funding, both P50 and P90 cost estimates are requested \textcite{DIRD2013NotesonAdministration}. However, a review of the 23 project summaries published by Infrastructure Australia as of 23rd of October 2016 reveals that the cost estimates submitted for funding requests are P79, on average.
 
-As the lower bound of the distribution is necessarily equal to or greater than one, symmetric distributions that predict as little as 25 per cent of projects experiencing cost overruns must severely underestimate the likelihood and potential magnitude of extreme cost overruns. The assumed distributions presented in \Vref{assumed-and-observed-prob-distr-of-cost-overruns} and \Vref{fig:assumed-and-actual-distributions} reflect this key characteristic.\footnote{We note that this assumed distribution is consistent with all observed cost outcomes. That is, if cost risks were anticipated to take this distribution, the expected value of cost overruns would be substantially greater than 0 - approximately equal to the average observed cost overrun of 24 per cent; more projects would have cost overruns than anticipated - as per the observed difference between the expected prevalence of cost overruns of less than 25 per cent relative to the realised frequency of 34 per cent; and these unanticipated cost overruns that drive high expected value of cost overruns would be larger than the overruns anticipated.}
+The second key observation is that risk management guidance typically assumes that cost risk is symmetrically distributed by recommending that symmteric distributions should be used for Monte Carlo simulation.\footnote{Please see \Vref{insufficient-information-is-provided} for further discussion and evidence of this conclusion.} 
 
-LUCILLE: REVIEW THIS FOOTNOTE IN THE MORNING. 
+As the lower bound of the distribution is necessarily equal to or greater than one, symmetric distributions that predict as little as 25 per cent of projects experiencing cost overruns must severely underestimate the likelihood and potential magnitude of extreme cost overruns. The assumed distributions presented in \Vref{assumed-and-observed-prob-distr-of-cost-overruns} and \Vref{fig:assumed-and-actual-distributions} reflect this key characteristic.
 
+We note that this assumed distribution is consistent with all observed cost outcomes. That is, if cost risks were anticipated to take this distribution, the expected value of cost overruns would be substantially greater than 0 - approximately equal to the average observed cost overrun of 24 per cent; more projects would have cost overruns than anticipated - as per the observed difference between the expected prevalence of cost overruns of less than 25 per cent relative to the realised frequency of 34 per cent; and these unanticipated cost overruns that drive high expected value of cost overruns would be larger than the overruns anticipated.
 
 
 \begin{figure}
