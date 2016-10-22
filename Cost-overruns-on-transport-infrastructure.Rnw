@@ -1662,7 +1662,7 @@ Similarly, projects are costed to reflect a low probability of going over budget
 
 This is problematic because whether or not a project runs over budget is only a small part of the story.
 What governments should really worry about is the cost of such overruns.
-Every project overrunning by a tiny amount would be much less troubling than a few blowing out by vast sums.
+All projects overrunning by a tiny amount is much less troubling than a few blowing out by vast sums.
 
 The lack of data on project outcomes encourages this focus on the rate of cost overruns.
 It is easy to claim how many projects came in on budget when there is not much data, rather than the magnitude of any overruns that did occur.
@@ -2541,13 +2541,85 @@ This is because switching to an accurate probability price estimation methodolog
 % Chevron chart
 %\end{figure}
 
+<<omit_repeated, eval=TRUE>>=
+knitr::opts_chunk$set(eval = TRUE)
+library(readxl)
+library(xtable)
+library(dplyr)
+omit_repeated <- function(x){
+  if_else(x != lag(x) | is.na(lag(x)), as.character(x), NA_character_)
+}
+@
+
+<<percent1_01_TeX>>=
+percent1_01_TeX <- function(x){
+  if (is.numeric(x) && mean(between(x, 0, 1) > 0.5)){
+    paste0(formatC(round(100*x, 1), 
+                   format = "f", flag = "#", digits = 1, width = 3), "\\%")
+  } else {
+    x
+  }
+}
+@
+
+<<digit_01_TeX>>=
+digit1_01_TeX <- function(x){
+  if (is.numeric(x) && between(x, 0, 1)){
+    formatC(round(100*x, 1), 
+                   format = "f", flag = "#", digits = 1, width = 3)
+  } else {
+    x
+  }
+}
+@
 
 
+\onecolumn
+<<cleanse_owains_txt>>=
+cleanse_owains_txt <- function(x){
+  x
+}
+@
 
+<<owain_addtorow>>=
+owain_addtorow          <- list()
+owain_addtorow$pos      <- list()
+owain_addtorow$pos[[1]] <- c(0)
+owain_addtorow$command  <- c(paste("\\midrule \n",
+                                   "\\endhead \n",
+                                   "& & &\\multicolumn{1}{r}{\\footnotesize Continued on next page} \n",
+                                   "\\endfoot \n",
+                                   "\\endlastfoot \n",sep=""))
+@
 
-
-
-
+<<owain-reference-table, eval=FALSE>>=
+read_excel("data/Owain-Guidelines-table.xlsx") %>%
+  filter(complete.cases(.)) %>%
+  select(Coverage, Agency, Guideline) %>% 
+  # Abbreviate States
+  mutate(Agency = gsub("^South Australian", "SA", 
+                       gsub("^Western Australian", "WA", Agency))) %>%
+  mutate(Coverage = factor(Coverage, levels = unique(.$Coverage), ordered = TRUE)) %>%
+  arrange(Coverage, Agency) %>%
+  mutate_each(funs(omit_repeated)) %>%
+  mutate(`\\phantom{.}` = if_else(!is.na(Coverage) & Coverage != first(Coverage), 
+                                  "&\\phantom{.}\\\\[-6pt]", 
+                                  if_else(!is.na(Agency) & Agency != first(Agency), 
+                                          "&\\phantom{.}\\\\[-9pt]",
+                                          ""))) %>%
+  select(`\\phantom{.}`, Coverage, Agency, Guideline) %>%
+  {suppressWarnings(xtable(x = ., align = "lQlll"))} %>%
+  print.xtable(tabular.environment = "longtable", 
+               sanitize.text.function = cleanse_owains_txt, 
+               booktabs = TRUE, 
+               add.to.row = owain_addtorow,
+               floating = FALSE, 
+               include.rownames = FALSE)
+  
+@
+\newcolumntype{Q}{@{}l@{}}
+\LTXtable{1.0\textwidth}{tex/owains-longtable}
+\twocolumn
 
 
 
