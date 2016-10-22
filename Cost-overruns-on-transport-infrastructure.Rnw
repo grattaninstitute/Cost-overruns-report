@@ -909,8 +909,7 @@ Among such statements:
 
 \begin{itemize}
 \item
-  The current Commonwealth Government maintains that ``\href{http://parlinfo.aph.gov.au/parlInfo/genpdf/chamber/hansardr/e674bc2a-82df-4a25-981b-1f2bab3d0b16/0005/hansard_frag.pdf;fileType=application\%2Fpdf}{\emph{it is critical to base project selection on rigorous analysis and sound planning to avoid wasteful investment}}\emph{\ldots{}{[}t{]}he advice provided by Infrastructure Australia will be a key input in guiding the Australian, state and territory governments when making major investment decisions}.''
-  \footcite{Fletcher2015StatementofExpectations}
+  The current Commonwealth Government maintains that ``\href{http://parlinfo.aph.gov.au/parlInfo/genpdf/chamber/hansardr/e674bc2a-82df-4a25-981b-1f2bab3d0b16/0005/hansard_frag.pdf;fileType=application\%2Fpdf}{\emph{it is critical to base project selection on rigorous analysis and sound planning to avoid wasteful investment}}\emph{\ldots{}{[}t{]}he advice provided by Infrastructure Australia will be a key input in guiding the Australian, state and territory governments when making major investment decisions}.''\footcites{Truss-2013-Second-Reading-Infrastructure-Australia-Amendment-Bill}{Fletcher2015StatementofExpectations}
 \item
   The Federal Labor Opposition, which established Infrastructure Australia when it was in office in 2008, promises to take the politics out of infrastructure by ensuring that \emph{``Infrastructure Australia independently assesses all major infrastructure projects on the basis of the benefits they provide to the economy and society as a whole, their commercial viability and their capacity to enhance national productivity}.''\footcite{ALP2016EmpoweringInfrastructureAustralia}
 \item
