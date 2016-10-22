@@ -1578,7 +1578,7 @@ Canberra Light Rail & ACT & \possibleTextDollar759\dz & \possibleTextDollar806\d
 \multicolumn{4}{r}{\textbf{Average actual difference across all projects completed in the  past 15 years}} & \textbf{21.0\% \footnote{Please see \Vref{expected-difference-between-p50-and-p90-costs} for details.}}\tabularnewline%[1.245ex]
 \bottomrule
 \end{tabularx}
-\end{table*}
+\end{table*} 
 
 A second consequence of not knowing historical outcomes of similar projects is that it deprives cost estimators of an effective counter to known psychological biases.
 Just as trains or aeroplanes more often arrive late than early, so too do cost estimates tend to ramp upwards more often and to a greater degree than downwards.
