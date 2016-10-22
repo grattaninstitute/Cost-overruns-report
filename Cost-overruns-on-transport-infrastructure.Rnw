@@ -1792,7 +1792,7 @@ In this appendix we review the current practices of each state for each of these
 {See \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} for the list of reviewed guidelines, Grattan analysis}
 \end{figure}
 
-% \begin{longtable}[c]{@{}llll@{}}
+% \begin{tabular}[c]{@{}llll@{}}
 % \toprule
 % & \textbf{Risk minimisation} & \textbf{Risk measurement} & \textbf{Ongoing risk monitoring}\tabularnewline
 % \midrule
@@ -1810,7 +1810,7 @@ In this appendix we review the current practices of each state for each of these
 % Activity} & Mitigate avoidable risks & Reduce estimation error & Measure the remaining risk\tabularnewline
 % &\tabularnewline
 % \bottomrule
-% \end{longtable}
+% \end{tabular}
 
 \section{Risk minimisation}\label{risk-minimisation}
 
@@ -1961,17 +1961,23 @@ Assessments of project risks can be considered:
   \textbf{comprehensive} if known, unknown, moderate and extreme risks are all accounted for. 
 \end{itemize}
 
+\begin{table}
+\caption{Requirements for complete risk measurement}\label{tbl:requirements-for-complete-risk-measurement}
+.
+\end{table}
+
+\begin{table}
+\caption{Completeness of key guidelines}\label{tbl:completeness-of-key-guidelines}
+.
+\end{table}
+
 As no single risk management tool achieves all these objectives, a combination of tools is required. 
 \Vref{tbl:requirements-for-complete-risk-measurement} summarises how each risk measurement tool can, if used properly, contribute to a complete approach to risk measurement. 
 \Vref{tbl:tbl:completeness-of-key-guidelines} illustrates that key Australian guidelines on risk measurement are systematically weak in their use of objective information and treatment of extreme and unknown risks. 
 
-\begin{longtable}
-\label{tbl:requirements-for-complete-risk-measurement}
-\end{longtable}
 
-\begin{longtable}
-\label{tbl:completeness-of-key-guidelines}
-\end{longtable}
+
+
 
 Most key guidelines recommend approaches to risk measurement that only go part way towards incorporating objective information and accounting for extreme and unknown risks.
 
@@ -2039,24 +2045,31 @@ There is substantial scope for the accuracy of existing risk measurement practic
 
 \subsection{Insufficient information is provided}\label{insufficient-information-is-provided}
 
-Perhaps the most troubling shortcoming of Australia's current risk measurement guidelines is that they commonly do not provide sufficient information to realise the advantages of the methodologies that they recommend.
+Perhaps the most troubling shortcoming of Australia’s current risk measurement guidelines is that they commonly do not provide sufficient information to realise the advantages of the methodologies that they recommend. 
+
+\begin{figure}
+\captionwithunits{No state provides consistently provides sufficient information for high quality risk measurement}{Yellow = recommended\\ Orange = recommended, but with insufficient information to be properly implemented\\ Red = not recommended}
+\label{fig:sufficient-information-table}
+\includegraphics[page=2]{atlas/AppendixCharts}
+\source{Australia risk management guidelines, Grattan analysis}
+\end{figure}
+
+\Vref{fig:sufficient-information-table} shows that expected value is the only approach which is consistently recommended with sufficient information to be implemented, and this is largely because calculation of the expected value of project risks is typically entirely based on project-specific information. 
+The quality of risk measurements obtained using the other key risk measurement tools are significantly impeded by the lack of data. 
+
 
 For example, \textbf{sensitivity analysis} is a valuable tool for understanding the external drivers of cost uncertainty.
-However, only 43 per cent of guidelines which recommend sensitivity analysis specify variables should be subjected to sensitivity analysis and the range of values these variables regularly take.
-In the absence of this information, there is opportunity for project proponents to retrofit their choices of variables and ranges of variation in order to achieve an acceptable level of cost uncertainty.
-Because of this, more guidelines should suggest ranges for sensitivity analysis, or recommend that the Austroad sensitivity ranges are used.%
-\footnote{Austroads 1996. p28: 2005. p27.
-These are old, but referenced in docs like p.32 of http://www.tmr.qld.gov.au/-/media/busind/techstdpubs/Project-delivery-and-maintenance/Cost-benefit-analysis-manual/Costbenefitanalysismanualroadprojects.pdf?la=en}
+However, only 43 per cent of guidelines which recommend sensitivity analysis specify variables should be subjected to sensitivity analysis and the range of values these variables regularly take. 
+In the absence of this information, there is opportunity for project proponents to retrofit their choices of variables and ranges of variation in order to achieve an acceptable level of cost uncertainty. 
+Because of this, more guidelines should suggest ranges for sensitivity analysis, or recommend that the sensitivity ranges specified in another set of guidelines are used\footnote{The Australian Transport Assessment Planning Guidelines provide a set of sensitivity ranges that could serve as a common point of reference, as the 1996 Austroad sensitivity ranges have done in the past.  For example, the Austroads 1996. p28: 2005. p27 (http://www.tmr.qld.gov.au/-/media/busind/techstdpubs/Project-delivery-and-maintenance/Cost-benefit-analysis-manual/Costbenefitanalysismanualroadprojects.pdf?la=en)}.
+
 
 Even more egregious is that some guidelines recommend that \textbf{reference class forecasting} be employed, but do not provide data or key statistics on any reference classes.
 Reference class forecasting is the practice of incorporating the rate of cost overruns observed historically on like projects into a project's cost estimate.
 Consequently, reference class forecasting cannot be implemented to any degree without high quality data on historical cost outcomes.
 
-Yet this is what some of Australia's risk management guidelines demand of project proponents.
-For example,
-
-the cost benefit analysis guidelines of Queensland Treasury's Project Assessment Framework recommend that cost estimates are adjusted for optimism bias using empirical evidence that is relevant to the project's type (2006, p.25).
-However, they do not provide any such evidence and, to the best of our knowledge, such empirical evidence is not readily available.
+Yet this is what some of Australia’s risk management guidelines demand of project proponents. 
+For example, the cost benefit analysis guidelines of Queensland Treasury’s Project Assessment Framework recommend that cost estimates are adjusted for optimism bias using empirical evidence that is relevant to the project’s type (2006, p.25). However, they do not provide any such evidence and, to the best of our knowledge, such empirical evidence is not readily available.
 
 Similarly, the Commonwealth's Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction identify that reference class forecasting should be used to counteract optimism bias, and refer to the United Kingdom's reference class forecasting uplift rates.\footnote{\textcite{DIRD2008BPCEPFRRC}, Appendix 7.}
 However, these uplift rates are not appropriate for use on Australian cost estimates, because they are designed to offset the average magnitude of cost overruns observed on British projects, relative to British cost estimation practices.
