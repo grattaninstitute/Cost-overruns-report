@@ -1392,28 +1392,25 @@ This advice contradicts Australian experience (see \Vref{box:failure-to-learn-co
 
 \begin{smallbox}{Failure to learn from history continues to affect current projects}{box:failure-to-learn-continues-to-affect-current-projects}
 
-For transport infrastructure projects valued at \$20 million or more, the difference between the median cost estimate, or ``P50'', and the ``worst case'', or ``P90'' cost estimates, has averaged 21 per cent over the past 15 years.
+The experience of the past 15 years has shown that the difference between the median cost, or ``P50'', and the ``worst case'', or ``P90'' cost , is 21 per cent on average, for transport infrastructure projects valued at \$20 million or more.
 
-But cost estimates for current projects do not reflect this difference.
-Instead, the difference between median and ``worst case'' estimates is generally about a third this size.
-Judging by recent history, this indicates that either the median cost estimate is too high, or - more likely - the ``worst case'' cost estimate is too low.
-If the latter is the case, more than the expected 10 per cent of these projects will be likely to experience overruns.
-This report has found that these will be larger, on average, than expected.
+But cost estimates for current projects do not reflect this experience. Instead, the difference between median and ``worst case'' estimates is generally about a third this size. Judging by recent history, this indicates that either the median cost estimate is too high, or - more likely - the ``worst case'' cost estimate is too low. If the latter is the case, more than the expected 10 per cent of these projects will be likely to experience overruns. This report has found that these will be larger, on average, than expected.
 
-\Vref{tbl:large-projects-cost-estimates} shows that the difference between median and ``worst case'' estimates appears to be too small for several massive projects currently under way, each of which is valued at close to a billion dollars or more.
-They show a ``worst case'' cost estimate far lower than 21 per cent above the median estimate that history should have led us to expect.
+
+\Vref{tbl:large-projects-cost-estimates} shows that the difference between median and ``worst case'' estimates appears to be too small for projects currently under way. They show a ``worst case'' cost estimate far lower than 21 per cent above the median estimate that history should have led us to expect.
+
 \end{smallbox}
 
 
 \begin{table*}
 \centering
 \captionsetup{margin = {0.075\textwidth,0.075\textwidth}}
-\caption{Large projects currently under consideration\label{tbl:large-projects-cost-estimates}}
+\caption{Large projects currently under development or construction\label{tbl:large-projects-cost-estimates}}
 \begin{tabularx}{0.85\textwidth}{Xlrrr}
 \toprule
-& & \multicolumn{2}{c}{\textbf{Cost estimate (nominal, millions)}} & \\
+& & \multicolumn{2}{c}{\textbf{Cost estimate (nominal, \$millions)}} & \\
 \cmidrule(lr){3-4}
-\textbf{Project} & \textbf{State} & \textbf{Median (or ``P50'')} & \textbf{``Worst case'' (or ``P90'')} & \textbf{Difference (\%)} \\
+\textbf{Project} & \textbf{State} & \textbf{Median (or ``P50'')} & \textbf{``Worst case'' (or ``P90'')} & \textbf{Difference} \\
 \midrule
 Inland Rail & National & \possibleTextDollar9\,890\dz & \possibleTextDollar10\,660\dz & 7.8\%\tabularnewline[1.245ex]
 Westconnex & NSW & \possibleTextDollar16\,800\dz & n/a & 6\%%\tablefootnote{``The Infrastructure Australia assessment makes reference to a six per cent difference between the P50 and P90 on the Stage 2'' (\textcite[][23]{SGS2016WestConnexreview})}
@@ -1422,12 +1419,12 @@ Melbourne Metro & Vic%\tablefootnote{``The expected value of each risk was then 
  & \possibleTextDollar10\,154\dz & \possibleTextDollar10\,837\dz & 6.7\%\tabularnewline
 Western Distributor & Vic%\tablefootnote{``Total nominal dollars over the construction period, assuming construction commences during the year ended 30 June 2018.''} 
 & \possibleTextDollar5\,226\dz & \possibleTextDollar5\,548\dz & 6.2\%\tabularnewline
-Princes Highway West Duplication & Vic & \possibleTextDollar334.3 & \possibleTextDollar363.5 & 8.7\%\tabularnewline
-Main Road, St Albans Level Crossing Removal Project & Vic & \possibleTextDollar222.9 & \possibleTextDollar231.5 & 3.9\%\tabularnewline[1.245ex]
-Bruce Highway Upgrade~& Qld & \possibleTextDollar841.2 & \possibleTextDollar929.3 & 10.5\%\tabularnewline
-M1 Pacific Motorway - Gateway Mway Merge Upgrade & Qld & \possibleTextDollar197.7 & \possibleTextDollar207.9 & 5.2\%\tabularnewline[1.245ex]
-Mitchell Freeway extension & WA & \possibleTextDollar297.9 & \possibleTextDollar322.6 & 8.3\%\tabularnewline
-Great Northern Highway & WA & \possibleTextDollar301.5 & \possibleTextDollar361\dz & 19.7\%\tabularnewline
+Princes Highway West Duplication & Vic & \possibleTextDollar334 & \possibleTextDollar363 & 8.7\%\tabularnewline
+Main Road, St Albans Level Crossing Removal Project & Vic & \possibleTextDollar222 & \possibleTextDollar231 & 3.9\%\tabularnewline[1.245ex]
+Bruce Highway Upgrade~& Qld & \possibleTextDollar841 & \possibleTextDollar929 & 10.5\%\tabularnewline
+M1 Pacific Motorway - Gateway Mway Merge Upgrade & Qld & \possibleTextDollar197 & \possibleTextDollar207 & 5.2\%\tabularnewline[1.245ex]
+Mitchell Freeway extension & WA & \possibleTextDollar297 & \possibleTextDollar322 & 8.3\%\tabularnewline
+Great Northern Highway & WA & \possibleTextDollar301 & \possibleTextDollar361\dz & 19.7\%\tabularnewline
 North West Coastal Highway & WA & \possibleTextDollar148\dz & \possibleTextDollar179\dz & 20.9\%\tabularnewline[1.245ex]
 Canberra Light Rail & ACT & \possibleTextDollar759\dz & \possibleTextDollar806\dz & 6.5\%\tabularnewline
 \midrule 
@@ -1492,7 +1489,7 @@ This practice would only be a concern for government if contractors pursued cont
 \footcites[][500]{Love2014Understandinglandscapeoverruns}[][87--88]{Hinze1992CostOverrunsonStateofWashington} While this may occur on some projects, we do not find significant evidence of low initial bids leading to later overruns.
 However, pre-construction overruns have been higher since the global financial crisis, perhaps because some projects were rushed through early development stages so that they could stimulate the economy in the years immediately following the crisis.
 
-\section{Avoidable risks could be better managed}\label{avoidable-risks-could-be-better-managed}
+\section{Unavoidable risks could be better managed}\label{avoidable-risks-could-be-better-managed}
 
 While broader economic shifts can affect project costs, many risks are specific to the individual project.
 But Australia's risk management practices appear to be better suited to managing risk to individuals' and agencies' reputations rather than improving cost efficiency.
