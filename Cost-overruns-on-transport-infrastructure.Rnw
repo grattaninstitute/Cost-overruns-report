@@ -2266,9 +2266,9 @@ The comparability of the Grattan and Deloitte datasets also holds at the individ
 \end{figure}
 
 Despite this similarity, we expect the average magnitude of cost overruns observed in the Investment Monitor will be substantially lower than observed in the Grattan dataset.
-This is because the Investment Monitor considers all projects valued over \$20 million, the Grattan dataset only considers projects valued above \$100 million and project size has been found in the literature to be a consistent predictor of the size of cost overruns \footcite{Flyvbjerg2004Whatcausescost, Koushki2005Delayscostincreases, Anastasopoulos2012EmpiricalAssessmentLikelihood}.
+This is because the Investment Monitor considers all projects valued over \$20 million, the Grattan dataset only considers projects valued above \$100 million and project size has been found in the literature to be a consistent predictor of the size of cost overruns \footcites{Flyvbjerg2004Whatcausescost}{Koushki2005Delayscostincreases}{Anastasopoulos2012EmpiricalAssessmentLikelihood}. 
 
-In line with this expectation, we observe far higher cost overruns across the Grattan dataset than the Investment Monitor dataset.,
+In line with this expectation, we observe far higher cost overruns across the Grattan dataset than the Investment Monitor dataset.
 
 \begin{figure}
 \caption{Cost overrun by project stage in Investment Monitor and Grattan datasets\label{fig:cost-overrun-by-project-stage}}
@@ -2464,14 +2464,15 @@ In these ways, the stylized distribution of cost overruns provides a fair repres
 Firstly, costs quoted in state budget papers are typically at least P75 - P90 costs. This implies that less than 25 per cent of projects are expected to overrun. For evidence of this practice, see, for instance that:
 \begin{itemize}
 \item Queensland Department of Transport and Main Roads' Project Cost Estimating Manual requires cost estimates to be P90 while initial designs are being completed, \footcite[12]{QLDDepTransport2015ProjectCostEstimatingManual}
-\item Transport for New South Wales' Principles and Guidelines for Economic Appraisal of Transport Investment and Initiatives require P90 cost estimates to be used from the pre-tender stage, \footcite[56]{TransportNSW2013PrinciplesandGuidelines}  
-\item the Victorian submission to the Productivity Commission's inquiry into public infrastructure noted that P90 costs often form the budget against which a project's success is assessed against, \footcite[42]{Victoria2014ProductivityCommissionPublic} and
-\item while both P50 and P90 cost estimates are required for requests for funding from the Commonwealth government, \footcite[47]{DIRD2013NotesonAdministration} a review of the 23 project summaries published by Infrastructure Australia as of 23rd of October 2016 reveals that the cost estimates submitted for funding requests are P79, on average.
+\item Transport for New South Wales' Principles and Guidelines for Economic Appraisal of Transport Investment and Initiatives require P90 cost estimates to be used from the pre-tender stage, \footcite[56]{TransportNSW2013PrinciplesandGuidelines}  and
+\item the Victorian submission to the Productivity Commission's inquiry into public infrastructure noted that P90 costs often form the budget against which a project's success is assessed against. \footcite[42]{Victoria2014ProductivityCommissionPublic} 
 \end{itemize} 
+While both P50 and P90 cost estimates are required for requests for funding from the Commonwealth government, \footcite[47]{DIRD2013NotesonAdministration} a review of the 23 project summaries published by Infrastructure Australia as of 23rd of October 2016 reveals that the cost estimates submitted for funding requests are P79, on average.
+
 
 The second key observation is that risk management guidance commonly implies that cost risk is symmetrically distributed, by recommending that symmteric distributions should be used for Monte Carlo simulation or not providing sufficient guidance on Monte Carlo simulation of asymmetric risks. 
 
-Very few of the reviewed guidelines provide any guidance to project proponents on the expected distribution of project risks,\footnote{Of those reviewed, only \textcite{QLDDepTransport2015ProjectCostEstimatingManual}, \textcite{DIRD2013NotesonAdministration}, \textcite{TransportNSW2013PrinciplesandGuidelines} and \textcite{VicDTF2015HighValueHighRisk} provided detailed guidance.} and of those that do, only the Victorian Department of Treasury and Finances' Economic Evaluation for Business Cases Technical guidelines for High Risk High Value projects clearly indicates that probabilistic probability pricing should assume that cost risks are asymmetrically distributed. 
+Very few of the reviewed guidelines provide any guidance to project proponents on the expected distribution of project risks,\footnote{Of those reviewed, only \textcite{QLDDepTransport2015ProjectCostEstimatingManual}, \textcite{DIRD2013NotesonAdministration}, \textcite{TransportNSW2013PrinciplesandGuidelines} and \textcite{VicDTF2015HighValueHighRisk} provided detailed guidance.} and of those that do, only the Victorian Department of Treasury and Finances' Economic Evaluation for Business Cases Technical guidelines for ``High Risk High Value'' projects clearly indicates that probabilistic probability pricing should assume that cost risks are asymmetrically distributed. 
 
 However, even these technical guidelines did not go as far as to explain how to simulate asymmetric cost risk distributions. \footnote{It is reasonable to expect guidelines to provide this level of detail because multiple asymmetric distributions being readily available in the commonly used excel package for Monte Carlo simulation, \emph{@RISK}. Instead, guidelines uniformly recommend the use uniform, triangular, PERT and other symmetric probability distributions, without guidance on how to design correlation matrices in such a way that Monte Carlo simulation from these distributions could produce an asymmetric risk distribution.} In this way,  guidelines' specific methodological recommendations contradict their general warnings regarding the perils of optimism bias, and the findings of the Australian literature on the distribution of cost risk transport projects. \footnote{See, for instance, \textcite{Love2014EstimatingConstructionContingency}} 
 
