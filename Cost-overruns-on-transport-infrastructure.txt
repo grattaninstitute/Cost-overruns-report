@@ -1,487 +1,130 @@
-\documentclass{grattan}
+\documentclass{grattan}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
 \input{tex/preamble}
 \input{tex/recommendations}
 
 \addbibresource{bib/transport_bibliography.bib}
 
 
-\title{Cost overruns in transport infrastructure}
+\title{Cost overruns}
 \author{Marion Terrill}
 
 \GrattanReportNumber{XX}
 
-\acknowledgements{%
-This report was written by Marion Terrill, Transport Program Director, and Lucille Danks, Associate, Grattan Institute. Brendan Coates, Owain Emslie, Hugh Parsonage and James Button made substantial contributions to the report.
-
-We would like to thank Deloitte for access to the Deloitte Investment Monitor. We would also like to thank numerous people from the public policy community for their helpful comments.
-The opinions in this report are those of the authors and do not necessarily represent the views of Grattan Institute’s founding members, affiliates, individual board members, reference group members or reviewers. Any remaining errors or omissions are the responsibility of the authors.
-
-Grattan Institute is an independent think-tank focused on Australian public policy. Our work is independent, practical and rigorous. We aim to improve policy outcomes by engaging with both decision-makers and the community. 
-
-{\footnotesize
-For further information on the Institute’s programs, or to join our mailing list, please go to: \textcolor{blue}{\url{http://www.grattan.edu.au/}}
-This working paper may be cited as: Terrill, M. and Danks, L., 2016, \textit{\mytitle}, Grattan Institute
-
-ISBN: 
-
-All material published or otherwise created by Grattan Institute is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License\par 
-}
-}
-
-
+\acknowledgements{...}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
-<<portability, echo=FALSE>>=
-source("R/portability.R")
-portability()
-@
 
-<<knitrOpts, echo=FALSE>>=
-library(knitr)
-opts_chunk$set(error = FALSE, eval=FALSE, echo = FALSE, cache=FALSE, warning = FALSE, message = FALSE, fig.width=11, fig.height=7, out.width="\\columnwidth", out.height=paste0("0.6363\\columnwidth"))
-@
 
-<<loadPackages, cache=FALSE>>=
-library(xtable)
-library(testthat)
-library(dplyr)
-library(data.table)
-library(dtplyr)
-library(magrittr)
-library(tidyr)
-library(zoo)
-library(ggplot2)
-library(scales)
-library(devtools)
-library(CostOverrunsData)
-if (packageVersion("CostOverrunsData") < package_version('0.2.0')){
-  stop("Update the CostOverrunsData package. Pull from github master then build locally.")
-}
-library(grattan)
-if (texNum(1.25, dollar = TRUE) != "\\$1.25"){
-  stop("Update the grattan package")  # recent bugfix
-}
-library(broom)
-library(sandwich)
-library(car)
-library(mfx)
-library(logistf)
-library(curl)
-library(digest)
-library(glmnet)
-# Namespace
-select <- function(...) dplyr::select(...)
-rename <- function(...) dplyr::rename(...)
-@
 
-<<n2w>>=
-#' @title Numbers to words
-#' @source \url{https://github.com/ateucher/useful_code/blob/master/R/numbers2words.r}
-n2w <- function(x){
-  c("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten")[x]
-}
-@
 
-<<val_nrst_mean>>=
-#' Returns the value in a set nearest to its mean
-#' @param x A numeric vector
-#' @param ... Arguments passed to \code{mean}.
-val_nrst_mean <- function(x, ...){
-  avg <- mean(x, ...)
-  diffs <- abs(avg - x)
-  # floating point precision not an issue
-  if (any(diffs == 0)){
-    return(avg)
-  } else {
-    return(x[which.min(diffs)])
-  }
-}
 
-test_that("Returns mean if there", {
-  expect_equal(mean(c(0.1, 0.3, 0.5)), val_nrst_mean(c(0.1, 0.3, 0.5)))
-})
 
-test_that("Returns nearest otherwise", {
-  expect_equal(val_nrst_mean(c(0.1, 0.35, 0.5)), 0.35)
-})
-@
 
-<<construction_inflator>>=
-# This will equal 1.661184 if the inflator's working correctly:
-# general_inflator(from = as.yearqtr("1998 Q1"), to = as.yearqtr("2013 Q1"), inflator_table = construction_indices)
-construction_indices2 <- 
-  construction_indices %>%
-  as.data.table %>%
-  copy %>%
-  .[, Time := as.Date(Time)]
 
-construction_inflator <- function(x = 1, from, to){
-  general_inflator(x = x, from = from, to = to, inflator_table = construction_indices2)
-}
 
-test_that("Construction inflator returns single correct value", {
-  expect_equal(construction_inflator(1, from = as.Date("1998-03-01"), to = as.Date("2013-03-01")), 1.66118421052632)
-})
 
-test_that("Construction inflator works multiply", {
-  expect_equal(construction_inflator(c(1, 2), from = as.Date(c("1998-03-01", "2000-03-01")), to = as.Date("2013-03-01")), 
-               c(1.66118421052632, 3.05135951661631))
-})
-@
 
-<<public_private_by_Grattan_record>>=
-public_private_by_Grattan_record <- 
-  completed_project_list  %>%
-  as.data.table %>%
-  setkey(Grattan_record) %>%
-  unique %>%
-  # no need to spread info over two columns
-  mutate(Lucille_Ownership = if_else(as.logical(Public_project_Grattan), 
-                                     "Public", 
-                                     "Private")) %>%
-  # Manual done by Lucille
-  # Correcting errors in the Lucille_ownership variable
-  mutate(Lucille_Ownership = if_else(Grattan_record %in% c(10218, 10858, 11043, 11127, 8267, 9757, 7952), 
-                                     "Private", 
-                                     Lucille_Ownership)) %>%
-  select(Grattan_record, Lucille_Ownership)
-@
 
-<<convert_million_cols>>=
-convert_million_cols <- function(.data){
-  stopifnot(is.data.table(.data))
-  cols_in_millions <- grep("$m", names(.data), fixed = TRUE)
-  
-  for (j in cols_in_millions){
-    set(.data, j = j, value = .data[[j]] * 10^6)
-  }
-  
-  # Update the names also
-  setnames(.data, 
-           old = names(.data)[cols_in_millions], 
-           trimws(gsub("$m", "", fixed = TRUE, gsub("($m)", "", names(.data)[cols_in_millions], fixed = TRUE))))
-  .data
-}
 
-test_that("convert_million_cols", {
-  example.dt <- data.table(x = 1:5, y = 1:5)
-  setnames(example.dt, "x", "x ($m)")
-  
-  expect_identical(convert_million_cols(example.dt), 
-                   data.table(x = seq(1e6, 5e6, by = 1e6), y = 1:5))
-})
-@
 
-<<project_dataset_orig>>=
-project_dataset_orig <- copy(project_dataset)
-@
 
-<<project_dataset>>=
-project_dataset <-
-  project_dataset_orig %>%
-  as.data.table %>%
-  # case-sensitivity
-  mutate(Status = if_else(Status == "Under Construction", "Under construction", Status)) %>%
-  mutate(Status_4 = Status) %>% # 4 stands for four stages: "Possible", "Under consideration", "Committed", "Under construction"
-  mutate(Status = if_else(Status %in% c("Possible", "Under consideration"), "Possible or under consideration", Status)) %>%
-  mutate(Grattan_record = coalesce(`Project No.`, `Record No`), 
-         Record_date = as.Date(paste("1", sheet), 
-                               format = "%d %b %Y")) %>%
-  filter(!is.na(Grattan_record))
-@
 
-<<first_status_by_GR>>=
-first_status_by_GR <-
-  project_dataset %>%
-  as.data.table %T>%
-  {warning("What about DELETED?")} %>%
-  mutate(Status_ordered = factor(Status, 
-                                 levels = c("Possible or under consideration", "Committed", "Under construction"), 
-                                 ordered = TRUE)) %>%
-  group_by(Grattan_record) %>%
-  summarise(first_pipeline_status = first(Status_ordered, order_by = Record_date)) %>%
-  setkey(Grattan_record)
-@
 
-<<final_status_by_GR>>=
-#' @return Data table of **all** records by their final status as recorded. 
-final_status_by_GR <- 
-  historical_dataset %>% 
-  as.data.table %>%
-  select(Grattan_record = `Project No.`, 
-         Status_according_to_historical_dataset = Status) %>%
-  # See https://github.com/grattaninstitute/Cost-overruns-report/issues/20 
-  right_join(project_dataset, by = "Grattan_record") %>%
-  group_by(Grattan_record) %>%
-  summarise(Final_status = 
-              # i.e. it is not in historical_dataset:
-              if (all(is.na(Status_according_to_historical_dataset))){
-                if (any(Status == "Under construction") && year(max(Record_date)) < 2015){
-                  "Completed"
-                } else {
-                  NA_character_
-                }
-              } else {
-                last(Status_according_to_historical_dataset, order_by = Record_date)
-              }) %>%
-  setkey(Grattan_record)
-@
 
-<<date_first_Deleted_by_GR>>=
-date_first_Deleted_by_GR <-
-  historical_dataset %>% 
-  as.data.table %>%
-  select(Grattan_record = `Project No.`, 
-         Status_according_to_historical_dataset = Status) %>%
-  # See https://github.com/grattaninstitute/Cost-overruns-report/issues/20 
-  right_join(project_dataset, by = "Grattan_record") %>%
-  mutate(Status = coalesce(Status_according_to_historical_dataset, Status)) %>%
-  mutate(isDeleted = Status == "Deleted") %>%
-  group_by(Grattan_record) %>%
-  summarise(date_first_Deleted = if (any(isDeleted)) min(Record_date[which(isDeleted)]) else as.Date(Inf))
-@
 
-<<isTransport_by_GR>>=
-isTransport_by_GR <- 
-  project_dataset %>%
-  mutate(isTransport = `&`(`Major industry` == "Transport & Storage",
-                           `Sub-industry` %in% c("Road", "Rail"))) %>%
-  select(Grattan_record, isTransport) %>%
-  setkey(Grattan_record) %>%
-  unique
-@
 
-<<inflation_origin_by_GR>>=
-inflation_origin_by_GR <- 
-  project_dataset %>%
-  # Is the status under construction in this quarter?
-  mutate(.co = grepl("under.*construction", Status, ignore.case = TRUE)) %>%
-  group_by(Grattan_record) %>%
-  # For each grattan record, 
-  #  1.  Is the project ever under construction?  If so, take
-  #      the value nearest the mean of those dates which were
-  #      under construction.
-  #  2.  If the project is never under construction, take the
-  #      the val_nrst_mean of all dates.
-  summarise(inflation_origin = 
-              if (any(.co)) { 
-                val_nrst_mean(Record_date[.co]) 
-              } else { 
-                val_nrst_mean(Record_date)
-              }) %>%
-  select(Grattan_record, inflation_origin) %>%
-  setkey(Grattan_record)
-@
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
-<<Cost_estimate_by_GR_Record_date>>=
-Cost_estimate_by_GR_Record_date <- 
-  project_dataset %>%
-  as.data.table %>%
-  select(Grattan_record, Record_date, sheet, Status, grep("Cost", names(.), ignore.case = TRUE, value = FALSE)) %>%
-  melt.data.table(measure.vars = grep("Cost", names(.), ignore.case = TRUE, value = TRUE), 
-                  na.rm = TRUE, 
-                  value.name = "Cost_estimate") %>%
-  setkey(Grattan_record) %T>%
-  ## Testing:
-  {
-    dot <- copy(.)
-    test_that("Each cost variable is unique", {
-      nrows_not_unique <- 
-        setkey(dot, 
-               Grattan_record, 
-               variable, 
-               sheet) %>% 
-        unique %>% 
-        group_by(Grattan_record, sheet) %>% 
-        mutate(n = uniqueN(variable)) %>% 
-        filter(n > 1) %>%
-        nrow
-      expect_equal(nrows_not_unique, 0)
-    })
-  } %>%
-  # molten state no longer needed
-  select(-variable) %>%
-  {
-    # Warning("Assuming cost columns not marked ($m) are nonetheless in millions") - yes, that's a fine assumption. 
-    mutate(., Cost_estimate = Cost_estimate * 10^6) 
-  } %>%
-  merge(inflation_origin_by_GR) %>%
-  mutate(Cost_estimate_real = construction_inflator(Cost_estimate, from = inflation_origin, to = as.Date("2015-12-01"))) %>% 
-  select(Grattan_record, Record_date, Cost_estimate, Cost_estimate_real) %>%
-  setkey(Grattan_record, Record_date)
-@
 
-<<Status_ordered_by_GR>>=
-#' @details Note that 'Deleted' is confusing: it really should be a separate field.
-#'          Deleted is a property of the project with respect to the dataset, whereas
-#'          the other statuses are properties of the project independent of the dataset. 
-Status_ordered_by_GR_Record_date <- 
-  project_dataset %>%
-  copy %>%
-  select(Grattan_record, Record_date, Status) %>%
-  filter(Status != "Deleted") %>%
-  mutate(Status_ordered = factor(Status, 
-                                 levels = c("Possible or under consideration", 
-                                            "Committed", 
-                                            "Under construction"), 
-                                 ordered = TRUE)) %>%
-  select(Grattan_record, Record_date, Status_ordered) %>%
-  setkey(Grattan_record, Record_date) %>%
-  unique
-@
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in function\_list[[i]](value): What about DELETED?}}\end{kframe}
+\end{knitrout}
 
-<<first_Cost_estimate_real_by_GR>>=
-first_Cost_estimate_real_by_GR <- 
-  Cost_estimate_by_GR_Record_date %>%
-  group_by(Grattan_record) %>%
-  summarise(first_Cost_estimate_real = first(Cost_estimate_real, order_by = Record_date)) %>%
-  setkey(Grattan_record)
-@
 
-<<last_Cost_estimate_real_by_GR>>=
-last_Cost_estimate_real_by_GR <- 
-  Cost_estimate_by_GR_Record_date %>%
-  group_by(Grattan_record) %>%
-  summarise(last_Cost_estimate_real = last(Cost_estimate_real, order_by = Record_date)) %>%
-  setkey(Grattan_record)
-@
 
-<<Status_by_GR_Record_date>>=
-Status_by_GR_Record_date <- 
-  project_dataset %>%
-  select(Grattan_record, Record_date, Status) %>%
-  setkey(Grattan_record, Record_date)
-@
 
-<<first_Cost_estimate_real_by_GR_Status_ordered>>=
-first_Cost_estimate_real_by_GR_Status_ordered <- 
-  Status_ordered_by_GR_Record_date %>%
-  merge(Cost_estimate_by_GR_Record_date) %>%
-  group_by(Grattan_record, Status_ordered) %>%
-  summarise(first_Cost_estimate_real = first(Cost_estimate_real, order_by = Record_date)) %>%
-  ungroup %>%
-  setkey(Grattan_record, Status_ordered)
-@
 
-<<outlier_by_GR>>=
-outlier_by_GR <- 
-  first_Cost_estimate_real_by_GR %>%
-  merge(last_Cost_estimate_real_by_GR) %>%
-  mutate(outlier = !between(last_Cost_estimate_real / first_Cost_estimate_real,
-                            0.5, # This is a generous definition of outliers as the biggest underrun we observe 
-                            # is the 34% underrun on the Springfield to Richlands line. 
-                            
-                            5.2  # Any overrun greater than 5.2 is suspect of a data error. This is because the 
-                            # Peel deviation is the project with the largest overrun that we have been able 
-                            # to verify with certainty. A bunch of the extreme outliers were all redcorded 
-                            # on the same day, which looks suspicious too.
-  ) | is.na(first_Cost_estimate_real) | is.na(last_Cost_estimate_real)) %>%
-  select(Grattan_record, outlier) %>%
-  setkey(Grattan_record)
-@
 
-<<total_cost_of_cost_overruns>>=
-total_cost_of_cost_overruns <- 
-  last_Cost_estimate_real_by_GR %>%
-  merge(first_Cost_estimate_real_by_GR) %>%
-  merge(isTransport_by_GR) %>%
-  merge(outlier_by_GR) %>%
-  merge(final_status_by_GR) %>%
-  filter(last_Cost_estimate_real >= 20e6, 
-         isTransport, 
-         !outlier, 
-         !is.na(Final_status)) %$%
-  sum(last_Cost_estimate_real - first_Cost_estimate_real)
-@
 
-<<n_valid_transport_projects_geq_20M>>=
-n_valid_transport_projects_geq_20M <-
-  last_Cost_estimate_real_by_GR %>%
-  merge(isTransport_by_GR) %>%
-  merge(outlier_by_GR) %>%
-  merge(final_status_by_GR) %>%
-  filter(last_Cost_estimate_real >= 20e6, 
-         isTransport, 
-         !outlier, 
-         !is.na(Final_status)) %$%
-  uniqueN(Grattan_record)
-@
 
-<<prop_projects_having_big_overruns>>=
-prop_projects_having_big_overruns <- 
-  final_status_by_GR %>%
-  merge(first_status_by_GR) %>%
-  merge(first_Cost_estimate_real_by_GR) %>%
-  merge(last_Cost_estimate_real_by_GR) %>%
-  merge(isTransport_by_GR) %>%
-  merge(outlier_by_GR) %>%
-  filter(last_Cost_estimate_real >= 20e6, 
-         isTransport, 
-         !outlier, 
-         !is.na(Final_status)) %>%
-  mutate(cost_overrun_perc = last_Cost_estimate_real / first_Cost_estimate_real - 1) %$% 
-  mean(cost_overrun_perc > 0.5)
-@
 
-<<prop_value_overruns_due_to_big_overruns>>=
-prop_value_overruns_due_to_big_overruns <- 
-  final_status_by_GR %>%
-  merge(first_status_by_GR) %>%
-  merge(first_Cost_estimate_real_by_GR) %>%
-  merge(last_Cost_estimate_real_by_GR) %>%
-  merge(isTransport_by_GR) %>%
-  merge(outlier_by_GR) %>%
-  filter(last_Cost_estimate_real >= 20e6, 
-         isTransport, 
-         !outlier, 
-         !is.na(Final_status)) %>%
-  mutate(cost_overrun_perc = last_Cost_estimate_real / first_Cost_estimate_real - 1, 
-         cost_overrun_value = last_Cost_estimate_real - first_Cost_estimate_real) %$%
-  weighted.mean(cost_overrun_perc > 0.5, cost_overrun_value)
-@
 
-<<prop_projects_announced_early>>=
-prop_projects_announced_early <- 
-  final_status_by_GR %>%
-  merge(first_status_by_GR) %>%
-  merge(last_Cost_estimate_real_by_GR) %>%
-  merge(isTransport_by_GR) %>%
-  merge(outlier_by_GR) %>%
-  filter(last_Cost_estimate_real >= 20e6, 
-         isTransport, 
-         !outlier, 
-         !is.na(Final_status)) %$%
-  mean(first_pipeline_status < "Committed")
-@
 
-<<prop_value_overruns_due_to_early_projects>>=
-prop_value_overruns_due_to_early_projects <- 
-  final_status_by_GR %>%
-  merge(first_status_by_GR) %>%
-  merge(first_Cost_estimate_real_by_GR) %>%
-  merge(last_Cost_estimate_real_by_GR) %>%
-  merge(isTransport_by_GR) %>%
-  merge(outlier_by_GR) %>%
-  filter(last_Cost_estimate_real >= 20e6, 
-         isTransport, 
-         !outlier, 
-         !is.na(Final_status)) %>%
-  mutate(cost_overrun_value = last_Cost_estimate_real - first_Cost_estimate_real) %$%
-  weighted.mean(first_pipeline_status < "Committed", cost_overrun_value)
-@
 
-<<prop_projects_before_committed_which_are_completed>>=
-prop_projects_before_committed_which_are_completed <- 
-  final_status_by_GR %>%
-  merge(first_status_by_GR) %>%
-  merge(last_Cost_estimate_real_by_GR) %>%
-  merge(isTransport_by_GR) %>%
-  merge(outlier_by_GR) %>%
-  filter(last_Cost_estimate_real >= 20e6, 
-         isTransport, 
-         !outlier,
-         first_pipeline_status < "Committed") %$%
-  mean(Final_status == "Completed", na.rm = TRUE)
-@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -492,7 +135,7 @@ prop_projects_before_committed_which_are_completed <-
 \nonfrenchspacing
 
 
-Over the past 15 years, Australian governments have spent \$28~billion more on transport infrastructure than they told taxpayers they would. The cost overruns amounted to nearly a quarter of total project budgets. Western Australia’s Forrest Highway between Perth and Bunbury cost nearly five times, and New South Wales’ Hunter Expressway cost over four times, the amounts initially promised. Yet despite their sometimes staggering size, cost overruns attract little public attention. There is little interest in understanding and fixing the underlying causes. 
+Over the past 15 years, Australian governments have spent \$28~billion more on transport infrastructure than they told taxpayers they would. The cost overruns amounted to nearly a quarter of total project budgets. Western Australia’s Forrest Highway between Perth and Bunbury cost nearly five times, and New South Wales’ Hunter Expressway cost nearly four times, the amounts initially promised. Yet despite their sometimes staggering size, cost overruns attract little public attention. There is little interest in understanding and fixing the underlying causes. 
 
 For the first time in Australia, this report investigates the cost outcomes of all 836 projects valued at \$20~million or more and planned or built since 2000. It finds that most problems are caused by a relatively small number of projects. Ninety per cent of Australia’s cost overrun problem is explained by 17 per cent of projects that exceed their promised cost by more than half.
 
@@ -526,10 +169,10 @@ The Commonwealth should enable and facilitate better public understanding of inf
   \item requiring Infrastructure Australia to publish 
   \begin{enumerate}
     \renewcommand{\labelenumii}{(\roman{enumii})}
-    \item summaries of \emph{all} transport infrastructure projects funded by the Commonwealth within the previous quarter, completed to the extent that Infrastructure Australia has the information to do so and otherwise left blank; and 
+    \item summaries of \emph{all} transport infrastructure projects funded by the Commonwealth within the previous quarter, populated to the extent that Infrastructure Australia has the information to do so and otherwise left blank; and 
     \item business cases and cost benefit analyses for all transport infrastructure proposals receiving Commonwealth funding during the previous quarter, if these have not already been published by a state government; and
   \end{enumerate}
-  \item requiring the Productivity Commission to publish reliability ratings of all transport infrastructure business cases within one month of Infrastructure Australia publishing them.
+  \item requiring the Parliamentary Budget Officer to publish reliability ratings of all transport infrastructure business cases within one month of Infrastructure Australia publishing them.
 \end{enumerate}
 
 \subsubsection*{Recommendation 3: Publish post-completion data}
@@ -552,7 +195,7 @@ When the estimated construction cost to that jurisdiction is \$1 billion or more
 
 The Commonwealth should provide model guidelines that states and territories may adopt or adapt, that recommend a consistent approach to measuring and managing project risk, including a statement of seniority where specific guidelines would otherwise conflict with one another.
 
-\subsubsection*{\mbox{Recommendation 6: Compile Australian database of completed projects}}
+\subsubsection*{Recommendation 6: Compile Australian database of completed projects}
 
 The Commonwealth should seek cooperation from the states to create new benchmarking data to improve risk measurement in new project proposals and public accountability. They should do so using data collected through mechanisms described in Recommendation 3. 
 
@@ -579,33 +222,24 @@ Central agencies should hold project contingency funds at arm’s length from pr
 
 
 \chapter{The extent of cost overruns\label{chap:extent-of-cost-overruns}}
-The Peel deviation is a stretch of the Forrest Highway running between Perth and Bunbury. 
-It was first promised during the 2001 state election campaign at a cost of \$136~million. 
-Many twists and turns later, in 2010, the road was completed at a cost of \$688~million -- over 400 per cent more than its originally promised cost.
+The Peel Deviation is a stretch of the Forrest Highway running between Perth and Bunbury. It was first promised during the 2001 state election campaign at a cost of \$136~million. Many twists and turns later, in 2010, the road was completed at a cost of \$688~million -- over 400 per cent more than its originally promised cost.
 
 Such budget blowouts like this are disturbing but they do not hit the media or public eye very often. People could therefore be forgiven for thinking they are rare.
 
-Unfortunately, they are not rare enough. This report finds that the transport infrastructure projects valued at \$20~million or more and planned or built in Australia in the past 15 years cost \$28~billion more than their promised costs. This is 24 per cent more than the costs that were announced.
+Unfortunately, they are not rare enough. This report finds that the transport infrastructure projects valued at \$20~million or more and planned or built in Australia in the past 15 years cost \$28~billion more than their promised costs.This is 24 per cent more than the costs that were announced.
 
-The 24 per cent over and above the original cost promise does not stem from the accumulation of small cost overruns on most projects. Rather, most projects come in reasonably close to their promised cost, as \Vref{fig:large-cost-overruns-uncommon-but-expensive} shows. 
-The problem is that when projects do exceed their promised costs, the overruns can be spectacular: 90 per cent of Australia's cost overruns problem is explained by the 17 per cent of projects that overran their cost promise by more than 50 per cent.%
-\footnote{90 per cent of cost overruns are attributable to projects with cost overruns greater than 50 per cent of initial project value. It should be noted that these cost overruns explain 98 per cent of total cost differences, as illustrated in \Vref{fig:large-cost-overruns-uncommon-but-expensive} as small cost overruns are almost entirely offset by cost underruns.}
-
-\begin{figure}
-\captionwithunits{Large cost overruns are uncommon, but expensive\label{fig:large-cost-overruns-uncommon-but-expensive}}
-{Frequency of cost differences as a proportion of all projects, per cent}
-
-\includegraphics{atlas/Freq_CO.pdf}
-\vspace*{3pt}
-\units{Value of cost differences as a proportion of total cost overruns, per cent}
-\includegraphics{atlas/Value_CO.pdf}
-\noteswithsource{Australian transport projects completed between 2001 and 2015. \emph{Cost differences} are defined to refer to cost underruns and cost overruns collectively. }%
-{Deloitte Investment Monitor, Grattan analysis.}
-\end{figure}
+The 24 per cent over and above the original cost promise does not stem from the accumulation of small cost overruns on most projects. Rather, most projects come in reasonably close to their promised cost, as \Vref{fig:large-cost-overruns-uncommon-but-expensive} shows. The problem is that when projects do exceed their promised costs, the overruns can be spectacular: 90 per cent of Australia's cost overruns problem is explained by the 17 per cent of projects that overran their cost promise by more than 50 per cent.
 
 Overruns are not matched by underruns. Only 9 per cent of projects finished under their announced cost, and these cost underruns were, on average, only a quarter of the size of the average cost overrun, amounting to a total of \$41~million. The majority of projects come in close to their announced costs, and underruns do little to offset overruns.
 
+\begin{figure}
+\captionwithunits{Large cost overruns are uncommon, but expensive\label{fig:large-cost-overruns-uncommon-but-expensive}}
+{Per cent}
 
+% \includegraphics{media/image3.tiff}\emph{\\
+\noteswithsource{Australian transport projects completed between 2001 and 2015}%
+{Deloitte Investment Monitor, Grattan analysis.}
+\end{figure}
 
 \section{This is the first comprehensive Australian analysis of transport project cost overruns}\label{this-is-the-first-comprehensive-australian-analysis-of-transport-project-cost-overruns}
 
@@ -619,8 +253,7 @@ A small number of researchers and state auditors general have analysed aspects o
 
 \begin{figure}
 \captionwithunits{This report analyses upwards of nine times more Australian projects than previous studies\label{fig:this-report-analyses-9-times-more-projects-than-previous-studies}}%
-{Sample sizes of studies into cost overruns on Australian transport infrastructure projects}
-\includegraphics[page=3]{atlas/Charts_CO}
+{Sample sizes of studies into cost overruns on Australian transport infrastructure projects} % \includegraphics{media/image4.png}\emph{\\
 \source{Cited studies and Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
@@ -629,8 +262,8 @@ The findings of these small studies present a mixed view. Two key studies in 200
 \footcite{Wood2010Comparingcostuplift} A 2015 study of 44 projects each valued at \$1~billion or more found cost overruns of 14 per cent on the \$44~billion budget.%
 \footcite[][7]{AustralianConstructorsAssociation2015}
 
-While not seeking to be representative, an investigation by the Victorian Auditor-General found a 5 per cent cost overrun across seven road and rail projects valued at more than \$40~million.\footcites[][22]{General2010Managementmajorrail}[][12]{General2011ManagementMajorRoad} % 
- The New South Wales Auditor-General reported a 7 per cent cost overrun across 50 transport and other infrastructure projects valued above \$50~million.%
+While not seeking to be representative, an investigation by the Victorian Auditor General found a 5 per cent cost overrun across seven road and rail projects valued at more than \$40~million.\footcites[][22]{General2010Managementmajorrail}[][12]{General2011ManagementMajorRoad} % 
+ The New South Wales Auditor General reported a 7 per cent cost overrun across 50 transport and other infrastructure projects valued above \$50~million.%
 \footcite[][5]{General2015Largeconstructionprojects} These two studies did not consider scope changes or overruns between project announcement and formal contract.
 
 The variation in the average size of overruns observed across these small sample studies illustrates the value of a large sample when analysing extreme events.
@@ -642,12 +275,12 @@ This report considers the entire project lifecycle from when ministers or opposi
 \begin{figure}
 \caption{Project lifecycle begins when the project is announced\label{fig:proj-lifecycle-begins-when-proj-announced}}
 
-\includegraphics{atlas/ProjectStages}
+% \includegraphics{media/image5.tiff}
 
 \source{Grattan analysis}
 \end{figure}
 
-We define a cost overrun as the amount by which the actual cost at the end of a particular phase exceeded the estimated cost at the start of that phase, expressed as a percentage of each project's first cost.
+We define a cost overrun as the amount by which the actual cost at the end of a particular phase exceeded the estimated cost at the start of that phase, expressed as a percentage of the cost estimated at the start of that phase.
 
 Some argue that cost overruns should only be measured from the point that a formal cost benefit analysis is completed or a funding commitment made.\footcites[][493-494]{Love2014Understandinglandscapeoverruns}[][185]{Love2016CostOverrunsinTransportationInfrastructure}[][144-145]{Seimiatycki2009AcademicsauditorsComparing} But this ignores the realpolitik of infrastructure funding. Politicians often promise to pursue infrastructure projects before a detailed cost benefit study is completed.
 Indeed, the vast majority of project commitments made in the last federal election were in this category.%
@@ -660,17 +293,17 @@ Even when politicians promise infrastructure that is at a very early stage of de
 
 \section{Cost overruns may be even bigger than we claim}\label{cost-overruns-may-be-even-bigger-than-we-claim}
 
-This finding and others in this report may well be understated. For the 68 per cent\footnote{Early cost data is not wholly missing for all of these projects. Only 41 per cent of projects have no cost estimates recorded prior to construction commencing.} of projects where data on their early costs is missing in our dataset, we have made the assumption that no early cost overruns occurred.
+This finding and others in this report may well be understated. For the 68 per cent \footnote{Early cost data is not wholly missing for all of these projects. Only 41 per cent of projects have no cost estimates recorded prior to construction commencing.} of projects where data on their early costs is missing in our dataset, we have made the assumption that no early cost overruns occurred.
 
-This assumption appears to be extremely conservative. Detailed analysis of a subset of the projects which are missing early cost data indicates that these projects experience cost overruns at approximately the same rate as projects which are not missing data on projects' early costs.\footnote{Of the 55 projects investigated, 19 were missing early cost data and 37\% were identified to have experienced cost overruns in this early period. This prevalence rate is comparable to the 51\% observed across the 32\% of projects which are not missing early cost data.} Consequently, the rate of overruns presented as the upper bound of \Vref{fig:cost-overruns-are-likely-to-be-higher-than-reported} appears to be more likely than the lower bound, which underpins this report's analysis.
+This assumption appears to be extremely conservative. Detailed analysis of a subset of the projects which are missing early cost data indicates that these projects experience cost overruns at approximately the same rate as projects which are not missing data on projects' early costs\footnote{Of the 55 projects investigated, 19 were missing early cost data and 37\% were identified to have experienced cost overruns in this early period. This prevalence rate is comparable to the 51\% observed across the 32\% of projects which are not missing early cost data.}. Consequently, the rate of overruns presented as the upper bound of \Vref{fig:cost-overruns-are-likely-to-be-higher-than-reported} appears to be more likely than the lower bound, which underpins this report's analysis.
 
 \begin{figure}
 \captionwithunits{Cost overruns are likely to be higher than reported\label{fig:cost-overruns-are-likely-to-be-higher-than-reported}}
 {Average cost overrun rates as a proportion of initial costs, by project stage}
 
-\includegraphics[page=5]{atlas/Charts_CO}
+% \includegraphics{media/image6.png}
 
-\noteswithsource{All cost overrun estimates contained elsewhere in this report have been estimated under the assumption that no overrun occurred where not observed directly, which is the illustrated by the lower bound illustrated in this graph. Australian transport projects completed between 2001 and 2015.}
+\noteswithsource{Australian transport projects completed between 2001 and 2015}
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
@@ -698,10 +331,10 @@ Changes to scope are only a problem if they are not appraised on their merits as
 Although it appears to be common for scope changes to be made without proper appraisal of the new work,\footcite[][185]{Love2016CostOverrunsinTransportationInfrastructure} in fact scope changes only account for about 11 per cent of cost overruns on transport infrastructure projects (\Vref{fig:most-cost-overruns-were-not-attrib-to-scope-changes}).
 
 \begin{figure}
-\captionwithunits{Most cost overruns were not attributable to substantive scope changes\label{fig:most-cost-overruns-were-not-attrib-to-scope-changes}}
-{Proportion of cost overruns attributable to scope change, per cent}
+\captionwithunits{Most cost overruns were not attributable to scope changes\label{fig:most-cost-overruns-were-not-attrib-to-scope-changes}}
+{Average proportion of cost overruns by cause, per cent}
 
-\includegraphics{atlas/PieChart}
+% \includegraphics{media/image7.emf}
 
 \noteswithsource{Based upon detailed investigation of 56 Australian transport infrastructure projects completed between 2008 and 2013, using publicly available data sources.\\
 The value of scope changes have been estimated where possible as the percentage of the total project cost (where scope changes were described as a percentage of project scope), or else by the total value of cost overruns incurred during the period the scope change took place.}
@@ -732,27 +365,27 @@ Our public finance perspective takes the starting point of a project as the init
 The following chapter shows that premature announcement is in fact the key underlying cause of ongoing cost overruns.
 
 
-\begin{bigbox*}{Case study -- Forrest Highway (Peel deviation) -- 406 per cent cost overrun}{box:forrest_highway}
+\begin{bigbox*}{Case study -- Forrest Highway (Peel deviation) -- 588 per cent cost overrun}{box:forrest_highway}
 
 %\setlength{\parskip}{5pt minus 2pt}
 
 \subsubsection*{Poorly scoped election promises end badly}
 
-The Western Australian Liberal government promised to build the Peel deviation from Perth to Bunbury during the 2001 election campaign. The project was priced at \$136\,million.\footcite{GovWA2000Premier} Yet in an indication of the lack of clarity surrounding the cost, it was shortly afterwards included in a \$100\,million package of works, along with other works in the package estimated to cost \$87\,million in total.\footcite[][285]{TreasurersAdvanceAuthBill2001}
+The Western Australian Liberal government promised to build the Peel deviation from Perth to Bunbury during the 2001 election campaign. The project was priced at \$136 million.\footcite{GovWA2000Premier} Yet in an indication of the lack of clarity surrounding the cost, it was shortly afterwards included in a \$100 million package of works, along with other works in the package estimated to cost \$87 million in total.\footcite[][285]{TreasurersAdvanceAuthBill2001}
 
-Before building began, estimated project costs skyrocketed: to \$337\,million in May 2005, then to \$370\,million in August 2005, \$511\,million in 2006 and \$631\,million in 2007.\footnote{For the May 2005 estimate, see \textcite[][662]{WABudget200506Statements}. For August 2005, \textcite[][40]{GovWA2005MainRoads}. For 2006, see \textcite{GHDPerthtoBunbury}. For 2007, see \textcite[][794]{WABudget200708Statements}.}  During construction, the price increased further to \$705\,million,\footcite[][85]{AusGov2012InfrastructurePlanningDelivery} before finishing at \$688\,million.\footcite[][13]{WALISRealisingPowerLocation}
+Before building began, estimated project costs skyrocketed: to \$337 million in May 2005,\footcite[][662]{WABudget200506Statements} then to \$370 million in August 2005,\footcite[][40]{GovWA2005MainRoads} \$511 million in 2006\footcite{GHDPerthtoBunbury} and \$631 million in 2007.\footcite[][794]{WABudget200708Statements} During construction, the price increased further to \$705 million,\footcite[][85]{AusGov2012InfrastructurePlanningDelivery} before finishing at \$688 million.\footcite[][13]{WALISRealisingPowerLocation}
 
 \subsubsection*{What caused these cost changes?}
 
-The initial funding commitments (\$136\,million, \$337\,million, \$370\,million) were for a road 20 per cent shorter.\footcite[][40]{GovWA2005MainRoads} By the time the road was contracted in 2006, an enhancement of a section of the existing Kwinana Highway between Baldavis and Karnup was included.\footcites{GHDPerthtoBunbury}[][87]{AusGov2012InfrastructurePlanningDelivery}
+The initial funding commitments (\$136m, \$337m, \$370m) were for a road 20 per cent shorter.\footcite[][40]{GovWA2005MainRoads} By the time the road was contracted in 2006, an enhancement of a section of the existing Kwinana Highway between Baldavis and Karnup was included.\footcites{GHDPerthtoBunbury}[][87]{AusGov2012InfrastructurePlanningDelivery}
 
-Official documents reveal little about the reasons for the cost increases. 
-There were design enhancements, including an extra \$40\,million to fund a change in materials from those specified in the business case.\footcite[][92]{AusGov2012InfrastructurePlanningDelivery}
+In official documents, little is revealed about the reasons for the cost increases. There were design enhancements that occurred at some 
+point, including an extra \$40m to fund a change in materials from those specified in the business case.\footcite[][92]{AusGov2012InfrastructurePlanningDelivery}
 
-But even reducing the final cost by 20 per cent (to account for the extended road length) and subtracting \$40\,million from the final estimate (to exclude the additions) leaves a cost of around \$500\,million to build the originally specified road – 400 per cent higher than the initial cost estimate.
+But even reducing the final cost by 20 per cent (to account for the extended road length) and subtracting \$40m from the final estimate (to exclude the additions) leaves a cost of around \$500m to build the originally specified road – 400 per cent higher than the initial cost estimate.
 
 \begin{figure}[H]
- \captionwithunits{Project cost estimates\label{fig:CS_Forrest}}{millions of dollars}
+ \caption{Project cost estimates, millions of dollars\label{fig:CS_Forrest}}
  \includegraphics[page=2]{atlas/CaseStudies.pdf}
 \end{figure}
 
@@ -788,7 +421,7 @@ Over the past 15 years, 74 per cent of the total value of cost overruns is expla
 \begin{figure}
 \captionwithunits{The projects with early initial cost announced account for most of the value of cost overruns\label{fig:projects-with-early-initial-cost-announced-accont-for-most-of-the-value-of-cost-overruns}}%
 {Per cent}
-\includegraphics[page=7]{atlas/Charts_CO}
+
 \noteswithsource{Australian transport projects completed between 2001 and 2015}
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
@@ -800,8 +433,8 @@ However, the poor cost performance of projects with early cost announcements is 
 
 \begin{figure}
 \captionwithunits{Projects announced earlier have larger percentage cost overruns at all stages of the project lifecycle\label{fig:projs-announced-early-have-larger-cost-overruns-at}}
-{Average project size of each cohort, by project stage, \$2016 millions}
-\includegraphics[page=8]{atlas/Charts_CO}
+{Average project size at each project stage by cohort, \$2016 millions}
+
 
 \noteswithsource{Australian transport projects, completed between 2001 and 2015.
 Projects' maturities at the time of initial cost announcements are inferred from each project's stated maturity when the project entered the Deloitte Investment Monitor.
@@ -828,8 +461,8 @@ Yet the project was not confirmed until 2009, when a contract was awarded for \$
 Savings of \$6.7 million were made during the construction period, and the project was declared to have come in ``under budget''\footcite{RuralandRegionalAffairs2014} when it was completed in 2011,\footcite{NorthernStar2011ThroughTrafficToUseNewBypass} six months after the contracted completion date,\footcite{ABCNews2009AlstonvilleBypassFundsAnnounced} five years after the promised completion date, and nine years after the first commitment.
 
 \begin{figure}[H]
- \captionwithunits{Project cost estimates\label{fig:CS_Alstonville}}{millions of dollars}
- \includegraphics[page=3]{atlas/CaseStudies.pdf}
+ \caption{Project cost estimates, millions of dollars}
+ \includegraphics[page=3]{atlas/CaseStudies.pdf}\label{fig:CS_Alstonville}
 \end{figure}
 
 \end{bigbox*}
@@ -863,13 +496,12 @@ Between a quarter and a half of their promises were for projects that had not be
 The proportions of the promised money that were for projects that had been assessed as nationally significant and worth doing ranged from 15 per cent for the Coalition to none for the Greens (see Figure \ref{fig:election-promises}).
 
 \begin{figure}
-\captionwithunits{The vast majority of committed money from all three major parties is for projects not endorsed by Infrastructure Australia \label{fig:election-promises}}%
+\captionwithunits{The vast majority of committed money from all 3 major parties is for projects not endorsed by Infrastructure Australia \label{fig:election-promises}}%
 {Value of specific election commitments to transport infrastructure projects, \$billion}
 
+%\includegraphics{media/image10.png}
 
-\includegraphics[page=9]{atlas/Charts_CO}
-
-\noteswithsource{Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of The Coalition, from the 2016--17 budget papers.
+\noteswithsource{Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of the coalition, from the 2016-17 budget papers.
 Excludes projects for which construction has already commenced.}
 {\textcite{Liberal2016Policy}; \textcite{ALP2016Policy}; \textcite{Greens2016Policy}; \textcite{Treasury2016CommonwealthBudgetPapers} \textcite{Treasury2014CommonwealthBudgetPapers}; \textcite{InfrastructureAustralia2016}; and Grattan analysis.}
 \end{figure}
@@ -883,18 +515,18 @@ This pattern of promising poor quality or under-developed project ideas in elect
 
 A plan to build a Maitland bypass as part of the New England Highway in northern New South Wales was floated as early as 1983.\footcite{Bill2009NationBuildingProgramAmendment} The preferred route for what eventually became the Hunter Expressway was decided in 2001 and expected to cost ``more than \$335 million'' in 2002.\footcite{DIRD2002FedGovkeepsNSWMoving}
 
-In 2007 the funding commitment was increased to \$887 million by the Federal coalition Government as an election pledge.\footcite{Bill2009NationBuildingProgramAmendment} After winning the 2007 election, the new Labor Government cooled on the idea. In 2008, Joel Fitzgibbon, the then Labor Member for Hunter, observed that: ``First, the F3 link was conceived in the mid 1980s and there have been big changes in traffic movements and residential and commercial settlement patterns since then. Second, the cost of the project is now \$1,700 million (\$1.7 billion) and it has a very low benefit to cost ratio (meaning it provides tax-payers with a low-value solution).''\footcite{Bill2009NationBuildingProgramAmendment}
+In 2007 the funding commitment was increased to \$887 million by the Federal coalition Government as an election pledge.\footcite{Bill2009NationBuildingProgramAmendment} After winning the 2007 election, the new Labor Government cooled on the idea. In 2008,Joel Fitzgibbon, the then Labor Member for Hunter, observed that: ``First, the F3 link was conceived in the mid 1980s and there have been big changes in traffic movements and residential and commercial settlement patterns since then. Second, the cost of the project is now \$1,700 million (\$1.7 billion) and it has a very low benefit to cost ratio (meaning it provides tax-payers with a low-value solution).''\footcite{Bill2009NationBuildingProgramAmendment}
 
 The government commissioned a review in 2008,\footcite{DIRD2008LowerHunterTransportNeedsStudy} following which funding of \$1.7 billion was committed in 2009.\footcite{RMS2010Hunter} Federal Liberal Member for nearby Paterson, Bob Baldwin criticised the government's prevarication ``because we (the coalition) had committed to it as a 
+\begin{figure}[H]
+ \caption{Project cost estimates, millions of dollars\label{fig:CS_Hunter}}
+ \includegraphics[page=5]{atlas/CaseStudies.pdf}
+\end{figure}\vspace{-12pt}
 government''.\footcite{Bill2009NationBuildingProgramAmendment} Mr Baldwin emphasised the persistence of Support the Link, a local lobby group that pushed hard for the road.\footcite{Bill2009NationBuildingProgramAmendment}
+
 The project was completed in 2014.\footcite{RMS2016Hunter}
 
 While the final benefit cost ratio has not been published, these comments from politicians reveal the difficulty governments experience in reneging on commitments made very early in a project’s life, even after the facts of the project change significantly.
-
-\begin{figure}[H]
- \captionwithunits{Project cost estimates\label{fig:CS_Hunter}}{millions of dollars}
- \includegraphics[page=5]{atlas/CaseStudies.pdf}
-\end{figure}
 
 \end{bigbox*}
 
@@ -960,10 +592,10 @@ The Commonwealth should enable and facilitate better public understanding of inf
   \item requiring Infrastructure Australia to publish 
   \begin{enumerate}
     \renewcommand{\labelenumii}{(\roman{enumii})}
-    \item summaries of \emph{all} transport infrastructure projects funded by the Commonwealth within the previous quarter, completed to the extent that Infrastructure Australia has the information to do so and otherwise left blank; and 
+    \item summaries of \emph{all} transport infrastructure projects funded by the Commonwealth within the previous quarter, populated to the extent that Infrastructure Australia has the information to do so and otherwise left blank; and 
     \item business cases and cost benefit analyses for all transport infrastructure proposals receiving Commonwealth funding during the previous quarter, if these have not already been published by a state government; and
   \end{enumerate}
-  \item requiring the Productivity Commission to publish reliability ratings of all transport infrastructure business cases within one month of Infrastructure Australia publishing them.
+  \item requiring the Parliamentary Budget Officer to publish reliability ratings of all transport infrastructure business cases within one month of Infrastructure Australia publishing them.
 \end{enumerate}
 \end{recommendation}
 
@@ -989,31 +621,31 @@ Transport infrastructure investment by Australian governments is a similarly lar
 In the absence of such reporting for infrastructure projects, the public is not equipped to understand whether any particular infrastructure turned out to offer value for money in the terms in which it was originally promised.
 Ministers overseeing projects with significant cost overruns over time commonly end up claiming that the project came in under budget.
 Both Governments and oppositions feel free to make claims that the media and public cannot verify.
-\Vref{box:overstated-benefits} provides background on some extreme examples of overstated benefits that have come to light through legal action.
+\Vref{box:unreliable-forecasts} provides background on some extreme examples of overstated benefits that have come to light through legal action.
 
-% \begin{smallbox}{Unreliable traffic forecasts}{box:unreliable-forecasts}
-% Several successful lawsuits reveal the most extreme cases of inaccurate forecasting.
+\begin{smallbox}{Unreliable traffic forecasts}{box:unreliable-forecasts}
+Several successful lawsuits reveal the most extreme cases of inaccurate forecasting.
 
-% Brisbane's CLEM 7 tunnel was forecast to carry more than 100,000 vehicles per day within two years of opening, but in fact only about 22,000 went through.\textsuperscript{1} A successful class action was brought against the forecaster, AECOM.\textsuperscript{2} The tunnel's owner, RiverCity Motorway, went into administration in 2011, after the traffic failed to generate enough revenue for the company to pay its debts.\textsuperscript{3}
+Brisbane's CLEM 7 tunnel was forecast to carry more than 100,000 vehicles per day within two years of opening, but in fact only about 22,000 went through.\textsuperscript{1} A successful class action was brought against the forecaster, AECOM.\textsuperscript{2} The tunnel's owner, RiverCity Motorway, went into administration in 2011, after the traffic failed to generate enough revenue for the company to pay its debts.\textsuperscript{3}
 
-% The traffic forecasts for Sydney's Lane Cove tunnel were in contention in a lawsuit brought against the companies, Parsons Brinckerhoff and Booz Allen.
-% They settled in 2014.
-% The case concerned allegations that the forecasters ``reverse engineered'' the predictions, working backwards from commercial objectives in estimating traffic volumes.\textsuperscript{4}
+The traffic forecasts for Sydney's Lane Cove tunnel were in contention in a lawsuit brought against the companies, Parsons Brinckerhoff and Booz Allen.
+They settled in 2014.
+The case concerned allegations that the forecasters ``reverse engineered'' the predictions, working backwards from commercial objectives in estimating traffic volumes.\textsuperscript{4}
 
-% Similarly, when traffic volumes were far below expectations on the Brisbane Airport Link, toll road owner Brisconnections launched litigation against forecaster Arup.\textsuperscript{5} This action was settled in 2015.\textsuperscript{6}
+Similarly, when traffic volumes were far below expectations on the Brisbane Airport Link, toll road owner Brisconnections launched litigation against forecaster Arup.\textsuperscript{5} This action was settled in 2015.\textsuperscript{6}
 
-% 1. \url{https://www.mauriceblackburn.com.au/media/2403/14-03-31-second-further-amended-statement-of-claim-with-schedules-a-and-b-clean-sealed.pdf}, p.9-11
+1. \url{https://www.mauriceblackburn.com.au/media/2403/14-03-31-second-further-amended-statement-of-claim-with-schedules-a-and-b-clean-sealed.pdf}, p.9-11
 
-% 2. https://www.mauriceblackburn.com.au/norewrite/current-class-actions/rivercity-class-action/
+2. https://www.mauriceblackburn.com.au/norewrite/current-class-actions/rivercity-class-action/
 
-% 3. \url{http://www.brisbanetimes.com.au/business/rivercity-ipo-investors-secure-121m-in-successful-clem7-class-action-20160601-gp8qu4.html}
+3. \url{http://www.brisbanetimes.com.au/business/rivercity-ipo-investors-secure-121m-in-successful-clem7-class-action-20160601-gp8qu4.html}
 
-% 4. \url{http://www.afr.com/news/politics/national/traffic-forecasters-settle-with-ampover-lane-cove-20140923-jftpp}
+4. \url{http://www.afr.com/news/politics/national/traffic-forecasters-settle-with-ampover-lane-cove-20140923-jftpp}
 
-% 5. \url{http://www.afr.com/business/brisconnections-receivers-sue-arup-over-brisbane-airport-link-20140528-iv1qo}
+5. \url{http://www.afr.com/business/brisconnections-receivers-sue-arup-over-brisbane-airport-link-20140528-iv1qo}
 
-% 6. http://www.imf.com.au/cases/detail/brisconnections
-% \end{smallbox}
+6. http://www.imf.com.au/cases/detail/brisconnections
+\end{smallbox}
 
 The current opacity of investment planning processes means that the public cannot readily judge the success of projects.
 This means that there is little political cost associated with announcing project costs prematurely, even when this creates a significant risk of promising projects with poor payoffs.
@@ -1063,8 +695,7 @@ Close to two thirds of cost overruns occur before construction begins. When over
 \begin{figure}
 \captionwithunits{A third of cost overruns occur prior to budget commitments\label{fig:cost-overruns-by-project-stage}}%
 {Cost overruns by project stage, per cent}
-\includegraphics[page=10]{atlas/Charts_CO}
-\noteswithsource{Australian transport projects, completed between 2001 and 2015.}{Deloitte Investment Monitor dataset; Grattan analysis}
+
 \end{figure}
 
 The following two sections identify why it is important that projects' investment merits are reappraised after early cost overruns, and whether Australia's project appraisal processes could be doing a better job at this.
@@ -1088,22 +719,11 @@ This phenomenon is known as the ``winner's curse'', meaning that the projects th
 
 Third, cost overruns distort decisions regarding the types of transport infrastructure to invest in.
 The most obvious case of this phenomenon is multi-billion dollar projects.
-As these projects are particularly prone to cost overruns, the benefit cost ratios for these projects are systematically more optimistic than those of smaller projects.
-Together with politicians' penchant for iconic and legacy projects, this distortion biases politicians towards funding large projects like the Dinmore to Goodna bypass (\Vref{box:Ipswich-motorway}), at the expense of smaller projects with more certain returns.
-
-\begin{smallbox}{Case study -- Ipswich Motorway Dinmore to Goodna upgrade -- 196 per cent overrun}{box:Ipswich-motorway}
-\subsubsection*{``Under budget'', and no return of contingency}
-
-An upgrade of the Ipswich Motorway between Dinmore and Goodna in Southern Queensland was announced in 2003, at a cost of \$594 million, based on a cost-benefit analysis.\footcite{Parliament2006QuestionsinWritingIpswich}
-
-In the 2007 federal election campaign, Labor promised to provide the upgrade for \$1.1 billion.\footcite{RoadsAustralia2007News} Although this figure was far higher than the initial cost proposed, it turned out to be far lower than the 2008 contracted cost of \$1.95 billion.\footcite{AEEA2016IpswichMotorway}
-
-On completion in 2012, the project came in 10 per cent lower than the contracted cost.\footcite{AEEA2016IpswichMotorway} Rather than being returned to the Commonwealth, the contingency was diverted to other Queensland roads, including the Bruce Highway.\footcite{BrisbaneTimes2012FiveStagesDown} 
-
-\end{smallbox}
+As these projects are particularly prone to cost overruns, the benefit cost ratios for these projects are systematically more optimistic than those of smaller p{}rojects.
+Together with politicians' penchant for iconic and legacy projects, this distortion biases politicians towards funding large projects like the Dinmore to Goodna bypass (see Box xx)), at the expense of smaller projects with more certain returns.
 
 The reduction to the transport infrastructure portfolio's return on investment caused by these distortions to investment decisions is sizable.
-If even half this reduction was avoided by switching to alternative investments when project costs skyrocket prior to construction, the benefits to taxpayers would be at least \$41 billion.\footnote{This conclusion is based on the observation of an average benefit cost ratio of 2.95 across the 39 business cases for transport infrastructure published by Infrastructure Australia by the 12th of Feburary 2016. Please see \Vref{methodological-appendix} for further details}
+If even half this reduction was avoided by switching to alternative investments when project costs skyrocket prior to construction, the benefits to taxpayers would be at least \$41 billion\footnote{This conclusion is based on the observation of an average benefit cost ratio of 2.95 across the 39 business cases for transport infrastructure published by Infrastructure Australia by the 12th of Feburary 2016. Please see appendix \ref{methodological-appendix} for further details}.
 
 
 \section{Australia could do better at reappraising projects after cost overruns}\label{australia-could-do-better-at-reappraising-projects-after-cost-overruns}
@@ -1119,7 +739,6 @@ Even those announced before a formal government funding commitment are usually c
 \begin{figure}
 \captionwithunits{Few projects are cancelled once announced\label{fig:perc-projects-cancelled-each-proj-stage}}%
 {Percentage of projects cancelled at each project stage}
-\includegraphics[page=11]{atlas/Charts_CO}
 
 \noteswithsource{Australian transport projects completed between 2000 and 2015}%
 {Deloitte Investment Monitor; Grattan analysis}
@@ -1159,7 +778,17 @@ This also resulted in litigation being launched, by toll road owners Brisconnect
 \end{smallbox}
 
 
+\begin{bigbox*}{Case study -- Ipswich Motorway Dinmore to Goodna upgrade -- 196 per cent overrun}{box:Ipswich-motorway}
+\subsubsection*{``Under budget'', and no return of contingency}
 
+An upgrade of the Ipswich Motorway between Dinmore and Goodna in Southern Queensland was announced in 2003, at a cost of \$594 million, based on a cost-benefit analysis.\footcite{Parliament2006QuestionsinWritingIpswich}
+
+In the 2007 federal election campaign, Labor promised to provide the upgrade for \$1.1 billion.\footcite{RoadsAustralia2007News} Although this figure was far higher than the initial cost proposed, it turned out to be far lower than the 2008 contracted cost of \$1.95 billion.\footcite{AEEA2016IpswichMotorway}
+
+On completion in 2012, the project came in 10 per cent lower than the contracted cost.\footcite{AEEA2016IpswichMotorway} Rather than being returned to the Commonwealth, the contingency was diverted to other Queensland roads, including the Bruce Highway.\footcite{BrisbaneTimes2012FiveStagesDown} 
+
+\tabularnewline
+\end{bigbox*}
 
 
 
@@ -1184,7 +813,7 @@ While cost estimation on any given project is uncertain, on average cost estimat
 
 But there is a substantial gap between estimated and actual costs on transport infrastructure projects over the past 15 years.
 In that period, cost estimators expected between 10 and 25 per cent of projects to exceed their budget.
-In fact, 34 per cent did so (\Vref{fig:assumed-and-observed-prob-distr-of-cost-overruns}).
+In fact, 34 per cent did so (Figure \Vref{fig:assumed-and-observed-prob-distr-of-cost-overruns}).
 Moreover, these overruns were not offset by underruns.%
 \GenericWarning{Footnote undefined}{LaTeX Warning: Footnote not complete}%
 \footnote{Give examples of guidelines which explicitly assume symmetry, and those that state the distribution should be asymmetric but do not recommend any use of this information.}
@@ -1193,9 +822,9 @@ Moreover, these overruns were not offset by underruns.%
 \captionwithunits{Experts systematically underestimate the likelihood of cost overruns\label{fig:assumed-and-observed-prob-distr-of-cost-overruns}}
 {Assumed and observed probability distributions of cost overruns, per cent}
 
-\includegraphics[page=12]{atlas/Charts_CO.pdf}
+% \includegraphics{media/image13.png}
 
-\noteswithsource{The assumed prevalence of cost overruns is inferred from the common representation of cost risk as symmetrically distributed in cost estimation guidance, and the assumption that budget costs are P75 - P90 costs, which implies that no more than 25 per cent of projects being expected to experience cost overruns.}{Australian risk management guidelines referenced in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} and Deloitte Investment Monitor, Grattan analysis}
+\notes{}
 \end{figure}
 
 Although it is not possible to perfectly predict the costs of any individual project, where cost estimates are wrong on average, there is clearly scope to improve.
@@ -1208,7 +837,7 @@ First, cost estimates should reflect predictable patterns in the types of projec
 There is an element of chance to any project finishing on budget.
 Yet the overall historical performance of Australian transport projects in aggregate suggests that we could be coming up with much better guesses of likely costs.
 
-For example, large\footnote{Here we define ``large" as valued above \$500~million at the commencement of construction} road projects are more likely to come in over the cost initially announced than they are to finish on budget.
+For example, large\footnote{Here we define "large" as valued above \$500~million at the commencement of construction} road projects are more likely to come in over the cost initially announced than they are to finish on budget.
 Being a large road is not a subtle characteristic that could easily go unnoticed.
 Rather, it is an example of the tangible project characteristics that affect the likelihood of a project finishing on budget.
 The fact that projects with these characteristics are less likely to finish on budget than others indicates that their obvious risks are not adequately factored into project cost estimates.
@@ -1227,10 +856,10 @@ Because of this, large projects are more likely to incur cost overruns, and thes
 In fact, a 10 per cent increase in a project's size (measured by cost estimate when first under construction) is associated with a 6 per cent higher chance of a cost overrun.
 
 \begin{figure}
-\captionwithunits{Cost overruns are more common and larger, on average, among big projects\label{fig:prevalence-avg-magnitude-cost-overruns-by-project-size}}
+\captionwithunits{Cost overruns are more common and larger on average among big projects\label{fig:prevalence-avg-magnitude-cost-overruns-by-project-size}}
 {Prevalence and average magnitude of cost overruns as a percentage of initial project costs by project size, per cent}
 
-\includegraphics[page=13]{atlas/Charts_CO.pdf}
+% \includegraphics{media/image14.png}
 
 \noteswithsource{Australian transport projects completed between 2001 and 2015.
 Project size is defined by project value at the commencement of construction.}
@@ -1265,10 +894,8 @@ The timing of cost overruns on rail and road projects is aligned with the stages
 Cost overruns are larger for road projects during the planning stage, when road projects tend to be more bespoke than rail, and larger for rail projects during the construction period, when rail projects tend to be more bespoke (\Vref{fig:cost-overruns-by-proj-stage-mode}).
 
 \begin{figure}
-\captionwithunits{Both road and rail projects suffer from cost overruns, but at different stages
-\label{fig:cost-overruns-by-proj-stage-mode}}
-{Average magnitude of cost overruns on Australian transport infrastructure projects completed between 2000 and 2015 by project mode}
-\includegraphics[page=14]{atlas/Charts_CO.pdf}
+\captionwithunits{Road and rail projects have different patterns of cost overruns\label{fig:cost-overruns-by-proj-stage-mode}}
+{Cost overruns by project stage and mode, per cent}%\includegraphics{media/image15.tiff}
 
 \noteswithsource{Australian transport projects completed between 2000 and 2015}
 {Deloitte Investment Monitor; Grattan analysis}
@@ -1318,11 +945,10 @@ They are inconsistent in which of the main tools they recommend and in how they 
 
 \begin{figure}
 \captionwithunits{Australia's various guidelines on risk measurement do not recommend any approach consistently\label{fig:prop-guidelines-that-reco-use-of-each-key-risk-assessment-tool}}%
-{Proportion of guidelines on quantitative risk assessment on transport infrastructure projects that recommend the use of each key risk assessment tool, per cent}
-\includegraphics[page=15]{atlas/Charts_CO.pdf}
+{Proportion of guidelines on quantitative risk assessment on transport infrastructure projects that recommend the use of each key risk assessment tool, per cent}%\includegraphics{media/image16.png}
 
 \noteswithsource{Australian transport projects completed between 2000 and 2015}%
-{Australian risk management guidelines references in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}; Deloitte Investment Monitor; Grattan analysis}
+{Deloitte Investment Monitor; Grattan analysis}
 \end{figure}
 
 A project's expected value is the most obvious gap in cost estimation guidance.
@@ -1355,20 +981,22 @@ Like the expected value methodology, it does not deal with unknown risks.
 For instance, most projects will have ‘P50’ and ‘P90’ cost estimates, which identify the prices for which it is expected that a project will meet or better its budget in 50 or 90 per cent of cases, respectively.
 
 \textbf{Reference class forecasting} compares cost estimates for one project to those on similar projects that have already been built. 
-The average size of cost overruns observed across the sample can be used as an estimate of the expected value of cost overruns; the variance of the outcomes on the comparison projects can be used to understand the range within which a cost estimate is likely to vary; and the different points within the observed distribution can be used to estimate probability prices.
-
-\begin{figure}[H]
-\captionwithunits{Key risk measurement and management concepts\label{fig:Key-risk-measurement-and-management-concepts}}%
-{Illustrative probability distribution of cost outcomes on individual projects} 
-\includegraphics{atlas/Density.pdf} 
-\noteswithsource{The distribution of cost risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see \Vref{sec:guidance-is-incomplete} for details. This graph's illustrative purpose is to graphically present the relative distances between the median, 90th quantile and expected value of cost overruns.}{Deloitte Investment Monitor, Grattan analysis}
-\end{figure}
+The average size of cost overruns observed across the sample can be used as an estimate of the expected value of cost overruns; the variance of the outcomes on the comparison projects can be used to understand the range within which a cost estimate is likely to vary; and the different points within the observed distribution can be used to estimate probability prices. 
 
 The key advantages of reference class forecasting are that it incorporates the likely costs of unknown risks and does not suffer from optimism bias, as it relies on objective historical information. 
 Its main shortcoming is that it does not account for the ways in which a project’s risk profile is unique.  
 
 \Vref{fig:Key-risk-measurement-and-management-concepts} illustrates these tools for the costs of a group of completed projects: expected value (or mean); variance (assessed by sensitivity analysis) and probability pricing levels.
 The fourth tool, reference class forecasting, offers a way to improve the quality of expected value, sensitivity analysis and probability pricing by relying on historical experience.
+
+\begin{figure}[H]
+\captionwithunits{Key risk measurement and management concepts\label{fig:Key-risk-measurement-and-management-concepts}}%
+{Illustrative probability distribution of cost outcomes on individual projects} 
+%\includegraphics{media/image17.png} 
+\notes{This diagram is a stylized representation of the differences between project and portfolio level risks.
+\Vref{fig:APPENDIX-UNDERPINNING-Risk-managers-toolkit} presents the raw data underpinning this.}
+\end{figure}
+
 
 \end{bigbox*}
 
@@ -1397,45 +1025,43 @@ This advice contradicts Australian experience (see \Vref{box:failure-to-learn-co
 
 \begin{smallbox}{Failure to learn from history continues to affect current projects}{box:failure-to-learn-continues-to-affect-current-projects}
 
-The experience of the past 15 years has shown that the difference between the median cost, or ``P50'', and the ``worst case'', or ``P90'' cost , is 21 per cent on average, for transport infrastructure projects valued at \$20 million or more.
+For transport infrastructure projects valued at \$20 million or more, the difference between the median cost estimate, or ``P50'', and the ``worst case'', or ``P90'' cost estimates, has averaged 21 per cent over the past 15 years.
 
-But cost estimates for current projects do not reflect this experience. Instead, the difference between median and ``worst case'' estimates is generally about a third this size. Judging by recent history, this indicates that either the median cost estimate is too high, or - more likely - the ``worst case'' cost estimate is too low. If the latter is the case, more than the expected 10 per cent of these projects will be likely to experience overruns. This report has found that these will be larger, on average, than expected.
+But cost estimates for current projects do not reflect this difference.
+Instead, the difference between median and ``worst case'' estimates is generally about a third this size.
+Judging by recent history, this indicates that either the median cost estimate is too high, or - more likely - the ``worst case'' cost estimate is too low.
+If the latter is the case, more than the expected 10 per cent of these projects will be likely to experience overruns.
+This report has found that these will be larger, on average, than expected.
 
-
-\Vref{tbl:large-projects-cost-estimates} shows that the difference between median and ``worst case'' estimates appears to be too small for projects currently under way. They show a ``worst case'' cost estimate far lower than 21 per cent above the median estimate that history should have led us to expect.
-
+\Vref{tbl:large-projects-cost-estimates} shows that the difference between median and ``worst case'' estimates appears to be too small for several massive projects currently under way, each of which is valued at close to a billion dollars or more.
+They show a ``worst case'' cost estimate far lower than 21 per cent above the median estimate that history should have led us to expect.
 \end{smallbox}
 
 
 \begin{table*}
 \centering
 \captionsetup{margin = {0.075\textwidth,0.075\textwidth}}
-\caption{Large projects currently under development or construction\label{tbl:large-projects-cost-estimates}}
+\caption{Large projects currently under consideration\label{tbl:large-projects-cost-estimates}}
 \begin{tabularx}{0.85\textwidth}{Xlrrr}
 \toprule
-& & \multicolumn{2}{c}{\textbf{Cost estimate (nominal, \$millions)}} & \\
+& & \multicolumn{2}{c}{\textbf{Cost estimate (nominal, millions)}} & \\
 \cmidrule(lr){3-4}
-\textbf{Project} & \textbf{State} & \textbf{Median (or ``P50'')} & \textbf{``Worst case'' (or ``P90'')} & \textbf{Difference} \\
+\textbf{Project} & \textbf{State} & \textbf{Median (or ``P50'')} & \textbf{``Worst case'' (or ``P90'')} & \textbf{Difference (\%)} \\
 \midrule
 Inland Rail & National & \possibleTextDollar9\,890\dz & \possibleTextDollar10\,660\dz & 7.8\%\tabularnewline[1.245ex]
-Westconnex & NSW & \possibleTextDollar16\,800\dz & \textcolor{theGrey}{n/a} & 6.0\%%\tablefootnote{``The Infrastructure Australia assessment makes reference to a six per cent difference between the P50 and P90 on the Stage 2'' (\textcite[][23]{SGS2016WestConnexreview})}
-\tabularnewline[1.245ex]
-Melbourne Metro & Vic%\tablefootnote{``The expected value of each risk was then calculated based on the probability of the risk occurring and the sum of the products of the impact (either as a percentage of the cost driver or delay costs) and their probabilities in each of the three defined states. Correlation between key risks was calculated using a correlation matrix. A Monte Carlo analysis was then used to calculate the P50 and P90 values.''} 
- & \possibleTextDollar10\,154\dz & \possibleTextDollar10\,837\dz & 6.7\%\tabularnewline
-Western Distributor & Vic%\tablefootnote{``Total nominal dollars over the construction period, assuming construction commences during the year ended 30 June 2018.''} 
-& \possibleTextDollar5\,226\dz & \possibleTextDollar5\,548\dz & 6.2\%\tabularnewline
-Princes Highway West Duplication & Vic & \possibleTextDollar334 & \possibleTextDollar363 & 8.7\%\tabularnewline
-Main Road, St Albans Level Crossing Removal Project & Vic & \possibleTextDollar222 & \possibleTextDollar231 & 3.9\%\tabularnewline[1.245ex]
-Bruce Highway Upgrade~& Qld & \possibleTextDollar841 & \possibleTextDollar929 & 10.5\%\tabularnewline
-M1 Pacific Motorway -- Gateway M'way Merge Upgrade & Qld & \possibleTextDollar197 & \possibleTextDollar207 & 5.2\%\tabularnewline[1.245ex]
-Mitchell Freeway extension & WA & \possibleTextDollar297 & \possibleTextDollar322 & 8.3\%\tabularnewline
-Great Northern Highway & WA & \possibleTextDollar301 & \possibleTextDollar361\dz & 19.7\%\tabularnewline
+Westconnex & NSW & \possibleTextDollar16\,800\dz & n/a & 6\%\tablefootnote{``The Infrastructure Australia assessment makes reference to a six per cent difference between the P50 and P90 on the Stage 2'' (\textcite[][23]{SGS2016WestConnexreview})}\tabularnewline[1.245ex]
+Melbourne Metro & Vic\tablefootnote{``The expected value of each risk was then calculated based on the probability of the risk occurring and the sum of the products of the impact (either as a percentage of the cost driver or delay costs) and their probabilities in each of the three defined states. Correlation between key risks was calculated using a correlation matrix. A Monte Carlo analysis was then used to calculate the P50 and P90 values.''} & \possibleTextDollar10\,154\dz & \possibleTextDollar10\,837\dz & 6.7\%\tabularnewline
+Western Distributor & Vic\tablefootnote{``Total nominal dollars over the construction period, assuming construction commences during the year ended 30 June 2018.''} & \possibleTextDollar5\,226\dz & \possibleTextDollar5\,548\dz & 6.2\%\tabularnewline
+Princes Highway West Duplication & Vic & \possibleTextDollar334.3 & \possibleTextDollar363.5 & 8.7\%\tabularnewline
+Main Road, St Albans Level Crossing Removal Project & Vic & \possibleTextDollar222.9 & \possibleTextDollar231.5 & 3.9\%\tabularnewline[1.245ex]
+Bruce Highway Upgrade~& Qld & \possibleTextDollar841.2 & \possibleTextDollar929.3 & 10.5\%\tabularnewline
+M1 Pacific Motorway - Gateway Mway Merge Upgrade & Qld & \possibleTextDollar197.7 & \possibleTextDollar207.9 & 5.2\%\tabularnewline[1.245ex]
+Mitchell Freeway extension & WA & \possibleTextDollar297.9 & \possibleTextDollar322.6 & 8.3\%\tabularnewline
+Great Northern Highway & WA & \possibleTextDollar301.5 & \possibleTextDollar361\dz & 19.7\%\tabularnewline
 North West Coastal Highway & WA & \possibleTextDollar148\dz & \possibleTextDollar179\dz & 20.9\%\tabularnewline[1.245ex]
-Canberra Light Rail & ACT & \possibleTextDollar759\dz & \possibleTextDollar806\dz & 6.5\%\tabularnewline[1.245ex]
+Canberra Light Rail & ACT & \possibleTextDollar759\dz & \possibleTextDollar806\dz & 6.5\%\tabularnewline
 \midrule 
-\multicolumn{4}{r}{Average difference of above estimates}    & 9.2\%\tabularnewline[1.245ex]
-%\cmidrule(lr){3-5}
-\multicolumn{4}{r}{\textbf{Average actual difference across all projects completed in the  past 15 years}} & \textbf{21.0\%}\tabularnewline%[1.245ex]
+\textbf{Observed average over past 15 years} & & & & \textbf{21.0\%}\tabularnewline
 \bottomrule
 \end{tabularx}
 \end{table*}
@@ -1496,7 +1122,7 @@ This practice would only be a concern for government if contractors pursued cont
 \footcites[][500]{Love2014Understandinglandscapeoverruns}[][87--88]{Hinze1992CostOverrunsonStateofWashington} While this may occur on some projects, we do not find significant evidence of low initial bids leading to later overruns.
 However, pre-construction overruns have been higher since the global financial crisis, perhaps because some projects were rushed through early development stages so that they could stimulate the economy in the years immediately following the crisis.
 
-\section{Unavoidable risks could be better managed}\label{avoidable-risks-could-be-better-managed}
+\section{Avoidable risks could be better managed}\label{avoidable-risks-could-be-better-managed}
 
 While broader economic shifts can affect project costs, many risks are specific to the individual project.
 But Australia's risk management practices appear to be better suited to managing risk to individuals' and agencies' reputations rather than improving cost efficiency.
@@ -1552,7 +1178,7 @@ In practice, the best way to manage the contingency would lie somewhere between 
 \captionwithunits{Small contingencies can achieve a lot when they are managed at the portfolio level\label{fig:value-contingencies-req-to-cover--}}
 {Value of the contingencies required to cover the costs of 90\% of the cost overruns that occur after a formal budget commitment, under different contingency management schemes}
 
-\includegraphics[page=17]{atlas/Charts_CO.pdf}
+
 
 \noteswithsource{Australian transport projects completed between 2000 and 2015}%
 {Deloitte Investment Monitor; Grattan analysis}
@@ -1612,7 +1238,7 @@ With actual Australian data on past projects, we would no longer need to be surp
 Instead, our infrastructure systems could promise what is worth having, and then deliver what is promised.
 
 
-
+\printbibliography
 
 \appendix
 
@@ -1630,20 +1256,30 @@ Instead, our infrastructure systems could promise what is worth having, and then
 % \end{figure}
 
 
-
+\begin{figure}
+\captionwithunits{Title }
+{Subtitle}
+% \includegraphics{}\label{}
+\noteswithsource{Notes}
+{Source}
+\end{figure}
 
 
 
 
 \chapter{Risk appendix}\label{risk-appendix}
 
+\chapter{}\label{section}
+
 Construction projects inevitably involve a host of cost risks. The objective of risk management is to minimise the costs of these risks. This involves:
 
 \begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \item
   Risk minimisation
 
   \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
   \item
     Identifying and mitigating avoidable risks
   \item
@@ -1653,6 +1289,7 @@ Construction projects inevitably involve a host of cost risks. The objective of 
   Risk measurement
 
   \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
   \item
     Measuring the remaining risk
   \end{enumerate}
@@ -1660,6 +1297,7 @@ Construction projects inevitably involve a host of cost risks. The objective of 
   Ongoing risk monitoring
 
   \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
   \item
     Accounting for this risk in investment decisions
   \item
@@ -1671,16 +1309,15 @@ There are upwards of fifty sets of guidelines outlining required approaches to r
 
 \Vref{fig:quality-of-risk-management-guidance-chevrons} provides a high level summary of the quality of risk guidance across Australian jurisdictions. It identifies that the provided guidance regarding risk minimisation is generally of a far higher standard than that of risk measurement and ongoing risk monitoring. This is aligned with the nature of Australia's problem with cost overruns: most projects finish on budget, but the huge costs of uncommon events are poorly anticipated and accounted for.
 
-In this appendix we review the current practices of each state for each of these components of risk management, and highlight the opportunities for improvement. Full details of the Australian risk management guidelines analysed in this appendix are provided in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}.
+In this appendix we review the current practices of each state for each of these components of risk management, and highlight the opportunities for improvement. Full details of the Australian risk management guidelines analysed in this appendix are provided in section \ref{Reviewed-Australian-risk-measurement-guidelines}.
 
 
 \begin{figure}
 \captionwithunits{The quality of risk management guidance varies\label{fig:quality-of-risk-management-guidance-chevrons}}
 {Guidance quality by jurisdiction and topic ranked as sufficient, incomplete and poor by green, orange and red, respectively.}
-\includegraphics[page=1]{atlas/AppendixCharts}
 
 \noteswithsource{}
-{See \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} for the list of reviewed guidelines, Grattan analysis}
+{See \Vref{sec:LAST-SECTION-OF-RISK-APPENDIX} for the list of reviewed guidelines, Grattan analysis}
 \end{figure}
 
 % \begin{longtable}[c]{@{}llll@{}}
@@ -1718,12 +1355,12 @@ Consistent use of risk matrices or like tools to identify and mitigate avoidable
 \begin{figure}
 \captionwithunits{Some avoidable risks can be mitigated \label{fig:Some-avoidable-risks-can-be-mitigated}}
 {Stylized representation of the probability of cost overruns of each size, per cent}
-\includegraphics[page=3]{atlas/AppendixCharts}
-\noteswithsource{The distribution of unavoidable risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see \Vref{methodological-appendix} for details. The distribution of avoidable and unavoidable risks has been inferred by assuming that cost overruns would be larger if no effort was made to mitigate avoidable risks. This graph's illustrative purpose is to graphically present the common wisdom that cost risks can be reduced, but not eliminated, by mitigating avoidable risks.}%
-{Deloitte Investment Monitor, Grattan analysis.}
+% \includegraphics{media/image2.png}
+\noteswithsource{The distribution of unavoidable risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see appendix \ref{methodological-appendix} for details. The distribution of avoidable and unavoidable risks has been inferred by assuming that cost overruns would be larger if no effort was made to mitigate avoidable risks. This graph's illustrative purpose is to graphically present the common wisdom that cost risks can be reduced, but not eliminated, by mitigating avoidable risks.}
+{Sources: Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
-At least one set of risk management guidelines in each of Australia's state and Commonwealth government jurisdictions recommends the use of risk matrices and provides high level advice on how to mitigate common risks.\footnote{For example, \textcite{Australia2016InfrastructureAustraliaAssessmentc}; \textcite{NSWTreasury2012RiskManagementToolkit}; \textcite{VMIA2016PracticeGuide}; \textcite{QLDDepTransport2015ProjectCostEstimatingManual}; \textcite{WADFGP2016GatewayBusinessCaseWorkbook}; and \textcite{SASPB2015RiskManagementGuideline}.} For this reason, the guidance on risk identification and mitigation provided in every jurisdiction appears to be adequate.
+At least one set of risk management guidelines in each of Australia's state and Commonwealth government jurisdictions recommends the use of risk matrices and provides high level advice on how to mitigate common risks\footnote{For example, Infrastructure Australia's \emph{Business Case Template}; NSW Treasury's \emph{Risk Management Toolkit}; the Victorian Managed Insurance Authority's \emph{Practice Guide}; Department of Transport and Main Roads Queensland's \emph{Project Cost Estimating Manual}; Department of Finance Western Australia's \emph{Gateway Process Business Case Workbook} and the South Australian State Procurement Board's \emph{Procurement Risk Management Plans}.}. For this reason, the guidance on risk identification and mitigation provided in every jurisdiction appears to be adequate.
 
 \subsection{Reduce estimation error}\label{reduce-estimation-error}
 
@@ -1731,7 +1368,7 @@ Some states also provide comprehensive guidance on the level of detail required 
 
 For example, the South Australian Department of Planning Transport and Infrastructure Estimating Manual sets out:
 
-\begin{itemize}{}
+\begin{itemize}
 \item
   the detail with which costs should be estimated, in terms of whether global benchmark, unit rate or first principles approaches should be used to price project inputs;
 \item
@@ -1749,8 +1386,8 @@ Providing detailed guidance on how project costs should be estimated for each le
 \begin{figure}
 \captionwithunits{More projects finish on budget when estimation error has been minimised \label{fig:Reduce-estimation-error-diagram}}
 {Stylized representation of the probability of cost overruns of each size, per cent}
-\includegraphics[page=4]{atlas/AppendixCharts}
-\noteswithsource{The distribution of unavoidable risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see \Vref{methodological-appendix} for details. The distribution of avoidable and unavoidable risks has been inferred by assuming that cost overruns would be larger if no effort was made to mitigate avoidable risks. This graph's illustrative purpose is to graphically present the common wisdom that cost risks can be reduced, but not eliminated, by mitigating avoidable risks.}%
+%\includegraphics{media/image3.png}
+\noteswithsource{The distribution of unavoidable risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see appendix \ref{methodological-appendix} for details. The narrowing of the distribution of unavoidable risks associated with a reduction in estimation error has been inferred by assuming that extreme outcomes would be more common if the margin of error on cost estimates was wider. This graph's illustrative purpose is to graphically present the common wisdom that cost risks can be reduced, but not eliminated, by reducing estimation error.}
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
@@ -1774,19 +1411,17 @@ This section reviews each of these shortcomings in detail and provides state-spe
 
 \subsection{Guidance is inconsistent}\label{guidance-is-inconsistent}
 
-Guidelines which apply to the same jurisdiction often recommend different approaches to risk measurement. For instance, Probability pricing is required for federal funding, yet only half the risk measurement guidance provided at the federal level discusses probability pricing.
-
-The \emph{National Partnerships Agreement on Land Transport Infrastructure Projects} \footcite{COAG2014NationalPartnershipAgreementInfrastructure}, the Australian Transport Council’s \emph{National Guidelines for Transport System Management in Australia} \footcite{ATC2006NGTSM3}, Infrastructure Australia’s \emph{Business Case Template} \footcite{Australia2016InfrastructureAustraliaAssessmentc}, the \emph{Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction} \footcite{DIRD2008BPCEPFRRC} and BITRE's \emph{Overview of Project Appraisal for Land Transport} \footcite{BITRE2014Overviewofprojectappraisalforlandtransport} require or discuss probability pricing. However, Infrastructure Australia's \emph{Assessment Framework} \footcite{Australia2016InfrastructureAustraliaAssessmentb}, the \emph{HB 158:2010 Handbook on delivering assurance based on ISO 31000:2009} \footcite{StandardsAustralia2010DeliveringassurancebasedonISO31000} and BITRE's \emph{Risk in Benefit Cost Analysis} \footcite{BITRE2005RiskinCostBenefitAnalysis} do not.
+Guidelines which apply to the same jurisdiction often recommend different approaches to risk measurement. For instance, Probability pricing is required for federal funding, yet only half the risk measurement guidance provided at the federal level discusses probability pricing \footnote{The \emph{National Partnerships Agreement on Land Transport Infrastructure Projects}, Australian Transport Council's \emph{National Guidelines for Transport System Management in Australia}, Infrastructure Australia's \emph{Business Case Template}, the \emph{Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction} and BITRE's \emph{Overview of Project Appraisal for Land Transport} require or discuss probability pricing. However, Infrastructure Australia's \emph{Assessment Framework}, the \emph{HB 158:2010 Handbook on delivering assurance based on ISO 31000:2009} and BITRE's \emph{Risk in Benefit Cost Analysis} paper do not.}.
 
 In Victoria, three key guidelines on risk measurement each recommend only part of the toolkit, and a different part in each case:
 
 \begin{itemize}
 \item
-  the Department of Treasury and Finance's \emph{Technical Guidelines on Economic Evaluation of Business Cases}\footcite{VicDTF2013EconomicEvaluationforBusinessCasesTechnicalguidelines} requires only sensitivity analysis,
+  the Department of Treasury and Finance's \emph{Technical Guidelines on Economic Evaluation of Business Cases} requires only sensitivity analysis,
 \item
-  the Victorian Insurance Management Authority's \emph{Practice Guide}\footcite{VMIA2016PracticeGuide} requires only the calculation of the expected value of project risks, and
+  the Victorian Insurance Management Authority's \emph{Practice Guide} requires only the calculation of the expected value of project risks, and
 \item
-  the Department of Treasury and Finance's \emph{Business Case Template}\footcite{VicDTF2016Fullbusinesscasetemplate} and \emph{Gateway Review Process}\footcite{VicDTF2016GatewayReviewProcess} only requires reference class forecasting.
+  the Department of Treasury and Finance's \emph{Business Case Template} and \emph{Gateway Review Process} only requires reference class forecasting.
 \end{itemize}
 
 Such inconsistencies within jurisdictions obfuscate proper process and make the conceptual dependencies between tools unclear.
@@ -1796,12 +1431,6 @@ Risk measurement guidance should also be consistent across jurisdictions. This i
 For example, Victoria's business case on the Western Distributor has two sets of benefit cost ratios in order to conform to different guidance of the two levels of government.\footnote{"Western distributor ref"} Neither of these benefit cost ratios appears more correct than the other. Rather, they are two imperfect estimates of the same concept. As both estimates would have come at a significant financial cost, Australia's project appraisal processes could be made more cost efficient by aligning the analysis required across each jurisdiction.
 
 As it stands, risk measurement guidance is very inconsistent between each state and the Commonwealth. \Vref{consistency-table} shows that the expected value approach to estimating risks' costs is the only approach that is recommended consistently across all jurisdictions.
-
-\begin{figure}
-\captionwithunits{No state provides high quality risk measurement guidance}{Green = recommended\\ Yellow = recommended, but with insufficient information to be properly implemented\\ Red = not recommended}
-\includegraphics[page=2]{atlas/AppendixCharts}
-\source{Australia risk management guidelines, Grattan analysis}
-\end{figure}
 
 %\begin{longtable}\label{consistency-table}
 % Title: No state provides high quality risk measurement guidance
@@ -1826,11 +1455,11 @@ As it stands, risk measurement guidance is very inconsistent between each state 
 
 The inconsistencies observed across Australian risk measurement guidelines could be resolved by removing old guidance when new processes are implemented, consolidating existing guidelines and writing new guidance so that replaces, rather than augments, older guidance.
 
-For example, many of the inconsistencies within guidance that applies to all states were addressed through the 2016 release of the \emph{Australian Transport Assessment and Planning Guidelines}\footcite{ATAP2016Guidelines}. These guidelines replaced \emph{Austroads' Guide to Project Evaluation}\footcite{Austroads2014GuidetoProjectEvaluation} and the \emph{National Guidelines for Transport System Management in Australia}\footcite{ATC2006NGTSM3}, and were written to be aligned with Infrastructure Australia's guidelines, The COAG-agreed \emph{National Guidance on Public Private Partnership Projects} and the \emph{National Charter of Integrated Land Use and Transport Planning}. A similar exercise should be undertaken within each of the states.
+For example, many of the inconsistencies within guidance that applies to all states were addressed through the 2016 release of the \emph{Australian Transport Assessment and Planning Guidelines}\footnote{History of ATAP guidelines ref}. These guidelines replaced \emph{Austroads' Guide to Project Evaluation} and the \emph{National Guidelines for Transport System Management in Australia}, and were written to be aligned with the guidance provided Infrastructure Australia's guidelines, The COAG-agreed \emph{National Guidance on Public Private Partnership Projects} and the \emph{National Charter of Integrated Land Use and Transport Planning}. A similar exercise should be undertaken within each of the states.
 
-Where different institutions within jurisdictions require different amounts of risk analysis, guidance should be comprehensively reviewed so that the hierarchy relating guidance documents is clear and, where possible, analytical requirements are aligned. For example, Transport NSW's \emph{Principles and Guidelines for Economic Appraisal of Transport Initiatives}\footcite{TransportNSW2013PrinciplesandGuidelines} outlines what the document sets out to achieve and how it should be used in combination with other guidelines.\footnote{Transport NSW guidelines ref}
+Where different institutions within jurisdictions require different amounts of risk analysis, guidance should be comprehensively reviewed so that the hierarchy relating guidance documents is clear and, where possible, analytical requirements are aligned. For example, Transport NSW's \emph{Principles and Guidelines for Economic Appraisal of Transport Initiatives} outlines what the document sets out to achieve and how it should be used in combination with other guidelines\footnote{Transport NSW guidelines ref}. 
 
-\subsection{Guidance is incomplete}\label{sec:guidance-is-incomplete}
+\subsection{Guidance is incomplete}\label{guidance-is-incomplete}
 
 Even if project proponents were to follow the guidance on risk measurement to the book, cost overruns would be underestimated. This is because the recommended approaches to risk measurement are incomplete.
 
@@ -1843,10 +1472,10 @@ There's no single ``right" way to measure risk, but for an approach to risk meas
   \textbf{comprehensive} if known, unknown, moderate and extreme risks are all accounted for.
 \end{itemize}
 
-As no single risk management tool achieves all these objectives, a combination of tools is required. \Vref{tbl:requirements-for-complete-risk-measurement} summarises how each risk measurement tool can, if used properly, contribute to a complete approach to risk measurement.
+As no single risk management tool achieves all these objectives, a combination of tools is required. Table \Vref{requirements-for-complete-risk-measurement} summarises how each risk measurement tool can, if used properly, contribute to a complete approach to risk measurement.
 
 %\begin{longtable}
-% \label{tbl:requirements-for-complete-risk-measurement}
+\label{requirements-for-complete-risk-measurement}
 % title: Complete approaches to risk measurement satisfy all the conditions for reliability and comprehensiveness by using a combination of tools
 % subtitle: Attributes of each risk management tool, where indicates that a tool can be used satisfy the criteria, indicates that a tool can be used to get part way towards the criteria and indicates that a tool cannot be used to achieve the criteria.
 % sources: See section [LAST SECTION OF RISK APPENDIX] for the list of reviewed guidelines, Grattan analysis
@@ -1875,18 +1504,13 @@ As no single risk management tool achieves all these objectives, a combination o
 % \bottomrule
 % \end{longtable}
 
-
-\begin{figure}
-\caption{Comparison of specific state guidelines\label{fig:assumed-and-actual-distributions}}
-\includegraphics[page=5]{atlas/AppendixCharts}
-\end{figure}
-
+Add comparison of stylised distributions \label{fig:assumed-and-actual-distributions} 
 
 \subsection{Insufficient information is provided}\label{insufficient-information-is-provided}
 
 Perhaps the most troubling shortcoming of Australia's current risk measurement guidelines is that they commonly do not provide sufficient information to realise the advantages of the methodologies that they recommend.
 
-For example, \textbf{sensitivity analysis} is a valuable tool for understanding the external drivers of cost uncertainty. However, only 43 per cent of guidelines which recommend sensitivity analysis specify variables should be subjected to sensitivity analysis and the range of values these variables regularly take. In the absence of this information, there is opportunity for project proponents to retrofit their choices of variables and ranges of variation in order to achieve an acceptable level of cost uncertainty. Because of this, more guidelines should suggest ranges for sensitivity analysis, or recommend that the Austroad sensitivity ranges are used.\footnote{Austroads 1996. p28: 2005. p27. These are old, but referenced in docs like p.32 of http://www.tmr.qld.gov.au/-/media/busind/techstdpubs/Project-delivery-and-maintenance/Cost-benefit-analysis-manual/Costbenefitanalysismanualroadprojects.pdf?la=en}
+For example, \textbf{sensitivity analysis} is a valuable tool for understanding the external drivers of cost uncertainty. However, only 43 per cent of guidelines which recommend sensitivity analysis specify variables should be subjected to sensitivity analysis and the range of values these variables regularly take. In the absence of this information, there is opportunity for project proponents to retrofit their choices of variables and ranges of variation in order to achieve an acceptable level of cost uncertainty. Because of this, more guidelines should suggest ranges for sensitivity analysis, or recommend that the Austroad sensitivity ranges are used \footnote{Austroads 1996. p28: 2005. p27. These are old, but referenced in docs like p.32 of http://www.tmr.qld.gov.au/-/media/busind/techstdpubs/Project-delivery-and-maintenance/Cost-benefit-analysis-manual/Costbenefitanalysismanualroadprojects.pdf?la=en}.
 
 Even more egregious is that some guidelines recommend that \textbf{reference class forecasting} be employed, but do not provide data or key statistics on any reference classes. Reference class forecasting is the practice of incorporating the rate of cost overruns observed historically on like projects into a project's cost estimate. Consequently, reference class forecasting cannot be implemented to any degree without high quality data on historical cost outcomes.
 
@@ -1902,16 +1526,16 @@ A similar circumstance befalls \textbf{probability pricing}. Probability pricing
 
 \begin{itemize}
 \item
-  ``probabilistically'', which involves estimating the distribution of risks on a specific project from estimates of its component parts,\footnote{For example. {[}Reference Peter Love's papers{]}.} or
+  ``probabilistically'', which involves estimating the distribution of risks on a specific project from estimates of its component parts\footnote{For example. {[}Reference Peter Love's papers{]}.}, or
 \item
-  ``deterministically'' which involves applying standard uplift rates that are -- like reference class forecasting -- derived from historical analysis of completed projects.\footnote{For example, {[}Reference eg SA guidelines{]}}
+  ``deterministically'' which involves applying standard uplift rates that are -- like reference class forecasting -- derived from historical analysis of completed projects\footnote{For example, {[}Reference eg SA guidelines{]}}.
 \end{itemize}
 
-More than 80\% of guidelines on probability pricing recommend that the probabilistic approach to probability pricing is employed, as the validity of the deterministic approach under active debated.\footnote{Currently, institutions like Infrastructure Australia (year, page)and Queensland's Department of Main Roads (year, page) assert that deterministic approaches to probability pricing are ``invalid'' and ``inaccurate'' while others still recommend its practice. (p.36, \url{http://infrastructureaustralia.gov.au/projects/files/Assessment_Framework_Detailed_Technical_Guidance.pdf}; QLD Cost Estimation Manual, page 79; For example, South Australian Department of Planning, Transport and Infrastructure's Estimating Manual)} However, there appears little grounds to claim that the probabilistic approach, as currently practiced, is any more scientific.
+More than 80\% of guidelines on probability pricing recommend that the probabilistic approach to probability pricing is employed, as the validity of the deterministic approach under active debated\footnote{Currently, institutions like Infrastructure Australia (year, page)and Queensland's Department of Main Roads (year, page) assert that deterministic approaches to probability pricing are ``invalid'' and ``inaccurate'' while others still recommend its practice. (p.36, \url{http://infrastructureaustralia.gov.au/projects/files/Assessment_Framework_Detailed_Technical_Guidance.pdf}; QLD Cost Estimation Manual, page 79; For example, South Australian Department of Planning, Transport and Infrastructure's Estimating Manual)}. However, there appears little grounds to claim that the probabilistic approach, as currently practiced, is any more scientific.
 
 This is because only two guidelines\footnote{QLD and fed notes on administration} provide any guidance to project proponents on the expected distribution of project risks, and both of these guidelines overlook the most critical characteristic of the distribution of cost risk on transport infrastructure projects: that cost overruns are more likely and larger on average than cost underruns.
 
-The observed distributions of construction project risks are actively being researched in academic circles.\footnote{For example. {[}Reference Peter Love's papers{]}.} This research is important, as the specific probability prices estimated through Monte Carlo simulation are only as reliable as the assumptions on which they are based. In order to obtain reliable probability prices using a probabilistic methodology, the distributions of key, or overarching, project risks need to be reliably estimated and clearly communicated in probability pricing guidelines.
+The observed distributions of construction project risks are actively being researched in academic circles\footnote{For example. {[}Reference Peter Love's papers{]}.}. This research is important, as the specific probability prices estimated through Monte Carlo simulation are only as reliable as the assumptions on which they are based. In order to obtain reliable probability prices using a probabilistic methodology, the distributions of key, or overarching, project risks need to be reliably estimated and clearly communicated in probability pricing guidelines.
 
 \section{Risk management}\label{risk-management}
 
@@ -1927,7 +1551,7 @@ It is true that project costs, and hence projects' returns on their investments,
 
 The impact of cost overruns on project selection can be minimised by including the expected value of project risks in the cost estimates used for cost benefit analysis (ref: BITRE, 2005). While benefit cost ratios will still be more uncertain for risky projects than routine projects after this adjustment is made, the benefit cost ratios of risky projects will no longer be systematically biased in a way that makes projects appear more lucrative than they really are. For this reason, it is critical that the costs used in cost benefit analyses include the \emph{expected value} of project risks.
 
-Only the Commonwealth and NSW's risk management guidelines clearly recommend that the expected value of projects risks should be incorporated into the costs estimates used for benefit cost analysis.\footnote{Reference Australian Transport Assessment and Planning Guidelines and Transport for NSW Principles and Guidelines for Economic Appraisal of Transport Investment Initiatives, and others that DON'T.}
+Only the Commonwealth and NSW's risk management guidelines clearly recommend that the expected value of projects risks should be incorporated into the costs estimates used for benefit cost analysis\footnote{Reference Australian Transport Assessment and Planning Guidelines and Transport for NSW Principles and Guidelines for Economic Appraisal of Transport Investment Initiatives, and others that DON'T.}.
 
 It is not reasonable to assume that incorporation of the expected value of risks into cost estimates is implicitly expected by guidelines which do not comment on the type of costs that should be employed in cost benefit analysis. This is because previous Australian research regarding the treatment of risk in cost benefit analysis has found that there is substantial confusion on this matter (BITRE, 2005).
 
@@ -1943,19 +1567,18 @@ However, this important component of risk management appears to be largely gover
 \captionwithunits{The recommended size of contingency funds varies substantially across guidelines\label{fig:Recommended-Size-of-contingency-funds-varies-considerably}}
 {Recommended contingency sizes at early and late stages of project development as a proportion of project costs, per cent}
 
-\includegraphics[page=6]{atlas/AppendixCharts}
-
+%\includegraphics{media/image4.png}\\
 \notes{The contingency ranges cited in the National Guidelines for Transport System Management refer specifically to road projects specifically, and are anticipated to be too conservative for projects which are one-off in nature.}%
 \end{figure}
 
-Even more problematic is the frequent absence of strict requirements for contingency funds to be held at the portfolio level. New South Wales is the only jurisdiction which provides clear, strategic advice on how contingency funds should be managed,\footnote{Infrastructure NSW Contingency Management Guidebook} and Queensland appears to be the only state where there is a strict requirement for contingency funds to be managed at the portfolio level.\footnote{\url{https://www.treasury.qld.gov.au/publications-resources/project-assessment-framework/paf-policy-overview.pdf} and Financial and Performance Management Standard 2009}
+Even more problematic is the frequent absence of strict requirements for contingency funds to be held at the portfolio level. New South Wales is the only jurisdiction which provides clear, strategic advice on how contingency funds should be managed\footnote{Infrastructure NSW Contingency Management Guidebook}, and Queensland appears to be the only state where there is a strict requirement for contingency funds to be managed at the portfolio level\footnote{\url{https://www.treasury.qld.gov.au/publications-resources/project-assessment-framework/paf-policy-overview.pdf} and Financial and Performance Management Standard 2009}.
 
 It should be noted that in the absence of such protocol, there are clear incentives for contingencies to be managed at the project level. This is because changes to project budgets that involve state treasuries increasing projects' budget allocations are open to more public scrutiny. Consequently, project management teams are subject to lower reputational risk when contingency funds are included within initial budget allocations and managed at the project level.
 
 Section \ref{contingencies-should-be-used-cost-efficiently} identified that contingency funds can be three times more cost effective when managed at the portfolio level. For this reason, it would be desirable for all states to adopt a stringent practice of managing contingency funds at the portfolio.
 
 
-\section{Reviewed Australian risk management guidelines \label{sec:Reviewed-Australian-risk-measurement-guidelines}}
+\section{Reviewed Australian risk management guidelines }\label{Reviewed-Australian-risk-measurement-guidelines}
 All the guidelines considered should be listed here. 
 
 
@@ -1991,13 +1614,13 @@ The key differences between the Investment Monitor and smaller Grattan dataset a
 
 Seeking to ascertain the quality of the Investment Monitor's cost estimates, we compared the cost estimates recorded in this dataset against the small sample of carefully investigated transport infrastructure projects that make up the Grattan dataset.
 
-\Vref{fig:value-projects-by-project-stage} compares the Investment Monitor and Grattan datasets' estimates of the total value of the projects included in the Grattan dataset. Although the Grattan dataset only covers a limited number of projects, the high level of similarity between the value of the Investment Monitor and Grattan datasets' portfolios at each project stage provides assurance that the Investment monitor dataset is unbiased. The comparability of the Grattan and Deloitte datasets also holds at the individual project level, as there is no statistically significant difference between the average cost change on individual projects observed across the Grattan and Investment Monitor datasets.\footnote{The t-distribution critical statistic of the difference between the two means is 0.35, far lower than the threshold of 1.68 required for statistical significance at the 90 per cent level of confidence with a sample of this size.}
+\Vref{fig:value-projects-by-project-stage} compares the Investment Monitor and Grattan datasets' estimates of the total value of the projects included in the Grattan dataset. Although the Grattan dataset only covers a limited number of projects, the high level of similarity between the value of the Investment Monitor and Grattan datasets' portfolios at each project stage provides assurance that the Investment monitor dataset is unbiased. The comparability of the Grattan and Deloitte datasets also holds at the individual project level, as there is no statistically significant difference between the average cost change on individual projects observed across the Grattan and Investment Monitor datasets\footnote{The t-distribution critical statistic of the difference between the two means is 0.35, far lower than the threshold of 1.68 required for statistical significance at the 90 per cent level of confidence with a sample of this size.}.
 
 
 \begin{figure}
 \captionwithunits{Cost estimates contained within the Investment Monitor data appear reliable overall\label{fig:value-projects-by-project-stage}}%
 {Total value of the portfolio of projects contained within the Grattan dataset by project stage, \$billion}
-\includegraphics[page=7]{atlas/AppendixCharts}
+
 
 \source{Deloitte-Access Investment Monitor; Grattan dataset; Grattan analysis.}
 \end{figure}
@@ -2009,7 +1632,6 @@ In line with this expectation, we observe far higher cost overruns across the Gr
 \begin{figure}
 \caption{Cost overrun by project stage in Investment Monitor and Grattan datasets\label{fig:cost-overrun-by-project-stage}}
 
-\includegraphics[page=8]{atlas/AppendixCharts}
 
 \noteswithsource{Cost overruns are defined as the percentage change over the period of interest as a proportion of the project's initial cost estimate.}%
 {Deloitte-Access Investment Monitor; Grattan dataset; Grattan analysis.}
@@ -2017,7 +1639,7 @@ In line with this expectation, we observe far higher cost overruns across the Gr
 
 \subsection{Outliers}\label{outliers}
 
-The Investment Monitor dataset contains a number of extreme observations. The quality of these observations is difficult to ascertain because not all of the sources underpinning the Investment Monitor dataset are still accessible, and the search cost associated with finding the sources for these data points is high. For this reason, we take a conservative approach and exclude the 56 projects with overruns that are greater than the largest overrun observed in the Grattan dataset (520\% of project value) or underruns greater than 50\% of project value.\footnote{Greater than 50\% is a generous definition of outlying underrun, as the largest underrun observed in the Grattan dataset is only 34\% of initial project value}
+The Investment Monitor dataset contains a number of extreme observations. The quality of these observations is difficult to ascertain because not all of the sources underpinning the Investment Monitor dataset are still accessible, and the search cost associated with finding the sources for these data points is high. For this reason, we take a conservative approach and exclude the 56 projects with overruns that are greater than the largest overrun observed in the Grattan dataset (520\% of project value) or underruns greater than 50\% of project value \footnote{Greater than 50\% is a generous definition of outlying underrun, as the largest underrun observed in the Grattan dataset is only 34\% of initial project value}.
 
 \subsection{Missing data}\label{missing-data}
 
@@ -2041,17 +1663,17 @@ During construction & 100 per cent\tabularnewline
 
 As discussed in section \ref{cost-overruns-may-be-even-bigger-than-we-claim}, a manual check of the history of 19 such projects with missing data indicated that this is assumption is quite conservative -- 37 per cent of these projects did experience public overruns during the unobserved period -- a proportion only marginally lower than the 46.5 per cent of projects with early cost estimates recorded that experienced early cost overruns.
 
-
 \begin{figure}
-\captionwithunits{Cost overruns are likely to be higher than reported\label{fig:appendix:cost-overruns-are-likely-to-be-higher-than-reported}}
+\captionwithunits{Cost overruns are likely to be higher than reported}
 {Average cost overrun rates as a proportion of initial costs, by project stage}
-\includegraphics[page=7]{atlas/AppendixCharts.pdf}
+
+
+
 \noteswithsource{Australian transport projects completed between 2001 and 2015}%
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
-This indicates that the missing data in the Investment Monitor dataset is associated with unobserved cost changes in some cases, as well as the absence of early cost estimates in others. Consequently, cost overruns may indeed be closer to the upper bound than the lower bound presented in figure \Vref{fig:appendix:cost-overruns-are-likely-to-be-higher-than-reported}. As this report's analysis assumes that no cost overrun occurred where not observed directly, we note that its conclusions are conservative.
-
+This indicates that the missing data in the Investment Monitor dataset is associated with unobserved cost changes in some cases, as well as the absence of early cost estimates in others. Consequently, cost overruns may indeed be closer to the upper bound than the lower bound presented in figure \Vref{fig:cost-overruns-are-likely-to-be-higher-than-reported}. As this report's analysis assumes that no cost overrun occurred where not observed directly, we note that its conclusions are conservative.
 
 \section{Analysis}\label{analysis}
 
@@ -2128,7 +1750,7 @@ We also estimated the appropriate overall rate of cancellation, by calculating t
 
 The overall cancellation rate of 35 per cent observed across the Deloitte Investment Monitor projects appears to be insufficient. This is because, given the observed distribution of the Infrastructure Australia business cases, even a two per cent reduction in the average benefit cost ratio would mean that some projects with benefit cost ratios below one would not be cancelled, and there are numerous reasons to suspect that this is the case.  
 
-For instance, the benefit cost ratios of cancelled projects are likely to be worse than the 39 projects that had undergone an advanced level of planning and voluntarily submitted their business cases for publishing. It is also reasonable to suspect that benefit cost ratios are overestimated by more than 2 per cent on average, as numerous studies have found that estimates of project benefits are routinely optimistic.\footnote{FLYVBJERG, B. 2016b. The fallacy of beneficial ignorance: A test of hirschman's hiding hand. World Development, 84, 176-189.} Finally, the business case for completing projects with benefit cost ratios that are only very marginally above one is contentious, given the existence of competing budget objectives and the marginal excess burden of raising taxes to fund infrastructure projects.\footnote{TERRILL, M., EMSLIE, O. \& COATES, B. 2016. Roads to riches: better transport investment. Grattan Institute.}
+For instance, the benefit cost ratios of cancelled projects are likely to be worse than the 39 projects that had undergone an advanced level of planning and voluntarily submitted their business cases for publishing. It is also reasonable to suspect that benefit cost ratios are overestimated by more than 2 per cent on average, as numerous studies have found that estimates of project benefits are routinely optimistic\footnote{FLYVBJERG, B. 2016b. The fallacy of beneficial ignorance: A test of hirschman's hiding hand. World Development, 84, 176-189.}. Finally, the business case for completing projects with benefit cost ratios that are only very marginally above one is contentious, given the existence of competing budget objectives and the marginal excess burden of raising taxes to fund infrastructure projects\footnote{TERRILL, M., EMSLIE, O. \& COATES, B. 2016. Roads to riches: better transport investment. Grattan Institute.}.
 
 We also investigate the relationship between cost overruns and project survival through a logit model of the probability of a project being cancelled at each stage, given the magnitude of cost overruns as incurred up to that point.
 
@@ -2150,24 +1772,20 @@ The stylized representations of distribution of cost overruns feature a much sma
 
 \begin{figure}\label{fig:probability-distribution}
 \caption{Probability distribution}
-\includegraphics[page=9]{atlas/AppendixCharts}
 \end{figure}
 
 Figure \Vref{fig:probability-distribution} confirms that stylized distribution employed is a fair representation of the underlying data. As emphasised in Box \Vref{box:risk-managers-toolkit}, the expected value of cost overruns falls far closer to the distribution's 90\textsuperscript{th} percentile than its median.
 
 Though less immediately visible, the heaviness right tail of the observed distribution is also notable: 17 percent of projects experienced cost overruns greater than the smallest cost underrun. In these ways, the stylized distribution of cost overruns provides a fair representation of the underlying data.
 
-\begin{figure}
-\caption{Probability distribution}
-\includegraphics[page=10]{atlas/AppendixCharts}
-\end{figure}
+{[}Insert an updated and annotated version of the observed distribution{]}
 
 
 \subsection{Contingency analysis}\label{contingency-analysis}
 
 \Vref{fig:value-contingencies-req-to-cover--} presents the financial advantages of managing cost risk at the portfolio level relative to the project level.
 
-The value of contingencies required to provide assurance that 90 per cent of projects will finish within budget has been estimated as the 90\textsuperscript{th} quantile of the observed distribution of cost outcomes, using the median-unbiased sample quantile estimator.\footnote{Hyndman and Fan, 1996}
+The value of contingencies required to provide assurance that 90 per cent of projects will finish within budget has been estimated as the 90\textsuperscript{th} quantile of the observed distribution of cost outcomes, using the median-unbiased sample quantile estimator\footnote{Hyndman and Fan, 1996}.
 
 To estimate the necessary size of a contingency fund to achieve this level of confidence at the project level, this analysis was conducted on the distribution of project's cost outcomes observed through the investment monitor.
 
@@ -2199,8 +1817,7 @@ The guidance regarding what type of probability price should be used in budget s
 Table ref{probability-pricing-table} reports the percentage of projects observed to have cost overruns greater than each estimated probability price. This comparison is founded on the assumption that budgeted costs are P75 cost estimates, which we know to be exceeded by 34 per cent of projects. This means that cost estimates that have been defined to be P75 costs should, on average, be P66 costs.
 
 
-\begin{table}
-\caption{\label{probability-pricing-table}}
+\begin{table}\label{probability-pricing-table}
 \begin{tabularx}{\columnwidth}{Xll}
 \toprule
 Estimated probability price & Per cent of projects with cost overruns greater than each probability price & Difference, as a per cent of budget commitment project costs, between the P50 and other estimated probability prices\tabularnewline
@@ -2215,25 +1832,24 @@ P99 & 10 per cent & 69 per cent\tabularnewline
 \end{table}
 
 
-To identify the estimated probability prices for different levels of risk tolerance, we assumed that all probability price estimates are biased by the same amount, in the same direction.\footnote{This is the most forgiving assumption that could be invoked regarding the average distance between each probability price under the current estimation methodology, as it is equivalent to assuming that the estimated probability prices were based off a probability distribution which takes the exact shape of the observed data
+To identify the estimated probability prices for different levels of risk tolerance, we assumed that all probability price estimates are biased by the same amount, in the same direction\footnote{This is the most forgiving assumption that could be invoked regarding the average distance between each probability price under the current estimation methodology, as it is equivalent to assuming that the estimated probability prices were based off a probability distribution which takes the exact shape of the observed data.
 
-  It is also the most conservative assumption that could be invoked for this purpose. The guidelines that recommend specific distributions all recommend symmetric distributions, which would cause the error in estimated probability prices to increase with each probability price above the median. By assuming that probability price estimates have been based off a correctly shaped probability distribution, we only claim probability prices are downwardly biased by the lower bound of the of bias implied by the cost estimation guidelines.}
+  It is also the most conservative assumption that could be invoked for this purpose. The guidelines that recommend specific distributions all recommend symmetric distributions, which would cause the error in estimated probability prices to increase with each probability price above the median. By assuming that probability price estimates have been based off a correctly shaped probability distribution, we only claim probability prices are downwardly biased by the lower bound of the of bias implied by the cost estimation guidelines.}.
 
 That is, we know the P75 probability price estimate is downwardly biased by 9 percentage points because it is exceeded by 34 per cent, rather than 25 per cent, of observations. We invoke the assumption that this bias is consistent across the distribution implies, which implies that P50 estimates will be exceeded by 59 per cent of observations, rather than 50 per cent of observations, for example.
 
-The final column of \Vref{probability-pricing-table} reports the the difference, as percentage of budget commitment project costs, between the P50 and other estimated probability prices. These figures have been calculated as the difference between the 90\textsuperscript{th} and 50\textsuperscript{th} quantiles of the observed distribution of final costs over budgeted costs, using the median-unbiased estimator of sample quantiles.\footnote{Hyndman and Fan, 1996}
-
+The final column of table \Vref{probability-pricing-table} reports the the difference, as percentage of budget commitment project costs, between the P50 and other estimated probability prices. These figures have been calculated as the difference between the 90\textsuperscript{th} and 50\textsuperscript{th} quantiles of the observed distribution of final costs over budgeted costs, using the median-unbiased estimator of sample quantiles\footnote{Hyndman and Fan, 1996}.
 
 We draw two conclusions from this analysis. The first conclusion is that expected value of cost overruns after budget commitments have been made is closer to a P90 cost estimate than a P50 cost estimates. This is based off the observation that the expected value of cost overruns after a budget commitment has been made is 21 per cent, and under the current probability price estimation methodology, a 21 per cent cost uplift is equivalent to a P87 cost estimate.
 
-Building off this finding, we also conclude that the average difference between P50 and P90 cost estimates as a percentage of budgeted project costs is approximately 21 per cent, under the current probability price estimation methodology. This is because, as budgeted cost estimates could also be interpreted as P50 cost estimates,\footnote{34 per cent of projects finish above their budget commitment costs, but 91 per cent of projects finish on or above their budget commitment costs. This means that P9-P66 cost estimates should all be set equal to budget commitment costs.} the 21 per cent cost uplift required to convert a budget commitment cost estimate to a P90 cost estimate is also the appropriate uplift rate for converting a P50 cost estimate to a P90 cost estimate.
+Building off this finding, we also conclude that the average difference between P50 and P90 cost estimates as a percentage of budgeted project costs is approximately 21 per cent, under the current probability price estimation methodology. This is because, as budgeted cost estimates could also be interpreted as P50 cost estimates\footnote{34 per cent of projects finish above their budget commitment costs, but 91 per cent of projects finish on or above their budget commitment costs. This means that P9-P66 cost estimates should all be set equal to budget commitment costs.}, the 21 per cent cost uplift required to convert a budget commitment cost estimate to a P90 cost estimate is also the appropriate uplift rate for converting a P50 cost estimate to a P90 cost estimate.
 
 The uplift required to convert a P50 cost estimate to a P90 cost estimate may actually be far higher than this. Under an accurate probability pricing methodology, this difference could actually be as large as 69 per cent. We refrain from making this claim so as to only interpret observed outcomes in relation to the probability price estimates that prevailed when the cost outcomes were generated. This is because switching to an accurate probability price estimation methodology could change cost behaviour.
 
 
-%\begin{figure}
+\begin{figure}
 % Chevron chart
-%\end{figure}
+\end{figure}
 
 
 
@@ -2251,8 +1867,40 @@ The uplift required to convert a P50 cost estimate to a P90 cost estimate may ac
 
 
 
+\chapter{Methodological appendix}
+\section{Expected difference between P50 and P90 costs\label{appendix:Expected-difference-between-P50-and-P90}}
 
-\printbibliography
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Remove finally}}\end{kframe}
+\end{knitrout}
+
+\begin{table}
+\caption{Bias}
+
+
+
+
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Fri Oct 21 19:51:43 2016
+\begin{tabularx}{\columnwidth}{lr}
+  \toprule
+\textbf{Estimated probability price} & \textbf{Proportion of projects less than} \\ 
+  \midrule
+P50 & 43~per~cent \\ 
+  P75 & 68~per~cent \\ 
+  P78 & 71~per~cent \\ 
+  P90 & 83~per~cent \\ 
+  P99 & 92~per~cent \\ 
+   \bottomrule
+\end{tabularx}
+
+
+
+\source{Grattan analysis}
+\end{table}
 
 \end{document}
 
