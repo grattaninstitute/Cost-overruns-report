@@ -1453,7 +1453,7 @@ Yet they are inconsistent in terms of which tools they recommend and in how they
 {Proportion of guidelines on quantitative risk assessment on transport infrastructure projects that recommend the use of each key risk assessment tool, per cent}
 \includegraphics[page=15]{atlas/Charts_CO.pdf}
 
-\noteswithsource{Australian transport projects completed between 2000 and 2015}%
+\noteswithsource{Australian risk manangement guidelines, as listed in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}. Prevalence rates were calculated over the subsample of each of these guidelines which provided quantitative risk measurement guidance.}%
 {Australian risk management guidelines references in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}; Deloitte Investment Monitor; Grattan analysis}
 \end{figure}
 
