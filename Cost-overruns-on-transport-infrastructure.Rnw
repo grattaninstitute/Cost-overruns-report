@@ -1215,11 +1215,14 @@ If even half this reduction was avoided by switching to alternative investments 
 Please see \Vref{methodological-appendix} for further details}
 
 
-\section{Australia could do better at reappraising projects after cost overruns}\label{australia-could-do-better-at-reappraising-projects-after-cost-overruns}
+\section{There is substantial scope for Australia to better reappraise projects after cost overruns}\label{australia-could-do-better-at-reappraising-projects-after-cost-overruns}
 
 
 Cost overruns that occur early in a project's life should prompt a reassessment of the project's costs relative to its benefits.
 The magnitude of some cost overruns suggests that not all projects will still be worth building.
+
+Projects should be cancelled when their estimated benefits are found to be lower than their estimated costs.
+Given that benefits are probably overstated much of the time,\footcite{Elaurant2015POLITICSFINANCETRANSPORT} just as costs are understated, it is entirely fitting that projects be cancelled if their estimated benefits are only slightly more than their estimated costs (see \Vref{box:overstated-benefits}).
 
 Fortunately, there is ample opportunity for Australian jurisdictions to identify these projects, as 63 per cent of cost overruns occur before construction begins, and 38 per cent before a formal budget commitment.
 However, such active reappraisals do not appear to be happening enough.
@@ -1247,8 +1250,7 @@ This either means that the project appraisal process is not being used to cancel
 \footnote{This argument is explained in more detail in \Vref{methodological-appendix}.} 
 Both of these interpretations suggest that not enough projects are cancelled.
 
-Projects should be cancelled when their estimated benefits are found to be lower than their estimated costs.
-Given that benefits are probably overstated much of the time,\footcite{Elaurant2015POLITICSFINANCETRANSPORT} just as costs are understated, it is entirely fitting that projects be cancelled if their estimated benefits are only slightly more than their estimated costs (see \Vref{box:overstated-benefits}).
+
 
 The early timing of Australia's cost overruns offers a substantial and unrealised opportunity to reduce cost overruns on transport infrastructure projects.
 If more projects were to be cancelled when cost overruns eroded the projects' investment merits, the indirect costs associated with distortions to investment planning processes could be materially reduced.
