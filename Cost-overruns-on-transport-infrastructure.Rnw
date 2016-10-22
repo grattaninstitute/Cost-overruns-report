@@ -1938,7 +1938,7 @@ In some instances, inconsistencies also introduce contradictions within jurisdic
 
 Risk measurement guidance should also be consistent across jurisdictions. This is because each state must comply with both its own guidelines and the Commonwealth’s whenever it seeks project funding from the Commonwealth to supplement its own funding of a project. Where state and commonwealth guidance differs, multiple versions of the same analysis are required. 
 
-For example, Victoria’s business case on the Western Distributor has two sets of benefit cost ratios in order to conform to different guidance of the two levels of government\footnote{"Western distributor ref"}.  Neither of these benefit cost ratios is more correct than the other. Rather, they are two imperfect estimates of the same concept. As cost estimates are expensive to produce, Australia’s project appraisal processes could be made more cost efficient by aligning the analysis required across each jurisdiction.  
+For example, Victoria’s business case on the Western Distributor has two sets of benefit cost ratios in order to conform to different guidance of the two levels of government.\footnote{"Western distributor ref"}  Neither of these benefit cost ratios is more correct than the other. Rather, they are two imperfect estimates of the same concept. As cost estimates are expensive to produce, Australia’s project appraisal processes could be made more cost efficient by aligning the analysis required across each jurisdiction.  
 
 The inconsistencies observed across Australian risk measurement guidelines could be resolved by removing old guidance when new processes are implemented, consolidating existing guidelines and writing new guidance so that replaces, rather than augments, older guidance. 
 
