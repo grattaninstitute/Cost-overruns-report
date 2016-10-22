@@ -487,11 +487,8 @@ prop_projects_before_committed_which_are_completed <-
 
 
 
-\setlength{\overviewExtra}{-4mm}
+\setlength{\overviewExtra}{0mm}
 \begin{overview}
-\nonfrenchspacing
-
-
 Over the past 15 years, Australian governments have spent \$28~billion more on transport infrastructure than they told taxpayers they would. The cost overruns amounted to nearly a quarter of total project budgets. Western Australia’s Forrest Highway between Perth and Bunbury cost nearly five times, and New South Wales’ Hunter Expressway cost over four times, the amounts initially promised. Yet despite their sometimes staggering size, cost overruns attract little public attention. There is little interest in understanding and fixing the underlying causes. 
 
 For the first time in Australia, this report investigates the cost outcomes of all 836 projects valued at \$20~million or more and planned or built since 2000. It finds that most problems are caused by a relatively small number of projects. Ninety per cent of Australia’s cost overrun problem is explained by 17 per cent of projects that exceed their promised cost by more than half.
@@ -1398,7 +1395,7 @@ This advice contradicts Australian experience (see \Vref{box:failure-to-learn-co
 
 \begin{smallbox}{Failure to learn from history continues to affect current projects}{box:failure-to-learn-continues-to-affect-current-projects}
 
-The experience of the past 15 years has shown that the difference between the median cost, or ``P50'', and the ``worst case'', or ``P90'' cost , is 21 per cent on average, for transport infrastructure projects valued at \$20 million or more.
+The experience of the past 15 years has shown that the difference between the median cost, or ``P50'', and the ``worst case'', or ``P90'' cost, is 21 per cent on average, for transport infrastructure projects valued at \$20 million or more.
 
 But cost estimates for current projects do not reflect this experience. Instead, the difference between median and ``worst case'' estimates is generally about a third this size. Judging by recent history, this indicates that either the median cost estimate is too high, or - more likely - the ``worst case'' cost estimate is too low. If the latter is the case, more than the expected 10 per cent of these projects will be likely to experience overruns. This report has found that these will be larger, on average, than expected.
 
