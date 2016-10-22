@@ -2163,7 +2163,7 @@ This conclusion is supported by the observations that the recommended size of co
 \includegraphics[page=6]{atlas/AppendixCharts}
 
 \notes{The contingency ranges cited in the National Guidelines for Transport System Management refer specifically to road projects specifically, and are anticipated to be too conservative for projects which are one-off in nature.}%
-\sources{\textcite{AssociationforAdvofCostEng2016}, \textcite{QLDDepTransport2015ProjectCostEstimatingManual}, \textcite{SADPTI2015EstimatingManual}, \textcite{ATC2006NGTSM4}}
+\source{\textcite{AssociationforAdvofCostEng2016}, \textcite{QLDDepTransport2015ProjectCostEstimatingManual}, \textcite{SADPTI2015EstimatingManual}, \textcite{ATC2006NGTSM4}}
 \end{figure}
 
 Even more problematic is the frequent absence of strict requirements for contingency funds to be held at the portfolio level.
@@ -2432,8 +2432,8 @@ This stylized distribution, presented as figure \Vref{fig:probability-distributi
 The stylized representations of distribution of cost overruns features a slightly smaller kurtosis that the observed distribution of cost overruns.
 This modification was made so that the diagrams were easier to label clearly and a key characteristic of the distribution - the heaviness of its right tail -- was more visible.
 
-\begin{figure}\label{fig:probability-distribution}
-\caption{Probability distribution}
+\begin{figure}
+\caption{Probability distribution}\label{fig:probability-distribution}
 \includegraphics[page=9]{atlas/AppendixCharts}
 \end{figure}
 
@@ -2445,12 +2445,12 @@ In these ways, the stylized distribution of cost overruns provides a fair repres
 
 \Vref{assumed-and-observed-prob-distr-of-cost-overruns} and \Vref{fig:assumed-and-actual-distributions} compare the distribution of observed cost overruns against an illustration  of the distribution of cost overruns assumed in risk management guidance. This distribution is founded upon two key observations: 
 
-\begin{itemise}
+\begin{itemize}
 \item
 Costs quoted in state budget papers are typically at least P75 - P90 costs,\footnote{This implies that less than 25 per cent of projects are expected to overrun. For evidence of this practice, see, for instance \textcite[12]{QLDDepTransport2015ProjectCostEstimatingManual}.} and
 \item
 The distribution of cost overruns is assumed to be symmetric\footnote{As discussed in \Vref{insufficient-information-is-provided}, very few guidelines note that cost risk is asymmetrically distributed. Instead, most guidelines only suggest symmetric distributions for use in Monte Carlo simulation.}
-\end{itemise}
+\end{itemize}
 
 As the lower bound of the distribution is necessarily equal to or greater than one, symmetric distributions that predict as little as 25 per cent of projects experiencing cost overruns must severely underestimate the likelihood and potential magnitude of extreme cost overruns. The assumed distributions presented in \Vref{assumed-and-observed-prob-distr-of-cost-overruns} and \Vref{fig:assumed-and-actual-distributions} reflect this key characteristic.\footnote{We note that this assumed distribution is consistent with all observed cost outcomes. That is, if cost risks were anticipated to take this distribution, the expected value of cost overruns would be substantially greater than 0 - approximately equal to the average observed cost overrun of 24 per cent; more projects would have cost overruns than anticipated - as per the observed difference between the expected prevalence of cost overruns of less than 25 per cent relative to the realised frequency of 34 per cent; and these unanticipated cost overruns that drive high expected value of cost overruns would be larger than the overruns anticipated.}
 
