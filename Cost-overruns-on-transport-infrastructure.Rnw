@@ -2383,6 +2383,13 @@ Where:
 
 {[}Regression results{]} \GenericWarning{LaTeX Warning: Regression results need insertion}{LaTeX Warning: Regression results need insertion}
 
+\begin{table*}
+\centering
+\caption{Results of logistic regression with instance of cost overrun in given period as dependent variable\label{tbl:regression-results-logit}}
+\input{tex/regresion-results-logit}
+\source{Grattan analysis of Deloitte Investment Monitor}
+\end{table*}
+
 Cost overruns are also expected to be partially attributable to scope changes.
 We assessed the contribution of this cause by thoroughly investigating publically available evidence of scope changes on the 51 projects contained within the Grattan dataset.
 We defined scope changes as substantive changes to an asset's functionality.
@@ -2498,7 +2505,7 @@ This means that cost estimates that have been defined to be P75 costs should, on
 
 \begin{table}
 \caption{\label{probability-pricing-table}}
-\begin{tabularx}{\columnwidth}{Xll}
+\begin{tabularx}{\columnwidth}{XXX}
 \toprule
 Estimated probability price & Per cent of projects with cost overruns greater than each probability price & Difference, as a per cent of budget commitment project costs, between the P50 and other estimated probability prices\tabularnewline
 \midrule
