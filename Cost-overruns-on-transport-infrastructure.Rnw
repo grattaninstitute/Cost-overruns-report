@@ -1414,16 +1414,17 @@ However, Australian risk management guidance does not currently advise project p
 A third characteristic that affects a project’s cost risk is its contract type. 
 Different types of contracts are used in order to allocate cost risks to the party best placed to manage them. 
 
-Public Private Partnerships, known as PPPs, have been used extensively over the past generation in an effort to bring commercial discipline to infrastructure construction and operations.
-PPPs encourage integrated trade-offs between construction and maintenance.
-They also tend to require clearer definition in advance of construction.
-Relative to traditional delivery models, PPPs can reduce costs if the additional commercial discipline is greater than the higher costs of private capital that PPPs incur.
+Traditionally, projects have been built under Design-Bid-Build and Design-Build contracts, where private companies have engaged with government in a typical contractor-client relationship. 
+In order to improve the cost-efficiency of construction and management, the past generation has seen significant innovation in contract design for public infrastructure projects, resulting in increased use of public private partnerships and alliancing.
+
+Public Private Partnerships, known as PPPs, have been used extensively to bring commercial discipline to infrastructure construction and operations. 
+PPPs encourage integrated trade-offs between construction and maintenance. They also tend to require clearer definition in advance of construction.\GenericWarning{LaTeX Warning: footnote not complete}{LaTeX Warning: footnote not complete} 
+Relative to traditional delivery models, PPPs can reduce costs if the additional commercial discipline is greater than the higher costs of private capital that PPPs incur.\GenericWarning{LaTeX Warning: footnote not complete}{LaTeX Warning: footnote not complete}  
 
 A newer form of contract type, known as alliancing, creates a partnership between the government buyer and the contracting company or companies.
-Alliancing has become common over the past decade or so for projects in which it is particularly difficult to define risks prior to tendering, as this contract type allows for greater ongoing negotiation between the private contractor and government body.
+Alliancing has become common over the past decade or so for projects in which it is particularly difficult to define risks prior to tendering, as this contract type allows for greater ongoing negotiation between the private contractor and government body.\GenericWarning{LaTeX Warning: footnote not complete}{LaTeX Warning: footnote not complete} 
 
-Alliancing and public private partnerships are designed to allocate project risk differently and more effectively than traditional delivery models.
-Consequently, the average size of cost overruns is likely to vary by contract type.
+Because different contract types are designed to allocate project risk in different ways, the average size of cost overruns is likely to vary by contract type. 
 However, there limited evidence on whether this is the case in practice.
 
 A 2007 study of 54 projects and a 2008 study of 67 projects both concluded that PPPs are less prone to cost overruns than are traditionally procured projects.%
