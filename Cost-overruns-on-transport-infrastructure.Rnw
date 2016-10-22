@@ -1,4 +1,4 @@
-\documentclass{grattan}
+\documentclass[FrontPage]{grattan}
 \input{tex/preamble}
 \input{tex/recommendations}
 
