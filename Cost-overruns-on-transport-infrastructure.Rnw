@@ -927,10 +927,10 @@ For example:
   \begin{quote}
   [t]oo often, major infrastructure decisions are made for short-term, politically expedient reasons, rather than in the long-term public interest.\footcite{Greens2016AustralianInfrastructureBank} 
   \end{quote}
-
-  They would like to see comprehensive cost-benefit analysis for large projects submitted to Infrastructure Australia for evaluation, and with the recommendation made public at the same time it is given to government.%
-\footcite{Greens2016AustralianInfrastructureBank}
 \end{itemize}
+
+They would like to see comprehensive cost-benefit analysis for large projects submitted to Infrastructure Australia for evaluation, and with the recommendation made public at the same time it is given to government.%
+\footcite{Greens2016AustralianInfrastructureBank}
 
 \begin{figure}
 \captionwithunits{The vast majority of committed money from all three major parties is for projects not endorsed by Infrastructure Australia \label{fig:election-promises}}%
