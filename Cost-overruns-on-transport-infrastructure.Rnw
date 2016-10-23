@@ -713,7 +713,7 @@ This prevalence rate is comparable to the 51\% observed across the 32\% of proje
 \includegraphics[page=5]{atlas/Charts_CO}
 
 \noteswithsource{Australian transport projects completed between 2001 and 2015. %
-All cost overrun estimates contained elsewhere in this report have been estimated under the assumption that no overrun occurred where not observed directly, which is the illustrated by the lower bound illustrated in this graph.}%
+All cost overrun estimates contained elsewhere in this report have been estimated under the assumption that no overrun occurred where not observed directly -- that is, the bottom line on this graph.}%
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
