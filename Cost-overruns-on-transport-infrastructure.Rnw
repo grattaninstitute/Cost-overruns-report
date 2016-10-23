@@ -754,7 +754,7 @@ The Productivity Commission's finding was based upon the  Western Australian Aud
 \noteswithsource{Based upon detailed investigation of 56 Australian transport infrastructure projects completed between 2008 and 2013, using publicly available data sources. %
 For projects where the percentage change in the scope of the project was known, the cost attributable to scope change is this known size multiplied by the project cost. For projects where the size of the scope change was unknown, the proportion of cost overrun attributable to {}scope change is the proportion of the project's cost overrun that occurred when the scope changed.   %The proportion of a project's cost overrun due to scope changes was calculated as the percentage of the total project cost scope changes were described as a percentage of project scope, or else by the total value of cost overruns incurred during the period the scope change took place.
 }%
-{Grattan analysis of .}
+{Grattan analysis of 51 projects valued above \$100~million.}
 \end{figure}
 
 \subsection{Australia actually does not compare especially well internationally}\label{australia-does-not-compare-especially-well-internationally}
@@ -944,10 +944,9 @@ They would like to see comprehensive cost-benefit analysis for large projects su
 
 \includegraphics[page=9]{atlas/Charts_CO}
 
-\noteswithsource{Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of the Coalition, from the 2016--17 budget papers.
+\noteswithsources{Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of the Coalition, from the 2016--17 budget papers.
 Excludes projects for which construction has already commenced.}
 {\textcite{Liberal2016Policy}; \textcite{ALP2016Policy}; \textcite{Greens2016Policy}; \textcite{Treasury2016CommonwealthBudgetPapers} \textcite{Treasury2014CommonwealthBudgetPapers}; \textcite{InfrastructureAustralia2016}; and Grattan analysis.}
-\end{figure}
 
 
 But even though parties make such statements, the behaviour of politicians exposes the hollowness of their claims.
@@ -1172,7 +1171,7 @@ These early and middle phase overruns could be used as a signal to actively reap
 \captionwithunits{A third of cost overruns occur prior to budget commitments\label{fig:cost-overruns-by-project-stage}}%
 {Cost overruns by project stage, per cent}
 \includegraphics[page=10]{atlas/Charts_CO}
-\noteswithsource{Australian transport projects, completed between 2001 and 2015.}{Deloitte Investment Monitor dataset; Grattan analysis}
+\noteswithsource{Australian transport projects, completed between 2001 and 2015.}{Deloitte Investment Monitor; Grattan analysis}
 \end{figure}
 
 The following two sections identify why it is important that projects' investment merits are reappraised after early cost overruns, and the evidence that Australia's project appraisal processes could be better.
@@ -1303,7 +1302,7 @@ Moreover, these overruns are not offset by underrun, as cost estimation guidelin
 
 \includegraphics[page=12]{atlas/Charts_CO.pdf}
 
-\noteswithsource{The assumed prevalence of cost overruns is inferred from the common representation of cost risk as symmetrically distributed in cost estimation guidance (see \Vref{distributional-analysis} for a discussion  of the sources underpinning this portrayal of risk management guidelines' assumed distribution of cost overruns), and the assumption that budget costs are P75 - P90 costs, which implies that no more than 25 per cent of projects being expected to experience cost overruns.}{Australian risk management guidelines referenced in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} and Deloitte Investment Monitor, Grattan analysis}
+\noteswithsource{The assumed prevalence of cost overruns is inferred from the common representation of cost risk as symmetrically distributed in cost estimation guidance (see \Vref{distributional-analysis} for a discussion  of the sources underpinning this portrayal of risk management guidelines' assumed distribution of cost overruns), and the assumption that budget costs are P75 - P90 costs, which implies that no more than 25 per cent of projects being expected to experience cost overruns.}{Australian risk management guidelines listed in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} and Deloitte Investment Monitor, Grattan analysis}
 \end{figure}
 
 Although it is not possible to perfectly predict the costs of any individual project, where cost estimates are wrong on average, there is clearly scope to improve.
@@ -1380,7 +1379,7 @@ However, roads are less often constructed on brownfield sites with poor accessib
 \GenericWarning{LaTeX Warning: footnote is incomplete.}{LaTeX Warning: footnote is incomplete.}
 
 The timing of cost overruns on rail and road projects is aligned with the stages in which projects of these types are expected to be most bespoke.
-Cost overruns are larger for road projects during the planning stage, when road projects tend to be more bespoke than rail, and larger for rail projects during the construction period, when rail projects tend to be more bespoke (\Vref{fig:cost-overruns-by-proj-stage-mode}).\footnote{The observation that road projects experience larger overruns, on average, than rail projects runs counter to several key findings in the cost overruns literature (\textcites{Merewitz1973Costoverrunspublic}{Flyvbjerg2002Underestimatingcostspublic}{Lee2008Costoverruncause}). However, it should be noted that these studies only investigate cost overruns during the construction phase, where we also observe that rail projects experience higher overruns than rail projects. }
+Cost overruns are larger for road projects during the planning stage, when road projects tend to be more bespoke than rail, and larger for rail projects during the construction period, when rail projects tend to be more bespoke (\Vref{fig:cost-overruns-by-proj-stage-mode}).\footnote{The observation that road projects experience larger overruns, on average, than rail projects runs counter to several key findings in the cost overruns literature (\textcites{Merewitz1973Costoverrunspublic}{Flyvbjerg2002Underestimatingcostspublic}{Lee2008Costoverruncause}). However, it should be noted that these studies only investigate cost overruns during the construction phase, where we also observe that rail projects experience higher overruns than road projects.}
 
 \begin{figure}
 \captionwithunits{Both road and rail projects suffer from cost overruns, but at different stages
