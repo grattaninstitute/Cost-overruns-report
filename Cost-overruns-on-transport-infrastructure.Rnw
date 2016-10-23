@@ -1236,7 +1236,6 @@ Given that benefits are probably overstated much of the time,\footcite{Elaurant2
 Fortunately, there is ample opportunity for Australian jurisdictions to identify these projects, as 63 per cent of cost overruns occur before construction begins, and 38 per cent before a formal budget commitment.
 However, such active reappraisals do not appear to be happening enough.
 
-\GenericWarning{LaTeX Warning: does this match chart?}{LaTeX Warning: does this match chart?}
 Over the last 15 years, two thirds of all announced projects have been completed.
 Even those announced before a formal government funding commitment are usually completed (\Vref{fig:perc-projects-cancelled-each-proj-stage}).
 
