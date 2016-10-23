@@ -2213,7 +2213,7 @@ This dataset has been manually collected for the express purpose of understandin
 
 \subsection{Adjusting expected project costs for inflation}\label{inflation-adjustment}
 
-Both these datasets are based on public sources that report project budgets in terms of nominal dollars at the time the underlying sources were published.  In order to compare projects that occur in different periods, expected and observed project costs in each dataset are adjusted for inflation, using the ABS construction price index.\footnote{http://www.abs.gov.au/ausstats/abs@.nsf/mf/6427.0} 
+Both these datasets are based on public sources that report project budgets in terms of nominal dollars at the time the underlying sources were published.  In order to compare projects that occur in different periods, expected and observed project costs in each dataset are adjusted for inflation, using the ABS construction price index.\footcite{ABS2016ConstructionPriceIndex} 
 
 We assume that the distribution of project costs across time is the same for all projects and convert nominal outturn costs to 2016 dollars from the middle year of the period during which each project was under construction. 
 While only approximate, this approach is sufficient for controlling for the effect of inflation at the aggregate level under the assumption that the distribution of project costs over the construction period does not vary with time. 
@@ -2294,7 +2294,7 @@ During construction & 100 per cent\tabularnewline
 \end{table}
 
 
-As discussed in section \ref{cost-overruns-may-be-even-bigger-than-we-claim}, a manual check of the history of 51 projects indicated that this is assumption is quite conservative – 37 per cent projects which were missing data on early cost estimates experienced public overruns during the unobserved period – a proportion only marginally lower than the 51 per cent of projects with early cost estimates. 
+As discussed in \Vref{cost-overruns-may-be-even-bigger-than-we-claim}, a manual check of the history of 51 projects indicated that this is assumption is quite conservative – 37 per cent projects which were missing data on early cost estimates experienced public overruns during the unobserved period – a proportion only marginally lower than the 51 per cent of projects with early cost estimates. 
 
 
 \begin{figure}
@@ -2306,7 +2306,7 @@ As discussed in section \ref{cost-overruns-may-be-even-bigger-than-we-claim}, a 
 \end{figure}
 
 This indicates that the missing data in the Investment Monitor dataset is associated with unobserved cost changes in some cases, as well as the absence of early cost estimates in others.
-Consequently, cost overruns may indeed be closer to the upper bound than the lower bound presented in figure \Vref{fig:appendix:cost-overruns-are-likely-to-be-higher-than-reported}.
+Consequently, cost overruns may indeed be closer to the upper bound than the lower bound presented in \Vref{fig:appendix:cost-overruns-are-likely-to-be-higher-than-reported}.
 As this report's analysis assumes that no cost overrun occurred where not observed directly, we note that its conclusions are conservative.
 
 
