@@ -1977,7 +1977,7 @@ Assessments of project risks can be considered:
 
 \begin{table}
 \caption{Requirements for complete risk measurement}\label{tbl:requirements-for-complete-risk-measurement}
-.
+\input{tex/tbl-complete-approaches-to-risk-management}
 \end{table}
 
 \begin{table}
