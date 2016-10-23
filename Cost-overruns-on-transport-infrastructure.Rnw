@@ -651,7 +651,7 @@ A small number of researchers and state auditors-general have analysed aspects o
 The drawback with small samples is that their findings may be less representative, and so policymakers cannot rely upon their findings as much as they can with larger or more comprehensive studies.
 
 \begin{figure}
-\captionwithunits{This report analyses upwards of nine times more Australian projects than previous studies\label{fig:this-report-analyses-9-times-more-projects-than-previous-studies}}%
+\captionwithunits{This report analyses over nine times more Australian projects than previous studies\label{fig:this-report-analyses-9-times-more-projects-than-previous-studies}}%
 {Sample sizes of studies into cost overruns on Australian transport infrastructure projects}
 \includegraphics[page=3]{atlas/Charts_CO}
 \source{Cited studies and Deloitte Investment Monitor, Grattan analysis.}
@@ -712,8 +712,8 @@ This prevalence rate is comparable to the 51 per cent observed across the 32 per
 
 \includegraphics[page=5]{atlas/Charts_CO}
 
-\noteswithsource{All cost overrun estimates contained elsewhere in this report have been estimated under the assumption that no overrun occurred where not observed directly, which is the illustrated by the lower bound illustrated in this graph.
-Australian transport projects completed between 2001 and 2015.}
+\noteswithsource{Australian transport projects completed between 2001 and 2015. %
+All cost overrun estimates contained elsewhere in this report have been estimated under the assumption that no overrun occurred where not observed directly -- that is, the bottom line on this graph.}%
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
@@ -746,8 +746,9 @@ Although it appears to be common for scope changes to be made without proper app
 
 \includegraphics{atlas/PieChart}
 
-\noteswithsource{Based upon detailed investigation of 56 Australian transport infrastructure projects completed between 2008 and 2013, using publicly available data sources.\\
-The value of scope changes have been estimated where possible as the percentage of the total project cost (where scope changes were described as a percentage of project scope), or else by the total value of cost overruns incurred during the period the scope change took place.}
+\noteswithsource{Based upon detailed investigation of 56 Australian transport infrastructure projects completed between 2008 and 2013, using publicly available data sources. %
+For projects where the percentage change in the scope of the project was known, the cost attributable to scope change is this known size multiplied by the project cost. For projects where the size of the scope change was unknown, the proportion of cost overrun attributable to scope change is the proportion of the project's cost overrun that occurred when the scope changed.   %The proportion of a project's cost overrun due to scope changes was calculated as the percentage of the total project cost scope changes were described as a percentage of project scope, or else by the total value of cost overruns incurred during the period the scope change took place.
+}%
 {Grattan analysis of .}
 \end{figure}
 
@@ -757,7 +758,8 @@ The scarcity of Australian studies of cost overruns has fed a misperception that
 
 The best-known international studies of `megaprojects' have found road projects overrunning by 24 per cent and rail by 40 per cent.
 These findings emerge from a study of infrastructure project cost overruns on 1603 road and rail projects of all sizes, each valued at between US\$1.5~million and US\$8.5~billion, in 20 countries between 1927 and 2013.%
-\footnote{\textcite{Flyvbjerg2016fallacybeneficialignorance}, methodology described in \textcite{Flyvbjerg2003Megaprojectsriskanatomy}} The findings led the leader of the study, Danish economic geographer Bent Flyvbjerg, to invent what he called ``the iron law of megaprojects: over budget, over time, over and over again.''\footcite[][9-11]{Flyvbjerg2014Whatyoushould}
+\footnote{\textcite{Flyvbjerg2016fallacybeneficialignorance}, methodology described in \textcite{Flyvbjerg2003Megaprojectsriskanatomy}.} %
+The findings led the leader of the study, Danish economic geographer Bent Flyvbjerg, to invent what he called ``the iron law of megaprojects: over budget, over time, over and over again.''\footcite[][9--11]{Flyvbjerg2014Whatyoushould}
 
 Yet Flyvbjerg's findings, while credible, cannot be generalised.
 His overrun estimates are markedly higher than the average overrun of 14 per cent reported across the next four biggest academic studies, or the 15 per cent reported across the four largest studies completed by auditors of road projects.%
@@ -795,7 +797,7 @@ For 2007, see \textcite[][794]{WABudget200708Statements}.}  During construction,
 
 \subsubsection*{What caused these cost changes?}
 
-The initial funding commitments (\$136\,million, \$337\,million, \$370\,million) were for a road 20 per cent shorter.%
+The initial funding commitments (\$136\,million, \$337\,million, and \$370\,million) were for a road 20 per cent shorter.%
 \footcite[][40]{GovWA2005MainRoads} By the time the road was contracted in 2006, an enhancement of a section of the existing Kwinana Highway between Baldavis and Karnup was included.%
 \footcites{GHDPerthtoBunbury}[][87]{AusGov2012InfrastructurePlanningDelivery}
 
@@ -840,7 +842,7 @@ History shows that projects with costs announced prior to a formal budget commit
 Over the past 15 years, 74 per cent of the total value of cost overruns is explained by the 32 per cent of projects with early cost announcements (see \Vref{fig:projects-with-early-initial-cost-announced-accont-for-most-of-the-value-of-cost-overruns}).
 
 \begin{figure}
-\captionwithunits{The projects with early initial cost announced account for most of the value of cost overruns\label{fig:projects-with-early-initial-cost-announced-accont-for-most-of-the-value-of-cost-overruns}}%
+\captionwithunits{The projects with early initial cost announcements account for most of the value of cost overruns\label{fig:projects-with-early-initial-cost-announced-accont-for-most-of-the-value-of-cost-overruns}}%
 {Per cent}
 \includegraphics[page=7]{atlas/Charts_CO}
 \noteswithsource{Australian transport projects completed between 2001 and 2015}
@@ -852,7 +854,6 @@ Once such announcements are scrutinised as part of the budget process, their ear
 
 The poor cost performance of projects with early cost announcements is not just a warning to mistrust politicians' infrastructure promises.
 Rather, premature cost announcements appear to haunt projects throughout their lives.
-After formal budget commitments, the costs of projects with early cost announcements project typically increase by a further 26 per cent (see \Vref{fig:projs-announced-early-have-larger-cost-overruns-at}).
 
 \begin{figure}
 \captionwithunits{Projects announced earlier have larger percentage cost overruns at all stages of the project lifecycle\label{fig:projs-announced-early-have-larger-cost-overruns-at}}
@@ -887,7 +888,8 @@ Savings of \$6.7 million were made during the construction period, and the proje
 
 \end{bigbox*}
 
-\Cref{fig:projs-announced-early-have-larger-cost-overruns-at} shows that projects announced early tend to perform worse than average against their cost estimates, not only in the early stages but also later in the project's life.
+\Vref{fig:projs-announced-early-have-larger-cost-overruns-at} shows that projects announced early tend to perform worse than average against their cost estimates, not only in the early stages but also later in the project's life. 
+After formal budget commitments, the costs of projects with early cost announcements project typically increase by a further 26 per cent (see \Cref{fig:projs-announced-early-have-larger-cost-overruns-at}).
 This suggests that overly optimistic initial cost estimates are rarely adequately adjusted straight away -- reliable project cost estimates may only eventuate half way through construction.
 
 Another reason why projects with premature cost announcements repeatedly have large overruns is that these low quality cost estimates are often imposed on the highest risk projects.
@@ -906,7 +908,7 @@ Previous Grattan work shows how politicians commit to poor quality projects for 
 \footcites{Terrill2016Roadsrichesbetter}{Terrill2016ElectionPromises}
 
 Politicians continue to make infrastructure promises for political advantage even though their parties have made strong statements recognising the need to spend infrastructure money better.
-Among such statements:
+For example:
 
 \begin{itemize}
 \item
@@ -916,6 +918,7 @@ Among such statements:
   \end{quote}
 \item
   The Federal Labor Opposition, which established Infrastructure Australia when it was in office in 2008, promises to take the politics out of infrastructure by ensuring that: 
+
 \begin{quote}
   Infrastructure Australia independently assesses all major infrastructure projects on the basis of the benefits they provide to the economy and society as a whole, their commercial viability and their capacity to enhance national productivity.\footcite{ALP2016EmpoweringInfrastructureAustralia}
   \end{quote}
@@ -924,10 +927,10 @@ Among such statements:
   \begin{quote}
   [t]oo often, major infrastructure decisions are made for short-term, politically expedient reasons, rather than in the long-term public interest.\footcite{Greens2016AustralianInfrastructureBank} 
   \end{quote}
-
-  They would like to see comprehensive cost-benefit analysis for large projects submitted to Infrastructure Australia for evaluation, and with the recommendation made public at the same time it is given to government.%
-\footcite{Greens2016AustralianInfrastructureBank}
 \end{itemize}
+
+They would like to see comprehensive cost-benefit analysis for large projects submitted to Infrastructure Australia for evaluation, and with the recommendation made public at the same time it is given to government.%
+\footcite{Greens2016AustralianInfrastructureBank}
 
 \begin{figure}
 \captionwithunits{The vast majority of committed money from all three major parties is for projects not endorsed by Infrastructure Australia \label{fig:election-promises}}%
@@ -936,17 +939,17 @@ Among such statements:
 
 \includegraphics[page=9]{atlas/Charts_CO}
 
-\noteswithsource{Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of The Coalition, from the 2016--17 budget papers.
+\noteswithsource{Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of the Coalition, from the 2016--17 budget papers.
 Excludes projects for which construction has already commenced.}
 {\textcite{Liberal2016Policy}; \textcite{ALP2016Policy}; \textcite{Greens2016Policy}; \textcite{Treasury2016CommonwealthBudgetPapers} \textcite{Treasury2014CommonwealthBudgetPapers}; \textcite{InfrastructureAustralia2016}; and Grattan analysis.}
 \end{figure}
 
 
-The proportions of the promised money that were for projects that had been assessed as nationally significant and worth doing ranged from 15 per cent for the Coalition to none for the Greens (see \Vref{fig:election-promises}).
 But even though parties make such statements, the behaviour of politicians exposes the hollowness of their claims.
 In the 2016 federal election campaign, Labor, the Coalition and the Greens all promised to build a large number of projects that had not been properly assessed.
 Between a quarter and a half of their promises were for projects that had not been submitted to Infrastructure Australia for assessment, or had been assessed and judged as not worth doing.%
-\footcite{Terrill2016ElectionPromises} Many others were only an ``initiative'' on Infrastructure Australia's list; in other words, Infrastructure Australia was yet to be convinced that the project was worthwhile.
+\footcite{Terrill2016ElectionPromises} Many others were only an ``initiative'' on Infrastructure Australia's list; in other words, Infrastructure Australia was yet to be convinced that the project was worthwhile. %
+The proportions of the promised money that were for projects that had been assessed as nationally significant and worth doing ranged from 15 per cent for the Coalition to none for the Greens (see \Vref{fig:election-promises}).
 
 
 
@@ -964,7 +967,7 @@ A plan to build a Maitland bypass as part of the New England Highway in northern
 In 2007 the Federal Coalition Government increased its funding commitment to \$887~million as an election pledge.%
 \footcite{Bill2009NationBuildingProgramAmendment} After winning the 2007 election, the new Labor Government cooled on the idea.
 In 2008, Joel Fitzgibbon, the then Labor Member for Hunter, observed that: ``First, the F3 link was conceived in the mid 1980s and there have been big changes in traffic movements and residential and commercial settlement patterns since then.
-Second, the cost of the project is now \$1,700 million (\$1.7 billion) and it has a very low benefit to cost ratio (meaning it provides tax-payers with a low-value solution).''\footcite{Bill2009NationBuildingProgramAmendment}
+Second, the cost of the project is now \$1,700 million (\$1.7 billion) and it has a very low benefit to cost ratio (meaning it provides taxpayers with a low-value solution).''\footcite{Bill2009NationBuildingProgramAmendment}
 
 The Government commissioned a review in 2008,\footcite{DIRD2008LowerHunterTransportNeedsStudy} after which it committed \$1.7 billion in 2009.%
 \footcite{RMS2010Hunter} 
@@ -978,7 +981,7 @@ The project was completed in 2014 for \$1678~million.%
 While the final benefit cost ratio has not been published, these comments from politicians reveal the difficulty governments experience in reneging on commitments made very early in a project’s life, even after the facts of the project change significantly.
 
 \begin{figure}[H]
- \captionwithunits{Project cost estimates\label{fig:CS_Hunter}}{millions of dollars}
+ \captionwithunits{Project cost estimates, Hunter Expressway\label{fig:CS_Hunter}}{millions of dollars}
  \includegraphics[page=5]{atlas/CaseStudies.pdf}
 \end{figure}
 
@@ -1008,16 +1011,18 @@ Yet the road was closed for further construction immediately after the ceremony 
 
 While governments are responsible for investment decisions, they should not spend public money without due care for how the spending will benefit the community.
 Cost benefit analysis has limitations, but it remains the best way for making like-for-like comparisons of projects.%
-\footcite{Eliasson2013CostOverrunsandDemandShortfalls} Even with such a process, politicians will be tempted to pressure evaluators to massage assessments to fit political priorities.
+\footcite{Eliasson2013CostOverrunsandDemandShortfalls} 
 
 Even when there is a cost benefit analysis, politicians will be tempted to pressure evaluators to massage assessments to fit political priorities. 
 This is not just a theoretical concern.
 For example, the Victorian Auditor-General, in his audit of the East West Link project, highlighted several instances involving advice:
+
 \begin{quote}
 that gave too much emphasis to the benefits of approaches that were in line with the governments’ preferred outcome and too little to alternative options that could be argued were more aligned with the state’s best interests.\footcite[][xiv]{General2015EastWestLink}  
 \end{quote}
 
 He further noted that: 
+
 \begin{quote}
 [s]ome public officials involved in this audit indicated that providing frank and fearless advice when they believe a government does not want to receive it will negatively impact their influence or career opportunities.\footcite[][xv]{General2015EastWestLink} 
 \end{quote}
@@ -1082,36 +1087,34 @@ For instance, the \$123 billion Future Fund,\footcite{FutureFund2016PortfolioUpd
 The Act ensures that investment decisions and activities are conducted at arm's length from government.
 It requires the tabling in Parliament of an annual report and audited financial statements.
 The Future Fund publishes quarterly portfolio updates to provide details of the investment activity and performance of the fund.
-Transport infrastructure investment by Australian governments is a similarly large element of the budget, and could be governed with similar scrutiny and assurance, but it is not.
+Transport infrastructure investment by Australian governments is similarly large, and could be governed with similar scrutiny and assurance. 
+But it is not.
 
 In the absence of such reporting for infrastructure projects, the public is not equipped to understand whether any particular infrastructure turned out to offer value for money in the terms in which it was originally promised.
 Ministers overseeing projects with significant cost overruns over time commonly end up claiming that the project came in under budget.
 Both Governments and oppositions feel free to make claims that the media and public cannot verify.
 \Vref{box:overstated-benefits} provides background on some extreme examples of overstated benefits that have come to light through legal action.
 
-% \begin{smallbox}{Unreliable traffic forecasts}{box:unreliable-forecasts}
-% Several successful lawsuits reveal the most extreme cases of inaccurate forecasting.
+\begin{smallbox}{Case study -- overstated benefits}{box:overstated-benefits}
+Several successful lawsuits show the most extreme cases of inaccurate forecasting of project benefits.
 
-% Brisbane's CLEM 7 tunnel was forecast to carry more than 100,000 vehicles per day within two years of opening, but in fact only about 22,000 went through.\textsuperscript{1} A successful class action was brought against the forecaster, AECOM.\textsuperscript{2} The tunnel's owner, RiverCity Motorway, went into administration in 2011, after the traffic failed to generate enough revenue for the company to pay its debts.\textsuperscript{3}
+Brisbane's CLEM 7 tunnel was forecast to carry over 100,000 vehicles per day within 2 years of opening, but the reality was only around 22,000.%
+\footcite[][9--11]{CLEM7-lawsuit-against-AECOM-statement-of-claim} A successful class action was brought against the forecaster, AECOM.%
+\footcite{CLEM7-lawsuit-successful-media-release} The tunnel's owner, RiverCity Motorway, went into administration in 2011, as the traffic had not generated enough revenue for the company to pay its debts.%
+\footcite{BrisTimes-RiverCity-IPO-secure-121M}
 
-% The traffic forecasts for Sydney's Lane Cove tunnel were in contention in a lawsuit brought against the companies, Parsons Brinckerhoff and Booz Allen.
-% They settled in 2014.
-% The case concerned allegations that the forecasters ``reverse engineered'' the predictions, working backwards from commercial objectives in estimating traffic volumes.\textsuperscript{4}
+The traffic forecasts for Sydney's Lane Cove tunnel were in contention in a lawsuit brought against the companies, Parsons Brinckerhoff and Booz Allen, settled in 2014.
+The case concerned allegations that the forecasters ``reverse engineered'' the predictions, working backwards from commercial objectives in estimating traffic volumes.%
+\footcite{AFR-Traffic-forecasters-settle-with-AMP-over-Lane-Cover-tunnel}
 
-% Similarly, when traffic volumes were far below expectations on the Brisbane Airport Link, toll road owner Brisconnections launched litigation against forecaster Arup.\textsuperscript{5} This action was settled in 2015.\textsuperscript{6}
+The Brisbane Airport Link is another example of a road for which traffic volumes were far below expectations.
+This also resulted in litigation being launched, by toll road owners Brisconnections against forecaster Arup.%
+\footcite{AFR-BrisConnections-receivers-sue-Arup-over-Brisbane-airport-link} This action was settled in 2015.%
+\footcite{IMFBentham-BrisConnections-vs-Arup-Settled-notice}
 
-% 1. \url{https://www.mauriceblackburn.com.au/media/2403/14-03-31-second-further-amended-statement-of-claim-with-schedules-a-and-b-clean-sealed.pdf}, p.9-11
 
-% 2. https://www.mauriceblackburn.com.au/norewrite/current-class-actions/rivercity-class-action/
 
-% 3. \url{http://www.brisbanetimes.com.au/business/rivercity-ipo-investors-secure-121m-in-successful-clem7-class-action-20160601-gp8qu4.html}
-
-% 4. \url{http://www.afr.com/news/politics/national/traffic-forecasters-settle-with-ampover-lane-cove-20140923-jftpp}
-
-% 5. \url{http://www.afr.com/business/brisconnections-receivers-sue-arup-over-brisbane-airport-link-20140528-iv1qo}
-
-% 6. http://www.imf.com.au/cases/detail/brisconnections
-% \end{smallbox}
+\end{smallbox}
 
 The current opacity of investment planning processes means that the public cannot readily judge the success of projects.
 This means that there is little political cost associated with announcing project costs prematurely, even when this creates a significant risk of promising projects with poor payoffs.
@@ -1178,7 +1181,8 @@ These distortions take three forms.
 
 First, cost overruns distort decisions regarding how much to invest in transport infrastructure relative to other spending priorities, such as hospitals, schools and pensions.
 Transport infrastructure projects have been systematically represented as if they were more attractive and better value for money than they really are.
-At the portfolio level, this misrepresentation has amounted to a 20 per cent reduction in the transport infrastructure portfolio's anticipated return on investment.
+At the portfolio level, this misrepresentation has amounted to a 20 per cent reduction in the transport infrastructure portfolio's anticipated return on investment,
+that is, 20 per cent lower benefit cost ratio underpinned the original investment decision.
 
 Second, cost overruns distort decisions regarding which transport infrastructure projects to invest in.
 At the project level, cost overruns have reduced projects' returns on investment by as much as 406 per cent.
@@ -1211,8 +1215,8 @@ On completion in 2012, the project came in 10 per cent lower than the contracted
 
 The reduction to the transport infrastructure portfolio's return on investment caused by these distortions to investment decisions is sizable.
 If even half this reduction was avoided by switching to alternative investments when project costs skyrocket prior to construction, the benefits to taxpayers would be at least \$41 billion.%
-\footnote{This conclusion is based on the observation of an average benefit cost ratio of 2.95 across the 39 business cases for transport infrastructure published by Infrastructure Australia by the 12th of Feburary 2016.
-Please see \Vref{methodological-appendix} for further details}
+\footnote{This conclusion is based on the observation of an average benefit cost ratio of 2.95 across the 39 business cases for transport infrastructure published by Infrastructure Australia by the 12th of Feburary 2016. %
+Please see \Vref{methodological-appendix} for further details.}
 
 
 \section{There is substantial scope for Australia to better reappraise projects after cost overruns}\label{australia-could-do-better-at-reappraising-projects-after-cost-overruns}
@@ -1257,26 +1261,7 @@ If more projects were to be cancelled when cost overruns eroded the projects' in
 A corollary of this conclusion is that, until the project appraisal process can be demonstrated to reliably cancel projects when it becomes apparent that they are poor investments, premature cost announcements remain a reckless practice.
 This is because, even though cost estimates announced prior to a budget commitment have been demonstrated to be of poor quality, in the absence of a robust mechanism for cancelling projects, such cost announcements constitute de facto commitments to build.
 
-\begin{smallbox}{Case study -- overstated benefits}{box:overstated-benefits}
-Several successful lawsuits show the most extreme cases of inaccurate forecasting of project benefits.
 
-Brisbane's CLEM 7 tunnel was forecast to carry over 100,000 vehicles per day within 2 years of opening, but the reality was only around 22,000.%
-\footcite[][9--11]{CLEM7-lawsuit-against-AECOM-statement-of-claim} A successful class action was brought against the forecaster, AECOM.%
-\footcite{CLEM7-lawsuit-successful-media-release} The tunnel's owner, RiverCity Motorway, went into administration in 2011, as the traffic had not generated enough revenue for the company to pay its debts.%
-\footcite{BrisTimes-RiverCity-IPO-secure-121M}
-
-The traffic forecasts for Sydney's Lane Cove tunnel were in contention in a lawsuit brought against the companies, Parsons Brinckerhoff and Booz Allen, settled in 2014.
-The case concerned allegations that the forecasters ``reverse engineered'' the predictions, working backwards from commercial objectives in estimating traffic volumes.%
-\footcite{AFR-Traffic-forecasters-settle-with-AMP-over-Lane-Cover-tunnel}
-
-The Brisbane Airport Link is another example of a road for which traffic volumes were far below expectations.
-This also resulted in litigation being launched, by toll road owners Brisconnections against forecaster Arup.%
-\footcite{AFR-BrisConnections-receivers-sue-Arup-over-Brisbane-airport-link} This action was settled in 2015.%
-\footcite{IMFBentham-BrisConnections-vs-Arup-Settled-notice}
-
-
-
-\end{smallbox}
 
 
 
@@ -1405,7 +1390,8 @@ Cost overruns are larger for road projects during the planning stage, when road 
 These differences in the size and timing of cost overruns by project mode illustrate another opportunity to improve cost estimates.
 Project proponents are always aware of their project's mode, and their project's mode provides substantial information about the project's likely cost risks.
 However, Australian risk management guidance does not currently advise project proponents to account for mode-specific differences in projects' cost risks.%
-\footnote{The recently updated Australian Transport and Planning guidelines do note the importance of mode specific cost risks, but currently only contain empty placeholder sections on this matter (\textcite{ATAP2016Guidelines}). These placeholder sections cite the NGTSM guidelines which preceded the ATAP guidelines, but the relevant sections of these guidelines only note modal differences in the components of projects' costs, not differences in cost \emph{risks} (\textcites{ATC2006NGTSM3}{ATC2006NGTSM5}}).
+\footnote{The recently updated Australian Transport and Planning guidelines cite the importance of mode specific cost estimation differences, but only contain placeholder sections. \textcite{ATAP2016Guidelines} Placeholder sections cite the NGTSM guidelines which preceded the ATAP guidelines, but the relevant sections of this document do not note modal differences in cost risk, or how to accommodate them. \textcites{ATC2006NGTSM3}{ATC2006NGTSM5}.}
+
 
 \subsection{Contract type may affect the risk of cost overruns}\label{contract-type-may-affect-the-risk-of-cost-overruns}
 
@@ -1534,7 +1520,7 @@ The experience of the past 15 years has shown that the difference between the me
 
 But cost estimates for current projects do not reflect this experience.
 Instead, the difference between median and ``worst case'' estimates is generally about a third this size.
-Judging by recent history, this indicates that either the median cost estimate is too high, or - more likely - the ``worst case'' cost estimate is too low.
+Judging by recent history, this indicates that either the median cost estimate is too high, or -- more likely -- the ``worst case'' cost estimate is too low.
 If the latter is the case, more than the expected 10 per cent of these projects will be likely to experience overruns.
 This report has found that these will be larger, on average, than expected.
 
@@ -2087,7 +2073,7 @@ The quality of risk measurements obtained using the other key risk measurement t
 For example, \textbf{sensitivity analysis} is a valuable tool for understanding the external drivers of cost uncertainty.
 However, only 43 per cent of guidelines which recommend sensitivity analysis specify variables should be subjected to sensitivity analysis and the range of values these variables regularly take. 
 In the absence of this information, there is opportunity for project proponents to retrofit their choices of variables and ranges of variation in order to achieve an acceptable level of cost uncertainty. 
-Because of this, more guidelines should suggest ranges for sensitivity analysis, or recommend that the sensitivity ranges specified in another set of guidelines are used\footnote{The Australian Transport Assessment Planning Guidelines provide a set of sensitivity ranges that could serve as a common point of reference, as the Austroad sensitivity ranges have done in the past \textcite[27]{QLDDepTransport2011CostBenefitAnalysis}}.
+Because of this, more guidelines should suggest ranges for sensitivity analysis, or recommend that the sensitivity ranges specified in another set of guidelines are used.\footnote{The Australian Transport Assessment Planning Guidelines provide a set of sensitivity ranges that could serve as a common point of reference, as the Austroad sensitivity ranges have done in the past \textcite[27]{QLDDepTransport2011CostBenefitAnalysis}}
 
 
 Even more egregious is that some guidelines recommend that \textbf{reference class forecasting} be employed, but do not provide data or key statistics on any reference classes.
