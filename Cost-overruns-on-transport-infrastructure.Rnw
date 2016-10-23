@@ -1181,7 +1181,8 @@ These distortions take three forms.
 
 First, cost overruns distort decisions regarding how much to invest in transport infrastructure relative to other spending priorities, such as hospitals, schools and pensions.
 Transport infrastructure projects have been systematically represented as if they were more attractive and better value for money than they really are.
-At the portfolio level, this misrepresentation has amounted to a 20 per cent reduction in the transport infrastructure portfolio's anticipated return on investment.
+At the portfolio level, this misrepresentation has amounted to a 20 per cent reduction in the transport infrastructure portfolio's anticipated return on investment,
+that is, 20 per cent lower benefit cost ratio underpinned the original investment decision.
 
 Second, cost overruns distort decisions regarding which transport infrastructure projects to invest in.
 At the project level, cost overruns have reduced projects' returns on investment by as much as 406 per cent.
