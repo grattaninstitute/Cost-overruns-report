@@ -1,3 +1,31 @@
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{>{\bfseries\raggedright}p{0.1\textwidth}llCCCCCC}
+%
+\toprule 
+& & & \multicolumn{2}{c}{\textbf{Reliable}} & \multicolumn{4}{c}{\textbf{Comprehensive}} \\
+\cmidrule(lr){4-5}\cmidrule{6-9}
+& & & \textbf{Tailored} & \textbf{Objective} & \textbf{Moderate} & \textbf{Extreme} & \textbf{Known} & \textbf{Unknown} \\ 
+\midrule 
+\topicFormat{Expert judgement}%
+ & Expected value       &                     & \BoldTick & \BoldX    & \BoldTick & \BoldTick & \BoldTick & \BoldX \\
+ & Probability pricing  & Moderate (\eg\ P50) & \BoldTick & \BoldX    & \BoldTick & \BoldX    & \BoldTick & \BoldX \\
+ &                      & High (\eg\ P90)     & \BoldTick & \BoldX    & \BoldX    & \GreyTick & \BoldTick & \BoldX \\
+ & Sensitivity analysis &                     & \GreyTick & \GreyTick & \BoldX    & \BoldX    & \BoldTick & \BoldX \\
+ \midrule
+\topicFormat{Monte Carlo simulation} %
+       & Expected value      &                     & \GreyTick & \GreyTick & \BoldTick & \BoldTick & \BoldTick & \BoldX \\
+       & Probability pricing & Moderate (\eg\ P50) & \GreyTick & \GreyTick & \BoldTick & \BoldX    & \BoldTick & \BoldX \\
+       &                     & High (\eg\ P90)     & \GreyTick & \GreyTick & \BoldTick & \GreyTick & \BoldTick & \BoldX \\
+       & Value at Risk       &                     & \GreyTick & \GreyTick & \BoldTick & \BoldTick & \BoldTick & \BoldX \\
+ \midrule
+\topicFormat{Reference class forecasting} %
+      & Expected value      &                     & \BoldX & \BoldTick & \BoldTick & \BoldTick & \BoldTick & \BoldTick \\
+      & Probability pricing & Moderate (\eg\ P50) & \BoldX & \BoldTick & \BoldTick & \BoldX    & \BoldTick & \BoldTick \\
+      &                     & High (\eg\ P90)     & \BoldX & \BoldTick & \BoldX    & \GreyTick & \BoldTick & \BoldTick \\
+      & Value at Risk       &                     & \BoldX & \BoldTick & \BoldX    & \BoldTick & \BoldTick & \BoldTick \\
+\midrule
+\multicolumn{3}{l}{\textbf{Characteristics of complete risk measurement}} & \BoldTick & \BoldTick & \BoldTick & \BoldTick & \BoldTick & \BoldTick \\ 
+\bottomrule
 
 
-ss
+\end{tabularx}
