@@ -1472,9 +1472,8 @@ The Commonwealth should provide model guidelines that states and territories may
 
 \begin{bigbox*}{The risk manager's toolkit}{box:risk-managers-toolkit}
 
-\textbf{Expected value}: The expected value of a project's cost is the probability-weighted average cost outcome.
-It is calculated by assigning a single probability to each potential cost outcome, and multiplying this probability by the cost of that particular outcome if did occur. For example, if a project has a 90 per cent chance of costing \$100 million and a 10 per cent chance of costing \$200 million, the expected value of the project's costs is \$110 million (0.9*100 + 0.1*200), not \$100 million, which is the most likely of the two potential costs. 
-
+\textbf{Expected value}: The expected value of a project's cost is the average, or mean, cost of a project.
+It is calculated by assigning a single probability to each potential cost outcome, and multiplying this probability by the cost of that particular outcome if did occur.  
 This is the simplest approach to estimating the likely size of cost overruns.
 To be useful, the approach should include all of the risks involved in a project.
 Its main shortcoming is that it does not include the costs posed by any unknown risks.  
@@ -1693,7 +1692,7 @@ By contrast, pooling contingencies from a portfolio of projects is cheaper, for 
 
 \begin{figure}
 \captionwithunits{Small contingencies can achieve a lot when they are managed at the portfolio level\label{fig:value-contingencies-req-to-cover--}}
-{Value of the contingencies required to cover the costs of 90 per cent of the cost overruns that occur after a formal budget commitment, under different contingency management schemes}
+{Value of the contingencies required to ensure that projects  90 per cent of the cost overruns that occur after a formal budget commitment, under different contingency management schemes}
 
 \includegraphics[page=17]{atlas/Charts_CO.pdf}
 
@@ -2495,11 +2494,11 @@ In these ways, the stylized distribution of cost overruns provides a fair repres
 
 Firstly, costs quoted in state budget papers are typically at least P75 - P90 costs. This implies that less than 25 per cent of projects are expected to overrun. For evidence of this practice see, for instance, that:
 \begin{itemize}
-\item Queensland Department of Transport and Main Roads' Project Cost Estimating Manual requires cost estimates to be P75 while initial designs are being completed, \footcite[12]{QLDDepTransport2015ProjectCostEstimatingManual}
-\item Transport for New South Wales' Principles and Guidelines for Economic Appraisal of Transport Investment and Initiatives require P90 cost estimates to be used from the pre-tender stage, \footcite[56]{TransportNSW2013PrinciplesandGuidelines}  and
+\item Queensland Department of Transport and Main Roads' Project Cost Estimating Manual requires cost estimates to be P75 while initial designs are being completed, \footcite[][12]{QLDDepTransport2015ProjectCostEstimatingManual}
+\item Transport for New South Wales' Principles and Guidelines for Economic Appraisal of Transport Investment and Initiatives require P90 cost estimates to be used from the pre-tender stage, \footcite[][56]{TransportNSW2013PrinciplesandGuidelines}  and
 \item the Victorian submission to the Productivity Commission's inquiry into public infrastructure noted that P90 costs often form the budget against which a project's success is assessed. \footcite[][42]{Victoria2014ProductivityCommissionPublic} 
 \end{itemize} 
-While both P50 and P90 cost estimates are required for requests for funding from the Commonwealth government, \footcite[47]{DIRD2013NotesonAdministration} a review of the 23 project summaries published by Infrastructure Australia as of 23rd of October 2016 reveals that the cost estimates submitted for funding requests are P79, on average.
+While both P50 and P90 cost estimates are required for requests for funding from the Commonwealth government, \footcite[][47]{DIRD2013NotesonAdministration} a review of the 23 project summaries published by Infrastructure Australia as of 23rd of October 2016 reveals that the cost estimates submitted for funding requests are P79, on average.
 
 The second key observation is that risk management guidance commonly implies that cost risk is symmetrically distributed, either by specifically recommending that symmteric distributions should be used for Monte Carlo simulation or by not providing sufficient guidance on Monte Carlo simulation of asymmetric risks. 
 
