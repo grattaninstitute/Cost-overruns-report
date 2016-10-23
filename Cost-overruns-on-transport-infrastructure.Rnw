@@ -944,10 +944,10 @@ They would like to see comprehensive cost-benefit analysis for large projects su
 
 \includegraphics[page=9]{atlas/Charts_CO}
 
-\noteswithsources{Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of the Coalition, from the 2016--17 budget papers.
+\noteswithsource{Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of the Coalition, from the 2016--17 budget papers.
 Excludes projects for which construction has already commenced.}
 {\textcite{Liberal2016Policy}; \textcite{ALP2016Policy}; \textcite{Greens2016Policy}; \textcite{Treasury2016CommonwealthBudgetPapers} \textcite{Treasury2014CommonwealthBudgetPapers}; \textcite{InfrastructureAustralia2016}; and Grattan analysis.}
-
+\end{figure}
 
 But even though parties make such statements, the behaviour of politicians exposes the hollowness of their claims.
 In the 2016 federal election campaign, Labor, the Coalition and the Greens all promised to build a large number of projects that had not been properly assessed.
@@ -2381,14 +2381,14 @@ Regression_results_xtable %>%
 \centering
 \caption{Results of logit regression with instance of cost overrun in given period as dependent variable\label{tbl:regression-results-logit}}
 \input{tex/regresion-results-logit}
-\sourceandnotes{Grattan analysis of Deloitte Investment Monitor}{Marginal effects of dependent variables are defined relative to the reference group of rail projects built in New South Wales. *,  ** and *** indicate that a marginal effect is significant at the 1\%, 5\% or 10\% levels of significance.}
+\noteswithsource{Grattan analysis of Deloitte Investment Monitor}{Marginal effects of dependent variables are defined relative to the reference group of rail projects built in New South Wales. *,  ** and *** indicate that a marginal effect is significant at the 1\%, 5\% or 10\% levels of significance.}
 \end{table*}
 
 \begin{table*}
 \centering
 \caption{Results of log-linear regression with instance of cost overrun in given period as dependent variable\label{tbl:regression-results-logit-normal}}
 \input{tex/regression-results-logit-normal}
-\sourceandnotes{Grattan analysis of Deloitte Investment Monitor}{Marginal effects of dependent variables are defined relative to the reference group of rail projects built in New South Wales. *,  ** and *** indicate that a marginal effect is significant at the 1\%, 5\% or 10\% levels of significance.}
+\noteswithsource{Grattan analysis of Deloitte Investment Monitor}{Marginal effects of dependent variables are defined relative to the reference group of rail projects built in New South Wales. *,  ** and *** indicate that a marginal effect is significant at the 1\%, 5\% or 10\% levels of significance.}
 \end{table*}
 
 Cost overruns are also expected to be partially attributable to scope changes.
@@ -2446,15 +2446,14 @@ This modification was made so that the diagrams were easier to label clearly and
 \includegraphics[page=9]{atlas/AppendixCharts2}
 \end{figure}
 
-Figure \Vref{fig:probability-distribution} confirms that stylized distribution employed is a fair representation of the underlying data.
+Figure \Vref{fig:probability-distribution} confirms that the stylized distribution employed is a fair representation of the underlying data.
 As emphasised in Box \Vref{box:risk-managers-toolkit}, the expected value of cost overruns falls far closer to the distribution's 90\textsuperscript{th} percentile than its median.
 
 Though less visible than in the stylized distribution, the heaviness right tail of the observed distribution is notable: 17 percent of projects experienced cost overruns greater than the smallest cost underrun.
-In these ways, the stylized distribution of cost overruns provides a fair representation of the underlying data.
 
 \Vref{assumed-and-observed-prob-distr-of-cost-overruns} and \Vref{fig:assumed-and-actual-distributions} compare the distribution of observed cost overruns against an illustration  of the distribution of cost overruns assumed in risk management guidance. This distribution is founded upon two key observations.
 
-Firstly, costs quoted in state budget papers are typically at least P75 - P90 costs. This implies that less than 25 per cent of projects are expected to overrun. For evidence of this practice see, for instance, that:
+Firstly, costs quoted in state budget papers are typically P75 - P90 costs. This implies that less than 25 per cent of projects are expected to overrun. For evidence of this practice see, for instance, that:
 \begin{itemize}
 \item Queensland Department of Transport and Main Roads' Project Cost Estimating Manual requires cost estimates to be P75 while initial designs are being completed, \footcite[][12]{QLDDepTransport2015ProjectCostEstimatingManual}
 \item Transport for New South Wales' Principles and Guidelines for Economic Appraisal of Transport Investment and Initiatives require P90 cost estimates to be used from the pre-tender stage, \footcite[][56]{TransportNSW2013PrinciplesandGuidelines}  and
@@ -2462,18 +2461,25 @@ Firstly, costs quoted in state budget papers are typically at least P75 - P90 co
 \end{itemize} 
 While both P50 and P90 cost estimates are required for requests for funding from the Commonwealth government, \footcite[][47]{DIRD2013NotesonAdministration} a review of the 23 project summaries published by Infrastructure Australia as of 23rd of October 2016 reveals that the cost estimates submitted for funding requests are P79, on average.
 
-The second key observation is that risk management guidance commonly implies that cost risk is symmetrically distributed, either by specifically recommending that symmteric distributions should be used for Monte Carlo simulation or by not providing sufficient guidance on Monte Carlo simulation of asymmetric risks. 
+The second key observation is that risk management guidance commonly implies that cost risk is symmetrically distributed, either by specifically recommending that symmetric distributions should be used for Monte Carlo simulation or by not providing sufficient guidance on Monte Carlo simulation of asymmetric risks. 
 
 Very few of the reviewed guidelines provide any guidance to project proponents on the expected distribution of project risks,\footnote{Of those reviewed, only \textcite{QLDDepTransport2015ProjectCostEstimatingManual}, \textcite{DIRD2013NotesonAdministration}, \textcite{TransportNSW2013PrinciplesandGuidelines} and \textcite{VicDTF2015HighValueHighRisk} provided detailed guidance.} and symmetric distributions are commonly recommended and depicted in those that do.\footnote{See, for instance \textcite{QLDDepTransport2015ProjectCostEstimatingManual}} 
 
 The honourable exception to this practice is the Victorian Department of Treasury and Finance's Economic Evaluation for Business Cases Technical guidelines for ``High Risk High Value'' projects, which clearly indicates that probabilistic probability pricing should assume that cost risks are asymmetrically distributed. 
-However, even these technical guidelines do not go as far as to explain how to simulate asymmetric cost risk distributions. \footnote{It is reasonable to expect guidelines to provide this level of detail because multiple asymmetric distributions being readily available in the commonly used excel package for Monte Carlo simulation, \emph{@RISK}. Instead, guidelines uniformly recommend the use uniform, triangular, PERT and other symmetric probability distributions, without guidance on how to design correlation matrices in such a way that Monte Carlo simulation from these distributions could produce an asymmetric risk distribution.} 
+However, even these technical guidelines do not go as far as to explain how to simulate asymmetric cost risk distributions.\footnote{It is reasonable to expect guidelines to provide this level of detail because multiple asymmetric distributions being readily available in the commonly used excel package for Monte Carlo simulation, \emph{@RISK}. Instead, guidelines uniformly recommend the use uniform, triangular, PERT and other symmetric probability distributions, without guidance on how to design correlation matrices in such a way that Monte Carlo simulation from these distributions could produce an asymmetric risk distribution.} 
 
 In these ways, most guidelines do not provide clear guidance on how to conduct Monte Carlo simulation, those that do mostly recommend that risks be assumed to be symmetrically distributed and even those that recommend that risk is assumed to be asymmetrically distributed do not explain how to simulate an appropriate asymmetric risk distribution. Consequently, guidelines' general warnings regarding the perils of optimism bias are not supported by their recommended practices. 
 
-As the lower bound of the distribution is necessarily equal to or greater than one, symmetric distributions that predict as little as 25 per cent of projects experiencing cost overruns must severely underestimate the likelihood and potential magnitude of extreme cost overruns. The assumed distributions presented in \Vref{assumed-and-observed-prob-distr-of-cost-overruns} and \Vref{fig:assumed-and-actual-distributions} reflect this key characteristic.
+As the lower bound of the distribution is necessarily equal to or greater than zero,\footnote{As neither initial nor final project costs can be less than zero, cost overruns, as defined as the ratio of final and initial costs, have a zero lower bound.} symmetric distributions that predict as little as 25 per cent of projects experiencing cost overruns must severely underestimate the likelihood and potential magnitude of extreme cost overruns. The assumed distributions presented in \Vref{assumed-and-observed-prob-distr-of-cost-overruns} and \Vref{fig:assumed-and-actual-distributions} reflect this key characteristic.
 
-We note that this assumed distribution is consistent with all observed cost outcomes. That is, if cost risks were anticipated to take this distribution, the expected value of cost overruns would be substantially greater than 0 - approximately equal to the average observed cost overrun of 24 per cent; more projects would have cost overruns than anticipated - as per the observed difference between the expected prevalence of cost overruns of less than 25 per cent relative to the realised frequency of 34 per cent; and these unanticipated cost overruns that drive high expected value of cost overruns would be larger than the overruns anticipated.
+In these ways, Australia's risk management guidelines suggest that cost risks are assumed to take a distribution not dissimilar to that depicted as the assumed distribution in \Vref{fig:assumed-and-actual-distributions}. The assumption of a distribution like this is also consistent with the nature of cost overruns observed on Australian transport infrastructure projects. Namely,
+\begin{itemize}
+\item 
+      the observation of an average cost overrun of 24 per cent is consistent with a the expected value of cost overruns being substantially underestimated, and
+\item
+      the substantial underestimation of the difference, as a percentage of initial project costs, between P50 and P90 costs,\footnote{The observed difference between P50 and P90 costs is 26 per cent, three times higher than the 9.2 per cent difference between P50 and P90 costs in the business cases assessed in table \Vref{tbl:large-projects-cost-estimates}} is consistent with the length of the right tail of the distribution of cost risk being substantially underestimated, 
+\end{itemize}
+as would be the case if assuming a distribution similar to the triangular distribution presented in \Vref{fig:assumed-and-actual-distributions}. This indicates that, although no distribution of cost risks was consistently recommended, the distribution assumed on average in practice appears similar to the triangular distribution presented in \Vref{fig:assumed-and-actual-distributions}.
 
 
 \begin{figure}
@@ -2489,7 +2495,7 @@ We note that this assumed distribution is consistent with all observed cost outc
 The value of contingencies required to provide assurance that 90 per cent of projects will finish within budget has been estimated as the 90\textsuperscript{th} quantile of the observed distribution of cost outcomes, using the median-unbiased sample quantile estimator.%
 \footcite{HyndmanandFan1996SampleQuantilesinStatisticalPackages}
 
-To estimate the necessary size of a contingency fund to achieve this level of confidence at the project level, this analysis was conducted on the distribution of project's cost outcomes observed through the investment monitor.
+To estimate the necessary size of a contingency fund to achieve this level of confidence at the project level, this analysis was conducted on the distribution of project's cost outcomes observed through the Investment Monitor.
 
 To estimate the necessary size of a contingency fund to achieve this level of confidence across the portfolio of infrastructure projects, this analysis was conducted on a simulated distribution of average portfolio cost outcomes.
 
@@ -2507,26 +2513,24 @@ Mostly, it is requested that P90 cost estimates are used as for budget estimates
 To allow for this variation in practices, we make the conservative assumption that budget estimates are all P75 estimates. 
 Under the less conservative assumption that budgets contain P90 cost estimates, probability prices would be downwardly biased by an additional 15 percent. 
 
-Table ref{probability-pricing-table} reports the percentage of projects observed to have cost overruns greater than each estimated probability price.
+Table \Vref{probability-pricing-table} reports the percentage of projects observed to have cost overruns greater than each estimated probability price.
 This comparison is founded on the assumption that budgeted costs are P75 cost estimates, which we know to be exceeded by 34 per cent of projects.
 This means that cost estimates that have been defined to be P75 costs should, on average, be P66 costs.
-
 
 \begin{table}
 \caption{\label{probability-pricing-table}}
 \begin{tabularx}{\columnwidth}{XXX}
 \toprule
-Estimated probability price & Per cent of projects with cost overruns greater than each probability price & Difference, as a per cent of budget commitment project costs, between the P50 and other estimated probability prices\tabularnewline
+Estimated probability price & Difference between the P50 and other estimated probability prices\footnote{As a per cent of projects' first budget commitment costs.} \tabularnewline
 \midrule
-P50 & 59 per cent & 0 per cent\tabularnewline
-P75 & 34 per cent & 0 per cent\tabularnewline
-P87 & 22 per cent & 21 per cent\tabularnewline
-P90 & 19 per cent & 26 per cent\tabularnewline
-P99 & 10 per cent & 69 per cent\tabularnewline
+P50 & 0 per cent\tabularnewline
+P75 & 0 per cent\tabularnewline
+P87 & 21 per cent\tabularnewline
+P90 & 26 per cent\tabularnewline
+P99 & 69 per cent\tabularnewline
 \bottomrule
 \end{tabularx}
 \end{table}
-
 
 To identify the estimated probability prices for different levels of risk tolerance, we assumed that all probability price estimates are biased by the same amount, in the same direction.%
 \footnote{This is the most forgiving assumption that could be invoked regarding the average distance between each probability price under the current estimation methodology, as it is equivalent to assuming that the estimated probability prices were based off a probability distribution which takes the exact shape of the observed data. 
@@ -2540,12 +2544,13 @@ The final column of \Vref{probability-pricing-table} reports the the difference,
 These figures have been calculated as the difference between the 90\textsuperscript{th} and 50\textsuperscript{th} quantiles of the observed distribution of final costs over budgeted costs, using the median-unbiased estimator of sample quantiles.%
 \footcite{HyndmanandFan1996SampleQuantilesinStatisticalPackages}
 
+This column reports that there is no difference between the P50 and P75 price, on average. This is because 57 per cent of projects finish exactly on budget, which means that there is no difference between most central quantiles. However, there is an increasingly large gap, as a percentage of initial project costs, between the P50 and the upper quantiles: the average P87 (equivalent to the expected value) is 21 per cent higher than the average P50 cost estimate, and the average P90 is 26 per cent higher than the average P50 estimate.
 
 We draw two conclusions from this analysis.
-The first conclusion is that expected value of cost overruns after budget commitments have been made is closer to a P90 cost estimate than a P50 cost estimates.
-This is based off the observation that the expected value of cost overruns after a budget commitment has been made is 21 per cent, and under the current probability price estimation methodology, a 21 per cent cost uplift is equivalent to a P87 cost estimate.
+The first conclusion is that the expected value of cost overruns after budget commitments have been made is closer to a P90 cost estimate than a P50 cost estimates.
+This is based on the observation that the expected value of cost overruns after a budget commitment has been made is 21 per cent, and under the current probability price estimation methodology, a 21 per cent cost uplift is equivalent to a P87 cost estimate.
 
-Building off this finding, we also conclude that the average difference between P50 and P90 cost estimates as a percentage of budgeted project costs is approximately 21 per cent, under the current probability price estimation methodology.
+Building on this finding, we also conclude that the average difference between P50 and P90 cost estimates as a percentage of budgeted project costs is approximately 21 per cent, under the current probability price estimation methodology.
 This is because, as budgeted cost estimates could also be interpreted as P50 cost estimates,\footnote{34 per cent of projects finish above their budget commitment costs, but 91 per cent of projects finish on or above their budget commitment costs.
 This means that P9-P66 cost estimates should all be set equal to budget commitment costs.} the 21 per cent cost uplift required to convert a budget commitment cost estimate to a P90 cost estimate is also the appropriate uplift rate for converting a P50 cost estimate to a P90 cost estimate.
 
