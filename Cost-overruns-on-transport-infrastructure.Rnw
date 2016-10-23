@@ -1212,8 +1212,8 @@ On completion in 2012, the project came in 10 per cent lower than the contracted
 
 The reduction to the transport infrastructure portfolio's return on investment caused by these distortions to investment decisions is sizable.
 If even half this reduction was avoided by switching to alternative investments when project costs skyrocket prior to construction, the benefits to taxpayers would be at least \$41 billion.%
-\footnote{This conclusion is based on the observation of an average benefit cost ratio of 2.95 across the 39 business cases for transport infrastructure published by Infrastructure Australia by the 12th of Feburary 2016.
-Please see \Vref{methodological-appendix} for further details}
+\footnote{This conclusion is based on the observation of an average benefit cost ratio of 2.95 across the 39 business cases for transport infrastructure published by Infrastructure Australia by the 12th of Feburary 2016. %
+Please see \Vref{methodological-appendix} for further details.}
 
 
 \section{There is substantial scope for Australia to better reappraise projects after cost overruns}\label{australia-could-do-better-at-reappraising-projects-after-cost-overruns}
