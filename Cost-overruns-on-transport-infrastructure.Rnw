@@ -1408,7 +1408,7 @@ Cost overruns are larger for road projects during the planning stage, when road 
 These differences in the size and timing of cost overruns by project mode illustrate another opportunity to improve cost estimates.
 Project proponents are always aware of their project's mode, and their project's mode provides substantial information about the project's likely cost risks.
 However, Australian risk management guidance does not currently advise project proponents to account for mode-specific differences in projects' cost risks.%
-\footnote{The recently updated Australian Transport and Planning guidelines cite the importance of mode specific cost estimation differences, but only contain placeholder sections. \textcite{ATAP2016Guidelines} Placeholder sections cite the NGTSM guidelines which preceded the ATAP guidelines, but the relevant sections of this document do not note modal differences in cost risk, or how to accommodate them.\textcites{ATC2006NGTSM3}{ATC2006NGTSM5}}
+\footnote{The recently updated Australian Transport and Planning guidelines cite the importance of mode specific cost estimation differences, but only contain placeholder sections. \textcite{ATAP2016Guidelines} Placeholder sections cite the NGTSM guidelines which preceded the ATAP guidelines, but the relevant sections of this document do not note modal differences in cost risk, or how to accommodate them. \textcites{ATC2006NGTSM3}{ATC2006NGTSM5}.}
 
 \subsection{Contract type may affect the risk of cost overruns}\label{contract-type-may-affect-the-risk-of-cost-overruns}
 
