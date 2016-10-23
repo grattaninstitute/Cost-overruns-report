@@ -738,9 +738,12 @@ We take this approach to differentiate genuinely additional infrastructure from 
 
 Changes to scope are only a problem if they are not appraised on their merits as to whether they are worth the money and are better than alternative ways to solve a problem or to spend public funds.
 
-It has previously been hypothesised that most cost overruns are attributable to changes in project scope. The Productivity Commission's inquiry into Public Infrastructure reflected what appears to be the prevailing wisdom on cost overruns in Australia when concluding that "cost overruns during delivery mainly stem from government clients changing the scope of the project". The key basis for this perception is the Western Australian Auditor General's report on major captial projects, which examined cost overruns on 20 projects.\textcite{WAAGMajorCapitalProjects}Cost overruns did explain the majority of cost overruns observed amoung these projects. However, this result was largely driven by the substantial scope changes observed on non-transport projects, such as hospitals, schools and prisons.
+This report first that scope changes only account for about 11 per cent of cost overruns on transport infrastructure projects (\Vref{fig:most-cost-overruns-were-not-attrib-to-scope-changes}). This conclusion is counter to what appears to be the prevailing wisdom on the causes of cost overruns on Australian transport projects, and the Productivity Commission's conclusion that "cost overruns during delivery mainly stem from government clients changing the scope of the project" \footcite[][29]{Commission2013Publicinfrastructure}. 
 
-Although it does appear to be common for scope changes to be made without proper appraisal of the new work,\footcite[][185]{Love2016CostOverrunsinTransportationInfrastructure}, this report finds that most cost overruns do not appear to be attributable to scope changes. In fact, scope changes appear to only account for about 11 per cent of cost overruns on transport infrastructure projects (\Vref{fig:most-cost-overruns-were-not-attrib-to-scope-changes}).
+However, the Productivity Commission's assertion was based upon the  Western Australian Auditor General's report on major captial projects, which found that scope changes explained the majority of cost overruns observed across 20 major projects.\footcite{WAAGMajorCapitalProjects} This study focused on cost overruns incurred during the construction phase, and was largely driven by the substantial scope changes observed on non-transport projects, such as hospitals, schools and prisons. It does not appear to be readily generalisable to cost overruns incurred on transport infrastructure projects between first cost announcement and project completion. 
+
+
+
 
 \begin{figure}
 \captionwithunits{Most cost overruns were not attributable to substantive scope changes\label{fig:most-cost-overruns-were-not-attrib-to-scope-changes}}
