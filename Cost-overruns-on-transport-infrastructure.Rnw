@@ -1472,7 +1472,7 @@ The Commonwealth should provide model guidelines that states and territories may
 
 \begin{bigbox*}{The risk manager's toolkit}{box:risk-managers-toolkit}
 
-\textbf{Expected value}: The expected value of a project's cost is an estimate of the most likely, average or mean cost of a project.
+\textbf{Expected value}: The expected value of a project's cost is the probability-weighted average, or most likely, cost outcome.
 It is calculated by assigning a single probability to each potential cost outcome, and multiplying this probability by the cost of that particular outcome if did occur.
 This is the simplest approach to estimating the likely size of cost overruns.
 To be useful, the approach should include all of the risks involved in a project.
@@ -1524,7 +1524,7 @@ The cost estimation toolkit relies upon historical cost outcomes to calculate ke
 Probability pricing and reference class forecasting depend entirely on knowing the historical outcomes of similar projects.
 Not knowing these has three important consequences.
 
-The first is that many guidelines suggest to cost estimators that overruns and underruns are equally likely.
+The first is that many guidelines suggest to cost estimators that overruns and underruns are equally likely.\footnote{Please see \Vref{distributional-analysis} for further details.}
 They do so by recommending that symmetric probability distributions should underpin the typical approach to estimating probability prices, known as Monte Carlo simulation.
 This advice contradicts Australian experience (see \Vref{box:failure-to-learn-continues-to-affect-current-projects} on current projects).
 
