@@ -1246,7 +1246,7 @@ Even those announced before a formal government funding commitment are usually c
 
 
 This cancellation rate seems lower than it should be.
-One indication that it is too low is that this cancellation rate is less than the proportion of projects that would be expected to have benefit cost ratios less than one, given the average magnitude of cost overruns (see \Vref{survival-analysis} for details)
+It is less than the proportion of projects that would be expected to have benefit cost ratios less than one, given the average magnitude of cost overruns (see \Vref{survival-analysis} for details)
 .
 The reason the cancellation rate is probably too low is that many projects with low net benefits are not being cancelled.
 Over the last 15 years, projects that incurred cost overruns were just as likely to be cancelled as those that did not.
@@ -1290,7 +1290,7 @@ While cost estimation on any given project is uncertain, cost estimates should o
 But there is a substantial gap between estimated and actual costs on transport infrastructure projects over the past 15 years.
 In that period, cost estimators expected between 10 and 25 per cent of projects to exceed their budget.
 In fact, 34 per cent did so (\Vref{fig:assumed-and-observed-prob-distr-of-cost-overruns}).
-Moreover, these overruns are not offset by underrun, as cost estimation guidelines optimistically imply. \footnote{Please see \Vref{distributional-analysis} for further details and evidence of this claim.}
+Moreover, these overruns are not offset by underruns, as cost estimation guidelines optimistically imply. \footnote{Please see \Vref{distributional-analysis} for further details and evidence of this claim.}
 
 \begin{figure}
 \captionwithunits{Experts systematically underestimate the likelihood of cost overruns\label{fig:assumed-and-observed-prob-distr-of-cost-overruns}}
@@ -1361,7 +1361,7 @@ When the estimated construction cost to that jurisdiction is \$1 billion or more
 
 \subsection{Road and rail projects overrun at different stages}\label{road-and-rail-projects-overrun-at-different-stages}
 
-It is also not surprising that unusual projects are also more prone to cost overruns.
+It is not surprising that unusual projects are also more prone to cost overruns.
 This is because the more unusual a project is, the more difficult it is to estimate its cost and to build it to budget.
 Understanding when and where a project is unusual can help project proponents identify which projects are at particularly high risk of cost overruns.
 
@@ -1519,7 +1519,7 @@ This advice contradicts Australian experience (see \Vref{box:failure-to-learn-co
 The experience of the past 15 years has shown that the difference between the median cost, or ``P50'', and the ``worst case'', or ``P90'' cost, is 21 per cent on average, for transport infrastructure projects valued at \$20 million or more.
 
 But cost estimates for current projects do not reflect this experience.
-Instead, the difference between median and ``worst case'' estimates is generally about a third this size.
+Instead, the difference between median and ``worst case'' estimates is generally about half this size.
 Judging by recent history, this indicates that either the median cost estimate is too high, or -- more likely -- the ``worst case'' cost estimate is too low.
 If the latter is the case, more than the expected 10 per cent of these projects will be likely to experience overruns.
 This report has found that these will be larger, on average, than expected.
@@ -1612,25 +1612,25 @@ These are key times for managing risks.
 
 Some risks materialise through changes in the economy.
 Because the growth rate of the economy fluctuates, the costs of public infrastructure will always be uncertain.
-This is because a project's input costs may be higher than anticipated if private sector demand for resources such as equipment, materials and workforce is higher or lower than anticipated.
+This is because a project's input costs may be higher than anticipated if private sector demand for resources such as equipment, materials and workforce is higher than anticipated.
 
 This type of unavoidable cost risk may explain the higher rate of cost overruns experienced in Western Australia during the resources boom.
 With many construction companies deployed on mining projects, there were often few or even only one bid for public sector works projects.
-Not surprisingly Western Australia experienced larger overruns on average than those in New South Wales, Victoria and Queensland (details in \Vref{methodological-appendix}).
+Not surprisingly, Western Australia experienced larger overruns on average than those in New South Wales, Victoria and Queensland (details in \Vref{methodological-appendix}).
 
 By contrast, current economic conditions have led to more competition within the construction industry to build public infrastructure.
 Anecdotal evidence has suggested that constructors may make unfeasibly low bids when the number of available projects shrinks, as is the case in some parts of Australia at present.
 This practice would only be a concern for government if contractors pursued contract changes that were in effect claims to recoup the revenue forgone by a low bid, and if governments were unable in practice to deny these changes because of political lock-in.%
 \footcites[][500]{Love2014Understandinglandscapeoverruns}[][87--88]{Hinze1992CostOverrunsonStateofWashington} While this may occur on some projects, we do not find significant evidence of low initial bids leading to later overruns.
 
-Budgetary environments also affect cost overruns by causing a general tightening of incentives to deliver projects within budget.
+Constrained budgetary environments also affect cost overruns by causing a general tightening of incentives to deliver projects within budget.
 This appears to have been the case in Australia since the global financial crisis, when the focus swung sharply from getting projects shovel-ready to balancing the budget.
 During this period, there have been substantial changes to the culture and practice of governments, and the probability of cost overruns during construction has approximately halved (although the same cannot be said of cost overruns before a formal funding commitment).
 
 There are numerous other unavoidable risks that are a part of major construction projects, like unexpected weather, ground conditions and industrial relation events.
 Each project also has its own idiosyncratic risks that cannot be avoided.
 These risks mean that it is impossible to eliminate cost risk entirely.
-Consequently, it's important that budgeting, reporting and contingency management practices are designed to minimise the cost of cost overruns when they occur.
+Consequently, it is important that budgeting, reporting and contingency management practices are designed to minimise the cost of cost overruns when they occur.
 
 \section{We could better manage the risks that cannot be avoided}\label{we-could-better-manage-the-risks-that-cannot-be-avoided}
 
