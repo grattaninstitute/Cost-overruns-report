@@ -1307,8 +1307,8 @@ While cost estimation on any given project is uncertain, cost estimates should o
 
 But there is a substantial gap between estimated and actual costs on transport infrastructure projects over the past 15 years.
 In that period, cost estimators expected between 10 and 25 per cent of projects to exceed their budget.
-In fact, 34 per cent did so (\Vref{fig:assumed-and-observed-prob-distr-of-cost-overruns}).
-Moreover, these overruns are not offset by underruns, as cost estimation guidelines optimistically imply. \footnote{Please see \Vref{distributional-analysis} for further details and evidence of this claim.}
+In fact, 34 per cent did so (\Vref{fig:assumed-and-observed-prob-distr-of-cost-overruns}). %
+Moreover, these overruns are not offset by underruns, as cost estimation guidelines optimistically imply.\footnote{Please see \Vref{distributional-analysis} for further details and evidence of this claim.}
 
 \begin{figure}
 \captionwithunits{Experts systematically underestimate the likelihood of cost overruns\label{fig:assumed-and-observed-prob-distr-of-cost-overruns}}
@@ -1942,13 +1942,13 @@ In some instances, inconsistencies also introduce contradictions within jurisdic
 
 Risk measurement guidance should also be consistent between the Commonwealth and each individual state. This is because each state must comply with both its own guidelines and the Commonwealth’s whenever it seeks project funding from the Commonwealth to supplement its own funding of a project. Where state and commonwealth guidance differs, multiple versions of the same analysis are required. 
 
-For example, Victoria’s business case on the Western Distributor has two sets of benefit cost ratios in order to conform to different requirements of the two levels of government.\footnote{"Western distributor ref"}  Neither of these benefit cost ratios is more correct than the other. Rather, they are two imperfect estimates of the same concept. As cost estimates are expensive to produce, Australia’s project appraisal processes could be made more cost efficient by aligning the analysis required across each jurisdiction.  
+For example, Victoria’s business case on the Western Distributor has two sets of benefit cost ratios in order to conform to different requirements of the two levels of government.\footcite{Government2015WesternDistributor}  Neither of these benefit cost ratios is more correct than the other. Rather, they are two imperfect estimates of the same concept. As cost estimates are expensive to produce, Australia’s project appraisal processes could be made more cost efficient by aligning the analysis required across each jurisdiction.  
 
 The inconsistencies observed across Australian risk measurement guidelines could be resolved by removing old guidance when new processes are implemented, consolidating existing guidelines and writing new guidance so that it replaces, rather than accretes onto, older guidance. 
 
 For example, many of the inconsistencies within Commonwealth, COAG and Austroads guidance were addressed through the 2016 release of the \emph{Australian Transport Assessment and Planning  Guidelines}.\footcite{ATAP2016Guidelines} These guidelines replaced \emph{Austroads' Guide to Project Evaluation}\footcite{Austroads2014GuidetoProjectEvaluation} and the \emph{National Guidelines for Transport System Management in Australia},\footcite{ATC2006NGTSM3} and were written to be aligned with Infrastructure Australia's guidelines, the \emph{National Guidance on Public Private Partnership Projects} and the \emph{National Charter of Integrated Land Use and Transport Planning}. A similar exercise should be undertaken within each  state, which should aim to align guidance with these federal guidelines. 
 
-Where different institutions within jurisdictions require different levels of risk analysis, guidance should be comprehensively reviewed so that the hierarchy of guidance documents is clear and, where possible, analytical requirements are aligned. \footnote{Page 11 of Transport NSW’s Principles and Guidelines for Economic Appraisal of Transport Initiatives provides a useful example of how this can be done.}
+Where different institutions within jurisdictions require different levels of risk analysis, guidance should be comprehensively reviewed so that the hierarchy of guidance documents is clear and, where possible, analytical requirements are aligned.\footnote{Page 11 of Transport NSW’s Principles and Guidelines for Economic Appraisal of Transport Initiatives provides a useful example of how this can be done.}
 
 %\begin{longtable}\label{consistency-table}
 % Title: No state provides high quality risk measurement guidance
@@ -2111,7 +2111,7 @@ Probability pricing can be conducted either:
 More than 80 per cent of guidelines on probability pricing recommend that the probabilistic approach to probability pricing is employed, as the validity of the deterministic approach under active debate.%
 \footnote{Currently, institutions like Infrastructure Australia (\textcite[][36]{Australia2016InfrastructureAustraliaAssessment}) and Queensland's Department of Main Roads (\textcite[][79]{QLDDepTransport2015ProjectCostEstimatingManual}) assert that deterministic approaches to probability pricing are ``invalid'' and ``inaccurate'' while others still recommend its practice. For example, South Australian Department of Planning, Transport and Infrastructure's Estimating Manual: \textcite{SADPTI2015EstimatingManual}).} However, there appears little grounds to claim that the probabilistic approach, as currently practiced, is any more scientific.
 
-This is because very few guidelines\footnote{\textcite{QLDDepTransport2015ProjectCostEstimatingManual}, \textcite{DIRD2013NotesonAdministration} and \textcite{VicDTF2015HighValueHighRisk} are honourable exceptions} provide any guidance to project proponents on the expected distribution of project risks, and these guidelines commonly overlook the most critical characteristic of the distribution of cost risk on transport infrastructure projects: that cost overruns are more likely and larger on average than cost underruns.\footnote{For further discussion and evidence, please see \Vref{distributional-analysis}}
+This is because very few guidelines\footnote{\textcite{QLDDepTransport2015ProjectCostEstimatingManual}, \textcite{DIRD2013NotesonAdministration} and \textcite{VicDTF2015HighValueHighRisk} are honourable exceptions.} provide any guidance to project proponents on the expected distribution of project risks, and these guidelines commonly overlook the most critical characteristic of the distribution of cost risk on transport infrastructure projects: that cost overruns are more likely and larger on average than cost underruns.\footnote{For further discussion and evidence, please see \Vref{distributional-analysis}.}
 
 The observed distributions of construction project risks are actively being researched in academic circles.%
 \footnote{For example \textcite{Love2012Overrunstransportationinfrastructure}.} This research is important, as the specific probability prices estimated through Monte Carlo simulation are only as reliable as the assumptions on which they are based.
@@ -2474,7 +2474,7 @@ While both P50 and P90 cost estimates are required for requests for funding from
 
 The second key observation is that risk management guidance commonly implies that cost risk is symmetrically distributed, either by specifically recommending that symmetric distributions should be used for Monte Carlo simulation or by not providing sufficient guidance on Monte Carlo simulation of asymmetric risks. 
 
-Very few of the reviewed guidelines provide any guidance to project proponents on the expected distribution of project risks,\footnote{Of those reviewed, only \textcite{QLDDepTransport2015ProjectCostEstimatingManual}, \textcite{DIRD2013NotesonAdministration}, \textcite{TransportNSW2013PrinciplesandGuidelines} and \textcite{VicDTF2015HighValueHighRisk} provided detailed guidance.} and symmetric distributions are commonly recommended and depicted in those that do.\footnote{See, for instance \textcite{QLDDepTransport2015ProjectCostEstimatingManual}} 
+Very few of the reviewed guidelines provide any guidance to project proponents on the expected distribution of project risks,\footnote{Of those reviewed, only \textcite{QLDDepTransport2015ProjectCostEstimatingManual}, \textcite{DIRD2013NotesonAdministration}, \textcite{TransportNSW2013PrinciplesandGuidelines} and \textcite{VicDTF2015HighValueHighRisk} provided detailed guidance.} and symmetric distributions are commonly recommended and depicted in those that do.\footnote{See, for instance \textcite{QLDDepTransport2015ProjectCostEstimatingManual}.} 
 
 The honourable exception to this practice is the Victorian Department of Treasury and Finance's Economic Evaluation for Business Cases Technical guidelines for ``High Risk High Value'' projects, which clearly indicates that probabilistic probability pricing should assume that cost risks are asymmetrically distributed. 
 However, even these technical guidelines do not go as far as to explain how to simulate asymmetric cost risk distributions.\footnote{It is reasonable to expect guidelines to provide this level of detail because multiple asymmetric distributions being readily available in the commonly used excel package for Monte Carlo simulation, \emph{@RISK}. Instead, guidelines uniformly recommend the use uniform, triangular, PERT and other symmetric probability distributions, without guidance on how to design correlation matrices in such a way that Monte Carlo simulation from these distributions could produce an asymmetric risk distribution.} 
@@ -2488,7 +2488,7 @@ In these ways, Australia's risk management guidelines suggest that cost risks ar
 \item 
       the observation of an average cost overrun of 24 per cent is consistent with a the expected value of cost overruns being substantially underestimated, and
 \item
-      the substantial underestimation of the difference, as a percentage of initial project costs, between P50 and P90 costs,\footnote{The observed difference between P50 and P90 costs is 26 per cent, three times higher than the 9.2 per cent difference between P50 and P90 costs in the business cases assessed in table \Vref{tbl:large-projects-cost-estimates}} is consistent with the length of the right tail of the distribution of cost risk being substantially underestimated, 
+      the substantial underestimation of the difference, as a percentage of initial project costs, between P50 and P90 costs,\footnote{The observed difference between P50 and P90 costs is 26 per cent, three times higher than the 9.2 per cent difference between P50 and P90 costs in the business cases assessed in table \Vref{tbl:large-projects-cost-estimates}.} is consistent with the length of the right tail of the distribution of cost risk being substantially underestimated, 
 \end{itemize}
 as would be the case if assuming a distribution similar to the triangular distribution presented in \Vref{fig:assumed-and-actual-distributions}. This indicates that, although no distribution of cost risks was consistently recommended, the distribution assumed on average in practice appears similar to the triangular distribution presented in \Vref{fig:assumed-and-actual-distributions}.
 
@@ -2512,7 +2512,7 @@ To estimate the necessary size of a contingency fund to achieve this level of co
 
 To estimate the necessary size of a contingency fund to achieve this level of confidence across the portfolio of infrastructure projects, this analysis was conducted on a simulated distribution of average portfolio cost outcomes.
 
-This simulated distribution was constructed by bootstrapping 1000 sample means with replacement from the observed distribution of project outcomes.\footnote{Bootstrapping was completed using ordinary nonparametric simulation}
+This simulated distribution was constructed by bootstrapping 1000 sample means with replacement from the observed distribution of project outcomes.\footnote{Bootstrapping was completed using ordinary nonparametric simulation.}
 
 
 \subsection{Expected difference between P50 and P90 costs}\label{expected-difference-between-p50-and-p90-costs}
