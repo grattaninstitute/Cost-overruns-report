@@ -1850,11 +1850,11 @@ Consistent use of risk matrices or like tools to identify and mitigate avoidable
 \end{figure}
 
 At least one set of risk management guidelines in each of Australia’s state and Commonwealth government jurisdictions recommends the use of risk matrices and provides high level advice on how to mitigate common risks.%
-\footnote{See \Vref{tab:risk-management-guidlines} in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}.} For this reason, the guidance on risk identification and mitigation provided in every jurisdiction appears to be adequate.
+\footnote{See \Vref{tab:risk-management-guidlines} in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}.} For this reason, the guidance on risk identification and mitigation provided in every jurisdiction appears to be sufficient.
 
 \subsection{Reduce estimation error}\label{reduce-estimation-error}
 
-Some states also provide comprehensive guidance on the level of detail required for risk estimation at each stage of a projects’ development. 
+Some states also provide comprehensive guidance on the level of detail required for risk estimation at each stage of a project's development. 
 
 For example, the South Australian Department of Planning Transport and Infrastructure Estimating Manual sets out:
 
