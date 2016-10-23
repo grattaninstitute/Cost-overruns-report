@@ -1699,7 +1699,7 @@ By contrast, pooling contingencies from a portfolio of projects is cheaper, for 
 \noteswithsource{Australian transport projects completed between 2001 and 2015}%
 {Deloitte Investment Monitor; Grattan analysis}
 \end{figure}
-
+ 
 \Vref{fig:value-contingencies-req-to-cover--} illustrates the difference between the contingency funds that would have been needed on average for projects valued at \$20 million or more and planned or built over the past 15 years, according to whether the contingency was set for an individual project or for a whole portfolio.
 The figure illustrates how different the results are at these extremes, both of which are designed to ensure that the average cost overrun is zero.
 In practice, the best way to manage the contingency would lie somewhere between these two extremes.
