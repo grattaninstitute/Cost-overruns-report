@@ -945,11 +945,11 @@ Excludes projects for which construction has already commenced.}
 \end{figure}
 
 
-The proportions of the promised money that were for projects that had been assessed as nationally significant and worth doing ranged from 15 per cent for the Coalition to none for the Greens (see \Vref{fig:election-promises}).
 But even though parties make such statements, the behaviour of politicians exposes the hollowness of their claims.
 In the 2016 federal election campaign, Labor, the Coalition and the Greens all promised to build a large number of projects that had not been properly assessed.
 Between a quarter and a half of their promises were for projects that had not been submitted to Infrastructure Australia for assessment, or had been assessed and judged as not worth doing.%
-\footcite{Terrill2016ElectionPromises} Many others were only an ``initiative'' on Infrastructure Australia's list; in other words, Infrastructure Australia was yet to be convinced that the project was worthwhile.
+\footcite{Terrill2016ElectionPromises} Many others were only an ``initiative'' on Infrastructure Australia's list; in other words, Infrastructure Australia was yet to be convinced that the project was worthwhile. %
+The proportions of the promised money that were for projects that had been assessed as nationally significant and worth doing ranged from 15 per cent for the Coalition to none for the Greens (see \Vref{fig:election-promises}).
 
 
 
