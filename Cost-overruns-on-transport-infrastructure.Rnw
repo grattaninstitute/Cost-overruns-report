@@ -1612,7 +1612,7 @@ These are key times for managing risks.
 
 Some risks materialise through changes in the economy.
 Because the growth rate of the economy fluctuates, the costs of public infrastructure will always be uncertain.
-This is because a project's input costs may be higher than anticipated if private sector demand for resources such as equipment, materials and workforce is higher or lower than anticipated.
+This is because a project's input costs may be higher than anticipated if private sector demand for resources such as equipment, materials and workforce is higher than anticipated.
 
 This type of unavoidable cost risk may explain the higher rate of cost overruns experienced in Western Australia during the resources boom.
 With many construction companies deployed on mining projects, there were often few or even only one bid for public sector works projects.
