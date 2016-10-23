@@ -1482,8 +1482,7 @@ The average size of cost overruns observed across the sample can be used as an e
 \captionwithunits{Key risk measurement and management concepts\label{fig:Key-risk-measurement-and-management-concepts}}%
 {Illustrative probability distribution of cost outcomes on individual projects} 
 \includegraphics{atlas/Density.pdf} 
-\noteswithsource{The distribution of cost risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see \Vref{sec:guidance-is-incomplete} for details.
-This graph's illustrative purpose is to graphically present the relative distances between the median, 90th quantile and expected value of cost overruns.}{ Investment Monitor; Grattan analysis}
+\noteswithsource{The distribution of cost risk depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see \Vref{distributional-analysis} for detials. This graph's illustrative purpose is to depict the relative distances between key points of the distribution}{Investment Monitor; Grattan analysis.}
 \end{figure}
 \vspace*{-11pt}
 
@@ -2449,7 +2448,7 @@ This modification was made so that the diagrams were easier to label clearly and
 \begin{figure}
 \caption{Probability distribution}\label{fig:probability-distribution}
 \includegraphics[page=9]{atlas/AppendixCharts2}
-\noteswithsource{}
+\noteswithsource{The distribution of cost risk depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see \Vref{distributional-analysis} for detials. This graph's illustrative purpose is to depict the relative distances between key points of the distribution}{Investment Monitor; Grattan analysis.}
 \end{figure}
 
 Figure \Vref{fig:probability-distribution} confirms that the stylized distribution employed is a fair representation of the underlying data.
@@ -2489,8 +2488,10 @@ as would be the case if assuming a distribution similar to the triangular distri
 
 
 \begin{figure}
-\caption{Probability distribution}
+\caption{Probability distribution}\label{kernel-density-plot}
 \includegraphics[page=10]{atlas/AppendixCharts}
+\source{Investment Monitor; Grattan analysis.}
+
 \end{figure}
 
 
