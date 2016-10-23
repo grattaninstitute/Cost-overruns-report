@@ -3,6 +3,7 @@
 \input{tex/recommendations}
 
 \addbibresource{bib/transport_bibliography.bib}
+\addbibresource{bibliographyRpackages.bib}
 
 
 \title{Cost overruns in transport infrastructure}
@@ -2662,7 +2663,7 @@ read_excel("data/Owain-Guidelines-table.xlsx") %>%
 
 
 
-
+\input{package_cite_input}
 \printbibliography
 
 \end{document}
