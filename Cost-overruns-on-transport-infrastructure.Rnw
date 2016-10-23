@@ -1630,7 +1630,7 @@ During this period, there have been substantial changes to the culture and pract
 There are numerous other unavoidable risks that are a part of major construction projects, like unexpected weather, ground conditions and industrial relation events.
 Each project also has its own idiosyncratic risks that cannot be avoided.
 These risks mean that it is impossible to eliminate cost risk entirely.
-Consequently, it's important that budgeting, reporting and contingency management practices are designed to minimise the cost of cost overruns when they occur.
+Consequently, it is important that budgeting, reporting and contingency management practices are designed to minimise the cost of cost overruns when they occur.
 
 \section{We could better manage the risks that cannot be avoided}\label{we-could-better-manage-the-risks-that-cannot-be-avoided}
 
