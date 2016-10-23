@@ -9,8 +9,7 @@
 \title{Cost overruns in transport infrastructure}
 \author{Marion Terrill}
 
-\GrattanReportNumber{XX}
-\GenericWarning{LaTeX Warning: No Grattan Report Number}{LaTeX Warning: No Grattan Report Number}
+\GrattanReportNumber{2016-13}
 
 \acknowledgements{%
 This report was written by Marion Terrill, Transport Program Director, and Lucille Danks, Associate, Grattan Institute.
