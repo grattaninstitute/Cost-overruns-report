@@ -738,9 +738,9 @@ We take this approach to differentiate genuinely additional infrastructure from 
 
 Changes to scope are only a problem if they are not appraised on their merits as to whether they are worth the money and are better than alternative ways to solve a problem or to spend public funds.
 
-This report first that scope changes only account for about 11 per cent of cost overruns on transport infrastructure projects (\Vref{fig:most-cost-overruns-were-not-attrib-to-scope-changes}). This conclusion is counter to what appears to be the prevailing wisdom on the causes of cost overruns on Australian transport projects, and the Productivity Commission's conclusion that "cost overruns during delivery mainly stem from government clients changing the scope of the project" \footcite[][29]{Commission2013Publicinfrastructure}. 
+This report finds that scope changes only account for about 11 per cent of cost overruns on transport infrastructure projects (\Vref{fig:most-cost-overruns-were-not-attrib-to-scope-changes}). This conclusion is counter to what appears to be the prevailing wisdom on the causes of cost overruns on Australian transport projects, and the Productivity Commission's conclusion that "cost overruns during delivery mainly stem from government clients changing the scope of the project." \footcite[][29]{Commission2014PublicInfastructure} 
 
-However, the Productivity Commission's assertion was based upon the  Western Australian Auditor General's report on major captial projects, which found that scope changes explained the majority of cost overruns observed across 20 major projects.\footcite{WAAGMajorCapitalProjects} This study focused on cost overruns incurred during the construction phase, and was largely driven by the substantial scope changes observed on non-transport projects, such as hospitals, schools and prisons. It does not appear to be readily generalisable to cost overruns incurred on transport infrastructure projects between first cost announcement and project completion. 
+The Productivity Commission's finding was based upon the  Western Australian Auditor General's report on major capital projects, which found that scope changes explained the majority of cost overruns observed across 20 major projects.\footcite{WAAGMajorCapitalProjects} The Western Australian Auditor General's finding differs our finding in that focused on cost overruns incurred only during the construction phase, and was largely driven by the substantial scope changes observed on non-transport projects, such as hospitals, schools and prisons. The finding does not appear to be readily generalisable to cost overruns incurred on transport infrastructure projects between first cost announcement and project completion. 
 
 
 
@@ -1380,7 +1380,7 @@ However, roads are less often constructed on brownfield sites with poor accessib
 \GenericWarning{LaTeX Warning: footnote is incomplete.}{LaTeX Warning: footnote is incomplete.}
 
 The timing of cost overruns on rail and road projects is aligned with the stages in which projects of these types are expected to be most bespoke.
-Cost overruns are larger for road projects during the planning stage, when road projects tend to be more bespoke than rail, and larger for rail projects during the construction period, when rail projects tend to be more bespoke (\Vref{fig:cost-overruns-by-proj-stage-mode}).
+Cost overruns are larger for road projects during the planning stage, when road projects tend to be more bespoke than rail, and larger for rail projects during the construction period, when rail projects tend to be more bespoke (\Vref{fig:cost-overruns-by-proj-stage-mode}).\footnote{The observation that road projects experience larger overruns, on average, than rail projects runs counter to several key findings in the cost overruns literature (\textcites{Merewitz1973Costoverrunspublic}{Flyvbjerg2002Underestimatingcostspublic}{Lee2008Costoverruncause}). However, it should be noted that these studies only investigate cost overruns during the construction phase, where we also observe that rail projects experience higher overruns than rail projects. }
 
 \begin{figure}
 \captionwithunits{Both road and rail projects suffer from cost overruns, but at different stages
@@ -1407,11 +1407,11 @@ Traditionally, projects have been built under Design-Bid-Build and Design-Build 
 In order to improve the cost-efficiency of construction and management, the past generation has seen significant innovation in contract design for public infrastructure projects, resulting in increased use of public private partnerships and alliancing.
 
 Public Private Partnerships, known as PPPs, have been used extensively to bring commercial discipline to infrastructure construction and operations. 
-PPPs encourage integrated trade-offs between construction and maintenance. They also tend to require clearer definition in advance of construction.\GenericWarning{LaTeX Warning: footnote not complete}{LaTeX Warning: footnote not complete} 
-Relative to traditional delivery models, PPPs can reduce costs if the additional commercial discipline is greater than the higher costs of private capital that PPPs incur.\GenericWarning{LaTeX Warning: footnote not complete}{LaTeX Warning: footnote not complete}  
+PPPs encourage integrated trade-offs between construction and maintenance. They also tend to require clearer definition in advance of construction.\footcite{Hodge2009PPPsPassageTime}
+Relative to traditional delivery models, PPPs can reduce costs if the additional commercial discipline is greater than the higher costs of private capital that PPPs incur.MacDonald2002ReviewlargePublic}
 
 A newer form of contract type, known as alliancing, creates a partnership between the government buyer and the contracting company or companies.
-Alliancing has become common over the past decade or so for projects in which it is particularly difficult to define risks prior to tendering, as this contract type allows for greater ongoing negotiation between the private contractor and government body.\GenericWarning{LaTeX Warning: footnote not complete}{LaTeX Warning: footnote not complete} 
+Alliancing has become common over the past decade or so for projects in which it is particularly difficult to define risks prior to tendering, as this contract type allows for greater ongoing negotiation between the private contractor and government body.\footcite{Wood2009AllianceContracts}
 
 Because different contract types are designed to allocate project risk in different ways, the average size of cost overruns is likely to vary by contract type. 
 However, there limited evidence on whether this is the case in practice.
@@ -1574,7 +1574,7 @@ Just as trains or aeroplanes more often arrive late than early, so too do cost e
 The psychological tendency to believe that project outcomes will be better than they turn out to be is known as `optimism bias', and arises from the combined impacts of cost underestimation and benefits overestimation.%
 \footcites{Kahneman2012Thinkingfastslow}[][14]{Flyvbjerg2014Whatyoushould} Unfortunately, optimism bias is especially acute when the most money is at stake, in the larger and more complex projects where the interdependence of risks is particularly hard for experts to judge accurately.
 
-A third consequence of not knowing historical outcomes is that cost estimators lack an effective counter to `strategic misrepresentation' -- when proponents deliberately manipulate the cost estimates to make them look more favourable than they really are.
+A third consequence of not knowing historical outcomes is that cost estimators lack an effective counter to `strategic misrepresentation' -- when proponents deliberately manipulate the cost estimates to make them look more favourable than they really are.\footcite[102]{Commission2014PublicInfastructure}
 Project proponents have an incentive for strategic misrepresentation to the extent that they are judged more on how much they build than how well they manage their budget.
 Lack of historical outcomes data makes this behaviour hard to counter.\footnote{See \textcite[][100--102]{Commission2014PublicInfastructure} for a recent discussion.} %
 
@@ -1922,19 +1922,17 @@ In Victoria, three key guidelines on risk measurement each recommend only part o
 
 Such fragmentation of guidance within jurisdictions obfuscates proper process and makes the conceptual dependencies between tools unclear. 
 
-In some instances, inconsistencies also introduce contradictions within jurisdictions. For example, the National Guidelines on Transport System Management suggest that New Zealand’s narrow contingency margins are added to project budgets, whereas the Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction recommends that the UK’s extremely wide contingency margins are added to project budgets.
+In some instances, inconsistencies also introduce contradictions within jurisdictions. For example, the Australian Transport Council's National Guidelines on Transport System Management and Department of Infrastructure and Regional Development's Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction guidelines both apply federally, but recommend that contingency margins of substantially different sizes are added to project budgets.\footnote{The National Guidelines on Transport System Management recommend that New Zealand’s narrow contingency margins are added to project budgets, whereas the Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction recommends that the UK’s extremely wide contingency margins are added to project budgets.}
 
-Risk measurement guidance should also be consistent across jurisdictions. This is because each state must comply with both its own guidelines and the Commonwealth’s whenever it seeks project funding from the Commonwealth to supplement its own funding of a project. Where state and commonwealth guidance differs, multiple versions of the same analysis are required. 
+Risk measurement guidance should also be consistent between the Commonwealth and each individual state. This is because each state must comply with both its own guidelines and the Commonwealth’s whenever it seeks project funding from the Commonwealth to supplement its own funding of a project. Where state and commonwealth guidance differs, multiple versions of the same analysis are required. 
 
-For example, Victoria’s business case on the Western Distributor has two sets of benefit cost ratios in order to conform to different guidance of the two levels of government.\footnote{"Western distributor ref"}  Neither of these benefit cost ratios is more correct than the other. Rather, they are two imperfect estimates of the same concept. As cost estimates are expensive to produce, Australia’s project appraisal processes could be made more cost efficient by aligning the analysis required across each jurisdiction.  
+For example, Victoria’s business case on the Western Distributor has two sets of benefit cost ratios in order to conform to different requirements of the two levels of government.\footnote{"Western distributor ref"}  Neither of these benefit cost ratios is more correct than the other. Rather, they are two imperfect estimates of the same concept. As cost estimates are expensive to produce, Australia’s project appraisal processes could be made more cost efficient by aligning the analysis required across each jurisdiction.  
 
-The inconsistencies observed across Australian risk measurement guidelines could be resolved by removing old guidance when new processes are implemented, consolidating existing guidelines and writing new guidance so that replaces, rather than augments, older guidance. 
+The inconsistencies observed across Australian risk measurement guidelines could be resolved by removing old guidance when new processes are implemented, consolidating existing guidelines and writing new guidance so that it replaces, rather than accretes onto, older guidance. 
 
-For example, many of the inconsistencies within Commonwealth, COAG and Austroads were addressed through the 2016 release of the \emph{Australian Transport Assessment and Planning  Guidelines}.\footcite{ATAP2016Guidelines} These guidelines replaced \emph{Austroads' Guide to Project Evaluation}\footcite{Austroads2014GuidetoProjectEvaluation} and the \emph{National Guidelines for Transport System Management in Australia},\footcite{ATC2006NGTSM3} and were written to be aligned with Infrastructure Australia's guidelines, The COAG-agreed \emph{National Guidance on Public Private Partnership Projects} and the \emph{National Charter of Integrated Land Use and Transport Planning}.
+For example, many of the inconsistencies within Commonwealth, COAG and Austroads guidance were addressed through the 2016 release of the \emph{Australian Transport Assessment and Planning  Guidelines}.\footcite{ATAP2016Guidelines} These guidelines replaced \emph{Austroads' Guide to Project Evaluation}\footcite{Austroads2014GuidetoProjectEvaluation} and the \emph{National Guidelines for Transport System Management in Australia},\footcite{ATC2006NGTSM3} and were written to be aligned with Infrastructure Australia's guidelines, the \emph{National Guidance on Public Private Partnership Projects} and the \emph{National Charter of Integrated Land Use and Transport Planning}. A similar exercise should be undertaken within each  state, which should aim to align guidance with these federal guidelines. 
 
-These guidelines replaced Austroads’ Guide to Project Evaluation and the National Guidelines for Transport System Management in Australia, and were written to be aligned with the guidance provided Infrastructure Australia’s guidelines, The COAG-agreed National Guidance on Public Private Partnership Projects and the National Charter of Integrated Land Use and Transport Planning. A similar exercise should be undertaken within each of the states, which should aim to align guidance with these federal guidelines. 
-
-Where different institutions within jurisdictions require different amounts of risk analysis, guidance should be comprehensively reviewed so that the hierarchy relating guidance documents is clear and, where possible, analytical requirements are aligned \footnote{Page 11 of Transport NSW’s Principles and Guidelines for Economic Appraisal of Transport Initiatives provides a useful example of how this can be done.}
+Where different institutions within jurisdictions require different levels of risk analysis, guidance should be comprehensively reviewed so that the hierarchy of guidance documents is clear and, where possible, analytical requirements are aligned. \footnote{Page 11 of Transport NSW’s Principles and Guidelines for Economic Appraisal of Transport Initiatives provides a useful example of how this can be done.}
 
 %\begin{longtable}\label{consistency-table}
 % Title: No state provides high quality risk measurement guidance
@@ -1957,14 +1955,6 @@ Where different institutions within jurisdictions require different amounts of r
 % \bottomrule
 % \end{longtable}
 
-
-
-For example, many of the inconsistencies within guidance that applies to all states were addressed through the 2016 release of the \emph{Australian Transport Assessment and Planning Guidelines}.\footcite{ATAP2016Guidelines}
-These guidelines replaced \emph{Austroads' Guide to Project Evaluation}\footcite{Austroads2014GuidetoProjectEvaluation} and the \emph{National Guidelines for Transport System Management in Australia},\footcite{ATC2006NGTSM3} and were written to be aligned with Infrastructure Australia's guidelines, The COAG-agreed \emph{National Guidance on Public Private Partnership Projects} and the \emph{National Charter of Integrated Land Use and Transport Planning}.
-A similar exercise should be undertaken within each of the states.
-
-Where different institutions within jurisdictions require different amounts of risk analysis, guidance should be comprehensively reviewed so that the hierarchy relating guidance documents is clear and, where possible, analytical requirements are aligned.
-For example, Transport NSW's \emph{Principles and Guidelines for Economic Appraisal of Transport Initiatives}\footcite{TransportNSW2013PrinciplesandGuidelines} outlines what the document sets out to achieve and how it should be used in combination with other guidelines.%
 
 
 \subsection{Guidance is incomplete}\label{sec:guidance-is-incomplete}
@@ -2002,10 +1992,10 @@ As no single risk management tool achieves all these objectives, a combination o
 
 Most key guidelines recommend approaches to risk measurement that only go part way towards incorporating objective information and accounting for extreme and unknown risks.
 
-Unknown risks are the most poorly accounted for. 
-This is because none of the reviewed guidelines employ analysis of the outcomes that have been observed historically across a reference class of projects. 
-We suggest that the guidelines which recommend the use of Monte Carlo simulation do a better job at accounting for unknown unknowns than those that rely purely on expert judgement. 
-This is because the structure of probabilistic risk analysis imposes more structure upon expert judgement, and so is expected to dampen the effects of innate overconfidence biases. However, the effects of overconfidence could be fully protected against through routine use reference class forecasting. 
+\textbf{Unknown risks} are the most poorly accounted for. 
+None of the reviewed guidelines require project teams to draw on analysis of the outcomes that have been observed historically across a reference class of projects. 
+Guidelines which recommend the use of Monte Carlo simulation do a better job at accounting for unknown unknowns than those that rely purely on expert judgement. 
+This is because structured processes somewhat dampen the effects of innate overconfidence biases. However, the effects of overconfidence could be fully protected against through routine use reference class forecasting. 
 
 \Vref{fig:assumed-and-actual-distributions} compares the distribution of cost risks recommended for use in Monte Carlo analysis in most risk management guidelines with the realised distribution of cost outcomes. It illustrates that probabilistic risk analysis is also compromised by overconfidence bias. Specifically, the extreme risks underpinning the extreme cost overruns that account for 90 per cent of cost overruns’ value do not appear to be anticipated at all. 
 
@@ -2048,14 +2038,14 @@ This is because the structure of probabilistic risk analysis imposes more struct
 \notes{The distribution of cost risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor. Please see \Vref{distributional-analysis} for details and a discussion  of the sources underpinning the typical risk management guidelines' assumed distribution of cost overruns. This graph’s illustrative purpose is to graphically present that a symmetric distribution with a lower bound of zero and 25 per cent probability of cost overruns drastically underestimates the probability and magnitude of extreme cost risks.}
 \end{figure}
 
-Even if unknown risks were accounted for and extreme risks were anticipated, the current approaches employed to measure risk do not consistently evaluate extreme risks. 
+Even if unknown risks were accounted for and extreme risks were anticipated, the current approaches employed to measure risk do not consistently evaluate \textbf{extreme risks}. 
 Over the last 15 years, the expected value of cost overruns is 24 per cent of initial project costs – a figure which is approximately equivalent to the 21 per cent average difference observed between P50 and P90 costs. This extreme asymmetry in the distribution of cost outcomes is in line with previous conclusions of the transport cost overruns literature,\footcites{Love2013Overrunstransportationinfrastructure}{Flyvbjerg2016BigisFragile} and makes clear that measures of the costs of extreme outcomes cannot be inferred from extreme quantiles like P90 costs. 
 
 Risk management guidelines need to account for the likely costs of extreme risks, not just their likely prevalence. 
 Although the expected value doesn’t assess extreme risks exclusively, it is a critical component of risk measurement because it is the only common tool which accounts for the likely cost of extreme risks. 
 In other sectors like finance, Value at Risk (VaR) – the expected value of extreme risks above a particular threshold – is used to measure the costs of extreme risks. Given that 90 per cent of the value of Australia’s cost overruns over the last 15 years has been attributable to extreme cost overruns, adopting a more rigorous treatment of extreme risks seems warranted.
 
-Finally, most of the guidelines summarised in \Vref{tbl:tbl:completeness-of-key-guidelines} rely on sensitivity analysis and Monte Carlo simulation to incorporate objective information into cost estimates. 
+Finally, most of the guidelines summarised in \Vref{tbl:tbl:completeness-of-key-guidelines} rely on sensitivity analysis and Monte Carlo simulation to incorporate \textbf{objective information} into cost estimates. 
 However, these approaches only achieve this objective if they employ high quality objective information. 
 The following section reviews the information provided for the execution of these approaches, and identifies that the quality of the objective data provided for implementing these tools is generally very poor. 
 There is substantial scope for the accuracy of existing risk measurement practices to be improved through the use of high quality data on historical cost outcomes. 
