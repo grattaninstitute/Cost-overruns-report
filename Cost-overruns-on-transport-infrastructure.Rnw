@@ -1011,7 +1011,7 @@ Yet the road was closed for further construction immediately after the ceremony 
 
 While governments are responsible for investment decisions, they should not spend public money without due care for how the spending will benefit the community.
 Cost benefit analysis has limitations, but it remains the best way for making like-for-like comparisons of projects.%
-\footcite{Eliasson2013CostOverrunsandDemandShortfalls} Even with such a process, politicians will be tempted to pressure evaluators to massage assessments to fit political priorities.
+\footcite{Eliasson2013CostOverrunsandDemandShortfalls} 
 
 Even when there is a cost benefit analysis, politicians will be tempted to pressure evaluators to massage assessments to fit political priorities. 
 This is not just a theoretical concern.
