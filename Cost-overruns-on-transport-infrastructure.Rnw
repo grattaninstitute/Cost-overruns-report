@@ -908,7 +908,7 @@ Previous Grattan work shows how politicians commit to poor quality projects for 
 \footcites{Terrill2016Roadsrichesbetter}{Terrill2016ElectionPromises}
 
 Politicians continue to make infrastructure promises for political advantage even though their parties have made strong statements recognising the need to spend infrastructure money better.
-Among such statements:
+For example:
 
 \begin{itemize}
 \item
@@ -918,6 +918,7 @@ Among such statements:
   \end{quote}
 \item
   The Federal Labor Opposition, which established Infrastructure Australia when it was in office in 2008, promises to take the politics out of infrastructure by ensuring that: 
+
 \begin{quote}
   Infrastructure Australia independently assesses all major infrastructure projects on the basis of the benefits they provide to the economy and society as a whole, their commercial viability and their capacity to enhance national productivity.\footcite{ALP2016EmpoweringInfrastructureAustralia}
   \end{quote}
