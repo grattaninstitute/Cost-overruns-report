@@ -10,6 +10,7 @@
 \author{Marion Terrill}
 
 \GrattanReportNumber{XX}
+\GenericWarning{LaTeX Warning: No Grattan Report Number}{LaTeX Warning: No Grattan Report Number}
 
 \acknowledgements{%
 This report was written by Marion Terrill, Transport Program Director, and Lucille Danks, Associate, Grattan Institute.
@@ -534,6 +535,7 @@ Our infrastructure systems should promise what is worth having, and then deliver
 \end{overview}
 
 \contentspage
+\listoffigures
 
 \begin{Recommendations}
 \subsubsection*{Recommendation 1: Evaluate before spending}%
@@ -627,7 +629,7 @@ It should be noted that these cost overruns explain 98 per cent of total cost di
 \includegraphics{atlas/Freq_CO.pdf}
 \vspace*{3pt}
 \units{Value of cost differences as a proportion of total cost overruns, per cent}
-\includegraphics{atlas/Value_CO.pdf}
+\includegraphics{atlas/fig1-1.pdf}
 \noteswithsource{Australian transport projects completed between 2001 and 2015. \emph{Cost differences} are defined to refer to cost underruns and cost overruns collectively. }%
 {Investment Monitor; Grattan analysis.}
 \end{figure}
@@ -900,7 +902,7 @@ This suggests that overly optimistic initial cost estimates are rarely adequatel
 
 Another reason why projects with premature cost announcements repeatedly have large overruns is that these low quality cost estimates are often imposed on the highest risk projects.
 \Cref{fig:projs-announced-early-have-larger-cost-overruns-at} shows that projects with early cost estimates are substantially bigger, on average, than projects with later cost announcements.
-\Vref{subsec:large-and-complex-projects-are-more-prone-to-cost-overruns} of this report confirms that large projects are more prone to cost overruns than smaller projects in Australia, as is consistently the case internationally.
+\Cref{subsec:large-and-complex-projects-are-more-prone-to-cost-overruns} of this report confirms that large projects are more prone to cost overruns than smaller projects in Australia, as is consistently the case internationally.
 
 This chapter argues that premature announcements are often made for electoral gain (see \Vref{box:alstonville} on the Alstonville bypass).
 To counteract this problem, there needs to be better accountability at the time that promises are made and after projects are completed. 
@@ -1202,7 +1204,7 @@ The most obvious case of this phenomenon is multi-billion dollar projects.
 As these projects are particularly prone to cost overruns, the benefit cost ratios for these projects are systematically more optimistic than those of smaller projects.
 Together with politicians' penchant for iconic and legacy projects, this distortion biases politicians towards funding large projects like the Dinmore to Goodna bypass (\Vref{box:Ipswich-motorway}), at the expense of smaller projects with more certain returns.
 
-\begin{smallbox}{Case study -- Ipswich Motorway Dinmore to Goodna upgrade -- 196 per cent overrun}{box:Ipswich-motorway}
+\begin{bigbox*}{Case study -- Ipswich Motorway Dinmore to Goodna upgrade -- 196 per cent overrun}{box:Ipswich-motorway}
 \subsubsection*{``Under budget'', and no return of contingency}
 
 An upgrade of the Ipswich Motorway between Dinmore and Goodna in Southern Queensland was announced in 2003, at a cost of \$594 million, based on a cost-benefit analysis.%
@@ -1216,7 +1218,13 @@ On completion in 2012, the project came in 10 per cent lower than the contracted
 \footcite{AEEA2016IpswichMotorway} Rather than being returned to the Commonwealth, the contingency was diverted to other Queensland roads, including the Bruce Highway.%
 \footcite{BrisbaneTimes2012FiveStagesDown} 
 
-\end{smallbox}
+\begin{figure}[H]
+\captionwithunits{Project cost estimates, Ipswich Motorway}%
+{millions of dollars}
+\includegraphics[page=4]{atlas/CaseStudies.pdf}
+\end{figure}
+
+\end{bigbox*}
 
 The reduction to the transport infrastructure portfolio's return on investment caused by these distortions to investment decisions is sizable.
 If even half this reduction was avoided by switching to alternative investments when project costs skyrocket prior to construction, the benefits to taxpayers would be at least \$41 billion.%
@@ -1394,7 +1402,7 @@ Cost overruns are larger for road projects during the planning stage, when road 
 These differences in the size and timing of cost overruns by project mode illustrate another opportunity to improve cost estimates.
 Project proponents are always aware of their project's mode, and their project's mode provides substantial information about the project's likely cost risks.
 However, Australian risk management guidance does not currently advise project proponents to account for mode-specific differences in projects' cost risks.%
-\footnote{The recently updated Australian Transport and Planning guidelines cite the importance of mode specific cost estimation differences, but only contain placeholder sections. \textcite{ATAP2016Guidelines} Placeholder sections cite the NGTSM guidelines which preceded the ATAP guidelines, but the relevant sections of this document do not note modal differences in cost risk, or how to accommodate them. \textcites{ATC2006NGTSM3}{ATC2006NGTSM5}.}
+\footnote{The recently updated Australian Transport and Planning guidelines cite the importance of mode specific cost estimation differences, but only contain placeholder sections (\textcite{ATAP2016Guidelines}). Placeholder sections cite the NGTSM guidelines which preceded the ATAP guidelines, but the relevant sections of this document do not note modal differences in cost risk, or how to accommodate them. \textcites{ATC2006NGTSM3}{ATC2006NGTSM5}.}
 
 
 \subsection{Contract type may affect the risk of cost overruns}\label{contract-type-may-affect-the-risk-of-cost-overruns}
@@ -1519,7 +1527,7 @@ This advice contradicts Australian experience (see \Vref{box:failure-to-learn-co
 
 \begin{smallbox}{Failure to learn from history continues to affect current projects}{box:failure-to-learn-continues-to-affect-current-projects}
 
-The experience of the past 15 years has shown that the difference between the median cost, or ``P50'', and the ``worst case'', or ``P90'' cost, is 21 per cent on average, for transport infrastructure projects valued at \$20 million or more.
+The experience of the past 15 years has shown that the difference between the median cost, or ``P50'', and the ``worst case'', or ``P90'' cost, is 26 per cent on average, for transport infrastructure projects valued at \$20 million or more.
 
 But cost estimates for current projects do not reflect this experience.
 Instead, the difference between median and ``worst case'' estimates is generally about half this size.
@@ -1529,7 +1537,7 @@ This report has found that these will be larger, on average, than expected.
 
 
 \Vref{tbl:large-projects-cost-estimates} shows that the difference between median and ``worst case'' estimates appears to be too small for projects currently under way.
-They show a ``worst case'' cost estimate far lower than 21 per cent above the median estimate that history should have led us to expect.
+They show a ``worst case'' cost estimate far lower than 26 per cent above the median estimate that history should have led us to expect.
 
 \end{smallbox}
 
@@ -1562,7 +1570,7 @@ Canberra Light Rail & ACT & \possibleTextDollar759\dz & \possibleTextDollar806\d
 \midrule 
 \multicolumn{4}{r}{Average difference of above estimates}    & 9.2\%\tabularnewline[1.245ex]
 %\cmidrule(lr){3-5}
-\multicolumn{4}{r}{\textbf{Average actual difference across all projects completed in the  past 15 years}} & \textbf{21.0\%} \tabularnewline%[1.245ex]
+\multicolumn{4}{r}{\textbf{Average actual difference across all projects completed in the  past 15 years}} & \textbf{26.0\%} \tabularnewline%[1.245ex]
 \bottomrule
 \end{tabularx}
 \noteswithsource{See \Vref{expected-difference-between-p50-and-p90-costs}.}{\textcites{Government2016MelbourneMetroBusiness}{Government2015WesternDistributor}{SGS2016WestConnexreview}{Bill2009NationBuildingProgramAmendment}{InlandRailBusinessCase}{CanberraLightRailBusinessCase}{PrincesHighwayBusinessCase}{MainRoadStAlbansLevelCrossingBusinessCase}{BruceHighwayBusinessCase}{M1PacificHighwayBusinessCase}{MitchellFreewayBusinessCase}{NorthWestCoastalHighwayBusinessCase}}
@@ -1798,10 +1806,10 @@ There are over fifty sets of guidelines outlining required approaches to risk ma
 \begin{figure}
 \captionwithunits{The quality of risk management guidance varies\label{fig:quality-of-risk-management-guidance-chevrons}}
 {Guidance quality by jurisdiction and topic ranked as sufficient, incomplete and poor by yellow, orange and red, respectively.}
+\vspace*{2pt}
 \includegraphics[page=1]{atlas/AppendixCharts}
 
-\noteswithsource{}
-{See \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} for the list of guidelines underpinning each rating; Grattan analysis.}
+\source{See \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} for the list of guidelines underpinning each rating; Grattan analysis.}
 \end{figure}
 
 \Vref{fig:quality-of-risk-management-guidance-chevrons} provides a high level summary of the quality of risk guidance across Australian jurisdictions for each of the aforementioned components of risk measurement. It identifies that the provided guidance regarding risk minimisation is generally of a far higher standard than that of risk measurement and ongoing risk monitoring. This is aligned with the nature of Australia’s problem with cost overruns: most projects finish on budget, but the huge costs of uncommon events are poorly anticipated and accounted for.
@@ -2042,7 +2050,7 @@ This is because structured processes somewhat dampen the effects of innate overc
 \end{figure}
 
 Even if unknown risks were accounted for and extreme risks were anticipated, the current approaches employed to measure risk do not consistently evaluate \textbf{extreme risks}. 
-Over the last 15 years, the expected value of cost overruns is 24 per cent of initial project costs – a figure which is approximately equivalent to the 21 per cent average difference observed between P50 and P90 costs. This extreme asymmetry in the distribution of cost outcomes is in line with previous conclusions of the transport cost overruns literature,\footcites{Love2013Overrunstransportationinfrastructure}{Flyvbjerg2016BigisFragile} and makes clear that measures of the costs of extreme outcomes cannot be inferred from extreme quantiles like P90 estimates. 
+Over the last 15 years, the expected value of cost overruns is 24 per cent of initial project costs – a figure which is approximately equivalent to the 26 per cent average difference observed between P50 and P90 costs. This extreme asymmetry in the distribution of cost outcomes is in line with previous conclusions of the transport cost overruns literature,\footcites{Love2013Overrunstransportationinfrastructure}{Flyvbjerg2016BigisFragile} and makes clear that measures of the costs of extreme outcomes cannot be inferred from extreme quantiles like P90 estimates. 
 
 
 Risk management guidelines need to account for the likely costs of extreme risks, not just their likely prevalence. 
@@ -2280,13 +2288,6 @@ Where this is the case, we assume that no cost overrun occurred prior to the pro
 As discussed in \Vref{cost-overruns-may-be-even-bigger-than-we-claim}, a manual check of the history of 51 projects indicated that this is assumption is conservative – 37 per cent of projects which were missing data on early cost estimates experienced public overruns during the unobserved period – a proportion only marginally lower than the 51 per cent of projects with early cost estimates. 
 
 
-\begin{figure}
-\captionwithunits{Cost overruns are likely to be higher than reported\label{fig:appendix:cost-overruns-are-likely-to-be-higher-than-reported}}
-{Average cost overrun rates as a proportion of initial costs, by project stage}
-\includegraphics[page=7]{atlas/AppendixCharts.pdf}
-\noteswithsource{Australian transport projects completed between 2001 and 2015.}%
-{Investment Monitor; Grattan analysis.}
-\end{figure}
 
 This indicates that the missing data in the Investment Monitor dataset is associated with unobserved cost changes in some cases, as well as the absence of early cost estimates in others.
 Consequently, cost overruns may indeed be closer to the upper bound than the lower bound presented in \Vref{fig:value-projects-by-project-stage}.
@@ -2449,7 +2450,7 @@ The stylized representations of distribution of cost overruns features a slightl
 This modification was made so that the diagrams were easier to label clearly and a key characteristic of the distribution - the heaviness of its right tail -- was more visible.
 
 \begin{figure}
-\caption{Probability distribution}\label{fig:probability-distribution}
+\caption{Stylized probability distribution}\label{fig:probability-distribution}
 \includegraphics[page=9]{atlas/AppendixCharts2}
 \noteswithsource{The distribution of cost risk depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see \Vref{distributional-analysis} for detials. This graph's illustrative purpose is to depict the relative distances between key points of the distribution}{Investment Monitor; Grattan analysis.}
 \end{figure}
@@ -2491,7 +2492,7 @@ as would be the case if assuming a distribution similar to the triangular distri
 
 
 \begin{figure}
-\caption{Probability distribution}\label{kernel-density-plot}
+\caption{Observed probability distribution}\label{kernel-density-plot}
 \includegraphics[page=10]{atlas/AppendixCharts}
 \source{Investment Monitor; Grattan analysis.}
 
@@ -2560,9 +2561,9 @@ We draw two conclusions from this analysis.
 The first conclusion is that the expected value of cost overruns after budget commitments have been made is closer to a P90 cost estimate than a P50 cost estimates.
 This is based on the observation that the expected value of cost overruns after a budget commitment has been made is 21 per cent, and under the current probability price estimation methodology, a 21 per cent cost uplift is equivalent to a P87 cost estimate.
 
-Building on this finding, we also conclude that the average difference between P50 and P90 cost estimates as a percentage of budgeted project costs is approximately 21 per cent, under the current probability price estimation methodology.
+Building on this finding, we also conclude that the average difference between P50 and P90 cost estimates as a percentage of budgeted project costs is approximately 26 per cent, under the current probability price estimation methodology.
 This is because, as budgeted cost estimates could also be interpreted as P50 cost estimates,\footnote{34 per cent of projects finish above their budget commitment costs, but 91 per cent of projects finish on or above their budget commitment costs.
-This means that P9-P66 cost estimates should all be set equal to budget commitment costs.} the 21 per cent cost uplift required to convert a budget commitment cost estimate to a P90 cost estimate is also the appropriate uplift rate for converting a P50 cost estimate to a P90 cost estimate.
+This means that P9-P66 cost estimates should all be set equal to budget commitment costs.} the 26 per cent cost uplift required to convert a budget commitment cost estimate to a P90 cost estimate is also the appropriate uplift rate for converting a P50 cost estimate to a P90 cost estimate.
 
 The uplift required to convert a P50 cost estimate to a P90 cost estimate may actually be far higher than this.
 Under an accurate probability pricing methodology, this difference could actually be as large as 69 per cent.
