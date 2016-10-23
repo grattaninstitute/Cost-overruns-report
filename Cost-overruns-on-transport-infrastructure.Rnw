@@ -1057,7 +1057,7 @@ Governments should not be able to commit public money to transport infrastructur
 Keeping an evaluation secret also protects cost claims from scrutiny and debate.
 
 The best incentive for high quality disinterested project analysis is detailed, timely publication.
-Although some will be concerned that publication may reduce the competitiveness of tenders by anchoring expectations, the cost of poor project selection is likely to far outweigh a marginal reduction in tendering competitiveness.
+Although some will be concerned that publication may reduce the competitiveness of tenders by anchoring expectations, the cost of poor project selection is likely to far outweigh a marginal reduction in tendering competitiveness. \oneraggedpage
 
 Consequently, before a government decides to build infrastructure, the public should have access to the business case, cost benefit analysis and evaluation summary.
 The information should include disclosure of the key assumptions made in the cost benefit case, sensitivity analysis of these assumptions, and the evidence justifying them.
@@ -1109,6 +1109,29 @@ Ministers overseeing projects with significant cost overruns over time commonly 
 Both Governments and oppositions feel free to make claims that the media and public cannot verify.
 \Vref{box:overstated-benefits} provides background on some extreme examples of overstated benefits that have come to light through legal action.
 
+
+
+The current opacity of investment planning processes means that the public cannot readily judge the success of projects.
+This means that there is little political cost associated with announcing project costs prematurely, even when this creates a significant risk of promising projects with poor payoffs.
+
+Moreover, the absence of outcomes reporting limits the ability of project proponents and managers to learn from the experiences of other project managers around the country and over time.
+Like appraisals of new commitments, post-completion information is most useful when it enables comparisons of different projects.
+For this reason, the mechanisms proposed in \Vref{reco:Publish-post-completion-data} are actions that Commonwealth entities should adopt.
+
+\begin{recommendation}[!h]{Publish post-completion data\label{reco:Publish-post-completion-data}}
+
+To enable learning from past experience, and to improve accountability:
+\begin{enumerate}
+  \renewcommand{\labelenumi}{\alph{enumi})}
+  \item The Commonwealth Department of Infrastructure should be required to publish to data.gov.au the post-completion report it already requires from state governments as a condition of providing final milestone payments for transport infrastructure projects.
+Reports should detail any scope changes and their justification, agreed and actual construction start and finish dates, actual project costs, reasons for overruns or under-runs, and progress against performance indicators. 
+
+  \item Infrastructure Australia should be asked to provide the Joint Committee of Public Accounts and Audit with a post-completion appraisal of the benefits and costs of each infrastructure project with Commonwealth funding of \$50 million or more. 
+
+  \item The Council of Australian Governments should add a new category of infrastructure services to the terms of reference for the annual Report on Government Services, produced by the Productivity Commission.
+\end{enumerate}
+\end{recommendation}
+
 \begin{smallbox}{Case study -- overstated benefits}{box:overstated-benefits}
 Several successful lawsuits show the most extreme cases of inaccurate forecasting of project benefits.
 
@@ -1130,26 +1153,7 @@ This also resulted in litigation being launched, by toll road owners Brisconnect
 
 \end{smallbox}
 
-The current opacity of investment planning processes means that the public cannot readily judge the success of projects.
-This means that there is little political cost associated with announcing project costs prematurely, even when this creates a significant risk of promising projects with poor payoffs.
 
-Moreover, the absence of outcomes reporting limits the ability of project proponents and managers to learn from the experiences of other project managers around the country and over time.
-Like appraisals of new commitments, post-completion information is most useful when it enables comparisons of different projects.
-For this reason, the mechanisms proposed in \Vref{reco:Publish-post-completion-data} are actions that Commonwealth entities should adopt.
-
-\begin{recommendation}{Publish post-completion data\label{reco:Publish-post-completion-data}}
-
-To enable learning from past experience, and to improve accountability:
-\begin{enumerate}
-  \renewcommand{\labelenumi}{\alph{enumi})}
-  \item The Commonwealth Department of Infrastructure should be required to publish to data.gov.au the post-completion report it already requires from state governments as a condition of providing final milestone payments for transport infrastructure projects.
-Reports should detail any scope changes and their justification, agreed and actual construction start and finish dates, actual project costs, reasons for overruns or under-runs, and progress against performance indicators. 
-
-  \item Infrastructure Australia should be asked to provide the Joint Committee of Public Accounts and Audit with a post-completion appraisal of the benefits and costs of each infrastructure project with Commonwealth funding of \$50 million or more. 
-
-  \item The Council of Australian Governments should add a new category of infrastructure services to the terms of reference for the annual Report on Government Services, produced by the Productivity Commission.
-\end{enumerate}
-\end{recommendation}
 
 
 
@@ -1352,10 +1356,6 @@ Such projects tend to have many interdependent components that can be disrupted 
 These risks are amplified when the existing infrastructure continues operating during construction.%
 \footnote{For overseas examples, see \textcites{Hinze1992CostOverrunsonStateofWashington}[][9--11]{Flyvbjerg2014Whatyoushould}; for Australian examples, see \textcite[][3]{EngineersAustralia2014Masteringcomplexprojects}.}
 
-The most complex projects also tend to be large.
-Because of this, large projects are more likely to incur cost overruns, and these overruns are likely to be particularly big (\Vref{fig:prevalence-avg-magnitude-cost-overruns-by-project-size}).
-In fact, a 10 per cent increase in a project's size (measured by cost estimate when first under construction) is associated with a 6 per cent higher chance of a cost overrun.
-
 \begin{figure}
 \captionwithunits{Cost overruns are more common and larger, on average, among big projects\label{fig:prevalence-avg-magnitude-cost-overruns-by-project-size}}
 {Prevalence and average magnitude of cost overruns as a percentage of initial project costs by project size, per cent}
@@ -1367,6 +1367,12 @@ Project size is defined by project value at the commencement of construction, \$
 {Investment Monitor; Grattan analysis.}
 \end{figure}
 
+The most complex projects also tend to be large (\Vref{fig:prevalence-avg-magnitude-cost-overruns-by-project-size}).
+Because of this, large projects are more likely to incur cost overruns, and these overruns are likely to be particularly big.
+In fact, a 10 per cent increase in a project's size (measured by cost estimate when first under construction) is associated with a 6 per cent higher chance of a cost overrun.
+
+
+
 Given that project size is such a clear predictor of the size of cost overruns, cost overruns could be reduced by routinely amending the cost estimates of large projects so that they are more conservative.
 Some states have recently done this by instituting special cost estimation guidance for ``high value, high risk'' projects.
 However, in most jurisdictions, cost estimates are arrived at under the assumption that large projects face the same risk of cost overruns as small projects.
@@ -1374,9 +1380,19 @@ However, in most jurisdictions, cost estimates are arrived at under the assumpti
 High-risk projects should be more closely scrutinised, and parties promoting them should seek to negotiate bipartisan support.
 Before they proceed, public infrastructure projects that are anticipated to cost \$1 billion or more should need the support of the parliament, not just the party in or seeking office (see \Vref{reco:special-legis-for-big-projects}).
 
-\begin{recommendation}{Special legislation for big projects\label{reco:special-legis-for-big-projects}}
+\begin{recommendation}[H]{Special legislation for big projects\label{reco:special-legis-for-big-projects}}
 When the estimated construction cost to that jurisdiction is \$1 billion or more, Commonwealth, state or territory governments should be required to introduce standalone legislation for any transport infrastructure.
 \end{recommendation}
+
+\begin{figure}
+\captionwithunits{Both road and rail projects suffer from cost overruns, but at different stages
+\label{fig:cost-overruns-by-proj-stage-mode}}
+{Average magnitude of cost overruns on Australian transport infrastructure projects completed between 2001 and 2015 by project mode}
+\includegraphics[page=14]{atlas/Charts_CO.pdf}
+
+\noteswithsource{Australian transport projects completed between 2001 and 2015.}
+{Investment Monitor; Grattan analysis.}
+\end{figure}
 
 \subsection{Road and rail projects overrun at different stages}\label{road-and-rail-projects-overrun-at-different-stages}
 
@@ -1391,20 +1407,9 @@ However, these projects tend to incur disparate construction problems, because t
 The inverse is true for roads.
 They often involve bespoke designs and complex interfaces with existing infrastructure.
 However, roads are less often constructed on brownfield sites with poor accessibility.%
-\GenericWarning{LaTeX Warning: footnote is incomplete.}{LaTeX Warning: footnote is incomplete.}
 
 The timing of cost overruns on rail and road projects is aligned with the stages in which projects of these types are expected to be most bespoke.
 Cost overruns are larger for road projects during the planning stage, when road projects tend to be more bespoke than rail, and larger for rail projects during the construction period, when rail projects tend to be more bespoke (\Vref{fig:cost-overruns-by-proj-stage-mode}).\footnote{The observation that road projects experience larger overruns, on average, than rail projects runs counter to several key findings in the cost overruns literature (\textcites{Merewitz1973Costoverrunspublic}{Flyvbjerg2002Underestimatingcostspublic}{Lee2008Costoverruncause}). However, it should be noted that these studies only investigate cost overruns during the construction phase, where we also observe that rail projects experience higher overruns than road projects.}
-
-\begin{figure}
-\captionwithunits{Both road and rail projects suffer from cost overruns, but at different stages
-\label{fig:cost-overruns-by-proj-stage-mode}}
-{Average magnitude of cost overruns on Australian transport infrastructure projects completed between 2001 and 2015 by project mode}
-\includegraphics[page=14]{atlas/Charts_CO.pdf}
-
-\noteswithsource{Australian transport projects completed between 2001 and 2015.}
-{Investment Monitor; Grattan analysis.}
-\end{figure}
 
 These differences in the size and timing of cost overruns by project mode illustrate another opportunity to improve cost estimates.
 Project proponents are always aware of their project's mode, and their project's mode provides substantial information about the project's likely cost risks.
@@ -1447,11 +1452,7 @@ The Commonwealth produces guidance too.
 There are more than 50 current guideline documents and handbooks around the country.
 The adequacy of these guidelines is reviewed in detail in \Cref{risk-appendix}.
 
-Ultimately all cost estimates use some combination of four tools: expected value, sensitivity analysis, probability pricing, and reference class forecasting (see \Vref{box:risk-managers-toolkit}).
-The various guidance documents present the same basic tools in a wide variety of ways.
-Yet they are inconsistent in terms of which tools they recommend and in how they guide the user through the relationships among the various tools (see \Vref{fig:prop-guidelines-that-reco-use-of-each-key-risk-assessment-tool}).
-
-\begin{figure}
+\begin{figure}[!t]
 \captionwithunits{Australia's various guidelines on risk measurement do not recommend any approach consistently\label{fig:prop-guidelines-that-reco-use-of-each-key-risk-assessment-tool}}%
 {Proportion of guidelines on quantitative risk assessment on transport infrastructure projects that recommend the use of each key risk assessment tool, per cent}
 \includegraphics[page=15]{atlas/Charts_CO.pdf}
@@ -1459,6 +1460,10 @@ Yet they are inconsistent in terms of which tools they recommend and in how they
 \noteswithsource{Australian risk management guidelines, as listed in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}. Prevalence rates were calculated over the subsample of each of these guidelines which provided quantitative risk measurement guidance.}%
 {Australian risk management guidelines references in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}; Investment Monitor; Grattan analysis.}
 \end{figure}
+
+Ultimately all cost estimates use some combination of four tools: expected value, sensitivity analysis, probability pricing, and reference class forecasting (see \Vref{box:risk-managers-toolkit}).
+The various guidance documents present the same basic tools in a wide variety of ways.
+Yet they are inconsistent in terms of which tools they recommend and in how they guide the user through the relationships among the various tools (see \Vref{fig:prop-guidelines-that-reco-use-of-each-key-risk-assessment-tool}).
 
 A project's expected value is the most obvious gap in cost estimation guidance.
 Most thinking about risk measurement is predicated on some measure of expected value or expected cost, so expected value is an important component of the risk manager's toolkit.
@@ -1549,7 +1554,7 @@ They show a ``worst case'' cost estimate far lower than 26 per cent above the me
 \end{smallbox}
 
 
-\begin{table*}[!t]
+\begin{table*}
 \centering
 \captionsetup{margin = {0.075\textwidth,0.075\textwidth}}
 \caption{Large projects currently under development or construction\label{tbl:large-projects-cost-estimates}}
@@ -1583,6 +1588,7 @@ Canberra Light Rail & ACT & \possibleTextDollar759\dz & \possibleTextDollar806\d
 \noteswithsource{See \Vref{expected-difference-between-p50-and-p90-costs}.}{\textcites{Government2016MelbourneMetroBusiness}{Government2015WesternDistributor}{SGS2016WestConnexreview}{Bill2009NationBuildingProgramAmendment}{InlandRailBusinessCase}{CanberraLightRailBusinessCase}{PrincesHighwayBusinessCase}{MainRoadStAlbansLevelCrossingBusinessCase}{BruceHighwayBusinessCase}{M1PacificHighwayBusinessCase}{MitchellFreewayBusinessCase}{NorthWestCoastalHighwayBusinessCase}}
 \end{table*} 
 
+
 A second consequence of not knowing historical outcomes of similar projects is that it deprives cost estimators of an effective counter to known psychological biases.
 Just as trains or aeroplanes more often arrive late than early, so too do cost estimates tend to ramp upwards more often and to a greater degree than downwards.
 The psychological tendency to believe that project outcomes will be better than they turn out to be is known as `optimism bias', and arises from the combined impacts of cost underestimation and benefits overestimation.%
@@ -1604,6 +1610,8 @@ The change would help cost estimation experts to create better quality estimates
 The Commonwealth should seek cooperation from the states to create new benchmarking data to improve risk measurement in new project proposals and public accountability.
 They should do so using data collected through mechanisms described in \Cref{reco:Publish-post-completion-data}.
 \end{recommendation}
+
+
 
 
 
@@ -1951,26 +1959,6 @@ For example, many of the inconsistencies within Commonwealth, COAG and Austroads
 
 Where different institutions within jurisdictions require different levels of risk analysis, guidance should be comprehensively reviewed so that the hierarchy of guidance documents is clear and, where possible, analytical requirements are aligned.\footnote{Page 11 of Transport NSW’s Principles and Guidelines for Economic Appraisal of Transport Initiatives provides a useful example of how this can be done.}
 
-%\begin{longtable}\label{consistency-table}
-% Title: No state provides high quality risk measurement guidance
-% Subtitle: No state provides high quality risk measurement guidance
-% Sources: See section [LAST SECTION OF RISK APPENDIX] for the list of reviewed guidelines, Grattan analysis
-% \end{longtable}
-
-% \begin{longtable}[c]{@{}lllll@{}}
-% \toprule
-% & \textbf{Expected value} & \textbf{Sensitivity analysis} & \textbf{Probability pricing} & \textbf{Reference class forecasting}\tabularnewline
-% \midrule
-% \endhead
-% C'wlth & & & &\tabularnewline
-% & & & &\tabularnewline
-% NSW & & & &\tabularnewline
-% VIC & & & &\tabularnewline
-% QLD & & & &\tabularnewline
-% WA & & & &\tabularnewline
-% SA & & & &\tabularnewline
-% \bottomrule
-% \end{longtable}
 
 
 
@@ -2084,7 +2072,8 @@ Perhaps the most troubling shortcoming of Australia’s current risk measurement
 \captionwithunits{No state provides consistently provides sufficient information for high quality risk measurement}{Yellow = approach is recommended\\ Orange = approach is recommended, but with insufficient information to be properly implemented\\ Red = approach is not recommended}
 \label{fig:sufficient-information-table}
 \includegraphics[page=2]{atlas/AppendixCharts}
-\source{See \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}; Grattan analysis.}
+\vspace*{-55pt}
+\source{See \Vref{tbl:list-of-guidelines}; Grattan analysis.}
 \end{figure}
 
 \Vref{fig:sufficient-information-table} shows that expected value is the only approach which is consistently recommended with sufficient information to be implemented, and this is largely because calculation of the expected value of project risks is typically entirely based on project-specific information. 
@@ -2186,7 +2175,7 @@ For this reason, it would be desirable for all states to adopt a stringent pract
 
 
 \section{Reviewed Australian risk management guidelines \label{sec:Reviewed-Australian-risk-measurement-guidelines}}
-This appendix, and the conclusions of the report that are founded upon its analysis, are based upon a thorough review of all the key documentation on cost estimation and risk management which could be identified to be publicly available. \Vref{tbl:list-of-guidelines} lists the guidelines reviewed. 
+This appendix, and the conclusions of the report that are founded upon its analysis, are based upon a thorough review of all the key documentation on cost estimation and risk management which we could identify as publicly available. \Vref{tbl:list-of-guidelines} lists the guidelines reviewed. 
 
 \begin{table*}
 \caption{Key risk management guidelines underpinning the ratings allocated in \Vref{fig:quality-of-risk-management-guidance-chevrons}}
@@ -2200,7 +2189,7 @@ This appendix, and the conclusions of the report that are founded upon its analy
 \input{tex/tbl-appendix-criteria-underpinning-the-ratings}
 \end{table*}
 
-The high level review of the quality of risk management guidelines presented as  \Vref{fig:quality-of-risk-management-guidance-chevrons} is based on the criteria listed in \Vref{tab:criteria}. The guidelines which had most bearing on the rating allocated for each component of risk management by state are listed in \Vref{tab:risk-management-guidlines}. These guidelines are those that were perceived to go the furthest towards satisfying the ratings’ criteria, or were the most conspicuous examples of the jurisdictions failure to do so.
+The high level review of the quality of risk management guidelines presented as  \Cref{fig:quality-of-risk-management-guidance-chevrons} is based on the criteria listed in \Vref{tab:criteria}. The guidelines which had most bearing on the rating allocated for each component of risk management by state are listed in \Vref{tab:risk-management-guidlines}. These guidelines are those that were perceived to go the furthest towards satisfying the ratings’ criteria, or were the most conspicuous examples of the jurisdictions failure to do~so.
 
 
 
@@ -2308,10 +2297,18 @@ The key questions that we use these datasets to answer are how big cost overruns
 
 \subsection{Magnitude of cost overruns}\label{magnitude-of-cost-overruns}
 
-We measure the average magnitude of cost overruns using a weighted arithmetic mean of the size of cost overruns, where the weights are defined as \(w_{i} = \frac{C1_{i}}{{\sum_{i \in N}^{}{C1}}_{i}}\) and C1 denotes the initial project cost.
+We measure the average magnitude of cost overruns using a weighted arithmetic mean of the size of cost overruns, where the weights are defined as 
+
+\[w_{i} = \frac{C1_{i}}{{\sum_{i \in N}^{}{C1}}_{i}}\] 
+
+and C1 denotes the initial project cost.
+
+
 This weighting scheme places greater weight on projects that make up a greater share of the overall infrastructure budget.
 
-The key advantage of this approach is that it allows our cost overrun indices to be interpreted as the percentage increase in expected infrastructure expenditure incurred across the portfolio between two project stages, as \(CO_{12}\  = \frac{1}{N}\sum_{i \in N}^{}\frac{C2 - C1}{C1} \times \frac{C1_{i}}{\sum_{i \in N}^{}{C1}} = \frac{\sum_{i \in N}^{}\left( C2_{i} - C1_{i} \right)}{\sum_{i \in N}^{}{C1_{i}}}\).
+The key advantage of this approach is that it allows our cost overrun indices to be interpreted as the percentage increase in expected infrastructure expenditure incurred across the portfolio between two project stages, as 
+
+\[CO_{12}\  = \frac{1}{N}\sum_{i \in N}^{}\frac{C2 - C1}{C1} \times \frac{C1_{i}}{\sum_{i \in N}^{}{C1}} = \frac{\sum_{i \in N}^{}\left( C2_{i} - C1_{i} \right)}{\sum_{i \in N}^{}{C1_{i}}}.\]
 
 However, it should be noted that the estimates obtained through a weighted arithmetic mean of this kind and the unweighted arithmetic mean commonly used elsewhere in the literature is trivial -- only 2 per cent.
 
@@ -2322,7 +2319,7 @@ CO_{12}  &= \frac{1}{N}\sum_{i \in N}^{}\frac{C2_{i} - C1_{i}}{C1_{i}}w_{i} \\
 CO_{23}  &= \frac{1}{N}\sum_{i \in N}^{}\frac{C3_{i} - C2_{i}}{C1_{i}}w_{i} \\
 CO_{34}  &= \frac{1}{N}\sum_{i \in N}^{}\frac{C4_{i} - C3_{i}}{C1_{i}}w_{i} \\
 CO_{14} &= \frac{1}{N}\sum_{i \in N}^{}\frac{C4_{i} - C1_{i}}{C1_{i}}w_{i} \\
-        &= CO12 + CO23 + CO34
+        &= CO_{12} + CO_{23} + CO_{34}
 \end{align*}
 
 
@@ -2340,7 +2337,7 @@ We complete this analysis separately for each cohort, as defined by the project'
 
 Pearson coefficients:
 
-\[\rho_{t,\ t + 1}\  = \frac{\sum_{i \in N}^{}\left\lbrack \left( CO_{t} - \frac{1}{N}\sum_{i \in N}^{}{CO_{t}} \right)\left( CO_{t + 1} - \frac{1}{N}\sum_{i \in N}^{}{CO_{t + 1}} \right) \right\rbrack}{\sqrt{\sum_{i \in N}^{}\left( CO_{t} - \frac{1}{N}\sum_{i \in N}^{}{CO_{t}} \right)^{2}\ }\sqrt{\sum_{i \in N}^{}\left( CO_{t + 1} - \frac{1}{N}\sum_{i \in N}^{}{CO_{t + 1}} \right)^{2}\ }}\]
+\makebox[\linewidth]{\(\displaystyle\rho_{t,\ t + 1}\  = \frac{\sum_{i \in N}^{}\left\lbrack \left( CO_{t} - \frac{1}{N}\sum_{i \in N}^{}{CO_{t}} \right)\left( CO_{t + 1} - \frac{1}{N}\sum_{i \in N}^{}{CO_{t + 1}} \right) \right\rbrack}{\sqrt{\sum_{i \in N}^{}\left( CO_{t} - \frac{1}{N}\sum_{i \in N}^{}{CO_{t}} \right)^{2}\ }\sqrt{\sum_{i \in N}^{}\left( CO_{t + 1} - \frac{1}{N}\sum_{i \in N}^{}{CO_{t + 1}} \right)^{2} }}\)}
 
 Where \(CO_{t}\) and \(CO_{t + 1}\) refer to cost overruns incurred over the consecutive project stages
 \(t\) = ``possible or under consideration'' to ``committed'', ``committed'' to ``under construction'', ``under construction to completed''.
@@ -2354,18 +2351,21 @@ Following this, we model the magnitude of cost overruns where a cost overrun occ
 
 The logit model of the probability of cost overruns occurring is specified as:
 
-\[\operatorname{logit}\left( \mathbb{l(}\text{CO}_{t} > 0) \right) = \beta_{0} + \beta_{1}X_{1} + \ldots + \beta_{K}X_{K} + \varepsilon\]
+\[\operatorname{logit}\left( \mathbf{1}(\text{CO}_{t} > 0) \right) = \beta_{0} + \beta_{1}X_{1} + \ldots + \beta_{K}X_{K} + \varepsilon\]
 
 The log-linear model of the magnitude of cost overruns, if they occur, is specified as:
 
-\[\log\left( \frac{\text{Cos}t_{t + 1} - Cost_{t}}{\text{Cos}t_{1}}|Cost_{t + 1} > Cost_{t} \right) = \beta_{0} + \beta_{1}X_{1} + \ldots + \beta_{K}X_{K} + \varepsilon\]
+\[\log\left( \frac{C_{t + 1} - C_{t}}{C_{1}} \mid C_{t + 1} > C_{t} \right) = \beta_{0} + \beta_{1}X_{1} + \ldots + \beta_{K}X_{K} + \varepsilon\]
 
 Where:
 
-\(\{ X_{1},\ \ldots,\ X_{K}\}\): independent variables\\
-\(\varepsilon\): zero-meaned random error term\\
-\(t\) = ``possible or under consideration'' -- ``committed'', ``committed'' -- ``under construction'', ``under construction -- completed''.
-
+\begin{align*}
+\{ X_{1},\ \ldots,\ X_{K}\} &= \text{independent variables}\\
+\varepsilon &=  \text{zero-meaned random error term}\\
+t &\in \{\text{``possible or under consideration'' -- ``committed''},\\
+&\qquad \text{``committed'' -- ``under construction''}, \\
+&\qquad \text{``under construction -- completed''}\}.
+\end{align*}
 
 <<regression-results-1, eval=FALSE>>=
 library(readxl)
@@ -2439,7 +2439,7 @@ It is also reasonable to suspect that benefit cost ratios are overestimated by m
 Finally, the business case for completing projects with benefit cost ratios that are only very marginally above one is contentious, given the existence of competing budget objectives.%
 We also investigate the relationship between cost overruns and project survival through a logit model of the probability of a project being cancelled at each stage, given the magnitude of cost overruns as incurred up to that point.
 
-\(\operatorname{logit}\left( \text{Survival}_{t} \right) = \beta_{0} + \beta_{1}CO_{1t} + \varepsilon\)
+\[\operatorname{logit}( \operatorname{Survival}_{t} ) = \beta_{0} + \beta_{1}CO_{1t} + \varepsilon\]
 
 Where:
 
@@ -2537,10 +2537,11 @@ This comparison is founded on the assumption that budgeted costs are P75 cost es
 This means that cost estimates that have been defined to be P75 costs should, on average, be P66 costs.
 
 \begin{table}
-\caption{\label{probability-pricing-table}}
-\begin{tabularx}{\columnwidth}{XXX}
+\caption{Value of probability prices as proportion of initial cost\label{probability-pricing-table}}
+\begin{tabularx}{\columnwidth}{lX}
+%
 \toprule
-Estimated probability price & Difference between the P50 and other estimated probability prices\footnote{As a per cent of projects' first budget commitment costs.} \tabularnewline
+\textbf{Estimated probability price} & \textbf{Difference between the P50 and other estimated probability prices}\textsuperscript{\textdagger} \tabularnewline
 \midrule
 P50 & 0 per cent\tabularnewline
 P75 & 0 per cent\tabularnewline
@@ -2548,7 +2549,9 @@ P87 & 21 per cent\tabularnewline
 P90 & 26 per cent\tabularnewline
 P99 & 69 per cent\tabularnewline
 \bottomrule
+ \multicolumn{2}{r}{\normalsize\strut \textdagger\ {\footnotesize As a per cent of projects' first budget commitment costs}} \\ 
 \end{tabularx}
+\source{Investment Monitor; Grattan analysis}
 \end{table}
 
 To identify the estimated probability prices for different levels of risk tolerance, we assumed that all probability price estimates are biased by the same amount, in the same direction.%
