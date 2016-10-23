@@ -1246,7 +1246,7 @@ Even those announced before a formal government funding commitment are usually c
 
 
 This cancellation rate seems lower than it should be.
-One indication that it is too low is that this cancellation rate is less than the proportion of projects that would be expected to have benefit cost ratios less than one, given the average magnitude of cost overruns (see \Vref{survival-analysis} for details)
+It is less than the proportion of projects that would be expected to have benefit cost ratios less than one, given the average magnitude of cost overruns (see \Vref{survival-analysis} for details)
 .
 The reason the cancellation rate is probably too low is that many projects with low net benefits are not being cancelled.
 Over the last 15 years, projects that incurred cost overruns were just as likely to be cancelled as those that did not.
