@@ -1901,7 +1901,9 @@ This section reviews each of these shortcomings in detail and provides state-spe
 
 \subsection{Guidance is inconsistent, within and across levels of government}\label{guidance-is-inconsistent}
 
-Guidelines which apply to the same jurisdiction often recommend different approaches to risk measurement. For instance, probability pricing is required for Commonwealth funding, yet only half the risk measurement guidance provided at the federal level discuss probability pricing.
+Guidelines which apply to the same jurisdiction often recommend different approaches to risk measurement. 
+For instance, probability pricing is required for Commonwealth funding, yet only half the risk measurement guidance provided by the Commonwealth Government discuss probability pricing.
+Although it may seem sufficient that some guidance material discusses probability pricing even if not all do, in practice such fragmentation makes guidance hard to follow properly.
 
 The \emph{National Partnerships Agreement on Land Transport Infrastructure Projects},\footcite{COAG2014NationalPartnershipAgreementInfrastructure} the Australian Transport Council’s \emph{National Guidelines for Transport System Management in Australia},\footcite{ATC2006NGTSM3} Infrastructure Australia’s \emph{Business Case Template},\footcite{Australia2016InfrastructureAustraliaAssessmentc} the \emph{Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction} \footcite{DIRD2008BPCEPFRRC} and BITRE's \emph{Overview of Project Appraisal for Land Transport} \footcite{BITRE2014Overviewofprojectappraisalforlandtransport} require or discuss probability pricing.
 However, Infrastructure Australia's \emph{Assessment Framework} \footcite{Australia2016InfrastructureAustraliaAssessmentb}, the \emph{HB 158:2010 Handbook on delivering assurance based on ISO 31000:2009} \footcite{StandardsAustralia2010DeliveringassurancebasedonISO31000} and BITRE's \emph{Risk in Benefit Cost Analysis} \footcite{BITRE2005RiskinCostBenefitAnalysis} do not. 
