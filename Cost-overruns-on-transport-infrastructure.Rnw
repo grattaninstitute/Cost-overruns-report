@@ -1016,11 +1016,13 @@ Cost benefit analysis has limitations, but it remains the best way for making li
 Even when there is a cost benefit analysis, politicians will be tempted to pressure evaluators to massage assessments to fit political priorities. 
 This is not just a theoretical concern.
 For example, the Victorian Auditor-General, in his audit of the East West Link project, highlighted several instances involving advice:
+
 \begin{quote}
 that gave too much emphasis to the benefits of approaches that were in line with the governments’ preferred outcome and too little to alternative options that could be argued were more aligned with the state’s best interests.\footcite[][xiv]{General2015EastWestLink}  
 \end{quote}
 
 He further noted that: 
+
 \begin{quote}
 [s]ome public officials involved in this audit indicated that providing frank and fearless advice when they believe a government does not want to receive it will negatively impact their influence or career opportunities.\footcite[][xv]{General2015EastWestLink} 
 \end{quote}
@@ -1093,29 +1095,26 @@ Ministers overseeing projects with significant cost overruns over time commonly 
 Both Governments and oppositions feel free to make claims that the media and public cannot verify.
 \Vref{box:overstated-benefits} provides background on some extreme examples of overstated benefits that have come to light through legal action.
 
-% \begin{smallbox}{Unreliable traffic forecasts}{box:unreliable-forecasts}
-% Several successful lawsuits reveal the most extreme cases of inaccurate forecasting.
+\begin{smallbox}{Case study -- overstated benefits}{box:overstated-benefits}
+Several successful lawsuits show the most extreme cases of inaccurate forecasting of project benefits.
 
-% Brisbane's CLEM 7 tunnel was forecast to carry more than 100,000 vehicles per day within two years of opening, but in fact only about 22,000 went through.\textsuperscript{1} A successful class action was brought against the forecaster, AECOM.\textsuperscript{2} The tunnel's owner, RiverCity Motorway, went into administration in 2011, after the traffic failed to generate enough revenue for the company to pay its debts.\textsuperscript{3}
+Brisbane's CLEM 7 tunnel was forecast to carry over 100,000 vehicles per day within 2 years of opening, but the reality was only around 22,000.%
+\footcite[][9--11]{CLEM7-lawsuit-against-AECOM-statement-of-claim} A successful class action was brought against the forecaster, AECOM.%
+\footcite{CLEM7-lawsuit-successful-media-release} The tunnel's owner, RiverCity Motorway, went into administration in 2011, as the traffic had not generated enough revenue for the company to pay its debts.%
+\footcite{BrisTimes-RiverCity-IPO-secure-121M}
 
-% The traffic forecasts for Sydney's Lane Cove tunnel were in contention in a lawsuit brought against the companies, Parsons Brinckerhoff and Booz Allen.
-% They settled in 2014.
-% The case concerned allegations that the forecasters ``reverse engineered'' the predictions, working backwards from commercial objectives in estimating traffic volumes.\textsuperscript{4}
+The traffic forecasts for Sydney's Lane Cove tunnel were in contention in a lawsuit brought against the companies, Parsons Brinckerhoff and Booz Allen, settled in 2014.
+The case concerned allegations that the forecasters ``reverse engineered'' the predictions, working backwards from commercial objectives in estimating traffic volumes.%
+\footcite{AFR-Traffic-forecasters-settle-with-AMP-over-Lane-Cover-tunnel}
 
-% Similarly, when traffic volumes were far below expectations on the Brisbane Airport Link, toll road owner Brisconnections launched litigation against forecaster Arup.\textsuperscript{5} This action was settled in 2015.\textsuperscript{6}
+The Brisbane Airport Link is another example of a road for which traffic volumes were far below expectations.
+This also resulted in litigation being launched, by toll road owners Brisconnections against forecaster Arup.%
+\footcite{AFR-BrisConnections-receivers-sue-Arup-over-Brisbane-airport-link} This action was settled in 2015.%
+\footcite{IMFBentham-BrisConnections-vs-Arup-Settled-notice}
 
-% 1. \url{https://www.mauriceblackburn.com.au/media/2403/14-03-31-second-further-amended-statement-of-claim-with-schedules-a-and-b-clean-sealed.pdf}, p.9-11
 
-% 2. https://www.mauriceblackburn.com.au/norewrite/current-class-actions/rivercity-class-action/
 
-% 3. \url{http://www.brisbanetimes.com.au/business/rivercity-ipo-investors-secure-121m-in-successful-clem7-class-action-20160601-gp8qu4.html}
-
-% 4. \url{http://www.afr.com/news/politics/national/traffic-forecasters-settle-with-ampover-lane-cove-20140923-jftpp}
-
-% 5. \url{http://www.afr.com/business/brisconnections-receivers-sue-arup-over-brisbane-airport-link-20140528-iv1qo}
-
-% 6. http://www.imf.com.au/cases/detail/brisconnections
-% \end{smallbox}
+\end{smallbox}
 
 The current opacity of investment planning processes means that the public cannot readily judge the success of projects.
 This means that there is little political cost associated with announcing project costs prematurely, even when this creates a significant risk of promising projects with poor payoffs.
@@ -1261,26 +1260,7 @@ If more projects were to be cancelled when cost overruns eroded the projects' in
 A corollary of this conclusion is that, until the project appraisal process can be demonstrated to reliably cancel projects when it becomes apparent that they are poor investments, premature cost announcements remain a reckless practice.
 This is because, even though cost estimates announced prior to a budget commitment have been demonstrated to be of poor quality, in the absence of a robust mechanism for cancelling projects, such cost announcements constitute de facto commitments to build.
 
-\begin{smallbox}{Case study -- overstated benefits}{box:overstated-benefits}
-Several successful lawsuits show the most extreme cases of inaccurate forecasting of project benefits.
 
-Brisbane's CLEM 7 tunnel was forecast to carry over 100,000 vehicles per day within 2 years of opening, but the reality was only around 22,000.%
-\footcite[][9--11]{CLEM7-lawsuit-against-AECOM-statement-of-claim} A successful class action was brought against the forecaster, AECOM.%
-\footcite{CLEM7-lawsuit-successful-media-release} The tunnel's owner, RiverCity Motorway, went into administration in 2011, as the traffic had not generated enough revenue for the company to pay its debts.%
-\footcite{BrisTimes-RiverCity-IPO-secure-121M}
-
-The traffic forecasts for Sydney's Lane Cove tunnel were in contention in a lawsuit brought against the companies, Parsons Brinckerhoff and Booz Allen, settled in 2014.
-The case concerned allegations that the forecasters ``reverse engineered'' the predictions, working backwards from commercial objectives in estimating traffic volumes.%
-\footcite{AFR-Traffic-forecasters-settle-with-AMP-over-Lane-Cover-tunnel}
-
-The Brisbane Airport Link is another example of a road for which traffic volumes were far below expectations.
-This also resulted in litigation being launched, by toll road owners Brisconnections against forecaster Arup.%
-\footcite{AFR-BrisConnections-receivers-sue-Arup-over-Brisbane-airport-link} This action was settled in 2015.%
-\footcite{IMFBentham-BrisConnections-vs-Arup-Settled-notice}
-
-
-
-\end{smallbox}
 
 
 
