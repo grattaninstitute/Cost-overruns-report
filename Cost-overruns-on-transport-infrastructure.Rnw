@@ -910,17 +910,17 @@ Among such statements:
 
 \begin{itemize}
 \item
-  The current Commonwealth Government maintains that 
+  The current Commonwealth Government maintains that: 
   \begin{quote}
   it is critical to base project selection on rigorous analysis and sound planning to avoid wasteful investment \ldots\ [t]he advice provided by Infrastructure Australia will be a key input in guiding the Australian, state and territory governments when making major investment decisions.\footcites{Truss-2013-Second-Reading-Infrastructure-Australia-Amendment-Bill}{Fletcher2015StatementofExpectations}
   \end{quote}
 \item
-  The Federal Labor Opposition, which established Infrastructure Australia when it was in office in 2008, promises to take the politics out of infrastructure by ensuring that 
+  The Federal Labor Opposition, which established Infrastructure Australia when it was in office in 2008, promises to take the politics out of infrastructure by ensuring that: 
 \begin{quote}
   Infrastructure Australia independently assesses all major infrastructure projects on the basis of the benefits they provide to the economy and society as a whole, their commercial viability and their capacity to enhance national productivity.\footcite{ALP2016EmpoweringInfrastructureAustralia}
   \end{quote}
 \item
-  The Greens contend that 
+  The Greens contend that: 
   \begin{quote}
   [t]oo often, major infrastructure decisions are made for short-term, politically expedient reasons, rather than in the long-term public interest.\footcite{Greens2016AustralianInfrastructureBank} 
   \end{quote}
@@ -1405,7 +1405,7 @@ Cost overruns are larger for road projects during the planning stage, when road 
 These differences in the size and timing of cost overruns by project mode illustrate another opportunity to improve cost estimates.
 Project proponents are always aware of their project's mode, and their project's mode provides substantial information about the project's likely cost risks.
 However, Australian risk management guidance does not currently advise project proponents to account for mode-specific differences in projects' cost risks.%
-\footnote{The recently updated Australian Transport and Planning guidelines cite the importance of mode specific cost estimation differences, but only contain placeholder sections. \textcite{ATAP2016Guidelines} Placeholder sections cite the NGTSM guidelines which preceded the ATAP guidelines, but the relevant sections of this document do not note modal differences in cost risk, or how to accommodate them.\textcites{ATC2006NGTSM3}{ATC2006NGTSM5}}
+\footnote{The recently updated Australian Transport and Planning guidelines do note the importance of mode specific cost risks, but currently only contain empty placeholder sections on this matter (\textcite{ATAP2016Guidelines}). These placeholder sections cite the NGTSM guidelines which preceded the ATAP guidelines, but the relevant sections of these guidelines only note modal differences in the components of projects' costs, not differences in cost \emph{risks} (\textcites{ATC2006NGTSM3}{ATC2006NGTSM5}}).
 
 \subsection{Contract type may affect the risk of cost overruns}\label{contract-type-may-affect-the-risk-of-cost-overruns}
 
@@ -1474,8 +1474,6 @@ The Commonwealth should provide model guidelines that states and territories may
 
 \textbf{Expected value}: The expected value of a project's cost is the probability-weighted average cost outcome.
 It is calculated by assigning a single probability to each potential cost outcome, and multiplying this probability by the cost of that particular outcome if did occur. For example, if a project has a 90 per cent chance of costing \$100 million and a 10 per cent chance of costing \$200 million, the expected value of the project's costs is \$110 million (0.9*100 + 0.1*200), not \$100 million, which is the most likely of the two potential costs. 
-
-Where the cost risk is asymmetrically distributed, as is the case with cost overruns, more than 50 per cent of projects will be expected to come in below the expected value of project costs. However, if all project budgets are set equal to the expected value, the savings made on all the occasions that projects finish below the expected value will be exactly equal to the cost overruns incurred when projects come in above the expected value.   
 
 This is the simplest approach to estimating the likely size of cost overruns.
 To be useful, the approach should include all of the risks involved in a project.
