@@ -1616,14 +1616,14 @@ This is because a project's input costs may be higher than anticipated if privat
 
 This type of unavoidable cost risk may explain the higher rate of cost overruns experienced in Western Australia during the resources boom.
 With many construction companies deployed on mining projects, there were often few or even only one bid for public sector works projects.
-Not surprisingly Western Australia experienced larger overruns on average than those in New South Wales, Victoria and Queensland (details in \Vref{methodological-appendix}).
+Not surprisingly, Western Australia experienced larger overruns on average than those in New South Wales, Victoria and Queensland (details in \Vref{methodological-appendix}).
 
 By contrast, current economic conditions have led to more competition within the construction industry to build public infrastructure.
 Anecdotal evidence has suggested that constructors may make unfeasibly low bids when the number of available projects shrinks, as is the case in some parts of Australia at present.
 This practice would only be a concern for government if contractors pursued contract changes that were in effect claims to recoup the revenue forgone by a low bid, and if governments were unable in practice to deny these changes because of political lock-in.%
 \footcites[][500]{Love2014Understandinglandscapeoverruns}[][87--88]{Hinze1992CostOverrunsonStateofWashington} While this may occur on some projects, we do not find significant evidence of low initial bids leading to later overruns.
 
-Budgetary environments also affect cost overruns by causing a general tightening of incentives to deliver projects within budget.
+Constrained budgetary environments also affect cost overruns by causing a general tightening of incentives to deliver projects within budget.
 This appears to have been the case in Australia since the global financial crisis, when the focus swung sharply from getting projects shovel-ready to balancing the budget.
 During this period, there have been substantial changes to the culture and practice of governments, and the probability of cost overruns during construction has approximately halved (although the same cannot be said of cost overruns before a formal funding commitment).
 
