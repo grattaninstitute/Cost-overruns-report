@@ -854,7 +854,6 @@ Once such announcements are scrutinised as part of the budget process, their ear
 
 The poor cost performance of projects with early cost announcements is not just a warning to mistrust politicians' infrastructure promises.
 Rather, premature cost announcements appear to haunt projects throughout their lives.
-After formal budget commitments, the costs of projects with early cost announcements project typically increase by a further 26 per cent (see \Vref{fig:projs-announced-early-have-larger-cost-overruns-at}).
 
 \begin{figure}
 \captionwithunits{Projects announced earlier have larger percentage cost overruns at all stages of the project lifecycle\label{fig:projs-announced-early-have-larger-cost-overruns-at}}
@@ -889,7 +888,8 @@ Savings of \$6.7 million were made during the construction period, and the proje
 
 \end{bigbox*}
 
-\Cref{fig:projs-announced-early-have-larger-cost-overruns-at} shows that projects announced early tend to perform worse than average against their cost estimates, not only in the early stages but also later in the project's life.
+\Cref{fig:projs-announced-early-have-larger-cost-overruns-at} shows that projects announced early tend to perform worse than average against their cost estimates, not only in the early stages but also later in the project's life. 
+After formal budget commitments, the costs of projects with early cost announcements project typically increase by a further 26 per cent (see \Vref{fig:projs-announced-early-have-larger-cost-overruns-at}).
 This suggests that overly optimistic initial cost estimates are rarely adequately adjusted straight away -- reliable project cost estimates may only eventuate half way through construction.
 
 Another reason why projects with premature cost announcements repeatedly have large overruns is that these low quality cost estimates are often imposed on the highest risk projects.
