@@ -1856,9 +1856,9 @@ At least one set of risk management guidelines in each of Australia’s state an
 
 Some states also provide comprehensive guidance on the level of detail required for risk estimation at each stage of a project's development. 
 
-For example, the South Australian Department of Planning Transport and Infrastructure Estimating Manual sets out:
+For example, the South Australian Department of Planning, Transport and Infrastructure Estimating Manual sets out:
 
-\begin{itemize}{}
+\begin{itemize}
 \item
   the \textbf{detail with which costs should be estimated}, in terms of whether global benchmark, unit rate or first principles approaches should be used to price project inputs;
 \item
@@ -1867,7 +1867,7 @@ For example, the South Australian Department of Planning Transport and Infrastru
   the \textbf{size of the contingency margin} which should be added to estimates at each stage.
 \end{itemize}
 
-It is important that every jurisdiction provides this level of guidance for two reasons. Firstly, the expense of arriving at more detailed cost estimates means that, where there are not clear requirements regarding the appropriate level of detail, incentives to produce insufficiently detailed cost estimates prevail. 
+It is important that every jurisdiction provides this level of guidance for two reasons. Firstly, the expense of arriving at more detailed cost estimates means that, where there are not clear requirements regarding the appropriate level of detail, incentives to produce insufficiently detailed cost estimates may prevail. 
 
 Secondly, the different margins of error associated with different cost estimation methodologies mean that cost estimates derived using different estimation methodologies are not directly comparable. 
 
@@ -1901,7 +1901,7 @@ This section reviews each of these shortcomings in detail and provides state-spe
 
 \subsection{Guidance is inconsistent, within and across levels of government}\label{guidance-is-inconsistent}
 
-Guidelines which apply to the same jurisdiction often recommend different approaches to risk measurement. For instance, probability pricing is required for federal funding, yet only half the risk measurement guidance provided at the federal level discusses probability pricing.
+Guidelines which apply to the same jurisdiction often recommend different approaches to risk measurement. For instance, probability pricing is required for Commonwealth funding, yet only half the risk measurement guidance provided at the federal level discuss probability pricing.
 
 The \emph{National Partnerships Agreement on Land Transport Infrastructure Projects},\footcite{COAG2014NationalPartnershipAgreementInfrastructure} the Australian Transport Council’s \emph{National Guidelines for Transport System Management in Australia},\footcite{ATC2006NGTSM3} Infrastructure Australia’s \emph{Business Case Template},\footcite{Australia2016InfrastructureAustraliaAssessmentc} the \emph{Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction} \footcite{DIRD2008BPCEPFRRC} and BITRE's \emph{Overview of Project Appraisal for Land Transport} \footcite{BITRE2014Overviewofprojectappraisalforlandtransport} require or discuss probability pricing.
 However, Infrastructure Australia's \emph{Assessment Framework} \footcite{Australia2016InfrastructureAustraliaAssessmentb}, the \emph{HB 158:2010 Handbook on delivering assurance based on ISO 31000:2009} \footcite{StandardsAustralia2010DeliveringassurancebasedonISO31000} and BITRE's \emph{Risk in Benefit Cost Analysis} \footcite{BITRE2005RiskinCostBenefitAnalysis} do not. 
