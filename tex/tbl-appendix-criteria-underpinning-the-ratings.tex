@@ -1,0 +1,34 @@
+
+\newcommand{\topicFormat}[1]{\multirow[t]{3}{=}{\bfseries #1}}
+
+\begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{0.15\textwidth}lX} %
+%
+\toprule
+\textbf{Topic} & \textbf{Rating} & \textbf{Criteria} \\ 
+\midrule 
+\topicFormat{Mitigate avoidable risks} 
+& Sufficient  & At least one set of guidance recommends the use of risk matrices to identify and log preventative measures by risk. It would be ideal, but not necessary, for some guidelines to also identify key risks which should be mitigated and provide recommendations of how to do so. \\
+& Incomplete  & N/A. No external information is required to implement the risk measurement strategies deemed to be sufficient. \\
+& Poor  & No guidelines. Recommends the use of risk matrices to identify and log preventative measures by risk. \\
+\midrule
+\topicFormat{Reduce estimation error} 
+& Sufficient  & At least one set of guidelines specifies the amount of detail (in terms of the cost estimation methodology, work breakdown schedule) for each stage of a gateway process. It would be ideal, but not necessary, for the appropriate size of contingency funds for estimates of each level of certainty to also be stated. \\
+& Incomplete  & N/A. No non-standardised external information is required to implement the cost estimation practices deemed sufficient. \\
+& Poor        & No guidelines specify the amount of detail (in terms of the cost estimation methodology, work breakdown schedule) for each stage of a gateway process. \\
+\midrule
+\topicFormat{Manage remaining risk} 
+& Sufficient  & At least one set of guidelines specifies a ``complete'' approach to risk measurement, where ``complete'' is defined as in \Vref{sec:guidance-is-incomplete}. \\
+& Incomplete  & At least one set of guidelines specifies a ``complete'' approach to risk measurement, but does not provide sufficient information for the approach to be properly implemented. \\
+& Poor        & No guidelines recommend a ``complete'' approach. \\
+\midrule
+\topicFormat{Account for risk in investment decisions} 
+& Sufficient  & At least one set of guidelines explicitly states that the cost estimates used in cost benefit analysis should be the expected value, not the median (P50) or P90, costs. \\
+& Incomplete  & At least one set of guidelines alludes to the importance of accounting for cost risk in cost benefit analysis. \\
+& Poor        & No guidelines mention the treatment of cost risk in cost benefit analysis. \\
+\midrule
+\topicFormat{Manage risk throughout construction} 
+& Sufficient  & At least one set of guidelines relates contingency estimation to the amount of risk accommodated in the base cost estimate, and at least one set of guidelines makes explicit the advantages of managing contingency funds at the portfolio level. \\
+& Incomplete  & At least one set of guidelines requires the use of contingency funds, without providing sufficient guidance. \\
+& Poor        & No guidelines require the use of contingency funds. \\
+\bottomrule
+\end{tabularx}
