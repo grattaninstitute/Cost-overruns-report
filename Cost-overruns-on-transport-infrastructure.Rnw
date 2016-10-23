@@ -2169,7 +2169,7 @@ This appendix, and the conclusions of the report that are founded upon its analy
 \begin{table}
 \caption{Reviewed risk management guidelines}
 \label{tab:risk-management-guidlines}
-.
+\input{tex/tbl-reviewed-risk-management-guidelines}
 \end{table}
 
 \begin{table*}
