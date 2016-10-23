@@ -741,7 +741,7 @@ We take this approach to differentiate genuinely additional infrastructure from 
 
 Changes to scope are only a problem if they are not appraised on their merits as to whether they are worth the money and are better than alternative ways to solve a problem or to spend public funds.
 
-This report finds that scope changes only account for about 11 per cent of cost overruns on transport infrastructure projects (\Vref{fig:most-cost-overruns-were-not-attrib-to-scope-changes}). This conclusion is counter to what appears to be the prevailing wisdom on the causes of cost overruns on Australian transport projects, and the Productivity Commission's conclusion that "cost overruns during delivery mainly stem from government clients changing the scope of the project." \footcite[][29]{Commission2014PublicInfastructure} 
+This report finds that scope changes only account for about 11 per cent of cost overruns on transport infrastructure projects (\Vref{fig:most-cost-overruns-were-not-attrib-to-scope-changes}). This conclusion is counter to what appears to be the prevailing wisdom on the causes of cost overruns on Australian transport projects, and the Productivity Commission's conclusion that ``cost overruns during delivery mainly stem from government clients changing the scope of the project.''\footcite[][29]{Commission2014PublicInfastructure} 
 
 The Productivity Commission's finding was based upon the  Western Australian Auditor-General's report on major capital projects, which found that scope changes explained the majority of cost overruns observed across 20 major projects.\footcite{WAAGMajorCapitalProjects} The Western Australian Auditor-General's finding differs our finding in that focused on cost overruns incurred only during the construction phase, and was largely driven by the substantial scope changes observed on non-transport projects, such as hospitals, schools and prisons. The finding does not appear to be readily generalisable to cost overruns incurred on transport infrastructure projects between first cost announcement and project completion. 
 
@@ -749,7 +749,7 @@ The Productivity Commission's finding was based upon the  Western Australian Aud
 
 
 \begin{figure}
-\captionwithunits{Most cost overruns are not attributable to substantive scope changes\label{fig:most-cost-overruns-were-not-attrib-to-scope-changes}}
+\captionwithunits{Most cost overruns are not attributable to scope changes\label{fig:most-cost-overruns-were-not-attrib-to-scope-changes}}
 {Proportion of cost overruns attributable to scope change, per cent}
 
 \includegraphics{atlas/PieChart}
@@ -864,7 +864,7 @@ The poor cost performance of projects with early cost announcements is not just 
 Rather, premature cost announcements appear to haunt projects throughout their lives.
 
 \begin{figure}
-\captionwithunits{Projects announced earlier have larger percentage cost overruns at all stages of the project lifecycle\label{fig:projs-announced-early-have-larger-cost-overruns-at}}
+\captionwithunits{Projects announced earlier have larger cost overruns at all stages of the project lifecycle\label{fig:projs-announced-early-have-larger-cost-overruns-at}}
 {Average project size of each cohort, by project stage, \$2016 millions}
 \includegraphics[page=8]{atlas/Charts_CO}
 
@@ -1220,7 +1220,7 @@ On completion in 2012, the project came in 10 per cent lower than the contracted
 
 \begin{figure}[H]
 \captionwithunits{Project cost estimates, Ipswich Motorway}%
-{millions of dollars}
+{Millions of dollars}
 \includegraphics[page=4]{atlas/CaseStudies.pdf}
 \end{figure}
 
@@ -1988,11 +1988,6 @@ Assessments of project risks can be considered:
 \input{tex/tbl-complete-approaches-to-risk-management}
 \end{table*}
 
-\begin{table}
-\caption{Completeness of key guidelines}\label{tbl:completeness-of-key-guidelines}
-.
-\end{table}
-
 As no single risk management tool achieves all these objectives, a combination of tools is required. 
 \Vref{tbl:requirements-for-complete-risk-measurement} summarises how each risk measurement tool can, if used properly, contribute to a complete approach to risk measurement. 
 \Vref{tbl:tbl:completeness-of-key-guidelines} illustrates that key Australian guidelines on risk measurement are systematically weak in their use of objective information and treatment of extreme and unknown risks. 
@@ -2175,7 +2170,7 @@ For this reason, it would be desirable for all states to adopt a stringent pract
 This appendix, and the conclusions of the report that are founded upon its analysis, are based upon a thorough review of all the key documentation on cost estimation and risk management which could be identified to be publically available. \Vref{tab:risk-management-guidlines} lists the guidelines reviewed. 
 
 \begin{table*}
-\caption{Reviewed risk management guidelines}
+\caption{Key risk management guidelines underpinning the ratings allocated in \Vref{fig:quality-of-risk-management-guidance-chevrons}}
 \label{tab:risk-management-guidlines}
 \input{tex/tbl-reviewed-risk-management-guidelines}
 \end{table*}
@@ -2263,7 +2258,8 @@ This is because the Investment Monitor considers all projects valued over \$20 m
 In line with this expectation, we observe higher cost overruns across the Grattan dataset than the Investment Monitor dataset.
 
 \begin{figure}
-\caption{Cost overrun by project stage in Investment Monitor and Grattan datasets\label{fig:cost-overrun-by-project-stage}} 
+\captionwithunits{Cost overrun by project stage in Investment Monitor and Grattan datasets\label{fig:cost-overrun-by-project-stage}}%
+{Cost overruns by project stage, per cent}
 
 \includegraphics[page=8]{atlas/AppendixCharts}
 
@@ -2389,14 +2385,14 @@ Regression_results_xtable %>%
 \centering
 \caption{Results of logit regression with instance of cost overrun in given period as dependent variable\label{tbl:regression-results-logit}}
 \input{tex/regresion-results-logit}
-\noteswithsource{Investment Monitor; Grattan analysis.}{Marginal effects of dependent variables are defined relative to the reference group of rail projects built in New South Wales. *,  ** and *** indicate that a marginal effect is significant at the 1\%, 5\% or 10\% levels of significance.}
+\noteswithsource{Investment Monitor; Grattan analysis.}{Marginal effects of independent variables are defined relative to the reference group of rail projects built in New South Wales. *,  ** and *** indicate that a marginal effect is significant at the 10\%, 5\% or 1\% levels of significance.}
 \end{table*}
 
 \begin{table*}
 \centering
 \caption{Results of log-linear regression with instance of cost overrun in given period as dependent variable\label{tbl:regression-results-logit-normal}}
 \input{tex/regression-results-logit-normal}
-\noteswithsource{Investment Monitor; Grattan analysis.}{Marginal effects of dependent variables are defined relative to the reference group of rail projects built in New South Wales. *,  ** and *** indicate that a marginal effect is significant at the 1\%, 5\% or 10\% levels of significance.}
+\noteswithsource{Investment Monitor; Grattan analysis.}{Marginal effects of independent variables are defined relative to the reference group of rail projects built in New South Wales. *,  ** and *** indicate that a marginal effect is significant at the 10\%, 5\% or 1\% levels of significance.}
 \end{table*}
 
 Cost overruns are also expected to be partially attributable to scope changes.
