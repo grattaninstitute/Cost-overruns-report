@@ -1085,7 +1085,8 @@ For instance, the \$123 billion Future Fund,\footcite{FutureFund2016PortfolioUpd
 The Act ensures that investment decisions and activities are conducted at arm's length from government.
 It requires the tabling in Parliament of an annual report and audited financial statements.
 The Future Fund publishes quarterly portfolio updates to provide details of the investment activity and performance of the fund.
-Transport infrastructure investment by Australian governments is a similarly large element of the budget, and could be governed with similar scrutiny and assurance, but it is not.
+Transport infrastructure investment by Australian governments is similarly large, and could be governed with similar scrutiny and assurance. 
+But it is not.
 
 In the absence of such reporting for infrastructure projects, the public is not equipped to understand whether any particular infrastructure turned out to offer value for money in the terms in which it was originally promised.
 Ministers overseeing projects with significant cost overruns over time commonly end up claiming that the project came in under budget.
