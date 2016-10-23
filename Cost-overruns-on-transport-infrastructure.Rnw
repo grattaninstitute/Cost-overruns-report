@@ -1305,9 +1305,7 @@ While cost estimation on any given project is uncertain, cost estimates should o
 But there is a substantial gap between estimated and actual costs on transport infrastructure projects over the past 15 years.
 In that period, cost estimators expected between 10 and 25 per cent of projects to exceed their budget.
 In fact, 34 per cent did so (\Vref{fig:assumed-and-observed-prob-distr-of-cost-overruns}).
-Moreover, these overruns are not offset by underrun, as cost estimation guidelines optimistically imply.%
-\GenericWarning{Footnote undefined}{LaTeX Warning: Footnote not complete}%
-\footnote{Give examples of guidelines which explicitly assume symmetry, and those that state the distribution should be asymmetric but do not recommend any use of this information.}
+Moreover, these overruns are not offset by underrun, as cost estimation guidelines optimistically imply. \footnote{Please see \Vref{distributional-analysis} for further details and evidence of this claim.}
 
 \begin{figure}
 \captionwithunits{Experts systematically underestimate the likelihood of cost overruns\label{fig:assumed-and-observed-prob-distr-of-cost-overruns}}
