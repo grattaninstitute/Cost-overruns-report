@@ -2417,7 +2417,7 @@ We found that publically available information was consistently of sufficient qu
 
 \subsection{Survival analysis}\label{survival-analysis}
 
-In addition to examining the size, timing and causes of cost overruns, we investigated the frequency with which projects were cancelled and the relationship between cost overruns and project cancellation.
+In addition to examining the size, timing and causes of cost overruns, we investigated the frequency with which projects were cancelled and the relationship between cost overruns and project cancellation. \xxxx
 
 Project cancellation rates for each stage were calculated as the number of projects that exited the dataset at each stage, as a proportion of the number of projects with cost estimates recorded for that stage.
 
@@ -2446,7 +2446,7 @@ We find that the value of cost overruns incurred to date, expressed as a percent
 \subsection{Distributional analysis}\label{distributional-analysis}
 
 \Vref{box:risk-managers-toolkit} features a stylized representation of the distribution of cost overruns.
-This stylized distribution, presented as figure \Vref{fig:probability-distribution} below, is also employed in figures \Cref{fig:Some-avoidable-risks-can-be-mitigated}, \Cref{reduce-estimation-error} and \Vref{fig:assumed-and-actual-distributions} of appendix 1.
+This stylized distribution, presented as \Vref{fig:probability-distribution} below, is also employed in figures \Cref{fig:Some-avoidable-risks-can-be-mitigated}, \Cref{reduce-estimation-error} and \Vref{fig:assumed-and-actual-distributions} of appendix 1.
 
 The stylized representations of distribution of cost overruns features a slightly smaller kurtosis that the observed distribution of cost overruns.
 This modification was made so that the diagrams were easier to label clearly and a key characteristic of the distribution - the heaviness of its right tail -- was more visible.
@@ -2457,8 +2457,8 @@ This modification was made so that the diagrams were easier to label clearly and
 \noteswithsource{The distribution of cost risk depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see \Vref{distributional-analysis} for detials. This graph's illustrative purpose is to depict the relative distances between key points of the distribution}{Investment Monitor; Grattan analysis.}
 \end{figure}
 
-Figure \Vref{fig:probability-distribution} confirms that the stylized distribution employed is a fair representation of the underlying data.
-As emphasised in Box \Vref{box:risk-managers-toolkit}, the expected value of cost overruns falls far closer to the distribution's 90\textsuperscript{th} percentile than its median.
+\Vref{fig:probability-distribution} confirms that the stylized distribution employed is a fair representation of the underlying data.
+As emphasised in \Vref{box:risk-managers-toolkit}, the expected value of cost overruns falls far closer to the distribution's 90\textsuperscript{th} percentile than its median.
 
 Though less visible than in the stylized distribution, the heaviness right tail of the observed distribution is notable: 17 percent of projects experienced cost overruns greater than the smallest cost underrun.
 
@@ -2488,7 +2488,7 @@ In these ways, Australia's risk management guidelines suggest that cost risks ar
 \item 
       the observation of an average cost overrun of 24 per cent is consistent with a the expected value of cost overruns being substantially underestimated, and
 \item
-      the substantial underestimation of the difference, as a percentage of initial project costs, between P50 and P90 costs,\footnote{The observed difference between P50 and P90 costs is 26 per cent, three times higher than the 9.2 per cent difference between P50 and P90 costs in the business cases assessed in table \Vref{tbl:large-projects-cost-estimates}.} is consistent with the length of the right tail of the distribution of cost risk being substantially underestimated, 
+      the substantial underestimation of the difference, as a percentage of initial project costs, between P50 and P90 costs,\footnote{The observed difference between P50 and P90 costs is 26 per cent, three times higher than the 9.2 per cent difference between P50 and P90 costs in the business cases assessed in \Vref{tbl:large-projects-cost-estimates}.} is consistent with the length of the right tail of the distribution of cost risk being substantially underestimated, 
 \end{itemize}
 as would be the case if assuming a distribution similar to the triangular distribution presented in \Vref{fig:assumed-and-actual-distributions}. This indicates that, although no distribution of cost risks was consistently recommended, the distribution assumed on average in practice appears similar to the triangular distribution presented in \Vref{fig:assumed-and-actual-distributions}.
 
@@ -2526,7 +2526,7 @@ Mostly, it is requested that P90 cost estimates are used as for budget estimates
 To allow for this variation in practices, we make the conservative assumption that budget estimates are all P75 estimates. 
 Under the less conservative assumption that budgets contain P90 cost estimates, probability prices would be downwardly biased by an additional 15 percent. 
 
-Table \Vref{probability-pricing-table} reports the percentage of projects observed to have cost overruns greater than each estimated probability price.
+\Vref{probability-pricing-table} reports the percentage of projects observed to have cost overruns greater than each estimated probability price.
 This comparison is founded on the assumption that budgeted costs are P75 cost estimates, which we know to be exceeded by 34 per cent of projects.
 This means that cost estimates that have been defined to be P75 costs should, on average, be P66 costs.
 
