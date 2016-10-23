@@ -758,7 +758,7 @@ The scarcity of Australian studies of cost overruns has fed a misperception that
 The best-known international studies of `megaprojects' have found road projects overrunning by 24 per cent and rail by 40 per cent.
 These findings emerge from a study of infrastructure project cost overruns on 1603 road and rail projects of all sizes, each valued at between US\$1.5~million and US\$8.5~billion, in 20 countries between 1927 and 2013.%
 \footnote{\textcite{Flyvbjerg2016fallacybeneficialignorance}, methodology described in \textcite{Flyvbjerg2003Megaprojectsriskanatomy}.} %
-The findings led the leader of the study, Danish economic geographer Bent Flyvbjerg, to invent what he called ``the iron law of megaprojects: over budget, over time, over and over again.''\footcite[][9-11]{Flyvbjerg2014Whatyoushould}
+The findings led the leader of the study, Danish economic geographer Bent Flyvbjerg, to invent what he called ``the iron law of megaprojects: over budget, over time, over and over again.''\footcite[][9--11]{Flyvbjerg2014Whatyoushould}
 
 Yet Flyvbjerg's findings, while credible, cannot be generalised.
 His overrun estimates are markedly higher than the average overrun of 14 per cent reported across the next four biggest academic studies, or the 15 per cent reported across the four largest studies completed by auditors of road projects.%
