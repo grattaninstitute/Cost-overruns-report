@@ -939,7 +939,7 @@ They would like to see comprehensive cost-benefit analysis for large projects su
 
 \includegraphics[page=9]{atlas/Charts_CO}
 
-\noteswithsource{Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of The Coalition, from the 2016--17 budget papers.
+\noteswithsource{Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of the Coalition, from the 2016--17 budget papers.
 Excludes projects for which construction has already commenced.}
 {\textcite{Liberal2016Policy}; \textcite{ALP2016Policy}; \textcite{Greens2016Policy}; \textcite{Treasury2016CommonwealthBudgetPapers} \textcite{Treasury2014CommonwealthBudgetPapers}; \textcite{InfrastructureAustralia2016}; and Grattan analysis.}
 \end{figure}
