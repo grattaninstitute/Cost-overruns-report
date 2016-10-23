@@ -2164,13 +2164,13 @@ For this reason, it would be desirable for all states to adopt a stringent pract
 
 
 \section{Reviewed Australian risk management guidelines \label{sec:Reviewed-Australian-risk-measurement-guidelines}}
-This appendix, and the conclusions of the report that are founded upon its analysis, are based upon a thorough review of all the key documentation on cost estimation and risk management which could be identified to be publically available. Table \Vref{tab:risk-management-guidlines} lists the guidelines reviewed. 
+This appendix, and the conclusions of the report that are founded upon its analysis, are based upon a thorough review of all the key documentation on cost estimation and risk management which could be identified to be publically available. \Vref{tab:risk-management-guidlines} lists the guidelines reviewed. 
 
-\begin{table}
+\begin{table*}
 \caption{Reviewed risk management guidelines}
 \label{tab:risk-management-guidlines}
 \input{tex/tbl-reviewed-risk-management-guidelines}
-\end{table}
+\end{table*}
 
 \begin{table*}
 \caption{Criteria underpinning the ratings of jurisdictions’ risk management guidelines presented in \Vref{fig:quality-of-risk-management-guidance-chevrons}}
@@ -2178,12 +2178,14 @@ This appendix, and the conclusions of the report that are founded upon its analy
 \input{tex/tbl-appendix-criteria-underpinning-the-ratings}
 \end{table*}
 
-\begin{table}
+\begin{table*}
 \caption{Key sources underpinning the ratings jurisdictions’ risk management guidelines presented in \Vref{fig:quality-of-risk-management-guidance-chevrons}} \label{tab:sources-underpinning-ratings}
-.
-\end{table}
+\input{tex/tbl-Key-Austr-risk-measurement-guidelines}
+\noteswithsource{* indicates that the recommended use of Monte Carlo simulation to estimate P50 and P90 costs for full business cases of large projects gets part way towards accounting for unknown risks, meriting the \GreyTick\ status. However, this criterion is not satisfied for small initiatives or rapid CBAs, where deterministic probability pricing is recommended.}%
+{Australian risk management guidelines; Grattan analysis}
+\end{table*}
 
-The high level review of the quality of risk management guidelines presented as  \Vref{fig:quality-of-risk-management-guidance-chevrons} is based on the criteria listed in \Vref{tab:criteria}. The guidelines which had most bearing on the rating awarded for each component of risk management by state are listed in table \Vref{tab:sources-underpinning-ratings} These guidelines are those that were perceived to go the furthest towards satisfying the ratings’ criteria, or were the most conspicuous examples of the jurisdictions failure to do so.
+The high level review of the quality of risk management guidelines presented as  \Vref{fig:quality-of-risk-management-guidance-chevrons} is based on the criteria listed in \Vref{tab:criteria}. The guidelines which had most bearing on the rating awarded for each component of risk management by state are listed in \Vref{tab:sources-underpinning-ratings}. These guidelines are those that were perceived to go the furthest towards satisfying the ratings’ criteria, or were the most conspicuous examples of the jurisdictions failure to do so.
 
 
 
