@@ -2319,7 +2319,7 @@ Where:
 We partner this aggregate summary of cost overruns with analysis of the linear dependence between cost overruns over time.
 To do so, we estimate the Pearson coefficient between the indices CO12 and CO23, and CO23 and CO34, and ascertain the significance of these correlations at the 10 per cent level of confidence through comparison to Chi-Squared critical values.
 
-This allows us to draw conclusions regarding whether individual projects are more or less likely to experience an overruns in a given period if it experienced an overrun in the previous period.
+This allows us to draw conclusions regarding whether individual projects are more or less likely to experience an overrun in a given period if it experienced an overrun in the previous period.
 We complete this analysis separately for each cohort, as defined by the project's maturity when the first cost estimate is announced.
 
 Pearson coefficients:
@@ -2327,20 +2327,20 @@ Pearson coefficients:
 \[\rho_{t,\ t + 1}\  = \frac{\sum_{i \in N}^{}\left\lbrack \left( CO_{t} - \frac{1}{N}\sum_{i \in N}^{}{CO_{t}} \right)\left( CO_{t + 1} - \frac{1}{N}\sum_{i \in N}^{}{CO_{t + 1}} \right) \right\rbrack}{\sqrt{\sum_{i \in N}^{}\left( CO_{t} - \frac{1}{N}\sum_{i \in N}^{}{CO_{t}} \right)^{2}\ }\sqrt{\sum_{i \in N}^{}\left( CO_{t + 1} - \frac{1}{N}\sum_{i \in N}^{}{CO_{t + 1}} \right)^{2}\ }}\]
 
 Where \(CO_{t}\) and \(CO_{t + 1}\) refer to cost overruns incurred over the consecutive project stages
-\(t\) = ``possible or under consideration'' -- ``committed'', ``committed'' -- ``under construction'', ``under construction -- completed''.
+\(t\) = ``possible or under consideration'' to ``committed'', ``committed'' to ``under construction'', ``under construction to completed''.
 
 \subsection{Causes of cost overruns}\label{causes-of-cost-overruns}
 
 We also investigate the relationship between cost overruns at each project stage and independent variables that describe the characteristics of each project and its appraisal process using regression analysis.
 This analysis is completed in two stages.
 First, we use a logit model to examine the correlation between our independent variables and the probability that a project experiences a cost overrun of any size.
-Following this, we model the magnitude of cost overruns where a cost overrun occurred using a log-normal model.
+Following this, we model the magnitude of cost overruns where a cost overrun occurred using a log-linear model.
 
-Logit model of the probability of cost overruns occurring:
+The logit model of the probability of cost overruns occurring is specified as:
 
 \[\operatorname{logit}\left( \mathbb{l(}\text{CO}_{t} > 0) \right) = \beta_{0} + \beta_{1}X_{1} + \ldots + \beta_{K}X_{K} + \varepsilon\]
 
-Log-normal model of the magnitude of cost overruns, if they occur
+The log-linear model of the magnitude of cost overruns, if they occur, is specified as:
 
 \[\log\left( \frac{\text{Cos}t_{t + 1} - Cost_{t}}{\text{Cos}t_{1}}|Cost_{t + 1} > Cost_{t} \right) = \beta_{0} + \beta_{1}X_{1} + \ldots + \beta_{K}X_{K} + \varepsilon\]
 
@@ -2350,7 +2350,6 @@ Where:
 \(\varepsilon\): zero-meaned random error term\\
 \(t\) = ``possible or under consideration'' -- ``committed'', ``committed'' -- ``under construction'', ``under construction -- completed''.
 
-{[}Regression results{]} \GenericWarning{LaTeX Warning: Regression results need insertion}{LaTeX Warning: Regression results need insertion}
 
 <<regression-results-1, eval=FALSE>>=
 library(readxl)
@@ -2380,16 +2379,16 @@ Regression_results_xtable %>%
 
 \begin{table*}
 \centering
-\caption{Results of logistic regression with instance of cost overrun in given period as dependent variable\label{tbl:regression-results-logit}}
+\caption{Results of logit regression with instance of cost overrun in given period as dependent variable\label{tbl:regression-results-logit}}
 \input{tex/regresion-results-logit}
-\source{Grattan analysis of Deloitte Investment Monitor}
+\sourceandnotes{Grattan analysis of Deloitte Investment Monitor}{Marginal effects of dependent variables are defined relative to the reference group of rail projects built in New South Wales. *,  ** and *** indicate that a marginal effect is significant at the 1\%, 5\% or 10\% levels of significance.}
 \end{table*}
 
 \begin{table*}
 \centering
-\caption{Results of logistic regression with instance of cost overrun in given period as dependent variable\label{tbl:regression-results-logit-normal}}
+\caption{Results of log-linear regression with instance of cost overrun in given period as dependent variable\label{tbl:regression-results-logit-normal}}
 \input{tex/regression-results-logit-normal}
-\source{Grattan analysis of Deloitte Investment Monitor}
+\sourceandnotes{Grattan analysis of Deloitte Investment Monitor}{Marginal effects of dependent variables are defined relative to the reference group of rail projects built in New South Wales. *,  ** and *** indicate that a marginal effect is significant at the 1\%, 5\% or 10\% levels of significance.}
 \end{table*}
 
 Cost overruns are also expected to be partially attributable to scope changes.
@@ -2399,7 +2398,7 @@ This definition excludes quality improvements because project benefits cannot be
 
 We defined scope changes as substantive changes to an asset’s functionality, such as the construction of more road length than originally planned for a project. 
 This definition excludes quality improvements like higher quality construction materials. 
-This is because project benefits cannot be assumed to increase above those assumed in the business case alongside costs to the same extent as functional improvements.
+This is because project benefits cannot be assumed to increase above those assumed in the business case to the same extent as functional improvements.
 
 Where this information was not available, other information was employed to approximate the value of scope changes.
 Where scope changes were expressed as a proportion of the total asset -- such as road being made ``20 per cent longer'', the value of scope changes were estimated by the corresponding proportion of the project costs prior to the scope change.
@@ -2410,9 +2409,9 @@ We found that publically available information was consistently of sufficient qu
 
 In addition to examining the size, timing and causes of cost overruns, we investigated the frequency with which projects were cancelled and the relationship between cost overruns and project cancellation.
 
-Project cancellation rates for each stage were calculated as the percentage of the projects which entered a project stage which also exited that project stage.
+Project cancellation rates for each stage were calculated as the number of projects that exited the dataset at each stage, as a proportion of the number of projects with cost estimates recorded for that stage.
 
-We also estimated the appropriate overall rate of cancellation, by calculating the proportion of the 39 business cases for transport infrastructure published by Infrastructure Australia by the 12\textsuperscript{th} of Feburary 2016 which would have benefit cost ratios less than 1 if project costs increased by the average amount observed across projects in the the Investment Monitor. 
+We also estimated the appropriate overall rate of cancellation, by calculating the proportion of the 39 business cases for transport infrastructure published by Infrastructure Australia by the 12\textsuperscript{th} of Feburary 2016 which would have had benefit cost ratios less than 1 if project costs increased by the average amount observed across projects in the the Investment Monitor. 
 
 The overall cancellation rate of 35 per cent observed across the Investment Monitor projects appears to be insufficient.
 This is because, given the observed distribution of the Infrastructure Australia business cases, even a two per cent reduction in the average benefit cost ratio would mean that some projects with benefit cost ratios below one would not be cancelled, and there are numerous reasons to suspect that this is the case.  
@@ -2421,8 +2420,7 @@ For instance, the benefit cost ratios of cancelled projects are likely to be wor
 It is also reasonable to suspect that benefit cost ratios are overestimated by more than 2 per cent on average, as numerous studies have found that estimates of project benefits are routinely optimistic.%
 \footcite{Flyvbjerg2016fallacybeneficialignorance} 
 
-Finally, the business case for completing projects with benefit cost ratios that are only very marginally above one is contentious, given the existence of competing budget objectives and the marginal excess burden of raising taxes to fund infrastructure projects.%
-\footcite{Terrill2016Roadsrichesbetter}
+Finally, the business case for completing projects with benefit cost ratios that are only very marginally above one is contentious, given the existence of competing budget objectives.%
 We also investigate the relationship between cost overruns and project survival through a logit model of the probability of a project being cancelled at each stage, given the magnitude of cost overruns as incurred up to that point.
 
 \(\operatorname{logit}\left( \text{Survival}_{t} \right) = \beta_{0} + \beta_{1}CO_{1t} + \varepsilon\)
@@ -2431,9 +2429,9 @@ Where:
 
 \[CO_{1t}\  = \frac{C_{t} - C1}{C1}\]
 
-We find that the value of cost overruns incurred to date, expressed as a percentage of projects' initial value, does not have a statistically significant effect on the probability of a project being cancelled at any stage in a project's development.
+We find that the value of cost overruns incurred to date, expressed as a percentage of projects' initial value, does not have a statistically significant effect on the probability of a project being cancelled at any stage in a project's development.\footnote{Tests of the hypothesis that cost overruns incurred up to a particular project stage affect the probability that a project is cancelled at that point were conducted relative to each project's first formal budget commitment, commencement of construction and completion. The p-values associated with this hypothesis at each each of these stages were 0.39, 0.38 and 0.8, respectively. As all of these p-values are substantially lower than the threshold of 0.1 required for significance at even the 10 per cent level, we find no evidence of cost overruns affecting the probability that a project will be cancelled.}
 
-{[}Table of results{]}
+
 
 \subsection{Distributional analysis}\label{distributional-analysis}
 
