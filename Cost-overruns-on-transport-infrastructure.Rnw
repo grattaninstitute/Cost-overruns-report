@@ -1564,8 +1564,8 @@ Canberra Light Rail & ACT & \possibleTextDollar759\dz & \possibleTextDollar806\d
 %\cmidrule(lr){3-5}
 \multicolumn{4}{r}{\textbf{Average actual difference across all projects completed in the  past 15 years}} & \textbf{21.0\%} \tabularnewline%[1.245ex]
 \bottomrule
-\noteswithsource{Please see \Vref{expected-difference-between-p50-and-p90-costs} for details.}{\textcites{Government2016MelbourneMetroBusiness}{Government2015WesternDistributor}{SGS2016WestConnexreview}{Bill2009NationBuildingProgramAmendment}{InlandRailBusinessCase}{CanberraLightRailBusinessCase}{PrincesHighwayBusinessCase}{MainRoadStAlbansLevelCrossingBusinessCase}{BruceHighwayBusinessCase}{M1PacificHighwayBusinessCase}{MitchellFreewayBusinessCase}{NorthWestCoastalHighwayBusinessCase}}
 \end{tabularx}
+\noteswithsource{See \Vref{expected-difference-between-p50-and-p90-costs}.}{\textcites{Government2016MelbourneMetroBusiness}{Government2015WesternDistributor}{SGS2016WestConnexreview}{Bill2009NationBuildingProgramAmendment}{InlandRailBusinessCase}{CanberraLightRailBusinessCase}{PrincesHighwayBusinessCase}{MainRoadStAlbansLevelCrossingBusinessCase}{BruceHighwayBusinessCase}{M1PacificHighwayBusinessCase}{MitchellFreewayBusinessCase}{NorthWestCoastalHighwayBusinessCase}}
 \end{table*} 
 
 A second consequence of not knowing historical outcomes of similar projects is that it deprives cost estimators of an effective counter to known psychological biases.
