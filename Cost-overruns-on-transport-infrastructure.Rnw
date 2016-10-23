@@ -944,9 +944,10 @@ They would like to see comprehensive cost-benefit analysis for large projects su
 
 \includegraphics[page=9]{atlas/Charts_CO}
 
-\noteswithsources{Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of the Coalition, from the 2016--17 budget papers.
+\noteswithsource{Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of the Coalition, from the 2016--17 budget papers.
 Excludes projects for which construction has already commenced.}
 {\textcite{Liberal2016Policy}; \textcite{ALP2016Policy}; \textcite{Greens2016Policy}; \textcite{Treasury2016CommonwealthBudgetPapers} \textcite{Treasury2014CommonwealthBudgetPapers}; \textcite{InfrastructureAustralia2016}; and Grattan analysis.}
+\end{figure}
 
 
 But even though parties make such statements, the behaviour of politicians exposes the hollowness of their claims.
@@ -2204,7 +2205,7 @@ This dataset has been manually collected for the express purpose of understandin
 
 \subsection{Adjusting expected project costs for inflation}\label{inflation-adjustment}
 
-Both these datasets are based on public sources that report project budgets in terms of nominal dollars at the time the underlying sources were published.  In order to compare projects that occur in different periods, expected and observed project costs in each dataset are adjusted for inflation, using the Australian Bureau of Statistics' construction price index.\footnote{http://www.abs.gov.au/ausstats/abs@.nsf/mf/6427.0} 
+Both these datasets are based on public sources that report project budgets in terms of nominal dollars at the time the underlying sources were published.  In order to compare projects that occur in different periods, expected and observed project costs in each dataset are adjusted for inflation, using the Australian Bureau of Statistics' construction price index.\footcite{ABS2016ConstructionPriceIndex}
 
 We assume that the distribution of project costs across time is the same for all projects and convert nominal outturn costs to 2016 dollars from the middle year of the period during which each project was under construction. 
 While only approximate, this approach is sufficient for controlling for the effect of inflation at the aggregate level under the assumption that the distribution of project costs over the construction period does not vary with time. 
@@ -2270,7 +2271,7 @@ This results in some projects missing cost estimates for the early project stage
 Where this is the case, we assume that no cost overrun occurred prior to the project's first appearance in our dataset.
 
 
-As discussed in section \ref{cost-overruns-may-be-even-bigger-than-we-claim}, a manual check of the history of 51 projects indicated that this is assumption is conservative – 37 per cent of projects which were missing data on early cost estimates experienced public overruns during the unobserved period – a proportion only marginally lower than the 51 per cent of projects with early cost estimates. 
+As discussed in \Vref{cost-overruns-may-be-even-bigger-than-we-claim}, a manual check of the history of 51 projects indicated that this is assumption is conservative – 37 per cent of projects which were missing data on early cost estimates experienced public overruns during the unobserved period – a proportion only marginally lower than the 51 per cent of projects with early cost estimates. 
 
 
 \begin{figure}
@@ -2282,7 +2283,7 @@ As discussed in section \ref{cost-overruns-may-be-even-bigger-than-we-claim}, a 
 \end{figure}
 
 This indicates that the missing data in the Investment Monitor dataset is associated with unobserved cost changes in some cases, as well as the absence of early cost estimates in others.
-Consequently, cost overruns may indeed be closer to the upper bound than the lower bound presented in figure \Vref{fig:value-projects-by-project-stage}.
+Consequently, cost overruns may indeed be closer to the upper bound than the lower bound presented in \Vref{fig:value-projects-by-project-stage}.
 As this report's analysis assumes that no cost overrun occurred where not observed directly, we note that its conclusions are conservative.
 
 
@@ -2290,7 +2291,7 @@ As this report's analysis assumes that no cost overrun occurred where not observ
 
 The key questions that we use these datasets to answer are how big cost overruns are in Australia, at what period in the project lifecycle cost overruns occur and what factors are associated with larger overruns and project cancellation.
 
-\subsection{ Magnitude of cost overruns}\label{magnitude-of-cost-overruns}
+\subsection{Magnitude of cost overruns}\label{magnitude-of-cost-overruns}
 
 We measure the average magnitude of cost overruns using a weighted arithmetic mean of the size of cost overruns, where the weights are defined as \(w_{i} = \frac{C1_{i}}{{\sum_{i \in N}^{}{C1}}_{i}}\) and C1 denotes the initial project cost.
 This weighting scheme places greater weight on projects that make up a greater share of the overall infrastructure budget.
