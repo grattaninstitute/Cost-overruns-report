@@ -1542,7 +1542,7 @@ They show a ``worst case'' cost estimate far lower than 21 per cent above the me
 \textbf{Project} & \textbf{State} & \textbf{Median (or ``P50'')} & \textbf{``Worst case'' (or ``P90'')} & \textbf{Difference} \\
 \midrule
 Inland Rail & National & \possibleTextDollar9\,890\dz & \possibleTextDollar10\,660\dz & 7.8\%\tabularnewline[1.245ex]
-Westconnex & NSW & \possibleTextDollar16\,800\dz & \textcolor{theGrey}{n/a} & 6.0\%%\tablefootnote{``The Infrastructure Australia assessment makes reference to a six per cent difference between the P50 and P90 on the Stage 2'' (\textcite[][23]{SGS2016WestConnexreview})}
+Westconnex & NSW & \possibleTextDollar16\,800\dz & \textcolor{theGrey}{n/a} & 6.0\%%\tablefootnote{``The Infrastructure Australia assessment makes reference to a six per cent difference between the P50 and P90 on the Stage 2'' (\textcite[][23]{SGS2016WestConnexreview}).}
 \tabularnewline[1.245ex]
 Melbourne Metro & Vic% 
  & \possibleTextDollar10\,154\dz & \possibleTextDollar10\,837\dz & 6.7\%\tabularnewline
@@ -1830,7 +1830,7 @@ In this appendix we review the current practices of each state for each of these
 
 \section{Risk minimisation}\label{risk-minimisation}
 
-The most critical component of risk management is reducing project risks where possible.\footnote{Project risks include external factors such as market conditions and industrial relations, project-specific factors such as geotechnical conditions, cost estimation error and scope variation} 
+The most critical component of risk management is reducing project risks where possible.\footnote{Project risks include external factors such as market conditions and industrial relations, project-specific factors such as geotechnical conditions, cost estimation error and scope variation.} 
 This can be achieved by identifying and mitigating avoidable risks and reducing estimation error, as far as it is financially worthwhile to do so.
 
 While there is scope to improve estimation error in many jurisdictions, the general quality of guidance provided on risk minimisation on transport infrastructure projects is high. This is a necessary component of a high quality risk management process, but risk minimisation alone is not sufficient. 
