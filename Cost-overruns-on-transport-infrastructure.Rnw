@@ -1472,8 +1472,11 @@ The Commonwealth should provide model guidelines that states and territories may
 
 \begin{bigbox*}{The risk manager's toolkit}{box:risk-managers-toolkit}
 
-\textbf{Expected value}: The expected value of a project's cost is the probability-weighted average, or most likely, cost outcome.
-It is calculated by assigning a single probability to each potential cost outcome, and multiplying this probability by the cost of that particular outcome if did occur.
+\textbf{Expected value}: The expected value of a project's cost is the probability-weighted average cost outcome.
+It is calculated by assigning a single probability to each potential cost outcome, and multiplying this probability by the cost of that particular outcome if did occur. For example, if a project has a 90 per cent chance of costing \$100 million and a 10 per cent chance of costing \$200 million, the expected value of the project's costs is \$110 million (0.9*100 + 0.1*200), not \$100 million, which is the most likely of the two potential costs. 
+
+Where the cost risk is asymmetrically distributed, as is the case with cost overruns, more than 50 per cent of projects will be expected to come in below the expected value of project costs. However, if all project budgets are set equal to the expected value, the savings made on all the occasions that projects finish below the expected value will be exactly equal to the cost overruns incurred when projects come in above the expected value.   
+
 This is the simplest approach to estimating the likely size of cost overruns.
 To be useful, the approach should include all of the risks involved in a project.
 Its main shortcoming is that it does not include the costs posed by any unknown risks.  
