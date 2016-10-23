@@ -677,7 +677,7 @@ This report considers the entire project lifecycle from when ministers or opposi
 
 \includegraphics{atlas/ProjectStages}
 
-\source{Grattan analysis}
+\source{Grattan analysis.}
 \end{figure}
 
 We define a cost overrun as the amount by which the actual cost at the end of a particular phase exceeded the estimated cost at the start of that phase, expressed as a percentage of each project's first cost.
@@ -708,12 +708,12 @@ This prevalence rate is comparable to the 51 per cent observed across the 32 per
 
 \begin{figure}
 \captionwithunits{Cost overruns are likely to be higher than reported\label{fig:cost-overruns-are-likely-to-be-higher-than-reported}}
-{Average cost overrun rates as a proportion of initial costs, by project stage}
+{Average cost overrun rates as a proportion of initial costs by project stage, per cent of initial project cost}
 
 \includegraphics[page=5]{atlas/Charts_CO}
 
 \noteswithsource{Australian transport projects completed between 2001 and 2015. %
-All cost overrun estimates contained elsewhere in this report have been estimated under the assumption that no overrun occurred where not observed directly -- that is, the bottom line on this graph.}%
+All cost overrun estimates contained elsewhere in this report have been estimated under the assumption that no overrun occurred where not observed directly -- that is, the bottom line on this graph. Please see \Vref{methodological-appendix} for further details.}%
 {Investment Monitor; Grattan analysis.}
 \end{figure}
 
@@ -746,7 +746,7 @@ The Productivity Commission's finding was based upon the  Western Australian Aud
 
 
 \begin{figure}
-\captionwithunits{Most cost overruns were not attributable to substantive scope changes\label{fig:most-cost-overruns-were-not-attrib-to-scope-changes}}
+\captionwithunits{Most cost overruns are not attributable to substantive scope changes\label{fig:most-cost-overruns-were-not-attrib-to-scope-changes}}
 {Proportion of cost overruns attributable to scope change, per cent}
 
 \includegraphics{atlas/PieChart}
@@ -813,7 +813,7 @@ There were design enhancements, including an extra \$40\,million to fund a chang
 But even reducing the final cost by 20 per cent (to account for the extended road length) and subtracting \$40\,million from the final estimate (to exclude the additions) leaves a cost of around \$500\,million to build the originally specified road – 368 per cent higher than the initial cost estimate.
 
 \begin{figure}[H]
- \captionwithunits{Project cost estimates\label{fig:CS_Forrest}}{millions of dollars}
+ \captionwithunits{Project cost estimates\label{fig:CS_Forrest}}{Millions of dollars}
  \includegraphics[page=2]{atlas/CaseStudies.pdf}
 \end{figure}
 
@@ -850,7 +850,7 @@ Over the past 15 years, 74 per cent of the total value of cost overruns is expla
 \captionwithunits{The projects with early initial cost announcements account for most of the value of cost overruns\label{fig:projects-with-early-initial-cost-announced-accont-for-most-of-the-value-of-cost-overruns}}%
 {Per cent}
 \includegraphics[page=7]{atlas/Charts_CO}
-\noteswithsource{Australian transport projects completed between 2001 and 2015}
+\noteswithsource{Australian transport projects completed between 2001 and 2015.}
 {Investment Monitor; Grattan analysis.}
 \end{figure}
 
@@ -887,7 +887,7 @@ Yet the project was not confirmed until 2009, when a contract was awarded for \$
 Savings of \$6.7 million were made during the construction period, and the project was declared to have come in ``under budget''\footcite{RuralandRegionalAffairs2014} when it was completed in 2011,\footcite{NorthernStar2011ThroughTrafficToUseNewBypass} six months after the contracted completion date,\footcite{ABCNews2009AlstonvilleBypassFundsAnnounced} five years after the promised completion date, and nine years after the first commitment.
 
 \begin{figure}[H]
- \captionwithunits{Project cost estimates\label{fig:CS_Alstonville}}{millions of dollars}
+ \captionwithunits{Project cost estimates\label{fig:CS_Alstonville}}{Millions of dollars}
  \includegraphics[page=3]{atlas/CaseStudies.pdf}
 \end{figure}
 
@@ -985,7 +985,7 @@ The project was completed in 2014 for \$1678~million.%
 While the final benefit cost ratio has not been published, these comments from politicians reveal the difficulty governments experience in reneging on commitments made very early in a project’s life, even after the facts of the project change significantly.
 
 \begin{figure}[H]
- \captionwithunits{Project cost estimates, Hunter Expressway\label{fig:CS_Hunter}}{millions of dollars}
+ \captionwithunits{Project cost estimates, Hunter Expressway\label{fig:CS_Hunter}}{Millions of dollars}
  \includegraphics[page=5]{atlas/CaseStudies.pdf}
 \end{figure}
 
@@ -1171,7 +1171,7 @@ These early and middle phase overruns could be used as a signal to actively reap
 \captionwithunits{A third of cost overruns occur prior to budget commitments\label{fig:cost-overruns-by-project-stage}}%
 {Cost overruns by project stage, per cent}
 \includegraphics[page=10]{atlas/Charts_CO}
-\noteswithsource{Australian transport projects, completed between 2001 and 2015.}{Investment Monitor; Grattan analysis}
+\noteswithsource{Australian transport projects, completed between 2001 and 2015.}{Investment Monitor; Grattan analysis.}
 \end{figure}
 
 The following two sections identify why it is important that projects' investment merits are reappraised after early cost overruns, and the evidence that Australia's project appraisal processes could be better.
@@ -1244,8 +1244,8 @@ Even those announced before a formal government funding commitment are usually c
 {Percentage of projects cancelled at each project stage}
 \includegraphics[page=11]{atlas/Charts_CO}
 
-\noteswithsource{Australian transport projects completed between 2001 and 2015}%
-{Investment Monitor; Grattan analysis}
+\noteswithsource{Australian transport projects completed between 2001 and 2015.}%
+{Investment Monitor; Grattan analysis.}
 \end{figure}
 
 
@@ -1302,7 +1302,7 @@ Moreover, these overruns are not offset by underruns, as cost estimation guideli
 
 \includegraphics[page=12]{atlas/Charts_CO.pdf}
 
-\noteswithsource{The assumed prevalence of cost overruns is inferred from the common representation of cost risk as symmetrically distributed in cost estimation guidance (see \Vref{distributional-analysis} for a discussion  of the sources underpinning this portrayal of risk management guidelines' assumed distribution of cost overruns), and the assumption that budget costs are P75 - P90 costs, which implies that no more than 25 per cent of projects being expected to experience cost overruns.}{Australian risk management guidelines listed in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} and Investment Monitor; Grattan analysis}
+\noteswithsource{The assumed prevalence of cost overruns is inferred from the common representation of cost risk as symmetrically distributed in cost estimation guidance (see \Vref{distributional-analysis} for a discussion  of the sources underpinning this portrayal of risk management guidelines' assumed distribution of cost overruns), and the assumption that budget costs are P75 - P90 costs, which implies that no more than 25 per cent of projects being expected to experience cost overruns.}{Australian risk management guidelines listed in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} and Investment Monitor; Grattan analysis.}
 \end{figure}
 
 Although it is not possible to perfectly predict the costs of any individual project, where cost estimates are wrong on average, there is clearly scope to improve.
@@ -1348,8 +1348,8 @@ In fact, a 10 per cent increase in a project's size (measured by cost estimate w
 \includegraphics[page=13]{atlas/Charts_CO.pdf}
 
 \noteswithsource{Australian transport projects completed between 2001 and 2015.
-Project size is defined by project value at the commencement of construction.}
-{Investment Monitor; Grattan analysis}
+Project size is defined by project value at the commencement of construction, \$2016.}
+{Investment Monitor; Grattan analysis.}
 \end{figure}
 
 Given that project size is such a clear predictor of the size of cost overruns, cost overruns could be reduced by routinely amending the cost estimates of large projects so that they are more conservative.
@@ -1387,8 +1387,8 @@ Cost overruns are larger for road projects during the planning stage, when road 
 {Average magnitude of cost overruns on Australian transport infrastructure projects completed between 2001 and 2015 by project mode}
 \includegraphics[page=14]{atlas/Charts_CO.pdf}
 
-\noteswithsource{Australian transport projects completed between 2001 and 2015}
-{Investment Monitor; Grattan analysis}
+\noteswithsource{Australian transport projects completed between 2001 and 2015.}
+{Investment Monitor; Grattan analysis.}
 \end{figure}
 
 These differences in the size and timing of cost overruns by project mode illustrate another opportunity to improve cost estimates.
@@ -1442,7 +1442,7 @@ Yet they are inconsistent in terms of which tools they recommend and in how they
 \includegraphics[page=15]{atlas/Charts_CO.pdf}
 
 \noteswithsource{Australian risk manangement guidelines, as listed in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}. Prevalence rates were calculated over the subsample of each of these guidelines which provided quantitative risk measurement guidance.}%
-{Australian risk management guidelines references in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}; Investment Monitor; Grattan analysis}
+{Australian risk management guidelines references in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}; Investment Monitor; Grattan analysis.}
 \end{figure}
 
 A project's expected value is the most obvious gap in cost estimation guidance.
@@ -1562,7 +1562,7 @@ Canberra Light Rail & ACT & \possibleTextDollar759\dz & \possibleTextDollar806\d
 \midrule 
 \multicolumn{4}{r}{Average difference of above estimates}    & 9.2\%\tabularnewline[1.245ex]
 %\cmidrule(lr){3-5}
-\multicolumn{4}{r}{\textbf{Average actual difference across all projects completed in the  past 15 years}} & \textbf{21.0\% \tabularnewline%[1.245ex]
+\multicolumn{4}{r}{\textbf{Average actual difference across all projects completed in the  past 15 years}} & \textbf{21.0\%} \tabularnewline%[1.245ex]
 \bottomrule
 \noteswithsource{Please see \Vref{expected-difference-between-p50-and-p90-costs} for details.}{\textcites{Government2016MelbourneMetroBusiness}{Government2015WesternDistributor}{SGS2016WestConnexreview}{Bill2009NationBuildingProgramAmendment}{InlandRailBusinessCase}{CanberraLightRailBusinessCase}{PrincesHighwayBusinessCase}{MainRoadStAlbansLevelCrossingBusinessCase}{BruceHighwayBusinessCase}{M1PacificHighwayBusinessCase}{MitchellFreewayBusinessCase}{NorthWestCoastalHighwayBusinessCase}}
 \end{tabularx}
@@ -1685,8 +1685,8 @@ By contrast, pooling contingencies from a portfolio of projects is cheaper, for 
 
 \includegraphics[page=17]{atlas/Charts_CO.pdf}
 
-\noteswithsource{Australian transport projects completed between 2001 and 2015}%
-{Investment Monitor; Grattan analysis}
+\noteswithsource{Australian transport projects completed between 2001 and 2015.}%
+{Investment Monitor; Grattan analysis.}
 \end{figure}
  
 \Vref{fig:value-contingencies-req-to-cover--} illustrates the difference between the contingency funds that would have been needed on average for projects valued at \$20 million or more and planned or built over the past 15 years, according to whether the contingency was set for an individual project or for a whole portfolio.
@@ -1801,7 +1801,7 @@ There are over fifty sets of guidelines outlining required approaches to risk ma
 \includegraphics[page=1]{atlas/AppendixCharts}
 
 \noteswithsource{}
-{See \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} for the list of guidelines underpinning each rating; Grattan analysis}
+{See \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} for the list of guidelines underpinning each rating; Grattan analysis.}
 \end{figure}
 
 \Vref{fig:quality-of-risk-management-guidance-chevrons} provides a high level summary of the quality of risk guidance across Australian jurisdictions for each of the aforementioned components of risk measurement. It identifies that the provided guidance regarding risk minimisation is generally of a far higher standard than that of risk measurement and ongoing risk monitoring. This is aligned with the nature of Australia’s problem with cost overruns: most projects finish on budget, but the huge costs of uncommon events are poorly anticipated and accounted for.
@@ -2061,7 +2061,7 @@ Perhaps the most troubling shortcoming of Australia’s current risk measurement
 \captionwithunits{No state provides consistently provides sufficient information for high quality risk measurement}{Yellow = approach is recommended\\ Orange = approach is recommended, but with insufficient information to be properly implemented\\ Red = approach is not recommended}
 \label{fig:sufficient-information-table}
 \includegraphics[page=2]{atlas/AppendixCharts}
-\source{See \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}; Grattan analysis}
+\source{See \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}; Grattan analysis.}
 \end{figure}
 
 \Vref{fig:sufficient-information-table} shows that expected value is the only approach which is consistently recommended with sufficient information to be implemented, and this is largely because calculation of the expected value of project risks is typically entirely based on project-specific information. 
@@ -2281,7 +2281,7 @@ As discussed in \Vref{cost-overruns-may-be-even-bigger-than-we-claim}, a manual 
 \captionwithunits{Cost overruns are likely to be higher than reported\label{fig:appendix:cost-overruns-are-likely-to-be-higher-than-reported}}
 {Average cost overrun rates as a proportion of initial costs, by project stage}
 \includegraphics[page=7]{atlas/AppendixCharts.pdf}
-\noteswithsource{Australian transport projects completed between 2001 and 2015}%
+\noteswithsource{Australian transport projects completed between 2001 and 2015.}%
 {Investment Monitor; Grattan analysis.}
 \end{figure}
 
