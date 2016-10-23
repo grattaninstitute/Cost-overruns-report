@@ -742,5 +742,10 @@ top=2.70cm, bottom=2.65cm,
 \twocolumn%
 }
 
-
+\newcommand{\oneraggedpage}{\let\mytextbottom\@textbottom
+  \let\mytexttop\@texttop
+  \raggedbottom
+  \afterpage{%
+  \global\let\@textbottom\mytextbottom
+  \global\let\@texttop\mytexttop}}
 

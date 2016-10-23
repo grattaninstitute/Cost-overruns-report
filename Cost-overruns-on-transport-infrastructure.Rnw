@@ -555,6 +555,9 @@ The Commonwealth should enable and facilitate better public understanding of inf
   \item requiring the Productivity Commission to publish reliability ratings of all transport infrastructure business cases within one month of Infrastructure Australia publishing them.
 \end{enumerate}
 
+
+\eject
+
 \subsubsection*{Recommendation 3: Publish post-completion data}
 
 To enable learning from past experience, and to improve accountability:
@@ -568,9 +571,13 @@ Reports should detail any scope changes and their justification, agreed and actu
   \item The Council of Australian Governments should add a new category of infrastructure services to the terms of reference for the annual Report on Government Services, produced by the Productivity Commission.
 \end{enumerate}
 
+
+
 \subsubsection*{Recommendation 4: Special arrangements for big projects}
 
-When the estimated construction cost to that jurisdiction is \$1 billion or more, Commonwealth, state or territory governments should be required to introduce standalone legislation for any transport infrastructure.
+When the estimated construction cost to that jurisdiction is \$1 billion or more, Commonwealth, state or territory governments should be required to introduce standalone legislation for any transport infrastructure. \oneraggedpage
+
+\pagebreak
 
 \subsubsection*{Recommendation 5: Improve risk measurement guidance}
 
