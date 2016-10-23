@@ -842,7 +842,7 @@ History shows that projects with costs announced prior to a formal budget commit
 Over the past 15 years, 74 per cent of the total value of cost overruns is explained by the 32 per cent of projects with early cost announcements (see \Vref{fig:projects-with-early-initial-cost-announced-accont-for-most-of-the-value-of-cost-overruns}).
 
 \begin{figure}
-\captionwithunits{The projects with early initial cost announced account for most of the value of cost overruns\label{fig:projects-with-early-initial-cost-announced-accont-for-most-of-the-value-of-cost-overruns}}%
+\captionwithunits{The projects with early initial cost announcements account for most of the value of cost overruns\label{fig:projects-with-early-initial-cost-announced-accont-for-most-of-the-value-of-cost-overruns}}%
 {Per cent}
 \includegraphics[page=7]{atlas/Charts_CO}
 \noteswithsource{Australian transport projects completed between 2001 and 2015}
