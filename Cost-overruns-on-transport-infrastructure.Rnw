@@ -1662,8 +1662,7 @@ This is problematic because whether or not a project runs over budget is only a 
 What governments should really worry about is the cost of such overruns.
 All projects overrunning by a tiny amount is much less troubling than a few blowing out by vast sums.
 
-The lack of data on project outcomes encourages this focus on the rate of cost overruns.
-It is easy to claim how many projects came in on budget when there is not much data, rather than the magnitude of any overruns that did occur.
+The lack of data on project outcomes encourages this focus on the rate of cost overruns. This is because it is easy to count how many projects came in on budget when there is not much data, but hard to uncover the average amount by which projects overran their budgets.
 
 A more technical way of putting this is that current practice has encouraged the folly of managing the \emph{median} cost overrun rather than the \emph{mean}.
 While the median and mean are often one and the same, this is not the case for cost outcomes because the distribution of cost outcomes is extremely asymmetric -- that is, overruns are much more likely and much bigger than underruns.
@@ -1682,7 +1681,7 @@ The costs of cost overruns could be reduced by managing contingency funds in a m
 
 A project's contingency fund is a sum of money from the project's operating budget that is set aside for exceptional circumstances.
 The idea is that the contingency is there to be called upon if needed, but if it is not needed, it should be kept separate and used at some point on another infrastructure project that does need it.
-Most projects should not need to use their contingencies, but some inevitably will.
+Most projects should not need to use their contingencies, but, inevitably, some  will.
 
 In most jurisdictions, some or all of a project's contingency funds are held within the managing agency, often by the project manager.
 But managing contingency funds at the project level in this way is far more expensive than managing them at the portfolio level.
@@ -1692,7 +1691,7 @@ By contrast, pooling contingencies from a portfolio of projects is cheaper, for 
 
 \begin{figure}
 \captionwithunits{Small contingencies can achieve a lot when they are managed at the portfolio level\label{fig:value-contingencies-req-to-cover--}}
-{Value of the contingencies required to ensure that projects  90 per cent of the cost overruns that occur after a formal budget commitment, under different contingency management schemes}
+{Value of the contingencies required to ensure that individual projects are expected to finish within initial budget commitments with 90 per cent probability, and that 90 per cent of projects finish within initial budget commitments}
 
 \includegraphics[page=17]{atlas/Charts_CO.pdf}
 
