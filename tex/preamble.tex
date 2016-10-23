@@ -2,6 +2,8 @@
 
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 \newcolumntype{Z}{>{$}r<{$}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 \newcommand{\dz}{} %% for alignment in tables (poor man's siunitx)
 \newcommand{\possibleTextDollar}{}  % for table of projects
 
@@ -14,6 +16,7 @@
 \newcommand*{\N}{\mathbb{N}}
 
 \newcommand{\mccl}[1]{\multicolumn{2}{l}{#1}}
+\newcommand{\topicFormat}[1]{\multirow[t]{3}{=}{\bfseries #1}}
 
 %% Patch for Issue #76 -- ibids not in mdframed
 \makeatletter
@@ -27,5 +30,15 @@
 \makeatother
 
 \AtBeginEnvironment{quote}{\small\justifying}
+
+\usepackage{bbding}
+\newlength{\PositionColumnWidth}
+\setlength{\PositionColumnWidth}{0.05\textwidth}
+
+\newcommand*{\BoldX}{\parbox[c]{0.9\PositionColumnWidth}{\centering\textcolor{black}{\XSolidBold}}}
+\newcommand*{\BoldTick}{\parbox[c]{0.9\PositionColumnWidth}{\centering\textcolor{black}{\CheckmarkBold}}}
+\newcommand*{\GreyTick}{\parbox[c]{0.9\PositionColumnWidth}{\centering\textcolor{theGrey}{\CheckmarkBold}}}
+
+\newcommand*{\eg}{\emph{e.g.}}
 
 

@@ -1974,10 +1974,11 @@ Assessments of project risks can be considered:
   \textbf{comprehensive} if known, unknown, moderate and extreme risks are all accounted for. 
 \end{itemize}
 
-\begin{table}
-\caption{Requirements for complete risk measurement}\label{tbl:requirements-for-complete-risk-measurement}
-.
-\end{table}
+\begin{table*}
+\captionwithunits{Complete approaches to risk measurement satisfy all the conditions for reliability and comprehensiveness by using a combination of tools\label{tbl:requirements-for-complete-risk-measurement}}%
+{Attributes of each risk management tool, where \BoldTick\  indicates that a tool can be used satisfy the criteria, \GreyTick\ indicates that a tool can be used to get part way towards the criteria and {\BoldX}\  indicates that a tool cannot be used to achieve the criteria.}
+\input{tex/tbl-complete-approaches-to-risk-management}
+\end{table*}
 
 \begin{table}
 \caption{Completeness of key guidelines}\label{tbl:completeness-of-key-guidelines}
@@ -2168,7 +2169,7 @@ This appendix, and the conclusions of the report that are founded upon its analy
 \begin{table}
 \caption{Reviewed risk management guidelines}
 \label{tab:risk-management-guidlines}
-.
+\input{tex/tbl-reviewed-risk-management-guidelines}
 \end{table}
 
 \begin{table*}
