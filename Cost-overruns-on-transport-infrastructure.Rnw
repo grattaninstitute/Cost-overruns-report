@@ -654,7 +654,7 @@ The drawback with small samples is that their findings may be less representativ
 \captionwithunits{This report analyses over nine times more Australian projects than previous studies\label{fig:this-report-analyses-9-times-more-projects-than-previous-studies}}%
 {Sample sizes of studies into cost overruns on completed Australian transport infrastructure projects}
 \includegraphics[page=3]{atlas/Charts_CO}
-\source{Cited studies and Investment Monitor; Grattan analysis.}
+\source{Cited studies and Investment Monitor; Grattan analysis.} 
 \end{figure}
 
 The findings of these small studies present a mixed view. Two key studies in 2007 and 2008 of infrastructure projects valued at more than \$20~million found overruns ranging from 12 to 35 per cent\footcite[][5]{Group2007PerformancePPPsTraditional} from formal funding commitment to completion and 24 to 52 per cent\footnote{\textcite[][15]{Duffield2008ReportperformancePPP}. Costs over the full project life mean originally announced to actual final costs.} over the full project life. Another study of 58 projects found an average 13 per cent overrun.%
