@@ -651,7 +651,7 @@ A small number of researchers and state auditors-general have analysed aspects o
 The drawback with small samples is that their findings may be less representative, and so policymakers cannot rely upon their findings as much as they can with larger or more comprehensive studies.
 
 \begin{figure}
-\captionwithunits{This report analyses upwards of nine times more Australian projects than previous studies\label{fig:this-report-analyses-9-times-more-projects-than-previous-studies}}%
+\captionwithunits{This report analyses over nine times more Australian projects than previous studies\label{fig:this-report-analyses-9-times-more-projects-than-previous-studies}}%
 {Sample sizes of studies into cost overruns on Australian transport infrastructure projects}
 \includegraphics[page=3]{atlas/Charts_CO}
 \source{Cited studies and Deloitte Investment Monitor, Grattan analysis.}
@@ -712,8 +712,8 @@ This prevalence rate is comparable to the 51\% observed across the 32\% of proje
 
 \includegraphics[page=5]{atlas/Charts_CO}
 
-\noteswithsource{All cost overrun estimates contained elsewhere in this report have been estimated under the assumption that no overrun occurred where not observed directly, which is the illustrated by the lower bound illustrated in this graph.
-Australian transport projects completed between 2001 and 2015.}
+\noteswithsource{Australian transport projects completed between 2001 and 2015. %
+All cost overrun estimates contained elsewhere in this report have been estimated under the assumption that no overrun occurred where not observed directly, which is the illustrated by the lower bound illustrated in this graph.}%
 {Deloitte Investment Monitor, Grattan analysis.}
 \end{figure}
 
