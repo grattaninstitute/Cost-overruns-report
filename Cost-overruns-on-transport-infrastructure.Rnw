@@ -955,7 +955,7 @@ For example:
 \includegraphics[page=9]{atlas/Charts_CO}
 
 \noteswithsource{Includes projects where a specific dollar amount could be discerned from campaign material or, in the case of the Coalition, from the 2016--17 budget papers.
-Excludes projects for which construction has already commenced.}
+Excludes projects for which construction had commenced by June 2016.}
 {\textcite{Liberal2016Policy}; \textcite{ALP2016Policy}; \textcite{Greens2016Policy}; \textcite{Treasury2016CommonwealthBudgetPapers} \textcite{Treasury2014CommonwealthBudgetPapers}; \textcite{InfrastructureAustralia2016}; Grattan analysis.}
 \end{figure}
 
@@ -1824,7 +1824,7 @@ There are over fifty sets of guidelines outlining required approaches to risk ma
 \vspace*{2pt}
 \includegraphics[page=1]{atlas/AppendixCharts}
 
-\source{See \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} for the list of guidelines underpinning each rating; Grattan analysis.}
+\noteswithsource{See \Vref{tab:risk-management-guidlines} for the guidelines rated and \Vref{tab:criteria} for the criteria used to rate them.}{Guidelines listed in \Vref{tbl:list-of-guidelines}; Grattan analysis.}
 \end{figure}
 
 \Vref{fig:quality-of-risk-management-guidance-chevrons} provides a high level summary of the quality of risk guidance across Australian jurisdictions for each of the aforementioned components of risk measurement. It identifies that the provided guidance regarding risk minimisation is generally of a far higher standard than that of risk measurement and ongoing risk monitoring. This is aligned with the nature of Australia’s problem with cost overruns: most projects finish on budget, but the huge costs of uncommon events are poorly anticipated and accounted for.
@@ -2177,6 +2177,55 @@ For this reason, it would be desirable for all states to adopt a stringent pract
 \section{Reviewed Australian risk management guidelines \label{sec:Reviewed-Australian-risk-measurement-guidelines}}
 This appendix, and the conclusions of the report that are founded upon its analysis, are based upon a thorough review of all the key documentation on cost estimation and risk management which we could identify as publicly available. \Vref{tbl:list-of-guidelines} lists the guidelines reviewed. 
 
+The high level review of the quality of risk management guidelines presented as  \Cref{fig:quality-of-risk-management-guidance-chevrons} is based on the criteria listed in \Vref{tab:criteria}. The guidelines which had most bearing on the rating allocated for each component of risk management by state are listed in \Vref{tab:risk-management-guidlines}. These guidelines are those that were perceived to go the furthest towards satisfying the ratings’ criteria, or were the most conspicuous examples of the jurisdictions failure to do~so.
+
+\onecolumn
+<<cleanse_owains_txt>>=
+cleanse_owains_txt <- function(x){
+  x
+}
+@
+
+<<owain_addtorow>>=
+owain_addtorow          <- list()
+owain_addtorow$pos      <- list()
+owain_addtorow$pos[[1]] <- c(0)
+owain_addtorow$command  <- c(paste("\\midrule \n",
+                                   "\\endhead \n",
+                                   "& & &\\multicolumn{1}{r}{\\footnotesize Continued on next page} \n",
+                                   "\\endfoot \n",
+                                   "\\endlastfoot \n",sep=""))
+@
+
+<<owain-reference-table, eval=FALSE>>=
+read_excel("data/Owain-Guidelines-table.xlsx") %>%
+  filter(complete.cases(.)) %>%
+  select(Coverage, Agency, Guideline) %>% 
+  # Abbreviate States
+  mutate(Agency = gsub("^South Australian", "SA", 
+                       gsub("^Western Australian", "WA", Agency))) %>%
+  mutate(Coverage = factor(Coverage, levels = unique(.$Coverage), ordered = TRUE)) %>%
+  arrange(Coverage, Agency) %>%
+  mutate_each(funs(omit_repeated)) %>%
+  mutate(`\\phantom{.}` = if_else(!is.na(Coverage) & Coverage != first(Coverage), 
+                                  "&\\phantom{.}\\\\[-6pt]", 
+                                  if_else(!is.na(Agency) & Agency != first(Agency), 
+                                          "&\\phantom{.}\\\\[-9pt]",
+                                          ""))) %>%
+  select(`\\phantom{.}`, Coverage, Agency, Guideline) %>%
+  {suppressWarnings(xtable(x = ., align = "lQlll"))} %>%
+  print.xtable(tabular.environment = "longtable", 
+               sanitize.text.function = cleanse_owains_txt, 
+               booktabs = TRUE, 
+               add.to.row = owain_addtorow,
+               floating = FALSE, 
+               include.rownames = FALSE)
+  
+@
+\newcolumntype{Q}{@{}l@{}}
+\LTXtable{1.0\textwidth}{tex/owains-longtable}
+\twocolumn
+
 \begin{table*}
 \caption{Key risk management guidelines underpinning the ratings allocated in \Vref{fig:quality-of-risk-management-guidance-chevrons}}
 \label{tab:risk-management-guidlines}
@@ -2189,7 +2238,7 @@ This appendix, and the conclusions of the report that are founded upon its analy
 \input{tex/tbl-appendix-criteria-underpinning-the-ratings}
 \end{table*}
 
-The high level review of the quality of risk management guidelines presented as  \Cref{fig:quality-of-risk-management-guidance-chevrons} is based on the criteria listed in \Vref{tab:criteria}. The guidelines which had most bearing on the rating allocated for each component of risk management by state are listed in \Vref{tab:risk-management-guidlines}. These guidelines are those that were perceived to go the furthest towards satisfying the ratings’ criteria, or were the most conspicuous examples of the jurisdictions failure to do~so.
+
 
 
 
@@ -2619,52 +2668,7 @@ digit1_01_TeX <- function(x){
 @
 
 
-\onecolumn
-<<cleanse_owains_txt>>=
-cleanse_owains_txt <- function(x){
-  x
-}
-@
 
-<<owain_addtorow>>=
-owain_addtorow          <- list()
-owain_addtorow$pos      <- list()
-owain_addtorow$pos[[1]] <- c(0)
-owain_addtorow$command  <- c(paste("\\midrule \n",
-                                   "\\endhead \n",
-                                   "& & &\\multicolumn{1}{r}{\\footnotesize Continued on next page} \n",
-                                   "\\endfoot \n",
-                                   "\\endlastfoot \n",sep=""))
-@
-
-<<owain-reference-table, eval=FALSE>>=
-read_excel("data/Owain-Guidelines-table.xlsx") %>%
-  filter(complete.cases(.)) %>%
-  select(Coverage, Agency, Guideline) %>% 
-  # Abbreviate States
-  mutate(Agency = gsub("^South Australian", "SA", 
-                       gsub("^Western Australian", "WA", Agency))) %>%
-  mutate(Coverage = factor(Coverage, levels = unique(.$Coverage), ordered = TRUE)) %>%
-  arrange(Coverage, Agency) %>%
-  mutate_each(funs(omit_repeated)) %>%
-  mutate(`\\phantom{.}` = if_else(!is.na(Coverage) & Coverage != first(Coverage), 
-                                  "&\\phantom{.}\\\\[-6pt]", 
-                                  if_else(!is.na(Agency) & Agency != first(Agency), 
-                                          "&\\phantom{.}\\\\[-9pt]",
-                                          ""))) %>%
-  select(`\\phantom{.}`, Coverage, Agency, Guideline) %>%
-  {suppressWarnings(xtable(x = ., align = "lQlll"))} %>%
-  print.xtable(tabular.environment = "longtable", 
-               sanitize.text.function = cleanse_owains_txt, 
-               booktabs = TRUE, 
-               add.to.row = owain_addtorow,
-               floating = FALSE, 
-               include.rownames = FALSE)
-  
-@
-\newcolumntype{Q}{@{}l@{}}
-\LTXtable{1.0\textwidth}{tex/owains-longtable}
-\twocolumn
 
 
 
