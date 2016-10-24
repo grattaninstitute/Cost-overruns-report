@@ -821,7 +821,7 @@ There were design enhancements, including an extra \$40\,million to fund a chang
 But even reducing the final cost by 20 per cent (to account for the extended road length) and subtracting \$40\,million from the final estimate (to exclude the additions) leaves a cost of around \$500\,million to build the originally specified road – 368 per cent higher than the initial cost estimate.
 
 \begin{figure}[H]
- \captionwithunits{Project cost estimates\label{fig:CS_Forrest}}{Millions of dollars}
+ \captionwithunits{Project cost estimates, Forrest Highway\label{fig:CS_Forrest}}{Millions of dollars}
  \includegraphics[page=2]{atlas/CaseStudies.pdf}
 \end{figure}
 
@@ -906,7 +906,7 @@ Yet the project was not confirmed until 2009, when a contract was awarded for \$
 Savings of \$6.7 million were made during the construction period, and the project was declared to have come in ``under budget''\footcite{RuralandRegionalAffairs2014} when it was completed in 2011,\footcite{NorthernStar2011ThroughTrafficToUseNewBypass} six months after the contracted completion date,\footcite{ABCNews2009AlstonvilleBypassFundsAnnounced} five years after the promised completion date, and nine years after the first commitment.
 
 \begin{figure}[H]
- \captionwithunits{Project cost estimates\label{fig:CS_Alstonville}}{Millions of dollars}
+ \captionwithunits{Project cost estimates, Alstonville bypass\label{fig:CS_Alstonville}}{Millions of dollars}
  \includegraphics[page=3]{atlas/CaseStudies.pdf}
 \end{figure}
 
