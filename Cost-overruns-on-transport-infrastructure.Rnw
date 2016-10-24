@@ -497,7 +497,7 @@ prop_projects_before_committed_which_are_completed <-
 \begin{overview}
 Over the past 15 years, Australian governments have spent \$28~billion more on transport infrastructure than they told taxpayers they would.
 The cost overruns amounted to nearly a quarter of total project budgets.
-Western Australia’s Forrest Highway between Perth and Bunbury cost nearly five times, and New South Wales’ Hunter Expressway cost over four times, the amounts initially promised.
+Both Western Australia's Forrest Highway between Perth and Bunbury and New South Wales' Hunter Expressway cost over five times the amounts initially promised.
 Yet despite their sometimes staggering size, cost overruns attract little public attention.
 There is little interest in understanding and fixing the underlying causes. 
 
