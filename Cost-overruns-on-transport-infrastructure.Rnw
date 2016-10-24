@@ -528,7 +528,7 @@ Producing more reliable cost estimates is vital.
 Current cost estimation guidance is inconsistent, omits valuable tools, and can’t draw on previous projects because we don’t collect the data.
 Governments set aside large contingency funds for every project, and on many projects this is ultimately spent on add-ons that are poor value for money.
 
-Even today, multi-billion dollar projects such as Melbourne’s Western Distributor, Sydney’s WestConnex and the Inland Rail between Melbourne and Brisbane have much less provision for the worst case than experience would lead us to expect.
+Even today, multi-billion dollar projects such as Melbourne’s Western Distributor, Sydney’s WestConnex and the Inland Rail from Melbourne to Brisbane have much less provision for the worst case than experience would suggest is prudent.
 We must start to learn from history.
 Our infrastructure systems should promise what is worth having, and then deliver what is promised.
 \end{overview}
