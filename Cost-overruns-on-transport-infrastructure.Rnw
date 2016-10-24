@@ -970,7 +970,7 @@ The proportions of the promised money that were for projects that had been asses
 
 This pattern of promising poor quality or under-developed project ideas in election campaigns is troubling because politicians find it very hard to back down from promises, even when it becomes apparent that the original assumptions about the project were not well founded (see \Vref{box:hunter} on the Hunter Expressway).
 
-\begin{bigbox*}{Case study -- Hunter Expressway -- more than 350 per cent over budget}{box:hunter}
+\begin{bigbox*}{Case study -- Hunter Expressway -- more than 400 per cent over budget}{box:hunter}
 
 \subsubsection*{Government reluctance to change course when facts change}
 
@@ -996,7 +996,7 @@ While the final benefit cost ratio has not been published, these comments from p
 
 \begin{figure}[H]
  \captionwithunits{Project cost estimates, Hunter Expressway\label{fig:CS_Hunter}}{Millions of dollars}
- \includegraphics[page=5]{atlas/CaseStudies.pdf}
+ \includegraphics{atlas/HunterExpresswayAfterPublication.pdf}
 \end{figure}
 
 \end{bigbox*}
