@@ -1389,7 +1389,7 @@ When the estimated construction cost to that jurisdiction is \$1 billion or more
 \begin{figure}
 \captionwithunits{Both road and rail projects suffer from cost overruns, but at different stages
 \label{fig:cost-overruns-by-proj-stage-mode}}
-{Average magnitude of cost overruns on Australian transport infrastructure projects completed between 2001 and 2015 by project mode}
+{Average magnitude of cost overruns as a proportion of initial project costs on Australian transport infrastructure projects completed between 2001 and 2015 by project mode, per cent}
 \includegraphics[page=14]{atlas/Charts_CO.pdf}
 
 \noteswithsource{Australian transport projects completed between 2001 and 2015.}
