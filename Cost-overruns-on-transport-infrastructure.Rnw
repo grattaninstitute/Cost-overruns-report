@@ -525,7 +525,7 @@ Stand-alone legislation should be used for big projects to encourage bipartisans
 Once a project is completed, governments should report to the public on how it performed against the cost-benefit estimates behind the original investment decision. 
 
 Producing more reliable cost estimates is vital.
-Current cost estimation guidance is inconsistent, omits valuable tools, and can’t draw on previous projects because we don’t collect the data.
+Current cost estimation guidance is inconsistent, omits valuable tools, and can't draw on previous projects because we don’t collect the data.
 Governments set aside large contingency funds for every project, and on many projects this is ultimately spent on add-ons that are poor value for money.
 
 Even today, multi-billion dollar projects such as Melbourne’s Western Distributor, Sydney’s WestConnex and the Inland Rail from Melbourne to Brisbane have much less provision for the worst case than experience would suggest is prudent.
@@ -539,6 +539,8 @@ Our infrastructure systems should promise what is worth having, and then deliver
 \begin{Recommendations}
 \subsubsection*{Recommendation 1: Evaluate before spending}%
 Governments should not be able to commit public money to transport infrastructure until a rigorous, independent like-for-like evaluation and the underlying business case have been tabled in the state or federal parliament.
+
+\vspace{1\baselineskip}
 
 \subsubsection*{Recommendation 2: Publish evaluations of new infrastructure commitments}
 
@@ -1453,11 +1455,11 @@ There are more than 50 current guideline documents and handbooks around the coun
 The adequacy of these guidelines is reviewed in detail in \Cref{risk-appendix}.
 
 \begin{figure}[!t]
-\captionwithunits{Australia's various guidelines on risk measurement do not recommend any approach consistently\label{fig:prop-guidelines-that-reco-use-of-each-key-risk-assessment-tool}}%
-{Proportion of guidelines on quantitative risk assessment on transport infrastructure projects that recommend the use of each key risk assessment tool, per cent}
+\captionwithunits{Australia's various guidelines on transport risk measurement do not recommend any approach consistently\label{fig:prop-guidelines-that-reco-use-of-each-key-risk-assessment-tool}}%
+{Percentage of guidelines recommending each key risk assessment tool}
 \includegraphics[page=15]{atlas/Charts_CO.pdf}
 
-\noteswithsource{Australian risk management guidelines, as listed in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}. Prevalence rates were calculated over the subsample of each of these guidelines which provided quantitative risk measurement guidance.}%
+\noteswithsource{Prevalence rates were calculated over the guideline part providing quantitative risk measurement guidance.}%
 {Australian risk management guidelines references in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}; Investment Monitor; Grattan analysis.}
 \end{figure}
 
@@ -2117,7 +2119,7 @@ This is because very few guidelines\footnote{\textcite{QLDDepTransport2015Projec
 
 The observed distributions of construction project risks are actively being researched in academic circles.%
 \footnote{For example \textcite{Love2012Overrunstransportationinfrastructure}.} This research is important, as the specific probability prices estimated through Monte Carlo simulation are only as reliable as the assumptions on which they are based.
-In order to obtain reliable probability prices using a probabilistic methodology, the distributions of key, or overarching, project risks need to be reliably estimated and clearly communicated in probability pricing guidelines.,
+In order to obtain reliable probability prices using a probabilistic methodology, the distributions of key, or overarching, project risks need to be reliably estimated and clearly communicated in probability pricing guidelines.
 
 \section{Risk management}\label{risk-management}
 
