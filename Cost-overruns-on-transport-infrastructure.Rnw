@@ -511,7 +511,7 @@ Prematurely announced projects need larger cost upgrades not just early on, but 
 
 Analysing cost overruns from the first funding promise is not common practice, but it should be.
 Once politicians have announced a project, they and the public treat that announcement as a commitment.
-They are right to do so: two thirds of these projects end up being built. 
+They are right to do so: two thirds of projects end up being built. 
 
 Promising to build infrastructure for less than it finally costs makes infrastructure projects seem more attractive than they really are.
 Understating costs also makes it impossible for decision-makers to differentiate good projects from bad ones.
@@ -659,7 +659,7 @@ This section explains why each of these features of the report matter.
 This report is the first study of cost overruns in Australia that includes all 836 transport infrastructure projects valued at \$20~million or more planned or built in the past 15 years.
 
 A small number of researchers and state auditors-general have analysed aspects of this problem in recent years, but they have studied small numbers of projects (\Vref{fig:this-report-analyses-9-times-more-projects-than-previous-studies}).
-The drawback with small samples is that their findings may be less representative, and so policymakers cannot rely upon their findings as much as they can with larger or more comprehensive studies.
+The drawback of small samples is that their findings may be less representative, and so policymakers cannot rely upon their findings as much as they can with larger or more comprehensive studies.
 
 \begin{figure}
 \captionwithunits{This report analyses over nine times more Australian projects than previous studies\label{fig:this-report-analyses-9-times-more-projects-than-previous-studies}}%
@@ -715,7 +715,7 @@ Only 41 per cent of projects have no cost estimates recorded prior to constructi
 This assumption appears to be extremely conservative.
 Detailed analysis of a subset of the projects which are missing early cost data indicates that these projects experience cost overruns at approximately the same rate as projects which are not missing data on projects' early costs.%
 \footnote{Of the 51 projects investigated, 19 were missing early cost data and 37 per cent were identified to have experienced cost overruns in this early period.
-This prevalence rate is comparable to the 51 per cent observed across the 32 per cent of projects which are not missing early cost data.} Consequently, the rate of overruns presented as the upper bound of \Vref{fig:cost-overruns-are-likely-to-be-higher-than-reported} appears to be more likely than the lower bound, which underpins this report's analysis.
+This prevalence rate is comparable to the 51 per cent observed across the 32 per cent of projects which are not missing early cost data.} Consequently, the rate of overruns presented as the upper bound of \Vref{fig:cost-overruns-are-likely-to-be-higher-than-reported} appears to be more likely than the lower bound that underpins this report's analysis.
 
 \begin{figure}
 \captionwithunits{Cost overruns are likely to be even higher than we report\label{fig:cost-overruns-are-likely-to-be-higher-than-reported}}
@@ -735,7 +735,7 @@ It would be a big step forward if they did.
 
 \section{Common explanations for cost overruns are myths}\label{dispelling-myths}
 
-This report's large scale Australian analysis of project cost overruns debunks myths about infrastructure in this country.
+This report's large scale analysis of cost overruns on Australian projects debunks myths about infrastructure in this country.
 Two prominent myths are that scope changes are the main reason for cost overruns, and that Australian projects are less prone to overruns than those in other countries.
 This section explains the challenge to these two views.
 
@@ -751,7 +751,7 @@ Changes to scope are only a problem if they are not appraised on their merits as
 
 This report finds that scope changes only account for about 11 per cent of cost overruns on transport infrastructure projects (\Vref{fig:most-cost-overruns-were-not-attrib-to-scope-changes}). This conclusion is counter to what appears to be the prevailing wisdom on the causes of cost overruns on Australian transport projects, and the Productivity Commission's conclusion that ``cost overruns during delivery mainly stem from government clients changing the scope of the project.''\footcite[][29]{Commission2014PublicInfastructure} 
 
-The Productivity Commission's finding was based upon the  Western Australian Auditor-General's report on major capital projects, which found that scope changes explained the majority of cost overruns observed across 20 major projects.\footcite{WAAGMajorCapitalProjects} The Western Australian Auditor-General's finding differs our finding in that focused on cost overruns incurred only during the construction phase, and was largely driven by the substantial scope changes observed on non-transport projects, such as hospitals, schools and prisons. The finding does not appear to be readily generalisable to cost overruns incurred on transport infrastructure projects between first cost announcement and project completion. 
+The Productivity Commission's finding was based upon the  Western Australian Auditor-General's report on major capital projects, which found that scope changes explained the majority of cost overruns observed across 20 major projects.\footcite{WAAGMajorCapitalProjects} The Western Australian Auditor-General's finding differs from our finding in that focused on cost overruns incurred only during the construction phase, and was largely driven by the substantial scope changes observed on non-transport projects, such as hospitals, schools and prisons. The finding does not appear to be readily generalisable to cost overruns incurred on transport infrastructure projects over the full project life, from first cost announcement to project completion. 
 
 
 
@@ -1011,7 +1011,7 @@ There is currently no effective curb on premature announcements.
 Politicians promise projects that have not been evaluated, or they promise projects with an evaluation that is not available to the public.
 Both of these shortcomings should be fixed.
 
-Both Commonwealth and state governments commonly commit to infrastructure projects without an evaluation.
+Both Commonwealth and state governments commonly commit to infrastructure projects that have not been evaluated.
 If there is no evaluation, then politicians' claims about a project's costs and benefits -- or even when it will open -- cannot be scrutinised until much later if at all (see \Vref{box:bulahdelah} on Bulahdelah bypass).
 
 \begin{verysmallbox}{Case study -- Bulahdelah Bypass -- 111 per cent cost overrun}{box:bulahdelah}
@@ -1109,7 +1109,7 @@ But it is not.
 In the absence of such reporting for infrastructure projects, the public is not equipped to understand whether any particular infrastructure turned out to offer value for money in the terms in which it was originally promised.
 Ministers overseeing projects with significant cost overruns over time commonly end up claiming that the project came in under budget.
 Both Governments and oppositions feel free to make claims that the media and public cannot verify.
-\Vref{box:overstated-benefits} provides background on some extreme examples of overstated benefits that have come to light through legal action.
+\Vref{box:overstated-benefits} provides background on some extreme examples of overstated benefits that have come to light through legal action by shareholders.
 
 
 
@@ -1150,6 +1150,8 @@ The Brisbane Airport Link is another example of a road for which traffic volumes
 This also resulted in litigation being launched, by toll road owners Brisconnections against forecaster Arup.%
 \footcite{AFR-BrisConnections-receivers-sue-Arup-over-Brisbane-airport-link} This action was settled in 2015.%
 \footcite{IMFBentham-BrisConnections-vs-Arup-Settled-notice}
+
+Until Australian governments routinely ascertain whether projects' promised benefits have been realised, they will not be in a position to hold experts accountable for their advice as the Brisconnections shareholders have done. 
 
 
 
