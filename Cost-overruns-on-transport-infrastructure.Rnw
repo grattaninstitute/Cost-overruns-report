@@ -2221,8 +2221,6 @@ First, this report uses a time series dataset built from the archives of the Del
 Since 2001, Deloitte Access Economics has routinely screened government budgets, announcements by private companies, the media, and other publicly available data sources to produce a quarterly snapshot of expected investment plans for each sector, including transport. 
 Grattan Institute has linked the quarterly releases of the Investment Monitor from 2001 to 2015 to form a panel dataset that tracks the value and degree of commitment to all publicly announced investment projects from first announcement through to completion. 
 
-The routine 
-
 The analysis also relies on a smaller but far more detailed dataset compiled by Grattan Institute which investigates the circumstances surrounding the cost overruns on 51 of these projects.\footnote{This dataset is henceforth referred to as the Grattan dataset.} 
 This dataset has been manually collected for the express purpose of understanding the dynamics of cost overruns for transport infrastructure projects and the characteristics of affected projects. 
 
