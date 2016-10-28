@@ -1735,9 +1735,9 @@ Individual project managers may face reputational damage, however unfairly, if t
 
 For these reasons, managing all risk at the project level is unnecessarily expensive.
 Australian governments would do well to introduce more explicit requirements for contingency funds to be managed by state departments of treasury or finance.
-Even managing a substantial portion of contingencies at the project level could deliver substantial savings, while maintaining the same level of risk coverage  (see \Vref{reco:half-proj-contingency-in-portfolio-pool}).
+Even managing a substantial portion of contingencies at the project level could deliver substantial savings, while maintaining the same level of risk coverage  (\Vref{reco:half-proj-contingency-in-portfolio-pool}).
 
-\begin{recommendation}{Hold the project contingency in a portfolio pool\label{reco:half-proj-contingency-in-portfolio-pool}}
+\begin{recommendation}[H]{Hold the project contingency in a portfolio pool\label{reco:half-proj-contingency-in-portfolio-pool}}
 Central agencies should hold project contingency funds at arm’s length from project management, and formalise the conditions governing contingency drawdown. 
 \end{recommendation}
 
