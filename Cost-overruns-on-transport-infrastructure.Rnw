@@ -1456,10 +1456,10 @@ The adequacy of these guidelines is reviewed in detail in \Cref{risk-appendix}.
 
 \begin{figure}[!t]
 \captionwithunits{Australia's various guidelines on transport risk measurement do not recommend any approach consistently\label{fig:prop-guidelines-that-reco-use-of-each-key-risk-assessment-tool}}%
-{Percentage of guidelines recommending each key risk assessment tool}
+{Proportion of guidelines recommending each key risk assessment tool, per cent}
 \includegraphics[page=15]{atlas/Charts_CO.pdf}
 
-\noteswithsource{Prevalence rates were calculated over the guideline part providing quantitative risk measurement guidance.}%
+\noteswithsource{Prevalence rates were calculated over the subsample of Australian risk management guidance that provides quantitative risk measurement guidance.}%
 {Australian risk management guidelines references in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines}; Investment Monitor; Grattan analysis.}
 \end{figure}
 
