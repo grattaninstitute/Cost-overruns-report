@@ -1738,7 +1738,7 @@ Australian governments would do well to introduce more explicit requirements for
 Even managing a substantial portion of contingencies at the project level could deliver substantial savings, while maintaining the same level of risk coverage  (see \Vref{reco:half-proj-contingency-in-portfolio-pool}).
 
 \begin{recommendation}{Hold the project contingency in a portfolio pool\label{reco:half-proj-contingency-in-portfolio-pool}}
-Central agencies should hold project contingency funds at arm’s length from project management, and formalise the conditions governing contingency drawdown, to improve the cost-efficiency of risk management. 
+Central agencies should hold project contingency funds at arm’s length from project management, and formalise the conditions governing contingency drawdown. 
 \end{recommendation}
 
 
