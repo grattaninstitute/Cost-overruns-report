@@ -1814,7 +1814,7 @@ Construction projects inevitably involve a host of cost risks. The objective of 
   \end{enumerate}
 \end{enumerate}
 
-There are over fifty sets of guidelines outlining required approaches to risk management across Australian jurisdictions.\footnote{As listed in \Cref{sec:Reviewed-Australian-risk-measurement-guidelines}.} In general, these documents are very detailed and well written. However, there are substantial blind spots in the guidance provided in each jurisdiction. This has resulted in risk management guidance that varies in quality across the components of risk management.
+There are over fifty sets of guidelines outlining required approaches to risk management across Australian jurisdictions.\footnote{As listed in \Vref{tbl:list-of-guidelines}.} In general, these documents are very detailed and well written. However, there are substantial blind spots in the guidance provided in each jurisdiction. This has resulted in risk management guidance that varies in quality across the components of risk management.
 
 \begin{figure}
 \captionwithunits{The quality of risk management guidance varies\label{fig:quality-of-risk-management-guidance-chevrons}}
