@@ -1242,7 +1242,7 @@ On completion in 2012, the project came in 10 per cent lower than the contracted
 \end{bigbox*}
 
 The reduction to the transport infrastructure portfolio's return on investment caused by these distortions to investment decisions is sizable.
-If even half this reduction was avoided by switching to alternative investments when project costs skyrocket prior to construction, the benefits to taxpayers would be at least \$41 billion.%
+If even half this reduction was avoided by switching to alternative investments when project costs skyrocket prior to construction, the benefits to taxpayers would be as much as \$41 billion.%
 \footnote{This conclusion is based on the observation of an average benefit cost ratio of 2.95 across the 39 business cases for transport infrastructure published by Infrastructure Australia by the 12\textsuperscript{th} of February 2016. %
 Please see \Vref{methodological-appendix} for further details.}
 
@@ -1272,15 +1272,10 @@ Even those announced before a formal government funding commitment are usually c
 \end{figure}
 
 
-This cancellation rate seems lower than it should be.
-It is less than the proportion of projects that would be expected to have benefit cost ratios less than one, given the average magnitude of cost overruns (see \Vref{survival-analysis} for details)
-.
-The reason the cancellation rate is probably too low is that many projects with low net benefits are not being cancelled.
-Over the last 15 years, projects that incurred cost overruns were just as likely to be cancelled as those that did not.
-This either means that the project appraisal process is not being used to cancel the projects with investment merits that have been eroded by cost overruns, or that cancelled projects are cancelled because of cost overruns but these overruns are not announced -- in other words, that cost overruns are higher than reported.%
-\footnote{This argument is explained in more detail in \Vref{methodological-appendix}.} 
-Both of these interpretations suggest that too few projects are cancelled.
-
+This cancellation rate seems lower than it should be: the proportion of projects that are cancelled is less than the proportion of projects that would be expected to have benefit cost ratios less than one, given the average magnitude of cost overruns (see \Vref{survival-analysis} for details). 
+Moreover, projects that did not incur cost overruns have been just as likely to be cancelled as those that did. This suggests that the project appraisal process may not be being used to cancel the right projects.
+\footnote{It could also be the case that projects are cancelled because of cost overruns that are anticipated but never publicly announced. However, this would mean that cost overruns are even higher than we observe, and hence, that even more projects should be being cancelled.} 
+Together, these findings indicate that Australia's project appraisal process could be doing a much better job at cancelling projects when cost overruns push their costs above their benefits.
 
 The early timing of Australia's cost overruns offers a substantial and unrealised opportunity to reduce cost overruns on transport infrastructure projects.
 If more projects were to be cancelled when cost overruns eroded the projects' investment merits, the costs associated with distortions to investment planning processes could be materially reduced.
@@ -1312,7 +1307,7 @@ This is because, even though cost estimates announced prior to a budget commitme
 \chapter{How to improve cost estimation}\label{how-to-improve-cost-estimation}
 
 The previous chapter highlighted the costs to the community of cost overruns on transport infrastructure projects.
-While cost estimation on any given project is uncertain, cost estimates should on average correspond to cost outcomes.
+While cost estimates for any given project are uncertain, cost estimates should, on average, correspond to cost outcomes.
 
 But there is a substantial gap between estimated and actual costs on transport infrastructure projects over the past 15 years.
 In that period, cost estimators expected between 10 and 25 per cent of projects to exceed their budget.
@@ -1325,7 +1320,7 @@ Moreover, these overruns are not offset by underruns, as cost estimation guideli
 
 \includegraphics[page=12]{atlas/Charts_CO.pdf}
 
-\noteswithsource{The assumed prevalence of cost overruns is inferred from the common representation of cost risk as symmetrically distributed in cost estimation guidance (see \Vref{distributional-analysis} for a discussion  of the sources underpinning this portrayal of risk management guidelines' assumed distribution of cost overruns), and the assumption that budget costs are P75 - P90 costs, which implies that no more than 25 per cent of projects being expected to experience cost overruns.}{Australian risk management guidelines listed in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} and Investment Monitor; Grattan analysis.}
+\noteswithsource{See \Vref{distributional-analysis} for the analysis of Australia's risk management guidelines which underpins the prevalence of cost overruns and underruns claimed here to be assumed by risk management guidelines.}{Australian risk management guidelines listed in \Vref{sec:Reviewed-Australian-risk-measurement-guidelines} and Investment Monitor; Grattan analysis.}
 \end{figure}
 
 Although it is not possible to perfectly predict the costs of any individual project, where cost estimates are wrong on average, there is clearly scope to improve.
@@ -1413,7 +1408,7 @@ They often involve bespoke designs and complex interfaces with existing infrastr
 However, roads are less often constructed on brownfield sites with poor accessibility.%
 
 The timing of cost overruns on rail and road projects is aligned with the stages in which projects of these types are expected to be most bespoke.
-Cost overruns are larger for road projects during the planning stage, when road projects tend to be more bespoke than rail, and larger for rail projects during the construction period, when rail projects tend to be more bespoke (\Vref{fig:cost-overruns-by-proj-stage-mode}).\footnote{The observation that road projects experience larger overruns, on average, than rail projects runs counter to several key findings in the cost overruns literature (\textcites{Merewitz1973Costoverrunspublic}{Flyvbjerg2002Underestimatingcostspublic}{Lee2008Costoverruncause}). However, it should be noted that these studies only investigate cost overruns during the construction phase, where we also observe that rail projects experience higher overruns than road projects.}
+Cost overruns are larger for road projects during the planning stage, when road projects tend to be more bespoke than rail, and larger for rail projects during the construction period, when rail projects tend to be more bespoke (\Vref{fig:cost-overruns-by-proj-stage-mode}).\footnote{The observation that road projects experience larger overruns, on average, than rail projects runs counter to several key findings in the cost overruns literature (\textcites{Merewitz1973Costoverrunspublic}{Flyvbjerg2002Underestimatingcostspublic}{Lee2008Costoverruncause}). However, it should be noted that these studies only investigate cost overruns during the construction phase, where we observe that the distinction between the average magnitude of cost overruns observed on road and rail projects is extremely modest.}
 
 These differences in the size and timing of cost overruns by project mode illustrate another opportunity to improve cost estimates.
 Project proponents are always aware of their project's mode, and their project's mode provides substantial information about the project's likely cost risks.
@@ -1599,7 +1594,7 @@ The psychological tendency to believe that project outcomes will be better than 
 \footcites{Kahneman2012Thinkingfastslow}[][14]{Flyvbjerg2014Whatyoushould} Unfortunately, optimism bias is especially acute when the most money is at stake, in the larger and more complex projects where the interdependence of risks is particularly hard for experts to judge accurately.
 
 A third consequence of not knowing historical outcomes is that cost estimators lack an effective counter to `strategic misrepresentation' -- when proponents deliberately manipulate the cost estimates to make them look more favourable than they really are.\footcite[][102]{Commission2014PublicInfastructure}
-Project proponents have an incentive for strategic misrepresentation to the extent that they are judged more on how much they build than how well they manage their budget.
+Project proponents have an incentive for strategic misrepresentation to the extent that they are judged more on how much they build rather than how well they manage their budget.
 Lack of historical outcomes data makes this behaviour hard to counter.\footnote{See \textcite[][100--102]{Commission2014PublicInfastructure} for a recent discussion.} %
 
 The discrepancy between expert expectations and historical experience shows that the reliability of risk assessments on Australian transport infrastructure projects would be substantially improved by equipping risk experts with better information.
@@ -1650,7 +1645,7 @@ With many construction companies deployed on mining projects, there were often f
 Not surprisingly, Western Australia experienced larger overruns on average than those in New South Wales, Victoria and Queensland (details in \Vref{methodological-appendix}).
 
 By contrast, current economic conditions have led to more competition within the construction industry to build public infrastructure.
-Anecdotal evidence has suggested that constructors may make unfeasibly low bids when the number of available projects shrinks, as is the case in some parts of Australia at present.
+Anecdotal evidence suggests that constructors may make unfeasibly low bids when the number of available projects shrinks, as is the case in some parts of Australia at present.
 This practice would only be a concern for government if contractors pursued contract changes that were in effect claims to recoup the revenue forgone by a low bid, and if governments were unable in practice to deny these changes because of political lock-in.%
 \footcites[][500]{Love2014Understandinglandscapeoverruns}[][87--88]{Hinze1992CostOverrunsonStateofWashington} While this may occur on some projects, we do not find significant evidence of low initial bids leading to later overruns.
 
@@ -1717,8 +1712,7 @@ By contrast, pooling contingencies from a portfolio of projects is cheaper, for 
 \end{figure}
  
 \Vref{fig:value-contingencies-req-to-cover--} illustrates the difference between the contingency funds that would have been needed on average for projects valued at \$20 million or more and planned or built over the past 15 years, according to whether the contingency was set for an individual project or for a whole portfolio.
-The figure illustrates how different the results are at these extremes, both of which are designed to ensure that the average cost overrun is zero.
-In practice, the best way to manage the contingency would lie somewhere between these two extremes.
+The difference is substantial: contingency funds can achieve the same level of certainty for a third of the cost when managed at the portfolio level. 
 
 A second reason why it is more expensive to hold most or all of the contingency at the individual project level is the risk that the money is used on other things (see \Cref{box:Pacific-Motorway} on the Pacific Motorway).
 
