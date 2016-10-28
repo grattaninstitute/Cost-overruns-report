@@ -1854,7 +1854,7 @@ In this appendix we review the current practices of each state for each of these
 
 \section{Risk minimisation}\label{risk-minimisation}
 
-The most critical component of risk management is reducing project risks where possible.\footnote{Project risks include external factors, such as market conditions and industrial relations, as well as  project-specific factors, such as geotechnical conditions, cost estimation error and scope variation.} 
+The most critical component of risk management is the reduction of project risks\footnote{Project risks include external factors, such as market conditions and industrial relations, as well as  project-specific factors, such as geotechnical conditions, cost estimation error and scope variation.} where possible.
 This can be achieved by identifying and mitigating avoidable risks and reducing estimation error, as far as it is financially worthwhile to do so.
 
 While there is scope to improve estimation error in many jurisdictions, the general quality of guidance provided on risk minimisation on transport infrastructure projects is high. This is a necessary component of a high quality risk management process, but risk minimisation alone is not sufficient. 
@@ -1869,7 +1869,7 @@ Consistent use of risk matrices or like tools to identify and mitigate avoidable
 \captionwithunits{Some avoidable risks can be mitigated \label{fig:Some-avoidable-risks-can-be-mitigated}}
 {Stylized representation of the probability of cost overruns of each size, per cent}
 \includegraphics[page=3]{atlas/AppendixCharts2}
-\noteswithsource{The distribution of unavoidable risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see \Vref{methodological-appendix} for details. The distribution of avoidable and unavoidable risks has been inferred by assuming that cost overruns would be larger if no effort was made to mitigate avoidable risks. This graph's illustrative purpose is to graphically present the common wisdom that cost risks can be reduced, but not eliminated, by mitigating avoidable risks.}%
+\noteswithsource{The distribution of unavoidable risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see \Vref{methodological-appendix} for details. The distribution of avoidable risks relative to unavoidable risks has been inferred by assuming that cost overruns would be larger if no effort was made to mitigate avoidable risks. This graph's illustrative purpose is to graphically present the common wisdom that cost risks can be reduced, but not eliminated, by mitigating avoidable risks.}%
 {Investment Monitor; Grattan analysis.}
 \end{figure}
 
@@ -1880,7 +1880,7 @@ At least one set of risk management guidelines in each of Australia’s state an
 
 Some states also provide comprehensive guidance on the level of detail required for risk estimation at each stage of a project's development. 
 
-For example, the South Australian Department of Planning, Transport and \textit{Infrastructure Estimating Manual} sets out:
+For example, the South Australian Department of Planning, Transport and Infrastructure \textit{Estimating Manual} sets out:
 
 \begin{itemize}
 \item
@@ -1891,7 +1891,7 @@ For example, the South Australian Department of Planning, Transport and \textit{
   the \textbf{size of the contingency margin} which should be added to estimates at each stage.
 \end{itemize}
 
-It is important that every jurisdiction provides this level of guidance for two reasons. Firstly, the expense of arriving at more detailed cost estimates means that, where there are not clear requirements regarding the appropriate level of detail, incentives to produce insufficiently detailed cost estimates may prevail. 
+It is important that every jurisdiction provides this level of guidance for two reasons. Firstly, the expense of arriving at more detailed cost estimates means that, where there are not clear requirements regarding the appropriate level of detail, incentives to produce insufficiently detailed cost estimates will prevail. 
 
 Secondly, the different margins of error associated with different cost estimation methodologies mean that cost estimates derived using different estimation methodologies are not directly comparable. 
 
@@ -1901,7 +1901,7 @@ Providing detailed guidance on how project costs should be estimated for each le
 \captionwithunits{More projects will finish on budget when estimation error has been minimised \label{fig:Reduce-estimation-error-diagram}}
 {Stylized representation of the probability of cost overruns of each size, per cent}
 \includegraphics[page=4]{atlas/AppendixCharts2}
-\noteswithsource{The distribution of unavoidable risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see \Vref{methodological-appendix} for details. The distribution of avoidable and unavoidable risks has been inferred by assuming that cost overruns would be larger if no effort was made to mitigate avoidable risks. This graph's illustrative purpose is to graphically present the common wisdom that cost risks can be reduced, but not eliminated, by mitigating avoidable risks.}%
+\noteswithsource{The distribution of unavoidable risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see \Vref{methodological-appendix} for details. The distribution of cost overruns before estimation error has been minimised has been inferred by assuming that cost estimates will be incorrect more often under less detailed cost estimation methodologies. This graph's illustrative purpose is to graphically present the common wisdom that cost risks can be reduced, but not eliminated, by mitigating avoidable risks.}%
 {Investment Monitor; Grattan analysis.}
 \end{figure}
 
@@ -1910,7 +1910,7 @@ Providing detailed guidance on how project costs should be estimated for each le
 
 Australia’s guidance on risk minimisation is generally of a high standard. However, risk minimisation alone is not sufficient, as it is inevitable that some cost risks will be impossible, or prohibitively expensive, to eliminate. These remaining risks need to be accurately measured, so that they can be factored into investment decisions and efficiently managed throughout a project’s life.
 
-As discussed in \Vref{risk-assessment-should-be-comprehensive}, the critical shortcoming of risk management on Australia’s transport infrastructure projects is that the guidance regarding how to measure unavoidable project risks is uniformly poor. This is because the guidance on how to quantify project risks is:
+As discussed in \Vref{risk-assessment-should-be-comprehensive}, the critical shortcoming of risk management on Australia’s transport infrastructure projects is that the guidance regarding the measurement of unavoidable project risks is uniformly poor. This is because the guidance on how to quantify project risks is:
 
 \begin{itemize}{}
 \item
@@ -1927,12 +1927,12 @@ This section reviews each of these shortcomings in detail and provides state-spe
 
 Guidelines which apply to the same jurisdiction often recommend different approaches to risk measurement. 
 For instance, probability pricing is required for Commonwealth funding, yet only half the risk measurement guidance provided by the Commonwealth Government discuss probability pricing.
-Although it may seem sufficient that some guidance material discusses probability pricing even if not all do, in practice such fragmentation makes guidance hard to follow properly.
+Although it may seem sufficient that some guidance material discusses probability pricing even if not all do, in practice, such fragmentation makes guidance hard to follow properly.
 
-The \emph{National Partnerships Agreement on Land Transport Infrastructure Projects},\footcite{COAG2014NationalPartnershipAgreementInfrastructure} the Australian Transport Council’s \emph{National Guidelines for Transport System Management in Australia},\footcite{ATC2006NGTSM3} Infrastructure Australia’s \emph{Business Case Template},\footcite{Australia2016InfrastructureAustraliaAssessmentc} the \emph{Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction}\footcite{DIRD2008BPCEPFRRC} and the Bureau of Infrastructure, Transport and Regional Economics's  \emph{Overview of Project Appraisal for Land Transport}\footcite{BITRE2014Overviewofprojectappraisalforlandtransport} require or discuss probability pricing.
+For example, the \emph{National Partnerships Agreement on Land Transport Infrastructure Projects},\footcite{COAG2014NationalPartnershipAgreementInfrastructure} the Australian Transport Council’s \emph{National Guidelines for Transport System Management in Australia},\footcite{ATC2006NGTSM3} Infrastructure Australia’s \emph{Business Case Template},\footcite{Australia2016InfrastructureAustraliaAssessmentc} the Department of Infrastructure and Regional Development's \emph{Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction}\footcite{DIRD2008BPCEPFRRC} and the Bureau of Infrastructure, Transport and Regional Economics's  \emph{Overview of Project Appraisal for Land Transport}\footcite{BITRE2014Overviewofprojectappraisalforlandtransport} require or discuss probability pricing.
 However, Infrastructure Australia's \emph{Assessment Framework}\footcite{Australia2016InfrastructureAustraliaAssessmentb}, the \emph{HB 158:2010 Handbook on delivering assurance based on ISO 31000:2009} \footcite{StandardsAustralia2010DeliveringassurancebasedonISO31000} and BITRE's \emph{Risk in Benefit Cost Analysis}\footcite{BITRE2005RiskinCostBenefitAnalysis} do not. 
 
-In Victoria, three key guidelines on risk measurement each recommend only part of the toolkit, and a different part in each case:
+The Victorian guidelines on risk measurement are similarly fragmented. For example, three key guidelines on risk measurement each recommend only part of the toolkit, and a different part in each case:
 \begin{itemize}
 \item
   the Victorian Insurance Management Authority's \emph{Practice Guide}\footcite{VMIA2016PracticeGuide} requires only the calculation of the expected value of project risks;
@@ -1949,7 +1949,7 @@ In some instances, inconsistencies also introduce contradictions within jurisdic
 
 Risk measurement guidance should also be consistent between the Commonwealth and each individual state. This is because each state must comply with both its own guidelines and the Commonwealth’s whenever it seeks project funding from the Commonwealth to supplement its own funding of a project. Where state and commonwealth guidance differs, multiple versions of the same analysis are required. 
 
-For example, Victoria’s business case on the Western Distributor has two sets of benefit cost ratios in order to conform to different requirements of the two levels of government.\footcite{Government2015WesternDistributor}  Neither of these benefit cost ratios is more correct than the other. Rather, they are two imperfect estimates of the same concept. As cost estimates are expensive to produce, Australia’s project appraisal processes could be made more cost efficient by aligning the analysis required across each jurisdiction.  
+For example, Victoria’s business case on the Western Distributor has two sets of benefit cost ratios in order to conform to different requirements of the two levels of government.\footcite{Government2015WesternDistributor}  Neither of these benefit cost ratios is necessarily more correct than the other. Rather, they are two imperfect estimates of the same concept. As cost estimates are expensive to produce, Australia’s project appraisal processes could be made more cost efficient by aligning the analysis required across each jurisdiction.  
 
 The inconsistencies observed across Australian risk measurement guidelines could be resolved by removing old guidance when new processes are implemented, consolidating existing guidelines and writing new guidance so that it replaces, rather than accretes to, older guidance. 
 
@@ -1979,6 +1979,7 @@ Assessments of project risks can be considered:
 \captionwithunits{Complete approaches to risk measurement satisfy all the conditions for reliability and comprehensiveness by using a combination of tools\label{tbl:requirements-for-complete-risk-measurement}}%
 {Attributes of each risk management tool, where \BoldTick\  indicates that a tool can be used satisfy the criteria, \GreyTick\ indicates that a tool can be used to get part way towards the criteria and {\BoldX}\  indicates that a tool cannot be used to achieve the criteria.}
 \input{tex/tbl-complete-approaches-to-risk-management}
+\source{Grattan analysis.}
 \end{table*}
 
 \begin{table*}
@@ -1993,64 +1994,26 @@ Assessments of project risks can be considered:
 {Australian risk management guidelines; Grattan analysis}
 \end{table*}
 
-As no single risk management tool achieves all these objectives, a combination of tools is required. 
+No single risk measurement tool achieves all these objectives, which means that a combination of tools is required. 
 \Vref{tbl:requirements-for-complete-risk-measurement} summarises how each risk measurement tool can, if used properly, contribute to a complete approach to risk measurement. 
-\Vref{tbl:completeness-analysis-of-prominent-guidelines-ddag-table} illustrates that key Australian guidelines on risk measurement are systematically weak in their use of objective information and treatment of extreme and unknown risks. 
 
-
-
-
-
-Most key guidelines recommend approaches to risk measurement that only go part way towards incorporating objective information and accounting for extreme and unknown risks.
+As summarised in \Vref{tbl:completeness-analysis-of-prominent-guidelines-ddag-table}, most key guidelines recommend approaches to risk measurement that only go part way towards incorporating objective information and accounting for extreme and unknown risks.
 
 \textbf{Unknown risks} are the most poorly accounted for. 
 None of the reviewed guidelines require project teams to draw on analysis of the outcomes that have been observed historically across a reference class of projects. 
 Guidelines which recommend the use of Monte Carlo simulation do a better job at accounting for unknown unknowns than those that rely purely on expert judgement. 
 This is because structured processes somewhat dampen the effects of innate overconfidence biases. However, the effects of overconfidence could be fully protected against through routine use reference class forecasting. 
 
-\Vref{fig:assumed-and-actual-distributions} compares the distribution of cost risks recommended for use in Monte Carlo analysis in most risk management guidelines with the realised distribution of cost outcomes. It illustrates that probabilistic risk analysis is also compromised by overconfidence bias. Specifically, the extreme risks underpinning the extreme cost overruns that account for 90 per cent of cost overruns’ value do not appear to be anticipated at all. 
-
-
-
-%\begin{longtable}
-% \label{tbl:requirements-for-complete-risk-measurement}
-% title: Complete approaches to risk measurement satisfy all the conditions for reliability and comprehensiveness by using a combination of tools
-% subtitle: Attributes of each risk management tool, where indicates that a tool can be used satisfy the criteria, indicates that a tool can be used to get part way towards the criteria and indicates that a tool cannot be used to achieve the criteria.
-% sources: See section [LAST SECTION OF RISK APPENDIX] for the list of reviewed guidelines, Grattan analysis
-%\end{longtable}
-
-% \begin{longtable}[c]{@{}l@{}}
-% \toprule
-% \textbf{Table 1: Complete approaches to risk measurement satisfy all the conditions for reliability and comprehensiveness by using a combination of tools\\
-% }Attributes of each risk management tool, where indicates that a tool can be used satisfy the criteria, indicates that a tool can be used to get part way towards the criteria and indicates that a tool cannot be used to achieve the criteria.\tabularnewline
-% \midrule
-% \endhead
-% \tabularnewline
-% \tabularnewline
-% \textbf{Expert judgement}\tabularnewline
-% \tabularnewline
-% \tabularnewline
-% \tabularnewline
-% \textbf{Monte Carlo simulation }\tabularnewline
-% \tabularnewline
-% \tabularnewline
-% \tabularnewline
-% \textbf{Reference class forecasting}\tabularnewline
-% \tabularnewline
-% \tabularnewline
-% \textbf{Characteristics of complete risk measurement}\tabularnewline
-% \bottomrule
-% \end{longtable}
-
+\Vref{fig:assumed-and-actual-distributions} compares the distribution of cost risks recommended for use in Monte Carlo analysis in most risk management guidelines with the realised distribution of cost outcomes. It illustrates that probabilistic risk analysis is also compromised by overconfidence bias, as far more than the anticipated 25 per cent of projects overran their budgets\footnote{See \Cref{distributional-analysis} for the analysis of Australia's risk management guidelines underpinning the claim that no more than 25 per cent of projects were expected to overrun their budgets}. Moreover, the extreme risks underpinning the extreme cost overruns that are responsible for Australia's cost overruns problem\footnote{As discussed in \Cref{chap:extent-of-cost-overruns}, the 17 per cent of projects with cost overruns greater than 50 per cent of their initial project budgets account for 90 per cent of cost overruns by value.} do not appear to be anticipated at all. 
 
 \begin{figure}
-\caption{The probability of extreme cost overruns is systematically underestimated\label{fig:assumed-and-actual-distributions}}
+\captionwithunits{The probability of extreme cost overruns is systematically underestimated\label{fig:assumed-and-actual-distributions}}{Assumed and observed distributions of the average project cost risk, represented as the probability density functions of cost overruns}
 \includegraphics[page=5]{atlas/AppendixCharts2}
 \noteswithsource{The distribution of cost risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor. Please see \Vref{distributional-analysis} for details and a discussion  of the sources underpinning the typical risk management guidelines' assumed distribution of cost overruns. This graph’s illustrative purpose is to graphically present that a symmetric distribution with a lower bound of zero and 25 per cent probability of cost overruns drastically underestimates the probability and magnitude of extreme cost risks.}{Investment Monitor; Grattan analysis.}
 \end{figure}
 
 Even if unknown risks were accounted for and extreme risks were anticipated, the current approaches employed to measure risk do not consistently evaluate \textbf{extreme risks}. 
-Over the last 15 years, the expected value of cost overruns is 24 per cent of initial project costs – a figure which is approximately equivalent to the 26 per cent average difference observed between P50 and P90 costs. This extreme asymmetry in the distribution of cost outcomes is in line with previous conclusions of the transport cost overruns literature,\footcites{Love2013Overrunstransportationinfrastructure}{Flyvbjerg2016BigisFragile} and makes clear that measures of the costs of extreme outcomes cannot be inferred from extreme quantiles like P90 estimates. 
+Over the last 15 years, the expected value of cost overruns was 24 per cent of initial project costs – a figure which is approximately equivalent to the 26 per cent average difference observed between P50 and P90 costs. This extreme asymmetry in the distribution of cost outcomes is in line with previous conclusions of the transport cost overruns literature.\footcites{Love2013Overrunstransportationinfrastructure}{Flyvbjerg2016BigisFragile} It also makes clear that measures of the costs of extreme outcomes cannot be inferred from extreme quantiles like P90 estimates. This is because the worst ten percent of cost overruns take a huge range of values, which means that the expected value of cost overruns could readily be above or below P90 costs. 
 
 
 Risk management guidelines need to account for the likely costs of extreme risks, not just their likely prevalence. 
