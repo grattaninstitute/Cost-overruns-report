@@ -2293,7 +2293,7 @@ This results in some projects missing cost estimates for the early project stage
 Where this is the case, we assume that no cost overrun occurred prior to the project's first appearance in our dataset.
 
 
-As discussed in \Vref{cost-overruns-may-be-even-bigger-than-we-claim}, a manual check of the history of 51 projects indicated that this is assumption is conservative – 37 per cent of projects which were missing data on early cost estimates experienced public overruns during the unobserved period – a proportion only marginally lower than the 51 per cent of projects with early cost estimates. 
+As discussed in \Cref{cost-overruns-may-be-even-bigger-than-we-claim}, a manual check of the history of 51 projects indicated that this is assumption is conservative – 37 per cent of projects which were missing data on early cost estimates experienced public overruns during the unobserved period – a proportion only marginally lower than the 51 per cent of projects with early cost estimates. 
 
 
 
@@ -2451,6 +2451,19 @@ We find that the value of cost overruns incurred to date, expressed as a percent
 
 
 
+
+\subsection{Contingency analysis}\label{contingency-analysis}
+
+\Vref{fig:value-contingencies-req-to-cover--} presents the financial advantages of managing cost risk at the portfolio level relative to the project level.
+
+The value of contingencies required to provide assurance that 90 per cent of projects will finish within budget has been estimated as the 90\textsuperscript{th} quantile of the observed distribution of cost outcomes, using the median-unbiased sample quantile estimator.%
+\footcite{HyndmanandFan1996SampleQuantilesinStatisticalPackages}
+
+To estimate the necessary size of a contingency fund to achieve this level of confidence \emph{at the project level}, this analysis was conducted on the distribution of project's cost outcomes observed through the Investment Monitor.
+
+To estimate the necessary size of a contingency fund to achieve this level of confidence \emph{across the portfolio} of infrastructure projects, this analysis was conducted on a simulated distribution of average portfolio cost outcomes. 
+This simulated distribution was constructed by bootstrapping 1000 sample means with replacement from the observed distribution of project outcomes.\footnote{Bootstrapping was completed using ordinary nonparametric simulation.}
+
 \subsection{Distributional analysis}\label{distributional-analysis}
 
 \Vref{box:risk-managers-toolkit} features a stylized representation of the distribution of cost overruns.
@@ -2510,17 +2523,6 @@ as would be the case if assuming a distribution similar to the triangular distri
 
 
 
-\subsection{Contingency analysis}\label{contingency-analysis}
-
-\Vref{fig:value-contingencies-req-to-cover--} presents the financial advantages of managing cost risk at the portfolio level relative to the project level.
-
-The value of contingencies required to provide assurance that 90 per cent of projects will finish within budget has been estimated as the 90\textsuperscript{th} quantile of the observed distribution of cost outcomes, using the median-unbiased sample quantile estimator.%
-\footcite{HyndmanandFan1996SampleQuantilesinStatisticalPackages}
-
-To estimate the necessary size of a contingency fund to achieve this level of confidence \emph{at the project level}, this analysis was conducted on the distribution of project's cost outcomes observed through the Investment Monitor.
-
-To estimate the necessary size of a contingency fund to achieve this level of confidence \emph{across the portfolio} of infrastructure projects, this analysis was conducted on a simulated distribution of average portfolio cost outcomes. 
-This simulated distribution was constructed by bootstrapping 1000 sample means with replacement from the observed distribution of project outcomes.\footnote{Bootstrapping was completed using ordinary nonparametric simulation.}
 
 
 \subsection{Expected difference between P50 and P90 costs}\label{expected-difference-between-p50-and-p90-costs}
