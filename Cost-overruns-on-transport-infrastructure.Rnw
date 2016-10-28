@@ -2191,7 +2191,7 @@ read_excel("data/Owain-Guidelines-table.xlsx") %>%
 \caption{Key risk management guidelines underpinning the ratings allocated in \Vref{fig:quality-of-risk-management-guidance-chevrons}}
 \label{tab:risk-management-guidlines}
 \input{tex/tbl-reviewed-risk-management-guidelines}
-\source{See full list of guidelines in table XX}
+\source{See full list of guidelines in \Vref{tbl:list-of-guidelines}.}
 \end{table*}
 
 \begin{table*}
