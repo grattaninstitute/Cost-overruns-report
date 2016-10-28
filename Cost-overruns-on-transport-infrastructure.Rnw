@@ -2276,7 +2276,7 @@ In line with this expectation, we observe higher cost overruns across the Gratta
 
 \includegraphics[page=8]{atlas/AppendixCharts}
 
-\noteswithsource{A critical difference between these datasets is that the Investment Monitor dataset contains all projects valued above \$20 million, whereas the Grattan dataset only contains projects valued above \$100 million.}
+\noteswithsource{A critical difference between these datasets is that the Investment Monitor dataset contains all projects valued above \$20 million, whereas the Grattan dataset only contains projects valued above \$100 million.} {Investment Monitor; Grattan dataset; Grattan analysis.}
 \end{figure}
 
 \subsection{Treatment of outliers}\label{outliers}
@@ -2501,7 +2501,7 @@ as would be the case if assuming a distribution similar to the triangular distri
 
 
 \begin{figure}
-\captionwithunits{Observed probability distribution\label{kernel-density-plot}}
+\caption{Observed probability distribution\label{kernel-density-plot}}
 \includegraphics[page=10]{atlas/AppendixCharts}
 \source{Investment Monitor; Grattan analysis.}
 
