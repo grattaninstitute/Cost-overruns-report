@@ -577,7 +577,7 @@ Reports should detail any scope changes and their justification, agreed and actu
 
 \subsubsection*{Recommendation 4: Special arrangements for big projects}
 
-When the estimated construction cost to a jurisdiction is \$1 billion or more, Commonwealth, state or territory governments should be required to introduce standalone legislation for that transport infrastructure. \oneraggedpage
+When the estimated construction cost to a jurisdiction is \$1~billion or more, Commonwealth, state or territory governments should be required to introduce standalone legislation for that transport infrastructure. \oneraggedpage
 
 \pagebreak
 
@@ -1377,10 +1377,10 @@ Some states have recently done this by instituting special cost estimation guida
 However, in most jurisdictions, cost estimates are arrived at under the assumption that large projects face the same risk of cost overruns as small projects.
 
 High-risk projects should be more closely scrutinised, and parties promoting them should seek to negotiate bipartisan support.
-Before they proceed, public infrastructure projects that are anticipated to cost \$1 billion or more should need the support of the parliament, not just the party in or seeking office (see \Vref{reco:special-legis-for-big-projects}).
+Before they proceed, public infrastructure projects that are anticipated to cost \$1~billion or more should need the support of the parliament, not just the party in or seeking office (see \Vref{reco:special-legis-for-big-projects}).
 
 \begin{recommendation}[H]{Special legislation for big projects\label{reco:special-legis-for-big-projects}}
-When the estimated construction cost to a jurisdiction is \$1 billion or more, Commonwealth, state or territory governments should be required to introduce standalone legislation for that transport infrastructure.
+When the estimated construction cost to a jurisdiction is \$1~billion or more, Commonwealth, state or territory governments should be required to introduce standalone legislation for that transport infrastructure.
 \end{recommendation}
 
 \begin{figure}
