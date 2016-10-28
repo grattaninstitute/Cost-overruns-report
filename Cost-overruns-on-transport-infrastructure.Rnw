@@ -568,7 +568,7 @@ To enable learning from past experience, and to improve accountability:
   \item The Commonwealth Department of Infrastructure should be required to publish to data.gov.au the post-completion report it already requires from state governments as a condition of providing final milestone payments for transport infrastructure projects.
 Reports should detail any scope changes and their justification, agreed and actual construction start and finish dates, actual project costs, reasons for overruns or under-runs, and progress against performance indicators. 
 
-  \item Infrastructure Australia should be asked to provide the Joint Committee of Public Accounts and Audit with a post-completion appraisal of the benefits and costs of each infrastructure project with Commonwealth funding of \$50 million or more. 
+  \item Infrastructure Australia should be asked to provide the Joint Committee of Public Accounts and Audit with a post-completion appraisal of the benefits and costs of each infrastructure project that received Commonwealth funding of \$50 million or more. 
 
   \item The Council of Australian Governments should add a new category of infrastructure services to the terms of reference for the annual Report on Government Services, produced by the Productivity Commission.
 \end{enumerate}
@@ -577,7 +577,7 @@ Reports should detail any scope changes and their justification, agreed and actu
 
 \subsubsection*{Recommendation 4: Special arrangements for big projects}
 
-When the estimated construction cost to that jurisdiction is \$1 billion or more, Commonwealth, state or territory governments should be required to introduce standalone legislation for any transport infrastructure. \oneraggedpage
+When the estimated construction cost to a jurisdiction is \$1 billion or more, Commonwealth, state or territory governments should be required to introduce standalone legislation for that transport infrastructure. \oneraggedpage
 
 \pagebreak
 
@@ -592,7 +592,7 @@ They should do so using data collected through mechanisms described in Recommend
 
 \subsubsection*{Recommendation 7: Hold the project contingency in a portfolio pool}
 
-Central agencies should hold project contingency funds at arm’s length from project management, and formalise the conditions governing contingency drawdown, to improve the cost-efficiency of risk management. 
+Central agencies should hold project contingency funds at arm’s length from project management, and formalise the conditions governing contingency drawdown. 
 
 \end{Recommendations}
 
@@ -638,7 +638,7 @@ It should be noted that these cost overruns explain 98 per cent of total cost di
 \vspace*{3pt}
 \units{Value of cost differences as a proportion of total cost overruns, per cent}
 \includegraphics{atlas/fig1-1.pdf}
-\noteswithsource{Australian transport projects completed between 2001 and 2015. \emph{Cost differences} are defined to refer to cost underruns and cost overruns collectively. }%
+\noteswithsource{Australian transport projects completed between 2001 and 2015. \textit{Cost differences} is defined to refer to cost underruns and cost overruns collectively. }%
 {Investment Monitor; Grattan analysis.}
 \end{figure}
 
@@ -1128,7 +1128,7 @@ To enable learning from past experience, and to improve accountability:
   \item The Commonwealth Department of Infrastructure should be required to publish to data.gov.au the post-completion report it already requires from state governments as a condition of providing final milestone payments for transport infrastructure projects.
 Reports should detail any scope changes and their justification, agreed and actual construction start and finish dates, actual project costs, reasons for overruns or under-runs, and progress against performance indicators. 
 
-  \item Infrastructure Australia should be asked to provide the Joint Committee of Public Accounts and Audit with a post-completion appraisal of the benefits and costs of each infrastructure project with Commonwealth funding of \$50 million or more. 
+  \item Infrastructure Australia should be asked to provide the Joint Committee of Public Accounts and Audit with a post-completion appraisal of the benefits and costs of each infrastructure project that received Commonwealth funding of \$50 million or more. 
 
   \item The Council of Australian Governments should add a new category of infrastructure services to the terms of reference for the annual Report on Government Services, produced by the Productivity Commission.
 \end{enumerate}
@@ -1383,7 +1383,7 @@ High-risk projects should be more closely scrutinised, and parties promoting the
 Before they proceed, public infrastructure projects that are anticipated to cost \$1 billion or more should need the support of the parliament, not just the party in or seeking office (see \Vref{reco:special-legis-for-big-projects}).
 
 \begin{recommendation}[H]{Special legislation for big projects\label{reco:special-legis-for-big-projects}}
-When the estimated construction cost to that jurisdiction is \$1 billion or more, Commonwealth, state or territory governments should be required to introduce standalone legislation for any transport infrastructure.
+When the estimated construction cost to a jurisdiction is \$1 billion or more, Commonwealth, state or territory governments should be required to introduce standalone legislation for that transport infrastructure.
 \end{recommendation}
 
 \begin{figure}
