@@ -2017,11 +2017,11 @@ Over the last 15 years, the expected value of cost overruns was 24 per cent of i
 
 
 Risk management guidelines need to account for the likely costs of extreme risks, not just their likely prevalence. 
-Although the expected value doesn’t assess extreme risks exclusively, it is a critical component of risk measurement because it is the only common tool which accounts for the likely cost of extreme risks. 
-In other sectors like finance, Value at Risk (VaR) – the expected value of extreme risks above a particular threshold – is used to measure the costs of extreme risks. Given that 90 per cent of the value of Australia’s cost overruns over the last 15 years has been attributable to extreme cost overruns, adopting a more rigorous treatment of extreme risks seems warranted.
+Although the expected value doesn’t assess extreme risks exclusively, it is a critical component of risk measurement because it is the only common tool which accounts for the likely cost of these risks. 
+In other sectors like finance, Value at Risk (VaR) – the expected value of extreme risks above a particular threshold – is used to measure the costs of extreme risks. Given that 90 per cent of the value of Australia’s cost overruns over the last 15 years has been attributable to extreme cost overruns, adopting such a rigorous treatment of extreme risks seems warranted.
 
 Finally, most of the guidelines summarised in \Vref{tbl:completeness-analysis-of-prominent-guidelines-ddag-table} rely on sensitivity analysis and Monte Carlo simulation to incorporate \textbf{objective information} into cost estimates. 
-However, these approaches only achieve this objective if they employ high quality objective information. 
+However, these approaches only satisfy these objectives if they employ high quality objective information. 
 The following section reviews the information provided for the execution of these approaches, and identifies that the quality of the objective data provided for implementing these tools is generally very poor. 
 There is substantial scope for the accuracy of existing risk measurement practices to be improved through the use of high quality data on historical cost outcomes. 
 
@@ -2042,7 +2042,7 @@ The quality of risk measurements obtained using the other key risk measurement t
 
 
 For example, \textbf{sensitivity analysis} is a valuable tool for understanding the external drivers of cost uncertainty.
-However, only 43 per cent of guidelines which recommend sensitivity analysis specify variables should be subjected to sensitivity analysis and the range of values these variables regularly take. 
+However, only 43 per cent of guidelines which recommend sensitivity analysis specify the variables that should be subjected to sensitivity analysis and the range of values these variables should be expected to take. 
 In the absence of this information, there is opportunity for project proponents to retrofit their choices of variables and ranges of variation in order to achieve an acceptable level of cost uncertainty. 
 Because of this,  guidelines should suggest ranges for sensitivity analysis, or recommend that the sensitivity ranges specified in another set of guidelines are used.\footnote{The Australian Transport Assessment Planning Guidelines provide a set of sensitivity ranges that could serve as a common point of reference, as the Austroads sensitivity ranges have done in the past \textcite[27]{QLDDepTransport2011CostBenefitAnalysis}.}
 
@@ -2052,11 +2052,11 @@ Reference class forecasting is the practice of incorporating the rate of cost ov
 Consequently, reference class forecasting cannot be implemented to any degree without high quality data on historical cost outcomes.
 
 Yet this is what some of Australia’s risk management guidelines demand of project proponents. 
-For example, the cost benefit analysis guidelines of Queensland Treasury’s Project Assessment Framework recommend that cost estimates are adjusted for optimism bias using empirical evidence that is relevant to the project’s type.\footcite[25]{QLDTreasury2015Projectassessmentframeworkoverview} 
+For example, the cost benefit analysis guidelines of Queensland Treasury’s \emph{Project Assessment Framework} recommend that cost estimates are adjusted for optimism bias using empirical evidence that is relevant to the project’s type.\footcite[25]{QLDTreasury2015Projectassessmentframeworkoverview} 
 However, they do not provide any such evidence and, to the best of our knowledge, such empirical evidence is not readily available.
 
-Similarly, the Commonwealth's \textit{Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction} identifies that reference class forecasting should be used to counteract optimism bias, and refer to the United Kingdom's reference class forecasting uplift rates.\footcite[][Appendix~7]{DIRD2008BPCEPFRRC}
-However, these uplift rates are not appropriate for use on Australian cost estimates, because they are designed to offset the average magnitude of cost overruns observed on British projects, relative to British cost estimation practices.
+Similarly, the Commonwealth Department of Infrastructure and Regional Development's \textit{Best Practice Cost Estimation Standard for Publicly Funded Road and Rail Construction} identifies that reference class forecasting should be used to counteract optimism bias, and refer to the United Kingdom's reference class forecasting uplift rates.\footcite[][Appendix~7]{DIRD2008BPCEPFRRC}
+However, these uplift rates are not appropriate for use on Australian cost estimates because they are designed to offset the average magnitude of cost overruns observed on British projects, relative to British cost estimation practices.
 
 A similar circumstance befalls \textbf{probability pricing}.
 Probability pricing is the practice of identifying the cost under which a project is expected to be completed with a given probability.
@@ -2065,20 +2065,20 @@ Probability pricing can be conducted either:
 
 \begin{itemize}
 \item
-  ``probabilistically'', which involves estimating the distribution of risks on a specific project from estimates of its component parts,\footnote{For example, \textcite{QLDDepTransport2015ProjectCostEstimatingManual}.} or
+  \emph{probabilistically}, which involves estimating the distribution of risks on a specific project from estimates of its component parts,\footnote{For example, \textcite{QLDDepTransport2015ProjectCostEstimatingManual}.} or
 \item
-  ``deterministically'' which involves applying standard uplift rates that are -- like reference class forecasting -- derived from historical analysis of completed projects.%
+  \emph{deterministically}, which involves applying standard uplift rates that are -- like reference class forecasting -- derived from historical analysis of completed projects.%
 \footnote{For example, \textcite{SADTF2014GuidelinesfortheevaluationofpublicsectorinitiativesPartB}.}
 \end{itemize}{}
 
 More than 80 per cent of guidelines on probability pricing recommend that the probabilistic approach to probability pricing is employed, as the validity of the deterministic approach under active debate.%
-\footnote{Currently, institutions like Infrastructure Australia (\textcite[][36]{Australia2016InfrastructureAustraliaAssessment}) and Queensland's Department of Main Roads (\textcite[][79]{QLDDepTransport2015ProjectCostEstimatingManual}) assert that deterministic approaches to probability pricing are ``invalid'' and ``inaccurate'' while others still recommend its practice. For example, South Australian Department of Planning, Transport and Infrastructure's Estimating Manual: \textcite{SADPTI2015EstimatingManual}).} However, there appears little grounds to claim that the probabilistic approach, as currently practiced, is any more scientific.
+\footnote{Currently, institutions like Infrastructure Australia (\textcite[][36]{Australia2016InfrastructureAustraliaAssessment}) and Queensland's Department of Main Roads (\textcite[][79]{QLDDepTransport2015ProjectCostEstimatingManual}) assert that deterministic approaches to probability pricing are ``invalid'' and ``inaccurate'' while others still recommend its practice. For example, South Australian Department of Planning, Transport and Infrastructure's Estimating Manual: \textcite{SADPTI2015EstimatingManual}).} 
 
-This is because very few guidelines\footnote{\textcite{QLDDepTransport2015ProjectCostEstimatingManual}, \textcite{DIRD2013NotesonAdministration} and \textcite{VicDTF2015HighValueHighRisk} are honourable exceptions.} provide any guidance to project proponents on the expected distribution of project risks, and these guidelines commonly overlook the most critical characteristic of the distribution of cost risk on transport infrastructure projects: that cost overruns are more likely and larger on average than cost underruns.\footnote{For further discussion and evidence, please see \Vref{distributional-analysis}.}
+However, there appears little grounds to claim that the probabilistic approach, as currently practiced, is any more scientific. This is because very few guidelines\footnote{\textcite{QLDDepTransport2015ProjectCostEstimatingManual}, \textcite{DIRD2013NotesonAdministration} and \textcite{VicDTF2015HighValueHighRisk} are honourable exceptions.} provide any guidance to project proponents on the expected distribution of project risks, and these guidelines commonly overlook the most critical characteristic of the distribution of cost risk on transport infrastructure projects: that cost overruns are more likely and larger on average than cost underruns.\footnote{For further discussion and evidence, please see \Vref{distributional-analysis}.}
 
 The observed distributions of construction project risks are actively being researched in academic circles.%
 \footnote{For example \textcite{Love2012Overrunstransportationinfrastructure}.} This research is important, as the specific probability prices estimated through Monte Carlo simulation are only as reliable as the assumptions on which they are based.
-In order to obtain reliable probability prices using a probabilistic methodology, the distributions of key, or overarching, project risks need to be reliably estimated and clearly communicated in probability pricing guidelines.
+In order to obtain reliable probability prices using a probabilistic methodology, the distributions of key project risks need to be reliably estimated and clearly communicated in probability pricing guidelines.
 
 \section{Risk management}\label{risk-management}
 
@@ -2096,9 +2096,9 @@ However, when project risks are not priced into benefit cost ratios, returns on 
 This increases the probability that cost overruns will distort project selection.
 
 The impact of cost overruns on project selection can be minimised by including the expected value of project risks in the cost estimates used for cost benefit analysis.\footcite{BITRE2005RiskinCostBenefitAnalysis} While benefit cost ratios will still be more uncertain for risky projects than routine projects after this adjustment is made, the benefit cost ratios of risky projects will no longer be systematically biased in a way that makes projects appear more attractive than they really are.
-For this reason, it is critical that the costs used in cost benefit analyses include the \emph{expected value} of project risks.
+For this reason, it is critical that the costs used in cost benefit analyses include the expected value of project risks.\footcite{BITRE2005RiskinCostBenefitAnalysis}
 
-Only the Commonwealth and NSW's risk management guidelines\footcites{ATAP2016Guidelines}{TransportNSW2013PrinciplesandGuidelines} clearly recommend that the expected value of projects risks should be incorporated into the costs estimates used for benefit cost analysis.%
+Only the Commonwealth and NSW's risk management guidelines\footcites{ATAP2016Guidelines}{TransportNSW2013PrinciplesandGuidelines} clearly recommend that the expected value of projects risks should be incorporated in the costs estimates used for benefit cost analysis.%
 
 
 It is not reasonable to assume that incorporation of the expected value of risks into cost estimates is implicitly expected by guidelines which do not comment on the type of costs that should be employed in cost benefit analysis.
@@ -2115,7 +2115,7 @@ This conclusion is supported by the observations that the recommended size of co
 
 \begin{figure}
 \captionwithunits{The recommended size of contingency funds varies substantially across guidelines\label{fig:Recommended-Size-of-contingency-funds-varies-considerably}}
-{Recommended contingency sizes at early and late stages of project development as a proportion of project costs, per cent}
+{Recommended contingency ranges at early and late stages of project development as a proportion of project costs, per cent}
 
 \includegraphics[page=6]{atlas/AppendixCharts}
 
@@ -2128,7 +2128,7 @@ New South Wales is the only jurisdiction which provides clear, strategic advice 
 \footcites{QLDTreasury2015Projectassessmentframeworkoverview}{QLDGov2015FinancialandPerformanceManagementStandard}
 
 It should be noted that in the absence of such protocols, there are clear incentives for contingencies to be managed at the project level.
-This is because changes to project budgets that involve state treasuries increasing projects' budget allocations are open to more public scrutiny.
+This is because changes to project budgets that involve state treasuries increasing projects' budget allocations are open to public scrutiny.
 Consequently, project management teams are subject to lower reputational risk when contingency funds are included within initial budget allocations and managed at the project level.
 
 \Vref{contingencies-should-be-used-cost-efficiently} identified that contingency funds can be three times more cost effective when managed at the portfolio level.
@@ -2138,7 +2138,7 @@ For this reason, it would be desirable for all states to adopt a stringent pract
 \section{Reviewed Australian risk management guidelines \label{sec:Reviewed-Australian-risk-measurement-guidelines}}
 This appendix, and the conclusions of the report that are founded upon its analysis, are based upon a thorough review of all the key documentation on cost estimation and risk management which we could identify as publicly available. \Vref{tbl:list-of-guidelines} lists the guidelines reviewed. 
 
-The high level review of the quality of risk management guidelines presented as  \Cref{fig:quality-of-risk-management-guidance-chevrons} is based on the criteria listed in \Vref{tab:criteria}. The guidelines which had most bearing on the rating allocated for each component of risk management by state are listed in \Vref{tab:risk-management-guidlines}. These guidelines are those that were perceived to go the furthest towards satisfying the ratings’ criteria, or were the most conspicuous examples of the jurisdictions failure to do~so.
+The high level review of the quality of risk management guidelines presented as  \Cref{fig:quality-of-risk-management-guidance-chevrons} is based on the criteria listed in \Vref{tab:criteria}. The guidelines which had most bearing on the rating allocated for each component of risk management by state are listed in \Vref{tab:risk-management-guidlines}. These guidelines are those that were perceived to go the furthest towards satisfying the ratings’ criteria, or were the most conspicuous examples of the failure of a jurisdictions' guidelines to do so.
 
 \onecolumn
 <<cleanse_owains_txt>>=
@@ -2191,6 +2191,7 @@ read_excel("data/Owain-Guidelines-table.xlsx") %>%
 \caption{Key risk management guidelines underpinning the ratings allocated in \Vref{fig:quality-of-risk-management-guidance-chevrons}}
 \label{tab:risk-management-guidlines}
 \input{tex/tbl-reviewed-risk-management-guidelines}
+\source{See full list of guidelines in table XX}
 \end{table*}
 
 \begin{table*}
@@ -2220,12 +2221,12 @@ First, this report uses a time series dataset built from the archives of the Del
 Since 2001, Deloitte Access Economics has routinely screened government budgets, announcements by private companies, the media, and other publicly available data sources to produce a quarterly snapshot of expected investment plans for each sector, including transport. 
 Grattan Institute has linked the quarterly releases of the Investment Monitor from 2001 to 2015 to form a panel dataset that tracks the value and degree of commitment to all publicly announced investment projects from first announcement through to completion. 
 
-The analysis also relies on a smaller but far more detailed dataset compiled by Grattan Institute which investigates the circumstances surrounding the cost overruns on 51 of these projects. 
+The analysis also relies on a smaller but far more detailed dataset compiled by Grattan Institute which investigates the circumstances surrounding the cost overruns on 51 of these projects.\footnote{This dataset is henceforth referred to as the Grattan dataset.} 
 This dataset has been manually collected for the express purpose of understanding the dynamics of cost overruns for transport infrastructure projects and the characteristics of affected projects. 
 
 \subsection{Adjusting expected project costs for inflation}\label{inflation-adjustment}
 
-Both these datasets are based on public sources that report project budgets in terms of nominal dollars at the time the underlying sources were published.  In order to compare projects that occur in different periods, expected and observed project costs in each dataset are adjusted for inflation, using the Australian Bureau of Statistics' construction price index.\footcite{ABS2016ConstructionPriceIndex}
+Both these datasets are based on public sources that report project budgets in terms of nominal dollars at the time the underlying sources were published.  In order to compare projects that occur in different periods, expected and observed project costs in each dataset have been adjusted for inflation, using the Australian Bureau of Statistics' construction price index.\footcite{ABS2016ConstructionPriceIndex}
 
 We assume that the distribution of project costs across time is the same for all projects and convert nominal outturn costs to 2016 dollars from the middle year of the period during which each project was under construction. 
 While only approximate, this approach is sufficient for controlling for the effect of inflation at the aggregate level under the assumption that the distribution of project costs over the construction period does not vary with time. 
@@ -2234,7 +2235,7 @@ Importantly, the inflation adjustment procedure does not affect the estimates of
 \subsection{Measuring cost overruns }\label{Measuring-cost-overruns}
 
 We measure cost overruns as the percentage change in project costs over a given period, as a proportion of a project’s initial cost. 
-Project costs are defined as the total cost of designing and constructing a given asset to the public sector, and so include public sector project management costs outside of the project contract and exclude any costs incurred beyond the contract price by the contractor. 
+Project costs are defined as the total cost to the public sector of designing and constructing a given asset, and so include public sector project management costs outside of the project contract and exclude any costs incurred beyond the contract price by the contractor. 
 
 We consider overruns on these costs in relation to three project stages: from announcement with a cost estimate but prior to a budget commitment; between a formal budget commitment by an Australian government and the start of construction; and during construction. 
 These project stages correspond to the descriptions of projects’ maturity associated with each cost estimate in the Investment Monitor dataset. 
