@@ -2219,7 +2219,7 @@ The analysis contained in this report is based on two unique datasets.
 First, this report uses a time series dataset built from the archives of the Deloitte Access Economics Investment Monitor which tracks the evolution of project costs over time for all Australian transport infrastructure projects constructed since 2001. 
 
 Since 2001, Deloitte Access Economics has routinely screened government budgets, announcements by private companies, the media, and other publicly available data sources to produce a quarterly snapshot of expected investment plans for each sector, including transport. 
-Grattan Institute has linked the quarterly releases of the Investment Monitor from 2001 to 2015 to form a panel dataset that tracks the value and degree of commitment to all publicly announced investment projects from first announcement through to completion. 
+Grattan Institute has linked the quarterly releases of the Investment Monitor from 2001 to 2015 to form a panel dataset that tracks the value and degree of commitment to all publicly announced investment projects from first announcement through to completion. \xxxx 
 
 The routine 
 
@@ -2426,7 +2426,7 @@ Where the timing of scope changes was made explicit, the value of cost overruns 
 
 \subsection{Survival analysis}\label{survival-analysis}
 
-In addition to examining the size, timing and causes of cost overruns, we investigated the frequency with which projects were cancelled and the relationship between cost overruns and project cancellation. \xxxx
+In addition to examining the size, timing and causes of cost overruns, we investigated the frequency with which projects were cancelled and the relationship between cost overruns and project cancellation.
 
 Project cancellation rates for each stage were calculated as the number of projects that exited the dataset at each stage, as a proportion of the number of projects with cost estimates recorded for that stage.
 
