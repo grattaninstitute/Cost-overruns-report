@@ -1706,7 +1706,7 @@ By contrast, pooling contingencies from a portfolio of projects is cheaper, for 
 
 \begin{figure}
 \captionwithunits{Small contingencies can achieve a lot when they are managed at the portfolio level\label{fig:value-contingencies-req-to-cover--}}
-{Value of the contingencies required to ensure that individual projects are expected to finish within initial budget commitments with 90 per cent probability, and that 90 per cent of projects finish within initial budget commitments}
+{Value of the contingencies required to ensure that individual projects are expected to finish within initial budget commitments with 90 per cent probability, and that 90 per cent of projects finish within initial budget commitments, as a per cent of initial project costs}
 
 \includegraphics[page=17]{atlas/Charts_CO.pdf}
 
