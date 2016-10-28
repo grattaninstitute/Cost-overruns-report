@@ -1820,7 +1820,7 @@ There are over fifty sets of guidelines outlining required approaches to risk ma
 \captionwithunits{The quality of risk management guidance varies\label{fig:quality-of-risk-management-guidance-chevrons}}
 {Guidance quality by jurisdiction and topic ranked as sufficient, incomplete and poor by yellow, orange and red, respectively.}
 \vspace*{2pt}
-\includegraphics[page=1]{atlas/AppendixCharts}
+\includegraphics[page=1]{atlas/AppendixCharts3}
 
 \noteswithsource{See \Vref{tab:risk-management-guidlines} for the guidelines rated and \Vref{tab:criteria} for the criteria used to rate them.}{Guidelines listed in \Vref{tbl:list-of-guidelines}; Grattan analysis.}
 \end{figure}
@@ -2469,6 +2469,14 @@ This modification was made so that the diagrams were easier to label clearly and
 As emphasised in \Vref{box:risk-managers-toolkit}, the expected value of cost overruns falls far closer to the distribution's 90\textsuperscript{th} percentile than its median. 
 Though less visible than in the stylized distribution, the heaviness right tail of the observed distribution is notable: 17 percent of projects experienced cost overruns greater than the smallest cost underrun.
 
+\begin{figure}
+\caption{Observed probability distribution\label{kernel-density-plot}}
+\includegraphics[page=10]{atlas/AppendixCharts}
+\source{Investment Monitor; Grattan analysis.}
+
+\end{figure}
+
+
 \Vref{fig:assumed-and-observed-prob-distr-of-cost-overruns} and \Vref{fig:assumed-and-actual-distributions} compare the distribution of observed cost overruns against an illustration  of the distribution of cost overruns assumed in risk management guidance. The shape of this assumed distribution is founded upon two key observations.
 
 Firstly, costs quoted in state budget papers are typically P75 - P90 costs. This implies that less than 25 per cent of projects are expected to overrun. For evidence of this practice see, for instance, that:
@@ -2490,22 +2498,16 @@ In these ways, most guidelines do not provide clear guidance on how to conduct M
 
 As the lower bound of the distribution is necessarily equal to or greater than zero,\footnote{As neither initial nor final project costs can be less than zero, cost overruns, as defined as the ratio of final and initial costs, have a zero lower bound.} symmetric distributions that predict as little as 25 per cent of projects experiencing cost overruns must severely underestimate the likelihood and potential magnitude of extreme cost overruns. The assumed distributions presented in \Vref{fig:assumed-and-observed-prob-distr-of-cost-overruns} and \Vref{fig:assumed-and-actual-distributions} reflect this key characteristic.
 
-In these ways, Australia's risk management guidelines suggest that cost risks are assumed to take a distribution not dissimilar to that depicted as the assumed distribution in \Vref{fig:assumed-and-actual-distributions}. The observed distribution of cost overruns corroborates this conclusion, as the size and prevalence of the overruns observed are also consistent with the assumption of a distribution like that depicted in this figure. Specifically, 
+In these ways, Australia's risk management guidelines suggest that cost risks are assumed to take a distribution not dissimilar to that depicted as the assumed distribution in \Cref{fig:assumed-and-actual-distributions}. The observed distribution of cost overruns corroborates this conclusion, as the size and prevalence of the overruns observed are also consistent with the assumption of a distribution like that depicted in this figure. Specifically, 
 \begin{itemize}
 \item 
       the observation of an average cost overrun of 24 per cent is consistent with a the expected value of cost overruns being substantially underestimated, and
 \item
-      the substantial underestimation of the difference, as a percentage of initial project costs, between P50 and P90 costs,\footnote{The observed difference between P50 and P90 costs is 26 per cent, three times higher than the 9.2 per cent difference between P50 and P90 costs in the business cases assessed in \Vref{tbl:large-projects-cost-estimates}.} is consistent with the length of the right tail of the distribution of cost risk being substantially underestimated, 
+      the substantial underestimation of the difference, as a percentage of initial project costs, between P50 and P90 costs,\footnote{The observed difference between P50 and P90 costs is 26 per cent, three times higher than the 9.2 per cent difference between P50 and P90 costs in the business cases assessed in \Cref{tbl:large-projects-cost-estimates}.} is consistent with the length of the right tail of the distribution of cost risk being substantially underestimated, 
 \end{itemize}
-as would be the case if assuming a distribution similar to the triangular distribution presented in \Vref{fig:assumed-and-actual-distributions}. This indicates that, although no distribution of cost risks was consistently recommended, the distribution assumed on average in practice appears similar to the triangular distribution presented in \Vref{fig:assumed-and-actual-distributions}.
+as would be the case if assuming a distribution similar to the triangular distribution presented in \Cref{fig:assumed-and-actual-distributions}. This indicates that, although no distribution of cost risks was consistently recommended, the distribution assumed on average in practice appears similar to the triangular distribution presented in \Cref{fig:assumed-and-actual-distributions}.
 
 
-\begin{figure}
-\caption{Observed probability distribution\label{kernel-density-plot}}
-\includegraphics[page=10]{atlas/AppendixCharts}
-\source{Investment Monitor; Grattan analysis.}
-
-\end{figure}
 
 
 \subsection{Contingency analysis}\label{contingency-analysis}
