@@ -90,6 +90,7 @@ numbers=noenddot,
   
 %\RequirePackage{uarial}
 %  \linespread{1.04}
+\RequirePackage{lmodern}
 \RequirePackage[scaled]{helvet}
   \renewcommand{\familydefault}{\sfdefault}
 
