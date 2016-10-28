@@ -718,7 +718,7 @@ Detailed analysis of a subset of the projects which are missing early cost data 
 This prevalence rate is comparable to the 51 per cent observed across the 32 per cent of projects which are not missing early cost data.} Consequently, the rate of overruns presented as the upper bound of \Vref{fig:cost-overruns-are-likely-to-be-higher-than-reported} appears to be more likely than the lower bound, which underpins this report's analysis.
 
 \begin{figure}
-\captionwithunits{Cost overruns are likely to be higher than reported\label{fig:cost-overruns-are-likely-to-be-higher-than-reported}}
+\captionwithunits{Cost overruns are likely to be even higher than we report\label{fig:cost-overruns-are-likely-to-be-higher-than-reported}}
 {Average cost overrun rates as a proportion of initial costs by project stage, per cent of initial project cost}
 
 \includegraphics[page=5]{atlas/Charts_CO}
@@ -823,7 +823,7 @@ There were design enhancements, including an extra \$40\,million to fund a chang
 But even reducing the final cost by 20 per cent (to account for the extended road length) and subtracting \$40\,million from the final estimate (to exclude the additions) leaves a cost of around \$500\,million to build the originally specified road – 368 per cent higher than the initial cost estimate.
 
 \begin{figure}[H]
- \captionwithunits{Project cost estimates, Forrest Highway\label{fig:CS_Forrest}}{Millions of dollars}
+ \captionwithunits{Forrest Highway cost estimates \label{fig:CS_Forrest}}{Millions of dollars}
  \includegraphics[page=2]{atlas/CaseStudies.pdf}
 \end{figure}
 
@@ -871,7 +871,7 @@ The poor cost performance of projects with early cost announcements is not just 
 Rather, premature cost announcements appear to haunt projects throughout their lives.
 
 \begin{figure}
-\captionwithunits{Projects announced earlier have larger cost overruns at all stages of the project lifecycle\label{fig:projs-announced-early-have-larger-cost-overruns-at}}
+\captionwithunits{Projects announced prematurely have larger cost overruns at all stages of the project lifecycle\label{fig:projs-announced-early-have-larger-cost-overruns-at}}
 {Average project size of each cohort, by project stage, \$2016 millions}
 \includegraphics[page=8]{atlas/Charts_CO}
 
@@ -908,7 +908,7 @@ Yet the project was not confirmed until 2009, when a contract was awarded for \$
 Savings of \$6.7 million were made during the construction period, and the project was declared to have come in ``under budget''\footcite{RuralandRegionalAffairs2014} when it was completed in 2011,\footcite{NorthernStar2011ThroughTrafficToUseNewBypass} six months after the contracted completion date,\footcite{ABCNews2009AlstonvilleBypassFundsAnnounced} five years after the promised completion date, and nine years after the first commitment.
 
 \begin{figure}[H]
- \captionwithunits{Project cost estimates, Alstonville bypass\label{fig:CS_Alstonville}}{Millions of dollars}
+ \captionwithunits{Alstonville bypass cost estimates\label{fig:CS_Alstonville}}{Millions of dollars}
  \includegraphics[page=3]{atlas/CaseStudies.pdf}
 \end{figure}
 
@@ -997,7 +997,7 @@ The project was completed in 2014 for \$1678~million.%
 While the final benefit cost ratio has not been published, these comments from politicians reveal the difficulty governments experience in reneging on commitments made very early in a project’s life, even after the facts of the project change significantly.
 
 \begin{figure}[H]
- \captionwithunits{Project cost estimates, Hunter Expressway\label{fig:CS_Hunter}}{Millions of dollars}
+ \captionwithunits{Hunter Expressway cost estimates \label{fig:CS_Hunter}}{Millions of dollars}
  \includegraphics{atlas/HunterExpresswayAfterPublication.pdf}
 \end{figure}
 
@@ -1184,7 +1184,7 @@ In particular, close to two thirds of cost overruns occur before construction be
 These early and middle phase overruns could be used as a signal to actively reappraise projects, in order to determine whether they still appear to be good investments (\Vref{fig:cost-overruns-by-project-stage}).
 
 \begin{figure}
-\captionwithunits{A third of cost overruns occur prior to budget commitments\label{fig:cost-overruns-by-project-stage}}%
+\captionwithunits{Two thirds of cost overruns occur prior to construction commencing\label{fig:cost-overruns-by-project-stage}}%
 {Cost overruns by project stage, per cent}
 \includegraphics[page=10]{atlas/Charts_CO}
 \noteswithsource{Australian transport projects, completed between 2001 and 2015.}{Investment Monitor; Grattan analysis.}
@@ -1232,7 +1232,7 @@ On completion in 2012, the project came in 10 per cent lower than the contracted
 \footcite{BrisbaneTimes2012FiveStagesDown} 
 
 \begin{figure}[H]
-\captionwithunits{Project cost estimates, Ipswich Motorway}%
+\captionwithunits{Ipswich Motorway cost estimates}%
 {Millions of dollars}
 \includegraphics[page=4]{atlas/CaseStudies.pdf}
 \end{figure}
@@ -1902,7 +1902,7 @@ Secondly, the different margins of error associated with different cost estimati
 Providing detailed guidance on how project costs should be estimated for each level of project maturity allows governments to increase their confidence that projects will come in on budget, as illustrated in  \Vref{fig:Reduce-estimation-error-diagram}. Such increased cost certainty should be pursued insofar as the benefits outweigh the costs.
 
 \begin{figure}
-\captionwithunits{More projects finish on budget when estimation error has been minimised \label{fig:Reduce-estimation-error-diagram}}
+\captionwithunits{More projects will finish on budget when estimation error has been minimised \label{fig:Reduce-estimation-error-diagram}}
 {Stylized representation of the probability of cost overruns of each size, per cent}
 \includegraphics[page=4]{atlas/AppendixCharts2}
 \noteswithsource{The distribution of unavoidable risks depicted is a stylized representation of the distribution of cost overruns observed in the Investment Monitor; see \Vref{methodological-appendix} for details. The distribution of avoidable and unavoidable risks has been inferred by assuming that cost overruns would be larger if no effort was made to mitigate avoidable risks. This graph's illustrative purpose is to graphically present the common wisdom that cost risks can be reduced, but not eliminated, by mitigating avoidable risks.}%
@@ -2071,7 +2071,7 @@ There is substantial scope for the accuracy of existing risk measurement practic
 Perhaps the most troubling shortcoming of Australia’s current risk measurement guidelines is that they commonly do not provide sufficient information to realise the advantages of the methodologies that they recommend. 
 
 \begin{figure}
-\captionwithunits{No state provides consistently provides sufficient information for high quality risk measurement}{Yellow = approach is recommended\\ Orange = approach is recommended, but with insufficient information to be properly implemented\\ Red = approach is not recommended}
+\captionwithunits{No state consistently provides sufficient information for high quality risk measurement}{Yellow = approach is recommended\\ Orange = approach is recommended, but with insufficient information to be properly implemented\\ Red = approach is not recommended}
 \label{fig:sufficient-information-table}
 \includegraphics[page=2]{atlas/AppendixCharts}
 \vspace*{-55pt}
@@ -2297,7 +2297,7 @@ The comparability of the Grattan and Investment Monitor datasets also holds at t
 
 
 \begin{figure}
-\captionwithunits{Cost estimates contained within the Investment Monitor data appear reliable overall\label{fig:value-projects-by-project-stage}}%
+\captionwithunits{Cost estimates obtained from the Investment Monitor data appear reliable overall\label{fig:value-projects-by-project-stage}}%
 {Total value of the portfolio of projects contained within the Grattan dataset by project stage, \$billion}
 \includegraphics[page=7]{atlas/AppendixCharts}
 
