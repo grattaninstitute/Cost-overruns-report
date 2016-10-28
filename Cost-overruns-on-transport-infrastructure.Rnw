@@ -2448,14 +2448,14 @@ Regression_results_xtable %>%
 \centering
 \caption{Results of logit regression with instance of cost overrun in given period as dependent variable\label{tbl:regression-results-logit}}
 \input{tex/regresion-results-logit}
-\noteswithsource{Investment Monitor; Grattan analysis.}{Marginal effects of independent variables are defined relative to the reference group of rail projects built in New South Wales. *,  ** and *** indicate that a marginal effect is significant at the 10\%, 5\% or 1\% levels of significance.}
+\noteswithsource{Marginal effects of independent variables are defined relative to the reference group of rail projects built in New South Wales. *,  ** and *** indicate that a marginal effect is significant at the 10\%, 5\% or 1\% levels of significance.}{Investment Monitor; Grattan analysis.}
 \end{table*}
 
 \begin{table*}
 \centering
 \caption{Results of log-linear regression with instance of cost overrun in given period as dependent variable\label{tbl:regression-results-logit-normal}}
 \input{tex/regression-results-logit-normal}
-\noteswithsource{Investment Monitor; Grattan analysis.}{Marginal effects of independent variables are defined relative to the reference group of rail projects built in New South Wales. *,  ** and *** indicate that a marginal effect is significant at the 10\%, 5\% or 1\% levels of significance.}
+\noteswithsource{Marginal effects of independent variables are defined relative to the reference group of rail projects built in New South Wales. *,  ** and *** indicate that a marginal effect is significant at the 10\%, 5\% or 1\% levels of significance.}{Investment Monitor; Grattan analysis.}
 \end{table*}
 
 Cost overruns are also expected to be partially attributable to scope changes.
